@@ -1,0 +1,205 @@
+//
+//  Sample2DView.m
+//  Graph2DTestApp
+//
+//  Created by Anping Wang on 11/17/12.
+//  Copyright (c) 2012 Oracle. All rights reserved.
+//
+
+#import "Sample2DView.h"
+#import <Chart2D/Chart2D.h>
+
+@interface Sample2DView ()
+{
+    BOOL stopped;
+    NSMutableArray *values;
+}
+
+@end
+
+@implementation Sample2DView
+
+- (IBAction)toggleAnimation:(id)sender
+{
+    stopped = !stopped;
+    dispatch_queue_t testServer = dispatch_queue_create("Test-Server-Thread", NULL);
+    dispatch_async(testServer, ^{
+        while (!stopped)
+        {
+            offset += 0.1;
+            [self setupData];
+            [NSThread sleepForTimeInterval:0.05];
+            dispatch_async(dispatch_get_main_queue(),^ {
+                [self setNeedsDisplay ];
+            } );
+            
+        }
+    });
+}
+
+//data
+- (void) setupData
+{
+    values = [NSMutableArray arrayWithObjects:[NSMutableArray array], [NSMutableArray array], [NSMutableArray array], nil];
+    
+    for (int i = 0; i<count; i++) {
+        CGFloat fRand = rand() * 0.1f /RAND_MAX ;
+        [values[0] addObject:[NSNumber numberWithDouble: 1.5 + 0.4 * sin(waves * i * M_PI/count * sin(offset)) + fRand] ];
+        [values[1] addObject:[NSNumber numberWithDouble: 1.5 + cos(waves * i * M_PI/count + offset)] ];
+        [values[2] addObject:[NSNumber numberWithDouble: 1.5 + cos(waves * i * M_PI/count + offset)  + .3] ];
+    }
+}
+
+- (void) initChart
+{
+    [super initChart];
+    
+    self.dataSource = self;
+    self.chartDelegate = self;
+    self.view2DDelegate = self;
+    self.borderStyle = BorderStyleNone;
+    count = 100;
+    waves = 6;
+    
+    self.topMargin = 15;
+    self.topPadding = 10;
+    self.bottomPadding = 1;
+    
+    stopped = YES;
+    offset = 10;
+    
+    self.gridStyle = [[Graph2DGridStyle alloc]init];
+    self.gridStyle.lineType = LineStyleSolid;
+    self.gridStyle.color =[UIColor grayColor];
+    self.gridStyle.width = 1;
+    
+    self.xFrom = 0;
+    self.xTo = waves * M_PI;
+    
+    self.chartType = Graph2DLineChart;
+    self.fillStyle = [[Graph2DFillStyle alloc]init];
+    self.fillStyle.direction = Graph2DFillRightLeft;
+    
+    [self setupData];
+    
+}
+
+//graphs
+//return 1 for one chart
+- (NSInteger) numberOfSeries:(Graph2DView *) graph2Dview
+{
+    return 2;
+}
+
+//number of items in a group
+//return number of items
+- (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
+{
+    return count;
+}
+
+- (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(int)x 
+{
+    return [NSString stringWithFormat:@"L %d", x];
+}
+
+
+- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(int)y
+{
+    return [NSString stringWithFormat:@"%d", y];
+}
+
+- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
+{
+    Graph2DSeriesStyle *seriesStyle = [[Graph2DSeriesStyle alloc]init];
+    if (series == 0)
+    {
+        seriesStyle.color =  [UIColor whiteColor];
+        seriesStyle.gradient = YES;
+        seriesStyle.lineStyle.width = 1.0;
+        seriesStyle.fillStyle.colorFrom = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5];
+        seriesStyle.fillStyle.colorTo = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
+    
+        seriesStyle.chartType = Graph2DLineChart;
+        return seriesStyle;
+    }
+    else if (series == 1)
+    {
+        seriesStyle.color =  [UIColor colorWithRed:0.4 green:0.0 blue:0.0 alpha:1];
+        seriesStyle.gradient = NO;
+        seriesStyle.lineStyle.width = 3.0;
+        seriesStyle.chartType = Graph2DLineChart;
+        
+        return seriesStyle;
+    }
+    return nil;
+}
+
+//how to draw border
+- (Graph2DLineStyle *) borderStyle:(Graph2DView *)graph2DView
+{
+    Graph2DLineStyle *lineStyle = [[Graph2DLineStyle alloc]init];
+    lineStyle.color = [UIColor whiteColor];
+    lineStyle.width = 0.0;
+    lineStyle.lineType = LineStyleSolid;
+    return lineStyle;
+}
+
+//how to draw xaxis
+- (Graph2DAxisStyle *) xAxisStyle:(Graph2DView *)graph2DView
+{
+    Graph2DAxisStyle *xAxisStyle = [Graph2DAxisStyle defaultStyle];
+    xAxisStyle.color = [UIColor whiteColor];
+    xAxisStyle.width = 1.0;
+    xAxisStyle.lineType = LineStyleSolid;
+    
+    xAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:5];
+    xAxisStyle.labelOffset = 5;
+    xAxisStyle.tickStyle.majorTicks = 5;
+    xAxisStyle.tickStyle.minorTicks = 1;
+    xAxisStyle.tickStyle.width = 0.5;
+    xAxisStyle.tickStyle.majorLength = 7;
+    xAxisStyle.tickStyle.minorLength = 4;
+    
+    xAxisStyle.tickStyle.showMinorTicks = YES;
+    xAxisStyle.tickStyle.color = [UIColor whiteColor];
+    return xAxisStyle;
+}
+//how to draw y axis
+- (Graph2DAxisStyle *) yAxisStyle:(Graph2DView *)graph2DView
+{
+    Graph2DAxisStyle *yAxisStyle = [Graph2DAxisStyle defaultStyle];
+    
+    yAxisStyle.width = 1.0;
+    yAxisStyle.lineType = LineStyleSolid;
+    
+    yAxisStyle.tickStyle.majorTicks = 5;
+    yAxisStyle.tickStyle.majorLength = 7;
+    yAxisStyle.tickStyle.minorLength = 4;
+    yAxisStyle.showLabel = NO;
+    yAxisStyle.tickStyle.minorTicks = 1;
+    yAxisStyle.tickStyle.showMinorTicks = YES;
+    yAxisStyle.tickStyle.color = [UIColor greenColor];
+    
+    yAxisStyle.tickStyle.width = 1.0;
+    yAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:5];
+    return yAxisStyle;
+}
+
+
+//return value
+- (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
+{
+    return [values[series] objectAtIndex:index];
+    
+}
+
+
+//sample
++ (u_int32_t)randomInRangeLo:(u_int32_t)loBound toHi:(u_int32_t)hiBound
+{
+    int32_t   range = hiBound - loBound + 1;
+    return loBound + arc4random_uniform(range);
+}
+
+@end
