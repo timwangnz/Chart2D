@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CoreCrmAppDelegate.h"
+#import "Chart2DSampleApp.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CoreCrmAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([Chart2DSampleApp class]));
     }
 }
