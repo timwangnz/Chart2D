@@ -66,10 +66,10 @@
     if(self.pieChartDelegate)
     {
         style = [self.pieChartDelegate labelStyle : self];
-        labelOffset = style.labelOffset;
-        showLabel = style.showLabel;
+        labelOffset = style.labelStyle.offset;
+        showLabel = style.labelStyle.hidden;
         CGContextSetFillColorWithColor(context, [style.color CGColor]);
-        font = style.labelFont == nil ? font : style.labelFont;
+        font = style.labelStyle.font == nil ? font : style.labelStyle.font;
     }
     
     [storedLocations removeAllObjects];
@@ -127,8 +127,6 @@
                 {
                     theText = [self.pieChartDelegate graph2DView:self labelAt : i];
                 }
-                
-                //CGSize stringSize = [theText sizeWithFont:font];
                 
                 CGSize stringSize = [theText boundingRectWithSize:CGSizeMake(100, 2000.0)
                                                           options:NSStringDrawingUsesLineFragmentOrigin

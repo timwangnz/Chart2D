@@ -153,8 +153,8 @@
     xAxisStyle.width = 1.0;
     xAxisStyle.lineType = LineStyleSolid;
     
-    xAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:5];
-    xAxisStyle.labelOffset = 5;
+    xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:5];
+    xAxisStyle.labelStyle.offset = 5;
     xAxisStyle.tickStyle.majorTicks = 5;
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.tickStyle.width = 0.5;
@@ -176,13 +176,13 @@
     yAxisStyle.tickStyle.majorTicks = 5;
     yAxisStyle.tickStyle.majorLength = 7;
     yAxisStyle.tickStyle.minorLength = 4;
-    yAxisStyle.showLabel = NO;
+    yAxisStyle.labelStyle.hidden = YES;
     yAxisStyle.tickStyle.minorTicks = 1;
     yAxisStyle.tickStyle.showMinorTicks = YES;
     yAxisStyle.tickStyle.color = [UIColor greenColor];
     
     yAxisStyle.tickStyle.width = 1.0;
-    yAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:5];
+    
     return yAxisStyle;
 }
 

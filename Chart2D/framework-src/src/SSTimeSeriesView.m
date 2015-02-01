@@ -183,7 +183,7 @@
     if (self.yMax > 1000000000) {
         scale = 10000000000;
     }
-    return [NSString stringWithFormat:@"%.1f", y * (self.yMax - self.yMin)/scale];
+    return [NSString stringWithFormat:@"%.2f", y * (self.yMax - self.yMin)/scale];
 }
 
 - (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
@@ -227,12 +227,12 @@
     xAxisStyle.tickStyle.majorTicks = xTicks;
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.color = [UIColor blackColor];
-    xAxisStyle.labelAngle = 0.7;
+    xAxisStyle.labelStyle.angle = M_PI_4;
     xAxisStyle.tickStyle.penWidth = 1.0;
     xAxisStyle.tickStyle.majorLength = 5;
-    xAxisStyle.labelOffset = 10;
+    xAxisStyle.labelStyle.offset = 10;
     xAxisStyle.tickStyle.color = [UIColor redColor];
-    xAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:8];
+    xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:8];
     return xAxisStyle;
 }
 
@@ -243,10 +243,10 @@
     yAxisStyle.tickStyle.minorTicks = 1;
     yAxisStyle.hidden = NO;
     yAxisStyle.color = [UIColor whiteColor];
-    yAxisStyle.labelOffset = 10;
+    yAxisStyle.labelStyle.offset = 5;
     yAxisStyle.tickStyle.color = [UIColor redColor];
     yAxisStyle.tickStyle.penWidth = 1.0;
-    yAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:8];
+    yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:8];
     return yAxisStyle;
 }
 

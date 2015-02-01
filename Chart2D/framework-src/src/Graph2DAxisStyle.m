@@ -7,6 +7,25 @@
 
 #import "Graph2DAxisStyle.h"
 
+@implementation Graph2DLabelStyle
+
+- (id) init
+{
+    self = [super init];
+    if (self)
+    {
+        _offset = 1.0;
+        _hidden = NO;
+        _angle = 0;
+        _aligment = Graph2DLabelAlignmentLeft;
+        _color = [UIColor blackColor];
+        _font = [UIFont systemFontOfSize:12];
+    }
+    return self;
+}
+
+@end
+
 @implementation Graph2DAxisStyle
 
 + (Graph2DAxisStyle *) defaultStyle
@@ -20,10 +39,9 @@
     if (self)
     {
         _tickStyle = [[Graph2DTickStyle alloc] init];
-        _labelOffset = 1.0;
-        _showLabel = YES;
+        
+        _labelStyle = [[Graph2DLabelStyle alloc] init];
         _hidden = NO;
-        _labelAngle = 0;
     }
     return self;
 }

@@ -16,6 +16,9 @@ FOUNDATION_EXPORT const unsigned char Chart2DVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Chart2D/PublicHeader.h>
 
+#import "Graph2DArea.h"
+#import "Graph2DWidgetView.h"
+
 #import "Graph2DChartView.h"
 #import "Graph2DView.h"
 
@@ -29,3 +32,5 @@ FOUNDATION_EXPORT const unsigned char Chart2DVersionString[];
 #import "Graph2DAxisStyle.h"
 
 #import "Graph2DPieChartView.h"
+#import "SSTimeSeriesView.h"
+

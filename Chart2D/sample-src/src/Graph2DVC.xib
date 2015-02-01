@@ -18,12 +18,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="9" customClass="Graph2DChartView">
-                    <rect key="frame" x="0.0" y="30" width="478" height="515"/>
+                    <rect key="frame" x="0.0" y="104" width="478" height="446"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <segmentedControl opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="13">
-                    <rect key="frame" x="0.0" y="0.0" width="478" height="30"/>
+                    <rect key="frame" x="0.0" y="74" width="478" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
                         <segment title="Bar Chart"/>
@@ -35,7 +35,7 @@
                     </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" id="21" customClass="BarChartSampleView">
-                    <rect key="frame" x="0.0" y="577" width="478" height="374.99999906425177"/>
+                    <rect key="frame" x="0.0" y="561" width="478" height="391"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
@@ -69,15 +69,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" id="29" customClass="VolumnView">
+                    <rect key="frame" x="0.0" y="951" width="478" height="73"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" id="23">
-                    <rect key="frame" x="484" y="0.0" width="284" height="550"/>
+                    <rect key="frame" x="484" y="74" width="284" height="476"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" id="20" customClass="Sample2DView">
-                            <rect key="frame" x="0.0" y="44" width="284" height="506"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="0.50196081400000003" green="0.70588237050000002" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="25">
                             <rect key="frame" x="191" y="3" width="93" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -93,17 +93,17 @@
                                 <action selector="toggleAnimation:" destination="20" eventType="touchUpInside" id="26"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" id="20" customClass="Sample2DView">
+                            <rect key="frame" x="0.0" y="38" width="284" height="438"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" red="0.50196081400000003" green="0.70588237050000002" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.015686275440000001" green="0.35686275360000003" blue="0.64705884459999996" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <view contentMode="scaleToFill" id="29" customClass="VolumnView">
-                    <rect key="frame" x="0.0" y="951" width="478" height="73"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="185" y="358"/>
+            <point key="canvasLocation" x="333" y="360"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

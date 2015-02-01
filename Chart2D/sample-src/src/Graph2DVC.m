@@ -120,7 +120,7 @@
     Graph2DAxisStyle *style = [[Graph2DAxisStyle alloc]init];
     style.tickStyle.majorTicks = 5;
     style.color = [UIColor redColor];
-    style.showLabel = NO;
+    style.labelStyle.hidden = YES;
     return style;
 }
 

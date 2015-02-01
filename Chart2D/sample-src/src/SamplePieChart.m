@@ -54,8 +54,8 @@
     xAxisStyle.tickStyle.majorTicks = 5;
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.color = [UIColor whiteColor];
-    xAxisStyle.labelOffset = 30;
-    xAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:12];
+    xAxisStyle.labelStyle.offset = 30;
+    xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:12];
     return xAxisStyle;
 }
 

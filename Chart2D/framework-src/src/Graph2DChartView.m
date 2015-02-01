@@ -595,23 +595,11 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
-- (void) _drawText:(NSString *) text withFont:(UIFont *)font width:(float) width
-{
-    NSDictionary *attributes = @{NSFontAttributeName: font};
-    CGRect rect = [text boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
-                                     options:NSStringDrawingUsesLineFragmentOrigin
-                                  attributes:attributes
-                                     context:nil];
-    
-    [text  drawInRect:rect withAttributes:attributes];
-}
-
-
 - (void) drawYAxis: (CGContextRef) context withStyle:(Graph2DAxisStyle *)yAxisStyle
 {
     Graph2DAxisStyle *axisStyle = yAxisStyle ? yAxisStyle : [Graph2DAxisStyle defaultStyle];
     CGContextSetTextMatrix(context, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
-    UIFont *font = axisStyle.labelFont ? axisStyle.labelFont : [UIFont systemFontOfSize:12];
+    UIFont *font = axisStyle.labelStyle.font;
     
     CGContextSetTextDrawingMode(context, kCGTextFill);
     CGContextSetFillColorWithColor(context, [axisStyle.color CGColor]);
@@ -640,12 +628,12 @@
     
     NSDictionary *attributes = @{NSFontAttributeName: font, NSForegroundColorAttributeName :  color};
     
-    for (int i = 0; i < ticks + 1; i++)
+    for (int i = 0; i < ticks; i++)
     {
         CGFloat y = gBottomLeft.y - i * deltaY + axisStyle.tickStyle.penWidth;
-        if (axisStyle && axisStyle.showLabel)
+        if (axisStyle && !axisStyle.labelStyle.hidden)
         {
-            NSString *theText = [NSString stringWithFormat: (axisStyle.labelFormat ? axisStyle.labelFormat : @"%0.2f"), i*yValueDelta];
+            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), i*yValueDelta];
             
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(graph2DView:yLabelAt:)])
             {
@@ -696,88 +684,97 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
+-(void)  drawAtPoint:(NSString *)text
+                  at:(CGPoint) basePoint
+            andAngle:(CGFloat) angle
+             andFont:(UIFont *) font
+            andColor:(UIColor *) color
+{
+    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : font}];
+
+    CGFloat x = basePoint.x + (sinf(angle) > 0 ? size.height*sinf(angle) / 2.0 : -size.width *cosf(angle));
+    
+    if (sinf(angle) == 0)
+    {
+        x = basePoint.x - size.width / 2.0;
+    }
+    
+    CGFloat y = basePoint.y + (sinf(angle) > 0 ? 0 :(-size.width*sinf(angle)));
+    //NSLog(@"%f %f", x, y);
+    
+    CGContextRef    context =   UIGraphicsGetCurrentContext();
+    CGAffineTransform   t   =   CGAffineTransformMakeTranslation(x, y);
+    CGAffineTransform   r   =   CGAffineTransformMakeRotation(angle);
+    CGContextConcatCTM(context, t);
+    CGContextConcatCTM(context, r);
+    
+    [text drawAtPoint:CGPointMake(0, 0) withAttributes:@{NSFontAttributeName : font, NSForegroundColorAttributeName :  color}];
+    
+    CGContextConcatCTM(context, CGAffineTransformInvert(r));
+    CGContextConcatCTM(context, CGAffineTransformInvert(t));
+}
+
+
 - (void) drawXAxis: (CGContextRef) context withStyle:(Graph2DAxisStyle *)xAxisStyle
 {
     Graph2DAxisStyle *axisStyle = xAxisStyle ? xAxisStyle : [Graph2DAxisStyle defaultStyle];
-    UIFont *font = axisStyle.labelFont ? axisStyle.labelFont : [UIFont systemFontOfSize:12];
     
-    
-    CGFloat angle = 0.0;
-    angle = axisStyle.labelAngle;
-    
-    UIColor *color = [UIColor blueColor];
-    
-    if (axisStyle.tickStyle && axisStyle.tickStyle.color)
-    {
-        color = axisStyle.tickStyle.color;
-        
-        
-    }
-    else if (axisStyle.color)
-    {
-        color = axisStyle.color;
-     
-    }
-  
-    
-    CGContextSetStrokeColorWithColor(context, [color CGColor]);
-    
-    CGContextSetTextMatrix(context, CGAffineTransformRotate( CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0),  angle));
-    
+
     int ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
     int minorTicks = axisStyle.tickStyle.minorTicks;
     
     float deltaX = gDrawingRect.size.width / (ticks - 1);
     
-    for (int i = 0; i <= ticks; i++)
+    for (int i = 0; i < ticks; i++)
     {
-        if (axisStyle.showLabel)
+        if (!axisStyle.hidden && !axisStyle.labelStyle.hidden)
         {
-            CGFloat xValue = (self.xTo - self.xFrom) * i / (ticks - 1);
-            NSString *theText = [NSString stringWithFormat:@"%.2f", xValue];
+            UIFont *font = axisStyle.labelStyle.font;
             
+            CGFloat angle = axisStyle.labelStyle.angle;
+            CGFloat xValue = (self.xTo - self.xFrom) * i / (ticks - 1);
+            
+            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), xValue];
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(graph2DView:xLabelAt:)])
             {
                 theText = [self.chartDelegate graph2DView:self xLabelAt:i];
             }
             
-            CGSize stringSize = [theText boundingRectWithSize:CGSizeMake(100, 2000.0)
-                                                      options:NSStringDrawingUsesLineFragmentOrigin
-                                                   attributes:@{NSFontAttributeName : font}
-                                                      context:nil].size;
-            
             CGFloat x = 0;
             CGFloat y = 0;
             
-            if (sinf(angle) == 0)
+            x = gBottomLeft.x + i * deltaX;
+            y = gBottomLeft.y + font.pointSize + axisStyle.labelStyle.offset;
+            
+            if (axisStyle.labelStyle.aligment == Graph2DLabelAlignmentCenter)
             {
-                x = gBottomLeft.x + i * deltaX - stringSize.width/ 2;
-                y = gBottomLeft.y + font.pointSize + axisStyle.labelOffset;
-                
-                if (self.chartType == Graph2DBarChart)
-                {
-                    x = x + deltaX / 2;
-                }
+                x = x + deltaX / 2;
             }
-            else
+            
+            if (axisStyle.labelStyle.aligment == Graph2DLabelAlignmentRight)
             {
-                x = gBottomLeft.x + i * deltaX + font.pointSize/2 - stringSize.width*cosf(angle);
-                y = gBottomLeft.y + axisStyle.labelOffset + stringSize.width*sinf(angle);
-                
-                if (self.chartType == Graph2DBarChart)
-                {
-                    x = x + deltaX / 2;
-                }
+                x = x + deltaX;
             }
             
             if (self.chartType != Graph2DBarChart || (self.chartType == Graph2DBarChart && i < xTicks))
             {
-                [theText drawAtPoint:CGPointMake(x, y) withAttributes:@{NSFontAttributeName : font,
-                                                                        NSForegroundColorAttributeName :  color
-                                                                        }];
+                [self drawAtPoint:theText at:CGPointMake(x, y) andAngle: angle andFont:font andColor: axisStyle.labelStyle.color];
             }
         }
         
+        UIColor *color = [UIColor blueColor];
+        
+        if (axisStyle.tickStyle && axisStyle.tickStyle.color)
+        {
+            color = axisStyle.tickStyle.color;
+        }
+        else if (axisStyle.color)
+        {
+            color = axisStyle.color;
+            
+        }
+        
+        CGContextSetStrokeColorWithColor(context, [color CGColor]);
         if (axisStyle.tickStyle.showMajorTicks)
         {
             CGContextSetShouldAntialias(context, NO);
@@ -792,7 +789,7 @@
             
             float x = gBottomLeft.x + i * deltaX;
             
-            for(int j=1;j < minorTicks + 1;j++)
+            for(int j=1; j < minorTicks + 1; j++)
             {
                 CGContextSetShouldAntialias(context, NO);
                 CGContextMoveToPoint(context, x + j * minorDelta, gBottomLeft.y);

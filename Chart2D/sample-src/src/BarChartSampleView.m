@@ -78,10 +78,8 @@
     yAxisStyle.tickStyle.color = [UIColor whiteColor];
     
     yAxisStyle.width = 1;
-    yAxisStyle.showLabel = YES;
     
-    yAxisStyle.labelOffset = 10;
-    
+    yAxisStyle.labelStyle.offset = 10;
     yAxisStyle.tickStyle.width = 1.0;
     //yAxisStyle.labelFont = [UIFont fontWithName:@"Helvetica" size:5];
     return yAxisStyle;
@@ -90,13 +88,13 @@
 - (Graph2DAxisStyle *) xAxisStyle:(Graph2DView *)graph2DView
 {
     Graph2DAxisStyle *xAxisStyle = [Graph2DAxisStyle defaultStyle];
-    xAxisStyle.tickStyle.majorTicks = 5;
+    xAxisStyle.tickStyle.majorTicks = 10;
     xAxisStyle.tickStyle.minorTicks = 1;
-    
+   
     xAxisStyle.color = [UIColor whiteColor];
     xAxisStyle.width = 1;
-    xAxisStyle.showLabel = YES;
-    xAxisStyle.labelOffset = 2;
+   
+    xAxisStyle.labelStyle.offset = 5;
     xAxisStyle.tickStyle.color = [UIColor whiteColor];
     xAxisStyle.tickStyle.width = 1.0;
     xAxisStyle.tickStyle.majorLength = 5;
