@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSPictureVC">
+            <connections>
+                <outlet property="caption" destination="43" id="44"/>
+                <outlet property="captionField" destination="42" id="69"/>
+                <outlet property="currentView" destination="1" id="48"/>
+                <outlet property="editView" destination="39" id="47"/>
+                <outlet property="iconView" destination="40" id="45"/>
+                <outlet property="imageView" destination="13" id="20"/>
+                <outlet property="imagesView" destination="1" id="46"/>
+                <outlet property="noPictures" destination="34" id="36"/>
+                <outlet property="pageControl" destination="21" id="22"/>
+                <outlet property="progressLabel" destination="70" id="71"/>
+                <outlet property="view" destination="63" id="64"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <swipeGestureRecognizer direction="right" id="24">
+            <connections>
+                <action selector="last:" destination="-1" id="27"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="26">
+            <connections>
+                <action selector="next:" destination="-1" id="29"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <view contentMode="scaleToFill" id="39" userLabel="EditView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="37" customClass="RoundButton">
+                    <rect key="frame" x="221" y="76" width="73" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" red="0.91747572820000001" green="0.91747572820000001" blue="0.91747572820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="upload:" destination="-1" eventType="touchUpInside" id="59"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="40" customClass="SSImageView">
+                    <rect key="frame" x="8" y="31" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write catpion" minimumFontSize="17" id="42">
+                    <rect key="frame" x="101" y="31" width="199" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="textColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="60" customClass="RoundButton">
+                    <rect key="frame" x="135" y="76" width="74" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.91747572820000001" green="0.91747572820000001" blue="0.91747572820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelUpdate:" destination="-1" eventType="touchUpInside" id="62"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="70">
+                    <rect key="frame" x="8" y="121" width="292" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.15776699029999999" green="0.15776699029999999" blue="0.15776699029999999" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <view contentMode="scaleToFill" id="63">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="1">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="imgbg.png" id="13" customClass="SSTalkImageView">
+                            <rect key="frame" x="10" y="37" width="300" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="21">
+                            <rect key="frame" x="46" y="332" width="228" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="pageIndicatorTintColor" red="0.49019610879999997" green="0.69411766529999996" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="currentPageIndicatorTintColor" red="1" green="0.061489045079999999" blue="0.01501409947" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="setPage:" destination="-1" eventType="valueChanged" id="23"/>
+                            </connections>
+                        </pageControl>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No pictures found for this cafe" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="34">
+                            <rect key="frame" x="174" y="0.0" width="136" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="43">
+                            <rect key="frame" x="10" y="8" width="300" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.15776699029999999" green="0.15776699029999999" blue="0.15776699029999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="24" appends="YES" id="32"/>
+                        <outletCollection property="gestureRecognizers" destination="26" appends="YES" id="33"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.15776699029999999" green="0.15776699029999999" blue="0.15776699029999999" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="imgbg.png" width="320" height="320"/>
+    </resources>
+</document>

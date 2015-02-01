@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSDrawableVC">
+            <connections>
+                <outlet property="btnAddPage" destination="3bI-Xz-NXL" id="57E-Kl-w7S"/>
+                <outlet property="btnDeletePage" destination="O3h-Z0-iSu" id="stI-Xg-vFX"/>
+                <outlet property="btnDeleteSel" destination="f0H-Bh-fWf" id="bRM-BA-0ze"/>
+                <outlet property="btnPage" destination="hgj-wk-mHJ" id="QCX-jf-gGU"/>
+                <outlet property="btnSettings" destination="NlS-PQ-opP" id="3J9-Dv-463"/>
+                <outlet property="glView" destination="23q-Oj-bgk" id="b35-FW-THx"/>
+                <outlet property="vColors" destination="woK-Lu-bvZ" id="B7Q-tC-UDr"/>
+                <outlet property="vSettings" destination="uwY-Lg-Ahw" id="Dzk-Sv-Fb7"/>
+                <outlet property="vToolbox" destination="2" id="VWE-b1-05y"/>
+                <outlet property="vTools" destination="fch-ct-taS" id="ciX-FZ-3GF"/>
+                <outlet property="view" destination="r1O-F0-T3S" id="f9U-zH-FPC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="r1O-F0-T3S" userLabel="MainView">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="23q-Oj-bgk" customClass="SSDrawableLayer">
+                    <rect key="frame" x="0.0" y="43" width="768" height="930"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="w3A-iL-e04" userLabel="Toolbox" customClass="SSToolbarView">
+                    <rect key="frame" x="311" y="981" width="146" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qv0-5p-6a8" userLabel="Last Page" customClass="SSRoundButton">
+                            <rect key="frame" x="12" y="-2" width="36" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="&lt;">
+                                <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="previousPage:" destination="-1" eventType="touchUpInside" id="Eqh-3l-cQO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uEX-pe-nq9" userLabel="Next Page" customClass="SSRoundButton">
+                            <rect key="frame" x="100" y="0.0" width="36" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="&gt;">
+                                <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="nextPage:" destination="-1" eventType="touchUpInside" id="6m2-G1-MbL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hgj-wk-mHJ" userLabel="Next Page" customClass="SSRoundButton">
+                            <rect key="frame" x="56" y="2" width="36" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="1">
+                                <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2" userLabel="Toolbox" customClass="SSToolbarView">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="42"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view clipsSubviews="YES" tag="9" contentMode="scaleToFill" id="uwY-Lg-Ahw" userLabel="Settings">
+                            <rect key="frame" x="728" y="0.0" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O3h-Z0-iSu" userLabel="Delete Page" customClass="SSRoundButton">
+                                    <rect key="frame" x="0.0" y="200" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <state key="normal" title="-">
+                                        <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deletePage:" destination="-1" eventType="touchUpInside" id="Mqc-0X-NQk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3bI-Xz-NXL" userLabel="Add Page" customClass="SSRoundButton">
+                                    <rect key="frame" x="0.0" y="160" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <state key="normal" title="+">
+                                        <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addPage:" destination="-1" eventType="touchUpInside" id="lTj-tO-2XF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FaX-5M-jih" userLabel="Grid" customClass="SSRoundButton">
+                                    <rect key="frame" x="-102" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="166-newspaper.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="grid:" destination="-1" eventType="touchUpInside" id="w8Z-aD-Afr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9lJ-3t-KWX" userLabel="Undo" customClass="SSRoundButton">
+                                    <rect key="frame" x="-66" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="167-upload-photo.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="redo:" destination="-1" eventType="touchUpInside" id="1HM-Uc-PGj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MxD-qW-Wl7" userLabel="Redo" customClass="SSRoundButton">
+                                    <rect key="frame" x="-30" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="02-redo.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="undo:" destination="-1" eventType="touchUpInside" id="QkA-Lj-FY9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UXK-Uq-W1L" userLabel="Clear" customClass="SSRoundButton">
+                                    <rect key="frame" x="-138" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="waste_basket.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clear:" destination="-1" eventType="touchUpInside" id="yNg-vQ-e1f"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NlS-PQ-opP" userLabel="Settings" customClass="SSRoundButton">
+                                    <rect key="frame" x="1" y="1" width="38" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.93434276400000005" green="0.93434276400000005" blue="0.93434276400000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="19-gear.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected">
+                                        <color key="titleShadowColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="toggleOptions:" destination="-1" eventType="touchUpInside" id="B2e-SL-fwf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view clipsSubviews="YES" tag="8" contentMode="scaleToFill" id="fch-ct-taS" userLabel="Tools">
+                            <rect key="frame" x="686" y="0.0" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JeK-MO-nZo" userLabel="Scribble" customClass="SSRoundButton">
+                                    <rect key="frame" x="1" y="1" width="38" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="scribble.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="SAc-Vc-ch0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r7O-Bx-DrY" userLabel="Line" customClass="SSRoundButton">
+                                    <rect key="frame" x="-154" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="line.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="Tle-kn-TmX"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T0E-RE-hta" userLabel="Rect" customClass="SSRoundButton">
+                                    <rect key="frame" x="-118" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="rectangle.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="pxp-2e-NYO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CIy-ly-CIS" userLabel="Ellipse" customClass="SSRoundButton">
+                                    <rect key="frame" x="-66" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="ellipse.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="MEn-Ig-38A"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cpJ-DG-vea" userLabel="Texture" customClass="SSRoundButton">
+                                    <rect key="frame" x="-326" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="photo-32.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="CeY-Gj-LoT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ire-OL-xGa" userLabel="Selector" customClass="SSRoundButton">
+                                    <rect key="frame" x="-30" y="6" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.48857479609999999" green="0.67471528049999996" blue="0.95355165350000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="101-gameplan.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectTool:" destination="-1" eventType="touchUpInside" id="D2t-7M-EUw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view clipsSubviews="YES" tag="9" contentMode="scaleToFill" id="woK-Lu-bvZ" userLabel="Colors">
+                            <rect key="frame" x="645" y="0.0" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bx7-HR-iGN" userLabel="Green" customClass="SSRoundButton">
+                                    <rect key="frame" x="-31" y="5" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="color:" destination="-1" eventType="touchUpInside" id="Hti-nZ-m60"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MwO-GR-oiA" userLabel="Blue" customClass="SSRoundButton">
+                                    <rect key="frame" x="-67" y="5" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="color:" destination="-1" eventType="touchUpInside" id="DI8-DO-G25"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NiB-IE-785" userLabel="Yellow" customClass="SSRoundButton">
+                                    <rect key="frame" x="-103" y="5" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="color:" destination="-1" eventType="touchUpInside" id="Hzu-eU-Zqy"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Yd-w0-5WF" userLabel="White" customClass="SSRoundButton">
+                                    <rect key="frame" x="-139" y="5" width="28" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="color:" destination="-1" eventType="touchUpInside" id="tjY-D0-nnL"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZR-YT-GX9" userLabel="Red" customClass="SSRoundButton">
+                                    <rect key="frame" x="1" y="1" width="38" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.91747572820000001" green="0.1208040173" blue="0.078161615540000007" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="color:" destination="-1" eventType="touchUpInside" id="wK2-OS-emE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f0H-Bh-fWf" userLabel="Delete Selected" customClass="SSRoundButton">
+                            <rect key="frame" x="603" y="0.0" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="x">
+                                <color key="titleColor" red="0.91747572820000001" green="0.1208040173" blue="0.078161615540000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteSelection:" destination="-1" eventType="touchUpInside" id="Pox-PM-6iN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZOl-OW-qic" userLabel="Replay" customClass="SSRoundButton">
+                            <rect key="frame" x="46" y="2" width="36" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="[-&gt;">
+                                <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="replay:" destination="-1" eventType="touchUpInside" id="xjf-pc-tCR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oU4-C6-8DF" userLabel="Show Master" customClass="SSRoundButton">
+                            <rect key="frame" x="2" y="1" width="36" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="&lt;::">
+                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="hideUnhide:" destination="-1" eventType="touchUpInside" id="RTv-N8-BzV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TFk-Zg-mcw" userLabel="Next Page" customClass="SSRoundButton">
+                            <rect key="frame" x="90" y="2" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="++">
+                                <color key="titleColor" red="0.71042170959999995" green="0.92726732339999995" blue="0.2373735045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="animation:" destination="-1" eventType="touchUpInside" id="9aR-1W-urZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.23611005760000001" green="0.23611005760000001" blue="0.23611005760000001" alpha="1" colorSpace="calibratedRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="543" y="-1408"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="02-redo.png" width="30" height="26"/>
+        <image name="101-gameplan.png" width="28" height="28"/>
+        <image name="166-newspaper.png" width="28" height="23"/>
+        <image name="167-upload-photo.png" width="24" height="17"/>
+        <image name="19-gear.png" width="26" height="26"/>
+        <image name="ellipse.png" width="28" height="28"/>
+        <image name="line.png" width="28" height="28"/>
+        <image name="photo-32.png" width="32" height="32"/>
+        <image name="rectangle.png" width="28" height="28"/>
+        <image name="scribble.png" width="28" height="28"/>
+        <image name="waste_basket.png" width="26" height="26"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

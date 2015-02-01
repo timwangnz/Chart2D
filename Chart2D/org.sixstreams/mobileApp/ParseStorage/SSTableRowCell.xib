@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SSTableRowIdentifier" rowHeight="50" id="DYc-AU-4yY" customClass="SSTableRowCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DYc-AU-4yY" id="QVL-qt-cJ2">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="eeQ-CQ-qou" customClass="SSCalendarCell">
+                        <rect key="frame" x="0.0" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.78102245145631066" green="0.78102245145631066" blue="0.78102245145631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="RLP-jK-M6B" customClass="SSCalendarCell">
+                        <rect key="frame" x="46" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93434276395631066" green="0.93434276395631066" blue="0.93434276395631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="oDH-5q-vuP" customClass="SSCalendarCell">
+                        <rect key="frame" x="92" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93434276395631066" green="0.93434276395631066" blue="0.93434276395631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="exj-js-xSF" customClass="SSCalendarCell">
+                        <rect key="frame" x="138" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93434276395631066" green="0.93434276395631066" blue="0.93434276395631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="5OO-AL-dgC" customClass="SSCalendarCell">
+                        <rect key="frame" x="184" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93434276395631066" green="0.93434276395631066" blue="0.93434276395631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="Q7V-kg-8dl" customClass="SSCalendarCell">
+                        <rect key="frame" x="230" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93434276395631066" green="0.93434276395631066" blue="0.93434276395631066" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="s7V-3r-irQ" customClass="SSCalendarCell">
+                        <rect key="frame" x="276" y="2" width="42" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.78102245150000005" green="0.78102245150000005" blue="0.78102245150000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="vFriday" destination="Q7V-kg-8dl" id="8hu-0u-LTx"/>
+                <outlet property="vMonday" destination="RLP-jK-M6B" id="PEP-oF-nBv"/>
+                <outlet property="vSaturday" destination="s7V-3r-irQ" id="360-dN-RJc"/>
+                <outlet property="vSunday" destination="eeQ-CQ-qou" id="J8S-Tg-zZR"/>
+                <outlet property="vThursday" destination="5OO-AL-dgC" id="0OA-V4-OX1"/>
+                <outlet property="vTuesday" destination="oDH-5q-vuP" id="c96-9a-fnV"/>
+                <outlet property="vWednsday" destination="exj-js-xSF" id="Smn-I0-omx"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

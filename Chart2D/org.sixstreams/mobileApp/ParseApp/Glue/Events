@@ -1,0 +1,68 @@
+Events
+	Create an event - e.g. Surfing at Manhattan Beach
+		event categories - e.g. Social (there will be more than 4 categories, in fact, user should be able to create categories, name, rules, and pictures)
+			event subcategories - e.g. Sports & Game (same as categories)
+
+	title
+	picture
+	startAt
+	duration
+	location
+	type
+		invite only
+			groups
+			users
+		public
+			seats	
+
+	Browse/Save events
+		via calendar
+		via glue - spotlights
+		search events
+			categories
+			keywords search
+
+	Modify event
+		startAt, duration, location, invites
+
+	Cancel/delete event 
+		
+	Enrich 
+		add pictures
+		make comments
+
+	Manage My Event
+		opt out (can not make it)
+			
+
+Groups
+	Create a group
+		categories
+		rules
+	Delete a group
+	Join a group
+	Leave a group
+	Browse/Search groups
+	Manage My Groups
+	Invite Users to a group
+
+Users
+	sign-in 
+		with FB
+		with Glue
+	cancel account
+	sign off
+	profile
+		from facebook
+		friends?
+	browse/search users
+
+Notifications
+	invited / uninvited
+	event cancelled
+	event changed (location, time)
+	
+Admin
+	remove/block users, groups, events
+
+Settings

@@ -55,6 +55,7 @@
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.color = [UIColor whiteColor];
     xAxisStyle.labelStyle.offset = 30;
+    xAxisStyle.labelStyle.hidden = NO;
     xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:12];
     return xAxisStyle;
 }
@@ -129,7 +130,6 @@
 
 - (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
 {
-     
     Graph2DSeriesStyle *lineStyle = [[Graph2DSeriesStyle alloc]init];
     lineStyle.color = [UIColor blueColor];
     lineStyle.gradient = YES;
@@ -138,6 +138,7 @@
     lineStyle.fillStyle.colorTo = [UIColor redColor];
     return lineStyle;
 }
+
 //number of items in a group
 //return number of items
 - (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph

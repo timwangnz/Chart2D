@@ -153,18 +153,20 @@
     xAxisStyle.width = 1.0;
     xAxisStyle.lineType = LineStyleSolid;
     
-    xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:5];
+    xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:8];
     xAxisStyle.labelStyle.offset = 5;
     xAxisStyle.tickStyle.majorTicks = 5;
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.tickStyle.width = 0.5;
     xAxisStyle.tickStyle.majorLength = 7;
     xAxisStyle.tickStyle.minorLength = 4;
-    
+    xAxisStyle.labelStyle.angle = M_PI_4;
     xAxisStyle.tickStyle.showMinorTicks = YES;
     xAxisStyle.tickStyle.color = [UIColor whiteColor];
+        xAxisStyle.labelStyle.color = [UIColor whiteColor];
     return xAxisStyle;
 }
+
 //how to draw y axis
 - (Graph2DAxisStyle *) yAxisStyle:(Graph2DView *)graph2DView
 {

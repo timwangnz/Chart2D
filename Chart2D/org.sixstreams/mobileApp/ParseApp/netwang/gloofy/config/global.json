@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Gloofy": {
+            "applicationId": "GZXD8slt1c887LCdRfNmNfdSTzxGMO7puVlWQcWP", 
+            "masterKey": "ZCkHNBO2Bhn2lIbluGOQLoEnFavax9eqOMTgDmjs"
+        }, 
+        "_default": {
+            "link": "Gloofy"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.0"
+    }
+}

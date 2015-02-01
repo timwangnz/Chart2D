@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Jobs": {
+            "applicationId": "QGmVk5y0LjFvR4DD0eDNtM2AWnv68FXjYjsOSAQM", 
+            "masterKey": "lHsVpgZUHul1ITKw06Tolt3qFVd9V9iQDgoc4Qy7"
+        }, 
+        "_default": {
+            "link": "Jobs"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.12"
+    }
+}

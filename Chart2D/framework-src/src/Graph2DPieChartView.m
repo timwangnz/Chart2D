@@ -67,7 +67,7 @@
     {
         style = [self.pieChartDelegate labelStyle : self];
         labelOffset = style.labelStyle.offset;
-        showLabel = style.labelStyle.hidden;
+        showLabel = !style.labelStyle.hidden;
         CGContextSetFillColorWithColor(context, [style.color CGColor]);
         font = style.labelStyle.font == nil ? font : style.labelStyle.font;
     }

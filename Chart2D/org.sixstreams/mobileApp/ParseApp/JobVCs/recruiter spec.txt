@@ -1,0 +1,177 @@
+Flows
+	Create a job
+		add 
+			job title
+			term
+			location
+			industry
+			rate
+			number of positions
+			search keywords
+		add 
+			company name
+			description
+		add
+			career level
+			experiece
+			eduation
+			travel requirement
+			telecommute allowed
+		Addtional requirements
+			Text
+			attachment
+
+		Add skill set
+			name/level
+		Control
+			published
+
+	View a Job 
+		Job Details
+			industry
+			title
+			location
+			rate
+		About Employer
+		Requirements
+
+		Actions
+			Follow
+				Followers (#)
+			Apply
+			Refer/Share ?
+		Reviews
+			add review
+
+		Recruiter
+			name
+			job title
+			icon
+	Apply For a Job
+		Job Details
+			industry
+			title
+			rate
+			location
+		Actions
+			Chat
+			message
+			Prepare Application
+				check requriements
+					for each item, rate 1-10 and make a comment
+				check location
+				check rate
+				check experience
+				check skill
+				save as resume for the industry/title
+				Rate chance
+			Video application
+			Send application in email with resume, video intro or cover letter
+	Referal
+
+	Create Profile
+		First Name
+		Last Name
+		Gender
+		Age
+		Persona recruiter/hr/candidate/admin
+		phone
+		email
+		address
+		about me
+		company (for recruiter/hr)
+
+	Create Resume
+		Dream job
+		objectives
+		About Me
+			Work Auth w2, green card, citzen, 
+			date available
+			location
+			keywords 
+		Education
+			school, degree, years, desc
+		Experience
+			company, title, years, desc
+		Skillset
+			name, level, desc
+		Awards/Achievements
+			name desc
+
+	Find Job
+		Keyword search
+		guided navigation
+			by location
+			by industry
+			by title
+		Contextual
+
+	Find Candidates
+		Keyword search
+		guided navigation
+			by location
+			by industry
+			by title
+
+	Make Comment/Rate
+		comment on job
+		comment on candiate
+		comment on recuiter
+
+	Follow 
+		job
+		recruite
+		candiates
+
+	Activity Stream
+		job updates
+		candidate updates
+
+	Location based search
+		near by job
+		candidate nearby?
+
+	Share
+		on facetbook
+		on twitter
+
+	Singup
+
+
+	Revenue (Charege only recruiters)
+		Free
+			search jobs
+			search canditates
+			download app
+			edit resume
+			create profile
+
+		Publish a job with one position, $10
+				a job with more than one positions, position x 5 upto $100
+		View details of a candidate, $10
+		Share job on twitter
+			$2
+		Create facebook job page
+			$10
+		Mass Email
+		Match Reports
+			$10 per candidates
+
+		Advertising
+			Highlight Home Page Promotion $10 per day
+		Data revenue		
+
+		Recruiter can purchase points, 1 dollar 1 point
+			
+
+	Goal in a year
+		Candidates 1 million
+		Recruiters 100,000
+
+
+
+
+
+
+
+

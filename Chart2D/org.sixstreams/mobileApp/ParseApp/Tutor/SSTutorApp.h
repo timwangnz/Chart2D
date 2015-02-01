@@ -1,0 +1,13 @@
+//
+//  SSTutorApp.h
+//  SixStreams
+//
+//  Created by Anping Wang on 2/1/14.
+//  Copyright (c) 2014 SixStream. All rights reserved.
+//
+
+#import "SSApp.h"
+
+@interface SSTutorApp : SSApp
+
+@end
