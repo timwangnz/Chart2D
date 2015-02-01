@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3E41C81A7EBCA400FB756D /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E41C71A7EBCA400FB756D /* Chart2D.framework */; };
 		0D8DD7771A7E9C4C0074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7761A7E9C4C0074F31B /* JavaScriptCore.framework */; };
 		0DCFF0EB1A7EAAC9008F4B61 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF0D71A7EAAC9008F4B61 /* Default-568h@2x.png */; };
 		0DCFF0EC1A7EAAC9008F4B61 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF0D81A7EAAC9008F4B61 /* Default.png */; };
@@ -20,7 +21,6 @@
 		0DCFF0F41A7EAAC9008F4B61 /* Sample2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF0E61A7EAAC9008F4B61 /* Sample2DView.m */; };
 		0DCFF0F51A7EAAC9008F4B61 /* SamplePieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF0E81A7EAAC9008F4B61 /* SamplePieChart.m */; };
 		0DCFF0F61A7EAAC9008F4B61 /* VolumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF0EA1A7EAAC9008F4B61 /* VolumnView.m */; };
-		0DCFF0F81A7EAAE3008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F71A7EAAE3008F4B61 /* Chart2D.framework */; };
 		0DF9B4BF1656EBB3003072F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4BE1656EBB3003072F7 /* UIKit.framework */; };
 		0DF9B4C11656EBB3003072F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4C01656EBB3003072F7 /* Foundation.framework */; };
 		0DF9B4C31656EBB3003072F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4C21656EBB3003072F7 /* CoreGraphics.framework */; };
@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3E41C71A7EBCA400FB756D /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0D8DD7761A7E9C4C0074F31B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0DCFF0D71A7EAAC9008F4B61 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0DCFF0D81A7EAAC9008F4B61 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		0DCFF0E81A7EAAC9008F4B61 /* SamplePieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePieChart.m; sourceTree = "<group>"; };
 		0DCFF0E91A7EAAC9008F4B61 /* VolumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumnView.h; sourceTree = "<group>"; };
 		0DCFF0EA1A7EAAC9008F4B61 /* VolumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnView.m; sourceTree = "<group>"; };
-		0DCFF0F71A7EAAE3008F4B61 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0DF9B4BA1656EBB3003072F7 /* Graph2DTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graph2DTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF9B4BE1656EBB3003072F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DF9B4C01656EBB3003072F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,7 +70,7 @@
 				0DF9B4C11656EBB3003072F7 /* Foundation.framework in Frameworks */,
 				0DF9B4C31656EBB3003072F7 /* CoreGraphics.framework in Frameworks */,
 				0DF9B4F91656EC42003072F7 /* QuartzCore.framework in Frameworks */,
-				0DCFF0F81A7EAAE3008F4B61 /* Chart2D.framework in Frameworks */,
+				0D3E41C81A7EBCA400FB756D /* Chart2D.framework in Frameworks */,
 				0DF9B4FB1656EC54003072F7 /* OpenGLES.framework in Frameworks */,
 				0DF9B4FD1656EC59003072F7 /* GLKit.framework in Frameworks */,
 			);
@@ -141,7 +141,7 @@
 		0DF9B4BD1656EBB3003072F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0DCFF0F71A7EAAE3008F4B61 /* Chart2D.framework */,
+				0D3E41C71A7EBCA400FB756D /* Chart2D.framework */,
 				0D8DD7761A7E9C4C0074F31B /* JavaScriptCore.framework */,
 				0DF9B4FC1656EC59003072F7 /* GLKit.framework */,
 				0DF9B4FA1656EC54003072F7 /* OpenGLES.framework */,
@@ -314,8 +314,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
-					"$(PROJECT_DIR)/dependency",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"$(PROJECT_DIR)/../dependency",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/sample-src/resources/Graph2DTestApp-Prefix.pch";
@@ -338,8 +338,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
-					"$(PROJECT_DIR)/dependency",
+					"$(USER_LIBRARY_DIR)/Mobile",
+					"$(PROJECT_DIR)/../dependency",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/sample-src/resources/Graph2DTestApp-Prefix.pch";

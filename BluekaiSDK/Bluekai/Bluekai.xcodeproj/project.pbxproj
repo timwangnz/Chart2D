@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0DD064421A6B6F6E00BA9139 /* Aggregated */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0DD064431A6B6F6E00BA9139 /* Build configuration list for PBXAggregateTarget "Aggregated" */;
+			buildPhases = (
+				0DD064461A6B6F8000BA9139 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Aggregated;
+			productName = Aggregated;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0DD064281A6B6B2D00BA9139 /* Bluekai.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD064271A6B6B2D00BA9139 /* Bluekai.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD064401A6B6B5400BA9139 /* PixelServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DD0643E1A6B6B5400BA9139 /* PixelServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD064411A6B6B5400BA9139 /* PixelServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0643F1A6B6B5400BA9139 /* PixelServer.m */; };
+		0DD064541A6C35D100BA9139 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD064531A6C35D100BA9139 /* AdSupport.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DD064221A6B6B2D00BA9139 /* Bluekai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bluekai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DD064261A6B6B2D00BA9139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD064271A6B6B2D00BA9139 /* Bluekai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bluekai.h; sourceTree = "<group>"; };
+		0DD0643E1A6B6B5400BA9139 /* PixelServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelServer.h; sourceTree = "<group>"; };
+		0DD0643F1A6B6B5400BA9139 /* PixelServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelServer.m; sourceTree = "<group>"; };
+		0DD064531A6C35D100BA9139 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DD0641E1A6B6B2D00BA9139 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD064541A6C35D100BA9139 /* AdSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DD064181A6B6B2D00BA9139 = {
+			isa = PBXGroup;
+			children = (
+				0DD064241A6B6B2D00BA9139 /* Bluekai */,
+				0DD064551A6C369100BA9139 /* frameworks */,
+				0DD064231A6B6B2D00BA9139 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0DD064231A6B6B2D00BA9139 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DD064221A6B6B2D00BA9139 /* Bluekai.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DD064241A6B6B2D00BA9139 /* Bluekai */ = {
+			isa = PBXGroup;
+			children = (
+				0DD064271A6B6B2D00BA9139 /* Bluekai.h */,
+				0DD064251A6B6B2D00BA9139 /* Supporting Files */,
+				0DD0643E1A6B6B5400BA9139 /* PixelServer.h */,
+				0DD0643F1A6B6B5400BA9139 /* PixelServer.m */,
+			);
+			path = Bluekai;
+			sourceTree = "<group>";
+		};
+		0DD064251A6B6B2D00BA9139 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DD064261A6B6B2D00BA9139 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0DD064551A6C369100BA9139 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DD064531A6C35D100BA9139 /* AdSupport.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0DD0641F1A6B6B2D00BA9139 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD064401A6B6B5400BA9139 /* PixelServer.h in Headers */,
+				0DD064281A6B6B2D00BA9139 /* Bluekai.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DD064211A6B6B2D00BA9139 /* Bluekai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DD064381A6B6B2D00BA9139 /* Build configuration list for PBXNativeTarget "Bluekai" */;
+			buildPhases = (
+				0DD0641D1A6B6B2D00BA9139 /* Sources */,
+				0DD0641E1A6B6B2D00BA9139 /* Frameworks */,
+				0DD0641F1A6B6B2D00BA9139 /* Headers */,
+				0DD064201A6B6B2D00BA9139 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bluekai;
+			productName = Bluekai;
+			productReference = 0DD064221A6B6B2D00BA9139 /* Bluekai.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DD064191A6B6B2D00BA9139 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Oracle;
+				TargetAttributes = {
+					0DD064211A6B6B2D00BA9139 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					0DD064421A6B6F6E00BA9139 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 0DD0641C1A6B6B2D00BA9139 /* Build configuration list for PBXProject "Bluekai" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0DD064181A6B6B2D00BA9139;
+			productRefGroup = 0DD064231A6B6B2D00BA9139 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DD064211A6B6B2D00BA9139 /* Bluekai */,
+				0DD064421A6B6F6E00BA9139 /* Aggregated */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DD064201A6B6B2D00BA9139 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DD064461A6B6F8000BA9139 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules (from iphonesimulator build) to the copied framework directory\n# cp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/Framework.swiftmodule/.\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/Framework.swiftmodule\"\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\nrm -rf build\n# Step 6. Convenience step to open the project's directory in Finder\n#open \"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DD0641D1A6B6B2D00BA9139 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD064411A6B6B5400BA9139 /* PixelServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0DD064361A6B6B2D00BA9139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0DD064371A6B6B2D00BA9139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0DD064391A6B6B2D00BA9139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Bluekai/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0DD0643A1A6B6B2D00BA9139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Bluekai/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0DD064441A6B6F6E00BA9139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0DD064451A6B6F6E00BA9139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DD0641C1A6B6B2D00BA9139 /* Build configuration list for PBXProject "Bluekai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DD064361A6B6B2D00BA9139 /* Debug */,
+				0DD064371A6B6B2D00BA9139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DD064381A6B6B2D00BA9139 /* Build configuration list for PBXNativeTarget "Bluekai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DD064391A6B6B2D00BA9139 /* Debug */,
+				0DD0643A1A6B6B2D00BA9139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DD064431A6B6F6E00BA9139 /* Build configuration list for PBXAggregateTarget "Aggregated" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DD064441A6B6F6E00BA9139 /* Debug */,
+				0DD064451A6B6F6E00BA9139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DD064191A6B6B2D00BA9139 /* Project object */;
+}
