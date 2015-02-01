@@ -1,0 +1,6 @@
+framework module Chart2D {
+  umbrella header "Chart2D.h"
+
+  export *
+  module * { export * }
+}
