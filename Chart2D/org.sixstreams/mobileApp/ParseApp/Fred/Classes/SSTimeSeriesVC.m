@@ -63,7 +63,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
     [super viewDidLoad];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @"Group"
-                                   style: UIBarButtonItemStyleBordered
+                                   style: UIBarButtonItemStylePlain
                                    target: self action: @selector(showGroup:)];
     self.navigationItem.rightBarButtonItem = backButton;
 }

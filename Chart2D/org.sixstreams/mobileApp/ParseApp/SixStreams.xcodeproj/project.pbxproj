@@ -3685,76 +3685,6 @@
 		0DBC479619E9B94C0080D095 /* editprofile_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC478F19E9B94C0080D095 /* editprofile_button.png */; };
 		0DBC479919EA00CE0080D095 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
 		0DBC479A19EA00CE0080D095 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
-		0DBC86A0195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A1195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A2195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A3195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A4195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A5195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A6195F07F900540B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8693195F07F900540B61 /* AppDelegate.m */; };
-		0DBC86A7195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86A8195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86A9195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86AA195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86AB195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86AC195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86AD195F07F900540B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC8695195F07F900540B61 /* FBLoginVC.m */; };
-		0DBC86AE195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86AF195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B0195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B1195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B2195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B3195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B4195F07F900540B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8696195F07F900540B61 /* FBLoginVC.xib */; };
-		0DBC86B5195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86B6195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86B7195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86B8195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86B9195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86BA195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86BB195F07F900540B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8698195F07F900540B61 /* login-button-small-pressed.png */; };
-		0DBC86BC195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86BD195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86BE195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86BF195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86C0195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86C1195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86C2195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */; };
-		0DBC86C3195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C4195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C5195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C6195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C7195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C8195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86C9195F07F900540B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869A195F07F900540B61 /* login-button-small.png */; };
-		0DBC86CA195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86CB195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86CC195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86CD195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86CE195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86CF195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86D0195F07F900540B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869B195F07F900540B61 /* login-button-small@2x.png */; };
-		0DBC86D1195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D2195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D3195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D4195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D5195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D6195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D7195F07F900540B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869C195F07F900540B61 /* TableHeaderView.xib */; };
-		0DBC86D8195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86D9195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DA195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DB195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DC195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DD195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DE195F07F900540B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC869E195F07F900540B61 /* UserDetailsViewController.m */; };
-		0DBC86DF195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E0195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E1195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E2195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E3195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E4195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
-		0DBC86E5195F07F900540B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */; };
 		0DBD7D2E192E443A00678DDE /* SSShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBD7D2D192E443A00678DDE /* SSShadowView.m */; };
 		0DBD7D2F192E443A00678DDE /* SSShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBD7D2D192E443A00678DDE /* SSShadowView.m */; };
 		0DBD7D30192E443A00678DDE /* SSShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBD7D2D192E443A00678DDE /* SSShadowView.m */; };
@@ -3932,6 +3862,90 @@
 		0DCFF0D21A7EA922008F4B61 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0CD1A7EA922008F4B61 /* Parse.framework */; };
 		0DCFF0D31A7EA922008F4B61 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0CD1A7EA922008F4B61 /* Parse.framework */; };
 		0DCFF0D41A7EA922008F4B61 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0CD1A7EA922008F4B61 /* Parse.framework */; };
+		0DCFF0FA1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF0FB1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF0FC1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF0FD1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF0FE1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF0FF1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF1001A7EAD29008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */; };
+		0DCFF1111A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1121A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1131A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1141A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1151A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1161A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1171A7EAF54008F4B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */; };
+		0DCFF1181A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF1191A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11A1A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11B1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11C1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11D1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11E1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */; };
+		0DCFF11F1A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1201A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1211A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1221A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1231A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1241A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1251A7EAF55008F4B61 /* FBLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */; };
+		0DCFF1261A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF1271A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF1281A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF1291A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF12A1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF12B1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF12C1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */; };
+		0DCFF12D1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF12E1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF12F1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF1301A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF1311A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF1321A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF1331A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */; };
+		0DCFF1341A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF1351A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF1361A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF1371A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF1381A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF1391A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF13A1A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */; };
+		0DCFF13B1A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF13C1A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF13D1A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF13E1A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF13F1A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF1401A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF1411A7EAF55008F4B61 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */; };
+		0DCFF1421A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1431A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1441A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1451A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1461A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1471A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1481A7EAF55008F4B61 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */; };
+		0DCFF1491A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14A1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14B1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14C1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14D1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14E1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF14F1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */; };
+		0DCFF1501A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1511A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1521A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1531A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1541A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1551A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1561A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */; };
+		0DCFF1571A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF1581A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF1591A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF15A1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF15B1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF15C1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
+		0DCFF15D1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */; };
 		0DD0639E1A6ADF1100BA9139 /* SSDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0639C1A6ADF1100BA9139 /* SSDataVC.m */; };
 		0DD0639F1A6ADF1100BA9139 /* SSDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0639C1A6ADF1100BA9139 /* SSDataVC.m */; };
 		0DD063A01A6ADF1100BA9139 /* SSDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0639C1A6ADF1100BA9139 /* SSDataVC.m */; };
@@ -5430,19 +5444,6 @@
 		0DBC478F19E9B94C0080D095 /* editprofile_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editprofile_button.png; sourceTree = "<group>"; };
 		0DBC479719EA00CE0080D095 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		0DBC479819EA00CE0080D095 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		0DBC8692195F07F900540B61 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DBC8693195F07F900540B61 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0DBC8694195F07F900540B61 /* FBLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginVC.h; sourceTree = "<group>"; };
-		0DBC8695195F07F900540B61 /* FBLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginVC.m; sourceTree = "<group>"; };
-		0DBC8696195F07F900540B61 /* FBLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBLoginVC.xib; sourceTree = "<group>"; };
-		0DBC8698195F07F900540B61 /* login-button-small-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed.png"; sourceTree = "<group>"; };
-		0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
-		0DBC869A195F07F900540B61 /* login-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small.png"; sourceTree = "<group>"; };
-		0DBC869B195F07F900540B61 /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
-		0DBC869C195F07F900540B61 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
-		0DBC869D195F07F900540B61 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
-		0DBC869E195F07F900540B61 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
-		0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
 		0DBD7D2C192E443A00678DDE /* SSShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSShadowView.h; path = ../SmartViews/SSShadowView.h; sourceTree = "<group>"; };
 		0DBD7D2D192E443A00678DDE /* SSShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSShadowView.m; path = ../SmartViews/SSShadowView.m; sourceTree = "<group>"; };
 		0DC13E4D19B04EB500F95A1F /* editBottom_document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = editBottom_document.pdf; sourceTree = "<group>"; };
@@ -5528,6 +5529,21 @@
 		0DC663C7195B1002009A6078 /* SSJobLayoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJobLayoutVC.m; sourceTree = "<group>"; };
 		0DCFF0C51A7EA919008F4B61 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../dependency/FacebookSDK.framework; sourceTree = "<group>"; };
 		0DCFF0CD1A7EA922008F4B61 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../dependency/Parse.framework; sourceTree = "<group>"; };
+		0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../../dependency/Chart2D.framework; sourceTree = "<group>"; };
+		0DCFF1021A7EAF54008F4B61 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		0DCFF1051A7EAF54008F4B61 /* FBLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginVC.h; sourceTree = "<group>"; };
+		0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginVC.m; sourceTree = "<group>"; };
+		0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBLoginVC.xib; sourceTree = "<group>"; };
+		0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed.png"; sourceTree = "<group>"; };
+		0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
+		0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small.png"; sourceTree = "<group>"; };
+		0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
+		0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		0DCFF10E1A7EAF54008F4B61 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
 		0DD0639B1A6ADF1100BA9139 /* SSDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDataVC.h; sourceTree = "<group>"; };
 		0DD0639C1A6ADF1100BA9139 /* SSDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataVC.m; sourceTree = "<group>"; };
 		0DD0639D1A6ADF1100BA9139 /* SSDataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDataVC.xib; sourceTree = "<group>"; };
@@ -5602,6 +5618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D8DD7791A7E9CF20074F31B /* JavaScriptCore.framework in Frameworks */,
+				0DCFF1181A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D9BBB5217F9E2ED00FCE485 /* Security.framework in Frameworks */,
 				0D2B857B18144194000378CA /* MapKit.framework in Frameworks */,
 				0D9BBB5017F9E2DC00FCE485 /* QuartzCore.framework in Frameworks */,
@@ -5618,6 +5635,7 @@
 				0DFE525317F9DB59001BFB25 /* CFNetwork.framework in Frameworks */,
 				0D08968517F1424F00457A1A /* CoreGraphics.framework in Frameworks */,
 				0D08968717F1424F00457A1A /* UIKit.framework in Frameworks */,
+				0DCFF0FA1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D08968317F1424F00457A1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5627,6 +5645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2E7CA4185380E0000C7D67 /* MapKit.framework in Frameworks */,
+				0DCFF11B1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D2E7CA5185380E0000C7D67 /* Security.framework in Frameworks */,
 				0D2E7CA6185380E0000C7D67 /* QuartzCore.framework in Frameworks */,
 				0D2E7CA7185380E0000C7D67 /* AudioToolbox.framework in Frameworks */,
@@ -5643,6 +5662,7 @@
 				0D2E7BCD18537786000C7D67 /* Foundation.framework in Frameworks */,
 				0D8DD77C1A7E9CF90074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D2E7BCE18537786000C7D67 /* CoreGraphics.framework in Frameworks */,
+				0DCFF0FD1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D2E7BCF18537786000C7D67 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5652,6 +5672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D42541F18881384006AC83E /* Security.framework in Frameworks */,
+				0DCFF11C1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D42542018881384006AC83E /* MapKit.framework in Frameworks */,
 				0D42542118881384006AC83E /* QuartzCore.framework in Frameworks */,
 				0D42542218881384006AC83E /* AudioToolbox.framework in Frameworks */,
@@ -5668,6 +5689,7 @@
 				0D42542C18881384006AC83E /* CoreGraphics.framework in Frameworks */,
 				0D8DD77D1A7E9CFA0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D42542D18881384006AC83E /* UIKit.framework in Frameworks */,
+				0DCFF0FE1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D42542E18881384006AC83E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5677,6 +5699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D82242618E8816200A928B6 /* MapKit.framework in Frameworks */,
+				0DCFF11E1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D82242818E8816200A928B6 /* Security.framework in Frameworks */,
 				0D82242918E8816200A928B6 /* QuartzCore.framework in Frameworks */,
 				0D82242A18E8816200A928B6 /* AudioToolbox.framework in Frameworks */,
@@ -5693,6 +5716,7 @@
 				0D82243318E8816200A928B6 /* Foundation.framework in Frameworks */,
 				0D8DD77F1A7E9CFB0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D82243418E8816200A928B6 /* CoreGraphics.framework in Frameworks */,
+				0DCFF1001A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D82243518E8816200A928B6 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5702,6 +5726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D83F42D1832D80000AFB0E6 /* Security.framework in Frameworks */,
+				0DCFF1191A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D83F42E1832D80000AFB0E6 /* MapKit.framework in Frameworks */,
 				0D83F42F1832D80000AFB0E6 /* QuartzCore.framework in Frameworks */,
 				0D83F4301832D80000AFB0E6 /* AudioToolbox.framework in Frameworks */,
@@ -5718,6 +5743,7 @@
 				0D83F43A1832D80000AFB0E6 /* CoreGraphics.framework in Frameworks */,
 				0D8DD77A1A7E9CF70074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D83F43B1832D80000AFB0E6 /* UIKit.framework in Frameworks */,
+				0DCFF0FB1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D83F43C1832D80000AFB0E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5727,6 +5753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D83F59B1832E29300AFB0E6 /* Security.framework in Frameworks */,
+				0DCFF11A1A7EAF54008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D83F59C1832E29300AFB0E6 /* MapKit.framework in Frameworks */,
 				0D83F59D1832E29300AFB0E6 /* QuartzCore.framework in Frameworks */,
 				0D83F59E1832E29300AFB0E6 /* AudioToolbox.framework in Frameworks */,
@@ -5743,6 +5770,7 @@
 				0D83F5A81832E29300AFB0E6 /* CoreGraphics.framework in Frameworks */,
 				0D8DD77B1A7E9CF80074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D83F5A91832E29300AFB0E6 /* UIKit.framework in Frameworks */,
+				0DCFF0FC1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0D83F5AA1832E29300AFB0E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5763,6 +5791,7 @@
 				0DE0E5D7189D8CBA00FFC3FB /* MobileCoreServices.framework in Frameworks */,
 				0DCFF0D31A7EA922008F4B61 /* Parse.framework in Frameworks */,
 				0DE0E5D8189D8CBA00FFC3FB /* libz.1.1.3.dylib in Frameworks */,
+				0DCFF11D1A7EAF55008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0DE0E5D9189D8CBA00FFC3FB /* libsqlite3.dylib in Frameworks */,
 				0D8DD77E1A7E9CFA0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0DE0E5DA189D8CBA00FFC3FB /* Accounts.framework in Frameworks */,
@@ -5770,6 +5799,7 @@
 				0DE0E5DC189D8CBA00FFC3FB /* SystemConfiguration.framework in Frameworks */,
 				0DE0E5DD189D8CBA00FFC3FB /* CFNetwork.framework in Frameworks */,
 				0DE0E5DE189D8CBA00FFC3FB /* CoreGraphics.framework in Frameworks */,
+				0DCFF0FF1A7EAD29008F4B61 /* Chart2D.framework in Frameworks */,
 				0DE0E5DF189D8CBA00FFC3FB /* UIKit.framework in Frameworks */,
 				0DE0E5E0189D8CBA00FFC3FB /* Foundation.framework in Frameworks */,
 			);
@@ -5827,6 +5857,7 @@
 		0D08968117F1424F00457A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DCFF0F91A7EAD28008F4B61 /* Chart2D.framework */,
 				0DCFF0CD1A7EA922008F4B61 /* Parse.framework */,
 				0DCFF0C51A7EA919008F4B61 /* FacebookSDK.framework */,
 				0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */,
@@ -6497,9 +6528,9 @@
 		0D6D2B2E1801DC8A007210DA /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				0DCFF1011A7EAF54008F4B61 /* ParseFacebook */,
 				0D9EC25C1961C2D100C4EEE1 /* Company */,
 				0D9EC25B1961C2BA00C4EEE1 /* Grouping */,
-				0DBC8691195F07F900540B61 /* ParseFacebook */,
 				0D2F6C81186BE70000F781F6 /* SSAppSetupVC.h */,
 				0D2F6C82186BE70000F781F6 /* SSAppSetupVC.m */,
 				0D2F6C83186BE70000F781F6 /* SSAppSetupVC.xib */,
@@ -7921,35 +7952,6 @@
 			path = Groups_Detail;
 			sourceTree = "<group>";
 		};
-		0DBC8691195F07F900540B61 /* ParseFacebook */ = {
-			isa = PBXGroup;
-			children = (
-				0DBC8692195F07F900540B61 /* AppDelegate.h */,
-				0DBC8693195F07F900540B61 /* AppDelegate.m */,
-				0DBC8694195F07F900540B61 /* FBLoginVC.h */,
-				0DBC8695195F07F900540B61 /* FBLoginVC.m */,
-				0DBC8696195F07F900540B61 /* FBLoginVC.xib */,
-				0DBC8697195F07F900540B61 /* resources */,
-				0DBC869C195F07F900540B61 /* TableHeaderView.xib */,
-				0DBC869D195F07F900540B61 /* UserDetailsViewController.h */,
-				0DBC869E195F07F900540B61 /* UserDetailsViewController.m */,
-				0DBC869F195F07F900540B61 /* UserDetailsViewController.xib */,
-			);
-			name = ParseFacebook;
-			path = ../FacebookSDK/ParseFacebook;
-			sourceTree = "<group>";
-		};
-		0DBC8697195F07F900540B61 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				0DBC8698195F07F900540B61 /* login-button-small-pressed.png */,
-				0DBC8699195F07F900540B61 /* login-button-small-pressed@2x.png */,
-				0DBC869A195F07F900540B61 /* login-button-small.png */,
-				0DBC869B195F07F900540B61 /* login-button-small@2x.png */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 		0DC13E4B19B04EB500F95A1F /* Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -8077,6 +8079,36 @@
 				0DC663C7195B1002009A6078 /* SSJobLayoutVC.m */,
 			);
 			name = "Job VC";
+			sourceTree = "<group>";
+		};
+		0DCFF1011A7EAF54008F4B61 /* ParseFacebook */ = {
+			isa = PBXGroup;
+			children = (
+				0DCFF1021A7EAF54008F4B61 /* AppDelegate.h */,
+				0DCFF1031A7EAF54008F4B61 /* AppDelegate.m */,
+				0DCFF1041A7EAF54008F4B61 /* FacebookSDK.framework */,
+				0DCFF1051A7EAF54008F4B61 /* FBLoginVC.h */,
+				0DCFF1061A7EAF54008F4B61 /* FBLoginVC.m */,
+				0DCFF1071A7EAF54008F4B61 /* FBLoginVC.xib */,
+				0DCFF1081A7EAF54008F4B61 /* resources */,
+				0DCFF10D1A7EAF54008F4B61 /* TableHeaderView.xib */,
+				0DCFF10E1A7EAF54008F4B61 /* UserDetailsViewController.h */,
+				0DCFF10F1A7EAF54008F4B61 /* UserDetailsViewController.m */,
+				0DCFF1101A7EAF54008F4B61 /* UserDetailsViewController.xib */,
+			);
+			name = ParseFacebook;
+			path = ../ParseFacebook;
+			sourceTree = "<group>";
+		};
+		0DCFF1081A7EAF54008F4B61 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0DCFF1091A7EAF54008F4B61 /* login-button-small-pressed.png */,
+				0DCFF10A1A7EAF54008F4B61 /* login-button-small-pressed@2x.png */,
+				0DCFF10B1A7EAF54008F4B61 /* login-button-small.png */,
+				0DCFF10C1A7EAF54008F4B61 /* login-button-small@2x.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		0DEF039E198770E900A3D520 /* Survey */ = {
@@ -8345,21 +8377,23 @@
 				0DA2E7A81916C9050086E4B5 /* 40-inbox.png in Resources */,
 				0DA2E5391916C9050086E4B5 /* 138-scales.png in Resources */,
 				0DA2E6351916C9050086E4B5 /* 170-butterfly.png in Resources */,
+				0DCFF12D1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0D870AE21916B6BE00F607BD /* icon01.png in Resources */,
 				0D65F01019AED94A000D8F8D /* PageCreateEvent_Clear_BtnX2.png in Resources */,
 				0DA2E6891916C9050086E4B5 /* 181-hammer.png in Resources */,
 				0DA2E91B1916C9050086E4B5 /* 93-thermometer.png in Resources */,
 				0DA2E6D61916C9050086E4B5 /* 191-collection.png in Resources */,
 				0DB1174719C7F3E400FF7DE0 /* PageGroupDetail_TopProvileX2.png in Resources */,
-				0DBC86CA195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DA2E64A1916C9050086E4B5 /* 173-eyedropper.png in Resources */,
 				0DB115E219C7F3E400FF7DE0 /* Page_NameSearch_ProfilePic.png in Resources */,
 				0DA2E5321916C9050086E4B5 /* 137-presentation.png in Resources */,
 				0DA2E7001916C9050086E4B5 /* 197-card-diamonds.png in Resources */,
+				0DCFF1261A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DA2E4D01916C9050086E4B5 /* 124-bullhorn.png in Resources */,
 				0D870AC21916B6BE00F607BD /* conference-24.png in Resources */,
 				0DC13E9119B04EB500F95A1F /* pageEditHeader_FillForm.png in Resources */,
 				0D65F04E19AED94A000D8F8D /* PageRestriction_Back.png in Resources */,
+				0DCFF1491A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DA2E93E1916C9050086E4B5 /* 99-umbrella.png in Resources */,
 				0D65F01519AED94A000D8F8D /* PageCreateEvent_Slider.png in Resources */,
 				0DB1165919C7F3E400FF7DE0 /* PageCreateGroup_FillFormX2.png in Resources */,
@@ -8435,6 +8469,7 @@
 				0D8224C318E8A31700A928B6 /* star-template@2x.png in Resources */,
 				0D25F08519AC32FD00DC5408 /* glue_08222014.jpg in Resources */,
 				0DA2E40C1916C9050086E4B5 /* 09-chat-2.png in Resources */,
+				0DCFF1341A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0D65EF6F19ADB001000D8F8D /* pageProfileDetail_DeleteAcct_BTN_.png in Resources */,
 				0D65F01719AED94A000D8F8D /* PageCreateEvent_Slider_lineX2.png in Resources */,
 				0DA2E6B31916C9050086E4B5 /* 187-pencil.png in Resources */,
@@ -8610,7 +8645,6 @@
 				0D870B2F1916B6BE00F607BD /* SSGlueCatVC.xib in Resources */,
 				0D25F07619AC32FD00DC5408 /* pageFilter_Filter_Label.png in Resources */,
 				0D65F04C19AED94A000D8F8D /* PageEventType_Volunteer.png in Resources */,
-				0DBC86D1195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0D430E7D19CF76E00078358C /* back-arrowx2.png in Resources */,
 				0DBC479019E9B94C0080D095 /* editprofile_button.png in Resources */,
 				0DA2E82D1916C9050086E4B5 /* 59-flag.png in Resources */,
@@ -8687,13 +8721,11 @@
 				0DA2E47C1916C9050086E4B5 /* 113-navigation.png in Resources */,
 				0D65F04319AED94A000D8F8D /* PageEventType_PartyX2.png in Resources */,
 				0DC13EA519B04EB500F95A1F /* PageSetting_AboutBTNX2.png in Resources */,
-				0DBC86B5195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DC13EB019B04EB500F95A1F /* PageSetting_TopNav.png in Resources */,
 				0D870ABB1916B6BE00F607BD /* browsev04_bg-service.png in Resources */,
 				0D25F07B19AC32FD00DC5408 /* ProximaNova-Regular.ttf in Resources */,
 				0DB1171D19C7F3E400FF7DE0 /* PageGroupDetail_GroupImageX2.png in Resources */,
 				0D9EC2541961BEFE00C4EEE1 /* Issues in Resources */,
-				0DBC86DF195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0D65F03F19AED94A000D8F8D /* PageEventType_mealsX2.png in Resources */,
 				0DC286DD181575990030A642 /* SSImageEditorVC_iPhone.xib in Resources */,
 				0DC13E9D19B04EB500F95A1F /* pageEditProfile_ProfilePic.png in Resources */,
@@ -8725,6 +8757,7 @@
 				0DB1164B19C7F3E400FF7DE0 /* PageCreateGroup_EmptyCheckMarkX2.png in Resources */,
 				0DA2E8F11916C9050086E4B5 /* 87-wine-glass.png in Resources */,
 				0D870ACE1916B6BE00F607BD /* icon_profiles-sel.png in Resources */,
+				0DCFF13B1A7EAF55008F4B61 /* login-button-small.png in Resources */,
 				0D65F00219AED94A000D8F8D /* PageAdress_dividerX2.png in Resources */,
 				0D65EF7819ADB001000D8F8D /* pageProfileDetail_ProfileX2.png in Resources */,
 				0D870B061916B6BE00F607BD /* main_03.png in Resources */,
@@ -8757,7 +8790,6 @@
 				0DA2E4C21916C9050086E4B5 /* 122-stats.png in Resources */,
 				0D65F01C19AED94A000D8F8D /* Event_document.pdf in Resources */,
 				0DA2E5401916C9050086E4B5 /* 139-flags.png in Resources */,
-				0DBC86C3195F07F900540B61 /* login-button-small.png in Resources */,
 				0D65EF6B19ADB001000D8F8D /* People_List.jpg in Resources */,
 				0D65F05919AED94A000D8F8D /* PageEvent_Search.png in Resources */,
 				0D25F08719AC32FD00DC5408 /* glue_08202014.jpg in Resources */,
@@ -8833,6 +8865,7 @@
 				0D870E911916C5E100F607BD /* SSActivityVC.xib in Resources */,
 				0D1792B018EF20C000727312 /* bubble-right@2x.png in Resources */,
 				0D65F04819AED94A000D8F8D /* PageEventType_TopNav.png in Resources */,
+				0DCFF1571A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E8881916C9050086E4B5 /* 72-pin.png in Resources */,
 				0DC13E9819B04EB500F95A1F /* pageEditProfile_DividerX2.png in Resources */,
 				0DA2E55C1916C9050086E4B5 /* 142-wine-bottle.png in Resources */,
@@ -8940,7 +8973,6 @@
 				0D870B121916B6BE00F607BD /* sub03_03.png in Resources */,
 				0DA2E56A1916C9050086E4B5 /* 144-martini.png in Resources */,
 				0DA2E5F61916C9050086E4B5 /* 162-receipt.png in Resources */,
-				0DBC86AE195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DC13EA119B04EB500F95A1F /* pageEditProfile_TopPanel.png in Resources */,
 				0D65F06319AED94B000D8F8D /* PageEventYou_image.png in Resources */,
 				0D870B1B1916B6BE00F607BD /* sub_bg01_03.png in Resources */,
@@ -8952,10 +8984,10 @@
 				0D65EF6D19ADB001000D8F8D /* pageProfileDetail_Back.png in Resources */,
 				0DA2E7701916C9050086E4B5 /* 32-iphone.png in Resources */,
 				0DB116D019C7F3E400FF7DE0 /* PageGroup_ProfilePic.png in Resources */,
-				0DBC86BC195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0D65EF5619ADB001000D8F8D /* pageNearby_Search_BarX2.png in Resources */,
 				0D65F04119AED94A000D8F8D /* PageEventType_NatureX2.png in Resources */,
 				0D65F05019AED94A000D8F8D /* PageRestriction_divider.png in Resources */,
+				0DCFF1421A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0D65F03919AED94A000D8F8D /* PageEventType_BackX2.png in Resources */,
 				0DB1160C19C7F3E400FF7DE0 /* PageCreateGroup_Back.png in Resources */,
 				0D8224CA18E8A31700A928B6 /* star.png in Resources */,
@@ -9040,7 +9072,6 @@
 				0DA2E5971916C9050086E4B5 /* 15-tags.png in Resources */,
 				0DA2E4C51916C9050086E4B5 /* 122-stats.png in Resources */,
 				0DA2E78F1916C9050086E4B5 /* 36-toolbox.png in Resources */,
-				0DBC86BF195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E7EA1916C9050086E4B5 /* 49-battery.png in Resources */,
 				0DB115AD19C7F3E400FF7DE0 /* CreateGroup_document_1.pdf in Resources */,
 				0DB1173519C7F3E400FF7DE0 /* PageGroupDetail_listProfile.png in Resources */,
@@ -9050,7 +9081,6 @@
 				0DA2E6BD1916C9050086E4B5 /* 188-paint-roller.png in Resources */,
 				0D870E631916C5E100F607BD /* googleplus.png in Resources */,
 				0D430E8019CF76E00078358C /* back-arrowx2.png in Resources */,
-				0DBC86CD195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0D870BDB1916B6F500F607BD /* InfoPlist.strings in Resources */,
 				0DA2E5AC1916C9050086E4B5 /* 152-rolodex.png in Resources */,
 				0DB116DA19C7F3E400FF7DE0 /* PageGroup_ProfilePicX2.png in Resources */,
@@ -9124,6 +9154,7 @@
 				0DD1FAC319230F7C009DAC4F /* triangle.png in Resources */,
 				0D870BE51916B6F500F607BD /* Cafe.png in Resources */,
 				0DB115B419C7F3E400FF7DE0 /* group_08242014.jpg in Resources */,
+				0DCFF1451A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0D870C021916B6F500F607BD /* WCProductListVC.xib in Resources */,
 				0DB1173C19C7F3E400FF7DE0 /* PageGroupDetail_listProfileX2.png in Resources */,
 				0DA2E40F1916C9050086E4B5 /* 09-chat-2.png in Resources */,
@@ -9170,12 +9201,12 @@
 				0DE662441868D09400A4761A /* SSGroupEditorVC.xib in Resources */,
 				0DA2E3D71916C9050086E4B5 /* 01-refresh.png in Resources */,
 				0DA2E3EC1916C9050086E4B5 /* 04-squiggle.png in Resources */,
+				0DCFF1291A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DB116F619C7F3E400FF7DE0 /* PageGroupDetail_BackX2.png in Resources */,
 				0DA2E7A41916C9050086E4B5 /* 39-spraycan.png in Resources */,
 				0DA2E5891916C9050086E4B5 /* 148-doghouse.png in Resources */,
 				0DA2E97B1916D17D0086E4B5 /* check-unselected.png in Resources */,
 				0D18ED8D193BE29500C312FD /* SSLinkedInVC.xib in Resources */,
-				0DBC86B8195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DA2E4A91916C9050086E4B5 /* 119-piggy-bank.png in Resources */,
 				0D8224B118E8A31700A928B6 /* star-highlighted-template.png in Resources */,
 				0DB1169419C7F3E400FF7DE0 /* PageGroup_DividerX2.png in Resources */,
@@ -9185,7 +9216,6 @@
 				0D537EF71874C4BC006B0401 /* SSReferenceEditorVC.xib in Resources */,
 				0DA2E9821916D17D0086E4B5 /* checkboxbg.png in Resources */,
 				0DA2E63F1916C9050086E4B5 /* 171-sun.png in Resources */,
-				0DBC86B1195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DA2E4941916C9050086E4B5 /* 116-controller.png in Resources */,
 				0DA2E6E01916C9050086E4B5 /* 192-credit-card.png in Resources */,
 				0D27978B198A0A350058F7D2 /* SSSlideOpenVC.xib in Resources */,
@@ -9218,6 +9248,8 @@
 				0DA2E8611916C9050086E4B5 /* 66-microphone.png in Resources */,
 				0D870BF11916B6F500F607BD /* seededroasters.json in Resources */,
 				0DB1164E19C7F3E400FF7DE0 /* PageCreateGroup_EmptyCheckMarkX2.png in Resources */,
+				0DCFF13E1A7EAF55008F4B61 /* login-button-small.png in Resources */,
+				0DCFF1301A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DB1165C19C7F3E400FF7DE0 /* PageCreateGroup_FillFormX2.png in Resources */,
 				0D0AB1131980333C000EF898 /* SSHighlightsVC.xib in Resources */,
 				0DA2E75E1916C9050086E4B5 /* 29-heart.png in Resources */,
@@ -9230,6 +9262,7 @@
 				0DA2E5901916C9050086E4B5 /* 149-windmill.png in Resources */,
 				0DA2E7961916C9050086E4B5 /* 37-suitcase.png in Resources */,
 				0D56030318C1B03700DD8905 /* SSColorPickerVC.xib in Resources */,
+				0DCFF14C1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DF93B451930CF830004C049 /* SSCompanyEditorVC.xib in Resources */,
 				0DB115C919C7F3E400FF7DE0 /* Page_NameSearch_divider.png in Resources */,
 				0DB115F319C7F3E400FF7DE0 /* Page_NameSearch_Selected.png in Resources */,
@@ -9239,7 +9272,6 @@
 				0DA2E7421916C9050086E4B5 /* 25-weather.png in Resources */,
 				0DA2E62A1916C9050086E4B5 /* 169-8ball.png in Resources */,
 				0D870BEF1916B6F500F607BD /* mappuccino-icon.png in Resources */,
-				0DBC86C6195F07F900540B61 /* login-button-small.png in Resources */,
 				0DA2E5F21916C9050086E4B5 /* 161-calculator.png in Resources */,
 				0DA2E4321916C9050086E4B5 /* 103-map.png in Resources */,
 				0D870E861916C5E100F607BD /* youtube.png in Resources */,
@@ -9251,7 +9283,6 @@
 				0D870BE91916B6F500F607BD /* Default.png in Resources */,
 				0DA2E8141916C9050086E4B5 /* 55-network.png in Resources */,
 				0DA2E54A1916C9050086E4B5 /* 14-tag.png in Resources */,
-				0DBC86D4195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E84C1916C9050086E4B5 /* 63-runner.png in Resources */,
 				0DA2E49B1916C9050086E4B5 /* 117-todo.png in Resources */,
 				0DBC478419E97EC40080D095 /* menuIcon.png in Resources */,
@@ -9317,7 +9348,6 @@
 				0DA2E61C1916C9050086E4B5 /* 167-upload-photo.png in Resources */,
 				0DA2E42B1916C9050086E4B5 /* 102-walk.png in Resources */,
 				0DA2E4161916C9050086E4B5 /* 10-medical.png in Resources */,
-				0DBC86E2195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0DB115FA19C7F3E400FF7DE0 /* Page_NameSearch_SelectedX2.png in Resources */,
 				0DA2E9741916D17D0086E4B5 /* check-selected.png in Resources */,
 				0DA2E4711916C9050086E4B5 /* 111-user.png in Resources */,
@@ -9382,12 +9412,14 @@
 				0D870C0B1916B6F500F607BD /* WCSetupVC.xib in Resources */,
 				0D870BEA1916B6F500F607BD /* Default@2x.png in Resources */,
 				0D96F71A186008A4007A0F42 /* SSTableViewCell.xib in Resources */,
+				0DCFF15A1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E7D51916C9050086E4B5 /* 46-movie-2.png in Resources */,
 				0DA2E5581916C9050086E4B5 /* 141-lamp.png in Resources */,
 				0D870BE41916B6F500F607BD /* bar-background.png in Resources */,
 				0DA2E5741916C9050086E4B5 /* 145-persondot.png in Resources */,
 				0D870ED31916C5E100F607BD /* SSFollowVC.xib in Resources */,
 				0D870BEE1916B6F500F607BD /* m80x80.png in Resources */,
+				0DCFF1371A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E7181916C9050086E4B5 /* 20-gear2.png in Resources */,
 				0D870E6A1916C5E100F607BD /* linkedin.png in Resources */,
 				0DB116D319C7F3E400FF7DE0 /* PageGroup_ProfilePic.png in Resources */,
@@ -9445,22 +9477,23 @@
 				0D8224C018E8A31700A928B6 /* star-template.png in Resources */,
 				0DA2E7741916C9050086E4B5 /* 32-iphone.png in Resources */,
 				0DA2E4D41916C9050086E4B5 /* 124-bullhorn.png in Resources */,
-				0DBC86C7195F07F900540B61 /* login-button-small.png in Resources */,
 				0D870E721916C5E100F607BD /* message-32.png in Resources */,
 				0DA2E41E1916C9050086E4B5 /* 100-coffee.png in Resources */,
 				0DA2E4951916C9050086E4B5 /* 116-controller.png in Resources */,
 				0D039BE518D8C32700396A1A /* point.vsh in Resources */,
 				0DA2E5981916C9050086E4B5 /* 15-tags.png in Resources */,
+				0DCFF12A1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DA2E5601916C9050086E4B5 /* 142-wine-bottle.png in Resources */,
 				0DA2E8E01916C9050086E4B5 /* 84-lightbulb.png in Resources */,
 				0D42546E18881384006AC83E /* SSTableViewCell.xib in Resources */,
+				0DCFF13F1A7EAF55008F4B61 /* login-button-small.png in Resources */,
 				0D039BDF18D8C32700396A1A /* point.fsh in Resources */,
 				0DB1160919C7F3E400FF7DE0 /* PageCreateGroup_AddPhotoX2.png in Resources */,
-				0DBC86B2195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DA2E7AC1916C9050086E4B5 /* 40-inbox.png in Resources */,
 				0D870E801916C5E100F607BD /* twitter.png in Resources */,
 				0D56030418C1B03700DD8905 /* SSColorPickerVC.xib in Resources */,
 				0DA2E90A1916C9050086E4B5 /* 90-life-buoy.png in Resources */,
+				0DCFF15B1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E5DE1916C9050086E4B5 /* 159-voicemail.png in Resources */,
 				0D18ED8E193BE29500C312FD /* SSLinkedInVC.xib in Resources */,
 				0DA2E4E21916C9050086E4B5 /* 126-moon.png in Resources */,
@@ -9527,7 +9560,6 @@
 				0DA2E4721916C9050086E4B5 /* 111-user.png in Resources */,
 				0DA2E5F31916C9050086E4B5 /* 161-calculator.png in Resources */,
 				0DB1162519C7F3E400FF7DE0 /* PageCreateGroup_CheckMarkX2.png in Resources */,
-				0DBC86E3195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E8771916C9050086E4B5 /* 69-display.png in Resources */,
 				0DA2E8B61916C9050086E4B5 /* 78-stopwatch.png in Resources */,
 				0DA2E4331916C9050086E4B5 /* 103-map.png in Resources */,
@@ -9555,6 +9587,7 @@
 				0DB115C319C7F3E400FF7DE0 /* Namesearch_document_1.pdf in Resources */,
 				0DC663C21959FE94009A6078 /* SSPackageEditor.xib in Resources */,
 				0DA2E7EB1916C9050086E4B5 /* 49-battery.png in Resources */,
+				0DCFF1311A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DF93B69193120AA0004C049 /* company-icon.png in Resources */,
 				0DB1161E19C7F3E400FF7DE0 /* PageCreateGroup_CheckMark.png in Resources */,
 				0DA2E45D1916C9050086E4B5 /* 109-chicken.png in Resources */,
@@ -9563,7 +9596,6 @@
 				0DA2E5D01916C9050086E4B5 /* 157-wrench.png in Resources */,
 				0D0B5C1818C2B73700E5A2B7 /* SSPagesVC.xib in Resources */,
 				0DA2E6391916C9050086E4B5 /* 170-butterfly.png in Resources */,
-				0DBC86B9195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DA2E5A61916C9050086E4B5 /* 151-telescope.png in Resources */,
 				0DA2E9181916C9050086E4B5 /* 92-test-tube.png in Resources */,
 				0DB1169519C7F3E400FF7DE0 /* PageGroup_DividerX2.png in Resources */,
@@ -9588,9 +9620,11 @@
 				0DA2E8691916C9050086E4B5 /* 67-tshirt.png in Resources */,
 				0DA2E4561916C9050086E4B5 /* 108-badge.png in Resources */,
 				0DB1164119C7F3E400FF7DE0 /* PageCreateGroup_DoneBTNX2.png in Resources */,
+				0DCFF1461A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0DA2E44F1916C9050086E4B5 /* 107-widescreen.png in Resources */,
 				0DC6637E1959ECCB009A6078 /* SSNavMenuVC.xib in Resources */,
 				0D27978C198A0A350058F7D2 /* SSSlideOpenVC.xib in Resources */,
+				0DCFF14D1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DA2E4FE1916C9050086E4B5 /* 13-target.png in Resources */,
 				0DA2E7201916C9050086E4B5 /* 200-card-clubs.png in Resources */,
 				0DA2E8231916C9050086E4B5 /* 57-download.png in Resources */,
@@ -9622,7 +9656,6 @@
 				0D8224B218E8A31700A928B6 /* star-highlighted-template.png in Resources */,
 				0D430E8919CF783A0078358C /* back-arrow.png in Resources */,
 				0DF93B461930CF830004C049 /* SSCompanyEditorVC.xib in Resources */,
-				0DBC86CE195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DA2E84D1916C9050086E4B5 /* 63-runner.png in Resources */,
 				0DA2E4481916C9050086E4B5 /* 106-sliders.png in Resources */,
 				0DA2E42C1916C9050086E4B5 /* 102-walk.png in Resources */,
@@ -9669,7 +9702,6 @@
 				0DA2E62B1916C9050086E4B5 /* 169-8ball.png in Resources */,
 				0DA2E80E1916C9050086E4B5 /* 54-lock.png in Resources */,
 				0D0AB1381980336D000EF898 /* SSMenuVC.xib in Resources */,
-				0DBC86D5195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E53D1916C9050086E4B5 /* 138-scales.png in Resources */,
 				0DB1170C19C7F3E400FF7DE0 /* PageGroupDetail_Divider.png in Resources */,
 				0DA2E9031916C9050086E4B5 /* 89-dumbell.png in Resources */,
@@ -9697,6 +9729,7 @@
 				0DA2E7D61916C9050086E4B5 /* 46-movie-2.png in Resources */,
 				0DA2E7121916C9050086E4B5 /* 199-card-hearts.png in Resources */,
 				0DB1174B19C7F3E400FF7DE0 /* PageGroupDetail_TopProvileX2.png in Resources */,
+				0DCFF1381A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E9831916D17D0086E4B5 /* checkboxbg.png in Resources */,
 				0D2FAB03193004E5000C26C1 /* settings.png in Resources */,
 				0DA2E64E1916C9050086E4B5 /* 173-eyedropper.png in Resources */,
@@ -9754,7 +9787,6 @@
 				0DA2E5BB1916C9050086E4B5 /* 154-necktie.png in Resources */,
 				0DA2E69B1916C9050086E4B5 /* 183-genie-lamp.png in Resources */,
 				0DB1165619C7F3E400FF7DE0 /* PageCreateGroup_FillForm.png in Resources */,
-				0DBC86C0195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E5591916C9050086E4B5 /* 141-lamp.png in Resources */,
 				0DB1162C19C7F3E400FF7DE0 /* PageCreateGroup_ClearBTN.png in Resources */,
 				0DA2E6631916C9050086E4B5 /* 176-ipad.png in Resources */,
@@ -9787,6 +9819,7 @@
 				0D82244718E8816200A928B6 /* SSPagesVC.xib in Resources */,
 				0DA2E4431916C9050086E4B5 /* 105-piano.png in Resources */,
 				0DB115F619C7F3E400FF7DE0 /* Page_NameSearch_Selected.png in Resources */,
+				0DCFF1481A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0DB115E819C7F3E400FF7DE0 /* Page_NameSearch_ProfilePic.png in Resources */,
 				0D870E891916C5E100F607BD /* youtube.png in Resources */,
 				0DA2E8021916C9050086E4B5 /* 52-pine-tree.png in Resources */,
@@ -9804,6 +9837,7 @@
 				0D8224D018E8A31700A928B6 /* star.png in Resources */,
 				0DA2E8BF1916C9050086E4B5 /* 79-medical-bag.png in Resources */,
 				0DA2E9851916D17D0086E4B5 /* checkboxbg.png in Resources */,
+				0DCFF15D1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0D82245618E8816200A928B6 /* SSProfileEditorVC.xib in Resources */,
 				0D0AB1161980333C000EF898 /* SSHighlightsVC.xib in Resources */,
 				0DA2E4121916C9050086E4B5 /* 09-chat-2.png in Resources */,
@@ -9837,9 +9871,9 @@
 				0DB1160419C7F3E400FF7DE0 /* PageCreateGroup_AddPhoto.png in Resources */,
 				0DA2E4741916C9050086E4B5 /* 111-user.png in Resources */,
 				0DA2E8251916C9050086E4B5 /* 57-download.png in Resources */,
+				0DCFF12C1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DA2E7531916C9050086E4B5 /* 27-planet.png in Resources */,
 				0DA2E6D51916C9050086E4B5 /* 190-bank.png in Resources */,
-				0DBC86C2195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E58C1916C9050086E4B5 /* 148-doghouse.png in Resources */,
 				0D82246018E8816200A928B6 /* SSTableLovVC.xib in Resources */,
 				0DA2E4191916C9050086E4B5 /* 10-medical.png in Resources */,
@@ -9856,9 +9890,9 @@
 				0DA2E5AF1916C9050086E4B5 /* 152-rolodex.png in Resources */,
 				0D27978E198A0A350058F7D2 /* SSSlideOpenVC.xib in Resources */,
 				0DA2E5A81916C9050086E4B5 /* 151-telescope.png in Resources */,
-				0DBC86D7195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E61F1916C9050086E4B5 /* 167-upload-photo.png in Resources */,
 				0DB1166D19C7F3E400FF7DE0 /* PageCreateGroup_TopNavX2.png in Resources */,
+				0DCFF13A1A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DD1FABF19230F7C009DAC4F /* star02.png in Resources */,
 				0DA2E8A31916C9050086E4B5 /* 75-phone.png in Resources */,
 				0D870B821916B6DD00F607BD /* recruiter spec.txt in Resources */,
@@ -9903,7 +9937,6 @@
 				0DA2E55B1916C9050086E4B5 /* 141-lamp.png in Resources */,
 				0DB1172319C7F3E400FF7DE0 /* PageGroupDetail_GroupImageX2.png in Resources */,
 				0DA2E9131916C9050086E4B5 /* 91-beaker-2.png in Resources */,
-				0DBC86C9195F07F900540B61 /* login-button-small.png in Resources */,
 				0DA2E6341916C9050086E4B5 /* 17-bar-chart.png in Resources */,
 				0DA2E8C61916C9050086E4B5 /* 80-shopping-cart.png in Resources */,
 				0DA2E5F51916C9050086E4B5 /* 161-calculator.png in Resources */,
@@ -9926,10 +9959,10 @@
 				0DA2E8B11916C9050086E4B5 /* 77-ekg.png in Resources */,
 				0DEF03C0198773BE00A3D520 /* SSSurveyCell.xib in Resources */,
 				0DA2E6B91916C9050086E4B5 /* 187-pencil.png in Resources */,
+				0DCFF1331A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DB115C519C7F3E400FF7DE0 /* Namesearch_document_1.pdf in Resources */,
 				0DA2E53F1916C9050086E4B5 /* 138-scales.png in Resources */,
 				0DB115FD19C7F3E400FF7DE0 /* Page_NameSearch_SelectedX2.png in Resources */,
-				0DBC86BB195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DB1164A19C7F3E400FF7DE0 /* PageCreateGroup_EmptyCheckMark.png in Resources */,
 				0DA2E42E1916C9050086E4B5 /* 102-walk.png in Resources */,
 				0DB115CC19C7F3E400FF7DE0 /* Page_NameSearch_divider.png in Resources */,
@@ -9975,7 +10008,6 @@
 				0DB1162719C7F3E400FF7DE0 /* PageCreateGroup_CheckMarkX2.png in Resources */,
 				0DA2E78B1916C9050086E4B5 /* 35-shopping.png in Resources */,
 				0D430E8B19CF783A0078358C /* back-arrow.png in Resources */,
-				0DBC86D0195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DB1171C19C7F3E400FF7DE0 /* PageGroupDetail_GroupImage.png in Resources */,
 				0DA2E5151916C9050086E4B5 /* 132-ghost.png in Resources */,
 				0DA2E3FD1916C9050086E4B5 /* 06-magnify.png in Resources */,
@@ -9987,6 +10019,7 @@
 				0DA2E7301916C9050086E4B5 /* 22-skull-n-bones.png in Resources */,
 				0DB1170019C7F3E400FF7DE0 /* PageGroupDetail_Crown.png in Resources */,
 				0DA2E4041916C9050086E4B5 /* 07-map-marker.png in Resources */,
+				0DCFF14F1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DC663C41959FE94009A6078 /* SSPackageEditor.xib in Resources */,
 				0DA2E4EB1916C9050086E4B5 /* 127-sock.png in Resources */,
 				0DA2E8E91916C9050086E4B5 /* 85-trophy.png in Resources */,
@@ -10031,6 +10064,7 @@
 				0DA2E75A1916C9050086E4B5 /* 28-star.png in Resources */,
 				0DB1173819C7F3E400FF7DE0 /* PageGroupDetail_listProfile.png in Resources */,
 				0D82247B18E8816200A928B6 /* SSAddressVC.xib in Resources */,
+				0DCFF1411A7EAF55008F4B61 /* login-button-small.png in Resources */,
 				0D870B851916B6DD00F607BD /* gear_inx2.png in Resources */,
 				0D82247D18E8816200A928B6 /* SSImagesVC.xib in Resources */,
 				0DA2E7AE1916C9050086E4B5 /* 40-inbox.png in Resources */,
@@ -10099,7 +10133,6 @@
 				0D870B931916B6DD00F607BD /* SSJobApplicationVC.xib in Resources */,
 				0DA2E69D1916C9050086E4B5 /* 183-genie-lamp.png in Resources */,
 				0DB116F919C7F3E400FF7DE0 /* PageGroupDetail_BackX2.png in Resources */,
-				0DBC86E5195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E4BA1916C9050086E4B5 /* 120-headphones.png in Resources */,
 				0DA2E5231916C9050086E4B5 /* 134-viking.png in Resources */,
 				0DB1174D19C7F3E400FF7DE0 /* PageGroupDetail_TopProvileX2.png in Resources */,
@@ -10134,7 +10167,6 @@
 				0DA2E4201916C9050086E4B5 /* 100-coffee.png in Resources */,
 				0DA2E6651916C9050086E4B5 /* 176-ipad.png in Resources */,
 				0DEF038B1987621100A3D520 /* SSDeckViewVC.xib in Resources */,
-				0DBC86B4195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DA2E8B81916C9050086E4B5 /* 78-stopwatch.png in Resources */,
 				0DA2E5EE1916C9050086E4B5 /* 160-voicemail-2.png in Resources */,
 				0DA2E94B1916C9050086E4B5 /* book.png in Resources */,
@@ -10207,15 +10239,18 @@
 				0DA2E8041916C9050086E4B5 /* 53-house.png in Resources */,
 				0DA2E74E1916C9050086E4B5 /* 27-planet.png in Resources */,
 				0DA2E5E21916C9050086E4B5 /* 16-line-chart.png in Resources */,
+				0DCFF1271A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0D870E761916C5E100F607BD /* pinterest.png in Resources */,
 				0D83F4721832D80000AFB0E6 /* SSTableViewCell.xib in Resources */,
 				0DA2E72B1916C9050086E4B5 /* 22-skull-n-bones.png in Resources */,
+				0DCFF13C1A7EAF55008F4B61 /* login-button-small.png in Resources */,
 				0DA2E8741916C9050086E4B5 /* 69-display.png in Resources */,
 				0D870ED11916C5E100F607BD /* SSFollowVC.xib in Resources */,
 				0DA2E4E61916C9050086E4B5 /* 127-sock.png in Resources */,
 				0DA2E4ED1916C9050086E4B5 /* 128-bone.png in Resources */,
 				0DA2E8CF1916C9050086E4B5 /* 82-dog-paw.png in Resources */,
 				0D870E921916C5E100F607BD /* SSActivityVC.xib in Resources */,
+				0DCFF1581A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0D2FAB00193004E5000C26C1 /* settings.png in Resources */,
 				0DA2E4A01916C9050086E4B5 /* 118-coat-hanger.png in Resources */,
 				0DA2E4C31916C9050086E4B5 /* 122-stats.png in Resources */,
@@ -10238,9 +10273,7 @@
 				0DD1FAC119230F7C009DAC4F /* triangle.png in Resources */,
 				0DA2E8201916C9050086E4B5 /* 57-download.png in Resources */,
 				0DA2E4841916C9050086E4B5 /* 114-balloon.png in Resources */,
-				0DBC86C4195F07F900540B61 /* login-button-small.png in Resources */,
 				0DA2E6DE1916C9050086E4B5 /* 192-credit-card.png in Resources */,
-				0DBC86B6195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DA2E6B41916C9050086E4B5 /* 187-pencil.png in Resources */,
 				0DEF03861987621100A3D520 /* SSDeckViewVC.xib in Resources */,
 				0DA2E5871916C9050086E4B5 /* 148-doghouse.png in Resources */,
@@ -10251,7 +10284,6 @@
 				0DA2E7081916C9050086E4B5 /* 198-card-spades.png in Resources */,
 				0DB1166119C7F3E400FF7DE0 /* PageCreateGroup_TopNav.png in Resources */,
 				0D870EEC1916C62800F607BD /* SSCommonSetupVC.xib in Resources */,
-				0DBC86D2195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E4141916C9050086E4B5 /* 10-medical.png in Resources */,
 				0DA2E87B1916C9050086E4B5 /* 70-tv.png in Resources */,
 				0DB116BC19C7F3E400FF7DE0 /* pageGroup_HamburgerX2.png in Resources */,
@@ -10312,6 +10344,7 @@
 				0DD1FABA19230F7C009DAC4F /* star02.png in Resources */,
 				0DA2E8F21916C9050086E4B5 /* 87-wine-glass.png in Resources */,
 				0DA2E6981916C9050086E4B5 /* 183-genie-lamp.png in Resources */,
+				0DCFF12E1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DB1165A19C7F3E400FF7DE0 /* PageCreateGroup_FillFormX2.png in Resources */,
 				0DEF03BB198773BE00A3D520 /* SSSurveyCell.xib in Resources */,
 				0DB116CA19C7F3E400FF7DE0 /* PageGroup_headerX2.png in Resources */,
@@ -10344,9 +10377,11 @@
 				0DA2E4531916C9050086E4B5 /* 108-badge.png in Resources */,
 				0DA2E8191916C9050086E4B5 /* 56-cloud.png in Resources */,
 				0DA2E5801916C9050086E4B5 /* 147-popsicle.png in Resources */,
+				0DCFF1431A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0DA2E76A1916C9050086E4B5 /* 31-ipod.png in Resources */,
 				0D8224BD18E8A31700A928B6 /* star-template.png in Resources */,
 				0DA2E5AA1916C9050086E4B5 /* 152-rolodex.png in Resources */,
+				0DCFF14A1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DA2E71D1916C9050086E4B5 /* 200-card-clubs.png in Resources */,
 				0DB1171E19C7F3E400FF7DE0 /* PageGroupDetail_GroupImageX2.png in Resources */,
 				0DA2E6671916C9050086E4B5 /* 177-building.png in Resources */,
@@ -10372,13 +10407,11 @@
 				0DD1FAB319230F7C009DAC4F /* star01.png in Resources */,
 				0DA2E47D1916C9050086E4B5 /* 113-navigation.png in Resources */,
 				0DA2E4AE1916C9050086E4B5 /* 12-eye.png in Resources */,
-				0DBC86E0195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0DA2E7401916C9050086E4B5 /* 25-weather.png in Resources */,
 				0DA2E58E1916C9050086E4B5 /* 149-windmill.png in Resources */,
 				0D83F4E71832D80000AFB0E6 /* SSAddressVC.xib in Resources */,
 				0D22AB2F19C56501003DE78C /* save.png in Resources */,
 				0DB1174F19C7F3E400FF7DE0 /* PageGroupDetail_TopShade.png in Resources */,
-				0DBC86CB195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DA2E6591916C9050086E4B5 /* 175-macbook.png in Resources */,
 				0DA2E4761916C9050086E4B5 /* 112-group.png in Resources */,
 				0DA2E4FB1916C9050086E4B5 /* 13-target.png in Resources */,
@@ -10397,7 +10430,6 @@
 				0DA2E60C1916C9050086E4B5 /* 165-glasses-3.png in Resources */,
 				0D22AB2819C56501003DE78C /* back.png in Resources */,
 				0DB116A019C7F3E400FF7DE0 /* PageGroup_groupImage_Shade.png in Resources */,
-				0DBC86AF195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DB116D119C7F3E400FF7DE0 /* PageGroup_ProfilePic.png in Resources */,
 				0DB116D819C7F3E400FF7DE0 /* PageGroup_ProfilePicX2.png in Resources */,
 				0DA2E9381916C9050086E4B5 /* 98-palette.png in Resources */,
@@ -10454,6 +10486,7 @@
 				0DA2E5C61916C9050086E4B5 /* 156-controlpad.png in Resources */,
 				0DA2E5331916C9050086E4B5 /* 137-presentation.png in Resources */,
 				0D870EBC1916C5E100F607BD /* SSCommentVC.xib in Resources */,
+				0DCFF1351A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E6F31916C9050086E4B5 /* 195-barcode.png in Resources */,
 				0DA2E4991916C9050086E4B5 /* 117-todo.png in Resources */,
 				0D83F51B1832D80000AFB0E6 /* SSSecurityVC.xib in Resources */,
@@ -10491,7 +10524,6 @@
 				0DA2E4371916C9050086E4B5 /* 104-index-cards.png in Resources */,
 				0DA2E8F91916C9050086E4B5 /* 88-beer-mug.png in Resources */,
 				0DA2E4451916C9050086E4B5 /* 106-sliders.png in Resources */,
-				0DBC86BD195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DA2E4BC1916C9050086E4B5 /* 121-landscape.png in Resources */,
 				0DA2E7471916C9050086E4B5 /* 26-bandaid.png in Resources */,
 				0DD063A61A6ADF1100BA9139 /* SSDataVC.xib in Resources */,
@@ -10546,6 +10578,7 @@
 				0D870C911916B70A00F607BD /* SSMyViewsVC.xib in Resources */,
 				0DA2E5C71916C9050086E4B5 /* 156-controlpad.png in Resources */,
 				0DA2E64C1916C9050086E4B5 /* 173-eyedropper.png in Resources */,
+				0DCFF1361A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0DEF03B4198770E900A3D520 /* SSSurveyVC.xib in Resources */,
 				0D18ED8C193BE29500C312FD /* SSLinkedInVC.xib in Resources */,
 				0DA2E5AB1916C9050086E4B5 /* 152-rolodex.png in Resources */,
@@ -10559,7 +10592,6 @@
 				0DA2E8671916C9050086E4B5 /* 67-tshirt.png in Resources */,
 				0DA2E6B51916C9050086E4B5 /* 187-pencil.png in Resources */,
 				0DA2E49A1916C9050086E4B5 /* 117-todo.png in Resources */,
-				0DBC86BE195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0D83F5BD1832E29300AFB0E6 /* SSFriendVC.xib in Resources */,
 				0DB115DD19C7F3E400FF7DE0 /* Page_NameSearch_DropDownX2.png in Resources */,
 				0DA2E59D1916C9050086E4B5 /* 150-sailboat.png in Resources */,
@@ -10567,7 +10599,6 @@
 				0D8224CC18E8A31700A928B6 /* star.png in Resources */,
 				0DA2E50A1916C9050086E4B5 /* 131-tower.png in Resources */,
 				0D870C951916B70A00F607BD /* SSDataViewVC.xib in Resources */,
-				0DBC86CC195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DA2E8281916C9050086E4B5 /* 58-bookmark.png in Resources */,
 				0DA2E4EE1916C9050086E4B5 /* 128-bone.png in Resources */,
 				0DA2E7251916C9050086E4B5 /* 21-skull.png in Resources */,
@@ -10618,6 +10649,7 @@
 				0DA2E8D01916C9050086E4B5 /* 82-dog-paw.png in Resources */,
 				0DA2E6761916C9050086E4B5 /* 179-notepad.png in Resources */,
 				0DC6638D1959FABB009A6078 /* SSLayoutVC.xib in Resources */,
+				0DCFF12F1A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DB1162319C7F3E400FF7DE0 /* PageCreateGroup_CheckMarkX2.png in Resources */,
 				0D22AB3019C56501003DE78C /* save.png in Resources */,
 				0D870EBD1916C5E100F607BD /* SSCommentVC.xib in Resources */,
@@ -10625,6 +10657,7 @@
 				0D83F5EF1832E29300AFB0E6 /* SSTableLovVC.xib in Resources */,
 				0DA2E7B81916C9050086E4B5 /* 42-photos.png in Resources */,
 				0DD1FA9219230F45009DAC4F /* dividerLine.png in Resources */,
+				0DCFF1441A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0DA2E65A1916C9050086E4B5 /* 175-macbook.png in Resources */,
 				0D870EA11916C5E100F607BD /* SSActivityView.xib in Resources */,
 				0DD063A71A6ADF1100BA9139 /* SSDataVC.xib in Resources */,
@@ -10671,6 +10704,7 @@
 				0DB1168C19C7F3E400FF7DE0 /* PageGroup_Divider.png in Resources */,
 				0DA2E4A11916C9050086E4B5 /* 118-coat-hanger.png in Resources */,
 				0DB115C819C7F3E400FF7DE0 /* Page_NameSearch_divider.png in Resources */,
+				0DCFF13D1A7EAF55008F4B61 /* login-button-small.png in Resources */,
 				0DA2E8E51916C9050086E4B5 /* 85-trophy.png in Resources */,
 				0DB115BA19C7F3E400FF7DE0 /* group_08242014.jpg in Resources */,
 				0D870CC61916B70A00F607BD /* SSWidgetVC.xib in Resources */,
@@ -10699,7 +10733,6 @@
 				0DA2E6D11916C9050086E4B5 /* 190-bank.png in Resources */,
 				0DA2E8211916C9050086E4B5 /* 57-download.png in Resources */,
 				0DB1165B19C7F3E400FF7DE0 /* PageCreateGroup_FillFormX2.png in Resources */,
-				0DBC86B7195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DB1174219C7F3E400FF7DE0 /* PageGroupDetail_TopProvile.png in Resources */,
 				0D0AB1361980336D000EF898 /* SSMenuVC.xib in Resources */,
 				0DA2E5C01916C9050086E4B5 /* 155-bowtie.png in Resources */,
@@ -10710,7 +10743,6 @@
 				0DA2E7D41916C9050086E4B5 /* 46-movie-2.png in Resources */,
 				0DA2E5A41916C9050086E4B5 /* 151-telescope.png in Resources */,
 				0DA2E7021916C9050086E4B5 /* 197-card-diamonds.png in Resources */,
-				0DBC86B0195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DA2E72C1916C9050086E4B5 /* 22-skull-n-bones.png in Resources */,
 				0D83F62E1832E29300AFB0E6 /* SSImageEditorVC_iPhone.xib in Resources */,
 				0DA2E5881916C9050086E4B5 /* 148-doghouse.png in Resources */,
@@ -10740,6 +10772,7 @@
 				0DB116C419C7F3E400FF7DE0 /* PageGroup_header.png in Resources */,
 				0DA2E3EB1916C9050086E4B5 /* 04-squiggle.png in Resources */,
 				0D039BD418D8A69300396A1A /* Particle.png in Resources */,
+				0DCFF14B1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DB1165419C7F3E400FF7DE0 /* PageCreateGroup_FillForm.png in Resources */,
 				0DB116D919C7F3E400FF7DE0 /* PageGroup_ProfilePicX2.png in Resources */,
 				0DD1FABB19230F7C009DAC4F /* star02.png in Resources */,
@@ -10753,7 +10786,6 @@
 				0DA2E4931916C9050086E4B5 /* 116-controller.png in Resources */,
 				0DB115EB19C7F3E400FF7DE0 /* Page_NameSearch_ProfilePicX2.png in Resources */,
 				0D870CAB1916B70A00F607BD /* SSColumnEditor.xib in Resources */,
-				0DBC86C5195F07F900540B61 /* login-button-small.png in Resources */,
 				0D870EAF1916C5E100F607BD /* SSCommentsVC.xib in Resources */,
 				0DA2E9731916D17D0086E4B5 /* check-selected.png in Resources */,
 				0D0AB1121980333C000EF898 /* SSHighlightsVC.xib in Resources */,
@@ -10767,7 +10799,6 @@
 				0DA2E7DB1916C9050086E4B5 /* 47-fuel.png in Resources */,
 				0DD1FA9F19230F7C009DAC4F /* circle.png in Resources */,
 				0DA2E7A31916C9050086E4B5 /* 39-spraycan.png in Resources */,
-				0DBC86D3195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E9161916C9050086E4B5 /* 92-test-tube.png in Resources */,
 				0DA2E5421916C9050086E4B5 /* 139-flags.png in Resources */,
 				0DA2E67D1916C9050086E4B5 /* 18-envelope.png in Resources */,
@@ -10820,13 +10851,13 @@
 				0DB1160E19C7F3E400FF7DE0 /* PageCreateGroup_Back.png in Resources */,
 				0D870E931916C5E100F607BD /* SSActivityVC.xib in Resources */,
 				0DA2E6A71916C9050086E4B5 /* 185-printer.png in Resources */,
+				0DCFF1281A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DA2E5D51916C9050086E4B5 /* 158-wrench-2.png in Resources */,
 				0DA2E7C61916C9050086E4B5 /* 44-shoebox.png in Resources */,
 				0DB115F219C7F3E400FF7DE0 /* Page_NameSearch_Selected.png in Resources */,
 				0DA2E4FC1916C9050086E4B5 /* 13-target.png in Resources */,
 				0DA2E6451916C9050086E4B5 /* 172-pricetag.png in Resources */,
 				0DB116D219C7F3E400FF7DE0 /* PageGroup_ProfilePic.png in Resources */,
-				0DBC86E1195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0D870C931916B70A00F607BD /* SSEntityVC.xib in Resources */,
 				0DA2E79C1916C9050086E4B5 /* 38-airplane.png in Resources */,
 				0DB1161519C7F3E400FF7DE0 /* PageCreateGroup_BackX2.png in Resources */,
@@ -10835,6 +10866,7 @@
 				0DA2E7101916C9050086E4B5 /* 199-card-hearts.png in Resources */,
 				0D870E621916C5E100F607BD /* googleplus.png in Resources */,
 				0DA2E8051916C9050086E4B5 /* 53-house.png in Resources */,
+				0DCFF1591A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0DB1160719C7F3E400FF7DE0 /* PageCreateGroup_AddPhotoX2.png in Resources */,
 				0DA2E73A1916C9050086E4B5 /* 24-gift.png in Resources */,
 				0DB1166219C7F3E400FF7DE0 /* PageCreateGroup_TopNav.png in Resources */,
@@ -10921,7 +10953,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA2E5ED1916C9050086E4B5 /* 160-voicemail-2.png in Resources */,
-				0DBC86C8195F07F900540B61 /* login-button-small.png in Resources */,
 				0DA2E4DC1916C9050086E4B5 /* 125-food.png in Resources */,
 				0DA2E4421916C9050086E4B5 /* 105-piano.png in Resources */,
 				0DB1170D19C7F3E400FF7DE0 /* PageGroupDetail_Divider.png in Resources */,
@@ -10975,7 +11006,6 @@
 				0DB1163B19C7F3E400FF7DE0 /* PageCreateGroup_DoneBTN.png in Resources */,
 				0DB115D919C7F3E400FF7DE0 /* Page_NameSearch_DropDown.png in Resources */,
 				0D870EC01916C5E100F607BD /* SSCommentVC.xib in Resources */,
-				0DBC86E4195F07F900540B61 /* UserDetailsViewController.xib in Resources */,
 				0D870F0C1916C62800F607BD /* SSSettingAttributeEditorVC.xib in Resources */,
 				0DB1172219C7F3E400FF7DE0 /* PageGroupDetail_GroupImageX2.png in Resources */,
 				0D039BD718D8A69300396A1A /* Particle.png in Resources */,
@@ -11025,6 +11055,7 @@
 				0D870E881916C5E100F607BD /* youtube.png in Resources */,
 				0DA2E5DF1916C9050086E4B5 /* 159-voicemail.png in Resources */,
 				0D9EC2591961BEFE00C4EEE1 /* Issues in Resources */,
+				0DCFF1471A7EAF55008F4B61 /* login-button-small@2x.png in Resources */,
 				0DA2E48F1916C9050086E4B5 /* 115-bow-and-arrow.png in Resources */,
 				0DA2E88D1916C9050086E4B5 /* 72-pin.png in Resources */,
 				0DA2E4D51916C9050086E4B5 /* 124-bullhorn.png in Resources */,
@@ -11038,7 +11069,6 @@
 				0DE0E63F189D8CBA00FFC3FB /* SSTableRowCell.xib in Resources */,
 				0DA2E85C1916C9050086E4B5 /* 65-note.png in Resources */,
 				0DD063AA1A6ADF1100BA9139 /* SSDataVC.xib in Resources */,
-				0DBC86B3195F07F900540B61 /* FBLoginVC.xib in Resources */,
 				0DE0E644189D8CBA00FFC3FB /* SSMessagingVC.xib in Resources */,
 				0DB115FC19C7F3E400FF7DE0 /* Page_NameSearch_SelectedX2.png in Resources */,
 				0DB1171B19C7F3E400FF7DE0 /* PageGroupDetail_GroupImage.png in Resources */,
@@ -11050,7 +11080,6 @@
 				0DA2E55A1916C9050086E4B5 /* 141-lamp.png in Resources */,
 				0DD1FAA919230F7C009DAC4F /* icon_email.png in Resources */,
 				0DB1165E19C7F3E400FF7DE0 /* PageCreateGroup_FillFormX2.png in Resources */,
-				0DBC86CF195F07F900540B61 /* login-button-small@2x.png in Resources */,
 				0DA2E49D1916C9050086E4B5 /* 117-todo.png in Resources */,
 				0DBC477F19E97EC40080D095 /* filterIcon.png in Resources */,
 				0DA2E9761916D17D0086E4B5 /* check-selected.png in Resources */,
@@ -11093,6 +11122,8 @@
 				0DA2E8BE1916C9050086E4B5 /* 79-medical-bag.png in Resources */,
 				0DA2E8631916C9050086E4B5 /* 66-microphone.png in Resources */,
 				0DA2E6DB1916C9050086E4B5 /* 191-collection.png in Resources */,
+				0DCFF1401A7EAF55008F4B61 /* login-button-small.png in Resources */,
+				0DCFF1391A7EAF55008F4B61 /* login-button-small-pressed@2x.png in Resources */,
 				0D870D1D1916B73400F607BD /* SSTimeSeriesVC.xib in Resources */,
 				0DB116B219C7F3E400FF7DE0 /* PageGroup_groupImageX2.png in Resources */,
 				0DE0E65D189D8CBA00FFC3FB /* SSDatePickerVC.xib in Resources */,
@@ -11160,10 +11191,12 @@
 				0DE0E68C189D8CBA00FFC3FB /* SSGroupVC.xib in Resources */,
 				0DA2E6561916C9050086E4B5 /* 174-imac.png in Resources */,
 				0DA2E5CA1916C9050086E4B5 /* 156-controlpad.png in Resources */,
+				0DCFF1321A7EAF55008F4B61 /* login-button-small-pressed.png in Resources */,
 				0DA2E8E11916C9050086E4B5 /* 84-lightbulb.png in Resources */,
 				0D870EF01916C62800F607BD /* SSCommonSetupVC.xib in Resources */,
 				0DA2E4031916C9050086E4B5 /* 07-map-marker.png in Resources */,
 				0DA2E4AB1916C9050086E4B5 /* 119-piggy-bank.png in Resources */,
+				0DCFF15C1A7EAF55008F4B61 /* UserDetailsViewController.xib in Resources */,
 				0D870CFB1916B72800F607BD /* SSDrawableVC.xib in Resources */,
 				0DA2E50D1916C9050086E4B5 /* 131-tower.png in Resources */,
 				0DA2E5371916C9050086E4B5 /* 137-presentation.png in Resources */,
@@ -11176,6 +11209,7 @@
 				0DC6637F1959ECCB009A6078 /* SSNavMenuVC.xib in Resources */,
 				0DA2E76E1916C9050086E4B5 /* 31-ipod.png in Resources */,
 				0DA2E3D91916C9050086E4B5 /* 01-refresh.png in Resources */,
+				0DCFF14E1A7EAF55008F4B61 /* TableHeaderView.xib in Resources */,
 				0DA2E5A01916C9050086E4B5 /* 150-sailboat.png in Resources */,
 				0DA2E4811916C9050086E4B5 /* 113-navigation.png in Resources */,
 				0DA2E6D41916C9050086E4B5 /* 190-bank.png in Resources */,
@@ -11190,11 +11224,9 @@
 				0DA2E9841916D17D0086E4B5 /* checkboxbg.png in Resources */,
 				0DE0E6AF189D8CBA00FFC3FB /* SSAddressVC.xib in Resources */,
 				0DE0E6B2189D8CBA00FFC3FB /* SSNearByVC.xib in Resources */,
-				0DBC86D6195F07F900540B61 /* TableHeaderView.xib in Resources */,
 				0DA2E7831916C9050086E4B5 /* 34-coffee.png in Resources */,
 				0DA2E4501916C9050086E4B5 /* 107-widescreen.png in Resources */,
 				0DA2E9191916C9050086E4B5 /* 92-test-tube.png in Resources */,
-				0DBC86BA195F07F900540B61 /* login-button-small-pressed.png in Resources */,
 				0DA2E8391916C9050086E4B5 /* 60-signpost.png in Resources */,
 				0DA2E5531916C9050086E4B5 /* 140-gradhat.png in Resources */,
 				0DA2E8B71916C9050086E4B5 /* 78-stopwatch.png in Resources */,
@@ -11249,6 +11281,7 @@
 				0DA2E3EE1916C9050086E4B5 /* 04-squiggle.png in Resources */,
 				0DA2E6091916C9050086E4B5 /* 164-glasses-2.png in Resources */,
 				0DA2E79F1916C9050086E4B5 /* 38-airplane.png in Resources */,
+				0DCFF12B1A7EAF55008F4B61 /* FBLoginVC.xib in Resources */,
 				0DA2E63A1916C9050086E4B5 /* 170-butterfly.png in Resources */,
 				0DE0E6EB189D8CBA00FFC3FB /* SSSecurityVC.xib in Resources */,
 				0DA2E5221916C9050086E4B5 /* 134-viking.png in Resources */,
@@ -11277,7 +11310,6 @@
 				0DA2E6481916C9050086E4B5 /* 172-pricetag.png in Resources */,
 				0DA2E92E1916C9050086E4B5 /* 95-equalizer.png in Resources */,
 				0DB1172919C7F3E400FF7DE0 /* PageGroupDetail_header.png in Resources */,
-				0DBC86C1195F07F900540B61 /* login-button-small-pressed@2x.png in Resources */,
 				0D8224BA18E8A31700A928B6 /* star-highlighted-template@2x.png in Resources */,
 				0DA2E7E51916C9050086E4B5 /* 48-fork-and-knife.png in Resources */,
 				0DA2E6171916C9050086E4B5 /* 166-newspaper.png in Resources */,
@@ -11305,7 +11337,6 @@
 			files = (
 				0DBD7D2E192E443A00678DDE /* SSShadowView.m in Sources */,
 				0DC4567718C38F7A00947FA4 /* SSMyProfileVC.m in Sources */,
-				0DBC86A0195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D21713018559578009939BC /* SSTableRowCell.m in Sources */,
 				0D83F5491832DC5200AFB0E6 /* SSApp.m in Sources */,
 				0D30FE0A181C386E00E1C33E /* SSMembershipVC.m in Sources */,
@@ -11334,6 +11365,7 @@
 				0DF93B5D19311CDB0004C049 /* SSCompanyVC.m in Sources */,
 				0D870B301916B6BE00F607BD /* SSGluedVC.m in Sources */,
 				0D870E8A1916C5E100F607BD /* SSActivityVC.m in Sources */,
+				0DCFF1501A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0DC6634E19576780009A6078 /* SSSlider.m in Sources */,
 				0D6B8B2D18176A47000E0009 /* SSListOfValueView.m in Sources */,
 				0D74F12418160A8100F5C2FD /* SSJSONUtil.m in Sources */,
@@ -11344,6 +11376,7 @@
 				0D21713B18564B59009939BC /* SSCalendarCell.m in Sources */,
 				0D4C35461A1A468500F0A0C8 /* SSDrawableLayer.m in Sources */,
 				0D2B8579181439EA000378CA /* SSCommonVC.m in Sources */,
+				0DCFF1111A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D74F12318160A8100F5C2FD /* SSGeoCodeUtil.m in Sources */,
 				0D74F12618160A8100F5C2FD /* SSReachability.m in Sources */,
 				0D30FE05181C247100E1C33E /* SSGroupEditorVC.m in Sources */,
@@ -11400,7 +11433,6 @@
 				0DE413E11816EB25002752E5 /* SSProfileVC.m in Sources */,
 				0D18ED60193BE29500C312FD /* LIALinkedInAuthorizationViewController.m in Sources */,
 				0DEF03AB198770E900A3D520 /* SSSurveyVC.m in Sources */,
-				0DBC86A7195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0DF93B4B1930FC230004C049 /* SSValueLabel.m in Sources */,
 				0D65EF1E19AD8EAD000D8F8D /* SSCarouselView.m in Sources */,
 				0D1792A018EF20AF00727312 /* MessageView.m in Sources */,
@@ -11426,13 +11458,13 @@
 				0D4A42EA182E92B0005D707D /* SSDateTextField.m in Sources */,
 				0D6D2B5C1801E96F007210DA /* SSTableViewVC.m in Sources */,
 				0D18ED6E193BE29500C312FD /* NSString+LIAEncode.m in Sources */,
-				0DBC86D8195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0DE413DF1816EB25002752E5 /* SSProfileEditorVC.m in Sources */,
 				0D18ED67193BE29500C312FD /* LIALinkedInHttpClient.m in Sources */,
 				0D870E981916C5E100F607BD /* SSActivityView.m in Sources */,
 				0D039BC518D8A44B00396A1A /* fileUtil.m in Sources */,
 				0D1E73BE18BA59070082DDF2 /* SSShape.m in Sources */,
 				0D74F12718160A8100F5C2FD /* SSTimeUtil.m in Sources */,
+				0DCFF11F1A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0DF4581A19885B9100BB8C49 /* SSDeckHolderView.m in Sources */,
 				0D1E738818BA59070082DDF2 /* SSAnimiate.m in Sources */,
 				0DC286DE181575990030A642 /* SSImageEditorVC.m in Sources */,
@@ -11511,6 +11543,7 @@
 				0D2E7CC918538188000C7D67 /* SSValueField.m in Sources */,
 				0DEF03911987666700A3D520 /* SSDeckView.m in Sources */,
 				0D870C011916B6F500F607BD /* WCProductListVC.m in Sources */,
+				0DCFF1531A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0DC6636F1959ECCB009A6078 /* SSMainVC.m in Sources */,
 				0D2E7CCA18538188000C7D67 /* SSAddressField.m in Sources */,
 				0D2E7CCB18538188000C7D67 /* SSRoundTextView.m in Sources */,
@@ -11523,7 +11556,6 @@
 				0DF93B4E1930FC230004C049 /* SSValueLabel.m in Sources */,
 				0D1E73B518BA59070082DDF2 /* SSLinePoint.m in Sources */,
 				0D537EDC186FC8FA006B0401 /* SSImagesVC.m in Sources */,
-				0DBC86A3195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D1E73BB18BA59070082DDF2 /* SSRect.m in Sources */,
 				0D870C051916B6F500F607BD /* WCRoasterCell.m in Sources */,
 				0DEF03811987621100A3D520 /* SSDeckViewVC.m in Sources */,
@@ -11539,6 +11571,7 @@
 				0D870F111916C62800F607BD /* SSSettingEditorVC.m in Sources */,
 				0D870C001916B6F500F607BD /* WCMarkerView.m in Sources */,
 				0D870F1D1916C6AF00F607BD /* HTTPConnector.m in Sources */,
+				0DCFF1221A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0D870D611916C06000F607BD /* main.m in Sources */,
 				0D1E73C118BA59070082DDF2 /* SSShape.m in Sources */,
 				0D21713E18564B59009939BC /* SSCalendarCell.m in Sources */,
@@ -11546,6 +11579,7 @@
 				0DF93B571930FDB70004C049 /* SSBooleanEditor.m in Sources */,
 				0D870C031916B6F500F607BD /* WCProductsVC.m in Sources */,
 				0D537EF31874C4BC006B0401 /* SSReferenceEditorVC.m in Sources */,
+				0DCFF1141A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D2E7C82185380B3000C7D67 /* DebugLogger.m in Sources */,
 				0D2E7C83185380B3000C7D67 /* SSBase64.m in Sources */,
 				0D870D6C1916C55A00F607BD /* iCarousel.m in Sources */,
@@ -11556,7 +11590,6 @@
 				0D039BCE18D8A44B00396A1A /* shaderUtil.c in Sources */,
 				0D2E7C86185380B3000C7D67 /* SSKeyChainUtil.m in Sources */,
 				0D2E7C87185380B3000C7D67 /* SSReachability.m in Sources */,
-				0DBC86DB195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0D2E7C88185380B3000C7D67 /* SSTimeUtil.m in Sources */,
 				0D1E73D918BA59070082DDF2 /* Vector.m in Sources */,
 				0DB3B6631A3E891B00C57D96 /* SSConversation.m in Sources */,
@@ -11577,7 +11610,6 @@
 				0D870BFF1916B6F500F607BD /* WCMapTouchView.m in Sources */,
 				0DFD0D3818C95CF400A1F568 /* SSInviteUserVC.m in Sources */,
 				0D870EE71916C62800F607BD /* SSCommonSetupVC.m in Sources */,
-				0DBC86AA195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0D870BFE1916B6F500F607BD /* WCMapMarker.m in Sources */,
 				0D2E7C91185380B3000C7D67 /* SSDatePickerVC.m in Sources */,
 				0DF93B6019311CDB0004C049 /* SSCompanyVC.m in Sources */,
@@ -11683,7 +11715,6 @@
 				0D4253BC18881384006AC83E /* SSAddressField.m in Sources */,
 				0DBD7D32192E443A00678DDE /* SSShadowView.m in Sources */,
 				0D0B5C1218C2B73700E5A2B7 /* SSPagesVC.m in Sources */,
-				0DBC86DC195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0D1792D718EF211F00727312 /* ProgressObserver.m in Sources */,
 				0D870EB81916C5E100F607BD /* SSCommentVC.m in Sources */,
 				0DEF03821987621100A3D520 /* SSDeckViewVC.m in Sources */,
@@ -11691,9 +11722,9 @@
 				0D1E73B618BA59070082DDF2 /* SSLinePoint.m in Sources */,
 				0D039BCF18D8A44B00396A1A /* shaderUtil.c in Sources */,
 				0D4253C518881384006AC83E /* SSGeoCodeUtil.m in Sources */,
+				0DCFF1231A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0D0AB1291980333C000EF898 /* SSMenuVC.m in Sources */,
 				0D1EC3BB195FDEFF00BF5D82 /* SSIconView.m in Sources */,
-				0DBC86A4195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D18ED5D193BE29500C312FD /* LIALinkedInApplication.m in Sources */,
 				0D0AB10D1980333C000EF898 /* SSHighlightsVC.m in Sources */,
 				0D870E8E1916C5E100F607BD /* SSActivityVC.m in Sources */,
@@ -11721,10 +11752,10 @@
 				0D4253D818881384006AC83E /* SSImageViewCell.m in Sources */,
 				0D279785198A0A350058F7D2 /* SSSlideOpenVC.m in Sources */,
 				0D4253D918881384006AC83E /* SSSecurityVC.m in Sources */,
-				0DBC86AB195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0D4253DA18881384006AC83E /* SSFilter.m in Sources */,
 				0D870ECD1916C5E100F607BD /* SSFollowVC.m in Sources */,
 				0D279795198A0D380058F7D2 /* SSSlideView.m in Sources */,
+				0DCFF1151A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D4253DB18881384006AC83E /* SSMarkerView.m in Sources */,
 				0D4253DC18881384006AC83E /* SSAppSetupVC.m in Sources */,
 				0D1E736E18BA59070082DDF2 /* GLPen.m in Sources */,
@@ -11787,6 +11818,7 @@
 				0D870D201916B73400F607BD /* SSTimeSeriesGraphVC.m in Sources */,
 				0D54C96A1944AB7800BF4A70 /* SSOptionsEditor.m in Sources */,
 				0DC6635219576780009A6078 /* SSSlider.m in Sources */,
+				0DCFF1541A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0D42540F18881384006AC83E /* SSConnection.m in Sources */,
 				0D42541018881384006AC83E /* SSCacheManager.m in Sources */,
 				0D42541218881384006AC83E /* SSTweetAdapter.m in Sources */,
@@ -11811,6 +11843,7 @@
 				0D82239518E8816200A928B6 /* SSTexture.m in Sources */,
 				0D82239618E8816200A928B6 /* SSMessagingVC.m in Sources */,
 				0D82239718E8816200A928B6 /* SSMapMarker.m in Sources */,
+				0DCFF1171A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0DD063A41A6ADF1100BA9139 /* SSDataVC.m in Sources */,
 				0D82239818E8816200A928B6 /* SSMapTouchView.m in Sources */,
 				0DEF03AA198770E900A3D520 /* SSSurveyCell.m in Sources */,
@@ -11850,7 +11883,6 @@
 				0D18ED89193BE29500C312FD /* SSLinkedInVC.m in Sources */,
 				0DC663721959ECCB009A6078 /* SSMainVC.m in Sources */,
 				0D8223B118E8816200A928B6 /* SSLinePoint.m in Sources */,
-				0DBC86A6195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D8223B218E8816200A928B6 /* SSImagesVC.m in Sources */,
 				0DD1FAF419247050009DAC4F /* SSProfile4JobVC.m in Sources */,
 				0D870F141916C62800F607BD /* SSSettingEditorVC.m in Sources */,
@@ -11877,10 +11909,10 @@
 				0D870B791916B6DD00F607BD /* SSExperienceVC.m in Sources */,
 				0D8223C818E8816200A928B6 /* SSReferenceEditorVC.m in Sources */,
 				0D870F201916C6AF00F607BD /* HTTPConnector.m in Sources */,
+				0DCFF1561A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0D8223CA18E8816200A928B6 /* DebugLogger.m in Sources */,
 				0D870B941916B6DD00F607BD /* SSJobApp.m in Sources */,
 				0DC663891959EE66009A6078 /* SSLayoutVC.m in Sources */,
-				0DBC86DE195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0D8223CB18E8816200A928B6 /* SSBase64.m in Sources */,
 				0D8223CC18E8816200A928B6 /* SSGeoCodeUtil.m in Sources */,
 				0DC663BD1959FE94009A6078 /* SSPackageEditor.m in Sources */,
@@ -11904,10 +11936,10 @@
 				0DEF03941987666700A3D520 /* SSDeckView.m in Sources */,
 				0D8223DC18E8816200A928B6 /* fileUtil.m in Sources */,
 				0D870B7D1916B6DD00F607BD /* SSResumeVC.m in Sources */,
-				0DBC86AD195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0DC6635419576780009A6078 /* SSSlider.m in Sources */,
 				0D8223DD18E8816200A928B6 /* SSImageEditorVC.m in Sources */,
 				0D8223DE18E8816200A928B6 /* SSMasterDetailsVC.m in Sources */,
+				0DCFF1251A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0D8223DF18E8816200A928B6 /* SSTableLayoutView.m in Sources */,
 				0D8223E018E8816200A928B6 /* SSEntityObject.m in Sources */,
 				0D8223E118E8816200A928B6 /* SSCacheManager.m in Sources */,
@@ -12021,7 +12053,6 @@
 				0D21713C18564B59009939BC /* SSCalendarCell.m in Sources */,
 				0D039BCC18D8A44B00396A1A /* shaderUtil.c in Sources */,
 				0D83F3F51832D80000AFB0E6 /* SSCommonVC.m in Sources */,
-				0DBC86A1195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D870EF31916C62800F607BD /* SSConfigManager.m in Sources */,
 				0D83F3F61832D80000AFB0E6 /* SSGeoCodeUtil.m in Sources */,
 				0DEF03AC198770E900A3D520 /* SSSurveyVC.m in Sources */,
@@ -12077,6 +12108,7 @@
 				0D1792D418EF211F00727312 /* ProgressObserver.m in Sources */,
 				0DEF03A5198770E900A3D520 /* SSSurveyCell.m in Sources */,
 				0D83F40E1832D80000AFB0E6 /* SSProfileVC.m in Sources */,
+				0DCFF1201A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0DC663A71959FD45009A6078 /* SSCategoryWizardVC.m in Sources */,
 				0D1E73B318BA59070082DDF2 /* SSLinePoint.m in Sources */,
 				0D83F4121832D80000AFB0E6 /* SSMapMarker.m in Sources */,
@@ -12089,7 +12121,6 @@
 				0D83F4181832D80000AFB0E6 /* SSDateTextField.m in Sources */,
 				0D83F41B1832D80000AFB0E6 /* SSTableViewVC.m in Sources */,
 				0D83F41C1832D80000AFB0E6 /* SSProfileEditorVC.m in Sources */,
-				0DBC86D9195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0D23C2EF18E8F43300CD5F01 /* SSSearchVC.m in Sources */,
 				0D5602FB18C1B03700DD8905 /* SSColorPickerVC.m in Sources */,
 				0D83F41D1832D80000AFB0E6 /* SSTimeUtil.m in Sources */,
@@ -12110,11 +12141,11 @@
 				0D83F4231832D80000AFB0E6 /* SSConnection.m in Sources */,
 				0DFE57CC18AFD5C000D5EBFA /* SSToolbarView.m in Sources */,
 				0D870F0F1916C62800F607BD /* SSSettingEditorVC.m in Sources */,
-				0DBC86A8195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0DC663841959EE66009A6078 /* SSLayoutVC.m in Sources */,
 				0D83F4241832D80000AFB0E6 /* SSCacheManager.m in Sources */,
 				0D870ECA1916C5E100F607BD /* SSFollowVC.m in Sources */,
 				0DF4581B19885B9100BB8C49 /* SSDeckHolderView.m in Sources */,
+				0DCFF1121A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D60A12418DF9B3900EE73FE /* SSSelection.m in Sources */,
 				0D08BE9F1839C75100B64357 /* SSTextField.m in Sources */,
 				0D83F4251832D80000AFB0E6 /* SSTweetAdapter.m in Sources */,
@@ -12125,6 +12156,7 @@
 				0D83F4271832D80000AFB0E6 /* SSImageView.m in Sources */,
 				0D83F42A1832D80000AFB0E6 /* SSFriendVC.m in Sources */,
 				0D83F42B1832D80000AFB0E6 /* SSStorageManager.m in Sources */,
+				0DCFF1511A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0D870EC31916C5E100F607BD /* SSCommentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -12158,7 +12190,6 @@
 				0DC663601959ECCB009A6078 /* SSContainerVC.m in Sources */,
 				0D83F55C1832E29300AFB0E6 /* SSBase64.m in Sources */,
 				0D870C8D1916B70A00F607BD /* SSApplaticsApp.m in Sources */,
-				0DBC86A9195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0D870C901916B70A00F607BD /* SSMyViewsVC.m in Sources */,
 				0D870CB61916B70A00F607BD /* TreeIconsLV.m in Sources */,
 				0D537EEB1874C477006B0401 /* SSReferenceTextField.m in Sources */,
@@ -12177,12 +12208,12 @@
 				0D26909418ADA50C002C5117 /* SSToggleView.m in Sources */,
 				0D83F5621832E29300AFB0E6 /* SSAddressField.m in Sources */,
 				0DC6636E1959ECCB009A6078 /* SSMainVC.m in Sources */,
+				0DCFF1211A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0DBD7D30192E443A00678DDE /* SSShadowView.m in Sources */,
 				0DF4581C19885B9100BB8C49 /* SSDeckHolderView.m in Sources */,
 				0D0AB1271980333C000EF898 /* SSMenuVC.m in Sources */,
 				0D83F5651832E29300AFB0E6 /* SSCommonVC.m in Sources */,
 				0DFD0D3718C95CF400A1F568 /* SSInviteUserVC.m in Sources */,
-				0DBC86DA195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0D1E73C018BA59070082DDF2 /* SSShape.m in Sources */,
 				0D83F5661832E29300AFB0E6 /* SSGeoCodeUtil.m in Sources */,
 				0D537EDB186FC8FA006B0401 /* SSImagesVC.m in Sources */,
@@ -12208,6 +12239,7 @@
 				0D870F021916C62800F607BD /* SSSettingAttributeEditorVC.m in Sources */,
 				0D1EC3B9195FDEFF00BF5D82 /* SSIconView.m in Sources */,
 				0D870CA61916B70A00F607BD /* SSObjectTypeEditorVC.m in Sources */,
+				0DCFF1521A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0D870D601916C06000F607BD /* main.m in Sources */,
 				0D34042A1879D2AD00D795CA /* SSMessageView.m in Sources */,
 				0D83F56C1832E29300AFB0E6 /* SSDatePickerVC.m in Sources */,
@@ -12239,6 +12271,7 @@
 				0DA2E98B191CB1530086E4B5 /* SSWelcomeVC.m in Sources */,
 				0D870F1C1916C6AF00F607BD /* HTTPConnector.m in Sources */,
 				0D18ED69193BE29500C312FD /* LIALinkedInHttpClient.m in Sources */,
+				0DCFF1131A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D0B5C1018C2B73700E5A2B7 /* SSPagesVC.m in Sources */,
 				0DFE57CD18AFD5C000D5EBFA /* SSToolbarView.m in Sources */,
 				0D23C30618F0595A00CD5F01 /* SSListValueField.m in Sources */,
@@ -12295,7 +12328,6 @@
 				0D83F5901832E29300AFB0E6 /* SSMasterDetailsVC.m in Sources */,
 				0D83F5911832E29300AFB0E6 /* SSConnection.m in Sources */,
 				0D83F5921832E29300AFB0E6 /* SSCacheManager.m in Sources */,
-				0DBC86A2195F07F900540B61 /* AppDelegate.m in Sources */,
 				0D83F5931832E29300AFB0E6 /* SSTweetAdapter.m in Sources */,
 				0D83F5941832E29300AFB0E6 /* SSTableViewCell.m in Sources */,
 				0D83F5951832E29300AFB0E6 /* SSImageView.m in Sources */,
@@ -12360,6 +12392,7 @@
 				0DE0E566189D8CBA00FFC3FB /* SSCommonVC.m in Sources */,
 				0DE0E568189D8CBA00FFC3FB /* SSGeoCodeUtil.m in Sources */,
 				0D051C2218CD1BF600A4766F /* SSSelection.m in Sources */,
+				0DCFF1551A7EAF55008F4B61 /* UserDetailsViewController.m in Sources */,
 				0D0AB1311980333C000EF898 /* SSSpotlightView.m in Sources */,
 				0DF93B591930FDB70004C049 /* SSBooleanEditor.m in Sources */,
 				0DC663631959ECCB009A6078 /* SSContainerVC.m in Sources */,
@@ -12370,6 +12403,7 @@
 				0DE0E56A189D8CBA00FFC3FB /* SSImagesVC.m in Sources */,
 				0D870CF81916B72800F607BD /* SSBooksVC.m in Sources */,
 				0D1E738D18BA59070082DDF2 /* SSAnimiate.m in Sources */,
+				0DCFF1161A7EAF54008F4B61 /* AppDelegate.m in Sources */,
 				0D1E739F18BA59070082DDF2 /* SSEntityObject.m in Sources */,
 				0DE0E56B189D8CBA00FFC3FB /* SSReachability.m in Sources */,
 				0DF4582819896EF100BB8C49 /* SSMyGroupsVC.m in Sources */,
@@ -12414,7 +12448,6 @@
 				0DC4567C18C38F7A00947FA4 /* SSMyProfileVC.m in Sources */,
 				0D06168519339D72004794DF /* SSTransitionStrategy.m in Sources */,
 				0DE0E587189D8CBA00FFC3FB /* SSAddressVC.m in Sources */,
-				0DBC86AC195F07F900540B61 /* FBLoginVC.m in Sources */,
 				0D1E73A518BA59070082DDF2 /* SSGraph.m in Sources */,
 				0DE0E58B189D8CBA00FFC3FB /* SSValueField.m in Sources */,
 				0D0AB10E1980333C000EF898 /* SSHighlightsVC.m in Sources */,
@@ -12433,7 +12466,6 @@
 				0D870CFA1916B72800F607BD /* SSDrawableVC.m in Sources */,
 				0D1E73B118BA59070082DDF2 /* SSLine.m in Sources */,
 				0D1E73C918BA59070082DDF2 /* SSTool.m in Sources */,
-				0DBC86DD195F07F900540B61 /* UserDetailsViewController.m in Sources */,
 				0DE0E59F189D8CBA00FFC3FB /* SSMapMarker.m in Sources */,
 				0D5602FF18C1B03700DD8905 /* SSColorPickerVC.m in Sources */,
 				0D1792D818EF211F00727312 /* ProgressObserver.m in Sources */,
@@ -12457,6 +12489,7 @@
 				0DE0E5B2189D8CBA00FFC3FB /* SSTimeUtil.m in Sources */,
 				0DA2E98E191CB1530086E4B5 /* SSWelcomeVC.m in Sources */,
 				0DE0E5B5189D8CBA00FFC3FB /* SSImageEditorVC.m in Sources */,
+				0DCFF1241A7EAF55008F4B61 /* FBLoginVC.m in Sources */,
 				0DE0E5B6189D8CBA00FFC3FB /* SSValueEditorVC.m in Sources */,
 				0DE0E5B7189D8CBA00FFC3FB /* SSRoundTextView.m in Sources */,
 				0DE0E5B8189D8CBA00FFC3FB /* SSRoundButton.m in Sources */,
@@ -12464,7 +12497,6 @@
 				0DE0E5BF189D8CBA00FFC3FB /* SSConnection.m in Sources */,
 				0DE0E5C0189D8CBA00FFC3FB /* SSCacheManager.m in Sources */,
 				0DE0E5C2189D8CBA00FFC3FB /* SSTweetAdapter.m in Sources */,
-				0DBC86A5195F07F900540B61 /* AppDelegate.m in Sources */,
 				0DE0E5C3189D8CBA00FFC3FB /* SSTableViewCell.m in Sources */,
 				0D54C96B1944AB7800BF4A70 /* SSOptionsEditor.m in Sources */,
 				0DE0E5C8189D8CBA00FFC3FB /* SSImageView.m in Sources */,
@@ -12595,6 +12627,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12619,6 +12652,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12642,6 +12676,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12668,6 +12703,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12706,6 +12742,7 @@
 					"Documents/com~apple~CloudDocs/Private/org.sixstreams/mobileApp",
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12744,6 +12781,7 @@
 					"Documents/com~apple~CloudDocs/Private/org.sixstreams/mobileApp",
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12798,6 +12836,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12857,6 +12896,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12880,6 +12920,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12902,6 +12943,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12924,6 +12966,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12946,6 +12989,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12969,6 +13013,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12992,6 +13037,7 @@
 					/Users/anpwang/Documents/iphoneFramworks,
 					/Users/anpwang/Documents/iPhoneProjects/Chart2D,
 					/Users/anpwang/Documents/github/Chart2D/dependency,
+					/Users/anpwang/Documents/github/Chart2D/org.sixstreams/mobileApp/ParseFacebook,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";

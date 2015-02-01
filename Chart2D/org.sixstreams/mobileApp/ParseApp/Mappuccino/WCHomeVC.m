@@ -159,7 +159,7 @@ static NSString *HOME = @"Home";
     UIViewController *viewController3 = [[WCByNBameVC alloc] initWithNibName:@"WCByNBameVC" bundle:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: HOME
-                                   style: UIBarButtonItemStyleBordered
+                                   style: UIBarButtonItemStylePlain
                                    target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
     [self.navigationController pushViewController:viewController3 animated:YES];
@@ -170,7 +170,7 @@ static NSString *HOME = @"Home";
     UIViewController *viewController3 = [[WCByCityVC alloc] initWithNibName:@"WCByCityVC" bundle:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: HOME
-                                   style: UIBarButtonItemStyleBordered
+                                   style: UIBarButtonItemStylePlain
                                    target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
     [self.navigationController pushViewController:viewController3 animated:YES];
@@ -186,7 +186,7 @@ static NSString *HOME = @"Home";
         
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                        initWithTitle: HOME
-                                       style: UIBarButtonItemStyleBordered
+                                       style: UIBarButtonItemStylePlain
                                        target: nil action: nil];
         [self.navigationItem setBackBarButtonItem: backButton];
         

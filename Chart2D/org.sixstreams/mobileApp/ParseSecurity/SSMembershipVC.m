@@ -237,7 +237,7 @@
             entityEditor.readonly = YES;
             UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                            initWithTitle: @""
-                                           style: UIBarButtonItemStyleBordered
+                                           style: UIBarButtonItemStylePlain
                                            target: nil action: nil];
             
             [self.navigationItem setBackBarButtonItem: backButton];
@@ -308,7 +308,7 @@
     [groups refreshOnSuccess:^(id data) {
         [self.navigationItem setBackBarButtonItem: [[UIBarButtonItem alloc]
                                                     initWithTitle: @""
-                                                    style: UIBarButtonItemStyleBordered
+                                                    style: UIBarButtonItemStylePlain
                                                     target: nil action: nil]];
         [self.navigationController pushViewController:groups animated:YES];
         [self dissmissView:menuView];

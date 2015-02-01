@@ -268,7 +268,7 @@ typedef void (^CallbackBlock)(id entity);
     
     [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc]
                                                initWithTitle: @""
-                                               style: UIBarButtonItemStyleBordered
+                                               style: UIBarButtonItemStylePlain
                                                target: self action: @selector(confirmDone)]];
     
     [self.navigationController pushViewController:entityVC animated:YES];
@@ -357,7 +357,7 @@ typedef void (^CallbackBlock)(id entity);
                 [search refreshOnSuccess:^(id data) {
                     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                                    initWithTitle: @""
-                                                   style: UIBarButtonItemStyleBordered
+                                                   style: UIBarButtonItemStylePlain
                                                    target: nil action: nil];
                     
                     [self.navigationItem setBackBarButtonItem: backButton];
@@ -830,7 +830,7 @@ typedef void (^CallbackBlock)(id entity);
                 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
                 self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                                          initWithImage:[UIImage imageNamed:@"back-arrow"] landscapeImagePhone:[UIImage imageNamed:@"back-arrow"]
-                                                         style: UIBarButtonItemStyleBordered
+                                                         style: UIBarButtonItemStylePlain
                                                          target: self action: @selector(confirmDone)];
             }
         }

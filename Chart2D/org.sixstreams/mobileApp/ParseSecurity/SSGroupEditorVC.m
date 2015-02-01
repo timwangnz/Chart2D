@@ -91,7 +91,7 @@
         
         [self.navigationItem setBackBarButtonItem: [[UIBarButtonItem alloc]
                                                    initWithTitle: @""
-                                                   style: UIBarButtonItemStyleBordered
+                                                   style: UIBarButtonItemStylePlain
                                                     target: nil action: nil]];
          [self.navigationController pushViewController:lov animated:YES];
     } onFailure:^(NSError *error) {

@@ -134,7 +134,7 @@ static NSString *_ACTIVATION_CODE =@"williamchong";
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @"Back"
-                                   style: UIBarButtonItemStyleBordered
+                                   style: UIBarButtonItemStylePlain
                                    target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
     [self.navigationController pushViewController:viewController3 animated:YES];

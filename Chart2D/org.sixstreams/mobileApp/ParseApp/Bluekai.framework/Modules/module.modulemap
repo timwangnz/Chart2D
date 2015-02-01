@@ -1,6 +1,0 @@
-framework module Bluekai {
-  umbrella header "Bluekai.h"
-
-  export *
-  module * { export * }
-}

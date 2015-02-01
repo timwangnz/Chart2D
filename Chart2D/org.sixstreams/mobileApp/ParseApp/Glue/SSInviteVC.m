@@ -108,7 +108,7 @@
     [events refreshOnSuccess:^(id data) {
         [self.navigationItem setBackBarButtonItem: [[UIBarButtonItem alloc]
                                                     initWithTitle: @""
-                                                    style: UIBarButtonItemStyleBordered
+                                                    style: UIBarButtonItemStylePlain
                                                     target: nil action: nil]];
         [self.navigationController pushViewController:events animated:YES];
         
@@ -360,7 +360,7 @@
             [entityEditor updateEntity:data OfType: MEETING_CLASS];
             UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                            initWithTitle: @""
-                                           style: UIBarButtonItemStyleBordered
+                                           style: UIBarButtonItemStylePlain
                                            target: nil action: nil];
             
             [self.navigationItem setBackBarButtonItem: backButton];
