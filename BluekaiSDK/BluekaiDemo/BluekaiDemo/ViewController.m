@@ -9,9 +9,7 @@
 #import "ViewController.h"
 
 #import <AdSupport/AdSupport.h>
-
 #import <Bluekai/Bluekai.h>
-
 
 @interface ViewController ()
 

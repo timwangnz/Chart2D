@@ -21,14 +21,14 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bluekai SDK Demo " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-ds-R07">
                                 <rect key="frame" x="108" y="45" width="469" height="73"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.24971525319999999" green="0.62266857630000005" blue="0.84452745750000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-yb-MdZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-yb-MdZ">
                                 <rect key="frame" x="16" y="133" width="568" height="21"/>
                                 <color key="backgroundColor" red="0.93282577369999997" green="0.93282577369999997" blue="0.93282577369999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.24971525319999999" green="0.62266857630000005" blue="0.84452745750000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -103,6 +103,7 @@
                         <constraints>
                             <constraint firstItem="ekW-dZ-xSb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="160" id="2uM-AI-1pK"/>
                             <constraint firstAttribute="centerX" secondItem="JW6-nj-QaR" secondAttribute="centerX" id="3tb-5Q-Ed8"/>
+                            <constraint firstItem="cNm-yb-MdZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="113" id="MGK-tM-txb"/>
                             <constraint firstAttribute="centerX" secondItem="ekW-dZ-xSb" secondAttribute="centerX" id="dYg-Mb-hcM"/>
                         </constraints>
                     </view>
