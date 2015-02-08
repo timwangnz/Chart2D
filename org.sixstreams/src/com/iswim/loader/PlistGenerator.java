@@ -8,436 +8,441 @@ import java.util.List;
 import java.util.Map;
 
 public class PlistGenerator {
-	public static void main(String[] arg) {
+
+    public static void main(String[] arg) {
 		// readFile("/Users/anpwang/Downloads/national.csv", "national");
-		//readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\junior.txt","cba");
-		// readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\junior.txt",
-		// "junior");
-		// readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\senior.txt","national");
-		// readFile("/Users/anpwang/Downloads/trials.csv", "trials");
-		//readFile("/Users/anpwang/Dropbox/Private/swimmingdata/senior.txt","national");
-		readFile("/Users/anpwang/Dropbox/Private/swimmingdata/junior.txt","junior");
-				// "junior");
-	}
+        //readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\junior.txt","cba");
+        // readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\junior.txt",
+        // "junior");
+        // readFile("C:\\Documents and Settings\\anpwang.anpwang-LAP2\\My Documents\\Dropbox\\Private\\swimmingdata\\senior.txt","national");
+        // readFile("/Users/anpwang/Downloads/trials.csv", "trials");
+        //readFile("/Users/anpwang/Dropbox/Private/swimmingdata/senior.txt","national");
+        readFile("/Users/anpwang/Dropbox/Private/swimmingdata/junior.txt", "junior");
+        // "junior");
+    }
 
-	static void readFile(String fileName, String type) {
-		try {
-			objects.clear();
-			BufferedReader reader = new BufferedReader(new FileReader(fileName));
-			String line = reader.readLine();
-			while (line != null) {
-				line = reader.readLine();
-				if (line != null) {
-					addObject(line.split(","), type);
-				}
-			}
-			// print(type);
-			printEvents(type);
-			// System.err.println(type)
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    static void readFile(String fileName, String type) {
+        try {
+            objects.clear();
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line = reader.readLine();
+            while (line != null) {
+                line = reader.readLine();
+                if (line != null) {
+                    addObject(line.split(","), type);
+                }
+            }
+            // print(type);
+            printEvents(type);
+            // System.err.println(type)
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 
-	static String[] strokes = new String[] { "Free", "Fly", "Back", "Breast",
-			"IM" };
+    static String[] strokes = new String[]{"Free", "Fly", "Back", "Breast",
+        "IM"};
 
-	static void print(String cut) {
-		System.err
-				.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">");
-		System.err.println("<plist version=\"1.0\">");
-		System.err.println("<dict>");
-		for (String stroke : strokes) {
-			System.err.println("<key>" + stroke + "</key>\n<array>");
-			for (Record object : objects) {
-				if (stroke.equals(nameMapping.get(object.style.toLowerCase()))) {
-					System.err.println(object.toString(cut, stroke));
-				}
-			}
-			System.err.println("</array>");
-		}
-		System.err.println("</dict>");
-		System.err.println("</plist>");
-	}
+    static void print(String cut) {
+        System.err
+                .println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">");
+        System.err.println("<plist version=\"1.0\">");
+        System.err.println("<dict>");
+        for (String stroke : strokes) {
+            System.err.println("<key>" + stroke + "</key>\n<array>");
+            for (Record object : objects) {
+                if (stroke.equals(nameMapping.get(object.style.toLowerCase()))) {
+                    System.err.println(object.toString(cut, stroke));
+                }
+            }
+            System.err.println("</array>");
+        }
+        System.err.println("</dict>");
+        System.err.println("</plist>");
+    }
 
-	static void printEvents(String standard) {
-		System.err
-				.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">");
-		System.err.println("<plist version=\"1.0\">");
-		System.err.println("<dict>");
-		for (String stroke : strokes) {
-			System.err.println("<key>" + stroke + "</key>\n<array>");
-			for (Record object : objects) {
-				if (stroke.equals(nameMapping.get(object.style.toLowerCase()))) {
-					System.err.println(object.toEvents(standard));
-				}
-			}
-			System.err.println("</array>");
-		}
-		System.err.println("</dict>");
-		System.err.println("</plist>");
-	}
+    static void printEvents(String standard) {
+        System.err
+                .println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">");
+        System.err.println("<plist version=\"1.0\">");
+        System.err.println("<dict>");
+        for (String stroke : strokes) {
+            System.err.println("<key>" + stroke + "</key>\n<array>");
+            for (Record object : objects) {
+                if (stroke.equals(nameMapping.get(object.style.toLowerCase()))) {
+                    System.err.println(object.toEvents(standard));
+                }
+            }
+            System.err.println("</array>");
+        }
+        System.err.println("</dict>");
+        System.err.println("</plist>");
+    }
 
-	static class JuniorRecord extends Record {
-		String a, b, jo, fw, prt;
+    static class JuniorRecord extends Record {
 
-		JuniorRecord(String[] attrs) {
-			this.course = attrs[0];
-			this.age = attrs[1];
-			this.gender = attrs[2];
-			this.distance = attrs[3];
-			this.style = attrs[4];
+        String a, b, jo, fw, prt;
 
-			if (attrs.length > 9) {
-				this.b = attrs[5];
-				this.a = attrs[6];
-				this.jo = attrs[7];
-				this.fw = attrs[8];
-				this.prt = attrs[9];
-			} else if ("UN08".equals(age)) {
-				this.b = attrs[5];
-				this.a = attrs[6];
-				this.prt = attrs[7];
-			} else if (attrs.length == 6) {
-				this.fw = attrs[5];
-			} else {
-				for (String attr : attrs) {
-					System.err.print(attr + "\t");
-				}
-				System.err.println("");
-			}
-		}
+        JuniorRecord(String[] attrs) {
+            this.course = attrs[0];
+            this.age = attrs[1];
+            this.gender = attrs[2];
+            this.distance = attrs[3];
+            this.style = attrs[4];
 
-		public String toString(String standard, String stroke) {
+            if (attrs.length > 9) {
+                this.b = attrs[5];
+                this.a = attrs[6];
+                this.jo = attrs[7];
+                this.fw = attrs[8];
+                this.prt = attrs[9];
+            } else if ("UN08".equals(age)) {
+                this.b = attrs[5];
+                this.a = attrs[6];
+                this.prt = attrs[7];
+            } else if (attrs.length == 6) {
+                this.fw = attrs[5];
+            } else {
+                for (String attr : attrs) {
+                    System.err.print(attr + "\t");
+                }
+                System.err.println("");
+            }
+        }
 
-			StringBuffer buffer = new StringBuffer(
-					"<key>times</key>\n<array>\n");
-			if (standard.equals("cba")) {
+        public String toString(String standard, String stroke) {
 
-				buffer.append(getPair("B", "" + getTime(b)))
-						.append(getPair("A", "" + getTime(a)))
-						.append(getPair("PRT", "" + getTime(prt)));
+            StringBuffer buffer = new StringBuffer(
+                    "<key>times</key>\n<array>\n");
+            if (standard.equals("cba")) {
 
-			} else {
-				buffer.append(getPair("FW", "" + getTime(fw)))
-						.append(getPair("JO", "" + getTime(jo)))
-						.append(getPair("PRT", "" + getTime(prt)));
-			}
-			time = buffer.append("</array>\n").toString();
-			return super.toString();
-		}
+                buffer.append(getPair("B", "" + getTime(b)))
+                        .append(getPair("A", "" + getTime(a)))
+                        .append(getPair("PRT", "" + getTime(prt)));
 
-		public String toEvents(String standard) {
+            } else {
+                buffer.append(getPair("FW", "" + getTime(fw)))
+                        .append(getPair("JO", "" + getTime(jo)))
+                        .append(getPair("PRT", "" + getTime(prt)));
+            }
+            time = buffer.append("</array>\n").toString();
+            return super.toString();
+        }
 
-			StringBuffer buffer = new StringBuffer(
-					"<key>times</key>\n<array>\n");
+        public String toEvents(String standard) {
 
-			if ("cba".equals(standard)) {
-				if (a != null && b != null && prt != null) {
-					buffer.append(getPair("A", "" + getTime(a)));
-					buffer.append(getPair("B", "" + getTime(b)));
-					buffer.append(getPair("PRT", "" + getTime(prt)));
-				}
-			}
+            StringBuffer buffer = new StringBuffer(
+                    "<key>times</key>\n<array>\n");
 
-			if ("junior".equals(standard)) {
-				buffer.append(getPair("JO", "" + getTime(jo)));
-				buffer.append(getPair("FW", "" + getTime(fw)));
-				buffer.append(getPair("PRT", "" + getTime(prt)));
-			}
+            if ("cba".equals(standard)) {
+                if (a != null && b != null && prt != null) {
+                    buffer.append(getPair("A", "" + getTime(a)));
+                    buffer.append(getPair("B", "" + getTime(b)));
+                    buffer.append(getPair("PRT", "" + getTime(prt)));
+                }
+            }
 
-			time = buffer.append("</array>\n").toString();
-			return super.toEvents(standard);
-		}
-	}
+            if ("junior".equals(standard)) {
+                buffer.append(getPair("JO", "" + getTime(jo)));
+                buffer.append(getPair("FW", "" + getTime(fw)));
+                buffer.append(getPair("PRT", "" + getTime(prt)));
+            }
 
-	static class SeniorRecord extends Record {
-		String i, ii, iii, iv;
+            time = buffer.append("</array>\n").toString();
+            return super.toEvents(standard);
+        }
+    }
 
-		SeniorRecord(String[] attrs) {
-			this.course = attrs[0];
-			this.age = attrs[1];
-			this.gender = attrs[2];
-			this.distance = attrs[3];
-			this.style = attrs[4];
+    static class SeniorRecord extends Record {
 
-			this.i = attrs[5];
-			this.ii = attrs[6];
-			this.iii = attrs[7];
-			this.iv = attrs[8];
-		}
+        String i, ii, iii, iv;
 
-		public String toString() {
-			StringBuffer buffer = new StringBuffer();
-			buffer.append("<dict>\n");
-			buffer.append(super.toString());
-			buffer.append("<key>").append("Style").append("</key>\n");
-			buffer.append("<string>")
-					.append(nameMapping.get(style.toLowerCase()))
-					.append("</string>\n");
+        SeniorRecord(String[] attrs) {
+            this.course = attrs[0];
+            this.age = attrs[1];
+            this.gender = attrs[2];
+            this.distance = attrs[3];
+            this.style = attrs[4];
 
-			buffer.append("<key>").append("Senior1").append("</key>\n");
-			buffer.append("<string>").append(i).append("</string>\n");
-			buffer.append("<key>").append("Seniorii").append("</key>\n");
-			buffer.append("<string>").append(ii).append("</string>\n");
-			buffer.append("<key>").append("Senioriii").append("</key>\n");
-			buffer.append("<string>").append(iii).append("</string>\n");
-			buffer.append("<key>").append("Senioriv").append("</key>\n");
-			buffer.append("<string>").append(iv).append("</string>\n");
+            this.i = attrs[5];
+            this.ii = attrs[6];
+            this.iii = attrs[7];
+            this.iv = attrs[8];
+        }
 
-			buffer.append("</dict>");
-			return buffer.toString();
+        public String toString() {
+            StringBuffer buffer = new StringBuffer();
+            buffer.append("<dict>\n");
+            buffer.append(super.toString());
+            buffer.append("<key>").append("Style").append("</key>\n");
+            buffer.append("<string>")
+                    .append(nameMapping.get(style.toLowerCase()))
+                    .append("</string>\n");
 
-		}
-	}
+            buffer.append("<key>").append("Senior1").append("</key>\n");
+            buffer.append("<string>").append(i).append("</string>\n");
+            buffer.append("<key>").append("Seniorii").append("</key>\n");
+            buffer.append("<string>").append(ii).append("</string>\n");
+            buffer.append("<key>").append("Senioriii").append("</key>\n");
+            buffer.append("<string>").append(iii).append("</string>\n");
+            buffer.append("<key>").append("Senioriv").append("</key>\n");
+            buffer.append("<string>").append(iv).append("</string>\n");
 
-	static class Trials extends Record {
-		Trials(String[] attrs) {
-			this.course = attrs[0];
-			this.age = attrs[1];
-			this.gender = attrs[2];
-			this.distance = attrs[3];
-			this.style = attrs[4];
-			this.time = attrs[5];
-		}
+            buffer.append("</dict>");
+            return buffer.toString();
 
-		public String toString(String style, String stroke) {
+        }
+    }
 
-			StringBuffer buffer = new StringBuffer();
+    static class Trials extends Record {
 
-			buffer.append("<key>").append("time").append("</key>\n");
-			buffer.append("<string>").append(getTime(time))
-					.append("</string>\n");
-			time = buffer.toString();
-			return super.toString();
+        Trials(String[] attrs) {
+            this.course = attrs[0];
+            this.age = attrs[1];
+            this.gender = attrs[2];
+            this.distance = attrs[3];
+            this.style = attrs[4];
+            this.time = attrs[5];
+        }
 
-		}
-	}
+        public String toString(String style, String stroke) {
 
-	static class Record {
-		String course, age, gender, distance, style, time;
+            StringBuffer buffer = new StringBuffer();
 
-		public String toString() {
-			if (time == null || time.length() == 0) {
-				return "";
-			}
-			StringBuffer buffer = new StringBuffer();
-			buffer.append("<dict>\n");
-			buffer.append("<key>").append("c").append("</key>\n");
-			buffer.append("<string>").append(courseName(course))
-					.append("</string>\n");
-			buffer.append("<key>").append("g").append("</key>\n");
-			buffer.append("<string>").append(gender).append("</string>\n");
-			buffer.append("<key>").append("age").append("</key>\n");
-			buffer.append("<string>").append(age).append("</string>\n");
-			buffer.append("<key>").append("d").append("</key>\n");
-			buffer.append("<string>").append(distance).append("</string>\n");
-			buffer.append(time);
-			buffer.append("</dict>\n");
-			return buffer.toString();
-		}
+            buffer.append("<key>").append("time").append("</key>\n");
+            buffer.append("<string>").append(getTime(time))
+                    .append("</string>\n");
+            time = buffer.toString();
+            return super.toString();
 
-		public String toEvents(String standard) {
+        }
+    }
 
-			StringBuffer buffer = new StringBuffer();
-			//for junior standard, we don't have un08
-			if(standard.equals("junior") && age.equals("UN08"))
-			{
-				return "";
-			}
-			
-			buffer.append("<dict>\n");
-			buffer.append("<key>").append("c").append("</key>\n");
-			buffer.append("<string>").append(courseName(course))
-					.append("</string>\n");
-			buffer.append("<key>").append("g").append("</key>\n");
-			buffer.append("<string>").append(gender).append("</string>\n");
-			buffer.append("<key>").append("age").append("</key>\n");
-			buffer.append("<string>").append(age)// ageMapping.get(age))
-					.append("</string>\n");
-			buffer.append("<key>").append("d").append("</key>\n");
-			buffer.append("<string>").append(distance).append("</string>\n");
-			buffer.append(time);
-			buffer.append("</dict>\n");
-			return buffer.toString();
-		}
+    static class Record {
 
-		String toString(String cut, String stroke) {
+        String course, age, gender, distance, style, time;
 
-			StringBuffer buffer = new StringBuffer();
+        public String toString() {
+            if (time == null || time.length() == 0) {
+                return "";
+            }
+            StringBuffer buffer = new StringBuffer();
+            buffer.append("<dict>\n");
+            buffer.append("<key>").append("c").append("</key>\n");
+            buffer.append("<string>").append(courseName(course))
+                    .append("</string>\n");
+            buffer.append("<key>").append("g").append("</key>\n");
+            buffer.append("<string>").append(gender).append("</string>\n");
+            buffer.append("<key>").append("age").append("</key>\n");
+            buffer.append("<string>").append(age).append("</string>\n");
+            buffer.append("<key>").append("d").append("</key>\n");
+            buffer.append("<string>").append(distance).append("</string>\n");
+            buffer.append(time);
+            buffer.append("</dict>\n");
+            return buffer.toString();
+        }
 
-			return buffer.toString();
-		}
-	}
+        public String toEvents(String standard) {
 
-	static String courseName(String course) {
-		if ("m".equals(course)) {
-			return "LCM";
-		}
-		if ("y".equals(course)) {
-			return "SCY";
-		}
-		if ("ym".equals(course)) {
-			return "SCM";
-		}
-		return "SCY";
-	}
+            StringBuffer buffer = new StringBuffer();
+            //for junior standard, we don't have un08
+            if (standard.equals("junior") && age.equals("UN08")) {
+                return "";
+            }
 
-	static class NationalRecord extends Record {
-		String national, jNational, sectional, nationalBonus, jNationalBonus;
+            buffer.append("<dict>\n");
+            buffer.append("<key>").append("c").append("</key>\n");
+            buffer.append("<string>").append(courseName(course))
+                    .append("</string>\n");
+            buffer.append("<key>").append("g").append("</key>\n");
+            buffer.append("<string>").append(gender).append("</string>\n");
+            buffer.append("<key>").append("age").append("</key>\n");
+            buffer.append("<string>").append(age)// ageMapping.get(age))
+                    .append("</string>\n");
+            buffer.append("<key>").append("d").append("</key>\n");
+            buffer.append("<string>").append(distance).append("</string>\n");
+            buffer.append(time);
+            buffer.append("</dict>\n");
+            return buffer.toString();
+        }
 
-		NationalRecord(String[] attrs, boolean bonus) {
-			this.course = attrs[0];
-			this.age = attrs[1];
-			if (bonus) {
-				this.age = "Bonus";
-			}
-			this.gender = attrs[2];
-			this.distance = attrs[3];
-			this.style = attrs[4];
+        String toString(String cut, String stroke) {
 
-			if (attrs.length > 9) {
-				
+            StringBuffer buffer = new StringBuffer();
 
-					this.national = attrs[5];
-					this.nationalBonus = attrs[6];
-					this.jNational = attrs[7];
-					this.jNationalBonus = attrs[8];
-					this.sectional = attrs[9];
-				
-			}
+            return buffer.toString();
+        }
+    }
 
-		}
+    static String courseName(String course) {
+        if ("m".equals(course)) {
+            return "LCM";
+        }
+        if ("y".equals(course)) {
+            return "SCY";
+        }
+        if ("ym".equals(course)) {
+            return "SCM";
+        }
+        return "SCY";
+    }
 
-		public String toEvents(String standard) {
-			if (!age.equals("Bonus")) {
-				StringBuffer buffer = new StringBuffer(
-						"<key>times</key>\n<array>\n");
-				buffer.append(getPair("National", "" + getTime(national)))
-						.append(getPair("JrNat", "" + getTime(jNational)))
-						.append(getPair("Sectoinal", "" + getTime(sectional)));
+    static class NationalRecord extends Record {
 
-				time = buffer.append("</array>\n").toString();
-			} else {
-				StringBuffer buffer = new StringBuffer("<key>times</key>\n<array>\n")
+        String national, jNational, sectional, nationalBonus, jNationalBonus;
 
-				.append(getPair("Sectoinal", "" + getTime(sectional)));
-				buffer.append(getPair("National", "" + getTime(nationalBonus)))
-						.append(getPair("JrNat", "" + getTime(jNationalBonus)));
+        NationalRecord(String[] attrs, boolean bonus) {
+            this.course = attrs[0];
+            this.age = attrs[1];
+            if (bonus) {
+                this.age = "Bonus";
+            }
+            this.gender = attrs[2];
+            this.distance = attrs[3];
+            this.style = attrs[4];
 
-				time = buffer.append("</array>\n").toString();
-			}
-			return super.toEvents(standard);
+            if (attrs.length > 9) {
 
-		}
+                this.national = attrs[5];
+                this.nationalBonus = attrs[6];
+                this.jNational = attrs[7];
+                this.jNationalBonus = attrs[8];
+                this.sectional = attrs[9];
 
-		public String toString(String style, String cut) {
-			StringBuffer buffer = new StringBuffer(
-					"<key>times</key>\n<array>\n");
-			buffer.append(getPair("National", "" + getTime(national)))
-					.append(getPair("JrNat", "" + getTime(jNational)))
-					.append(getPair("Sectoinal", "" + getTime(sectional)));
+            }
 
-			time = buffer.append("</array>\n").toString();
+        }
 
-			return super.toString();
+        public String toEvents(String standard) {
+            if (!age.equals("Bonus")) {
+                StringBuffer buffer = new StringBuffer(
+                        "<key>times</key>\n<array>\n");
+                buffer.append(getPair("National", "" + getTime(national)))
+                        .append(getPair("JrNat", "" + getTime(jNational)))
+                        .append(getPair("Sectoinal", "" + getTime(sectional)));
 
-		}
+                time = buffer.append("</array>\n").toString();
+            } else {
+                StringBuffer buffer = new StringBuffer("<key>times</key>\n<array>\n")
+                        .append(getPair("Sectoinal", "" + getTime(sectional)));
+                buffer.append(getPair("National", "" + getTime(nationalBonus)))
+                        .append(getPair("JrNat", "" + getTime(jNationalBonus)));
 
-		public String toString() {
-			StringBuffer buffer = new StringBuffer();
-			buffer.append(super.toString());
-			buffer.append("<key>").append("Style").append("</key>\n");
-			buffer.append("<string>")
-					.append(nameMapping.get(style.toLowerCase()))
-					.append("</string>\n");
-			buffer.append("<key>").append("National").append("</key>\n");
-			buffer.append("<string>").append(national).append("</string>\n");
-			buffer.append("<key>").append("jNational").append("</key>\n");
-			buffer.append("<string>").append(jNational).append("</string>\n");
-			buffer.append("<key>").append("Sectional").append("</key>\n");
-			buffer.append("<string>").append(sectional).append("</string>\n");
-			buffer.append("</dict>");
-			return buffer.toString();
-		}
-	}
+                time = buffer.append("</array>\n").toString();
+            }
+            return super.toEvents(standard);
 
-	static StringBuffer getPair(String key, String value) {
-		StringBuffer sb = new StringBuffer("<dict>\n<key>name</key>\n<string>")
-				.append(key).append("</string>\n")
-				.append("<key>time</key>\n<string>").append(value)
-				.append("</string>\n</dict>\n");
-		return sb;
-	}
+        }
 
-	static int getTime(String time) {
-		if (time == null) {
-			return 0;
-		}
-		time = time.trim();
-		if (time.length() == 0) {
-			return 0;
-		}
-		String[] splitted = time.split(":");
-		if (splitted.length == 2) {
-			int min = 0;
-			if (splitted[0].length() > 0) {
-				min = Integer.parseInt(splitted[0]);
-			}
-			splitted = splitted[1].split("\\.");
-			int sec = Integer.parseInt(splitted[0]);
-			int hundredthsec = Integer.parseInt(splitted[1]);
-			return min * 60000 + sec * 1000 + hundredthsec * 10;
-		} else {
-			int min = 0;
-			splitted = splitted[0].split("\\.");
-			int sec = Integer.parseInt(splitted[0]);
-			int hundredthsec = Integer.parseInt(splitted[1]);
-			return min * 60000 + sec * 1000 + hundredthsec * 10;
-		}
+        public String toString(String style, String cut) {
+            StringBuffer buffer = new StringBuffer(
+                    "<key>times</key>\n<array>\n");
+            buffer.append(getPair("National", "" + getTime(national)))
+                    .append(getPair("JrNat", "" + getTime(jNational)))
+                    .append(getPair("Sectoinal", "" + getTime(sectional)));
 
-	}
+            time = buffer.append("</array>\n").toString();
 
-	static Map<String, String> nameMapping = new HashMap<String, String>();
-	static {
-		nameMapping.put("fl", "Fly");
-		nameMapping.put("br", "Breast");
-		nameMapping.put("bk", "Back");
-		nameMapping.put("fr", "Free Relay");
-		nameMapping.put("mr", "Medley Relay");
-		nameMapping.put("im", "IM");
-		nameMapping.put("fly", "Fly");
-		nameMapping.put("breast", "Breast");
-		nameMapping.put("back", "Back");
-		nameMapping.put("free", "Free");
-	}
-	static Map<String, String> ageMapping = new HashMap<String, String>();
-	static {
-		ageMapping.put("8", "8 &amp; Under");
-		ageMapping.put("9", "9 - 10");
-		ageMapping.put("11", "11 - 12");
-		ageMapping.put("13", "13 - 14");
-		ageMapping.put("15", "15 - 16");
-		ageMapping.put("17", "17 - 18");
-		ageMapping.put("18", "Bonus");
-		ageMapping.put("19", "Senior");
-	}
-	static List<Record> objects = new ArrayList<Record>();
+            return super.toString();
 
-	static void addObject(String[] object, String type) {
-		if (type.equals("senior")) {
-			objects.add(new SeniorRecord(object));
-		} else if (type.equals("cba")) {
-			objects.add(new JuniorRecord(object));
-		} else if (type.equals("junior")) {
-			objects.add(new JuniorRecord(object));
-		} else if (type.equals("national")) {
+        }
 
-			objects.add(new NationalRecord(object, false));
-			objects.add(new NationalRecord(object, true));
-		} else if (type.equals("trials")) {
-			objects.add(new Trials(object));
-		}
-	}
+        public String toString() {
+            StringBuffer buffer = new StringBuffer();
+            buffer.append(super.toString());
+            buffer.append("<key>").append("Style").append("</key>\n");
+            buffer.append("<string>")
+                    .append(nameMapping.get(style.toLowerCase()))
+                    .append("</string>\n");
+            buffer.append("<key>").append("National").append("</key>\n");
+            buffer.append("<string>").append(national).append("</string>\n");
+            buffer.append("<key>").append("jNational").append("</key>\n");
+            buffer.append("<string>").append(jNational).append("</string>\n");
+            buffer.append("<key>").append("Sectional").append("</key>\n");
+            buffer.append("<string>").append(sectional).append("</string>\n");
+            buffer.append("</dict>");
+            return buffer.toString();
+        }
+    }
+
+    static StringBuffer getPair(String key, String value) {
+        StringBuffer sb = new StringBuffer("<dict>\n<key>name</key>\n<string>")
+                .append(key).append("</string>\n")
+                .append("<key>time</key>\n<string>").append(value)
+                .append("</string>\n</dict>\n");
+        return sb;
+    }
+
+    static int getTime(String time) {
+        if (time == null) {
+            return 0;
+        }
+        time = time.trim();
+        if (time.length() == 0) {
+            return 0;
+        }
+        String[] splitted = time.split(":");
+        if (splitted.length == 2) {
+            int min = 0;
+            if (splitted[0].length() > 0) {
+                min = Integer.parseInt(splitted[0]);
+            }
+            splitted = splitted[1].split("\\.");
+            int sec = Integer.parseInt(splitted[0]);
+            int hundredthsec = Integer.parseInt(splitted[1]);
+            return min * 60000 + sec * 1000 + hundredthsec * 10;
+        } else {
+            int min = 0;
+            splitted = splitted[0].split("\\.");
+            int sec = Integer.parseInt(splitted[0]);
+            int hundredthsec = Integer.parseInt(splitted[1]);
+            return min * 60000 + sec * 1000 + hundredthsec * 10;
+        }
+
+    }
+
+    static Map<String, String> nameMapping = new HashMap<String, String>();
+
+    static {
+        nameMapping.put("fl", "Fly");
+        nameMapping.put("br", "Breast");
+        nameMapping.put("bk", "Back");
+        nameMapping.put("fr", "Free Relay");
+        nameMapping.put("mr", "Medley Relay");
+        nameMapping.put("im", "IM");
+        nameMapping.put("fly", "Fly");
+        nameMapping.put("breast", "Breast");
+        nameMapping.put("back", "Back");
+        nameMapping.put("free", "Free");
+    }
+    static Map<String, String> ageMapping = new HashMap<String, String>();
+
+    static {
+        ageMapping.put("8", "8 &amp; Under");
+        ageMapping.put("9", "9 - 10");
+        ageMapping.put("11", "11 - 12");
+        ageMapping.put("13", "13 - 14");
+        ageMapping.put("15", "15 - 16");
+        ageMapping.put("17", "17 - 18");
+        ageMapping.put("18", "Bonus");
+        ageMapping.put("19", "Senior");
+    }
+    static List<Record> objects = new ArrayList<Record>();
+
+    static void addObject(String[] object, String type) {
+        if (type.equals("senior")) {
+            objects.add(new SeniorRecord(object));
+        } else if (type.equals("cba")) {
+            objects.add(new JuniorRecord(object));
+        } else if (type.equals("junior")) {
+            objects.add(new JuniorRecord(object));
+        } else if (type.equals("national")) {
+
+            objects.add(new NationalRecord(object, false));
+            objects.add(new NationalRecord(object, true));
+        } else if (type.equals("trials")) {
+            objects.add(new Trials(object));
+        }
+    }
 }

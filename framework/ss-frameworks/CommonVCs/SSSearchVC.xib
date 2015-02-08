@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSSearchVC">
+            <connections>
+                <outlet property="btnCancel" destination="Mav-tu-SC0" id="O6O-cc-IDH"/>
+                <outlet property="dataView" destination="5" id="WiP-D8-LgJ"/>
+                <outlet property="pulldownHandle" destination="Kl9-tV-t3v" id="w97-S2-G2M"/>
+                <outlet property="searchBar" destination="9lC-1a-EsJ" id="5Ox-UW-ZSw"/>
+                <outlet property="searchBarView" destination="zZy-gQ-84z" id="KcR-ph-uh7"/>
+                <outlet property="searchDisplayController" destination="cyz-CB-6ka" id="GrX-01-kSB"/>
+                <outlet property="view" destination="1" id="by0-nB-vaE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="601"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="601"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <color key="sectionIndexTrackingBackgroundColor" red="0.91871776400000005" green="0.91871776400000005" blue="0.91871776400000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6"/>
+                        <outlet property="delegate" destination="-1" id="7"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kl9-tV-t3v" customClass="SSRoundButton">
+                    <rect key="frame" x="116" y="-8" width="88" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
+                    <state key="normal" title="Filters">
+                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="toggleFilters" destination="-1" eventType="touchUpInside" id="dvf-nn-VHx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="zZy-gQ-84z" userLabel="Search Bar View">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" id="9lC-1a-EsJ">
+                    <rect key="frame" x="0.0" y="0.0" width="339" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" red="0.95911711170000002" green="0.76831962220000005" blue="0.078136986019999993" alpha="1" colorSpace="calibratedRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kYG-Ae-4IL"/>
+                    </connections>
+                </searchBar>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mav-tu-SC0">
+                    <rect key="frame" x="272" y="7" width="67" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelSearch:" destination="-1" eventType="touchUpInside" id="2nU-rl-hyR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <searchDisplayController id="E57-ys-7zl">
+            <connections>
+                <outlet property="delegate" destination="-1" id="eip-i1-ICk"/>
+                <outlet property="searchContentsController" destination="-1" id="0Oy-ub-LGK"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="hCX-zO-NBQ"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="qUW-L9-PtB"/>
+            </connections>
+        </searchDisplayController>
+        <searchDisplayController id="cyz-CB-6ka">
+            <connections>
+                <outlet property="delegate" destination="-1" id="UXk-qU-PWB"/>
+                <outlet property="searchContentsController" destination="-1" id="vWR-VW-U0F"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="NXb-ss-bpN"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="vXe-YC-XYf"/>
+            </connections>
+        </searchDisplayController>
+        <tapGestureRecognizer id="eeM-TM-zK2">
+            <connections>
+                <action selector="showFilters:" destination="-1" id="IqX-YU-gsY"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

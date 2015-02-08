@@ -2626,14 +2626,12 @@
 		0D257DB01A7EDFC80087E51B /* CreateGroup_document_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729B1A7EDFC70087E51B /* CreateGroup_document_1.pdf */; };
 		0D257DB11A7EDFC80087E51B /* CreateGroup_document_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729B1A7EDFC70087E51B /* CreateGroup_document_1.pdf */; };
 		0D257DB21A7EDFC80087E51B /* CreateGroup_document_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729B1A7EDFC70087E51B /* CreateGroup_document_1.pdf */; };
-		0D257DB31A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB41A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB51A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB61A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB71A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB81A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DB91A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729C1A7EDFC70087E51B /* group_08242014.jpg */; };
-		0D257DBA1A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729E1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DBB1A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729E1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DBC1A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729E1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257DBD1A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D25729E1A7EDFC70087E51B /* group_08242014.jpg */; };
@@ -2934,7 +2932,6 @@
 		0D257EE41A7EDFC80087E51B /* PageGroup_ProfilePicX2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572C91A7EDFC70087E51B /* PageGroup_ProfilePicX2.png */; };
 		0D257EE51A7EDFC80087E51B /* PageGroup_ProfilePicX2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572C91A7EDFC70087E51B /* PageGroup_ProfilePicX2.png */; };
 		0D257EE61A7EDFC80087E51B /* PageGroup_ProfilePicX2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572C91A7EDFC70087E51B /* PageGroup_ProfilePicX2.png */; };
-		0D257EE71A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572CB1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257EE81A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572CB1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257EE91A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572CB1A7EDFC70087E51B /* group_08242014.jpg */; };
 		0D257EEA1A7EDFC80087E51B /* group_08242014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D2572CB1A7EDFC70087E51B /* group_08242014.jpg */; };
@@ -8459,7 +8456,6 @@
 				0DC13E8219B04EB500F95A1F /* editBottom_document.pdf in Resources */,
 				0D257B051A7EDFC80087E51B /* 196-radiation.png in Resources */,
 				0D870AF81916B6BE00F607BD /* icon_mapit.png in Resources */,
-				0D257DB31A7EDFC80087E51B /* group_08242014.jpg in Resources */,
 				0D870AE51916B6BE00F607BD /* icon04.png in Resources */,
 				0D870B0C1916B6BE00F607BD /* sub02_01.png in Resources */,
 				0D870ADE1916B6BE00F607BD /* today-32.png in Resources */,
@@ -8730,7 +8726,6 @@
 				0DC13EB019B04EB500F95A1F /* PageSetting_TopNav.png in Resources */,
 				0D25747C1A7EDFC70087E51B /* Shader.fsh in Resources */,
 				0D870ABB1916B6BE00F607BD /* browsev04_bg-service.png in Resources */,
-				0D257DBA1A7EDFC80087E51B /* group_08242014.jpg in Resources */,
 				0D25F07B19AC32FD00DC5408 /* ProximaNova-Regular.ttf in Resources */,
 				0D65F03F19AED94A000D8F8D /* PageEventType_mealsX2.png in Resources */,
 				0D25778C1A7EDFC70087E51B /* SSLayoutVC.xib in Resources */,
@@ -9061,7 +9056,6 @@
 				0D257CB01A7EDFC80087E51B /* 76-baby.png in Resources */,
 				0D2575F61A7EDFC70087E51B /* filterIcon.png in Resources */,
 				0D2577B61A7EDFC70087E51B /* back-arrow.png in Resources */,
-				0D257EE71A7EDFC80087E51B /* group_08242014.jpg in Resources */,
 				0D870ABA1916B6BE00F607BD /* browsev04_bg-school.png in Resources */,
 				0D257B591A7EDFC80087E51B /* 27-planet.png in Resources */,
 				0D65F05819AED94A000D8F8D /* PageEvent_Search.jpg in Resources */,
@@ -12702,12 +12696,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(USER_LIBRARY_DIR)/Mobile",
-					"$(PROJECT_DIR)/../../../dependency",
-					"$(PROJECT_DIR)/Security/ParseFacebook",
-					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../dependency";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
@@ -12726,12 +12715,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(USER_LIBRARY_DIR)/Mobile",
-					"$(PROJECT_DIR)/../../../dependency",
-					"$(PROJECT_DIR)/Security/ParseFacebook",
-					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../dependency";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";

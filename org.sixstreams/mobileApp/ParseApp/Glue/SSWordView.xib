@@ -47,13 +47,14 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="meaning" destination="g2e-V8-czy" id="rXF-6z-6T7"/>
                 <outlet property="sample" destination="5je-3F-fU1" id="2Ve-42-IiR"/>
                 <outlet property="type" destination="5SO-yG-aLQ" id="60v-RD-rMe"/>
                 <outlet property="word" destination="ozN-v3-kGQ" id="Cyb-zS-bnF"/>
             </connections>
-            <point key="canvasLocation" x="21" y="308"/>
+            <point key="canvasLocation" x="76" y="327"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

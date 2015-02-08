@@ -20,6 +20,7 @@ public interface Crawlable
    /**
     * Returns indexable document for a given doc id.
     * @param docId document id of an indexable document.
+     * @return Indexable Document
     */
    IndexableDocument getDocument(String docId);
 

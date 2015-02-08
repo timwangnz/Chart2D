@@ -1,71 +1,61 @@
 package com.iswim.model;
- 
 
 import org.sixstreams.search.data.java.annotations.Searchable;
 import org.sixstreams.search.data.java.annotations.SearchableAttribute;
 import org.sixstreams.social.Person;
- 
+
 @Searchable(title = "firstName")
-public class Swimmer extends Person
-{
+public class Swimmer extends Person {
 
-	@SearchableAttribute(facetName="club", facetPath="club")
-	private String club;
+    @SearchableAttribute(facetName = "club", facetPath = "club")
+    private String club;
 
-	@SearchableAttribute
-	private String LSC;
+    @SearchableAttribute
+    private String LSC;
 
-	@SearchableAttribute
-	private String swimmerUSSNo;
+    @SearchableAttribute
+    private String swimmerUSSNo;
 
-	@SearchableAttribute
-	private String group;
-	public Swimmer()
-	{
-		
-	}
-	public Swimmer(String name)
-	{
-		super(name);
-	}
+    @SearchableAttribute
+    private String group;
 
-	public String getLSC()
-	{
-		return LSC;
-	}
+    public Swimmer() {
 
-	public void setLSC(String lSC)
-	{
-		LSC = lSC;
-	}
+    }
 
-	public String getSwimmerUSSNo()
-	{
-		return swimmerUSSNo;
-	}
+    public Swimmer(String name) {
+        super(name);
+    }
 
-	public void setSwimmerUSSNo(String swimmerUSSNo)
-	{
-		this.swimmerUSSNo = swimmerUSSNo;
-	}
+    public String getLSC() {
+        return LSC;
+    }
 
-	public void setClub(String club)
-	{
-		this.club = club;
-	}
+    public void setLSC(String lSC) {
+        LSC = lSC;
+    }
 
-	public String getClub()
-	{
-		return club;
-	}
+    public String getSwimmerUSSNo() {
+        return swimmerUSSNo;
+    }
 
-	public void setGroup(String group)
-	{
-		this.group = group;
-	}
+    public void setSwimmerUSSNo(String swimmerUSSNo) {
+        this.swimmerUSSNo = swimmerUSSNo;
+    }
 
-	public String getGroup()
-	{
-		return group;
-	}
+    public void setClub(String club) {
+        this.club = club;
+    }
+
+    public String getClub() {
+        return club;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public String getGroup() {
+        return group;
+    }
 }

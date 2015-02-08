@@ -111,7 +111,7 @@
 #pragma page control
  
 
-- (int) numberOfPagesFor: (SSPagesVC* )pageControl
+- (NSUInteger) numberOfPagesFor: (SSPagesVC* )pageControl
 {
      return [categoryViews count];
 }
@@ -121,7 +121,7 @@
      return [categoryViews objectAtIndex:page];
 }
 
-- (void) pagesVC:(id)pageControl didChangeTo :(int) page
+- (void) pagesVC:(id)pageControl didChangeTo :(NSUInteger) page
 {
      if (currentPage == page) {
           return;

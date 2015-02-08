@@ -15,10 +15,10 @@ public interface Indexer
 
 
    /**
-    * Indexs a document.
+    * Indexes a document.
     *
-    * @param searchContext crawl time context.
     * @param document to be indexed.
+     * @throws org.sixstreams.search.IndexingException
     */
    void indexDocument(IndexableDocument document)
       throws IndexingException;
@@ -29,18 +29,21 @@ public interface Indexer
    /**
     * Sets Searchable Object for this indexer
     * @param searchableObject
+     * @throws org.sixstreams.search.IndexingException
     */
    void setSearchableObject(SearchableObject searchableObject)
       throws IndexingException;
 
    /**
     * Closes the indexer. Clean up call after indexing.
+     * @throws org.sixstreams.search.IndexingException
     */
    void close()
       throws IndexingException;
 
    /**
     * Creates an index store.
+     * @throws org.sixstreams.search.IndexingException
     */
    void createIndex()
       throws IndexingException;

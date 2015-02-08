@@ -18,7 +18,7 @@ public abstract class AbstractDefaultContext
    protected static Logger sLogger = Logger.getLogger(AbstractDefaultContext.class.getName());
 
    /**
-    * Default Constrcutor.
+    * Default Constructor.
     */
    public AbstractDefaultContext()
    {

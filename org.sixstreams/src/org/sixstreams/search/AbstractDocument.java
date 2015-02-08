@@ -15,7 +15,7 @@ import org.sixstreams.search.meta.SearchableObject;
 
 
 /**
- * This class implements default methods requrired by Document. It should be extended
+ * This class implements default methods required by Document. It should be extended
  * by search engine specific implementations to implement IndexableDocument and
  * IndexedDocument.
  *

@@ -29,7 +29,7 @@ typedef NSUInteger Graph2DCursorType;
 //how to draw the grid
 @property (strong, nonatomic) Graph2DGridStyle *gridStyle;
 
-//this is default chart style for all the series in the chart
+//this is the default chart style for all the series in the chart
 //one can override this by changing the style from
 //delegate call to get series style
 //refer to Graph2DSeriesStyle
@@ -41,9 +41,10 @@ typedef NSUInteger Graph2DCursorType;
 //min and max value used to scale the chart.
 //when autoscale flag is on, these values are calculated based on the data
 //set
-//if you want to manually control the scale, set these values and autoscale to be NO
+//if you want to manually control the scale, set these values and autoscale to NO
 @property (nonatomic) CGFloat yMin;
 @property (nonatomic) CGFloat yMax;
+
 //This flag indicates if the chart should be automatically scaled based on data set
 //default value is YES
 @property (nonatomic) BOOL autoScale;
