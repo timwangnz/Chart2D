@@ -219,6 +219,7 @@
         
         [self addView:item inView:view withAttr:TITLE at:1];
         [self addView:item inView:view withAttr:USER at:2];
+        view.backgroundColor = [UIColor colorWithRed:0.9 green:0.90 blue:0.9 alpha:0.6];
     }
     else
     {

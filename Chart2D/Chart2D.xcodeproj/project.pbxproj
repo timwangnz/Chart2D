@@ -28,37 +28,37 @@
 		0D0700941A75BE2B00CCBCA8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0700931A75BE2B00CCBCA8 /* GLKit.framework */; };
 		0D0700961A75BF0700CCBCA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0700951A75BF0700CCBCA8 /* CoreImage.framework */; };
 		0D0700981A75C0CC00CCBCA8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0700971A75C0CC00CCBCA8 /* QuartzCore.framework */; };
-		0DDEC96B1A75DE8600B3E212 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEC94B1A75DE8600B3E212 /* Info.plist */; };
-		0DDEC96C1A75DE8600B3E212 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC94C1A75DE8600B3E212 /* README.md */; };
-		0DDEC96D1A75DE8600B3E212 /* Chart2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC94E1A75DE8600B3E212 /* Chart2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC96E1A75DE8600B3E212 /* Graph2DArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC94F1A75DE8600B3E212 /* Graph2DArea.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC96F1A75DE8600B3E212 /* Graph2DArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9501A75DE8600B3E212 /* Graph2DArea.m */; };
-		0DDEC9701A75DE8600B3E212 /* Graph2DAxisStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9511A75DE8600B3E212 /* Graph2DAxisStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9711A75DE8600B3E212 /* Graph2DAxisStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9521A75DE8600B3E212 /* Graph2DAxisStyle.m */; };
-		0DDEC9721A75DE8600B3E212 /* Graph2DChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9531A75DE8600B3E212 /* Graph2DChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9731A75DE8600B3E212 /* Graph2DChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9541A75DE8600B3E212 /* Graph2DChartView.m */; };
-		0DDEC9741A75DE8600B3E212 /* Graph2DDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9551A75DE8600B3E212 /* Graph2DDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9751A75DE8600B3E212 /* Graph2DFillStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9561A75DE8600B3E212 /* Graph2DFillStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9761A75DE8600B3E212 /* Graph2DFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9571A75DE8600B3E212 /* Graph2DFillStyle.m */; };
-		0DDEC9771A75DE8600B3E212 /* Graph2DGridStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9581A75DE8600B3E212 /* Graph2DGridStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9781A75DE8600B3E212 /* Graph2DGridStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9591A75DE8600B3E212 /* Graph2DGridStyle.m */; };
-		0DDEC9791A75DE8600B3E212 /* Graph2DLineStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC95A1A75DE8600B3E212 /* Graph2DLineStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC97A1A75DE8600B3E212 /* Graph2DLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC95B1A75DE8600B3E212 /* Graph2DLineStyle.m */; };
-		0DDEC97B1A75DE8600B3E212 /* Graph2DPieChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC95C1A75DE8600B3E212 /* Graph2DPieChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC97C1A75DE8600B3E212 /* Graph2DPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC95D1A75DE8600B3E212 /* Graph2DPieChartView.m */; };
-		0DDEC97D1A75DE8600B3E212 /* Graph2DSeriesStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC95E1A75DE8600B3E212 /* Graph2DSeriesStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC97E1A75DE8600B3E212 /* Graph2DSeriesStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC95F1A75DE8600B3E212 /* Graph2DSeriesStyle.m */; };
-		0DDEC97F1A75DE8600B3E212 /* Graph2DStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9601A75DE8600B3E212 /* Graph2DStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9801A75DE8600B3E212 /* Graph2DStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9611A75DE8600B3E212 /* Graph2DStyle.m */; };
-		0DDEC9811A75DE8600B3E212 /* Graph2DTickStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9621A75DE8600B3E212 /* Graph2DTickStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9821A75DE8600B3E212 /* Graph2DTickStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9631A75DE8600B3E212 /* Graph2DTickStyle.m */; };
-		0DDEC9831A75DE8600B3E212 /* Graph2DView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9641A75DE8600B3E212 /* Graph2DView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9841A75DE8600B3E212 /* Graph2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9651A75DE8600B3E212 /* Graph2DView.m */; };
-		0DDEC9851A75DE8600B3E212 /* Graph2DViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9661A75DE8600B3E212 /* Graph2DViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9861A75DE8600B3E212 /* Graph2DWidgetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9671A75DE8600B3E212 /* Graph2DWidgetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9871A75DE8600B3E212 /* Graph2DWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC9681A75DE8600B3E212 /* Graph2DWidgetView.m */; };
-		0DDEC9881A75DE8600B3E212 /* SSTimeSeriesView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDEC9691A75DE8600B3E212 /* SSTimeSeriesView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDEC9891A75DE8600B3E212 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEC96A1A75DE8600B3E212 /* SSTimeSeriesView.m */; };
+		0D31ACB81A866DE100F8C26C /* Chart2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31AC9B1A866DE100F8C26C /* Chart2D.h */; };
+		0D31ACB91A866DE100F8C26C /* Graph2DArea.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31AC9C1A866DE100F8C26C /* Graph2DArea.h */; };
+		0D31ACBA1A866DE100F8C26C /* Graph2DArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31AC9D1A866DE100F8C26C /* Graph2DArea.m */; };
+		0D31ACBB1A866DE100F8C26C /* Graph2DAxisStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31AC9E1A866DE100F8C26C /* Graph2DAxisStyle.h */; };
+		0D31ACBC1A866DE100F8C26C /* Graph2DAxisStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31AC9F1A866DE100F8C26C /* Graph2DAxisStyle.m */; };
+		0D31ACBD1A866DE100F8C26C /* Graph2DChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA01A866DE100F8C26C /* Graph2DChartView.h */; };
+		0D31ACBE1A866DE100F8C26C /* Graph2DChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACA11A866DE100F8C26C /* Graph2DChartView.m */; };
+		0D31ACBF1A866DE100F8C26C /* Graph2DDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA21A866DE100F8C26C /* Graph2DDataSource.h */; };
+		0D31ACC01A866DE100F8C26C /* Graph2DFillStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA31A866DE100F8C26C /* Graph2DFillStyle.h */; };
+		0D31ACC11A866DE100F8C26C /* Graph2DFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACA41A866DE100F8C26C /* Graph2DFillStyle.m */; };
+		0D31ACC21A866DE100F8C26C /* Graph2DGridStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA51A866DE100F8C26C /* Graph2DGridStyle.h */; };
+		0D31ACC31A866DE100F8C26C /* Graph2DGridStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACA61A866DE100F8C26C /* Graph2DGridStyle.m */; };
+		0D31ACC41A866DE100F8C26C /* Graph2DLineStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA71A866DE100F8C26C /* Graph2DLineStyle.h */; };
+		0D31ACC51A866DE100F8C26C /* Graph2DLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACA81A866DE100F8C26C /* Graph2DLineStyle.m */; };
+		0D31ACC61A866DE100F8C26C /* Graph2DPieChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACA91A866DE100F8C26C /* Graph2DPieChartView.h */; };
+		0D31ACC71A866DE100F8C26C /* Graph2DPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACAA1A866DE100F8C26C /* Graph2DPieChartView.m */; };
+		0D31ACC81A866DE100F8C26C /* Graph2DSeriesStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACAB1A866DE100F8C26C /* Graph2DSeriesStyle.h */; };
+		0D31ACC91A866DE100F8C26C /* Graph2DSeriesStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACAC1A866DE100F8C26C /* Graph2DSeriesStyle.m */; };
+		0D31ACCA1A866DE100F8C26C /* Graph2DStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACAD1A866DE100F8C26C /* Graph2DStyle.h */; };
+		0D31ACCB1A866DE100F8C26C /* Graph2DStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACAE1A866DE100F8C26C /* Graph2DStyle.m */; };
+		0D31ACCC1A866DE100F8C26C /* Graph2DTickStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACAF1A866DE100F8C26C /* Graph2DTickStyle.h */; };
+		0D31ACCD1A866DE100F8C26C /* Graph2DTickStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACB01A866DE100F8C26C /* Graph2DTickStyle.m */; };
+		0D31ACCE1A866DE100F8C26C /* Graph2DView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB11A866DE100F8C26C /* Graph2DView.h */; };
+		0D31ACCF1A866DE100F8C26C /* Graph2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACB21A866DE100F8C26C /* Graph2DView.m */; };
+		0D31ACD01A866DE100F8C26C /* Graph2DViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB31A866DE100F8C26C /* Graph2DViewDelegate.h */; };
+		0D31ACD11A866DE100F8C26C /* Graph2DWidgetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB41A866DE100F8C26C /* Graph2DWidgetView.h */; };
+		0D31ACD21A866DE100F8C26C /* Graph2DWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */; };
+		0D31ACD31A866DE100F8C26C /* SSTimeSeriesView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB61A866DE100F8C26C /* SSTimeSeriesView.h */; };
+		0D31ACD41A866DE100F8C26C /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACB71A866DE100F8C26C /* SSTimeSeriesView.m */; };
+		0DAD4BFC1A866C46000C51FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DAD4BFA1A866C46000C51FE /* Info.plist */; };
+		0DAD4BFD1A866C46000C51FE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4BFB1A866C46000C51FE /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,37 +70,37 @@
 		0D0700931A75BE2B00CCBCA8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		0D0700951A75BF0700CCBCA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		0D0700971A75C0CC00CCBCA8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0DDEC94B1A75DE8600B3E212 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DDEC94C1A75DE8600B3E212 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0DDEC94E1A75DE8600B3E212 /* Chart2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chart2D.h; sourceTree = "<group>"; };
-		0DDEC94F1A75DE8600B3E212 /* Graph2DArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DArea.h; sourceTree = "<group>"; };
-		0DDEC9501A75DE8600B3E212 /* Graph2DArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DArea.m; sourceTree = "<group>"; };
-		0DDEC9511A75DE8600B3E212 /* Graph2DAxisStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DAxisStyle.h; sourceTree = "<group>"; };
-		0DDEC9521A75DE8600B3E212 /* Graph2DAxisStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DAxisStyle.m; sourceTree = "<group>"; };
-		0DDEC9531A75DE8600B3E212 /* Graph2DChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DChartView.h; sourceTree = "<group>"; };
-		0DDEC9541A75DE8600B3E212 /* Graph2DChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DChartView.m; sourceTree = "<group>"; };
-		0DDEC9551A75DE8600B3E212 /* Graph2DDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DDataSource.h; sourceTree = "<group>"; };
-		0DDEC9561A75DE8600B3E212 /* Graph2DFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DFillStyle.h; sourceTree = "<group>"; };
-		0DDEC9571A75DE8600B3E212 /* Graph2DFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DFillStyle.m; sourceTree = "<group>"; };
-		0DDEC9581A75DE8600B3E212 /* Graph2DGridStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DGridStyle.h; sourceTree = "<group>"; };
-		0DDEC9591A75DE8600B3E212 /* Graph2DGridStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DGridStyle.m; sourceTree = "<group>"; };
-		0DDEC95A1A75DE8600B3E212 /* Graph2DLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DLineStyle.h; sourceTree = "<group>"; };
-		0DDEC95B1A75DE8600B3E212 /* Graph2DLineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DLineStyle.m; sourceTree = "<group>"; };
-		0DDEC95C1A75DE8600B3E212 /* Graph2DPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DPieChartView.h; sourceTree = "<group>"; };
-		0DDEC95D1A75DE8600B3E212 /* Graph2DPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DPieChartView.m; sourceTree = "<group>"; };
-		0DDEC95E1A75DE8600B3E212 /* Graph2DSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DSeriesStyle.h; sourceTree = "<group>"; };
-		0DDEC95F1A75DE8600B3E212 /* Graph2DSeriesStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DSeriesStyle.m; sourceTree = "<group>"; };
-		0DDEC9601A75DE8600B3E212 /* Graph2DStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DStyle.h; sourceTree = "<group>"; };
-		0DDEC9611A75DE8600B3E212 /* Graph2DStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DStyle.m; sourceTree = "<group>"; };
-		0DDEC9621A75DE8600B3E212 /* Graph2DTickStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DTickStyle.h; sourceTree = "<group>"; };
-		0DDEC9631A75DE8600B3E212 /* Graph2DTickStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DTickStyle.m; sourceTree = "<group>"; };
-		0DDEC9641A75DE8600B3E212 /* Graph2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DView.h; sourceTree = "<group>"; };
-		0DDEC9651A75DE8600B3E212 /* Graph2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DView.m; sourceTree = "<group>"; };
-		0DDEC9661A75DE8600B3E212 /* Graph2DViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DViewDelegate.h; sourceTree = "<group>"; };
-		0DDEC9671A75DE8600B3E212 /* Graph2DWidgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DWidgetView.h; sourceTree = "<group>"; };
-		0DDEC9681A75DE8600B3E212 /* Graph2DWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DWidgetView.m; sourceTree = "<group>"; };
-		0DDEC9691A75DE8600B3E212 /* SSTimeSeriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeriesView.h; sourceTree = "<group>"; };
-		0DDEC96A1A75DE8600B3E212 /* SSTimeSeriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeriesView.m; sourceTree = "<group>"; };
+		0D31AC9B1A866DE100F8C26C /* Chart2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chart2D.h; sourceTree = "<group>"; };
+		0D31AC9C1A866DE100F8C26C /* Graph2DArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DArea.h; sourceTree = "<group>"; };
+		0D31AC9D1A866DE100F8C26C /* Graph2DArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DArea.m; sourceTree = "<group>"; };
+		0D31AC9E1A866DE100F8C26C /* Graph2DAxisStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DAxisStyle.h; sourceTree = "<group>"; };
+		0D31AC9F1A866DE100F8C26C /* Graph2DAxisStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DAxisStyle.m; sourceTree = "<group>"; };
+		0D31ACA01A866DE100F8C26C /* Graph2DChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DChartView.h; sourceTree = "<group>"; };
+		0D31ACA11A866DE100F8C26C /* Graph2DChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DChartView.m; sourceTree = "<group>"; };
+		0D31ACA21A866DE100F8C26C /* Graph2DDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DDataSource.h; sourceTree = "<group>"; };
+		0D31ACA31A866DE100F8C26C /* Graph2DFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DFillStyle.h; sourceTree = "<group>"; };
+		0D31ACA41A866DE100F8C26C /* Graph2DFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DFillStyle.m; sourceTree = "<group>"; };
+		0D31ACA51A866DE100F8C26C /* Graph2DGridStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DGridStyle.h; sourceTree = "<group>"; };
+		0D31ACA61A866DE100F8C26C /* Graph2DGridStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DGridStyle.m; sourceTree = "<group>"; };
+		0D31ACA71A866DE100F8C26C /* Graph2DLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DLineStyle.h; sourceTree = "<group>"; };
+		0D31ACA81A866DE100F8C26C /* Graph2DLineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DLineStyle.m; sourceTree = "<group>"; };
+		0D31ACA91A866DE100F8C26C /* Graph2DPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DPieChartView.h; sourceTree = "<group>"; };
+		0D31ACAA1A866DE100F8C26C /* Graph2DPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DPieChartView.m; sourceTree = "<group>"; };
+		0D31ACAB1A866DE100F8C26C /* Graph2DSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DSeriesStyle.h; sourceTree = "<group>"; };
+		0D31ACAC1A866DE100F8C26C /* Graph2DSeriesStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DSeriesStyle.m; sourceTree = "<group>"; };
+		0D31ACAD1A866DE100F8C26C /* Graph2DStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DStyle.h; sourceTree = "<group>"; };
+		0D31ACAE1A866DE100F8C26C /* Graph2DStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DStyle.m; sourceTree = "<group>"; };
+		0D31ACAF1A866DE100F8C26C /* Graph2DTickStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DTickStyle.h; sourceTree = "<group>"; };
+		0D31ACB01A866DE100F8C26C /* Graph2DTickStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DTickStyle.m; sourceTree = "<group>"; };
+		0D31ACB11A866DE100F8C26C /* Graph2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DView.h; sourceTree = "<group>"; };
+		0D31ACB21A866DE100F8C26C /* Graph2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DView.m; sourceTree = "<group>"; };
+		0D31ACB31A866DE100F8C26C /* Graph2DViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DViewDelegate.h; sourceTree = "<group>"; };
+		0D31ACB41A866DE100F8C26C /* Graph2DWidgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DWidgetView.h; sourceTree = "<group>"; };
+		0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DWidgetView.m; sourceTree = "<group>"; };
+		0D31ACB61A866DE100F8C26C /* SSTimeSeriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeriesView.h; sourceTree = "<group>"; };
+		0D31ACB71A866DE100F8C26C /* SSTimeSeriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeriesView.m; sourceTree = "<group>"; };
+		0DAD4BFA1A866C46000C51FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "framework-src/Info.plist"; sourceTree = SOURCE_ROOT; };
+		0DAD4BFB1A866C46000C51FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "framework-src/README.md"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,51 +152,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0D31AC9A1A866DE100F8C26C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0D31AC9B1A866DE100F8C26C /* Chart2D.h */,
+				0D31AC9C1A866DE100F8C26C /* Graph2DArea.h */,
+				0D31AC9D1A866DE100F8C26C /* Graph2DArea.m */,
+				0D31AC9E1A866DE100F8C26C /* Graph2DAxisStyle.h */,
+				0D31AC9F1A866DE100F8C26C /* Graph2DAxisStyle.m */,
+				0D31ACA01A866DE100F8C26C /* Graph2DChartView.h */,
+				0D31ACA11A866DE100F8C26C /* Graph2DChartView.m */,
+				0D31ACA21A866DE100F8C26C /* Graph2DDataSource.h */,
+				0D31ACA31A866DE100F8C26C /* Graph2DFillStyle.h */,
+				0D31ACA41A866DE100F8C26C /* Graph2DFillStyle.m */,
+				0D31ACA51A866DE100F8C26C /* Graph2DGridStyle.h */,
+				0D31ACA61A866DE100F8C26C /* Graph2DGridStyle.m */,
+				0D31ACA71A866DE100F8C26C /* Graph2DLineStyle.h */,
+				0D31ACA81A866DE100F8C26C /* Graph2DLineStyle.m */,
+				0D31ACA91A866DE100F8C26C /* Graph2DPieChartView.h */,
+				0D31ACAA1A866DE100F8C26C /* Graph2DPieChartView.m */,
+				0D31ACAB1A866DE100F8C26C /* Graph2DSeriesStyle.h */,
+				0D31ACAC1A866DE100F8C26C /* Graph2DSeriesStyle.m */,
+				0D31ACAD1A866DE100F8C26C /* Graph2DStyle.h */,
+				0D31ACAE1A866DE100F8C26C /* Graph2DStyle.m */,
+				0D31ACAF1A866DE100F8C26C /* Graph2DTickStyle.h */,
+				0D31ACB01A866DE100F8C26C /* Graph2DTickStyle.m */,
+				0D31ACB11A866DE100F8C26C /* Graph2DView.h */,
+				0D31ACB21A866DE100F8C26C /* Graph2DView.m */,
+				0D31ACB31A866DE100F8C26C /* Graph2DViewDelegate.h */,
+				0D31ACB41A866DE100F8C26C /* Graph2DWidgetView.h */,
+				0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */,
+				0D31ACB61A866DE100F8C26C /* SSTimeSeriesView.h */,
+				0D31ACB71A866DE100F8C26C /* SSTimeSeriesView.m */,
+			);
+			name = src;
+			path = "framework-src/src";
+			sourceTree = SOURCE_ROOT;
+		};
 		0DDEC94A1A75DE8600B3E212 /* framework-src */ = {
 			isa = PBXGroup;
 			children = (
-				0DDEC94B1A75DE8600B3E212 /* Info.plist */,
-				0DDEC94C1A75DE8600B3E212 /* README.md */,
-				0DDEC94D1A75DE8600B3E212 /* src */,
+				0D31AC9A1A866DE100F8C26C /* src */,
+				0DAD4BFA1A866C46000C51FE /* Info.plist */,
+				0DAD4BFB1A866C46000C51FE /* README.md */,
 			);
 			name = "framework-src";
 			path = "../../github/Chart2D/framework-src";
-			sourceTree = "<group>";
-		};
-		0DDEC94D1A75DE8600B3E212 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				0DDEC94E1A75DE8600B3E212 /* Chart2D.h */,
-				0DDEC94F1A75DE8600B3E212 /* Graph2DArea.h */,
-				0DDEC9501A75DE8600B3E212 /* Graph2DArea.m */,
-				0DDEC9511A75DE8600B3E212 /* Graph2DAxisStyle.h */,
-				0DDEC9521A75DE8600B3E212 /* Graph2DAxisStyle.m */,
-				0DDEC9531A75DE8600B3E212 /* Graph2DChartView.h */,
-				0DDEC9541A75DE8600B3E212 /* Graph2DChartView.m */,
-				0DDEC9551A75DE8600B3E212 /* Graph2DDataSource.h */,
-				0DDEC9561A75DE8600B3E212 /* Graph2DFillStyle.h */,
-				0DDEC9571A75DE8600B3E212 /* Graph2DFillStyle.m */,
-				0DDEC9581A75DE8600B3E212 /* Graph2DGridStyle.h */,
-				0DDEC9591A75DE8600B3E212 /* Graph2DGridStyle.m */,
-				0DDEC95A1A75DE8600B3E212 /* Graph2DLineStyle.h */,
-				0DDEC95B1A75DE8600B3E212 /* Graph2DLineStyle.m */,
-				0DDEC95C1A75DE8600B3E212 /* Graph2DPieChartView.h */,
-				0DDEC95D1A75DE8600B3E212 /* Graph2DPieChartView.m */,
-				0DDEC95E1A75DE8600B3E212 /* Graph2DSeriesStyle.h */,
-				0DDEC95F1A75DE8600B3E212 /* Graph2DSeriesStyle.m */,
-				0DDEC9601A75DE8600B3E212 /* Graph2DStyle.h */,
-				0DDEC9611A75DE8600B3E212 /* Graph2DStyle.m */,
-				0DDEC9621A75DE8600B3E212 /* Graph2DTickStyle.h */,
-				0DDEC9631A75DE8600B3E212 /* Graph2DTickStyle.m */,
-				0DDEC9641A75DE8600B3E212 /* Graph2DView.h */,
-				0DDEC9651A75DE8600B3E212 /* Graph2DView.m */,
-				0DDEC9661A75DE8600B3E212 /* Graph2DViewDelegate.h */,
-				0DDEC9671A75DE8600B3E212 /* Graph2DWidgetView.h */,
-				0DDEC9681A75DE8600B3E212 /* Graph2DWidgetView.m */,
-				0DDEC96A1A75DE8600B3E212 /* SSTimeSeriesView.m */,
-				0DDEC9691A75DE8600B3E212 /* SSTimeSeriesView.h */,
-			);
-			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,22 +207,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDEC96D1A75DE8600B3E212 /* Chart2D.h in Headers */,
-				0DDEC9751A75DE8600B3E212 /* Graph2DFillStyle.h in Headers */,
-				0DDEC9851A75DE8600B3E212 /* Graph2DViewDelegate.h in Headers */,
-				0DDEC9791A75DE8600B3E212 /* Graph2DLineStyle.h in Headers */,
-				0DDEC9881A75DE8600B3E212 /* SSTimeSeriesView.h in Headers */,
-				0DDEC97B1A75DE8600B3E212 /* Graph2DPieChartView.h in Headers */,
-				0DDEC96E1A75DE8600B3E212 /* Graph2DArea.h in Headers */,
-				0DDEC9811A75DE8600B3E212 /* Graph2DTickStyle.h in Headers */,
-				0DDEC97D1A75DE8600B3E212 /* Graph2DSeriesStyle.h in Headers */,
-				0DDEC9831A75DE8600B3E212 /* Graph2DView.h in Headers */,
-				0DDEC9861A75DE8600B3E212 /* Graph2DWidgetView.h in Headers */,
-				0DDEC9721A75DE8600B3E212 /* Graph2DChartView.h in Headers */,
-				0DDEC97F1A75DE8600B3E212 /* Graph2DStyle.h in Headers */,
-				0DDEC9741A75DE8600B3E212 /* Graph2DDataSource.h in Headers */,
-				0DDEC9771A75DE8600B3E212 /* Graph2DGridStyle.h in Headers */,
-				0DDEC9701A75DE8600B3E212 /* Graph2DAxisStyle.h in Headers */,
+				0D31ACC01A866DE100F8C26C /* Graph2DFillStyle.h in Headers */,
+				0D31ACD01A866DE100F8C26C /* Graph2DViewDelegate.h in Headers */,
+				0D31ACC41A866DE100F8C26C /* Graph2DLineStyle.h in Headers */,
+				0D31ACD31A866DE100F8C26C /* SSTimeSeriesView.h in Headers */,
+				0D31ACC61A866DE100F8C26C /* Graph2DPieChartView.h in Headers */,
+				0D31ACB91A866DE100F8C26C /* Graph2DArea.h in Headers */,
+				0D31ACCC1A866DE100F8C26C /* Graph2DTickStyle.h in Headers */,
+				0D31ACC81A866DE100F8C26C /* Graph2DSeriesStyle.h in Headers */,
+				0D31ACCE1A866DE100F8C26C /* Graph2DView.h in Headers */,
+				0D31ACD11A866DE100F8C26C /* Graph2DWidgetView.h in Headers */,
+				0D31ACBD1A866DE100F8C26C /* Graph2DChartView.h in Headers */,
+				0D31ACCA1A866DE100F8C26C /* Graph2DStyle.h in Headers */,
+				0D31ACBF1A866DE100F8C26C /* Graph2DDataSource.h in Headers */,
+				0D31ACC21A866DE100F8C26C /* Graph2DGridStyle.h in Headers */,
+				0D31ACBB1A866DE100F8C26C /* Graph2DAxisStyle.h in Headers */,
+				0D31ACB81A866DE100F8C26C /* Chart2D.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDEC96B1A75DE8600B3E212 /* Info.plist in Resources */,
+				0DAD4BFC1A866C46000C51FE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,20 +314,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDEC9891A75DE8600B3E212 /* SSTimeSeriesView.m in Sources */,
-				0DDEC97A1A75DE8600B3E212 /* Graph2DLineStyle.m in Sources */,
-				0DDEC9781A75DE8600B3E212 /* Graph2DGridStyle.m in Sources */,
-				0DDEC97E1A75DE8600B3E212 /* Graph2DSeriesStyle.m in Sources */,
-				0DDEC96C1A75DE8600B3E212 /* README.md in Sources */,
-				0DDEC9801A75DE8600B3E212 /* Graph2DStyle.m in Sources */,
-				0DDEC97C1A75DE8600B3E212 /* Graph2DPieChartView.m in Sources */,
-				0DDEC96F1A75DE8600B3E212 /* Graph2DArea.m in Sources */,
-				0DDEC9871A75DE8600B3E212 /* Graph2DWidgetView.m in Sources */,
-				0DDEC9841A75DE8600B3E212 /* Graph2DView.m in Sources */,
-				0DDEC9821A75DE8600B3E212 /* Graph2DTickStyle.m in Sources */,
-				0DDEC9731A75DE8600B3E212 /* Graph2DChartView.m in Sources */,
-				0DDEC9711A75DE8600B3E212 /* Graph2DAxisStyle.m in Sources */,
-				0DDEC9761A75DE8600B3E212 /* Graph2DFillStyle.m in Sources */,
+				0D31ACD41A866DE100F8C26C /* SSTimeSeriesView.m in Sources */,
+				0D31ACC51A866DE100F8C26C /* Graph2DLineStyle.m in Sources */,
+				0D31ACC31A866DE100F8C26C /* Graph2DGridStyle.m in Sources */,
+				0D31ACC91A866DE100F8C26C /* Graph2DSeriesStyle.m in Sources */,
+				0DAD4BFD1A866C46000C51FE /* README.md in Sources */,
+				0D31ACCB1A866DE100F8C26C /* Graph2DStyle.m in Sources */,
+				0D31ACC71A866DE100F8C26C /* Graph2DPieChartView.m in Sources */,
+				0D31ACBA1A866DE100F8C26C /* Graph2DArea.m in Sources */,
+				0D31ACD21A866DE100F8C26C /* Graph2DWidgetView.m in Sources */,
+				0D31ACCF1A866DE100F8C26C /* Graph2DView.m in Sources */,
+				0D31ACCD1A866DE100F8C26C /* Graph2DTickStyle.m in Sources */,
+				0D31ACBE1A866DE100F8C26C /* Graph2DChartView.m in Sources */,
+				0D31ACBC1A866DE100F8C26C /* Graph2DAxisStyle.m in Sources */,
+				0D31ACC11A866DE100F8C26C /* Graph2DFillStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +425,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/../../github/Chart2D/framework-src/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/framework-src/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
@@ -440,7 +441,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/../../github/Chart2D/framework-src/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/framework-src/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;

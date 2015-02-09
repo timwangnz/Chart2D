@@ -22,7 +22,6 @@ import org.sixstreams.search.crawl.content.ContentReader;
 import org.sixstreams.search.crawl.content.ContentReaderProxy;
 import org.sixstreams.search.crawl.listener.CrawlListener;
 import org.sixstreams.search.crawl.listener.DocumentListener;
-import org.sixstreams.search.meta.AttributeDefinition;
 import org.sixstreams.search.meta.SearchableObject;
 import org.sixstreams.search.util.ContextFactory;
 import org.sixstreams.search.util.CrawlerFactory;
@@ -49,14 +48,14 @@ abstract public class AbstractCrawler
 
    private SearchContext parentContext;
 
-   private List<Thread> threads = new Vector<Thread>();
+   private final List<Thread> threads = new Vector<>();
 
-   private Map<String, Object> contextParams = new HashMap<String, Object>();
+   private final Map<String, Object> contextParams = new HashMap<>();
    private boolean busy = true;
    private SearchableObject searchableObject;
-   private List<CrawlListener> crawlListeners = new Vector<CrawlListener>();
+   private final List<CrawlListener> crawlListeners = new Vector<>();
    //called at all times to process data
-   private List<DocumentListener> documentListeners = new ArrayList<DocumentListener>();
+   private final List<DocumentListener> documentListeners = new ArrayList<>();
    private String queueId;
 
    protected AbstractCrawler()
@@ -229,27 +228,6 @@ abstract public class AbstractCrawler
          }
       }
 
-
-      for (String attrName: indexableDocument.getAttributeNames())
-      {
-
-         AttributeDefinition fd = so.getDocumentDef().getAttributeDef(attrName);
-         if (fd != null)
-         {
-            if (fd.isSecure())
-            {
-               if (securityPlugin instanceof Securable)
-               {
-                  Securable securable = (Securable) securityPlugin;
-                  List<String> acl = securable.getSecureAttrAcl(indexableDocument, fd.getName());
-                  if (acl != null && acl.size() > 0)
-                  {
-                     indexableDocument.setAttribueAcl(fd.getName(), acl);
-                  }
-               }
-            }
-         }
-      }
    }
 
    //called by the sub class to process document

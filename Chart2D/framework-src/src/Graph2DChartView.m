@@ -684,7 +684,7 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
--(void)  drawAtPoint:(NSString *)text
+-(void)  textAtPoint:(NSString *)text
                   at:(CGPoint) basePoint
             andAngle:(CGFloat) angle
              andFont:(UIFont *) font
@@ -758,7 +758,7 @@
             
             if (self.chartType != Graph2DBarChart || (self.chartType == Graph2DBarChart && i < xTicks))
             {
-                [self drawAtPoint:theText at:CGPointMake(x, y) andAngle: angle andFont:font andColor: axisStyle.labelStyle.color];
+                [self textAtPoint:theText at:CGPointMake(x, y) andAngle: angle andFont:font andColor: axisStyle.labelStyle.color];
             }
         }
         
@@ -798,6 +798,7 @@
             }
         }
     }
+    
     if(axisStyle.width > 0)
     {
         if (axisStyle.color)
@@ -809,6 +810,7 @@
         CGContextAddLineToPoint(context, gBottomLeft.x + gBounds.size.width, gBottomLeft.y + 1 );
         CGContextSetShouldAntialias(context, YES);
     }
+    
     CGContextDrawPath(context, kCGPathStroke);
     
 }

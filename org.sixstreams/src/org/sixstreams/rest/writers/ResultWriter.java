@@ -32,7 +32,7 @@ public abstract class ResultWriter
 
    public boolean isAttributeRendered(String name)
    {
-      if (excludingAttributes == null || excludingAttributes.size() == 0 || name == null)
+      if (excludingAttributes == null || excludingAttributes.isEmpty() || name == null)
       {
          return true;
       }

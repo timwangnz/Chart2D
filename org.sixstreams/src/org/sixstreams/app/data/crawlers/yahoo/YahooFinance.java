@@ -37,6 +37,7 @@ import org.sixstreams.app.marketIntel.Cashflow;
 import org.sixstreams.app.marketIntel.IncomeStatement;
 import org.sixstreams.app.marketIntel.Stock;
 import org.sixstreams.app.marketIntel.StockPrice;
+
 import org.sixstreams.search.Crawler;
 import org.sixstreams.search.IndexableDocument;
 import org.sixstreams.search.crawl.crawler.ContentMapper;
@@ -49,601 +50,496 @@ import org.sixstreams.search.util.CrawlerFactory;
 import org.sixstreams.search.util.FileUtil;
 import org.sixstreams.search.util.GUIDUtil;
 
-public class YahooFinance implements ContentMapper, GraphAnalyzer, Runnable
-{
-	Logger sLogger = Logger.getLogger(YahooFinance.class.getName());
-	private WebCrawler crawler;
-	private MapValueUtil mapValueUtil = new MapValueUtil();
+public class YahooFinance implements ContentMapper, GraphAnalyzer, Runnable {
 
-	public static String CACHE_LOCATION = MetaDataManager.getProperty("org.sixstreams.search.web.crawler.cache.location") + "/yahooFinance";
+    private static final Logger sLogger = Logger.getLogger(YahooFinance.class.getName());
+    private WebCrawler crawler;
+    private final MapValueUtil mapValueUtil = new MapValueUtil();
 
-	private int count = 0;
-	private List<String> attributes = new ArrayList<String>();
-	public final static String CONTENT_TYPE = "finance.yahoo.com/Company";
-	private boolean busy;
+    public static String CACHE_LOCATION
+            = MetaDataManager.getProperty("org.sixstreams.search.web.crawler.cache.location") + "/yahooFinance";
 
-	public boolean isBusy()
-	{
-		return busy;
-	}
+    private int count = 0;
+    private final List<String> attributes = new ArrayList<>();
+    public final static String CONTENT_TYPE = "finance.yahoo.com/Company";
+    private boolean busy;
+    private Object MetadataManager;
 
-	public void setBusy(boolean busy)
-	{
-		this.busy = busy;
-	}
+    public boolean isBusy() {
+        return busy;
+    }
 
-	static
-	{
-		CrawlerFactory.registerCrawler(CONTENT_TYPE, WebCrawler.class.getName());
-		CrawlerFactory.registerMapper("http://finance.yahoo.com", YahooFinance.class.getName());
-	}
+    public void setBusy(boolean busy) {
+        this.busy = busy;
+    }
 
-	public static String getDateString(Date date)
-	{
-		SimpleDateFormat format = new SimpleDateFormat();
-		format.applyPattern("ddMMyyyy");
-		return format.format(date);
-	}
+    static {
+        CrawlerFactory.registerCrawler(CONTENT_TYPE, WebCrawler.class.getName());
+        CrawlerFactory.registerMapper("http://finance.yahoo.com", YahooFinance.class.getName());
+    }
 
-	public void save(String stockSymbol, Map<String, Object> stock) throws Exception
-	{
-		ObjectMapper mapper = new ObjectMapper();
-		for (String key : stock.keySet())
-		{
-			Object object = stock.get(key);
-			
-			//FileUtil.saveFile(mapper.writeValueAsString(object), CACHE_LOCATION + File.separator + stockSymbol + File.separator + key.replace(".", File.separator), getDateString(new Date()), true);
-			FileUtil.saveFile(mapper.writeValueAsString(object), CACHE_LOCATION + File.separator + stockSymbol, key, true);
-		}
-	}
-	
-	public Map<String, Object> enrich(Stock company)
-	{
-		Map<String, Object> jsonableCompany = new HashMap<String, Object>();
+    public static String getDateString(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat();
+        format.applyPattern("ddMMyyyy");
+        return format.format(date);
+    }
 
-		enrichWithProfile(company);
-		enrichWithSummary(company);
-		enrichWithStats(company);
+    public void save(String stockSymbol, Map<String, Object> stock) throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        FileUtil.saveFile(mapper.writeValueAsString(stock), CACHE_LOCATION + File.separator + getDateString(new Date()), stockSymbol, true);
 
-		jsonableCompany.put(Stock.class.getName(), company);
-		jsonableCompany.put(IncomeStatement.class.getName(), getIncomeStatements(company));
-		jsonableCompany.put(BalanceSheet.class.getName(), getBalanceSheet(company));
-		jsonableCompany.put(Cashflow.class.getName(), getCashflow(company));
+        /*
+         for (String key : stock.keySet()) {
+         Object object = stock.get(key);
+         FileUtil.saveFile(mapper.writeValueAsString(object), CACHE_LOCATION + File.separator + stockSymbol, key, true);
+         }
+         */
+    }
 
-		try
-		{
-			if ("fund".equals(company.getStockType()) || company.getCity() == null)
-			{
-				System.err.println("Skip " + company.getStockSymbol());
-			}
-			else
-			{
-				save(company.getStockSymbol(), jsonableCompany);
-			}
-		}
-		catch (Exception e)
-		{
-			sLogger.log(Level.SEVERE, "Failed to save company " + company.getStockSymbol(), e);
-		}
-		
-		return jsonableCompany;
+    public Map<String, Object> enrich(Stock company) {
+        try {
+            Map<String, Object> jsonableCompany = new HashMap<>();
 
-	}
+            enrichWithProfile(company);
+            enrichWithSummary(company);
+            enrichWithStats(company);
+            if ("fund".equals(company.getStockType()) || company.getCity() == null) {
+                System.err.println("Skip " + company.getStockSymbol());
+            } else {
 
-	public Object enrichWithProfile(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, String> map = getProfile(stockSymbol);
-		mapValueUtil.updateProfile(company, map);
-		return company;
-	}
+                jsonableCompany.put(Stock.class.getName(), company);
+                jsonableCompany.put(IncomeStatement.class.getName(), getIncomeStatements(company));
+                jsonableCompany.put(BalanceSheet.class.getName(), getBalanceSheet(company));
+                jsonableCompany.put(Cashflow.class.getName(), getCashflow(company));
 
-	public Object enrichWithStats(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, String> map = getKeyStats(stockSymbol);
-		mapValueUtil.updateStats(company, map);
-		return company;
-	}
+                save(company.getStockSymbol(), jsonableCompany);
+                return jsonableCompany;
+            }
+        } catch (Exception e) {
+            sLogger.log(Level.SEVERE, "Failed to save company " + company.getStockSymbol(), e);
+        }
 
-	public Object getIncomeStatements(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
-		Map<String, List<String>> income = map.get("income");
-		return mapValueUtil.createIncomeStatements(company, income);
-	}
+        return null;
 
-	public Object getBalanceSheet(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
-		Map<String, List<String>> balance = map.get("balanceSheet");
-		return mapValueUtil.createBalanceSheets(company, balance);
-	}
+    }
 
-	public Object getCashflow(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
-		Map<String, List<String>> cashflow = map.get("cashflow");
+    public Object enrichWithProfile(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, String> map = getProfile(stockSymbol);
+        mapValueUtil.updateProfile(company, map);
+        return company;
+    }
 
-		return mapValueUtil.createCashflows(company, cashflow);
+    public Object enrichWithStats(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, String> map = getKeyStats(stockSymbol);
+        mapValueUtil.updateStats(company, map);
+        return company;
+    }
 
-	}
+    public Object getIncomeStatements(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
+        Map<String, List<String>> income = map.get("income");
+        return mapValueUtil.createIncomeStatements(company, income);
+    }
 
-	public Object getPrices(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		try
-		{
-			List<StockPrice> prices = getHistoricalPrices(stockSymbol);
-			Date latestDate = null;
-			for (StockPrice price : prices)
-			{
-				latestDate = latestDate == null || latestDate.before(price.getDate()) ? price.getDate() : latestDate;
-			}
-			// persistenceManager.insert(prices);
-			// MetaDataObject.putValue("getHistoricalPrices", stockSymbol,
-			// latestDate);
-			return prices;
+    public Object getBalanceSheet(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
+        Map<String, List<String>> balance = map.get("balanceSheet");
+        return mapValueUtil.createBalanceSheets(company, balance);
+    }
 
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		return Collections.EMPTY_LIST;
-	}
+    public Object getCashflow(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, Map<String, List<String>>> map = getFinancials(stockSymbol);
+        Map<String, List<String>> cashflow = map.get("cashflow");
 
-	public Object enrichWithSummary(Stock company)
-	{
-		String stockSymbol = company.getStockSymbol();
-		Map<String, String> map = this.getSummary(stockSymbol);
-		mapValueUtil.updateSummary(company, map);
-		return company;
-	}
+        return mapValueUtil.createCashflows(company, cashflow);
 
-	private List<StockPrice> getHistoricalPrices(String symbol)
-	{
-		List<StockPrice> prices = new ArrayList<StockPrice>();
-		if (symbol == null)
-		{
-			return prices;
-		}
+    }
 
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
+    public Object getPrices(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        try {
+            List<StockPrice> prices = getHistoricalPrices(stockSymbol);
+            Date latestDate = null;
+            for (StockPrice price : prices) {
+                latestDate = latestDate == null || latestDate.before(price.getDate()) ? price.getDate() : latestDate;
+            }
+            return prices;
 
-		String url = "http://finance.yahoo.com/q/hp?s=" + symbol.trim() + "+Historical+Prices";
-		NodeList nodeList = crawler.retreive(url);
+        } catch (Exception e) {
+            sLogger.log(Level.SEVERE, "Failed {0}", e);
+        }
+        return Collections.EMPTY_LIST;
+    }
 
-		// List<StockPrice> latestPrices = toPrices(symbol, nodeList);
+    public Object enrichWithSummary(Stock company) {
+        String stockSymbol = company.getStockSymbol();
+        Map<String, String> map = this.getSummary(stockSymbol);
+        mapValueUtil.updateSummary(company, map);
+        return company;
+    }
 
-		// if current page does not have all the pricess, pull from csv
-		prices.clear();
+    private List<StockPrice> getHistoricalPrices(String symbol) {
+        List<StockPrice> prices = new ArrayList<>();
+        if (symbol == null) {
+            return prices;
+        }
 
-		List<String> urls = toUrls(nodeList);
-		if (urls.size() > 0 && urls.get(0) != null)
-		{
-			InputStream inputStream = crawler.read(urls.get(0));
-			StringWriter writer = new StringWriter();
-			try
-			{
-				IOUtils.copy(inputStream, writer, "UTF-8");
-				String theString = writer.toString();
-				BufferedReader in = new BufferedReader(new StringReader(theString));
-				String line = in.readLine();
-				while (line != null)
-				{
-					try
-					{
-						prices.add(new StockPrice(symbol, line));
-					}
-					catch (Exception e)
-					{
-						System.err.println("Failed to handle line " + line + "\n" + e.toString());
-					}
-					line = in.readLine();
-				}
-			}
-			catch (IOException e)
-			{
-				System.err.println("Failed to handle url " + urls.get(0) + "\n" + e.toString());
-			}
-		}
-		return prices;
-	}
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
 
-	public Map<String, Map<String, List<String>>> getFinancials(String symbol)
-	{
-		Map<String, Map<String, List<String>>> financials = new HashMap<String, Map<String, List<String>>>();
-		if (symbol != null)
-		{
-			symbol = symbol.trim();
-			financials.put("income", this.getIncome(symbol));
-			financials.put("balanceSheet", this.getBalanceSheet(symbol));
-			financials.put("cashflow", this.getCashFlow(symbol));
-		}
-		return financials;
-	}
+        String url = "http://finance.yahoo.com/q/hp?s=" + symbol.trim() + "+Historical+Prices";
+        NodeList nodeList = crawler.retreive(url);
 
-	public Map<String, List<String>> getIncome(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
-		String url = "http://finance.yahoo.com/q/is?s=" + symbol + "+Income+Statement&annual";
-		return toMap(crawler.retreive(url));
-	}
+        prices.clear();
 
-	public Map<String, List<String>> getBalanceSheet(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
-		String url = "http://finance.yahoo.com/q/bs?s=" + symbol + "+Balance+Sheet&annual";
-		return toMap(crawler.retreive(url));
-	}
+        List<String> urls = toUrls(nodeList);
+        if (urls.size() > 0 && urls.get(0) != null) {
+            InputStream inputStream = crawler.read(urls.get(0));
+            StringWriter writer = new StringWriter();
+            try {
+                IOUtils.copy(inputStream, writer, "UTF-8");
+                String theString = writer.toString();
+                BufferedReader in = new BufferedReader(new StringReader(theString));
+                String line = in.readLine();
+                while (line != null) {
+                    try {
+                        prices.add(new StockPrice(symbol, line));
+                    } catch (Exception e) {
+                        sLogger.log(Level.SEVERE, "Failed to handle line {0}\n{1}", new Object[]{line, e.toString()});
+                    }
+                    line = in.readLine();
+                }
+            } catch (IOException e) {
+                sLogger.log(Level.SEVERE, "Failed to handle url {0}\n{1}", new Object[]{urls.get(0), e.toString()});
+            }
+        }
+        return prices;
+    }
 
-	public Map<String, List<String>> getCashFlow(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
-		String url = "http://finance.yahoo.com/q/cf?s=" + symbol + "+Cash+Flow&annual";
-		return toMap(crawler.retreive(url));
-	}
+    public Map<String, Map<String, List<String>>> getFinancials(String symbol) {
+        Map<String, Map<String, List<String>>> financials = new HashMap<>();
+        if (symbol != null) {
+            symbol = symbol.trim();
+            financials.put("income", this.getIncome(symbol));
+            financials.put("balanceSheet", this.getBalanceSheet(symbol));
+            financials.put("cashflow", this.getCashFlow(symbol));
+        }
+        return financials;
+    }
 
-	public Map<String, String> getSummary(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
+    public Map<String, List<String>> getIncome(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
+        String url = "http://finance.yahoo.com/q/is?s=" + symbol + "+Income+Statement&annual";
+        return toMap(crawler.retreive(url));
+    }
 
-		String url = "http://finance.yahoo.com/q?s=" + symbol.trim();
-		return toSummary(crawler.retreive(url));
-	}
+    public Map<String, List<String>> getBalanceSheet(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
+        String url = "http://finance.yahoo.com/q/bs?s=" + symbol + "+Balance+Sheet&annual";
+        return toMap(crawler.retreive(url));
+    }
 
-	public Map<String, String> getKeyStats(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
-		String url = "http://finance.yahoo.com/q/ks?s=" + symbol.trim() + "+Key+Statistics";
-		return toKeyStats(crawler.retreive(url));
-	}
+    public Map<String, List<String>> getCashFlow(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
+        String url = "http://finance.yahoo.com/q/cf?s=" + symbol + "+Cash+Flow&annual";
+        return toMap(crawler.retreive(url));
+    }
 
-	public Map<String, String> getProfile(String symbol)
-	{
-		if (crawler == null)
-		{
-			crawler = new WebCrawler();
-		}
-		String url = "http://finance.yahoo.com/q/pr?s=" + symbol.trim() + "+Profile";
-		return toProfile(crawler.retreive(url));
-	}
+    public Map<String, String> getSummary(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
 
-	@Override
-	public boolean isChildCrawlable(CrawlableEndpoint endPoint, Object childObject)
-	{
-		LinkTag linkTag = (LinkTag) childObject;
-		Node relatedTickers = linkTag.getParent().getParent();
-		if (relatedTickers instanceof Div)
-		{
-			String id = ((Div) relatedTickers).getAttribute("id");
-			if ("yfi_related_tickers".equals(id))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+        String url = "http://finance.yahoo.com/q?s=" + symbol.trim();
+        return toSummary(crawler.retreive(url));
+    }
 
-	@Override
-	public IndexableDocument createIndexableDocument(String url, Object content)
-	{
-		// IndexableDocument doc = process(url, (NodeList) content);
-		if (content instanceof NodeList)
-		{
-			Company emp = new Company();
-			emp.setName(getTitle((NodeList) content));
+    public Map<String, String> getKeyStats(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
+        String url = "http://finance.yahoo.com/q/ks?s=" + symbol.trim() + "+Key+Statistics";
+        return toKeyStats(crawler.retreive(url));
+    }
 
-			emp.setId(GUIDUtil.getGUID(emp));
+    public Map<String, String> getProfile(String symbol) {
+        if (crawler == null) {
+            crawler = new WebCrawler();
+        }
+        String url = "http://finance.yahoo.com/q/pr?s=" + symbol.trim() + "+Profile";
+        return toProfile(crawler.retreive(url));
+    }
 
-			// we need get profile here
-			IndexableDocument doc = PersistenceManager.createDocument(emp);
-			doc.overrideAccessURL(url);
+    @Override
+    public boolean isChildCrawlable(CrawlableEndpoint endPoint, Object childObject) {
+        LinkTag linkTag = (LinkTag) childObject;
+        Node relatedTickers = linkTag.getParent().getParent();
+        if (relatedTickers instanceof Div) {
+            String id = ((Div) relatedTickers).getAttribute("id");
+            if ("yfi_related_tickers".equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-			return doc;
-		}
-		else
-		{
-			return null;
-		}
-	}
+    @Override
+    public IndexableDocument createIndexableDocument(String url, Object content) {
+        // IndexableDocument doc = process(url, (NodeList) content);
+        if (content instanceof NodeList) {
+            Company emp = new Company();
+            emp.setName(getTitle((NodeList) content));
 
-	protected String getTitle(NodeList list)
-	{
-		NodeList rows = list.extractAllNodesThatMatch(new TagNameFilter("title"), true);
-		if (rows.size() == 1)
-		{
-			TitleTag title = (TitleTag) rows.elementAt(0);
-			return title.getTitle();
-		}
-		return "";
-	}
+            emp.setId(GUIDUtil.getGUID(emp));
 
-	private void processChildren(NodeList list, Map<String, String> profile)
-	{
-		SimpleNodeIterator iter = list.elements();
-		while (iter.hasMoreNodes())
-		{
-			Node childNode = iter.nextNode();
-			if (childNode instanceof TextNode)
-			{
-				attributes.add(childNode.getText());
-				count++;
-			}
+            // we need get profile here
+            IndexableDocument doc = PersistenceManager.createDocument(emp);
 
-			if (childNode.getChildren() != null)
-			{
-				processChildren(childNode.getChildren(), profile);
-			}
-		}
-	}
+            return doc;
+        } else {
+            return null;
+        }
+    }
 
-	private Map<String, String> toSummary(NodeList list)
-	{
-		Map<String, String> summary = new HashMap<String, String>();
-		NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "rtq_table"), true);
-		NodeList properties = rows.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
-		SimpleNodeIterator propertyIterator = properties.elements();
-		while (propertyIterator.hasMoreNodes())
-		{
-			Node tr = propertyIterator.nextNode();
-			Node th = tr.getFirstChild();
-			Node td = tr.getLastChild();
-			summary.put(th.getFirstChild().toPlainTextString(), td.getFirstChild().toPlainTextString());
-		}
-		return summary;
-	}
+    protected String getTitle(NodeList list) {
+        NodeList rows = list.extractAllNodesThatMatch(new TagNameFilter("title"), true);
+        if (rows.size() == 1) {
+            TitleTag title = (TitleTag) rows.elementAt(0);
+            return title.getTitle();
+        }
+        return "";
+    }
 
-	private Map<String, String> toProfile(NodeList list)
-	{
-		Map<String, String> profile = new HashMap<String, String>();
-		this.attributes.clear();
-		NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_modtitlew1"), true);
-		processChildren(rows, profile);
-		NodeList attribute = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_datamodoutline1"), true);
-		processChildren(attribute, profile);
-		if (attributes.size() == 0)
-		{
-			// System.err.println("failed to get attributes " +
-			// list.asString());
-			return profile;
-		}
-		int i = 0;
-		profile.put("name", attributes.get(i++));
-		profile.put("address", attributes.get(i++));
-		
-		
-		
-		String cityAddr = attributes.get(i++);
-		
-		String[] addres = cityAddr.split(",");
-		if (addres.length == 1)
-		{
-			profile.put("address1", cityAddr);
-			cityAddr = attributes.get(i++);
-		}
-		addres = cityAddr.split(",");
-		profile.put("city", addres[0]);
-		if (addres.length == 2)
-		{
-			addres = addres[1].trim().split("\\ ");
-			if (addres.length > 0)
-			{
-				profile.put("state", addres[0]);
-			}
-			if (addres.length > 1)
-			{
-				profile.put("zipCode", addres[1]);
-			}
-		}
-		String countryStr = attributes.get(i++);
-		if (countryStr != null && countryStr.contains("-"))
-		{
-			profile.put("country", countryStr.substring(0, countryStr.indexOf("-")).trim());
-		}
-		//done with address
-		
-		i = 0;
-		for (String attr : attributes)
-		{
-			if (attr.toLowerCase().contains("phone:"))
-			{
-				profile.put("phone", attr.substring(attr.indexOf(":")+1).trim());
-			}
-			if (attr.toLowerCase().contains("fax:"))
-			{
-				profile.put("fax", attr.substring(attr.indexOf(":")+1).trim());
-			}
-			if (attr.toLowerCase().contains("http"))
-			{
-				profile.put("website", attr.trim());
-			}
-		}
-		
-		i = attributes.indexOf("Sector:");
-		profile.put("sector", attributes.get(i + 1));
+    private void processChildren(NodeList list, Map<String, String> profile) {
+        SimpleNodeIterator iter = list.elements();
+        while (iter.hasMoreNodes()) {
+            Node childNode = iter.nextNode();
+            if (childNode instanceof TextNode) {
+                attributes.add(childNode.getText());
+                count++;
+            }
 
-		i = attributes.indexOf("Industry:");
-		profile.put("industry", attributes.get(i + 1));
+            if (childNode.getChildren() != null) {
+                processChildren(childNode.getChildren(), profile);
+            }
+        }
+    }
 
-		i = attributes.indexOf("Business Summary");
-		profile.put("summary", attributes.get(i + 2));
+    private Map<String, String> toSummary(NodeList list) {
+        Map<String, String> summary = new HashMap<>();
+        NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "rtq_table"), true);
+        NodeList properties = rows.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
+        SimpleNodeIterator propertyIterator = properties.elements();
+        while (propertyIterator.hasMoreNodes()) {
+            Node tr = propertyIterator.nextNode();
+            Node th = tr.getFirstChild();
+            Node td = tr.getLastChild();
+            summary.put(th.getFirstChild().toPlainTextString(), td.getFirstChild().toPlainTextString());
+        }
+        return summary;
+    }
 
-		i = attributes.indexOf("Full Time Employees:");
-		profile.put("numberOfEmployees", attributes.get(i + 1));
+    private Map<String, String> toProfile(NodeList list) {
+        Map<String, String> profile = new HashMap<>();
+        this.attributes.clear();
+        NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_modtitlew1"), true);
+        processChildren(rows, profile);
+        NodeList attribute = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_datamodoutline1"), true);
+        processChildren(attribute, profile);
+        if (attributes.isEmpty()) {
+            // System.err.println("failed to get attributes " +
+            // list.asString());
+            return profile;
+        }
+        int i = 0;
+        profile.put("name", attributes.get(i++));
+        profile.put("address", attributes.get(i++));
 
-		// executives
-		i = attributes.indexOf("Exercised");
-		while (i + 3 < attributes.size())
-		{
-			profile.put(attributes.get(i + 3), attributes.get(i + 1));
-			i += 5;
-		}
-		return profile;
-	}
+        String cityAddr = attributes.get(i++);
 
-	@Override
-	public GraphAnalyzer getGraphAnalyzer(String url)
-	{
-		return this;
-	}
+        String[] addres = cityAddr.split(",");
+        if (addres.length == 1) {
+            profile.put("address1", cityAddr);
+            cityAddr = attributes.get(i++);
+        }
+        addres = cityAddr.split(",");
+        profile.put("city", addres[0]);
+        if (addres.length == 2) {
+            addres = addres[1].trim().split("\\ ");
+            if (addres.length > 0) {
+                profile.put("state", addres[0]);
+            }
+            if (addres.length > 1) {
+                profile.put("zipCode", addres[1]);
+            }
+        }
+        String countryStr = attributes.get(i++);
+        if (countryStr != null && countryStr.contains("-")) {
+            profile.put("country", countryStr.substring(0, countryStr.indexOf("-")).trim());
+        }
+        //done with address
 
-	public void setCrawler(Crawler crawler)
-	{
-		this.crawler = (WebCrawler) crawler;
-	}
+        attributes.stream().map((attr) -> {
+            if (attr.toLowerCase().contains("phone:")) {
+                profile.put("phone", attr.substring(attr.indexOf(":") + 1).trim());
+            }
+            return attr;
+        }).map((attr) -> {
+            if (attr.toLowerCase().contains("fax:")) {
+                profile.put("fax", attr.substring(attr.indexOf(":") + 1).trim());
+            }
+            return attr;
+        }).filter((attr) -> (attr.toLowerCase().contains("http"))).forEach((attr) -> {
+            profile.put("website", attr.trim());
+        });
 
-	public Crawler getCrawler()
-	{
-		return crawler;
-	}
+        i = attributes.indexOf("Sector:");
+        profile.put("sector", attributes.get(i + 1));
 
-	private Map<String, String> toKeyStats(NodeList list)
-	{
-		Map<String, String> summary = new HashMap<String, String>();
-		NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_datamodoutline1"), true);
-		NodeList tables = rows.extractAllNodesThatMatch(new TagNameFilter("table"), true);
-		NodeList tableRows = tables.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
-		SimpleNodeIterator propertyIterator = tableRows.elements();
-		while (propertyIterator.hasMoreNodes())
-		{
-			Node tr = propertyIterator.nextNode();
-			Node th = tr.getFirstChild();
-			Node td = tr.getLastChild();
-			if (!th.equals(td))
-			{
-				summary.put(th.getFirstChild().toPlainTextString(), td.getFirstChild().toPlainTextString());
-			}
-		}
-		return summary;
-	}
+        i = attributes.indexOf("Industry:");
+        profile.put("industry", attributes.get(i + 1));
 
-	public List<StockPrice> toPrices(String stockSymbol, NodeList list)
-	{
-		List<StockPrice> prices = new ArrayList<StockPrice>();
-		NodeList tables = list.extractAllNodesThatMatch(new TagNameFilter("table"), true);
-		NodeList tableRows = tables.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
-		SimpleNodeIterator propertyIterator = tableRows.elements();
-		while (propertyIterator.hasMoreNodes())
-		{
-			TableRow tr = (TableRow) propertyIterator.nextNode();
-			if (tr.getColumnCount() != 7)
-			{
-				continue;
-			}
-			else
-			{
-				StringBuffer line = new StringBuffer();
-				TableColumn[] columns = tr.getColumns();
-				line.append(StockPrice.dateFormat.format(this.mapValueUtil.getDate(columns[0].toPlainTextString()))).append(",");
-				line.append(columns[1].toPlainTextString()).append(",");
-				line.append(columns[2].toPlainTextString()).append(",");
-				line.append(columns[3].toPlainTextString()).append(",");
-				line.append(columns[4].toPlainTextString()).append(",");
-				line.append(columns[5].toPlainTextString()).append(",");
-				line.append(columns[6].toPlainTextString());
-				prices.add(new StockPrice(stockSymbol, line.toString()));
-			}
-		}
-		return prices;
-	}
+        i = attributes.indexOf("Business Summary");
+        profile.put("summary", attributes.get(i + 2));
 
-	private List<String> toUrls(NodeList list)
-	{
-		List<String> urls = new ArrayList<String>();
-		NodeList tableRows = list.extractAllNodesThatMatch(new TagNameFilter("a"), true);
-		SimpleNodeIterator propertyIterator = tableRows.elements();
-		while (propertyIterator.hasMoreNodes())
-		{
-			Node tr = propertyIterator.nextNode();
-			String url = ((Tag) tr).getAttribute("href");
-			if (url.contains(".csv"))
-			{
-				urls.add(url);
-			}
-		}
-		return urls;
-	}
+        i = attributes.indexOf("Full Time Employees:");
+        profile.put("numberOfEmployees", attributes.get(i + 1));
 
-	private Map<String, List<String>> toMap(NodeList list)
-	{
-		Map<String, List<String>> summary = new HashMap<String, List<String>>();
-		NodeList tableRows = list.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
-		SimpleNodeIterator propertyIterator = tableRows.elements();
-		while (propertyIterator.hasMoreNodes())
-		{
-			TableRow tr = (TableRow) propertyIterator.nextNode();
-			if (tr.getHeaderCount() > 0 && tr.getColumnCount() == 1)
-			{
-				TableColumn col = tr.getColumns()[0];
-				TableHeader[] columns = tr.getHeaders();
-				List<String> values = new ArrayList<String>();
-				for (int i = 0; i < columns.length; i++)
-				{
-					values.add(columns[i].toPlainTextString().replaceAll("&nbsp;", "").trim());
+        // executives
+        i = attributes.indexOf("Exercised");
+        while (i + 3 < attributes.size()) {
+            profile.put(attributes.get(i + 3), attributes.get(i + 1));
+            i += 5;
+        }
+        return profile;
+    }
 
-				}
-				summary.put(col.toPlainTextString().trim(), values);
-			}
-			else if (tr.getColumnCount() >= 4)
-			{
-				TableColumn[] columns = tr.getColumns();
-				int colCount = tr.getColumnCount();
-				int startCount = colCount == 4 ? 0 : 1;
-				TableColumn th = columns[startCount];
-				List<String> values = new ArrayList<String>();
+    @Override
+    public GraphAnalyzer getGraphAnalyzer(String url) {
+        return this;
+    }
 
-				for (int i = startCount + 1; i < colCount; i++)
-				{
-					values.add(columns[i].toPlainTextString().replaceAll("&nbsp;", "").trim());
-				}
-				summary.put(th.toPlainTextString().trim(), values);
-			}
-		}
-		return summary;
-	}
+    @Override
+    public void setCrawler(Crawler crawler) {
+        this.crawler = (WebCrawler) crawler;
+    }
 
-	public Stock getCompany()
-	{
-		return company;
-	}
+    @Override
+    public Crawler getCrawler() {
+        return crawler;
+    }
 
-	public void setCompany(Stock company)
-	{
-		this.company = company;
-	}
+    private Map<String, String> toKeyStats(NodeList list) {
+        Map<String, String> summary = new HashMap<>();
+        NodeList rows = list.extractAllNodesThatMatch(new HasAttributeFilter("class", "yfnc_datamodoutline1"), true);
+        NodeList tables = rows.extractAllNodesThatMatch(new TagNameFilter("table"), true);
+        NodeList tableRows = tables.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
+        SimpleNodeIterator propertyIterator = tableRows.elements();
+        while (propertyIterator.hasMoreNodes()) {
+            Node tr = propertyIterator.nextNode();
+            Node th = tr.getFirstChild();
+            Node td = tr.getLastChild();
+            if (!th.equals(td)) {
+                summary.put(th.getFirstChild().toPlainTextString(), td.getFirstChild().toPlainTextString());
+            }
+        }
+        return summary;
+    }
 
-	private Stock company;
+    public List<StockPrice> toPrices(String stockSymbol, NodeList list) {
+        List<StockPrice> prices = new ArrayList<>();
+        NodeList tables = list.extractAllNodesThatMatch(new TagNameFilter("table"), true);
+        NodeList tableRows = tables.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
+        SimpleNodeIterator propertyIterator = tableRows.elements();
+        while (propertyIterator.hasMoreNodes()) {
+            TableRow tr = (TableRow) propertyIterator.nextNode();
+            if (tr.getColumnCount() == 7) {
+                StringBuilder line = new StringBuilder();
+                TableColumn[] columns = tr.getColumns();
+                line.append(StockPrice.dateFormat.format(this.mapValueUtil.getDate(columns[0].toPlainTextString()))).append(",");
+                line.append(columns[1].toPlainTextString()).append(",");
+                line.append(columns[2].toPlainTextString()).append(",");
+                line.append(columns[3].toPlainTextString()).append(",");
+                line.append(columns[4].toPlainTextString()).append(",");
+                line.append(columns[5].toPlainTextString()).append(",");
+                line.append(columns[6].toPlainTextString());
+                prices.add(new StockPrice(stockSymbol, line.toString()));
+            }
+        }
+        return prices;
+    }
 
-	@Override
-	public void run()
-	{
-		if (company != null)
-		{
-			this.enrich(company);
-		}
-		busy = false;
-	}
+    private List<String> toUrls(NodeList list) {
+        List<String> urls = new ArrayList<>();
+        NodeList tableRows = list.extractAllNodesThatMatch(new TagNameFilter("a"), true);
+        SimpleNodeIterator propertyIterator = tableRows.elements();
+        while (propertyIterator.hasMoreNodes()) {
+            Node tr = propertyIterator.nextNode();
+            String url = ((Tag) tr).getAttribute("href");
+            if (url.contains(".csv")) {
+                urls.add(url);
+            }
+        }
+        return urls;
+    }
+
+    private Map<String, List<String>> toMap(NodeList list) {
+        Map<String, List<String>> summary = new HashMap<>();
+        NodeList tableRows = list.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
+        SimpleNodeIterator propertyIterator = tableRows.elements();
+        while (propertyIterator.hasMoreNodes()) {
+            TableRow tr = (TableRow) propertyIterator.nextNode();
+            if (tr.getHeaderCount() > 0 && tr.getColumnCount() == 1) {
+                TableColumn col = tr.getColumns()[0];
+                TableHeader[] columns = tr.getHeaders();
+                List<String> values = new ArrayList<>();
+                for (TableHeader column : columns) {
+                    values.add(column.toPlainTextString().replaceAll("&nbsp;", "").trim());
+                }
+                summary.put(col.toPlainTextString().trim(), values);
+            } else if (tr.getColumnCount() >= 4) {
+                TableColumn[] columns = tr.getColumns();
+                int colCount = tr.getColumnCount();
+                int startCount = colCount == 4 ? 0 : 1;
+                TableColumn th = columns[startCount];
+                List<String> values = new ArrayList<>();
+
+                for (int i = startCount + 1; i < colCount; i++) {
+                    values.add(columns[i].toPlainTextString().replaceAll("&nbsp;", "").trim());
+                }
+                summary.put(th.toPlainTextString().trim(), values);
+            }
+        }
+        return summary;
+    }
+
+    public Stock getCompany() {
+        return company;
+    }
+
+    public void setCompany(Stock company) {
+        this.company = company;
+    }
+
+    private Stock company;
+
+    @Override
+    public void run() {
+        if (company != null) {
+            this.enrich(company);
+        }
+        busy = false;
+    }
 }

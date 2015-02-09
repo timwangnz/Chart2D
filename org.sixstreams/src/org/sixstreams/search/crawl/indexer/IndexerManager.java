@@ -1,25 +1,17 @@
 package org.sixstreams.search.crawl.indexer;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.sixstreams.search.Attachment;
 import org.sixstreams.search.IndexableDocument;
 import org.sixstreams.search.IndexingException;
 import org.sixstreams.search.LifeCycleEvent;
 import org.sixstreams.search.SearchContext;
-import org.sixstreams.search.crawl.content.ContentReader;
-import org.sixstreams.search.crawl.content.ContentReaderProxy;
 import org.sixstreams.search.crawl.listener.DocumentListener;
 import org.sixstreams.search.crawl.listener.IndexListener;
-import org.sixstreams.search.meta.AttributeDefinition;
 import org.sixstreams.search.util.ContextFactory;
 import org.sixstreams.search.util.queue.Queue;
 import org.sixstreams.search.util.queue.QueueManager;
@@ -30,13 +22,12 @@ import org.sixstreams.search.util.queue.QueueManager;
 public class IndexerManager
    implements Runnable
 {
-   private static Logger sLogger = Logger.getLogger(IndexerManager.class.getName());
+   private static final Logger sLogger = Logger.getLogger(IndexerManager.class.getName());
 
-   private List<IndexListener> mListeners = new Vector<IndexListener>();
+   private final List<IndexListener> mListeners = new ArrayList<>();
 
-   private List<AbstractIndexer> mIndexers = new Vector<AbstractIndexer>();
-   private List<DocumentListener> mDocumentListeners = new Vector<DocumentListener>();
-   private int mSleepInterval = 50;
+   private final List<AbstractIndexer> mIndexers = new ArrayList<>();
+   private final int mSleepInterval = 50;
    private SearchContext mParentContext;
    private Queue mDocumentQueue = QueueManager.getQueue(QueueManager.DOCUMENT_QUEUE_NAME);
    private boolean mStop = false;
@@ -72,11 +63,7 @@ public class IndexerManager
          run();
       }
    }
-
-   public void addDocumentListener(DocumentListener listener)
-   {
-      mDocumentListeners.add(listener);
-   }
+   
 
    public AbstractIndexer getIndexer()
    {
@@ -94,21 +81,20 @@ public class IndexerManager
    private void close()
       throws IndexingException
    {
-      //SearchContext ctx =
-      for (AbstractIndexer indexer: mIndexers)
-      {
-         indexer.close();
-      }
+       //SearchContext ctx =
+       mIndexers.stream().forEach((indexer) -> {
+           indexer.close();
+       });
    }
 
    private void raiseEvent(LifeCycleEvent event)
    {
-      for (IndexListener listener: mListeners)
-      {
-         listener.onLifeCycleEvent(event);
-      }
+       mListeners.stream().forEach((listener) -> {
+           listener.onLifeCycleEvent(event);
+       });
    }
 
+   @Override
    public void run()
    {
       try
@@ -128,7 +114,7 @@ public class IndexerManager
                IndexableDocument resp = (IndexableDocument) mDocumentQueue.dequeue();
                if (resp != null)
                {
-                  sLogger.fine("Indexing document " + resp.getPrimaryKey());
+                  sLogger.log(Level.FINE, "Indexing document {0}", resp.getPrimaryKey());
                   processCompositeContent(resp);
                   AbstractIndexer indexer = getIndexer();
                   if (indexer != null)
@@ -155,7 +141,7 @@ public class IndexerManager
          raiseEvent(new LifeCycleEvent(LifeCycleEvent.COMPLETE, org.sixstreams.search.LifeCycleEvent.Phase.INDEX, this));
          close();
       }
-      catch (Exception ie)
+      catch (IndexingException | InterruptedException ie)
       {
          sLogger.log(Level.SEVERE, "Indexing failed", ie);
       }
@@ -171,54 +157,10 @@ public class IndexerManager
       StringBuffer content = new StringBuffer(ctnt == null? "": ctnt).append(" Attributes: ");
 
       
-      for (AttributeDefinition attrDef: indexableDocument.getDocumentDef().getAttrDefs())
-      {
-         if (attrDef.isStored()) //TODO fieldDef.isIndexed
-         {
-             content.append(indexableDocument.getAttrValue(attrDef.getName())).append(" ");
-         }
-      }
-
-      //TODO move to composite module
-      for (Attachment attachment: indexableDocument.getAttachments())
-      {
-         // AttachmentImpl impl = (AttachmentImpl)attachment;
-         ByteArrayOutputStream out = new ByteArrayOutputStream();
-         try
-         {
-            //TODO handle large documents
-            //TODO this might need to be asynchronous
-            attachment.read(ctx, out);
-
-            InputStream in = new ByteArrayInputStream(out.toByteArray());
-            String contentType = ContentReaderProxy.sniff4ContentType(in);
-            ContentReader reader = new ContentReaderProxy(contentType);
-            StringBuffer sb = reader.read(in);
-
-            if (sb != null && sb.toString().trim().length() > 0)
-            {
-               content.append("\nAttachment - ").append(attachment.getPrimaryKey()).append("\n");
-               content.append(sb);
-            }
-
-            reader.close();
-         }
-         catch (Exception ioe)
-         {
-            sLogger.log(Level.SEVERE, "Failed to read attachment", ioe);
-         }
-         finally
-         {
-            try
-            {
-               out.close();
-            }
-            catch (IOException ioe)
-            {
-               sLogger.log(Level.SEVERE, "Failed to close stream", ioe);
-            }
-         }
-      }
+      indexableDocument.getDocumentDef().getAttrDefs().stream().filter((attrDef) -> (attrDef.isStored()) //TODO fieldDef.isIndexed
+      ).forEach((attrDef) -> {
+          content.append(indexableDocument.getAttrValue(attrDef.getName())).append(" ");
+       });
       //
       //composite document to be indexed
       //

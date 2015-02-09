@@ -34,5 +34,4 @@ typedef void (^ProgressBlock)(id data);
       onProgress: (ProgressBlock) progress
        onFailure: (ErrorBlock) errorCallback;
 
-
 @end

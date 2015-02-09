@@ -8,7 +8,7 @@ import org.sixstreams.search.meta.SearchableObject;
 
 
 /**
- * An document represents an instance of a searchable object.
+ * A document represents an instance of a searchable object.
  */
 
 public interface Document
@@ -114,20 +114,6 @@ public interface Document
     */
    void setKeywords(String keywords);
 
-   /**
-    * Adds a child indexable document.
-    */
-   void addChildDoc(String name, Document doc);
-
-   /**
-    * Gets a child indexable document by name.
-    */
-   List<Document> getChildDocs(String name);
-
-   /**
-    * Removes all child indexable documents (when no longer needed).
-    */
-   void removeChildDocs();
 
    /**
     * Gets document definition of this document.
