@@ -33,217 +33,173 @@ import org.htmlparser.http.HttpHeader;
 import org.htmlparser.tags.LinkTag;
 import org.htmlparser.util.NodeList;
 
-public class WebCrawler extends AbstractCrawler
-{
-	public static final String MAX_LEVEL_PROPERTY_KEY = "org.sixstreams.search.web.crawler.WebCrawler.MaxLevel";
-	private static final String CONTENT_TYPE_HTML_TEXT = "text/html";
+public class WebCrawler extends AbstractCrawler {
 
-	private static Logger sLogger = Logger.getLogger(WebCrawler.class.getName());
-	private static Map<String, String> sFailedUrls = new HashMap<String, String>();
+    public static final String MAX_LEVEL_PROPERTY_KEY = "org.sixstreams.search.web.crawler.WebCrawler.MaxLevel";
+    private static final String CONTENT_TYPE_HTML_TEXT = "text/html";
 
-	private CacheManager cacheManager = new CacheManager();
+    private static Logger sLogger = Logger.getLogger(WebCrawler.class.getName());
+    private static Map<String, String> sFailedUrls = new HashMap<String, String>();
 
-	private int maxLevel = -1;
+    private CacheManager cacheManager = new CacheManager();
 
-	private Parser parser;
+    private int maxLevel = -1;
 
-	private String proxyHost;
-	private int proxyPort;
+    private Parser parser;
 
-	public WebCrawler()
-	{
-		String maxLevel = MetaDataManager.getProperty(MAX_LEVEL_PROPERTY_KEY);
-		if (maxLevel != null)
-		{
-			this.maxLevel = Integer.parseInt(maxLevel);
-		}
-	}
+    private String proxyHost;
+    private int proxyPort;
 
-	private void initializeConnectionManager()
-	{
-		ConnectionManager manager = Parser.getConnectionManager();
-		CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
-		if (proxyHost != null)
-		{
-			manager.setProxyHost(proxyHost);
-			manager.setProxyPort(proxyPort);
-		}
+    public WebCrawler() {
+        String maxLevel = MetaDataManager.getProperty(MAX_LEVEL_PROPERTY_KEY);
+        if (maxLevel != null) {
+            this.maxLevel = Integer.parseInt(maxLevel);
+        }
+    }
 
-		if (sLogger.isLoggable(Level.FINE))
-		{
-			ConnectionMonitor monitor = new ConnectionMonitor()
-			{
-				public void preConnect(HttpURLConnection connection)
-				{
-					sLogger.fine(HttpHeader.getRequestHeader(connection));
-				}
+    private void initializeConnectionManager() {
+        ConnectionManager manager = Parser.getConnectionManager();
+        CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
+        if (proxyHost != null) {
+            manager.setProxyHost(proxyHost);
+            manager.setProxyPort(proxyPort);
+        }
 
-				public void postConnect(HttpURLConnection connection)
-				{
-					sLogger.fine(HttpHeader.getResponseHeader(connection));
-				}
-			};
-			manager.setMonitor(monitor);
-		}
-	}
+        if (sLogger.isLoggable(Level.FINE)) {
+            ConnectionMonitor monitor = new ConnectionMonitor() {
+                public void preConnect(HttpURLConnection connection) {
+                    sLogger.fine(HttpHeader.getRequestHeader(connection));
+                }
 
-	public InputStream read(String urlString)
-	{
-		try
-		{
-			URL url = new URL(cacheManager.cachedUrl(urlString));
-			URLConnection urlConnection = url.openConnection();
-			return urlConnection.getInputStream();
-		}
-		catch (Throwable e)
-		{
-			failedOn(urlString, e);
-		}
-		return null;
-	}
+                public void postConnect(HttpURLConnection connection) {
+                    sLogger.fine(HttpHeader.getResponseHeader(connection));
+                }
+            };
+            manager.setMonitor(monitor);
+        }
+    }
 
-	public NodeList retreive(String urlString)
-	{
-		try
-		{
-			initializeConnectionManager();
-			parser = new Parser(cacheManager.cachedUrl(urlString));
-			NodeList nodes = parser.parse(null);
-			return nodes;
-		}
-		catch (Throwable e)
-		{
-			failedOn(urlString, e);
-		}
-		return null;
-	}
+    public InputStream read(String urlString) {
+        try {
+            URL url = new URL(cacheManager.cachedUrl(urlString));
+            URLConnection urlConnection = url.openConnection();
+            return urlConnection.getInputStream();
+        } catch (Throwable e) {
+            failedOn(urlString, e);
+        }
+        return null;
+    }
 
-	public Crawlable retreive(CrawlableEndpoint endpoint)
-	{
-		String url = endpoint.getUrl();
-		try
-		{
-			NodeList list = retreive(url);
-			CrawlableImpl crawlable = null;
+    public NodeList retreive(String urlString) {
+        try {
+            initializeConnectionManager();
+            parser = new Parser(cacheManager.cachedUrl(urlString));
+            NodeList nodes = parser.parse(null);
+            return nodes;
+        } catch (Throwable e) {
+            failedOn(urlString, e);
+        }
+        return null;
+    }
 
-			if (maxLevel > endpoint.getLevel() || maxLevel == -1)
-			{
-				crawlable = new CrawlableImpl(this, url, getChildUrls(endpoint, list), list);
-			}
-			else
-			{
-				crawlable = new CrawlableImpl(this, url, null, list);
-			}
+    @Override
+    public Crawlable retreive(CrawlableEndpoint endpoint) {
+        String url = endpoint.getUrl();
+        try {
+            NodeList list = retreive(url);
+            CrawlableImpl crawlable = null;
 
-			String contentType = (String) getContextParam(AbstractCrawler.CONTENT_TYPE_KEY);
+            if (maxLevel > endpoint.getLevel() || maxLevel == -1) {
+                crawlable = new CrawlableImpl(this, url, getChildUrls(endpoint, list), list);
+            } else {
+                crawlable = new CrawlableImpl(this, url, null, list);
+            }
 
-			if (contentType != null)
-			{
-				crawlable.setContentType(contentType);
-			}
-			else
-			{
-				crawlable.setContentType(CONTENT_TYPE_HTML_TEXT);
-			}
-			return crawlable;
-		}
-		catch (Throwable e)
-		{
-			endpoint.setError(e);
-			failedOn(url, e);
-		}
-		return null;
-	}
+            String contentType = (String) getContextParam(AbstractCrawler.CONTENT_TYPE_KEY);
 
-	protected boolean isUrlCrawlable(String url)
-	{
-		return url != null && !url.isEmpty();
-	}
+            if (contentType != null) {
+                crawlable.setContentType(contentType);
+            } else {
+                crawlable.setContentType(CONTENT_TYPE_HTML_TEXT);
+            }
+            return crawlable;
+        } catch (Throwable e) {
+            endpoint.setError(e);
+            failedOn(url, e);
+        }
+        return null;
+    }
 
-	protected GraphAnalyzer getGraphAnalyzer(Object object)
-	{
-		String url = "" + object;
-		if (object instanceof LinkTag)
-		{
-			url = ((LinkTag) object).getLink();
-			return super.getGraphAnalyzer(url);
-		}
-		else
-		{
-			return null;
-		}
-	}
+    protected boolean isUrlCrawlable(String url) {
+        return url != null && !url.isEmpty();
+    }
 
-	protected List<String> getChildUrls(CrawlableEndpoint endpoint, NodeList list)
-	{
-		List<String> urls = new ArrayList<String>();
-		NodeList text = list.extractAllNodesThatMatch(new LinkFilterImpl(), true);
-		for (Node node : text.toNodeArray())
-		{
-			LinkTag linkTag = (LinkTag) node;
+    protected GraphAnalyzer getGraphAnalyzer(Object object) {
+        String url = "" + object;
+        if (object instanceof LinkTag) {
+            url = ((LinkTag) object).getLink();
+            return super.getGraphAnalyzer(url);
+        } else {
+            return null;
+        }
+    }
 
-			if (isObjectCrawlable(endpoint, linkTag))
-			{
-				String urlString = linkTag.getLink();
-				if (isUrlCrawlable(urlString))
-				{
-					urls.add(urlString);
-				}
-			}
-		}
+    protected List<String> getChildUrls(CrawlableEndpoint endpoint, NodeList list) {
+        List<String> urls = new ArrayList<String>();
+        NodeList text = list.extractAllNodesThatMatch(new LinkFilterImpl(), true);
+        for (Node node : text.toNodeArray()) {
+            LinkTag linkTag = (LinkTag) node;
 
-		return urls;
-	}
+            if (isObjectCrawlable(endpoint, linkTag)) {
+                String urlString = linkTag.getLink();
+                if (isUrlCrawlable(urlString)) {
+                    urls.add(urlString);
+                }
+            }
+        }
 
-	private void failedOn(String url, Throwable t)
-	{
-		if (sFailedUrls.get(url) != null)
-		{
-			return;
-		}
-		sFailedUrls.put(url, url);
-		System.err.println("Failed on " + url);
-		t.printStackTrace();
-	}
+        return urls;
+    }
 
-	public String getStartingUrl()
-	{
+    private void failedOn(String url, Throwable t) {
+        if (sFailedUrls.get(url) != null) {
+            return;
+        }
+        sFailedUrls.put(url, url);
+        System.err.println("Failed on " + url);
+        t.printStackTrace();
+    }
 
-		return (String) getContextParam(URL_KEY);
-	}
+    public String getStartingUrl() {
 
-	protected ContentMapper getContentMapper()
-	{
-		return new WebPageMapper();
-	}
+        return (String) getContextParam(URL_KEY);
+    }
 
-	public void setMaxLevel(int mMaxLevel)
-	{
-		this.maxLevel = mMaxLevel;
-	}
+    protected ContentMapper getContentMapper() {
+        return new WebPageMapper();
+    }
 
-	public int getMaxLevel()
-	{
-		return maxLevel;
-	}
+    public void setMaxLevel(int mMaxLevel) {
+        this.maxLevel = mMaxLevel;
+    }
 
-	public void setProxyHost(String mProxyHost)
-	{
-		this.proxyHost = mProxyHost;
-	}
+    public int getMaxLevel() {
+        return maxLevel;
+    }
 
-	public String getProxyHost()
-	{
-		return proxyHost;
-	}
+    public void setProxyHost(String mProxyHost) {
+        this.proxyHost = mProxyHost;
+    }
 
-	public void setProxyPort(int mProxyPort)
-	{
-		this.proxyPort = mProxyPort;
-	}
+    public String getProxyHost() {
+        return proxyHost;
+    }
 
-	public int getProxyPort()
-	{
-		return proxyPort;
-	}
+    public void setProxyPort(int mProxyPort) {
+        this.proxyPort = mProxyPort;
+    }
+
+    public int getProxyPort() {
+        return proxyPort;
+    }
 }

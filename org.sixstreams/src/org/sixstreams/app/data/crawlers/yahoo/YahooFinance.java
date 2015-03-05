@@ -65,6 +65,12 @@ public class YahooFinance implements ContentMapper, GraphAnalyzer, Runnable {
     private boolean busy;
     private Object MetadataManager;
 
+    public static boolean done()
+    {
+        File file = new File(CACHE_LOCATION + File.separator + getDateString(new Date()));
+        return file.exists();
+    }
+    
     public boolean isBusy() {
         return busy;
     }
@@ -391,19 +397,18 @@ public class YahooFinance implements ContentMapper, GraphAnalyzer, Runnable {
         }
         //done with address
 
-        attributes.stream().map((attr) -> {
+        for (String attr : attributes) {
             if (attr.toLowerCase().contains("phone:")) {
                 profile.put("phone", attr.substring(attr.indexOf(":") + 1).trim());
             }
-            return attr;
-        }).map((attr) -> {
+
             if (attr.toLowerCase().contains("fax:")) {
                 profile.put("fax", attr.substring(attr.indexOf(":") + 1).trim());
             }
-            return attr;
-        }).filter((attr) -> (attr.toLowerCase().contains("http"))).forEach((attr) -> {
-            profile.put("website", attr.trim());
-        });
+            if (attr.toLowerCase().contains("http")) {
+                profile.put("website", attr.trim());
+            }
+        };
 
         i = attributes.indexOf("Sector:");
         profile.put("sector", attributes.get(i + 1));
@@ -496,7 +501,13 @@ public class YahooFinance implements ContentMapper, GraphAnalyzer, Runnable {
     }
 
     private Map<String, List<String>> toMap(NodeList list) {
-        Map<String, List<String>> summary = new HashMap<>();
+         Map<String, List<String>> summary = new HashMap<>();
+        if (list == null || list.size() == 0)
+        {
+            return summary;
+        }
+        
+       
         NodeList tableRows = list.extractAllNodesThatMatch(new TagNameFilter("tr"), true);
         SimpleNodeIterator propertyIterator = tableRows.elements();
         while (propertyIterator.hasMoreNodes()) {

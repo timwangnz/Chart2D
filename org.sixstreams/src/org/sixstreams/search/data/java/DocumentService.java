@@ -50,9 +50,9 @@ public class DocumentService {
 
     public DocumentService process(List<IndexableDocument> docs)
             throws SearchException {
-        docs.stream().forEach((searchDocument) -> {
+        for (IndexableDocument searchDocument : docs) {
             evaluateExpression(searchDocument);
-        });
+        };
         //plugin is called where develeopers can add/delete some documents
         //as a result the list and the data might be differet after this call.
         preIndexProcess(docs);
@@ -109,9 +109,9 @@ public class DocumentService {
 
             PrimaryKey pk = doc.getPrimaryKey();
 
-            pk.keySet().stream().forEach((key) -> {
+            for(Object key : pk.keySet()) {
                 filters.add(new AttributeFilter(key.toString(), null, pk.get(key), Constants.OPERATOR_EQS));
-            });
+            };
             deleteDataObjectsByFilters(filters);
         }
     }
@@ -128,9 +128,9 @@ public class DocumentService {
             Indexer indexer = engine.getIndexer();
             try {
                 List<IndexableDocument> docs = new ArrayList<>();
-                objects.stream().forEach((object) -> {
+                for(Object object : objects){
                     docs.add(((SearchableDataObject) searchableObject).createIndexableDocument(object));
-                });
+                };
                 process(docs);
                 indexer.indexBatch(docs);
             } catch (SearchException e) {

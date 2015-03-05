@@ -75,9 +75,9 @@ public class PersistenceManager {
     public <T> Object getObjectById(String objectId, Class<T> clazz) throws SearchException {
         SearchableObject so = getSearchableObject(Constants.INVALID_ENGINE_INST_ID, clazz);
         Map<String, Object> filter = new HashMap<>();
-        so.getDocumentDef().getKeyAttrDefs().stream().forEach((af) -> {
+        for(AttributeDefinition af : so.getDocumentDef().getKeyAttrDefs()){
             filter.put(af.getName(), objectId);
-        });
+        };
         List<T> objects = query(filter, clazz);
         if (objects == null || objects.size() != 1) {
             return null;
@@ -201,9 +201,9 @@ public class PersistenceManager {
 
     public SearchHits search(String query, List<AttributeFilter> filters, Class<?> clazz, int start, int limit, String orderBy) throws SearchException {
         Map<String, Object> filterMap = new HashMap<>();
-        filters.stream().forEach((filter) -> {
+        for (AttributeFilter filter : filters) {
             filterMap.put(filter.getAttrName(), filter);
-        });
+        };
         return search(Constants.INVALID_ENGINE_INST_ID, query, filterMap, clazz, start, limit, orderBy);
     }
 
@@ -314,7 +314,7 @@ public class PersistenceManager {
         DocumentDefinition docDef = so.getDocumentDef();
 
         if (filters != null) {
-            filters.keySet().stream().forEach((key) -> {
+            for(String key : filters.keySet()) {
                 Object value = filters.get(key);
 
                 if (value instanceof AttributeFilter) {
@@ -323,7 +323,7 @@ public class PersistenceManager {
                     AttributeDefinition fd = getAttrDef(docDef, key);
                     queryMetaData.addFilter(fd.getName(), fd.getDataType(), filters.get(key), Constants.OPERATOR_EQS);
                 }
-            });
+            };
         }
 
         SearchContext ctx = ContextFactory.getSearchContext();

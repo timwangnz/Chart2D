@@ -13,15 +13,15 @@ import org.sixstreams.search.data.PersistenceManager;
 
 public class StockCrawler extends TextCrawler {
 
-    static String nasdaq = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=NASDAQ&render=download";
-    static String amex = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=AMEX&render=download";
-    static String nyse = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=NYSE&render=download";
+    private static final String nasdaq = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=NASDAQ&render=download";
+    private static final String amex = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=AMEX&render=download";
+    private static final String nyse = "http://www.nasdaq.com/screening/companies-by-name.aspx?exchange=NYSE&render=download";
 
-    List<YahooFinance> enrichers = new ArrayList<>();
+    private final List<YahooFinance> enrichers = new ArrayList<>();
 
-    static long totalStocks = 100000;
-    static int threads = 5;
-    static int time2WaitForThread = 1000;
+    private static final long totalStocks = 100000;
+    private static final int threads = 5;
+    private static final int time2WaitForThread = 1000;
 
     static {
         Logger.getLogger(StockCrawler.class.getName()).setLevel(Level.SEVERE);
@@ -40,7 +40,13 @@ public class StockCrawler extends TextCrawler {
         return false;
     }
 
-    public static void main(String[] args) {
+    public static void load() {
+        
+        if (YahooFinance.done())
+        {
+            return;
+        }
+        
         StockCrawler crawler = new StockCrawler();
 
         long startedAt = System.currentTimeMillis();
@@ -50,12 +56,11 @@ public class StockCrawler extends TextCrawler {
 
         crawler.withQuotes = true;
         crawler.crawl(nasdaq);
-    //    crawler.crawl(nyse);
-        //    crawler.crawl(amex);
+        crawler.crawl(nyse);
+        crawler.crawl(amex);
 
         System.err.println("Time spent for " + crawler.getTotalCrawled() + " items is " + (System.currentTimeMillis() - startedAt) + " ms");
 
-        //StockCrawler.main(args);
     }
 
     public StockCrawler() {

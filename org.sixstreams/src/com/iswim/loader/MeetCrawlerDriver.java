@@ -15,7 +15,7 @@ import com.iswim.model.Race;
 import com.iswim.model.Swimmer;
 import com.iswim.model.Team;
 
-public class MeetCrawlerTest {
+public class MeetCrawlerDriver {
 
     static {
         Logger.getLogger("").setLevel(Level.SEVERE);
@@ -25,7 +25,7 @@ public class MeetCrawlerTest {
     static String[] meetPages = new String[]{
         // "11results.html",
         //	 "12results.html",
-        "2014"
+        "2014", "2015"
 	// "10results.html",
     // "09results.html",
     // "08results.html",
@@ -40,7 +40,7 @@ public class MeetCrawlerTest {
     static String rootUrl = "http://www.pacswim.org/swim-meet-results?year=";
     static String fileUrl = "file:///Users/anpwang";
 
-    public static void main(String[] args) {
+    public static void load() {
         try {
             download(1000);
             //crawl(100000);
