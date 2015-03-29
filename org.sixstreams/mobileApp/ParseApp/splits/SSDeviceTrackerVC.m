@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 SixStream. All rights reserved.
 //
 
-#import "SSSplitsModelVC.h"
+#import "SSDeviceTrackerVC.h"
 #import "SSSecurityVC.h"
 
-@interface SSSplitsModelVC (){
+@interface SSDeviceTrackerVC (){
     
     IBOutlet UIView *splitsView;
     IBOutlet UIView *eventView;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SSSplitsModelVC
+@implementation SSDeviceTrackerVC
 
 - (IBAction)nextStep:(id)sender
 {
@@ -36,4 +36,6 @@
     [layoutTable disablesSwipe];
     [self linkEditFields];
 }
+
+
 @end

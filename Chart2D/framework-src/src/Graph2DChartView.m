@@ -59,7 +59,7 @@
     [storedLocations removeAllObjects];
     
     float yMax = -9000000000000;
-    float yMin = 9000000000000;
+    float yMin =  9000000000000;
     
     if (self.dataSource)
     {
@@ -113,9 +113,9 @@
                     yMax = [value floatValue];
                 }
                 
-                if ([lowValue floatValue] < yMin)
+                if ([value floatValue] < yMin)
                 {
-                    yMin = [lowValue floatValue] ;
+                    yMin = [value floatValue] ;
                 }
                 
                 NSMutableDictionary *valueDic = [NSMutableDictionary dictionary];

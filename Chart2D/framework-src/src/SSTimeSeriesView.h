@@ -15,5 +15,7 @@
 }
 
 - (void) addSeries:(id) series;
+
 - (IBAction)startAnimate:(id)sender;
+
 @end

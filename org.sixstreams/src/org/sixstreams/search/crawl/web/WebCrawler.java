@@ -38,10 +38,10 @@ public class WebCrawler extends AbstractCrawler {
     public static final String MAX_LEVEL_PROPERTY_KEY = "org.sixstreams.search.web.crawler.WebCrawler.MaxLevel";
     private static final String CONTENT_TYPE_HTML_TEXT = "text/html";
 
-    private static Logger sLogger = Logger.getLogger(WebCrawler.class.getName());
-    private static Map<String, String> sFailedUrls = new HashMap<String, String>();
+    private static final Logger sLogger = Logger.getLogger(WebCrawler.class.getName());
+    private static final Map<String, String> sFailedUrls = new HashMap<>();
 
-    private CacheManager cacheManager = new CacheManager();
+    private final CacheManager cacheManager = new CacheManager();
 
     private int maxLevel = -1;
 
@@ -51,9 +51,9 @@ public class WebCrawler extends AbstractCrawler {
     private int proxyPort;
 
     public WebCrawler() {
-        String maxLevel = MetaDataManager.getProperty(MAX_LEVEL_PROPERTY_KEY);
-        if (maxLevel != null) {
-            this.maxLevel = Integer.parseInt(maxLevel);
+        String level = MetaDataManager.getProperty(MAX_LEVEL_PROPERTY_KEY);
+        if (level != null) {
+            this.maxLevel = Integer.parseInt(level);
         }
     }
 
@@ -67,10 +67,12 @@ public class WebCrawler extends AbstractCrawler {
 
         if (sLogger.isLoggable(Level.FINE)) {
             ConnectionMonitor monitor = new ConnectionMonitor() {
+                @Override
                 public void preConnect(HttpURLConnection connection) {
                     sLogger.fine(HttpHeader.getRequestHeader(connection));
                 }
 
+                @Override
                 public void postConnect(HttpURLConnection connection) {
                     sLogger.fine(HttpHeader.getResponseHeader(connection));
                 }
@@ -107,7 +109,7 @@ public class WebCrawler extends AbstractCrawler {
         String url = endpoint.getUrl();
         try {
             NodeList list = retreive(url);
-            CrawlableImpl crawlable = null;
+            CrawlableImpl crawlable;
 
             if (maxLevel > endpoint.getLevel() || maxLevel == -1) {
                 crawlable = new CrawlableImpl(this, url, getChildUrls(endpoint, list), list);
@@ -134,8 +136,9 @@ public class WebCrawler extends AbstractCrawler {
         return url != null && !url.isEmpty();
     }
 
+    @Override
     protected GraphAnalyzer getGraphAnalyzer(Object object) {
-        String url = "" + object;
+        String url;
         if (object instanceof LinkTag) {
             url = ((LinkTag) object).getLink();
             return super.getGraphAnalyzer(url);
@@ -145,7 +148,7 @@ public class WebCrawler extends AbstractCrawler {
     }
 
     protected List<String> getChildUrls(CrawlableEndpoint endpoint, NodeList list) {
-        List<String> urls = new ArrayList<String>();
+        List<String> urls = new ArrayList<>();
         NodeList text = list.extractAllNodesThatMatch(new LinkFilterImpl(), true);
         for (Node node : text.toNodeArray()) {
             LinkTag linkTag = (LinkTag) node;
@@ -167,9 +170,9 @@ public class WebCrawler extends AbstractCrawler {
         }
         sFailedUrls.put(url, url);
         System.err.println("Failed on " + url);
-        t.printStackTrace();
     }
 
+    @Override
     public String getStartingUrl() {
 
         return (String) getContextParam(URL_KEY);

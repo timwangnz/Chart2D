@@ -11,7 +11,6 @@
 
 @interface SSTimeSeriesView ()
 {
-    
     NSMutableArray *values;
     NSMutableArray *xLabels;
     CGFloat offset;
@@ -26,7 +25,6 @@
     int count;
 }
 
-
 @end
 
 @implementation SSTimeSeriesView
@@ -38,7 +36,6 @@
 
 -(void) doAnimation
 {
-    
     stopped = !stopped;
     dispatch_queue_t testServer = dispatch_queue_create("Test-Server-Thread", NULL);
     dispatch_async(testServer, ^{
@@ -57,8 +54,6 @@
             } );
             
         }
-        
-        
     });
 }
 
@@ -159,10 +154,12 @@
     if (self.yMax > 1000000000) {
         scale = 10000000000;
     }
+    
     title.text = scale >1 ?
         [NSString stringWithFormat:@"%.0f %@", scale/10, [def objectForKey:@"units"]]
     :
     [NSString stringWithFormat:@"%@", [def objectForKey:@"units"]];
+    
     return [xLabels objectAtIndex:x];
 }
 

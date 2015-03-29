@@ -72,7 +72,6 @@ public class ContactEnrichPlugin
          }
          catch (SearchException e)
          {
-            e.printStackTrace();
          }
       }
    }

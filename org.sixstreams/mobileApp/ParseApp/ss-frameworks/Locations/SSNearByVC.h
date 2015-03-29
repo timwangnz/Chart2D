@@ -13,11 +13,12 @@
 #import "SSSearchVC.h"
 
 @protocol SSNearByDelegate <NSObject>
+@optional
 - (void) mapView:(id) view didSelect : (id) item;
 - (NSString *) mapView:(id) view titleFor : (id) item;
 - (NSString *) mapView:(id) view subtitleFor : (id) item;
 - (id) mapView:(id) view addressFor:(id) item;
-
+- (void) mapView:(id) view didDeviceMove: (CLLocation *)userLocation;
 @end
 
 @interface SSNearByVC : SSSearchVC<MKMapViewDelegate>
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSArray *locations;
 @property (nonatomic, retain) id<SSNearByDelegate> delegate;
 @property (nonatomic) BOOL showDeviceLoc;
+@property (nonatomic) BOOL trackDevice;
 @property float deltaLatitude;
 @property float deltaLongitude;
 @property BOOL searchAllowed;

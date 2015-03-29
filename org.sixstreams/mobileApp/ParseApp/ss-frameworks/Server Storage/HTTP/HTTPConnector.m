@@ -267,6 +267,7 @@ static SSReachability *hostReach;
     onSuccess = callback;
     onProgress = progress;
     self.url = url;
+    //DebugLog(@"%@", url);
     [self get];
 }
 

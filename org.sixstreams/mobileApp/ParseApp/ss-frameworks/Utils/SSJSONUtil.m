@@ -300,7 +300,8 @@ NSString *parseName(NSString *input) {
                          options:NSJSONReadingMutableContainers
                          error:&error];
     if (error) {
-        DebugLog(@"Failed to convert %@ to dictionary due to %@", self, error);
+        DebugLog(@"Failed to convert to dictionary due to %@ %@", [self toString], error);
+        return nil;
     }
     return dic;
 

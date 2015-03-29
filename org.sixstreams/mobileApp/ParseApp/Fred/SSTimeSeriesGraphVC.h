@@ -11,8 +11,8 @@
 
 @interface SSTimeSeriesGraphVC : SSFredCommonVC<UISplitViewControllerDelegate>
 
-- (void) addSeries:(id) series;
-- (void) loadData:(RequestCallback) block;
+
+- (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block;
 - (void) updateUI;
 
 @end

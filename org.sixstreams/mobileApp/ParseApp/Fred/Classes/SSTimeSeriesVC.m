@@ -101,19 +101,19 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     selectedKey = [sortedKeys objectAtIndex:indexPath.row];
-    id series = [self.data objectForKey: selectedKey];
-    self.detailVC.title = selectedKey;
-    [self.detailVC addSeries:series];
     
+    id series = [self.data objectForKey: selectedKey];
+
     if (![self isIPad])
     {
-        [self.detailVC loadData:^(NSError *error, id data) {
+        [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
             [self.navigationController pushViewController:self.detailVC animated:YES];
         }];
     }
     else
     {
-        [self.detailVC loadData:^(NSError *error, id data) {
+        
+        [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
             [self.detailVC updateUI];
         }];
     }

@@ -8,6 +8,6 @@
 
 #import "SSApp.h"
 
-@interface SSSplitsApp : SSApp
+@interface SSTrackerApp : SSApp
 
 @end

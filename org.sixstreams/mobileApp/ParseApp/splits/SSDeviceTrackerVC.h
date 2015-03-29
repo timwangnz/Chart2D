@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SSEntityEditorVC.h"
 
-@interface SSSplitsModelVC : SSEntityEditorVC
+@interface SSDeviceTrackerVC : SSEntityEditorVC
 
 @end

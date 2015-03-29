@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSTimeSeriesGraphVC">
             <connections>
+                <outlet property="controller" destination="tcS-5f-eLc" id="dqf-3X-wWt"/>
                 <outlet property="layoutView" destination="vGA-jT-ne7" id="xWa-8V-Pvm"/>
                 <outlet property="seriesView" destination="hcQ-TB-UhT" id="cpu-xg-490"/>
                 <outlet property="tbFacts" destination="lue-hA-ALr" id="B8T-ht-Z1W"/>
@@ -20,9 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZEB-Vj-5MH">
-                    <rect key="frame" x="61" y="0.0" width="198" height="21"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -32,6 +34,7 @@
             <connections>
                 <outlet property="title" destination="ZEB-Vj-5MH" id="54J-OJ-tI4"/>
             </connections>
+            <point key="canvasLocation" x="114" y="-80"/>
         </view>
         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" id="lue-hA-ALr" customClass="SSPropertiesView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
@@ -40,6 +43,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <point key="canvasLocation" x="114" y="219.5"/>
         </tableView>
         <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vGA-jT-ne7" customClass="SSTableLayoutView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -47,6 +51,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <point key="canvasLocation" x="660" y="152"/>
         </tableView>
         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="WZy-4o-zOq">
             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
@@ -55,7 +60,27 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <fontDescription key="fontDescription" type="system" pointSize="14"/>
             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+            <point key="canvasLocation" x="114" y="453.5"/>
         </textView>
+        <view contentMode="scaleToFill" id="tcS-5f-eLc">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vP9-Au-TcD">
+                    <rect key="frame" x="8" y="16" width="55" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clearAll:" destination="-1" eventType="touchUpInside" id="MmF-TJ-JtK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="114" y="-283"/>
+        </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

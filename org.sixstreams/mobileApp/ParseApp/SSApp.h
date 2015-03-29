@@ -35,6 +35,8 @@ CGAffineTransform makeTransform(CGFloat xScale, CGFloat yScale,
 
 + (SSApp *) instance;
 
+- (NSString *) deviceId;
+
 - (void) initializeOnSuccess:(SuccessCallback) callback;
 - (UIView *) backgroundView;
 - (BOOL) invitationOnly;
