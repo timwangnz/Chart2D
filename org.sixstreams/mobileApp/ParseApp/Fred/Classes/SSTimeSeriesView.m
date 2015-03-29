@@ -1,34 +1,33 @@
 //
-//  SSDataView.m
+//  SSTimeSeriesView.m
 //  SixStreams
 //
-//  Created by Anping Wang on 1/31/15.
+//  Created by Anping Wang on 3/29/15.
 //  Copyright (c) 2015 SixStream. All rights reserved.
 //
 
-#import "SSDataView.h"
+#import "SSTimeSeriesView.h"
 #import "DebugLogger.h"
 #import "SSTimeSeries.h"
 
-@interface SSDataView()
+@interface SSTimeSeriesView()
 {
     NSMutableArray *charts;
     NSMutableArray *xLabels;
     NSMutableArray *xPoints;
     CGFloat offset;
+    NSString *units;
     int xTicks;
     int maxCounts;
-    int seriesCount;
-    int points;
+    NSUInteger seriesCount;
+    NSUInteger points;
     int pointsInStep;
     float lastValue;
     int count;
 }
 @end
 
-@implementation SSDataView
-
-- (void) removeAll
+@implementation SSTimeSeriesView- (void) removeAll
 {
     [charts removeAllObjects];
     count = 0;
@@ -37,7 +36,7 @@
 
 - (void) removeSeries:(id) series
 {
-
+    
 }
 
 - (void) addSeries:(id) series
@@ -45,12 +44,10 @@
     count = [[series objectForKey:@"count"] intValue];
     SSTimeSeries *ts = [[SSTimeSeries alloc ] initWithDictionary:series];
     //DebugLog(@"%@", ts.dataPoints);
-    title.text = ts.units;
+    units = ts.units;
     
-    [charts addObject:series];
+    [charts addObject:ts];
     
-    
-    title.hidden = charts.count != 1;
     [self refresh];
 }
 
@@ -68,7 +65,10 @@
     self.bottomPadding = 0;
     self.bottomMargin = 80;
     self.leftMargin = 60;
-
+    
+    self.touchEnabled = YES;
+    self.cursorType = Graph2DCursorCross;
+    
     maxCounts = 356;
     pointsInStep = 1;
     xTicks = 11;
@@ -77,6 +77,7 @@
     charts = [NSMutableArray array];
     xLabels = [NSMutableArray array];
     xPoints = [NSMutableArray array];
+    
     self.gridStyle = [[Graph2DGridStyle alloc]init];
     self.gridStyle.lineType = LineStyleSolid;
     self.gridStyle.color =[UIColor grayColor];
@@ -102,12 +103,12 @@
 
 - (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
 {
-    id series = [charts objectAtIndex:graph];
-    seriesCount = [series[@"count"] intValue];
+    SSTimeSeries *ts = [charts objectAtIndex:graph];
+    seriesCount = [ts.dataPoints count];
     
     points = seriesCount > maxCounts ? maxCounts : seriesCount;
     
-    NSArray *obsvs = series[@"observations"];
+    NSArray *obsvs = ts.xPoints;
     
     [xPoints removeAllObjects];
     [xLabels removeAllObjects];
@@ -117,8 +118,7 @@
         long idx = [obsvs count] - points + i;
         if (idx >= 0)
         {
-            id obvs = obsvs[idx];
-            [xPoints addObject:obvs[@"date"]];
+           [xPoints addObject:obsvs[idx]];
         }
     }
     
@@ -127,14 +127,13 @@
         long idx = [obsvs count] - (int)points*(1.0 - i*1.0/(xTicks-1));
         if(idx < [obsvs count])
         {
-            id obvs = obsvs[idx];
-            [xLabels addObject:obvs[@"date"]];
+            [xLabels addObject:obsvs[idx]];
         }
     }
     
     if(xLabels.count < xTicks)
     {
-        [xLabels addObject:obsvs[obsvs.count -1][@"date"]];
+        [xLabels addObject:obsvs[obsvs.count -1]];
     }
     
     return points;
@@ -170,7 +169,7 @@
     return [NSString stringWithFormat:@"%.1f %@", self.yMin + y * (self.yMax - self.yMin)/scale,
             scale == 10000 ? @"k" :
             (scale == 10000000 ? @"m" : (scale == 10000000000 ? @"b":@""))
-             ];
+            ];
 }
 
 - (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
@@ -180,6 +179,7 @@
     seriesStyle.gradient = NO;
     seriesStyle.lineStyle.penWidth = 1.0;
     seriesStyle.chartType = Graph2DLineChart;
+    seriesStyle.showMarker = YES;
     return seriesStyle;
 }
 
@@ -226,29 +226,25 @@
 
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
-    id observation = [charts objectAtIndex:series];
-    NSArray *obsvs = [observation objectForKey:@"observations"];
+    SSTimeSeries * observation = [charts objectAtIndex:series];
+    
+    NSDictionary *obsvs = observation.dataPoints;
     
     NSString *date = xPoints[index];
     for (long i = obsvs.count - 1; i >= 0 ; i--)
     {
-        id obs = obsvs[i];
-        if ([date isEqualToString:obs[@"date"]])
+        id obs = [obsvs objectForKey:date];
+        if (obs)
         {
             float value = lastValue;
             //DebugLog(@"%ld %ld %f", obsvs.count, obsvs.count - points +  index, value);
-            if (obs[@"value"])
+            
+            value = [obs floatValue];
+            if (value == 0)
             {
-                value = [obs[@"value"] floatValue];
-                if (value == 0)
-                {
-                    value=lastValue;
-                }
+                value=lastValue;
             }
-            else
-            {
-                value = lastValue;
-            }
+            
             lastValue = value;
             return [NSNumber numberWithFloat:value];
         }
@@ -257,3 +253,4 @@
 }
 
 @end
+

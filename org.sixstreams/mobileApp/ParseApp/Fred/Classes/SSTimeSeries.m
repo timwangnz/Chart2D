@@ -19,12 +19,15 @@
         self.units = seriesDef[@"units"];
         self.id = dict[@"id"];
         NSMutableDictionary *dataPoints = [NSMutableDictionary dictionary];
+        NSMutableArray *xPoints = [NSMutableArray array];
         id observations = dict[@"observations"];
         
         for (id observation in observations) {
             [dataPoints setObject:observation[@"value"] forKey:observation[@"date"]];
+            [xPoints addObject:observation[@"date"]];
         }
         self.dataPoints = [NSDictionary dictionaryWithDictionary:dataPoints];
+        self.xPoints = [NSArray arrayWithArray:xPoints];
         self.title = dict[@"title"];
     }
     return self;

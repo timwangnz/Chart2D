@@ -21,6 +21,8 @@
 @property (nonatomic, retain) NSString *reference;
 @property (nonatomic, retain) NSDictionary *dataPoints;
 
+@property (nonatomic, retain) NSArray *xPoints;
+
 
 - (id) initWithDictionary:(id) dict;
 

@@ -31,11 +31,24 @@
 }
 
 - (IBAction)clearAll:(id)sender;
+- (IBAction)changChartStyle:(UISegmentedControl *)sender;
+- (IBAction)setOperation : (UISegmentedControl *)sender;
+
 @end
 
 @implementation SSTimeSeriesGraphVC
 static NSString  *timePeriod =  @"";//@"&realtime_start=2014-01-01&realtime_end=2015-03-28";
 static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observations?api_key=ef673da26430e206a8b7d3ce658b7162&file_type=json";
+
+- (IBAction)setOperation : (UISegmentedControl *)sender
+{
+    
+}
+
+- (IBAction)changChartStyle:(UISegmentedControl *)sender
+{
+    
+}
 
 - (IBAction)clearAll:(id)sender
 {
