@@ -61,7 +61,7 @@ public abstract class TextCrawler {
             try (Reader reader = new InputStreamReader(url.openStream())) {
                 crawl(reader);
             }
-            
+         
         } catch (Exception ex) {
             Logger.getLogger(TextCrawler.class.getName()).log(Level.SEVERE, null, ex);
         }
