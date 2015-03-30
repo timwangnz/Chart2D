@@ -24,13 +24,20 @@
     int pointsInStep;
     float lastValue;
     int count;
+    int selected;
+    
+    IBOutlet UILabel *title;
 }
 @end
 
-@implementation SSTimeSeriesView- (void) removeAll
+@implementation SSTimeSeriesView
+
+- (void) removeAll
 {
     [charts removeAllObjects];
     count = 0;
+    selected = -1;
+    title.text = @"";
     [self refresh];
 }
 
@@ -45,7 +52,7 @@
     SSTimeSeries *ts = [[SSTimeSeries alloc ] initWithDictionary:series];
     //DebugLog(@"%@", ts.dataPoints);
     units = ts.units;
-    
+    title.text = @"";
     [charts addObject:ts];
     
     [self refresh];
@@ -73,7 +80,7 @@
     pointsInStep = 1;
     xTicks = 11;
     offset = 1;
-    
+    selected = -1;
     charts = [NSMutableArray array];
     xLabels = [NSMutableArray array];
     xPoints = [NSMutableArray array];
@@ -175,11 +182,25 @@
 - (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
 {
     Graph2DSeriesStyle *seriesStyle = [[Graph2DSeriesStyle alloc]init];
-    seriesStyle.color =  [UIColor colorWithRed:0.4 green:0.0 blue:0.0 alpha:1];
+    if (selected == -1)
+    {
+        seriesStyle.color =  [UIColor colorWithRed:0.4 green:0.0 blue:0.0 alpha:1];
+    }
+    else{
+        if(selected == series)
+        {
+            seriesStyle.color =  [UIColor colorWithRed:0.4 green:0.0 blue:0.0 alpha:1];
+        }
+        else{
+            seriesStyle.color =  [UIColor colorWithRed:0.4 green:0.0 blue:0.0 alpha:0.2];
+        }
+    }
+    
+    
     seriesStyle.gradient = NO;
     seriesStyle.lineStyle.penWidth = 1.0;
     seriesStyle.chartType = Graph2DLineChart;
-    seriesStyle.showMarker = YES;
+    //seriesStyle.showMarker = YES;
     return seriesStyle;
 }
 
@@ -224,32 +245,22 @@
     return lineStyle;
 }
 
+- (void) graph2DView:(Graph2DView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
+{
+    selected = series;
+    SSTimeSeries * observation = [charts objectAtIndex:series];
+    title.text = [NSString stringWithFormat: @"%@ %.2f", xPoints[index], [observation valueFor:xPoints[index]]];
+    //for (int i=0; i< charts.count; i++) {
+      //  observation = [charts objectAtIndex:i];
+      //  NSLog(@"%d %@",i, [NSString stringWithFormat: @"%@ %@", xPoints[index], observation.dataPoints[xPoints[index]]]);
+    //}
+}
+
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
-    SSTimeSeries * observation = [charts objectAtIndex:series];
+    SSTimeSeries *ts = charts[series];
     
-    NSDictionary *obsvs = observation.dataPoints;
-    
-    NSString *date = xPoints[index];
-    for (long i = obsvs.count - 1; i >= 0 ; i--)
-    {
-        id obs = [obsvs objectForKey:date];
-        if (obs)
-        {
-            float value = lastValue;
-            //DebugLog(@"%ld %ld %f", obsvs.count, obsvs.count - points +  index, value);
-            
-            value = [obs floatValue];
-            if (value == 0)
-            {
-                value=lastValue;
-            }
-            
-            lastValue = value;
-            return [NSNumber numberWithFloat:value];
-        }
-    }
-    return [NSNumber numberWithFloat:0.0];
+    return [NSNumber numberWithFloat:[ts valueFor: xPoints[index]]];
 }
 
 @end

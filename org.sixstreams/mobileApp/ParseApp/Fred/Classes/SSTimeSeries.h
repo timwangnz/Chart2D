@@ -25,5 +25,7 @@
 
 
 - (id) initWithDictionary:(id) dict;
+- (float) valueAt:(NSInteger) index;
+- (float) valueFor:(id) key;
 
 @end

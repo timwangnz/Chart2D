@@ -26,7 +26,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
 
 - (NSString *) getUrl:(NSString *)catId
 {
-    return [NSString stringWithFormat:@"%@&category_id=%@", fredCatSeri, catId ];
+    return [NSString stringWithFormat:@"%@&category_id=%@", fredCatSeri, catId];
 }
 
 - (void) showGroup:(id) sender

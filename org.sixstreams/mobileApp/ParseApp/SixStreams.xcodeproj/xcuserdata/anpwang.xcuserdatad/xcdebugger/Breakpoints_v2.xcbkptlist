@@ -823,13 +823,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "449362091.135084"
+            filePath = "Fred/Classes/SSFredVC.m"
+            timestampString = "449374841.098684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-numberOfItems:forSeries:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-didFinishLoading:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -62,7 +62,6 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-
     return self;
 }
 
@@ -157,7 +156,6 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     [barButtonItem setTitle:@"Categories"];
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
-
 
 - (void)splitViewController:(UISplitViewController*)svc
      willShowViewController:(UIViewController *)aViewController

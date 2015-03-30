@@ -87,14 +87,17 @@ static NSString  *fredCat = @"http://api.stlouisfed.org/fred/category/children?a
         [self.navigationController pushViewController:children animated:YES];
         return;
     }
+    
     for (id cat in cats) {
         [categories setObject:[cat objectForKey:@"id"] forKey:[cat objectForKey:@"name"]];
     }
+    
     SSFredVC *children = [[SSFredVC alloc]init];
     children.data = categories;
     children.title = selectedKey;
     children.isChild = YES;
     children.detailVC = self.detailVC;
+    
     [self.navigationController pushViewController:children animated:YES];
     
 }

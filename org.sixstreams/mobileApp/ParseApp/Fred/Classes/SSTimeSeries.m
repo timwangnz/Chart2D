@@ -21,7 +21,6 @@
         NSMutableDictionary *dataPoints = [NSMutableDictionary dictionary];
         NSMutableArray *xPoints = [NSMutableArray array];
         id observations = dict[@"observations"];
-        
         for (id observation in observations) {
             [dataPoints setObject:observation[@"value"] forKey:observation[@"date"]];
             [xPoints addObject:observation[@"date"]];
@@ -33,5 +32,14 @@
     return self;
 }
 
+- (float) valueAt:(NSInteger) index
+{
+    return [self.dataPoints[self.xPoints[index]] floatValue];
+}
+
+- (float) valueFor:(id) key
+{
+    return [self.dataPoints[key]floatValue];
+}
 
 @end
