@@ -5,6 +5,8 @@
 //  Created by Anping Wang on 9/16/12.
 //  Copyright (c) 2012 s. All rights reserved.
 //
+#import <MapKit/MapKit.h>
+#import <MapKit/MKAnnotation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SSNearByVC.h"
 #import "SSMapMarker.h"
@@ -13,6 +15,8 @@
 #import "SSFilter.h"
 #import "SSMapMarker.h"
 #import "SSEntityEditorVC.h"
+
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface SSNearByVC ()<CLLocationManagerDelegate>
 {
@@ -34,8 +38,6 @@
 
 @implementation SSNearByVC
 
-#define DISTANCE 30.0
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,32 +58,29 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    if ([locations count] == 1)
+    if ([locations count] >= 1)
     {
-
         CLLocation *location = (CLLocation *)locations[0];
+        
         if(!pastLocation)
         {
             pastLocation = location;
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(pastLocation.coordinate, 800, 800);
+            [myMapView setRegion:[myMapView regionThatFits:region] animated:YES];
         }
         
         CLLocationDistance distance = [location distanceFromLocation:pastLocation];
-
-        if (deviceMarker && distance > 10)
+        //self.title = [NSString stringWithFormat:@"%f", distance];
+        if (deviceMarker && distance > 5)
         {
             [self moveAnnotation:deviceMarker to:location.coordinate];
             pastLocation = location;
-            
-            NSMutableDictionary *myLocation = [NSMutableDictionary dictionary];
-            myLocation[LATITUDE]=[NSNumber numberWithDouble:location.coordinate.latitude];
-            myLocation[LONGITUDE]=[NSNumber numberWithDouble:location.coordinate.longitude];
-            myLocation[DATE] = location.timestamp;
-            
-            [[SSConnection connector] createObject:myLocation ofType:@"location_tracker" onSuccess:^(id data) {
-                //
-            } onFailure:^(NSError *error) {
-                //
-            }];
+        }
+        
+        
+        if ([self.delegate respondsToSelector:@selector(mapView:didDeviceMove:)])
+        {
+            [self.delegate mapView:self didDeviceMove:location];
         }
     }
 }
@@ -145,20 +144,34 @@
     if (self.showDeviceLoc)
     {
         [self assignPlaces];
+        myMapView.showsUserLocation = YES;
+        locationManager.distanceFilter = kCLDistanceFilterNone;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     }
+    [locationManager startUpdatingLocation];
+
+    [self searchCurrentLocation];
 }
 
 - (void) viewDidLoad
 {
     //[super viewDidLoad];
-    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     locationManager.desiredAccuracy = kCLLocationAccuracyBest; // 100 m
     locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
-    [self searchCurrentLocation];
-    deviceMarker = [SSMapMarker getMyMarker];
+    
+#ifdef __IPHONE_8_0
+    if(IS_OS_8_OR_LATER) {
+        // Use one or the other, not both. Depending on what you put in info.plist
+        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestAlwaysAuthorization];
+    }
+#endif
+    
+   deviceMarker = [SSMapMarker getMyMarker];
+
+   
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated

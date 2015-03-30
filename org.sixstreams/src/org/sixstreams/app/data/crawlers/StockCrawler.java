@@ -20,7 +20,7 @@ public class StockCrawler extends TextCrawler {
     private final List<YahooFinance> enrichers = new ArrayList<>();
 
     private static final long totalStocks = 100000;
-    private static final int threads = 5;
+    private static final int threads = 50;
     private static final int time2WaitForThread = 1000;
 
     static {
@@ -113,7 +113,7 @@ public class StockCrawler extends TextCrawler {
         }
         return null;
     }
-
+    //replace this with an executor
     void enrichStock(Stock stock) throws Exception {
         YahooFinance yf = getIdleEnricher();
         while (true) {

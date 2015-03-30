@@ -10,7 +10,6 @@
 
 @interface SSWelcomeVC ()
 {
-    
     __weak IBOutlet UIActivityIndicatorView *waiting;
 }
 

@@ -12,73 +12,78 @@
 
 #import "SSTableLayoutView.h"
 #import "SSPropertiesView.h"
+#import "SSDataView.h"
+
+//display multiple serieses
 
 @interface SSTimeSeriesGraphVC ()
 {
-    NSMutableArray *serieses;
-    NSMutableDictionary *obvservations;
-    IBOutlet SSTimeSeriesView *seriesView;
+    IBOutlet SSDataView *seriesView;
     IBOutlet SSPropertiesView *tbFacts;
-    
+    IBOutlet UIView  *controller;
     IBOutlet SSTableLayoutView *layoutView;
     IBOutlet UITextView *textView;
     NSString *seriesId;
     id properties;
-    id theSeries;
+    id theSeriesDef;
     RequestCallback dataCallback;
     NSData *loadedData;
 }
 
+- (IBAction)clearAll:(id)sender;
+- (IBAction)changChartStyle:(UISegmentedControl *)sender;
+- (IBAction)setOperation : (UISegmentedControl *)sender;
+
 @end
 
 @implementation SSTimeSeriesGraphVC
-
+static NSString  *timePeriod =  @"";//@"&realtime_start=2014-01-01&realtime_end=2015-03-28";
 static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observations?api_key=ef673da26430e206a8b7d3ce658b7162&file_type=json";
+
+- (IBAction)setOperation : (UISegmentedControl *)sender
+{
+    
+}
+
+- (IBAction)changChartStyle:(UISegmentedControl *)sender
+{
+    
+}
+
+- (IBAction)clearAll:(id)sender
+{
+    [seriesView removeAll];
+    properties = nil;
+    theSeriesDef = nil;
+    seriesId = nil;
+    layoutView.hidden = YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        serieses = [NSMutableArray array];
-        obvservations = [NSMutableDictionary dictionary];
-    }
+
     return self;
 }
 
 - (NSString *) getUrl:(NSString *)catId
 {
     seriesId = catId;
-    return [NSString stringWithFormat:@"%@&series_id=%@", fredCatSeri, catId];
+    return [NSString stringWithFormat:@"%@%@&series_id=%@", fredCatSeri, timePeriod, catId];
 }
 
-- (void) setSeries:(id) series
+- (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block
 {
-    theSeries = series;
-    seriesId = [series objectForKey:@"id"];
-    properties = [NSMutableDictionary dictionaryWithDictionary:theSeries];
-    [properties removeObjectForKey:@"title"];
-    [properties removeObjectForKey:@"id"];
-    [properties removeObjectForKey:@"notes"];
-    [properties removeObjectForKey:@"realtime_end"];
-    [properties removeObjectForKey:@"realtime_start"];
-    [properties removeObjectForKey:@"frequency_short"];
-    [properties removeObjectForKey:@"observation_end"];
-    [properties removeObjectForKey:@"observation_start"];
-    [properties removeObjectForKey:@"seasonal_adjustment_short"];
-    [properties removeObjectForKey:@"units_short"];
-   // [self updateUI];
-}
-
-- (void) loadData:(RequestCallback)block
-{
-    dataCallback = block;
-    id catId = [theSeries objectForKey:@"id"];
-    
-    
+    id catId = [seriesDef objectForKey:@"id"];
     if(!catId)
     {
         return;
     }
+    
+    theSeriesDef = seriesDef;
+    seriesId = [seriesDef objectForKey:@"id"];
+    properties = [NSMutableDictionary dictionaryWithDictionary:seriesDef];
+    dataCallback = block;
     
     HTTPConnector *conn = [[HTTPConnector alloc]init];
 
@@ -91,23 +96,13 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     } onProgress:^(id data) {
         //
     } onFailure:^(NSError *error) {
-        //
+        [self showAlert:@"Failed to get data, please try again later" withTitle:@"Network Failure"];
     }];
 }
 
-- (void) addSeries:(id) series
-{
-    [serieses removeAllObjects];
-    [serieses addObject:series];
-    if ([serieses count]>0) {
-        [self setSeries:[serieses objectAtIndex:0]];
-    }
-}
-
-
 - (void) viewWillAppear:(BOOL)animated
 {
-    if (theSeries)
+    if (theSeriesDef)
     {
         [self updateUI];
     }
@@ -115,17 +110,24 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
 - (void) updateUI
 {
-    tbFacts.data = properties;
-    textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeries objectForKey:@"notes"] ? [theSeries objectForKey:@"notes"] : @""];
     
     id dic = [NSMutableDictionary dictionaryWithDictionary:[loadedData toDictionary]];
-    [dic setObject:tbFacts.data forKey:@"seriesDef"];
+    if (dic[@"error_code"])
+    {
+        [self showAlert:dic[@"error_message"] withTitle:@"Error"];
+        return;
+    }
     
-    [obvservations setObject:dic forKey:seriesId];
+    tbFacts.data = properties;
+    self.title = [theSeriesDef objectForKey:@"title"];
+    textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeriesDef objectForKey:@"notes"] ? [theSeriesDef objectForKey:@"notes"] : @""];
+    
+
+    [dic setObject:tbFacts.data forKey:@"seriesDef"];
     
     [seriesView addSeries:dic];
     
-    
+    seriesView.hidden = NO;
     [layoutView removeChildViews];
     layoutView.hidden = NO;
     if([self isIPad])
@@ -141,6 +143,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     [textView sizeToFit];
     [textView setScrollEnabled:NO];
     
+    [layoutView addChildView:controller];
     [layoutView addChildView:seriesView];
     [layoutView addChildView:textView];
     [layoutView addChildView:tbFacts];
@@ -151,7 +154,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
           withBarButtonItem:(UIBarButtonItem*)barButtonItem
        forPopoverController:(UIPopoverController*)pc
 {
-    [barButtonItem setTitle:@"your title"];
+    [barButtonItem setTitle:@"Categories"];
     self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 

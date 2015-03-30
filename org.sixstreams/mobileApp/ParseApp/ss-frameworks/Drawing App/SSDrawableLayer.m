@@ -336,7 +336,7 @@ typedef struct {
         // Allocate  memory needed for the bitmap context
         brushData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte));
         // Use  the bitmatp creation function provided by the Core Graphics framework.
-        brushContext = CGBitmapContextCreate(brushData, width, height, 8, width * 4, CGImageGetColorSpace(brushImage), kCGImageAlphaPremultipliedLast);
+        brushContext = CGBitmapContextCreate(brushData, width, height, 8, width * 4, CGImageGetColorSpace(brushImage), kCGBitmapByteOrderDefault);
         // After you create the context, you can draw the  image to the context.
         CGContextDrawImage(brushContext, CGRectMake(0.0, 0.0, (CGFloat)width, (CGFloat)height), brushImage);
         // You don't need the context at this point, so you need to release it to avoid memory leaks.

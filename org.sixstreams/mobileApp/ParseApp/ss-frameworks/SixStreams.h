@@ -190,8 +190,11 @@
 #define POSTAL_CODE @"postalCode"
 #define ZIP_CODE @"zipCode"
 #define LATITUDE @"latitude"
+#define DEVICE_ID @"deviceId"
 #define LONGITUDE @"longitude"
 #define LOCATION @"location"
+#define VELOCITY @"velocity"
+#define DISTANCE @"distance"
 #define APPLICATION_KEY @"application"
 #define PRIVACY @"privacy"
 

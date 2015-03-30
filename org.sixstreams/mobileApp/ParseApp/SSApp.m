@@ -101,6 +101,12 @@ CGAffineTransform makeTransform(CGFloat xScale, CGFloat yScale,
     return eventIcon;
 }
 
+- (NSString *) deviceId
+{
+    NSUUID *uuid =[[UIDevice currentDevice] identifierForVendor] ;
+    return uuid.UUIDString;
+}
+
 - (void) initializeOnSuccess:(SuccessCallback) callback
 {
     callback(self);

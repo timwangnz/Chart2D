@@ -8,6 +8,14 @@
 
 #import <Chart2D/Chart2D.h>
 
-@interface SSDataView : SSTimeSeriesView
+@interface SSDataView : Graph2DChartView<Graph2DDataSource, Graph2DChartDelegate, Graph2DViewDelegate>
+{
+    IBOutlet UILabel *title;
+}
+
+
+- (void) removeAll;
+- (void) addSeries:(id) series;
+- (void) removeSeries:(id) series;
 
 @end

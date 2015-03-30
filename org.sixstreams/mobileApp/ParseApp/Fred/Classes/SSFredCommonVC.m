@@ -53,7 +53,7 @@
 - (void) processError: (NSString *) error
 {
     DebugLog(@"%@", error);
-    
+    [self showAlert:@"Network connection failed, try again later please" withTitle:@"Error"];
 }
 
 -(void) reloadData:(id) catId
@@ -65,6 +65,7 @@
     
     HTTPConnector *conn = [[HTTPConnector alloc]init];
     conn.url = [self getUrl:catId];
+    //DebugLog(@"%@", conn.url);
     conn.delegate = self;
     [conn get];
 }

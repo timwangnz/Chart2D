@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D06A5C51AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5C61AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5C71AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5C81AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5C91AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5CA1AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
+		0D06A5CB1AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */; };
 		0D08968317F1424F00457A1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968217F1424F00457A1A /* Foundation.framework */; };
 		0D08968517F1424F00457A1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968417F1424F00457A1A /* CoreGraphics.framework */; };
 		0D08968717F1424F00457A1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968617F1424F00457A1A /* UIKit.framework */; };
@@ -3141,8 +3148,6 @@
 		0D257FB61A7EDFC80087E51B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2572F01A7EDFC70087E51B /* AppDelegate.m */; };
 		0D257FB71A7EDFC80087E51B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2572F01A7EDFC70087E51B /* AppDelegate.m */; };
 		0D257FB81A7EDFC80087E51B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2572F01A7EDFC70087E51B /* AppDelegate.m */; };
-		0D257FB91A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2572F11A7EDFC70087E51B /* FacebookSDK.framework */; };
-		0D257FBA1A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2572F11A7EDFC70087E51B /* FacebookSDK.framework */; };
 		0D257FBB1A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2572F11A7EDFC70087E51B /* FacebookSDK.framework */; };
 		0D257FBC1A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2572F11A7EDFC70087E51B /* FacebookSDK.framework */; };
 		0D257FBE1A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2572F11A7EDFC70087E51B /* FacebookSDK.framework */; };
@@ -3628,9 +3633,9 @@
 		0D2B857B18144194000378CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B857A18144194000378CA /* MapKit.framework */; };
 		0D2BBDBF198E83B400BA0A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2BBDA8198E83B300BA0A4D /* InfoPlist.strings */; };
 		0D2BBDC0198E83B400BA0A4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2BBDAA198E83B300BA0A4D /* Images.xcassets */; };
-		0D2BBDC2198E83B400BA0A4D /* SSSplitsModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BBDAD198E83B300BA0A4D /* SSSplitsModelVC.m */; };
-		0D2BBDC3198E83B400BA0A4D /* SSSplitsModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2BBDAE198E83B300BA0A4D /* SSSplitsModelVC.xib */; };
-		0D2BBDCA198E83B400BA0A4D /* SSSplitsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BBDB9198E83B400BA0A4D /* SSSplitsApp.m */; };
+		0D2BBDC2198E83B400BA0A4D /* SSDeviceTrackerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BBDAD198E83B300BA0A4D /* SSDeviceTrackerVC.m */; };
+		0D2BBDC3198E83B400BA0A4D /* SSDeviceTrackerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2BBDAE198E83B300BA0A4D /* SSDeviceTrackerVC.xib */; };
+		0D2BBDCA198E83B400BA0A4D /* SSTrackerApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BBDB9198E83B400BA0A4D /* SSTrackerApp.m */; };
 		0D2E7BCD18537786000C7D67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968217F1424F00457A1A /* Foundation.framework */; };
 		0D2E7BCE18537786000C7D67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968417F1424F00457A1A /* CoreGraphics.framework */; };
 		0D2E7BCF18537786000C7D67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968617F1424F00457A1A /* UIKit.framework */; };
@@ -4256,13 +4261,6 @@
 		0DCFF1741A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */; };
 		0DCFF1751A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */; };
 		0DCFF1761A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */; };
-		0DCFF1781A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF1791A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF17A1A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF17B1A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF17C1A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF17D1A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
-		0DCFF17E1A7EB849008F4B61 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCFF1771A7EB849008F4B61 /* Chart2D.framework */; };
 		0DD1FA841923039A009DAC4F /* job.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1FA831923039A009DAC4F /* job.xcassets */; };
 		0DD1FA86192303DC009DAC4F /* glue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1FA85192303DC009DAC4F /* glue.xcassets */; };
 		0DD1FAF419247050009DAC4F /* SSProfile4JobVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1FAF319247050009DAC4F /* SSProfile4JobVC.m */; };
@@ -4283,6 +4281,20 @@
 		0DE0E5DE189D8CBA00FFC3FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968417F1424F00457A1A /* CoreGraphics.framework */; };
 		0DE0E5DF189D8CBA00FFC3FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968617F1424F00457A1A /* UIKit.framework */; };
 		0DE0E5E0189D8CBA00FFC3FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968217F1424F00457A1A /* Foundation.framework */; };
+		0DE50F511AC8697D005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F521AC86984005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F531AC86985005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F541AC86985005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F551AC86986005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F561AC86987005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F571AC86988005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DE50F841AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F851AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F861AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F871AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F881AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F891AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
+		0DE50F8A1AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */; };
 		0DE6A1C6193A4E31009A7C32 /* SSMyGlueProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6A1C5193A4E31009A7C32 /* SSMyGlueProfileVC.m */; };
 		0DEE57A419BABA6400B1B99B /* SSGlueSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE57A219BABA6400B1B99B /* SSGlueSettingsVC.m */; };
 		0DEE57A519BABA6400B1B99B /* SSGlueSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEE57A319BABA6400B1B99B /* SSGlueSettingsVC.xib */; };
@@ -4296,6 +4308,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D06A5C31AC72F1D00EDCED4 /* SSTimeSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeries.h; sourceTree = "<group>"; };
+		0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeries.m; sourceTree = "<group>"; };
 		0D08967F17F1424F00457A1A /* Glue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D08968217F1424F00457A1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D08968417F1424F00457A1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -5023,12 +5037,12 @@
 		0D2B857A18144194000378CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0D2BBDA9198E83B300BA0A4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D2BBDAA198E83B300BA0A4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0D2BBDAC198E83B300BA0A4D /* SSSplitsModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSplitsModelVC.h; sourceTree = "<group>"; };
-		0D2BBDAD198E83B300BA0A4D /* SSSplitsModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSplitsModelVC.m; sourceTree = "<group>"; };
-		0D2BBDAE198E83B300BA0A4D /* SSSplitsModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSSplitsModelVC.xib; sourceTree = "<group>"; };
-		0D2BBDB8198E83B400BA0A4D /* SSSplitsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSplitsApp.h; sourceTree = "<group>"; };
-		0D2BBDB9198E83B400BA0A4D /* SSSplitsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSplitsApp.m; sourceTree = "<group>"; };
-		0D2BBDCE198E84C600BA0A4D /* Splits-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Splits-Info.plist"; sourceTree = "<group>"; };
+		0D2BBDAC198E83B300BA0A4D /* SSDeviceTrackerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDeviceTrackerVC.h; sourceTree = "<group>"; };
+		0D2BBDAD198E83B300BA0A4D /* SSDeviceTrackerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDeviceTrackerVC.m; sourceTree = "<group>"; };
+		0D2BBDAE198E83B300BA0A4D /* SSDeviceTrackerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDeviceTrackerVC.xib; sourceTree = "<group>"; };
+		0D2BBDB8198E83B400BA0A4D /* SSTrackerApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTrackerApp.h; sourceTree = "<group>"; };
+		0D2BBDB9198E83B400BA0A4D /* SSTrackerApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTrackerApp.m; sourceTree = "<group>"; };
+		0D2BBDCE198E84C600BA0A4D /* Tracker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tracker-Info.plist"; sourceTree = "<group>"; };
 		0D2E7BCC18537786000C7D67 /* Mappuccino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mappuccino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D39DD9418B9621B004F6ECC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0D3E356D1A58AC5B00C0B605 /* SSWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWordView.h; sourceTree = "<group>"; };
@@ -5206,7 +5220,7 @@
 		0D65EFFA19AED94A000D8F8D /* You_document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = You_document.pdf; sourceTree = "<group>"; };
 		0D73A87B19612BD9005182C5 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		0D82249418E8816200A928B6 /* Jobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D83F53D1832D80000AFB0E6 /* Splits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Splits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D83F53D1832D80000AFB0E6 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D83F5441832DC5200AFB0E6 /* SSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSApp.h; sourceTree = "<group>"; };
 		0D83F5451832DC5200AFB0E6 /* SSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSApp.m; sourceTree = "<group>"; };
 		0D83F5461832DC5200AFB0E6 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -5637,12 +5651,14 @@
 		0DCFF15F1A7EB38D008F4B61 /* SSSATApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSATApp.m; sourceTree = "<group>"; };
 		0DCFF1671A7EB83B008F4B61 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../dependency/Parse.framework; sourceTree = "<group>"; };
 		0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../dependency/FacebookSDK.framework; sourceTree = "<group>"; };
-		0DCFF1771A7EB849008F4B61 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0DD1FA831923039A009DAC4F /* job.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = job.xcassets; sourceTree = "<group>"; };
 		0DD1FA85192303DC009DAC4F /* glue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = glue.xcassets; sourceTree = "<group>"; };
 		0DD1FAF219247050009DAC4F /* SSProfile4JobVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSProfile4JobVC.h; sourceTree = "<group>"; };
 		0DD1FAF319247050009DAC4F /* SSProfile4JobVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSProfile4JobVC.m; sourceTree = "<group>"; };
 		0DE0E713189D8CBA00FFC3FB /* Tutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE50F501AC8697D005C15A2 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../../dependency/Chart2D.framework; sourceTree = "<group>"; };
+		0DE50F821AC8AA3D005C15A2 /* SSTimeSeriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeriesView.h; sourceTree = "<group>"; };
+		0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeriesView.m; sourceTree = "<group>"; };
 		0DE6A1C4193A4E31009A7C32 /* SSMyGlueProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMyGlueProfileVC.h; sourceTree = "<group>"; };
 		0DE6A1C5193A4E31009A7C32 /* SSMyGlueProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMyGlueProfileVC.m; sourceTree = "<group>"; };
 		0DEE57A119BABA6400B1B99B /* SSGlueSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGlueSettingsVC.h; sourceTree = "<group>"; };
@@ -5663,7 +5679,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D8DD7791A7E9CF20074F31B /* JavaScriptCore.framework in Frameworks */,
-				0D257FB91A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */,
 				0DCFF1701A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D9BBB5217F9E2ED00FCE485 /* Security.framework in Frameworks */,
 				0D2B857B18144194000378CA /* MapKit.framework in Frameworks */,
@@ -5671,7 +5686,6 @@
 				0D9BBB4E17F9E2C700FCE485 /* AudioToolbox.framework in Frameworks */,
 				0D9BBB4C17F9E2B200FCE485 /* CoreLocation.framework in Frameworks */,
 				0DFE525F17F9DCD0001BFB25 /* MobileCoreServices.framework in Frameworks */,
-				0DCFF1781A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
 				0DFE525D17F9DC6E001BFB25 /* libz.1.1.3.dylib in Frameworks */,
 				0DFE525B17F9DC61001BFB25 /* libsqlite3.dylib in Frameworks */,
 				0DCFF1681A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5681,6 +5695,7 @@
 				0DFE525317F9DB59001BFB25 /* CFNetwork.framework in Frameworks */,
 				0D08968517F1424F00457A1A /* CoreGraphics.framework in Frameworks */,
 				0D08968717F1424F00457A1A /* UIKit.framework in Frameworks */,
+				0DE50F521AC86984005C15A2 /* Chart2D.framework in Frameworks */,
 				0D08968317F1424F00457A1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5698,7 +5713,7 @@
 				0D2E7CA8185380E0000C7D67 /* CoreLocation.framework in Frameworks */,
 				0D2E7CA9185380E0000C7D67 /* MobileCoreServices.framework in Frameworks */,
 				0D2E7CAA185380E0000C7D67 /* libz.1.1.3.dylib in Frameworks */,
-				0DCFF17B1A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
+				0DE50F551AC86986005C15A2 /* Chart2D.framework in Frameworks */,
 				0D2E7CAB185380E0000C7D67 /* libsqlite3.dylib in Frameworks */,
 				0D2E7CAC185380E0000C7D67 /* Accounts.framework in Frameworks */,
 				0DCFF16B1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5716,6 +5731,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE50F511AC8697D005C15A2 /* Chart2D.framework in Frameworks */,
 				0D42541F18881384006AC83E /* Security.framework in Frameworks */,
 				0DCFF1741A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D42542018881384006AC83E /* MapKit.framework in Frameworks */,
@@ -5724,7 +5740,6 @@
 				0D42542318881384006AC83E /* CoreLocation.framework in Frameworks */,
 				0D42542518881384006AC83E /* MobileCoreServices.framework in Frameworks */,
 				0D42542618881384006AC83E /* libz.1.1.3.dylib in Frameworks */,
-				0DCFF17C1A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
 				0D42542718881384006AC83E /* libsqlite3.dylib in Frameworks */,
 				0D42542818881384006AC83E /* Accounts.framework in Frameworks */,
 				0DCFF16C1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5750,7 +5765,6 @@
 				0D82242B18E8816200A928B6 /* CoreLocation.framework in Frameworks */,
 				0D82242C18E8816200A928B6 /* MobileCoreServices.framework in Frameworks */,
 				0D82242D18E8816200A928B6 /* libz.1.1.3.dylib in Frameworks */,
-				0DCFF17E1A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
 				0D82242E18E8816200A928B6 /* libsqlite3.dylib in Frameworks */,
 				0D82242F18E8816200A928B6 /* Accounts.framework in Frameworks */,
 				0DCFF16E1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5760,6 +5774,7 @@
 				0D82243318E8816200A928B6 /* Foundation.framework in Frameworks */,
 				0D8DD77F1A7E9CFB0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D82243418E8816200A928B6 /* CoreGraphics.framework in Frameworks */,
+				0DE50F571AC86988005C15A2 /* Chart2D.framework in Frameworks */,
 				0D82243518E8816200A928B6 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5769,7 +5784,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D83F42D1832D80000AFB0E6 /* Security.framework in Frameworks */,
-				0D257FBA1A7EDFC80087E51B /* FacebookSDK.framework in Frameworks */,
 				0DCFF1711A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D83F42E1832D80000AFB0E6 /* MapKit.framework in Frameworks */,
 				0D83F42F1832D80000AFB0E6 /* QuartzCore.framework in Frameworks */,
@@ -5777,7 +5791,6 @@
 				0D83F4311832D80000AFB0E6 /* CoreLocation.framework in Frameworks */,
 				0D83F4331832D80000AFB0E6 /* MobileCoreServices.framework in Frameworks */,
 				0D83F4341832D80000AFB0E6 /* libz.1.1.3.dylib in Frameworks */,
-				0DCFF1791A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
 				0D83F4351832D80000AFB0E6 /* libsqlite3.dylib in Frameworks */,
 				0D83F4361832D80000AFB0E6 /* Accounts.framework in Frameworks */,
 				0DCFF1691A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5787,6 +5800,7 @@
 				0D83F43A1832D80000AFB0E6 /* CoreGraphics.framework in Frameworks */,
 				0D8DD77A1A7E9CF70074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D83F43B1832D80000AFB0E6 /* UIKit.framework in Frameworks */,
+				0DE50F531AC86985005C15A2 /* Chart2D.framework in Frameworks */,
 				0D83F43C1832D80000AFB0E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5804,7 +5818,7 @@
 				0D83F59F1832E29300AFB0E6 /* CoreLocation.framework in Frameworks */,
 				0D83F5A11832E29300AFB0E6 /* MobileCoreServices.framework in Frameworks */,
 				0D83F5A21832E29300AFB0E6 /* libz.1.1.3.dylib in Frameworks */,
-				0DCFF17A1A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
+				0DE50F541AC86985005C15A2 /* Chart2D.framework in Frameworks */,
 				0D83F5A31832E29300AFB0E6 /* libsqlite3.dylib in Frameworks */,
 				0D83F5A41832E29300AFB0E6 /* Accounts.framework in Frameworks */,
 				0DCFF16A1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
@@ -5826,7 +5840,7 @@
 				0DBC479A19EA00CE0080D095 /* OpenGLES.framework in Frameworks */,
 				0D39DD9518B9621B004F6ECC /* AVFoundation.framework in Frameworks */,
 				0DE0E5D1189D8CBA00FFC3FB /* Security.framework in Frameworks */,
-				0DCFF17D1A7EB849008F4B61 /* Chart2D.framework in Frameworks */,
+				0DE50F561AC86987005C15A2 /* Chart2D.framework in Frameworks */,
 				0DE0E5D2189D8CBA00FFC3FB /* MapKit.framework in Frameworks */,
 				0DE0E5D3189D8CBA00FFC3FB /* QuartzCore.framework in Frameworks */,
 				0DE0E5D4189D8CBA00FFC3FB /* AudioToolbox.framework in Frameworks */,
@@ -5867,7 +5881,7 @@
 			isa = PBXGroup;
 			children = (
 				0D08967F17F1424F00457A1A /* Glue.app */,
-				0D83F53D1832D80000AFB0E6 /* Splits.app */,
+				0D83F53D1832D80000AFB0E6 /* Tracker.app */,
 				0D83F6AB1832E29300AFB0E6 /* Applatics.app */,
 				0D2E7BCC18537786000C7D67 /* Mappuccino.app */,
 				0D42555918881384006AC83E /* Fred.app */,
@@ -5880,7 +5894,7 @@
 		0D08968117F1424F00457A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0DCFF1771A7EB849008F4B61 /* Chart2D.framework */,
+				0DE50F501AC8697D005C15A2 /* Chart2D.framework */,
 				0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */,
 				0DCFF1671A7EB83B008F4B61 /* Parse.framework */,
 				0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */,
@@ -7073,19 +7087,19 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		0D2BBDA7198E83B300BA0A4D /* Splits */ = {
+		0D2BBDA7198E83B300BA0A4D /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				0D2BBDCE198E84C600BA0A4D /* Splits-Info.plist */,
+				0D2BBDCE198E84C600BA0A4D /* Tracker-Info.plist */,
 				0D2BBDA8198E83B300BA0A4D /* InfoPlist.strings */,
 				0D2BBDAA198E83B300BA0A4D /* Images.xcassets */,
-				0D2BBDAC198E83B300BA0A4D /* SSSplitsModelVC.h */,
-				0D2BBDAD198E83B300BA0A4D /* SSSplitsModelVC.m */,
-				0D2BBDAE198E83B300BA0A4D /* SSSplitsModelVC.xib */,
-				0D2BBDB8198E83B400BA0A4D /* SSSplitsApp.h */,
-				0D2BBDB9198E83B400BA0A4D /* SSSplitsApp.m */,
+				0D2BBDAC198E83B300BA0A4D /* SSDeviceTrackerVC.h */,
+				0D2BBDAD198E83B300BA0A4D /* SSDeviceTrackerVC.m */,
+				0D2BBDAE198E83B300BA0A4D /* SSDeviceTrackerVC.xib */,
+				0D2BBDB8198E83B400BA0A4D /* SSTrackerApp.h */,
+				0D2BBDB9198E83B400BA0A4D /* SSTrackerApp.m */,
 			);
-			name = Splits;
+			name = Tracker;
 			path = splits;
 			sourceTree = "<group>";
 		};
@@ -7346,7 +7360,7 @@
 		0D83F9A61832E69900AFB0E6 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				0D2BBDA7198E83B300BA0A4D /* Splits */,
+				0D2BBDA7198E83B300BA0A4D /* Tracker */,
 				0D870D021916B73400F607BD /* Fred */,
 				0D870CD51916B72800F607BD /* Tutor */,
 				0D870C0C1916B70900F607BD /* Applatics */,
@@ -7911,6 +7925,10 @@
 				0D870D0D1916B73400F607BD /* SSTimeSeriesVC.xib */,
 				0D223F5B1A7D35220046E00B /* SSDataView.h */,
 				0D223F5C1A7D35220046E00B /* SSDataView.m */,
+				0D06A5C31AC72F1D00EDCED4 /* SSTimeSeries.h */,
+				0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */,
+				0DE50F821AC8AA3D005C15A2 /* SSTimeSeriesView.h */,
+				0DE50F831AC8AA3D005C15A2 /* SSTimeSeriesView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -8236,9 +8254,9 @@
 			productReference = 0D82249418E8816200A928B6 /* Jobs.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0D83F3E41832D80000AFB0E6 /* Splits */ = {
+		0D83F3E41832D80000AFB0E6 /* Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D83F53A1832D80000AFB0E6 /* Build configuration list for PBXNativeTarget "Splits" */;
+			buildConfigurationList = 0D83F53A1832D80000AFB0E6 /* Build configuration list for PBXNativeTarget "Tracker" */;
 			buildPhases = (
 				0D83F3E51832D80000AFB0E6 /* Sources */,
 				0D83F42C1832D80000AFB0E6 /* Frameworks */,
@@ -8248,9 +8266,9 @@
 			);
 			dependencies = (
 			);
-			name = Splits;
+			name = Tracker;
 			productName = Medistory;
-			productReference = 0D83F53D1832D80000AFB0E6 /* Splits.app */;
+			productReference = 0D83F53D1832D80000AFB0E6 /* Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0D83F5521832E29300AFB0E6 /* Appliatics */ = {
@@ -8325,7 +8343,7 @@
 			projectRoot = "";
 			targets = (
 				0D08967E17F1424E00457A1A /* Glue */,
-				0D83F3E41832D80000AFB0E6 /* Splits */,
+				0D83F3E41832D80000AFB0E6 /* Tracker */,
 				0D83F5521832E29300AFB0E6 /* Appliatics */,
 				0D2E7BCB18537786000C7D67 /* Mappuccino */,
 				0D42539D18881384006AC83E /* Fred */,
@@ -10625,7 +10643,7 @@
 				0D2580B61A7EDFC80087E51B /* facebook.png in Resources */,
 				0D257DD01A7EDFC80087E51B /* Page_NameSearch_dividerX2.png in Resources */,
 				0D257BA71A7EDFC80087E51B /* 38-airplane.png in Resources */,
-				0D2BBDC3198E83B400BA0A4D /* SSSplitsModelVC.xib in Resources */,
+				0D2BBDC3198E83B400BA0A4D /* SSDeviceTrackerVC.xib in Resources */,
 				0D257E471A7EDFC80087E51B /* PageCreateGroup_EmptyCheckMark.png in Resources */,
 				0D257B1B1A7EDFC80087E51B /* 199-card-hearts.png in Resources */,
 				0D257CD41A7EDFC80087E51B /* 81-dashboard.png in Resources */,
@@ -11494,6 +11512,7 @@
 				0D2574051A7EDFC70087E51B /* SSRoundLabel.m in Sources */,
 				0D2576F91A7EDFC70087E51B /* ImageView.m in Sources */,
 				0D25770E1A7EDFC70087E51B /* MessageView.m in Sources */,
+				0D06A5C51AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2573F71A7EDFC70087E51B /* SSPropertiesView.m in Sources */,
 				0D2580681A7EDFC80087E51B /* SSConnection.m in Sources */,
 				0D2581251A7EDFC80087E51B /* SSFollowVC.m in Sources */,
@@ -11568,6 +11587,7 @@
 				0D2573CD1A7EDFC70087E51B /* SSStarRating.m in Sources */,
 				0D25807D1A7EDFC80087E51B /* SSCommonSetupVC.m in Sources */,
 				0D2574F31A7EDFC70087E51B /* SSTool.m in Sources */,
+				0DE50F841AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D25773F1A7EDFC70087E51B /* SSMessageView.m in Sources */,
 				0D870B2A1916B6BE00F607BD /* SSEventVC.m in Sources */,
 				0D2575C51A7EDFC70087E51B /* SSLovTextField.m in Sources */,
@@ -11649,6 +11669,7 @@
 				0D2577731A7EDFC70087E51B /* SSContainerVC.m in Sources */,
 				0D25771F1A7EDFC70087E51B /* ProgressView.m in Sources */,
 				0D2574161A7EDFC70087E51B /* SSScrollView.m in Sources */,
+				0DE50F871AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D2574D31A7EDFC70087E51B /* SSLinePoint.m in Sources */,
 				0D25779D1A7EDFC70087E51B /* SSNavMenuVC.m in Sources */,
 				0D2575CF1A7EDFC70087E51B /* SSOptionsEditor.m in Sources */,
@@ -11716,6 +11737,7 @@
 				0D2581361A7EDFC80087E51B /* DebugLogger.m in Sources */,
 				0D2580641A7EDFC80087E51B /* SSCacheManager.m in Sources */,
 				0D1AD81B19B6E12D003235A2 /* SSExpressionParser.m in Sources */,
+				0D06A5C81AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D257F681A7EDFC80087E51B /* SSFriendVC.m in Sources */,
 				0D870BF81916B6F500F607BD /* WCByCityVC.m in Sources */,
 				0D2575511A7EDFC70087E51B /* SSAddressField.m in Sources */,
@@ -11803,6 +11825,7 @@
 				0D2581141A7EDFC80087E51B /* SSCommentVC.m in Sources */,
 				0D2577191A7EDFC70087E51B /* ProgressObserver.m in Sources */,
 				0D25774A1A7EDFC70087E51B /* SSMessagingVC.m in Sources */,
+				0DE50F881AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D257DA91A7EDFC80087E51B /* SSCompanyVC.m in Sources */,
 				0D2580421A7EDFC80087E51B /* SSProfileView.m in Sources */,
 				0D2574CD1A7EDFC70087E51B /* SSLine.m in Sources */,
@@ -11899,6 +11922,7 @@
 				0D2573611A7EDFC70087E51B /* SSCommonVC.m in Sources */,
 				0D870D201916B73400F607BD /* SSTimeSeriesGraphVC.m in Sources */,
 				0D25773C1A7EDFC70087E51B /* SSConversation.m in Sources */,
+				0D06A5C91AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2575D01A7EDFC70087E51B /* SSOptionsEditor.m in Sources */,
 				0D257FF51A7EDFC80087E51B /* UserDetailsViewController.m in Sources */,
 				0D257FA11A7EDFC80087E51B /* SSMembershipVC.m in Sources */,
@@ -11936,6 +11960,7 @@
 				0D870D641916C06000F607BD /* main.m in Sources */,
 				0D2576111A7EDFC70087E51B /* SSCarouselView.m in Sources */,
 				0D870B921916B6DD00F607BD /* SSJobApplicationVC.m in Sources */,
+				0DE50F8A1AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D52F1A9194B50E200C6A621 /* SSJobsLookups.m in Sources */,
 				0D2576501A7EDFC70087E51B /* SSSlideOpenVC.m in Sources */,
 				0D2581781A7EDFC80087E51B /* SSTransitionStrategy.m in Sources */,
@@ -12028,6 +12053,7 @@
 				0D2574121A7EDFC70087E51B /* SSRoundView.m in Sources */,
 				0D25806E1A7EDFC80087E51B /* SSConnection.m in Sources */,
 				0D257D9D1A7EDFC80087E51B /* SSCompanyEditorVC.m in Sources */,
+				0D06A5CB1AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2576EA1A7EDFC70087E51B /* SSMarkerView.m in Sources */,
 				0DC663C8195B1002009A6078 /* SSJobLayoutVC.m in Sources */,
 				0D2573DA1A7EDFC70087E51B /* SSSurveyCell.m in Sources */,
@@ -12088,13 +12114,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D25745A1A7EDFC70087E51B /* GLPen.m in Sources */,
+				0D06A5C61AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2580F51A7EDFC80087E51B /* SSActivityView.m in Sources */,
-				0D2BBDC2198E83B400BA0A4D /* SSSplitsModelVC.m in Sources */,
+				0D2BBDC2198E83B400BA0A4D /* SSDeviceTrackerVC.m in Sources */,
 				0D2573FF1A7EDFC70087E51B /* SSRoundButton.m in Sources */,
 				0D25771D1A7EDFC70087E51B /* ProgressView.m in Sources */,
 				0D83F54A1832DC5200AFB0E6 /* SSApp.m in Sources */,
 				0D2573CE1A7EDFC70087E51B /* SSStarRating.m in Sources */,
-				0D2BBDCA198E83B400BA0A4D /* SSSplitsApp.m in Sources */,
+				0D2BBDCA198E83B400BA0A4D /* SSTrackerApp.m in Sources */,
 				0D2577391A7EDFC70087E51B /* SSConversation.m in Sources */,
 				0D2580701A7EDFC80087E51B /* SSFilter.m in Sources */,
 				0D870D5F1916C06000F607BD /* main.m in Sources */,
@@ -12168,6 +12195,7 @@
 				0D2580231A7EDFC80087E51B /* SSProfileEditorVC.m in Sources */,
 				0D2576DE1A7EDFC70087E51B /* SSMapTouchView.m in Sources */,
 				0D25738F1A7EDFC70087E51B /* SSTableViewVC.m in Sources */,
+				0DE50F851AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D25748B1A7EDFC70087E51B /* SSAnimiate.m in Sources */,
 				0D2575801A7EDFC70087E51B /* SSReferenceEditorVC.m in Sources */,
 				0D25816C1A7EDFC80087E51B /* SSTransitionDelegate.m in Sources */,
@@ -12280,6 +12308,7 @@
 				0D2576A71A7EDFC70087E51B /* SSTalkImageView.m in Sources */,
 				0D2575651A7EDFC70087E51B /* SSColorPickerVC.m in Sources */,
 				0D2577721A7EDFC70087E51B /* SSContainerVC.m in Sources */,
+				0D06A5C71AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D870C901916B70A00F607BD /* SSMyViewsVC.m in Sources */,
 				0D870CB61916B70A00F607BD /* TreeIconsLV.m in Sources */,
 				0D870CB01916B70A00F607BD /* SSTextEditor.m in Sources */,
@@ -12393,6 +12422,7 @@
 				0D2573891A7EDFC70087E51B /* SSShuttleVC.m in Sources */,
 				0D2577871A7EDFC70087E51B /* SSLayoutVC.m in Sources */,
 				0D2574BD1A7EDFC70087E51B /* SSGraph.m in Sources */,
+				0DE50F861AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D2575421A7EDFC70087E51B /* SSEntityEditorVC.m in Sources */,
 				0D870C921916B70A00F607BD /* SSEntityVC.m in Sources */,
 				0D870CB31916B70A00F607BD /* IconViewVC.m in Sources */,
@@ -12537,6 +12567,7 @@
 				0D257FB71A7EDFC80087E51B /* AppDelegate.m in Sources */,
 				0D2573FC1A7EDFC70087E51B /* SSPropertiesView.m in Sources */,
 				0D2575681A7EDFC70087E51B /* SSColorPickerVC.m in Sources */,
+				0DE50F891AC8AA3D005C15A2 /* SSTimeSeriesView.m in Sources */,
 				0D2574CE1A7EDFC70087E51B /* SSLine.m in Sources */,
 				0D2575841A7EDFC70087E51B /* SSReferenceEditorVC.m in Sources */,
 				0D2575C31A7EDFC70087E51B /* SSDateTextField.m in Sources */,
@@ -12557,6 +12588,7 @@
 				0D2575ED1A7EDFC70087E51B /* SSValueLabel.m in Sources */,
 				0D25764F1A7EDFC70087E51B /* SSSlideOpenVC.m in Sources */,
 				0D870D1B1916B73400F607BD /* SSTimeSeriesVC.m in Sources */,
+				0D06A5CA1AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2581461A7EDFC80087E51B /* SSGeoCodeUtil.m in Sources */,
 				0D2573701A7EDFC70087E51B /* SSPagesVC.m in Sources */,
 				0D2574111A7EDFC70087E51B /* SSRoundView.m in Sources */,
@@ -12628,8 +12660,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -12646,8 +12678,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "32183b53-5613-4459-9d7f-d7bf0528e685";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12670,8 +12702,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -12682,7 +12714,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "32183b53-5613-4459-9d7f-d7bf0528e685";
+				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12696,13 +12728,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../dependency";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "32183b53-5613-4459-9d7f-d7bf0528e685";
+				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12713,15 +12748,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Glue;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../dependency";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "32183b53-5613-4459-9d7f-d7bf0528e685";
+				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12738,6 +12776,7 @@
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12764,6 +12803,7 @@
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12784,6 +12824,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12804,6 +12845,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12826,6 +12868,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12853,6 +12896,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/../../../dependency",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12870,18 +12914,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/splits/Splits-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = Splits;
+				INFOPLIST_FILE = "$(SRCROOT)/splits/Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_NAME = Tracker;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12892,18 +12939,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/splits/Splits-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = Splits;
+				INFOPLIST_FILE = "$(SRCROOT)/splits/Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_NAME = Tracker;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12920,6 +12970,7 @@
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12942,6 +12993,7 @@
 					"$(PROJECT_DIR)/../../../dependency",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12965,6 +13017,7 @@
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -12988,6 +13041,7 @@
 					"$(USER_LIBRARY_DIR)/Mobile",
 					"$(PROJECT_DIR)/Security/ParseFacebook",
 					"$(PROJECT_DIR)/ss-frameworks/Security/ParseFacebook",
+					/Users/anpwang/Documents/github/dependency,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
@@ -13047,7 +13101,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D83F53A1832D80000AFB0E6 /* Build configuration list for PBXNativeTarget "Splits" */ = {
+		0D83F53A1832D80000AFB0E6 /* Build configuration list for PBXNativeTarget "Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D83F53B1832D80000AFB0E6 /* Debug */,

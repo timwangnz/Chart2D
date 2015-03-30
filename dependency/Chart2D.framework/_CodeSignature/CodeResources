@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Chart2D.h</key>
 		<data>
-		7NSTMbclnsG+arYB2eeuKCoxtCU=
+		xAr8Skc4veGb/1zQa08vNJuTXlg=
 		</data>
 		<key>Headers/Graph2DArea.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		YoLinHst6K2zi5mW+eZSU9bT4D4=
+		nErehjJDqY13V8/SgxP0CtGNqCM=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -36,13 +36,17 @@
 		<data>
 		EKU2oO9QUt+DrQLoEfQjWs3uIkw=
 		</data>
+		<key>Headers/Graph2DMarkerStyle.h</key>
+		<data>
+		Hz3/TFsr0JoNnPYngphpqzY8UZI=
+		</data>
 		<key>Headers/Graph2DPieChartView.h</key>
 		<data>
 		uv70vjchpG9yZxZ7fEGsyL10neM=
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		mvzbqyoXQEuwirWaVlkCjRT60ac=
+		5TniXcucDWpRmjX3ErfLWX97XUo=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
@@ -58,19 +62,15 @@
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>
-		dQZ+3leryx/ymJlWwou3Sh4gKdk=
+		U5LrFTlFgC9yisPlY2dcnLnwAdA=
 		</data>
 		<key>Headers/Graph2DWidgetView.h</key>
 		<data>
 		zGahdNCZPNjrP/vYovurEJL6NI0=
 		</data>
-		<key>Headers/SSTimeSeriesView.h</key>
-		<data>
-		d4JtmLhuJbLEEHUkkbAdHJbTKJE=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		KJ/brzJkYNgAiEYyjjSwm7aOND4=
+		NERoSv4yMIuIi/+exL/wFhvjvgc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 	<dict>
 		<key>Headers/Chart2D.h</key>
 		<data>
-		7NSTMbclnsG+arYB2eeuKCoxtCU=
+		xAr8Skc4veGb/1zQa08vNJuTXlg=
 		</data>
 		<key>Headers/Graph2DArea.h</key>
 		<data>
@@ -93,7 +93,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		YoLinHst6K2zi5mW+eZSU9bT4D4=
+		nErehjJDqY13V8/SgxP0CtGNqCM=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -111,13 +111,17 @@
 		<data>
 		EKU2oO9QUt+DrQLoEfQjWs3uIkw=
 		</data>
+		<key>Headers/Graph2DMarkerStyle.h</key>
+		<data>
+		Hz3/TFsr0JoNnPYngphpqzY8UZI=
+		</data>
 		<key>Headers/Graph2DPieChartView.h</key>
 		<data>
 		uv70vjchpG9yZxZ7fEGsyL10neM=
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		mvzbqyoXQEuwirWaVlkCjRT60ac=
+		5TniXcucDWpRmjX3ErfLWX97XUo=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
@@ -133,15 +137,11 @@
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>
-		dQZ+3leryx/ymJlWwou3Sh4gKdk=
+		U5LrFTlFgC9yisPlY2dcnLnwAdA=
 		</data>
 		<key>Headers/Graph2DWidgetView.h</key>
 		<data>
 		zGahdNCZPNjrP/vYovurEJL6NI0=
-		</data>
-		<key>Headers/SSTimeSeriesView.h</key>
-		<data>
-		d4JtmLhuJbLEEHUkkbAdHJbTKJE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
