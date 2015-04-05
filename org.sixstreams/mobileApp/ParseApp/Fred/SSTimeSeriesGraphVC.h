@@ -15,6 +15,7 @@
 - (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block;
 - (void) updateUI;
 
+- (void) removeSeries:(id) series;
 
 
 @end

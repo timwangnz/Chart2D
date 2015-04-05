@@ -138,12 +138,7 @@
     }
     
     maxItems = 0;
-    
-    if (self.yMin > 0)
-    {
-        self.yMin = 0;
-    }
-    
+
     for (int j = 0 ; j < [data count]; j++)
     {
         NSArray * series = [data objectAtIndex:j];
@@ -183,38 +178,13 @@
         }
     }
     
-    //normalize the values against max value, so it will be 0 - 1
-    
-    CGFloat newMax = self.yMax;
-    for(int i = 0; i < 10; i++)
-    {
-        if (pow(10, i) < self.yMax)
-        {
-            newMax = pow(10,i+1);
-            if (newMax > self.yMax)
-            {
-                CGFloat delta = pow(10, i);
-                for(int j = 0;j < 10; j++)
-                {
-                    if ((pow(10, i) + j* delta) > self.yMax)
-                    {
-                        newMax = pow(10, i) + j*pow(10, i);
-                        if ((newMax / 2) > self.yMax)
-                        {
-                            newMax = newMax/2;
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    
     if (self.autoScale)
     {
-        self.yMax = (newMax/2) > self.yMax ? newMax / 2.0 : newMax;
-        self.yMin = self.yMin;
+        CGFloat delta = self.yMax - self.yMin;
+        self.yMax = self.yMax + delta / 10;
+        self.yMin = self.yMin - delta/ 10;
     }
+
     
     CGFloat ySpan = 1.0 / (self.yMax - self.yMin);
     
@@ -230,9 +200,9 @@
             value = [items[j] objectForKey:LOW_VALUE_KEY];
             value = [NSNumber numberWithFloat : ([value floatValue] - self.yMin)*ySpan];
             [items[j] setObject:value forKey:LOW_VALUE_KEY];
-            
         }
     }
+     
     return data;
 }
 
@@ -329,7 +299,7 @@
         {
             float floatValue = [[series[i] objectForKey:HIGH_VALUE_KEY] floatValue];
             
-            float lowFloatValue = [[series[i] objectForKey:LOW_VALUE_KEY] floatValue];
+            //float lowFloatValue = [[series[i] objectForKey:LOW_VALUE_KEY] floatValue];
             
             float barY = gBottomLeft.y - gDrawingRect.size.height * floatValue;
             
@@ -341,7 +311,7 @@
                 barY = gBottomLeft.y - gDrawingRect.size.height *  [acumlatedHeight floatValue];
             }
             
-            float barHeight = gDrawingRect.size.height * (floatValue - lowFloatValue);
+            float barHeight = gDrawingRect.size.height * (floatValue);// - lowFloatValue);
             
             float barX = gBottomLeft.x + i * barWidth;
             CGRect barRect = CGRectMake(barX + self.barGap, barY, barWidth - 2 * self.barGap, barHeight);
@@ -575,7 +545,7 @@
         float floatValue  = [[data[i] objectForKey:HIGH_VALUE_KEY] floatValue];
         CGFloat y = gBottomLeft.y - maxGraphHeight * floatValue;
         CGContextAddLineToPoint(context, x, y);
-        CGRect newRect = CGRectMake(x, y, 5, 5);
+        CGRect newRect = CGRectMake(x, y, 10, 10);
         [rects addObject:[[Graph2DArea alloc]initWithRect:newRect]];
     }
     
@@ -651,7 +621,6 @@
         
     }
     
-    
     int ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
     
     int minorTicks = axisStyle.tickStyle.minorTicks;
@@ -660,8 +629,6 @@
     
     CGFloat yValueDelta = (self.yMax - self.yMin)/(ticks  - 1);
     
-    
-    
     for (int i = 0; i < ticks; i++)
     {
         CGFloat y = gBottomLeft.y - i * deltaY + axisStyle.tickStyle.penWidth/2;
@@ -669,7 +636,8 @@
         {
             UIFont *font = axisStyle.labelStyle.font;
             CGFloat angle = axisStyle.labelStyle.angle;
-            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), i*yValueDelta];
+            
+            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), i*yValueDelta + self.yMin];
             
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(graph2DView:yLabelAt:)])
             {
@@ -726,7 +694,7 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
--(void)  textAtPoint:(NSString *)text
+-(void) textAtPoint:(NSString *)text
                   at:(CGPoint) basePoint
             andAngle:(CGFloat) angle
              andFont:(UIFont *) font

@@ -9,16 +9,16 @@
 #import <Chart2D/Chart2D.h>
 
 #import "SSTimeSeriesGraphVC.h"
+#import "SSTimeSeriesView.h"
 
 #import "SSTableLayoutView.h"
 #import "SSPropertiesView.h"
-#import "SSDataView.h"
 
 //display multiple serieses
 
-@interface SSTimeSeriesGraphVC ()
+@interface SSTimeSeriesGraphVC ()<TimeSeriesViewDelegate>
 {
-    IBOutlet SSDataView *seriesView;
+    IBOutlet SSTimeSeriesView *seriesView;
     IBOutlet SSPropertiesView *tbFacts;
     IBOutlet UIView  *controller;
     IBOutlet SSTableLayoutView *layoutView;
@@ -71,6 +71,18 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     return [NSString stringWithFormat:@"%@%@&series_id=%@", fredCatSeri, timePeriod, catId];
 }
 
+- (void) removeSeries:(id) series
+{
+    [seriesView removeSeries:series];
+    if ([seriesView numberOfSeries] == 0) {
+        properties = nil;
+        theSeriesDef = nil;
+        seriesId = nil;
+        self.title = @"";
+        layoutView.hidden = YES;
+    }
+}
+
 - (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block
 {
     id catId = [seriesDef objectForKey:@"id"];
@@ -87,7 +99,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     HTTPConnector *conn = [[HTTPConnector alloc]init];
 
     [conn get:[self getUrl:catId] onSuccess:^(NSData *data) {
-        loadedData= data;
+        loadedData = data;
         if (dataCallback)
         {
             dataCallback(nil, data);
@@ -111,6 +123,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 {
     
     id dic = [NSMutableDictionary dictionaryWithDictionary:[loadedData toDictionary]];
+    
     if (dic[@"error_code"])
     {
         [self showAlert:dic[@"error_message"] withTitle:@"Error"];
@@ -118,10 +131,15 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     }
     
     tbFacts.data = properties;
-    self.title = [theSeriesDef objectForKey:@"title"];
+    if ([seriesView numberOfSeries] == 1)
+    {
+        self.title = [theSeriesDef objectForKey:@"title"];
+    }
+    else{
+        self.title = @"Charts";
+    }
     textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeriesDef objectForKey:@"notes"] ? [theSeriesDef objectForKey:@"notes"] : @""];
     
-
     [dic setObject:tbFacts.data forKey:@"seriesDef"];
     
     [seriesView addSeries:dic];
@@ -146,6 +164,12 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     [layoutView addChildView:seriesView];
     [layoutView addChildView:textView];
     [layoutView addChildView:tbFacts];
+}
+
+
+- (void) timeSeriesView:(SSTimeSeriesView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
+{
+    
 }
 
 - (void)splitViewController:(UISplitViewController*)svc

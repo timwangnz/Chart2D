@@ -25,6 +25,17 @@
 	return displayName;	
 }	   
 
++ (NSDate *)dateAYearAgo:(NSDate *)from
+{
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:-1];
+    
+    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    
+}
 
 +(NSString *) stringWithDateTime:(NSDate *) date
 {

@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSString *note;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
+@property BOOL excluedeWeekends;
+
 @property (nonatomic, retain) NSDate *lastUpdated;
 @property (nonatomic, retain) NSString *frequency;
 @property (nonatomic, retain) NSString *units;
@@ -21,11 +23,13 @@
 @property (nonatomic, retain) NSString *reference;
 @property (nonatomic, retain) NSDictionary *dataPoints;
 
+@property int valueMode;
+
 @property (nonatomic, retain) NSArray *xPoints;
 
 
 - (id) initWithDictionary:(id) dict;
-- (float) valueAt:(NSInteger) index;
-- (float) valueFor:(id) key;
-
+- (NSNumber *) valueAt:(NSInteger) index;
+- (NSNumber *) valueFor:(id) key;
+- (NSNumber *) growthRatioBetween:(id) first and:(id) second;
 @end

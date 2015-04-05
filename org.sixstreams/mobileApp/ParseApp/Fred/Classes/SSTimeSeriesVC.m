@@ -14,6 +14,7 @@
     NSMutableDictionary *semanticCategories;
     IBOutlet UIViewController *groupByVC;
     IBOutlet UITextField *groupBy;
+    NSMutableArray *selectedKeys;
     
 }
 - (IBAction)groupBy:(id)sender;
@@ -79,46 +80,79 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
     id dic = [data toDictionary];
     NSMutableDictionary *categories = [NSMutableDictionary dictionary];
     semanticCategories = [NSMutableDictionary dictionary];
-    
     NSArray * cats = [dic objectForKey:@"seriess"];
     if ([cats count]==0)
     {
         return;
     }
-    
     for (id cat in cats)
     {
         NSString *title = [cat objectForKey:@"title"];
         [categories setObject:cat forKey:title];
     }
-    
+    selectedKeys = [NSMutableArray array];
     self.data = categories;
-    
     [tvCategory reloadData];
+}
+
+#define CELL @"cell"
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CELL];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+        cell.textLabel.font = [UIFont systemFontOfSize:14];
+    }
+    NSString *key = [sortedKeys objectAtIndex:indexPath.row];
+    if ([selectedKeys containsObject:key])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    cell.textLabel.text = [self cellText: [self.data objectForKey:key] forKey:key];
+    return cell;
 }
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectedKey = [sortedKeys objectAtIndex:indexPath.row];
-    
-    id series = [self.data objectForKey: selectedKey];
-
-    if (![self isIPad])
+    id row = [sortedKeys objectAtIndex:indexPath.row];
+    if ([selectedKeys containsObject:row])
     {
-        [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
-            [self.navigationController pushViewController:self.detailVC animated:YES];
-        }];
+        id series = [self.data objectForKey: row];
+        [self.detailVC removeSeries:series];
+        [selectedKeys removeObject:row];
     }
     else
     {
+        [selectedKeys addObject:row];
+        selectedKey = row;
+        id series = [self.data objectForKey: selectedKey];
         
-        [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
-            [self.detailVC updateUI];
-        }];
+        if (![self isIPad])
+        {
+            [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
+                [self.navigationController pushViewController:self.detailVC animated:YES];
+            }];
+        }
+        else
+        {
+            
+            [self.detailVC loadDataFor:series withBlock:^(NSError *error, id data) {
+                [self.detailVC updateUI];
+            }];
+        }
     }
-    
-    
+    [tableView reloadData];
 }
 
 

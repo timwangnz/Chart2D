@@ -17,5 +17,5 @@
 - (void) removeAll;
 - (void) addSeries:(id) series;
 - (void) removeSeries:(id) series;
-
+- (NSUInteger) numberOfSeries;
 @end

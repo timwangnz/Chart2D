@@ -25,5 +25,5 @@
 
 +(NSString *) stringWithShortDate:(NSDate *) date;
 +(NSDate *) dateWithShortString:(NSString *) dateString;
-
++ (NSDate *)dateAYearAgo:(NSDate *)from;
 @end

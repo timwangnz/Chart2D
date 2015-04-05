@@ -28,6 +28,11 @@
 
 @implementation SSDataView
 
+- (NSUInteger) numberOfSeries
+{
+    return [charts count];
+}
+
 - (void) removeAll
 {
     [charts removeAllObjects];
@@ -47,8 +52,7 @@
     //DebugLog(@"%@", ts.dataPoints);
     title.text = ts.units;
     
-    [charts addObject:series];
-    
+    [charts addObject:ts];
     
     title.hidden = charts.count != 1;
     [self refresh];
