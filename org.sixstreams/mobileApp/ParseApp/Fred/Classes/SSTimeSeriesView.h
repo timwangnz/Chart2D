@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
 @property BOOL excluedeWeekends;
+@property BOOL showGrowthRate;
 
 @property (nonatomic, retain) NSString *frequency;
 @property (nonatomic) id<TimeSeriesViewDelegate> delegate;
@@ -29,9 +30,10 @@
 
 - (void) removeAll;
 - (void) addSeries:(id) series;
+- (id) seriesAt:(int) series;
 - (void) removeSeries:(id) series;
 - (NSUInteger) numberOfSeries;
-
+- (void) clearSelection;
 - (void) setChartType:(int) type;
 
 @end

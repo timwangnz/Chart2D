@@ -9,7 +9,7 @@
 #import "SSFredVC.h"
 #import "HTTPConnector.h"
 #import "SSJSONUtil.h"
-#import "SSTimeSeriesVC.h"
+#import "SSCategoryVC.h"
 #import "SSProfileEditorVC.h"
 
 @interface SSFredVC ()
@@ -80,7 +80,7 @@ static NSString  *fredCat = @"http://api.stlouisfed.org/fred/category/children?a
     NSArray * cats = [dic objectForKey:@"categories"];
     if ([cats count]==0)
     {
-        SSTimeSeriesVC *children = [[SSTimeSeriesVC alloc]init];
+        SSCategoryVC *children = [[SSCategoryVC alloc]init];
         children.categoryId = selectedId;
         children.title = selectedKey;
         children.detailVC = self.detailVC;

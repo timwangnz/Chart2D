@@ -9,8 +9,12 @@
 #import "SSFredCommonVC.h"
 #import "HTTPConnector.h"
 
+
+@class SSCategoryVC;
+
 @interface SSTimeSeriesGraphVC : SSFredCommonVC<UISplitViewControllerDelegate>
 
+@property SSCategoryVC *categoryVC;
 
 - (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block;
 - (void) updateUI;

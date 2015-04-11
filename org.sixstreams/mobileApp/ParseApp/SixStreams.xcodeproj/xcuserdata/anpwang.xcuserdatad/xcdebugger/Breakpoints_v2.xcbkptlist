@@ -836,16 +836,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "449880248.090768"
+            filePath = "ss-frameworks/Utils/SSTimeUtil.m"
+            timestampString = "449966575.983076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "-graph2DView:valueAtIndex:forSeries:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "+dateFromString:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -855,13 +855,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "449880248.090768"
+            filePath = "../../../Chart2D/framework/framework-src/src/Graph2DChartView.m"
+            timestampString = "449977521.059509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "-graph2DView:didSelectSeries:atIndex:"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-dataFromDelegate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

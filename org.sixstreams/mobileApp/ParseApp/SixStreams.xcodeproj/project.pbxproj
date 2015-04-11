@@ -32,8 +32,6 @@
 		0D1AD81B19B6E12D003235A2 /* SSExpressionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870C141916B70900F607BD /* SSExpressionParser.m */; };
 		0D1AD81C19B6E12D003235A2 /* SSExpressionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870C141916B70900F607BD /* SSExpressionParser.m */; };
 		0D1AD81D19B6E12D003235A2 /* SSExpressionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870C141916B70900F607BD /* SSExpressionParser.m */; };
-		0D223F5D1A7D35220046E00B /* SSDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D223F5C1A7D35220046E00B /* SSDataView.m */; };
-		0D223F5E1A7D36320046E00B /* SSDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D223F5C1A7D35220046E00B /* SSDataView.m */; };
 		0D248B8419227BB200773B82 /* SSGlueProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D248B8319227BB200773B82 /* SSGlueProfileVC.m */; };
 		0D248B8619227DD200773B82 /* SSGlueProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D248B8519227DD200773B82 /* SSGlueProfileVC.xib */; };
 		0D25735D1A7EDFC70087E51B /* SSCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2570971A7EDFC60087E51B /* SSCommonVC.m */; };
@@ -4167,10 +4165,10 @@
 		0D870D171916B73400F607BD /* SSFredVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D091916B73400F607BD /* SSFredVC.m */; };
 		0D870D181916B73400F607BD /* SSFredVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0A1916B73400F607BD /* SSFredVC.xib */; };
 		0D870D191916B73400F607BD /* SSFredVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0A1916B73400F607BD /* SSFredVC.xib */; };
-		0D870D1A1916B73400F607BD /* SSTimeSeriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D0C1916B73400F607BD /* SSTimeSeriesVC.m */; };
-		0D870D1B1916B73400F607BD /* SSTimeSeriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D0C1916B73400F607BD /* SSTimeSeriesVC.m */; };
-		0D870D1C1916B73400F607BD /* SSTimeSeriesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0D1916B73400F607BD /* SSTimeSeriesVC.xib */; };
-		0D870D1D1916B73400F607BD /* SSTimeSeriesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0D1916B73400F607BD /* SSTimeSeriesVC.xib */; };
+		0D870D1A1916B73400F607BD /* SSCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D0C1916B73400F607BD /* SSCategoryVC.m */; };
+		0D870D1B1916B73400F607BD /* SSCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D0C1916B73400F607BD /* SSCategoryVC.m */; };
+		0D870D1C1916B73400F607BD /* SSCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0D1916B73400F607BD /* SSCategoryVC.xib */; };
+		0D870D1D1916B73400F607BD /* SSCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0D1916B73400F607BD /* SSCategoryVC.xib */; };
 		0D870D1F1916B73400F607BD /* Fred-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D870D0E1916B73400F607BD /* Fred-Info.plist */; };
 		0D870D201916B73400F607BD /* SSTimeSeriesGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D101916B73400F607BD /* SSTimeSeriesGraphVC.m */; };
 		0D870D211916B73400F607BD /* SSTimeSeriesGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D101916B73400F607BD /* SSTimeSeriesGraphVC.m */; };
@@ -4330,8 +4328,6 @@
 		0D18ED56193BE29500C312FD /* SSLinkedInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLinkedInVC.h; sourceTree = "<group>"; };
 		0D18ED57193BE29500C312FD /* SSLinkedInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLinkedInVC.m; sourceTree = "<group>"; };
 		0D18ED58193BE29500C312FD /* SSLinkedInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSLinkedInVC.xib; sourceTree = "<group>"; };
-		0D223F5B1A7D35220046E00B /* SSDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDataView.h; sourceTree = "<group>"; };
-		0D223F5C1A7D35220046E00B /* SSDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataView.m; sourceTree = "<group>"; };
 		0D248B8219227BB200773B82 /* SSGlueProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSGlueProfileVC.h; sourceTree = "<group>"; };
 		0D248B8319227BB200773B82 /* SSGlueProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSGlueProfileVC.m; sourceTree = "<group>"; };
 		0D248B8519227DD200773B82 /* SSGlueProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSGlueProfileVC.xib; sourceTree = "<group>"; };
@@ -5576,9 +5572,9 @@
 		0D870D081916B73400F607BD /* SSFredVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFredVC.h; sourceTree = "<group>"; };
 		0D870D091916B73400F607BD /* SSFredVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFredVC.m; sourceTree = "<group>"; };
 		0D870D0A1916B73400F607BD /* SSFredVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFredVC.xib; sourceTree = "<group>"; };
-		0D870D0B1916B73400F607BD /* SSTimeSeriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeriesVC.h; sourceTree = "<group>"; };
-		0D870D0C1916B73400F607BD /* SSTimeSeriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeriesVC.m; sourceTree = "<group>"; };
-		0D870D0D1916B73400F607BD /* SSTimeSeriesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSTimeSeriesVC.xib; sourceTree = "<group>"; };
+		0D870D0B1916B73400F607BD /* SSCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCategoryVC.h; sourceTree = "<group>"; };
+		0D870D0C1916B73400F607BD /* SSCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCategoryVC.m; sourceTree = "<group>"; };
+		0D870D0D1916B73400F607BD /* SSCategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSCategoryVC.xib; sourceTree = "<group>"; };
 		0D870D0E1916B73400F607BD /* Fred-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Fred-Info.plist"; sourceTree = "<group>"; };
 		0D870D0F1916B73400F607BD /* SSTimeSeriesGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTimeSeriesGraphVC.h; sourceTree = "<group>"; };
 		0D870D101916B73400F607BD /* SSTimeSeriesGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTimeSeriesGraphVC.m; sourceTree = "<group>"; };
@@ -7920,11 +7916,9 @@
 				0D870D081916B73400F607BD /* SSFredVC.h */,
 				0D870D091916B73400F607BD /* SSFredVC.m */,
 				0D870D0A1916B73400F607BD /* SSFredVC.xib */,
-				0D870D0B1916B73400F607BD /* SSTimeSeriesVC.h */,
-				0D870D0C1916B73400F607BD /* SSTimeSeriesVC.m */,
-				0D870D0D1916B73400F607BD /* SSTimeSeriesVC.xib */,
-				0D223F5B1A7D35220046E00B /* SSDataView.h */,
-				0D223F5C1A7D35220046E00B /* SSDataView.m */,
+				0D870D0B1916B73400F607BD /* SSCategoryVC.h */,
+				0D870D0C1916B73400F607BD /* SSCategoryVC.m */,
+				0D870D0D1916B73400F607BD /* SSCategoryVC.xib */,
 				0D06A5C31AC72F1D00EDCED4 /* SSTimeSeries.h */,
 				0D06A5C41AC72F1D00EDCED4 /* SSTimeSeries.m */,
 				0DE50F821AC8AA3D005C15A2 /* SSTimeSeriesView.h */,
@@ -9839,7 +9833,7 @@
 				0D257CE51A7EDFC80087E51B /* 83-calendar.png in Resources */,
 				0D2579811A7EDFC80087E51B /* 145-persondot.png in Resources */,
 				0D2578771A7EDFC70087E51B /* 110-bug.png in Resources */,
-				0D870D1C1916B73400F607BD /* SSTimeSeriesVC.xib in Resources */,
+				0D870D1C1916B73400F607BD /* SSCategoryVC.xib in Resources */,
 				0D257E121A7EDFC80087E51B /* PageCreateGroup_Back.png in Resources */,
 				0D2580DC1A7EDFC80087E51B /* twitter.png in Resources */,
 				0D2578A81A7EDFC70087E51B /* 117-todo.png in Resources */,
@@ -11256,7 +11250,7 @@
 				0D257E2F1A7EDFC80087E51B /* PageCreateGroup_ClearBTN.png in Resources */,
 				0D2577F31A7EDFC70087E51B /* 03-loopback.png in Resources */,
 				0D2579891A7EDFC80087E51B /* 146-gavel.png in Resources */,
-				0D870D1D1916B73400F607BD /* SSTimeSeriesVC.xib in Resources */,
+				0D870D1D1916B73400F607BD /* SSCategoryVC.xib in Resources */,
 				0D25794A1A7EDFC80087E51B /* 138-scales.png in Resources */,
 				0D2573B61A7EDFC70087E51B /* star-template.png in Resources */,
 				0D257D3A1A7EDFC80087E51B /* 95-equalizer.png in Resources */,
@@ -11523,7 +11517,6 @@
 				0D25741A1A7EDFC70087E51B /* SSShadowView.m in Sources */,
 				0D2574C91A7EDFC70087E51B /* SSLine.m in Sources */,
 				0D2574521A7EDFC70087E51B /* SSToolbarView.m in Sources */,
-				0D223F5D1A7D35220046E00B /* SSDataView.m in Sources */,
 				0D2574D01A7EDFC70087E51B /* SSLinePoint.m in Sources */,
 				0D2574D71A7EDFC70087E51B /* SSRect.m in Sources */,
 				0D25750F1A7EDFC70087E51B /* shaderUtil.c in Sources */,
@@ -11842,7 +11835,7 @@
 				0D2575831A7EDFC70087E51B /* SSReferenceEditorVC.m in Sources */,
 				0D2581531A7EDFC80087E51B /* SSKeyChainUtil.m in Sources */,
 				0D2576A91A7EDFC70087E51B /* SSTalkImageView.m in Sources */,
-				0D870D1A1916B73400F607BD /* SSTimeSeriesVC.m in Sources */,
+				0D870D1A1916B73400F607BD /* SSCategoryVC.m in Sources */,
 				0D2577041A7EDFC70087E51B /* MainViewController.m in Sources */,
 				0D4253B618881384006AC83E /* SSAppDelegate.m in Sources */,
 				0D25813E1A7EDFC80087E51B /* SSBase64.m in Sources */,
@@ -11917,7 +11910,6 @@
 				0D2576FD1A7EDFC70087E51B /* ImageView.m in Sources */,
 				0D2581681A7EDFC80087E51B /* SSTweetAdapter.m in Sources */,
 				0D2574251A7EDFC70087E51B /* SSTableLayoutView.m in Sources */,
-				0D223F5E1A7D36320046E00B /* SSDataView.m in Sources */,
 				0D25779E1A7EDFC70087E51B /* SSNavMenuVC.m in Sources */,
 				0D2573611A7EDFC70087E51B /* SSCommonVC.m in Sources */,
 				0D870D201916B73400F607BD /* SSTimeSeriesGraphVC.m in Sources */,
@@ -12587,7 +12579,7 @@
 				0D25755A1A7EDFC70087E51B /* SSAddressVC.m in Sources */,
 				0D2575ED1A7EDFC70087E51B /* SSValueLabel.m in Sources */,
 				0D25764F1A7EDFC70087E51B /* SSSlideOpenVC.m in Sources */,
-				0D870D1B1916B73400F607BD /* SSTimeSeriesVC.m in Sources */,
+				0D870D1B1916B73400F607BD /* SSCategoryVC.m in Sources */,
 				0D06A5CA1AC72F1D00EDCED4 /* SSTimeSeries.m in Sources */,
 				0D2581461A7EDFC80087E51B /* SSGeoCodeUtil.m in Sources */,
 				0D2573701A7EDFC70087E51B /* SSPagesVC.m in Sources */,
@@ -12679,7 +12671,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
+				PROVISIONING_PROFILE = "4020c0c5-0e09-4eda-8109-546a1633f6c8";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12714,7 +12706,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
+				PROVISIONING_PROFILE = "4020c0c5-0e09-4eda-8109-546a1633f6c8";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12726,8 +12718,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Glue;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../dependency",
 					/Users/anpwang/Documents/github/dependency,
@@ -12737,7 +12729,7 @@
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
+				PROVISIONING_PROFILE = "11ecacf0-9a76-4239-a970-2aa47a0d595f";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12748,8 +12740,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Glue;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../dependency",
 					/Users/anpwang/Documents/github/dependency,
@@ -12759,7 +12751,7 @@
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "20acd0e3-42ea-4b1f-b2d1-432ce81568d0";
+				PROVISIONING_PROFILE = "11ecacf0-9a76-4239-a970-2aa47a0d595f";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

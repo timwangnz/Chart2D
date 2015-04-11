@@ -9,10 +9,10 @@
 #import "SSFredCommonVC.h"
 #import "SSTimeSeriesGraphVC.h"
 
-@interface SSTimeSeriesVC : SSFredCommonVC
+@interface SSCategoryVC : SSFredCommonVC
 
 @property (nonatomic, retain) NSString *categoryId;
 @property (nonatomic, retain) SSTimeSeriesGraphVC *detailVC;
 
-
+- (void) clearSelections;
 @end

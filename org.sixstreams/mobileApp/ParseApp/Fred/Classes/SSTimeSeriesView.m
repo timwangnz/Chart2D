@@ -21,28 +21,36 @@
     int xTicks;
     int maxCounts;
     NSUInteger seriesCount;
-    NSUInteger points;
+    //NSUInteger points;
     int pointsInStep;
     float lastValue;
     int chartType;
-    int count;
     int selected;
     IBOutlet UILabel *title;
 }
 @end
 
 @implementation SSTimeSeriesView
-
+- (void) clearSelection
+{
+    selected = -1;
+}
 - (NSUInteger) numberOfSeries
 {
     return [charts count];
 }
+
+- (id) seriesAt:(int) series
+{
+    return [charts objectAtIndex:series];
+}
+
 - (void) removeAll
 {
     [charts removeAllObjects];
-    count = 0;
     selected = -1;
     title.text = @"";
+     [self updateModel];
     [self refresh];
 }
 
@@ -51,28 +59,87 @@
     NSString *idStr = series[@"id"];
     for(SSTimeSeries *ts in charts)
     {
-        if ([ts.id isEqualToString:idStr])
+        if ([ts.categoryId isEqualToString:idStr])
         {
             [charts removeObject:ts];
             break;
         }
     }
+    [self updateModel];
     [self refresh];
 }
 
 - (void) addSeries:(id) series
 {
-    count = [[series objectForKey:@"count"] intValue];
+    
     SSTimeSeries *ts = [[SSTimeSeries alloc ] initWithDictionary:series];
     units = ts.units;
     title.text = @"";
     [charts addObject:ts];
+     [self updateModel];
     [self refresh];
 }
 
 - (void) setChartType:(int) type
 {
     chartType = type;
+}
+
+- (void) updateModel
+{
+    [xPoints removeAllObjects];
+    [xLabels removeAllObjects];
+    if (charts.count == 0)
+    {
+        return;
+    }
+    
+    SSTimeSeries *firstTS = [charts objectAtIndex:0];
+    
+    seriesCount = [firstTS.dataPoints count];//all the points must exists in all charts
+    
+    NSUInteger count = seriesCount > maxCounts ? maxCounts : seriesCount;
+    
+    NSArray *obsvs = firstTS.xPoints;
+    
+    for(NSUInteger j = count; j > 0; j--)
+    {
+        id pt = obsvs[obsvs.count - j];
+        BOOL notFound = NO;
+        for(int i = 1; i < charts.count;i++)
+        {
+            SSTimeSeries *ts = [charts objectAtIndex:i];
+            NSArray *obsvs = ts.xPoints;
+            
+            if (![obsvs containsObject:pt])
+            {
+                notFound = YES;
+                break;
+            }
+            
+        }
+        if (!notFound)
+        {
+            [xPoints addObject:pt];
+        }
+    }
+
+    [xLabels removeAllObjects];
+    
+    NSUInteger points = xPoints.count;
+    for (int i = 0; i< xTicks; i++)
+    {
+        long idx = points - (int)points*(1.0 - i*1.0/(xTicks-1));
+        if(idx < points)
+        {
+            [xLabels addObject:xPoints[idx]];
+        }
+    }
+    
+    if(xLabels.count < xTicks)
+    {
+        [xLabels addObject:xPoints[points -1]];
+    }
 }
 
 - (void) awakeFromNib
@@ -92,11 +159,12 @@
     self.touchEnabled = YES;
     self.cursorType = Graph2DCursorCross;
     
-    maxCounts = 356;
+    maxCounts = 300;
     pointsInStep = 1;
     xTicks = 11;
     offset = 1;
     selected = -1;
+    
     charts = [NSMutableArray array];
     xLabels = [NSMutableArray array];
     xPoints = [NSMutableArray array];
@@ -131,38 +199,7 @@
 
 - (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
 {
-    SSTimeSeries *ts = [charts objectAtIndex:graph];
-    seriesCount = [ts.dataPoints count];
-    points = seriesCount > maxCounts ? maxCounts : seriesCount;
-    
-    NSArray *obsvs = ts.xPoints;
-    [xPoints removeAllObjects];
-    [xLabels removeAllObjects];
-    
-    for(int i = 0; i<points; i++)
-    {
-        long idx = [obsvs count] - points + i;
-        if (idx >= 0)
-        {
-           [xPoints addObject:obsvs[idx]];
-        }
-    }
-
-    for (int i = 0; i< xTicks; i++)
-    {
-        long idx = [obsvs count] - (int)points*(1.0 - i*1.0/(xTicks-1));
-        if(idx < [obsvs count])
-        {
-            [xLabels addObject:obsvs[idx]];
-        }
-    }
-    
-    if(xLabels.count < xTicks)
-    {
-        [xLabels addObject:obsvs[obsvs.count -1]];
-    }
-    
-    return points;
+    return [xPoints count];
 }
 
 - (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(int)x
@@ -171,7 +208,8 @@
     {
         return @"";
     }
-    return xLabels[x];
+    NSDate *date = xLabels[x];
+    return [NSString stringWithFormat:@"%@", date];
 }
 
 
@@ -198,28 +236,50 @@
             ];
 }
 
+- (UIColor *) color:(int) index withAlpha:(float) alpha
+{
+    switch (index) {
+        case 0:
+            return  [UIColor colorWithRed:1 green:0.0 blue:0.0 alpha:alpha];
+        case 1:
+            return  [UIColor colorWithRed:1 green:1.0 blue:0.0 alpha:alpha];
+        case 2:
+            return [UIColor colorWithRed:1 green:0.0 blue:1.0 alpha:alpha];
+        case 3:
+             return [UIColor colorWithRed:1 green:1.0 blue:1.0 alpha:alpha];
+        case 4:
+            return  [UIColor colorWithRed:0 green:1.0 blue:0.0 alpha:alpha];
+        case 5:
+            return [UIColor colorWithRed:0 green:1.0 blue:1.0 alpha:alpha];
+        case 6:
+            return [UIColor colorWithRed:0 green:0.0 blue:1.0 alpha:alpha];
+        case 7:
+            return [UIColor colorWithRed:1 green:0.0 blue:1.0 alpha:alpha];
+        case 8:
+            return [UIColor colorWithRed:1 green:0.5 blue:0.0 alpha:alpha];
+        case 9:
+            return [UIColor colorWithRed:1 green:0.0 blue:0.5 alpha:alpha];
+        case 10:
+            return [UIColor colorWithRed:0.5 green:0.0 blue:1.0 alpha:alpha];
+        default:
+           return  [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:alpha];
+    }
+
+}
+
 - (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
 {
     Graph2DSeriesStyle *seriesStyle = [[Graph2DSeriesStyle alloc]init];
     
-    
-    if (selected == -1)
+    float alpha = 1.0;
+    if (selected != -1 && selected != series)
     {
-        seriesStyle.color =  [UIColor colorWithRed:1 green:0.0 blue:0.0 alpha:1];
+        alpha = 0.3;
     }
-    else{
-        if(selected == series)
-        {
-            seriesStyle.color =  [UIColor colorWithRed:1 green:0.0 blue:0.0 alpha:1];
-        }
-        else{
-            seriesStyle.color =  [UIColor colorWithRed:1 green:0.0 blue:0.0 alpha:0.2];
-        }
-    }
-    
     seriesStyle.chartType = Graph2DLineChart;
     seriesStyle.gradient = NO;
     seriesStyle.lineStyle.penWidth = 1.0;
+    seriesStyle.color = [self color:series withAlpha:alpha];
     //seriesStyle.showMarker = YES;
     return seriesStyle;
 }
@@ -247,9 +307,9 @@
     yAxisStyle.tickStyle.minorTicks = 1;
     yAxisStyle.hidden = NO;
     
-    yAxisStyle.labelStyle.angle = -M_PI_4/2.0;
+    //yAxisStyle.labelStyle.angle = -M_PI_4/2.0;
     yAxisStyle.color = [UIColor blackColor];
-    yAxisStyle.labelStyle.offset = -20;
+    yAxisStyle.labelStyle.offset = -10;
     yAxisStyle.tickStyle.color = [UIColor redColor];
     yAxisStyle.tickStyle.penWidth = 1.0;
     yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
@@ -267,19 +327,27 @@
 
 - (void) graph2DView:(Graph2DView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
 {
-    selected = series;
-    if ([self.delegate respondsToSelector:@selector(timeSeriesView:didSelectSeries:atIndex:)])
+    if (selected != series)
     {
-        [self.delegate timeSeriesView:self didSelectSeries:series atIndex:index];
+        selected = series;
+        if ([self.delegate respondsToSelector:@selector(timeSeriesView:didSelectSeries:atIndex:)])
+        {
+            [self.delegate timeSeriesView:self didSelectSeries:series atIndex:index];
+        }
+        [self refresh];
     }
 }
 
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
     SSTimeSeries *ts = charts[series];
-  
-    return [ts growthRatioBetween:xPoints[0] and:xPoints[index]];
-   // return [ts valueFor: xPoints[index]];
+    if (self.showGrowthRate) {
+        return [ts growthRatioBetween:xPoints[0] and:xPoints[index]];
+    }
+    else
+    {
+        return [ts valueFor: xPoints[index]];
+    }
 }
 
 @end

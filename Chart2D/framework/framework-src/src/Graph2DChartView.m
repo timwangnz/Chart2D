@@ -1179,6 +1179,7 @@
     int i = 0, j = 0;
     if (self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:didSelectSeries:atIndex:)])
     {
+        BOOL selected = NO;
         for(NSMutableArray *list in storedLocations)
         {
             j = 0;
@@ -1186,12 +1187,18 @@
             {
                 if ([area isInArea:touchPointEndAt])
                 {
-                    
+                    selected = YES;
                     [self.chartDelegate graph2DView:self didSelectSeries:i atIndex:j];
+                    break;
                 }
                 j ++;
             }
             i++;
+        }
+        if (!selected)
+        {
+            [self.chartDelegate graph2DView:self didSelectSeries:-1 atIndex:-1];
+
         }
     }
     else

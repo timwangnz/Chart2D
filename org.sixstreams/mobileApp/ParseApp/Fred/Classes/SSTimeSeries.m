@@ -7,17 +7,31 @@
 //
 
 #import "SSTimeSeries.h"
+#import "SSTimeUtil.h"
 
 @implementation SSTimeSeries
+
+- (NSDate *)toDate:(NSString *) dateString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    if (!dateString)
+    {
+        return nil;
+    }
+    
+    dateFormatter.dateFormat = @"yyyy-mm-dd";
+    return [dateFormatter dateFromString:dateString];
+    
+}
 
 - (id) initWithDictionary:(id) dict
 {
     self = [super init];
     if (self) {
-        id seriesDef = dict[@"seriesDef"];
-        self.frequency = seriesDef[@"frequence"];
-        self.units = seriesDef[@"units"];
-        self.id = seriesDef[@"id"];
+        self.seriesDef = dict[@"seriesDef"];
+        self.frequency = self.seriesDef[@"frequence"];
+        self.units = self.seriesDef[@"units"];
+        self.categoryId = self.seriesDef[@"id"];
         NSMutableDictionary *dataPoints = [NSMutableDictionary dictionary];
         NSMutableArray *xPoints = [NSMutableArray array];
         id observations = dict[@"observations"];
@@ -29,8 +43,13 @@
                 value = lastValue;
             }
             lastValue = value;
-            [dataPoints setObject:[NSNumber numberWithFloat:value] forKey:observation[@"date"]];
-            [xPoints addObject:observation[@"date"]];
+            NSDate *date = observation[@"date"];//[self toDate:observation[@"date"]];
+            if(date != nil)
+            {
+                [dataPoints setObject:[NSNumber numberWithFloat:value] forKey:date];
+                 [xPoints addObject:date];
+            }
+           
         }
         self.dataPoints = [NSDictionary dictionaryWithDictionary:dataPoints];
         self.xPoints = [NSArray arrayWithArray:xPoints];
@@ -70,7 +89,7 @@
         {
             return [NSNumber numberWithFloat:0];;
         }
-        return [NSNumber numberWithFloat:(sValue - fValue)/fValue];
+        return [NSNumber numberWithFloat:(sValue - fValue)*100/fValue];
     }
     else
     {

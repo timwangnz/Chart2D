@@ -7,9 +7,10 @@
 //
 
 #import <Chart2D/Chart2D.h>
-
+#import "SSCategoryVC.h"
 #import "SSTimeSeriesGraphVC.h"
 #import "SSTimeSeriesView.h"
+#import "SSTimeSeries.h"
 
 #import "SSTableLayoutView.h"
 #import "SSPropertiesView.h"
@@ -28,6 +29,7 @@
     id theSeriesDef;
     RequestCallback dataCallback;
     NSData *loadedData;
+    NSUInteger selected;
 }
 
 - (IBAction)clearAll:(id)sender;
@@ -53,9 +55,11 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 - (IBAction)clearAll:(id)sender
 {
     [seriesView removeAll];
+    [self.categoryVC clearSelections];
     properties = nil;
     theSeriesDef = nil;
     seriesId = nil;
+    selected = -1;
     layoutView.hidden = YES;
 }
 
@@ -81,6 +85,24 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
         self.title = @"";
         layoutView.hidden = YES;
     }
+    else{
+        selected = -1;
+        if([seriesView numberOfSeries] >= 1)
+        {
+            SSTimeSeries *selectedSeries = [seriesView seriesAt:0];
+            id catId = selectedSeries.categoryId;
+            
+            if(!catId)
+            {
+                return;
+            }
+            [seriesView clearSelection];
+            theSeriesDef = selectedSeries.seriesDef;
+            seriesId = selectedSeries.categoryId;
+            properties = [NSMutableDictionary dictionaryWithDictionary:theSeriesDef];
+        }
+        [self updateUI];
+    }
 }
 
 - (void) loadDataFor:(id) seriesDef withBlock:(RequestCallback)block
@@ -100,6 +122,18 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
     [conn get:[self getUrl:catId] onSuccess:^(NSData *data) {
         loadedData = data;
+        id dic = [NSMutableDictionary dictionaryWithDictionary:[loadedData toDictionary]];
+        
+        if (dic[@"error_code"])
+        {
+            [self showAlert:dic[@"error_message"] withTitle:@"Error"];
+            return;
+        }
+        
+        tbFacts.data = properties;
+        [dic setObject:tbFacts.data forKey:@"seriesDef"];
+        [seriesView addSeries:dic];
+        selected = -1;
         if (dataCallback)
         {
             dataCallback(nil, data);
@@ -113,6 +147,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    seriesView.delegate = self;
     if (theSeriesDef)
     {
         [self updateUI];
@@ -121,55 +156,66 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
 - (void) updateUI
 {
-    
-    id dic = [NSMutableDictionary dictionaryWithDictionary:[loadedData toDictionary]];
-    
-    if (dic[@"error_code"])
-    {
-        [self showAlert:dic[@"error_message"] withTitle:@"Error"];
-        return;
-    }
-    
-    tbFacts.data = properties;
-    if ([seriesView numberOfSeries] == 1)
+    [layoutView removeChildViews];
+    layoutView.hidden = NO;
+
+    if ([seriesView numberOfSeries] == 1 || selected != -1)
     {
         self.title = [theSeriesDef objectForKey:@"title"];
+        textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeriesDef objectForKey:@"notes"] ? [theSeriesDef objectForKey:@"notes"] : @""];
+        if([self isIPad])
+        {
+            CGRect rect = seriesView.frame;
+            rect.size.height = 500;
+            seriesView.frame = rect;
+            rect.size.height = 200;
+            textView.frame = rect;
+        }
+        
+        [textView setScrollEnabled:YES];
+        [textView sizeToFit];
+        [textView setScrollEnabled:NO];
+        [layoutView addChildView:controller];
+        [layoutView addChildView:seriesView];
+        [layoutView addChildView:textView];
+        [layoutView addChildView:tbFacts];
     }
     else{
         self.title = @"Charts";
+        textView.text = @"";
+        [layoutView addChildView:controller];
+        [layoutView addChildView:seriesView];
     }
-    textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeriesDef objectForKey:@"notes"] ? [theSeriesDef objectForKey:@"notes"] : @""];
-    
-    [dic setObject:tbFacts.data forKey:@"seriesDef"];
-    
-    [seriesView addSeries:dic];
-    
+ 
     seriesView.hidden = NO;
-    [layoutView removeChildViews];
-    layoutView.hidden = NO;
-    if([self isIPad])
-    {
-        CGRect rect = seriesView.frame;
-        rect.size.height = 500;
-        seriesView.frame = rect;
-        rect.size.height = 200;
-        textView.frame = rect;
-    }
-    
-    [textView setScrollEnabled:YES];
-    [textView sizeToFit];
-    [textView setScrollEnabled:NO];
-    
-    [layoutView addChildView:controller];
-    [layoutView addChildView:seriesView];
-    [layoutView addChildView:textView];
-    [layoutView addChildView:tbFacts];
+
 }
 
 
 - (void) timeSeriesView:(SSTimeSeriesView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
 {
-    
+    if (selected == series)
+    {
+        return;
+    }
+    selected = series;
+    if (selected != -1)
+    {
+        
+        SSTimeSeries *selectedSeries = [seriesView seriesAt:series];
+        id catId = selectedSeries.categoryId;
+        
+        if(!catId)
+        {
+            return;
+        }
+        
+        theSeriesDef = selectedSeries.seriesDef;
+        seriesId = selectedSeries.categoryId;
+        properties = [NSMutableDictionary dictionaryWithDictionary:theSeriesDef];
+       
+    }
+     [self updateUI];
 }
 
 - (void)splitViewController:(UISplitViewController*)svc

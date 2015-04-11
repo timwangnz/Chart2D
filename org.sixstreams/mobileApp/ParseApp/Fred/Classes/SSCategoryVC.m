@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 SixStream. All rights reserved.
 //
 
-#import "SSTimeSeriesVC.h"
+#import "SSCategoryVC.h"
 #import "SSTimeSeriesGraphVC.h"
 
-@interface SSTimeSeriesVC ()
+@interface SSCategoryVC ()
 {
     NSMutableDictionary *semanticCategories;
     IBOutlet UIViewController *groupByVC;
@@ -21,9 +21,15 @@
 
 @end
 
-@implementation SSTimeSeriesVC
+@implementation SSCategoryVC
 
 static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series?api_key=ef673da26430e206a8b7d3ce658b7162&file_type=json";
+
+- (void) clearSelections
+{
+    [selectedKeys removeAllObjects];
+    [tvCategory reloadData];
+}
 
 - (NSString *) getUrl:(NSString *)catId
 {
@@ -72,7 +78,8 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self reloadData:self.categoryId];
+    self.detailVC.categoryVC = self;
+    [self reloadData: self.categoryId];
 }
 
 - (void) didFinishLoading: (NSData *)data
@@ -81,15 +88,46 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
     NSMutableDictionary *categories = [NSMutableDictionary dictionary];
     semanticCategories = [NSMutableDictionary dictionary];
     NSArray * cats = [dic objectForKey:@"seriess"];
+    
     if ([cats count]==0)
     {
         return;
     }
+    
+    NSMutableArray *groups = [NSMutableArray array];
+    
+    id cat = cats[0];
+    
+    NSString *title = [cat objectForKey:@"title"];
+    
+    if([groups count]==0)
+    {
+        NSArray *stringArray = [title componentsSeparatedByString: @" "];
+        NSMutableArray *processed = [NSMutableArray array];
+        for(int  i = 0; i<[stringArray count];i++)
+        {
+            [processed addObject: stringArray[i]];
+            groups[i] = [processed componentsJoinedByString:@" "];
+        }
+    }
+
+    
+    //NSLog(@"%@", groups);
     for (id cat in cats)
     {
         NSString *title = [cat objectForKey:@"title"];
+        /*
+        for (NSInteger i = [groups count] - 2; i >= 0; i --) {
+            if ([title containsString:groups[i]])
+            {
+                title = [title substringFromIndex:[groups[i] length]];
+                break;
+            }
+        }
+        */
         [categories setObject:cat forKey:title];
     }
+    
     selectedKeys = [NSMutableArray array];
     self.data = categories;
     [tvCategory reloadData];
