@@ -341,12 +341,16 @@
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
     SSTimeSeries *ts = charts[series];
+    
+    SSTimeSeries *firstTs = charts[0];
+    ;
+    
     if (self.showGrowthRate) {
         return [ts growthRatioBetween:xPoints[0] and:xPoints[index]];
     }
     else
     {
-        return [ts valueFor: xPoints[index]];
+        return [ts valueFor: firstTs.xPoints[index]];
     }
 }
 

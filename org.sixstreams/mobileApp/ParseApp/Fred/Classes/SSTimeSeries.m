@@ -18,7 +18,6 @@
     {
         return nil;
     }
-    
     dateFormatter.dateFormat = @"yyyy-mm-dd";
     return [dateFormatter dateFromString:dateString];
     
