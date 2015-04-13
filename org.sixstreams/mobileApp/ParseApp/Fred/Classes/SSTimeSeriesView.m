@@ -343,7 +343,6 @@
     SSTimeSeries *ts = charts[series];
     
     SSTimeSeries *firstTs = charts[0];
-    ;
     
     if (self.showGrowthRate) {
         return [ts growthRatioBetween:xPoints[0] and:xPoints[index]];
