@@ -139,10 +139,8 @@
 
 - (BOOL) isIPad
 {
-#ifdef UI_USER_INTERFACE_IDIOM
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-#endif
-    return NO;
+ 
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
     
 }
 

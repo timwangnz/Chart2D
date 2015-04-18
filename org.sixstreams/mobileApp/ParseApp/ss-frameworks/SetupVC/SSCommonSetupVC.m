@@ -16,8 +16,6 @@
     SSSecurityVC *loginVC;
 }
 
-@property (nonatomic) id selectedValue;
-@property (nonatomic) id selectedSection;
 @end
 
 @implementation SSCommonSetupVC

@@ -12,7 +12,6 @@
 
 @property (nonatomic) id item2Comment;
 @property (nonatomic) NSString *objectType;
-@property (nonatomic) NSString *titleKey;
 @property (nonatomic) id context;
 
 @end

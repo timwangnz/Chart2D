@@ -13,7 +13,6 @@
 @property (nonatomic) id itemCommented;
 @property (nonatomic) NSString *itemType;
 @property (nonatomic) BOOL oneAtATime;
-@property (nonatomic) NSString *titleKey;
 @property (nonatomic) UITableView *layoutManager;
 
 @end

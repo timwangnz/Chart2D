@@ -119,11 +119,12 @@
                 }
                 
                 NSMutableDictionary *valueDic = [NSMutableDictionary dictionary];
-                
-                [valueDic setObject:value forKey : HIGH_VALUE_KEY];
-                [valueDic setObject:lowValue forKey : LOW_VALUE_KEY];
-                
-                [items addObject:valueDic];
+                if (value)
+                {
+                    [valueDic setObject:value forKey : HIGH_VALUE_KEY];
+                    [valueDic setObject:lowValue forKey : LOW_VALUE_KEY];
+                    [items addObject:valueDic];
+                }
             }
             
             [data addObject:items];
