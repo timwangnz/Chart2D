@@ -33,6 +33,9 @@
         self.categoryId = self.seriesDef[@"id"];
         NSMutableDictionary *dataPoints = [NSMutableDictionary dictionary];
         NSMutableArray *xPoints = [NSMutableArray array];
+        self.seriesStyle = [Graph2DSeriesStyle defaultStyle:Graph2DLineChart];
+        self.seriesStyle.fillStyle = nil;
+        self.seriesStyle.gradient = NO;
         id observations = dict[@"observations"];
         float lastValue = 0;
         for (id observation in observations) {

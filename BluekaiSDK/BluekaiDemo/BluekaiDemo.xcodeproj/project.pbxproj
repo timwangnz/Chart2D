@@ -10,7 +10,7 @@
 		0D3E41CB1A7EBFEB00FB756D /* Bluekai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E41CA1A7EBFEB00FB756D /* Bluekai.framework */; };
 		0DD063E11A6B415300BA9139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E01A6B415300BA9139 /* main.m */; };
 		0DD063E41A6B415300BA9139 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E31A6B415300BA9139 /* AppDelegate.m */; };
-		0DD063E71A6B415300BA9139 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E61A6B415300BA9139 /* ViewController.m */; };
+		0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E61A6B415300BA9139 /* BluekaiIDVC.m */; };
 		0DD063EA1A6B415300BA9139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD063E81A6B415300BA9139 /* Main.storyboard */; };
 		0DD063EC1A6B415300BA9139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD063EB1A6B415300BA9139 /* Images.xcassets */; };
 		0DD063EF1A6B415300BA9139 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD063ED1A6B415300BA9139 /* LaunchScreen.xib */; };
@@ -26,8 +26,8 @@
 		0DD063E01A6B415300BA9139 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DD063E21A6B415300BA9139 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0DD063E31A6B415300BA9139 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0DD063E51A6B415300BA9139 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DD063E61A6B415300BA9139 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0DD063E51A6B415300BA9139 /* BluekaiIDVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluekaiIDVC.h; sourceTree = "<group>"; };
+		0DD063E61A6B415300BA9139 /* BluekaiIDVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluekaiIDVC.m; sourceTree = "<group>"; };
 		0DD063E91A6B415300BA9139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DD063EB1A6B415300BA9139 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0DD063EE1A6B415300BA9139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 				0DD0645C1A6C6A0A00BA9139 /* BlueKai_1712415.png */,
 				0DD063E21A6B415300BA9139 /* AppDelegate.h */,
 				0DD063E31A6B415300BA9139 /* AppDelegate.m */,
-				0DD063E51A6B415300BA9139 /* ViewController.h */,
-				0DD063E61A6B415300BA9139 /* ViewController.m */,
+				0DD063E51A6B415300BA9139 /* BluekaiIDVC.h */,
+				0DD063E61A6B415300BA9139 /* BluekaiIDVC.m */,
 				0DD063E81A6B415300BA9139 /* Main.storyboard */,
 				0DD063EB1A6B415300BA9139 /* Images.xcassets */,
 				0DD063ED1A6B415300BA9139 /* LaunchScreen.xib */,
@@ -173,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD063E71A6B415300BA9139 /* ViewController.m in Sources */,
+				0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */,
 				0DD063E41A6B415300BA9139 /* AppDelegate.m in Sources */,
 				0DD063E11A6B415300BA9139 /* main.m in Sources */,
 			);

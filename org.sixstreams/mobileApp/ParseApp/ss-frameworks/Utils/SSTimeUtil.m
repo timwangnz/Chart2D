@@ -23,17 +23,34 @@
     
 	NSString *displayName = [NSString stringWithFormat:@"%02d:%02d.%02d", minutes, seconds, subsecs];
 	return displayName;	
-}	   
+}
 
-+ (NSDate *)dateAYearAgo:(NSDate *)from
++ (NSDate *)days:(NSInteger) days from:(NSDate *) from
 {
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:-1];
+    [offsetComponents setDay:days];
     
     return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+}
+
++ (NSDate *)years:(NSInteger) years from:(NSDate *)from
+{
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:years];
+    
+    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    
+}
+
++ (NSDate *)dateAYearAgo:(NSDate *)from
+{
+    return [self years:-1 from:from];
     
 }
 
@@ -67,7 +84,8 @@
     return [dateFormat dateFromString:date];
 }
 
-+(NSString *) stringWithShortDate:(NSDate *) date
+
++(NSString *) formatDate:(NSString*) format date :(NSDate *) date
 {
     return [self stringFromDateWithFormat:@"MM-dd-yyyy" date:date];
 }

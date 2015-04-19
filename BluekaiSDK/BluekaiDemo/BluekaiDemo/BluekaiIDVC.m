@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 Oracle. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BluekaiIDVC.h"
 
 #import <AdSupport/AdSupport.h>
 #import <Bluekai/Bluekai.h>
 
-@interface ViewController ()
+@interface BluekaiIDVC ()
 
 - (IBAction)clearCookies:(id)sender;
 @end
 
-@implementation ViewController
+@implementation BluekaiIDVC
 
 - (IBAction)clearCookies:(id)sender
 {

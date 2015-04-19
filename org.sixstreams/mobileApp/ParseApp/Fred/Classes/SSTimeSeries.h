@@ -5,21 +5,27 @@
 //  Created by Anping Wang on 3/28/15.
 //  Copyright (c) 2015 SixStream. All rights reserved.
 //
-
+#import <Chart2D/Chart2D.h>
 
 @interface SSTimeSeries : NSObject
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *note;
+
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
+
 @property BOOL excluedeWeekends;
+
+@property BOOL selected;
 
 @property (nonatomic, retain) NSDate *lastUpdated;
 @property (nonatomic, retain) NSString *frequency;
 @property (nonatomic, retain) NSString *units;
 @property (nonatomic, retain) NSString *categoryId;
+
 @property (nonatomic, retain) id seriesDef;
+@property (nonatomic, retain) Graph2DSeriesStyle* seriesStyle;
 
 @property (nonatomic, retain) NSString *reference;
 @property (nonatomic, retain) NSDictionary *dataPoints;

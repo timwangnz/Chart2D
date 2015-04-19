@@ -61,7 +61,7 @@ static NSString  *fredCat = @"http://api.stlouisfed.org/fred/category/children?a
                                style:UIBarButtonItemStylePlain
                                target:self
                                action:@selector(showProfile)];
-    [arrBtns addObject:addAcc];
+    //[arrBtns addObject:addAcc];
     
     self.navigationItem.leftBarButtonItems = arrBtns;
     }

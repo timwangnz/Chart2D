@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Chart2D/Chart2D.h>
 
+
 @class SSTimeSeriesView;
+@class SSTimeSeries;
 
 @protocol TimeSeriesViewDelegate <NSObject>
 - (void) timeSeriesView:(SSTimeSeriesView *) graph2DView didSelectSeries:(int) series atIndex:(int) index;
@@ -21,9 +23,12 @@
 
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *endDate;
+
+@property (nonatomic, retain) SSTimeSeries *selected;
+
 @property BOOL excluedeWeekends;
 @property BOOL showGrowthRate;
-
+@property NSInteger pointsInView;
 @property (nonatomic, retain) NSString *frequency;
 @property (nonatomic) id<TimeSeriesViewDelegate> delegate;
 
@@ -35,5 +40,9 @@
 - (NSUInteger) numberOfSeries;
 - (void) clearSelection;
 - (void) setChartType:(int) type;
+
+- (NSArray *) timeserieses;
+
+- (void) updateUI;
 
 @end

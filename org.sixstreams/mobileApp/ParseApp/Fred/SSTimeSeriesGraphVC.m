@@ -29,7 +29,6 @@
     id theSeriesDef;
     RequestCallback dataCallback;
     NSData *loadedData;
-    NSUInteger selected;
 }
 
 - (IBAction)clearAll:(id)sender;
@@ -44,12 +43,61 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
 - (IBAction)setOperation : (UISegmentedControl *)sender
 {
-    
+    seriesView.showGrowthRate = sender.selectedSegmentIndex == 1;
+    [seriesView updateUI];
+}
+
+- (IBAction)setDuration : (UISegmentedControl *)sender
+{
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            seriesView.pointsInView = 30;
+            break;
+        case 1:
+            seriesView.pointsInView = 180;
+            break;
+        case 2:
+            seriesView.pointsInView = 360;
+            break;
+            
+        default:
+            break;
+    }
+    [seriesView updateUI];
 }
 
 - (IBAction)changChartStyle:(UISegmentedControl *)sender
 {
-    
+    if (seriesView.selected)
+    {
+        [self setChartType:seriesView.selected sender:sender];
+    }
+    else
+    {
+        for (SSTimeSeries *ts in [seriesView timeserieses]) {
+            [self setChartType:ts sender:sender];
+        }
+    }
+    [seriesView refresh];
+}
+
+- (void) setChartType:(SSTimeSeries *) ts sender:(UISegmentedControl *)sender
+{
+    if(sender.selectedSegmentIndex == 2)
+    {
+        ts.seriesStyle.chartType = Graph2DBarChart;
+        ts.seriesStyle.barGap = 1;
+    }
+    else if(sender.selectedSegmentIndex == 0)
+    {
+        ts.seriesStyle.chartType = Graph2DLineChart;
+        ts.seriesStyle.gradient = NO;
+        
+    }else if(sender.selectedSegmentIndex == 1)
+    {
+        ts.seriesStyle.chartType = Graph2DLineChart;
+        ts.seriesStyle.gradient = YES;
+    }
 }
 
 - (IBAction)clearAll:(id)sender
@@ -59,7 +107,6 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     properties = nil;
     theSeriesDef = nil;
     seriesId = nil;
-    selected = -1;
     layoutView.hidden = YES;
 }
 
@@ -86,7 +133,6 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
         layoutView.hidden = YES;
     }
     else{
-        selected = -1;
         if([seriesView numberOfSeries] >= 1)
         {
             SSTimeSeries *selectedSeries = [seriesView seriesAt:0];
@@ -129,11 +175,14 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
             [self showAlert:dic[@"error_message"] withTitle:@"Error"];
             return;
         }
-        
-        tbFacts.data = properties;
-        [dic setObject:tbFacts.data forKey:@"seriesDef"];
+        if(tbFacts)
+        {
+            tbFacts.data = properties;
+        }
+        [dic setObject:properties forKey:@"seriesDef"];
         [seriesView addSeries:dic];
-        selected = -1;
+       
+        
         if (dataCallback)
         {
             dataCallback(nil, data);
@@ -152,6 +201,8 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     {
         [self updateUI];
     }
+    tbFacts.data = properties;
+    [self.view setNeedsLayout];
 }
 
 - (void) updateUI
@@ -159,7 +210,7 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     [layoutView removeChildViews];
     layoutView.hidden = NO;
 
-    if ([seriesView numberOfSeries] == 1 || selected != -1)
+    if ([seriesView numberOfSeries] == 1 || !seriesView.selected)
     {
         self.title = [theSeriesDef objectForKey:@"title"];
         textView.text = [NSString stringWithFormat:@"%@\n\n%@", self.title, [theSeriesDef objectForKey:@"notes"] ? [theSeriesDef objectForKey:@"notes"] : @""];
@@ -188,34 +239,24 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
     }
  
     seriesView.hidden = NO;
-
+    [self.view setNeedsDisplay];
 }
 
 
 - (void) timeSeriesView:(SSTimeSeriesView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
 {
-    if (selected == series)
+    id catId = graph2DView.selected.categoryId;
+    if(!catId)
     {
         return;
     }
-    selected = series;
-    if (selected != -1)
-    {
-        
-        SSTimeSeries *selectedSeries = [seriesView seriesAt:series];
-        id catId = selectedSeries.categoryId;
-        
-        if(!catId)
-        {
-            return;
-        }
-        
-        theSeriesDef = selectedSeries.seriesDef;
-        seriesId = selectedSeries.categoryId;
-        properties = [NSMutableDictionary dictionaryWithDictionary:theSeriesDef];
-       
-    }
-     [self updateUI];
+    
+    theSeriesDef = graph2DView.selected.seriesDef;
+    seriesId = catId;
+    properties = [NSMutableDictionary dictionaryWithDictionary:theSeriesDef];
+    
+    
+    [self updateUI];
 }
 
 - (void)splitViewController:(UISplitViewController*)svc

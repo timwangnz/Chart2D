@@ -25,5 +25,9 @@
 
 +(NSString *) stringWithShortDate:(NSDate *) date;
 +(NSDate *) dateWithShortString:(NSString *) dateString;
+
 + (NSDate *)dateAYearAgo:(NSDate *)from;
+
++ (NSDate *)years:(NSInteger) years from: (NSDate *)from;
++ (NSDate *)days:(NSInteger) days from:(NSDate *) from;
 @end
