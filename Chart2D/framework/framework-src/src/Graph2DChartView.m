@@ -300,7 +300,7 @@
         {
             float floatValue = [[series[i] objectForKey:HIGH_VALUE_KEY] floatValue];
             
-            //float lowFloatValue = [[series[i] objectForKey:LOW_VALUE_KEY] floatValue];
+            float lowFloatValue = [[series[i] objectForKey:LOW_VALUE_KEY] floatValue];
             
             float barY = gBottomLeft.y - gDrawingRect.size.height * floatValue;
             
@@ -312,7 +312,7 @@
                 barY = gBottomLeft.y - gDrawingRect.size.height *  [acumlatedHeight floatValue];
             }
             
-            float barHeight = gDrawingRect.size.height * (floatValue);// - lowFloatValue);
+            float barHeight = gDrawingRect.size.height * (floatValue - lowFloatValue);
             
             float barX = gBottomLeft.x + i * barWidth;
             CGRect barRect = CGRectMake(barX + self.barGap, barY, barWidth - 2 * self.barGap, barHeight);

@@ -27,11 +27,13 @@
     self.leftMargin = 30;
     self.drawXGrids = YES;
     self.drawYGrids = YES;
+
     self.barChartStyle = BarStyleCluster;
     self.chartType = Graph2DBarChart;
     self.fillStyle = nil;
     self.touchEnabled = YES;
     self.cursorType = Graph2DCursorCross;
+    self.autoScale = YES;
     selected = -1;
     [self setupData];
 }

@@ -14,6 +14,7 @@
 @interface BluekaiIDVC ()
 
 - (IBAction)clearCookies:(id)sender;
+
 @end
 
 @implementation BluekaiIDVC

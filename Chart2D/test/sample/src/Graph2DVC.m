@@ -87,7 +87,7 @@
                 self.graph2DView.frame.size.width, self.graph2DView.frame.size.height);
     
     data = [[NSArray alloc] initWithObjects: @"0.7", @"0.4", @"0.9", @"1.0", @"0.2", @"0.85",
-                      @"0.11", @"0.75", @"0.53", @"0.44", @"0.88", @"0.77", nil];
+                      @"-0.11", @"0.75", @"-0.53", @"0.44", @"-0.88", @"0.77", nil];
     self.graph2DView.dataSource = self;
     self.graph2DView.chartDelegate = self;
     self.graph2DView.topPadding = 20;

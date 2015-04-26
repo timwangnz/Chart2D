@@ -44,8 +44,8 @@
     
     for (int i = 0; i<count; i++) {
         CGFloat fRand = rand() * 0.1f /RAND_MAX ;
-        [values[0] addObject:[NSNumber numberWithDouble: 1.5 + 0.4 * sin(waves * i * M_PI/count * sin(offset)) + fRand] ];
-        [values[1] addObject:[NSNumber numberWithDouble: 1.5 + cos(waves * i * M_PI/count + offset)] ];
+        [values[0] addObject:[NSNumber numberWithDouble: 0.4 * sin(waves * i * M_PI/count * sin(offset)) + fRand] ];
+        [values[1] addObject:[NSNumber numberWithDouble: 1.5 * cos(waves * i * M_PI/count + offset)] ];
         [values[2] addObject:[NSNumber numberWithDouble: 1.5 + cos(waves * i * M_PI/count + offset)  + .3] ];
     }
 }

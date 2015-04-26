@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0D3E41CB1A7EBFEB00FB756D /* Bluekai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3E41CA1A7EBFEB00FB756D /* Bluekai.framework */; };
+		0D87D4A71AEB5E4B006856A8 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4A51AEB5E4B006856A8 /* MainVC.m */; };
+		0D87D4AA1AEB5F47006856A8 /* BluekaiIDVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D87D4A91AEB5F47006856A8 /* BluekaiIDVC.xib */; };
+		0D87D4AD1AEC4C8D006856A8 /* StorageCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4AC1AEC4C8D006856A8 /* StorageCommonVC.m */; };
+		0D87D4B01AEC4D55006856A8 /* HTTPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4AF1AEC4D55006856A8 /* HTTPConnector.m */; };
+		0D87D4B41AEC538A006856A8 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4B21AEC538A006856A8 /* CategoryVC.m */; };
+		0D87D4B51AEC538A006856A8 /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D87D4B31AEC538A006856A8 /* CategoryVC.xib */; };
+		0D87D4B91AEC6D7A006856A8 /* CampaignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4B71AEC6D7A006856A8 /* CampaignVC.m */; };
+		0D87D4BA1AEC6D7A006856A8 /* CampaignVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D87D4B81AEC6D7A006856A8 /* CampaignVC.xib */; };
+		0D87D4BE1AEC9754006856A8 /* CfrStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D87D4BC1AEC9754006856A8 /* CfrStatusVC.m */; };
+		0D87D4BF1AEC9754006856A8 /* CfrStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D87D4BD1AEC9754006856A8 /* CfrStatusVC.xib */; };
 		0DD063E11A6B415300BA9139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E01A6B415300BA9139 /* main.m */; };
 		0DD063E41A6B415300BA9139 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E31A6B415300BA9139 /* AppDelegate.m */; };
 		0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E61A6B415300BA9139 /* BluekaiIDVC.m */; };
@@ -21,6 +31,22 @@
 
 /* Begin PBXFileReference section */
 		0D3E41CA1A7EBFEB00FB756D /* Bluekai.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bluekai.framework; path = ../Bluekai/Bluekai.framework; sourceTree = "<group>"; };
+		0D87D4A41AEB5E4B006856A8 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		0D87D4A51AEB5E4B006856A8 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		0D87D4A91AEB5F47006856A8 /* BluekaiIDVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluekaiIDVC.xib; sourceTree = "<group>"; };
+		0D87D4AB1AEC4C8D006856A8 /* StorageCommonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageCommonVC.h; sourceTree = "<group>"; };
+		0D87D4AC1AEC4C8D006856A8 /* StorageCommonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageCommonVC.m; sourceTree = "<group>"; };
+		0D87D4AE1AEC4D55006856A8 /* HTTPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnector.h; sourceTree = "<group>"; };
+		0D87D4AF1AEC4D55006856A8 /* HTTPConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnector.m; sourceTree = "<group>"; };
+		0D87D4B11AEC538A006856A8 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
+		0D87D4B21AEC538A006856A8 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
+		0D87D4B31AEC538A006856A8 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
+		0D87D4B61AEC6D7A006856A8 /* CampaignVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignVC.h; sourceTree = "<group>"; };
+		0D87D4B71AEC6D7A006856A8 /* CampaignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignVC.m; sourceTree = "<group>"; };
+		0D87D4B81AEC6D7A006856A8 /* CampaignVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignVC.xib; sourceTree = "<group>"; };
+		0D87D4BB1AEC9754006856A8 /* CfrStatusVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CfrStatusVC.h; sourceTree = "<group>"; };
+		0D87D4BC1AEC9754006856A8 /* CfrStatusVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CfrStatusVC.m; sourceTree = "<group>"; };
+		0D87D4BD1AEC9754006856A8 /* CfrStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CfrStatusVC.xib; sourceTree = "<group>"; };
 		0DD063DB1A6B415300BA9139 /* BluekaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluekaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD063DF1A6B415300BA9139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD063E01A6B415300BA9139 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,6 +104,8 @@
 		0DD063DD1A6B415300BA9139 /* BluekaiDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0D87D4AE1AEC4D55006856A8 /* HTTPConnector.h */,
+				0D87D4AF1AEC4D55006856A8 /* HTTPConnector.m */,
 				0DD0645E1A6C6A1100BA9139 /* bluekai.jpg */,
 				0DD0645C1A6C6A0A00BA9139 /* BlueKai_1712415.png */,
 				0DD063E21A6B415300BA9139 /* AppDelegate.h */,
@@ -88,6 +116,20 @@
 				0DD063EB1A6B415300BA9139 /* Images.xcassets */,
 				0DD063ED1A6B415300BA9139 /* LaunchScreen.xib */,
 				0DD063DE1A6B415300BA9139 /* Supporting Files */,
+				0D87D4A41AEB5E4B006856A8 /* MainVC.h */,
+				0D87D4A51AEB5E4B006856A8 /* MainVC.m */,
+				0D87D4A91AEB5F47006856A8 /* BluekaiIDVC.xib */,
+				0D87D4AB1AEC4C8D006856A8 /* StorageCommonVC.h */,
+				0D87D4AC1AEC4C8D006856A8 /* StorageCommonVC.m */,
+				0D87D4B11AEC538A006856A8 /* CategoryVC.h */,
+				0D87D4B21AEC538A006856A8 /* CategoryVC.m */,
+				0D87D4B31AEC538A006856A8 /* CategoryVC.xib */,
+				0D87D4B61AEC6D7A006856A8 /* CampaignVC.h */,
+				0D87D4B71AEC6D7A006856A8 /* CampaignVC.m */,
+				0D87D4B81AEC6D7A006856A8 /* CampaignVC.xib */,
+				0D87D4BB1AEC9754006856A8 /* CfrStatusVC.h */,
+				0D87D4BC1AEC9754006856A8 /* CfrStatusVC.m */,
+				0D87D4BD1AEC9754006856A8 /* CfrStatusVC.xib */,
 			);
 			path = BluekaiDemo;
 			sourceTree = "<group>";
@@ -158,11 +200,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D87D4BA1AEC6D7A006856A8 /* CampaignVC.xib in Resources */,
 				0DD063EA1A6B415300BA9139 /* Main.storyboard in Resources */,
 				0DD0645F1A6C6A1100BA9139 /* bluekai.jpg in Resources */,
 				0DD063EF1A6B415300BA9139 /* LaunchScreen.xib in Resources */,
+				0D87D4AA1AEB5F47006856A8 /* BluekaiIDVC.xib in Resources */,
+				0D87D4BF1AEC9754006856A8 /* CfrStatusVC.xib in Resources */,
 				0DD063EC1A6B415300BA9139 /* Images.xcassets in Resources */,
 				0DD0645D1A6C6A0A00BA9139 /* BlueKai_1712415.png in Resources */,
+				0D87D4B51AEC538A006856A8 /* CategoryVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D87D4B91AEC6D7A006856A8 /* CampaignVC.m in Sources */,
+				0D87D4AD1AEC4C8D006856A8 /* StorageCommonVC.m in Sources */,
 				0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */,
+				0D87D4A71AEB5E4B006856A8 /* MainVC.m in Sources */,
+				0D87D4B01AEC4D55006856A8 /* HTTPConnector.m in Sources */,
+				0D87D4BE1AEC9754006856A8 /* CfrStatusVC.m in Sources */,
+				0D87D4B41AEC538A006856A8 /* CategoryVC.m in Sources */,
 				0DD063E41A6B415300BA9139 /* AppDelegate.m in Sources */,
 				0DD063E11A6B415300BA9139 /* main.m in Sources */,
 			);
