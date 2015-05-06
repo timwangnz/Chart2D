@@ -27,6 +27,10 @@
 		0DD064571A6C37B900BA9139 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD064561A6C37B900BA9139 /* AdSupport.framework */; };
 		0DD0645D1A6C6A0A00BA9139 /* BlueKai_1712415.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DD0645C1A6C6A0A00BA9139 /* BlueKai_1712415.png */; };
 		0DD0645F1A6C6A1100BA9139 /* bluekai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DD0645E1A6C6A1100BA9139 /* bluekai.jpg */; };
+		0DD406981AED7517004BE290 /* PartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD406961AED7517004BE290 /* PartnerVC.m */; };
+		0DD406991AED7517004BE290 /* PartnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD406971AED7517004BE290 /* PartnerVC.xib */; };
+		0DD4069D1AEE017A004BE290 /* PartnerEntityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4069B1AEE017A004BE290 /* PartnerEntityVC.m */; };
+		0DD4069E1AEE017A004BE290 /* PartnerEntityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD4069C1AEE017A004BE290 /* PartnerEntityVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,12 @@
 		0DD064561A6C37B900BA9139 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0DD0645C1A6C6A0A00BA9139 /* BlueKai_1712415.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai_1712415.png; sourceTree = "<group>"; };
 		0DD0645E1A6C6A1100BA9139 /* bluekai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluekai.jpg; sourceTree = "<group>"; };
+		0DD406951AED7517004BE290 /* PartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerVC.h; sourceTree = "<group>"; };
+		0DD406961AED7517004BE290 /* PartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerVC.m; sourceTree = "<group>"; };
+		0DD406971AED7517004BE290 /* PartnerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerVC.xib; sourceTree = "<group>"; };
+		0DD4069A1AEE017A004BE290 /* PartnerEntityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerEntityVC.h; sourceTree = "<group>"; };
+		0DD4069B1AEE017A004BE290 /* PartnerEntityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerEntityVC.m; sourceTree = "<group>"; };
+		0DD4069C1AEE017A004BE290 /* PartnerEntityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerEntityVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,12 @@
 				0D87D4BB1AEC9754006856A8 /* CfrStatusVC.h */,
 				0D87D4BC1AEC9754006856A8 /* CfrStatusVC.m */,
 				0D87D4BD1AEC9754006856A8 /* CfrStatusVC.xib */,
+				0DD406951AED7517004BE290 /* PartnerVC.h */,
+				0DD406961AED7517004BE290 /* PartnerVC.m */,
+				0DD406971AED7517004BE290 /* PartnerVC.xib */,
+				0DD4069A1AEE017A004BE290 /* PartnerEntityVC.h */,
+				0DD4069B1AEE017A004BE290 /* PartnerEntityVC.m */,
+				0DD4069C1AEE017A004BE290 /* PartnerEntityVC.xib */,
 			);
 			path = BluekaiDemo;
 			sourceTree = "<group>";
@@ -201,12 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D87D4BA1AEC6D7A006856A8 /* CampaignVC.xib in Resources */,
+				0DD406991AED7517004BE290 /* PartnerVC.xib in Resources */,
 				0DD063EA1A6B415300BA9139 /* Main.storyboard in Resources */,
 				0DD0645F1A6C6A1100BA9139 /* bluekai.jpg in Resources */,
 				0DD063EF1A6B415300BA9139 /* LaunchScreen.xib in Resources */,
 				0D87D4AA1AEB5F47006856A8 /* BluekaiIDVC.xib in Resources */,
 				0D87D4BF1AEC9754006856A8 /* CfrStatusVC.xib in Resources */,
 				0DD063EC1A6B415300BA9139 /* Images.xcassets in Resources */,
+				0DD4069E1AEE017A004BE290 /* PartnerEntityVC.xib in Resources */,
 				0DD0645D1A6C6A0A00BA9139 /* BlueKai_1712415.png in Resources */,
 				0D87D4B51AEC538A006856A8 /* CategoryVC.xib in Resources */,
 			);
@@ -222,6 +240,8 @@
 				0D87D4B91AEC6D7A006856A8 /* CampaignVC.m in Sources */,
 				0D87D4AD1AEC4C8D006856A8 /* StorageCommonVC.m in Sources */,
 				0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */,
+				0DD406981AED7517004BE290 /* PartnerVC.m in Sources */,
+				0DD4069D1AEE017A004BE290 /* PartnerEntityVC.m in Sources */,
 				0D87D4A71AEB5E4B006856A8 /* MainVC.m in Sources */,
 				0D87D4B01AEC4D55006856A8 /* HTTPConnector.m in Sources */,
 				0D87D4BE1AEC9754006856A8 /* CfrStatusVC.m in Sources */,

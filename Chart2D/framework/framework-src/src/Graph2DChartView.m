@@ -181,11 +181,55 @@
     
     if (self.autoScale)
     {
-        CGFloat delta = self.yMax - self.yMin;
+        CGFloat delta = (self.yMax - self.yMin);
         self.yMax = self.yMax + delta / 10;
         self.yMin = self.yMin - delta/ 10;
+        
+        if(delta > 0)
+        {
+            int degree = 0;
+            if (delta < 1)
+            {
+                while (delta < 1) {
+                    delta = delta * 10;
+                    degree ++;
+                }
+        
+            }
+            else
+            {
+                while (delta > 1) {
+                    delta = delta / 10;
+                    degree --;
+                }
+            }
+            CGFloat power = pow(10, degree);
+            
+            CGFloat yMax = ceil(self.yMax * power)/power;
+            CGFloat yMin = floor(self.yMin * power)/power;
+            
+            //NSLog(@"%f, %f, %f, %f, %f, %f", yMin, self.yMin, yMax, self.yMax, (self.yMax -  self.yMin), power);
+            
+            delta = (yMax - yMin)/10;
+            if (yMin < self.yMin && delta > 0)
+            {
+                while (yMin < self.yMin) {
+                    yMin += delta;
+                }
+                yMin = yMin - delta;
+            }
+            if (yMax > self.yMax && delta > 0)
+            {
+                while (yMax > self.yMax) {
+                    yMax -= delta;
+                }
+                yMax = yMax + delta;
+            }
+            
+            self.yMax = yMax;
+            self.yMin = yMin;
+        }
     }
-
     
     CGFloat ySpan = 1.0 / (self.yMax - self.yMin);
     
@@ -301,7 +345,10 @@
             float floatValue = [[series[i] objectForKey:HIGH_VALUE_KEY] floatValue];
             
             float lowFloatValue = [[series[i] objectForKey:LOW_VALUE_KEY] floatValue];
-            
+            if(self.yMin > 0)
+            {
+                lowFloatValue = 0;
+            }
             float barY = gBottomLeft.y - gDrawingRect.size.height * floatValue;
             
             if (self.barChartStyle == BarStyleStack)
@@ -587,8 +634,6 @@
         }
         
     }
-    
-    
 }
 
 - (void) drawYAxis: (CGContextRef) context withStyle:(Graph2DAxisStyle *)yAxisStyle
@@ -608,8 +653,8 @@
     else if (axisStyle.color)
     {
         tickcolor = axisStyle.color;
-        
     }
+    
     UIColor *labelcolor = [UIColor blueColor];
     
     if (axisStyle.labelStyle && axisStyle.labelStyle.color)
@@ -677,7 +722,6 @@
                 CGContextSetShouldAntialias(context, YES);
             }
         }
-        
     }
     
     if (axisStyle.width > 0)

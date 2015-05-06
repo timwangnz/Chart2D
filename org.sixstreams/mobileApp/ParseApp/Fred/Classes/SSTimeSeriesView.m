@@ -108,6 +108,7 @@
     [self updateModel];
     [self refresh];
 }
+
 - (void) updateModel
 {
     [xPoints removeAllObjects];
@@ -207,17 +208,31 @@
 
 - (void) updatePoints
 {
-    xDates = [NSMutableArray array];
-    self.endDate = [NSDate date];
-    self.startDate = [SSTimeUtil days:-self.pointsInView from:self.endDate];
     
-    NSDate *end = self.endDate;
-    while ([end compare: self.startDate] == NSOrderedDescending) {
-        [xDates insertObject:[SSTimeUtil stringFromDateWithFormat:@"yyyy-MM-dd" date:end] atIndex:0];
-        end = [SSTimeUtil days:-1 from:end];
+    if ([charts count] > 0)
+    {
+        xDates = [NSMutableArray array];
+        self.endDate = [NSDate date];
+        SSTimeSeries *ts = charts[0];
+        NSLog(@"%@", ts.xPoints);
+        
+        if ([ts.units isEqualToString:@"D"])
+        {
+            self.startDate = [SSTimeUtil days:- self.pointsInView from:self.endDate];
+            
+            NSDate *end = self.endDate;
+            
+            while ([end compare: self.startDate] == NSOrderedDescending) {
+                [xDates insertObject:[SSTimeUtil stringFromDateWithFormat:@"yyyy-MM-dd" date:end] atIndex:0];
+                end = [SSTimeUtil days:-1 from:end];
+            }
+        }
+        else{
+            xDates =  [NSMutableArray arrayWithArray:ts.xPoints];
+        }
     }
-
 }
+
 //graphs
 //return 1 for one chart
 - (NSInteger) numberOfSeries:(Graph2DView *) graph2Dview

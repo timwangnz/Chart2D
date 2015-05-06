@@ -51,11 +51,11 @@
                 [dataPoints setObject:[NSNumber numberWithFloat:value] forKey:date];
                  [xPoints addObject:date];
             }
-           
         }
         self.dataPoints = [NSDictionary dictionaryWithDictionary:dataPoints];
         self.xPoints = [NSArray arrayWithArray:xPoints];
         self.title = dict[@"title"];
+        self.units = self.seriesDef[@"frequency_short"];
     }
     return self;
 }

@@ -920,11 +920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "451161051.748119"
+            timestampString = "452272836.064821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "-graph2DView:styleForSeries:"
             landmarkType = "5">
          </BreakpointContent>
@@ -936,11 +936,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "451161051.748119"
+            timestampString = "452272836.064821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "-graph2DView:didSelectSeries:atIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -952,11 +952,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fred/Classes/SSTimeSeriesView.m"
-            timestampString = "451161051.748119"
+            timestampString = "452272836.064821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "-graph2DView:didSelectSeries:atIndex:"
             landmarkType = "5">
          </BreakpointContent>

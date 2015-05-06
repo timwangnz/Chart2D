@@ -9,6 +9,7 @@
 #import "MainVC.h"
 #import "CategoryVC.h"
 #import "CampaignVC.h"
+#import "PartnerVC.h"
 
 #import "CfrStatusVC.h"
 
@@ -30,7 +31,7 @@
                  @"Profile Matrics" : @[@"Inventory", @"Campaign", @"ID Spaces"],
                  @"Mobile SDK" : @[@"Demo", @"SDK"],
                  @"Taxonomy" : @[@"Rules", @"Hints", @"Dags"],
-                 @"Partner 360" : @[@"Wins", @"ID Swaps", @"File Ingestions"]
+                 @"Partner 360" : @[@"Partner", @"Wins", @"ID Swaps", @"File Ingestions"]
             };
     
     sortedKeys = @[@"Operational Matrics" ,@"Profile Matrics",@"Runtime Monitoring", @"Partner 360",  @"Taxonomy"];
@@ -94,6 +95,24 @@
         campaignVC.title = @"CFR Status";
         
         [self.navigationController pushViewController:campaignVC animated:YES];
+    }
+    
+    if ([title isEqualToString:@"IDFA Demo"])
+    {
+        CfrStatusVC *campaignVC = [[CfrStatusVC alloc]init];
+        campaignVC.extendedLayoutIncludesOpaqueBars =  NO;
+        campaignVC.title = @"CFR Status";
+        
+        [self.navigationController pushViewController:campaignVC animated:YES];
+    }
+    if ([title isEqualToString:@"Partner"])
+    {
+        PartnerVC *partnerVC = [[PartnerVC alloc]init];
+      
+        
+        partnerVC.title = @"Partners";
+        
+        [self.navigationController pushViewController:partnerVC animated:YES];
     }
 }
 @end

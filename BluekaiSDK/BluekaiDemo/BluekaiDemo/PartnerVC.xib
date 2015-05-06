@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartnerVC">
             <connections>
-                <outlet property="tvCategories" destination="vPv-5S-gBJ" id="V8F-6D-dHx"/>
+                <outlet property="tvDataView" destination="Pfa-Fj-7Xc" id="Obo-Jo-Mx5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,23 +15,24 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="32" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vPv-5S-gBJ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-Fj-7Xc">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Aew-FI-Q3D"/>
-                        <outlet property="delegate" destination="-1" id="nPU-Qp-8vL"/>
+                        <outlet property="dataSource" destination="-1" id="9ZI-P7-wAX"/>
+                        <outlet property="delegate" destination="-1" id="cQG-71-eJy"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.42214345489999999" green="0.76531532670000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="vPv-5S-gBJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0vK-C9-Nqg"/>
-                <constraint firstItem="vPv-5S-gBJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nYD-e2-dJB"/>
-                <constraint firstAttribute="centerY" secondItem="vPv-5S-gBJ" secondAttribute="centerY" id="q7X-tn-Ib4"/>
-                <constraint firstAttribute="centerX" secondItem="vPv-5S-gBJ" secondAttribute="centerX" id="qu6-lg-jnt"/>
+                <constraint firstAttribute="bottom" secondItem="Pfa-Fj-7Xc" secondAttribute="bottom" id="FcN-US-Bmv"/>
+                <constraint firstAttribute="trailing" secondItem="Pfa-Fj-7Xc" secondAttribute="trailing" id="IOm-q2-Rnd"/>
+                <constraint firstItem="Pfa-Fj-7Xc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JRd-CO-0ko"/>
+                <constraint firstItem="Pfa-Fj-7Xc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qsf-Kd-zdY"/>
             </constraints>
-            <point key="canvasLocation" x="434" y="262"/>
+            <point key="canvasLocation" x="273" y="231"/>
         </view>
     </objects>
 </document>

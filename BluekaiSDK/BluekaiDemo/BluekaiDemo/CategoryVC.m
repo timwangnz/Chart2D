@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.sql = [NSString stringWithFormat:@"select category_id, category_name, profiles, is_leaf from bk_raw_inventory_view where parent_id= %d", self.parentId];
     types = @[@"Public", @"Private"];
-    
+    tvCategories.hidden = YES;
     [self getData];
 }
 
@@ -52,7 +52,7 @@
     
     [categories setValue:privateCategories forKey:types[1]];
     [categories setValue:publicCategories forKey:types[0]];
-    
+    tvCategories.hidden = NO;
     [tvCategories reloadData];
 }
 
