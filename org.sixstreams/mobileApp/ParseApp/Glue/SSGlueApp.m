@@ -186,12 +186,12 @@
 
 
 
-- (void) addView:(id) item inView:(UIView *) view withAttr:(NSString *) attrName at: (int) order
+- (void) addView:(id) item inView:(UIView *) view withAttr:(NSString *) attrName at: (NSInteger) order
 {
     SSValueLabel *label = (SSValueLabel*) [view viewWithTag:order];
     if (!label)
     {
-        label = [[SSValueLabel alloc]initWithFrame:CGRectMake(4, (order - 1) * 20 + 65, view.frame.size.width - 5, 20)];
+        label = [[SSValueLabel alloc]initWithFrame:CGRectMake(4, (order - 1) * 20 + 10, view.frame.size.width - 5, 20)];
         label.font = [UIFont systemFontOfSize:order == 1 ? 17 : 12];
         label.textColor = [UIColor darkGrayColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -219,7 +219,7 @@
         
         [self addView:item inView:view withAttr:TITLE at:1];
         [self addView:item inView:view withAttr:USER at:2];
-        view.backgroundColor = [UIColor colorWithRed:0.9 green:0.90 blue:0.9 alpha:0.6];
+        view.backgroundColor = [UIColor colorWithRed:0.9 green:0.90 blue:0.9 alpha:0.5];
     }
     else
     {
