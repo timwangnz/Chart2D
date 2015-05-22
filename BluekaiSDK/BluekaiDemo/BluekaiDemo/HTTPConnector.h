@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+typedef void (^OnSuccessCallback)(NSDictionary *data);
+typedef void (^OnFailCallback)(NSError *error);
 
 @protocol HTTPConnectorDelegate <NSObject>
 @required
@@ -29,6 +31,11 @@ typedef void (^RequestCallback)(NSError *error, id data);
 
 - (BOOL) post: (NSDictionary *) item;
 - (BOOL) post: (NSDictionary *) item withHeader:(NSDictionary*) header;
+
+- (BOOL) post : (NSDictionary *) item
+   withHeader : (NSDictionary*) header
+    onSuccess : (OnSuccessCallback) success
+    onFailure : (OnFailCallback) failure;
 
 - (BOOL) get;
 - (BOOL) get: (NSDictionary*) header;

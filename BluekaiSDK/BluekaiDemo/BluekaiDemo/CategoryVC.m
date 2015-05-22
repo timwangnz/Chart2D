@@ -7,13 +7,16 @@
 //
 
 #import "CategoryVC.h"
+#import "SqlGraphView.h"
 
 @interface CategoryVC ()
 {
-    IBOutlet UITableView *tvCategories;
     NSMutableDictionary *categories;
     NSArray *types;
-    id dataReceived;
+    IBOutlet SqlGraphView *trend;
+   // IBOutlet UISearchBar *searchBar;
+    BOOL showAll;
+    int selectedCategory;
 }
 
 @end
@@ -22,39 +25,85 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sql = [NSString stringWithFormat:@"select category_id, category_name, profiles, is_leaf from bk_raw_inventory_view where parent_id= %d", self.parentId];
     types = @[@"Public", @"Private"];
-    tvCategories.hidden = YES;
+    if (self.siteId == -1)
+    {
+        self.sql =
+        [NSString stringWithFormat:@"select inv.inventory, total_tagged, cat.category_name, created_at, cat.category_id, cat.is_leaf from bk_inventory_view inv, bk_category cat where inv.site_id(+)=-1 and cat.parent_id=%d and cat.category_id = inv.category_id(+) and to_char(created_at(+), 'DD-MM-YYYY') = '%@' order by cat.category_name", self.parentId, [self today]];
+    }
+    else{
+        self.sql =
+        [NSString stringWithFormat:@"select inv.inventory, total_tagged, cat.category_name, created_at, cat.category_id, cat.is_leaf from bk_inventory_view inv, bk_category cat where inv.site_id=%d and cat.parent_id=%d and cat.category_id = inv.category_id(+) and to_char(created_at(+), 'DD-MM-YYYY') = '%@' order by cat.category_name", self.siteId, self.parentId, [self today]];
+    }
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Show All" style:UIBarButtonItemStyleDone target:self action:@selector(actionDetails)];
+    tableview.hidden = YES;
     [self getData];
+    [self showTrend:self.parentId];
 }
 
-- (void) didFinishLoading: (id)data
+-(void) showTrend:(int) categoryId
 {
-    dataReceived = data;
-    NSArray *cats = data[@"data"];
+    trend.sql = [NSString stringWithFormat:
+                 @"select to_char(created_at, 'MM-DD-YYYY') created_at, inventory from bk_inventory_view where category_id = %d and site_id = -1 and sysdate - created_at < 11 order by created_at", categoryId];
+    //NSLog(@"%@", trend.sql);
+    selectedCategory = categoryId;
+    trend.limit = 20;
+    trend.title = @"Inventory";
+    trend.valueFields[0] = @"INVENTORY";
+    trend.xLabelField = @"CREATED_AT";
+    trend.topMargin = 20;
+    trend.bottomMargin = 60;
+    trend.leftMargin = 60;
+    trend.topPadding = 0;
+    trend.legendType = Graph2DLegendNone;
+    showAll = NO;
+    
+    self.titleField = @"CATEGORY_NAME";
+    if (categoryId == 344)
+    {
+        trend.hidden = YES;
+    }
+    else{
+        [trend reload];
+        [self updateLayout];
+    }
+}
+
+- (void) actionDetails
+{
+    showAll = !showAll;
+    [self updateModel];
+    self.navigationItem.rightBarButtonItem.title = showAll ? @"Hide":@"Show All";
+}
+
+- (void) updateModel
+{
     NSMutableArray * privateCategories = [NSMutableArray array];
     NSMutableArray * publicCategories = [NSMutableArray array];
     categories = [NSMutableDictionary dictionary];
-    
-    for (id cat in cats)
+    for (id cat in filteredObjects)
     {
-        if ([cat[@"CATEGORY_NAME"] rangeOfString:@"Private"].location == NSNotFound)
+        if ([cat[@"TOTAL_TAGGED"] intValue] > 0 || showAll)
         {
-            [publicCategories addObject:cat];
-        }
-        else
-        {
+            if ([cat[@"CATEGORY_NAME"] rangeOfString:@"Private"].location == NSNotFound)
+            {
+                [publicCategories addObject:cat];
+            }
+            else
+            {
+                
+                [cat setObject:@"Y" forKey:@"private"];
+                [privateCategories addObject:cat];
+            }
             
-            [cat setObject:@"Y" forKey:@"private"];
-            [privateCategories addObject:cat];
         }
     }
-    
     [categories setValue:privateCategories forKey:types[1]];
     [categories setValue:publicCategories forKey:types[0]];
-    tvCategories.hidden = NO;
-    [tvCategories reloadData];
+    tableview.hidden = NO;
+    [tableview reloadData];
 }
+
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -74,29 +123,63 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;// (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CELL];
+    id category = [categories objectForKey:types[indexPath.section]][indexPath.row];
+    
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"simpelCell"];
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        
         cell.indentationLevel = 0;
     }
-    id category = [categories objectForKey:types[indexPath.section]][indexPath.row];
-    cell.textLabel.text = category[@"CATEGORY_NAME"];
-    cell.detailTextLabel.text = [NSString stringWithFormat: @"%ld", [category[@"PROFILES"] longValue]];
+  
+    cell.accessoryType = [category[@"IS_LEAF"] isEqualToString:@"1"] ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", category[@"CATEGORY_NAME"], category[@"CATEGORY_ID"] ];
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    
+    cell.detailTextLabel.text = [formatter stringFromNumber: category[@"TOTAL_TAGGED"]];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
+    cell.detailTextLabel.textColor = [UIColor blueColor];
+    
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id category = [categories objectForKey:types[indexPath.section]][indexPath.row];
-    if ([category[@"IS_LEAF"] isEqualToString:@"1"]) {
-        return;
+    int categoryId = [category[@"CATEGORY_ID"] intValue];
+    //[searchBar resignFirstResponder];
+    if (categoryId == selectedCategory)
+    {
+        if ([category[@"IS_LEAF"] isEqualToString:@"1"]) {
+            return;
+        }
+        
+        CategoryVC *categoryVC = [[CategoryVC alloc]init];
+        categoryVC.parentId = [category[@"CATEGORY_ID"] intValue];
+        categoryVC.title = category[@"CATEGORY_NAME"];
+        categoryVC.siteId = self.siteId;
+        [self.navigationController pushViewController:categoryVC animated:YES];
     }
-    CategoryVC *categoryVC = [[CategoryVC alloc]init];
-    categoryVC.parentId = [category[@"CATEGORY_ID"] intValue];
-    categoryVC.title = category[@"CATEGORY_NAME"];
-    
-    [self.navigationController pushViewController:categoryVC animated:YES];
+    else{
+        [self showTrend:categoryId];
+        selectedCategory = categoryId;
+    }
+}
+- (void) updateLayout
+{
+    int header = 62;
+    if (selectedCategory == 344) {
+        tableview.frame = CGRectMake(tableview.frame.origin.x, header, tableview.frame.size.width, self.view.bounds.size.height - header);
+    }
+    else{
+        tableview.frame = CGRectMake(tableview.frame.origin.x, header, tableview.frame.size.width, self.view.bounds.size.height - trend.frame.size.height - header);
+    }
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateLayout];
+    
+}
 @end

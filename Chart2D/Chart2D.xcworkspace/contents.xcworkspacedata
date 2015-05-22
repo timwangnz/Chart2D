@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:framework/Chart2D.xcodeproj">
+      location = "container:test/Graph2DTestApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:test/Graph2DTestApp.xcodeproj">
+      location = "group:framework/Chart2D.xcodeproj">
    </FileRef>
 </Workspace>

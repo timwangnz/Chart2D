@@ -14,6 +14,15 @@ enum
     Graph2DCursorNone                       = 0
 };
 typedef NSUInteger Graph2DCursorType;
+enum
+{
+    Graph2DLegendNone                       = -1,
+    Graph2DLegendBottom                       = 3,
+    Graph2DLegendTop                       = 2,
+    Graph2DLegendLeft                      = 1,
+    Graph2DLegendRight                       = 0
+};
+typedef NSUInteger Graph2DLegendType;
 
 @interface Graph2DChartView : Graph2DView
 
@@ -47,6 +56,8 @@ typedef NSUInteger Graph2DCursorType;
 //This flag indicates if the chart should be automatically scaled based on data set
 //default value is YES
 @property (nonatomic) BOOL autoScale;
+@property Graph2DLegendType legendType;
+@property Graph2DTextStyle *caption;
 
 //gap between bars in a chart
 @property (nonatomic) CGFloat barGap;

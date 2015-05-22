@@ -14,6 +14,7 @@
 @interface Graph2DView()
 {
     NSMutableArray *storedLocations;
+    BOOL refreshed;
 }
 
 @end
@@ -24,7 +25,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        refreshed = NO;
     }
     return self;
 }
@@ -52,6 +53,7 @@
 
 - (void) refresh
 {
+    refreshed = YES;
     [self setNeedsDisplay];
 }
 
@@ -98,15 +100,16 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    [self repaint];
+    if (refreshed)
+    {
+        [self repaint];
+    }
 }
 
 - (void) repaint
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
     [self paintBackground:context];
-    
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     

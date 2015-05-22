@@ -35,6 +35,7 @@
     angle = 2*M_PI - 1;
     self.fillStyle = [[Graph2DFillStyle alloc]init];
     self.fillStyle.direction = Graph2DFillTopBottom;
+    [self refresh];
 }
 
 - (Graph2DLineStyle *) borderStyle:(Graph2DView *)graph2DView

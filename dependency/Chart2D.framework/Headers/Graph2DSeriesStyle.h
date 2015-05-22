@@ -25,6 +25,7 @@ enum
     Graph2DXAlignLeft              = 0,
     Graph2DXAlignCenter             = 1,
 };
+
 typedef NSUInteger Graph2DXAlign;
 
 @interface Graph2DSeriesStyle : Graph2DStyle;
@@ -47,6 +48,8 @@ typedef NSUInteger Graph2DXAlign;
 
 //specify the point location between x and x + 1
 @property (nonatomic) Graph2DXAlign xAlign;//0 left, 1 middle
+
+@property (nonatomic) NSString *legend;
 
 @property CGFloat barGap;
 

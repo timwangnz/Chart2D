@@ -3,7 +3,8 @@
 
 @interface HTTPConnector()
 {
-  
+    OnSuccessCallback onSuccessCallback;
+    OnFailCallback onFailCallback;
 }
 @end;
 
@@ -112,7 +113,8 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     }
 }
 
-- (BOOL) postData : (NSData *) data withHeader:(NSDictionary*) header
+- (BOOL) postData : (NSData *) data
+       withHeader : (NSDictionary*) header
 {
     request = [self requestForPost:nil withHeader:header];
     
@@ -138,19 +140,39 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     return [self post:item withHeader:nil];
 }
 
-- (BOOL) post :(NSDictionary *) item withHeader:(NSDictionary*) header
+- (BOOL) post : (NSDictionary *) item
+   withHeader : (NSDictionary*) header
 {
     request = [self requestForPost:item withHeader:header];
     request.HTTPMethod = HTTP_METHOD_POST;
-    
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
     if (theConnection) 
     {
         receivedData = [NSMutableData data];
         return YES;
     }
     else 
+    {
+        return NO;
+    }
+}
+
+- (BOOL) post : (NSDictionary *) item
+   withHeader : (NSDictionary*) header
+    onSuccess : (OnSuccessCallback) block
+    onFailure : (OnFailCallback) failure
+{
+    request = [self requestForPost:item withHeader:header];
+    request.HTTPMethod = HTTP_METHOD_POST;
+    
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    onSuccessCallback = block;
+    if (theConnection)
+    {
+        receivedData = [NSMutableData data];
+        return YES;
+    }
+    else
     {
         return NO;
     }
@@ -242,8 +264,6 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     {
         [self.delegate processData:receivedData];
     }
-  
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -254,6 +274,10 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
                                               [error localizedDescription],
                                               [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]]];
     }
+    if (onFailCallback)
+    {
+        onFailCallback(error);
+    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -261,6 +285,10 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     if(self.delegate)
     {
         [self.delegate didFinishLoading:[self toDictionary:receivedData]];
+    }
+    if (onSuccessCallback)
+    {
+        onSuccessCallback([self toDictionary:receivedData]);
     }
 }
 
@@ -274,7 +302,6 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     if (error) {
         NSLog(@"%@", error);
         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-       
         return nil;
     }
     return dic;

@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		nErehjJDqY13V8/SgxP0CtGNqCM=
+		k0H4TB+vRBW3U/dlIS0nA2gCzX4=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -46,11 +46,15 @@
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		5TniXcucDWpRmjX3ErfLWX97XUo=
+		CEz5JRxfwrWvIWRV45Oij4GqddE=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
 		cHtN9pSl0dh5NsBTq4vWCUHnD0U=
+		</data>
+		<key>Headers/Graph2DTextStyle.h</key>
+		<data>
+		UXYhNrm/4Idcjw027OnV0OJdQN4=
 		</data>
 		<key>Headers/Graph2DTickStyle.h</key>
 		<data>
@@ -58,7 +62,7 @@
 		</data>
 		<key>Headers/Graph2DView.h</key>
 		<data>
-		MWQ5Hh/zp5wDVRrrfDMn8ltmXl8=
+		q/nEd1dvlqjFkPwWA4aMYbkuAH8=
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>
@@ -93,7 +97,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		nErehjJDqY13V8/SgxP0CtGNqCM=
+		k0H4TB+vRBW3U/dlIS0nA2gCzX4=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -121,11 +125,15 @@
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		5TniXcucDWpRmjX3ErfLWX97XUo=
+		CEz5JRxfwrWvIWRV45Oij4GqddE=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
 		cHtN9pSl0dh5NsBTq4vWCUHnD0U=
+		</data>
+		<key>Headers/Graph2DTextStyle.h</key>
+		<data>
+		UXYhNrm/4Idcjw027OnV0OJdQN4=
 		</data>
 		<key>Headers/Graph2DTickStyle.h</key>
 		<data>
@@ -133,7 +141,7 @@
 		</data>
 		<key>Headers/Graph2DView.h</key>
 		<data>
-		MWQ5Hh/zp5wDVRrrfDMn8ltmXl8=
+		q/nEd1dvlqjFkPwWA4aMYbkuAH8=
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>

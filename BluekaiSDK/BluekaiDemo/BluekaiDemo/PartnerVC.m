@@ -10,12 +10,6 @@
 #import "PartnerEntityVC.h"
 
 @interface PartnerVC ()
-{
-    id dataReceived;
-    NSArray *data;
-    IBOutlet UITableView *tvDataView;
-}
-
 @end
 
 @implementation PartnerVC
@@ -23,51 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sql = @"select * from bk_partner";
+    self.sql = @"select PARTNER_NAME, PARTNER_ID, COMPANY_NAME, tagged_today, total_tagged, offline_updates, swapped_ids from bk_partner_view where created_at between sysdate - 1 and sysdate order by partner_name";
+    self.titleField = @"PARTNER_NAME";
+    self.detailField = @"PARTNER_ID";
+    self.limit = 5000;
     [self getData];
-}
-
-- (void) didFinishLoading: (id)received
-{
-    dataReceived = received;
-    NSArray *cats = received[@"data"];
-    data = [NSMutableArray arrayWithArray:cats];
-    [tvDataView reloadData];
-}
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [data count];
-}
-
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return  nil;
-}
-
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = nil;// (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CELL];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"simpelCell"];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.indentationLevel = 0;
-    }
-    id row = data[indexPath.row];
-    cell.textLabel.text = row[@"PARTNER_NAME"];
-    return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PartnerEntityVC *entityVC = [[ PartnerEntityVC alloc]init];
-     id row = data[indexPath.row];
+    id row = filteredObjects[indexPath.row];
     entityVC.partner = row;
     entityVC.title = row[@"PARTNER_NAME"];
     [self.navigationController pushViewController:entityVC animated:YES];

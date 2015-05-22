@@ -10,7 +10,6 @@
 
 @interface CfrStatusVC ()
 {
-    IBOutlet UITableView *tvWins;
     NSMutableArray *wins;
 }
 @end
@@ -30,7 +29,7 @@
     
     NSArray *cats = data[@"data"];
     wins = [NSMutableArray arrayWithArray:cats];
-    [tvWins reloadData];
+    [tableview reloadData];
 }
 
 
