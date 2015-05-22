@@ -97,6 +97,7 @@
     self.graph2DView.fillStyle.colorFrom = [UIColor greenColor];
     self.graph2DView.fillStyle.colorTo = [UIColor redColor];
     self.title = @"Graph 2D Demo";
+    [self.graph2DView refresh];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor] ;
     
     

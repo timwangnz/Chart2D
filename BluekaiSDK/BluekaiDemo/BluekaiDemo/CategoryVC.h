@@ -10,5 +10,7 @@
 
 @interface CategoryVC : StorageCommonVC
 @property int parentId;
+@property int siteId;
 @property BOOL isParentPrivate;
+
 @end

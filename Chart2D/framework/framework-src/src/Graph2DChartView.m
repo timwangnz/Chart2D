@@ -251,6 +251,54 @@
     return data;
 }
 
+- (void) drawLegends: (NSArray *)data inContext:(CGContextRef) context
+{
+    UIFont *font = [UIFont fontWithName:DEFAULT_FONT size:12];
+    int width = -1;
+    for (int j =0 ; j< [data count]; j++)
+    {
+        Graph2DSeriesStyle *style = [Graph2DSeriesStyle defaultStyle:self.chartType];
+        
+        if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
+        {
+            style = [self.chartDelegate graph2DView:self styleForSeries :j];
+        }
+        
+        if (style.legend)
+        {
+            CGSize size = [style.legend sizeWithAttributes:@{NSFontAttributeName : font}];
+            if (size.width > width)
+            {
+                width = size.width;
+            }
+        }
+        
+    }
+    width = width + 5;
+    
+    for (int j =0 ; j< [data count]; j++)
+    {
+        Graph2DSeriesStyle *style = [Graph2DSeriesStyle defaultStyle:self.chartType];
+        
+        if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
+        {
+            style = [self.chartDelegate graph2DView:self styleForSeries :j];
+        }
+        if (style.legend)
+        {
+            CGPoint textLocation;
+            textLocation.x = gBounds.origin.x + gBounds.size.width - width;
+            textLocation.y = gBounds.origin.y + j * 20 + 5;
+            [self text: style.legend
+               inRect : CGRectMake(textLocation.x, textLocation.y, width, 20)
+                 angle: 0
+                  font: font
+                 color: style.color
+              aligment: NSTextAlignmentLeft];
+        }
+
+    }
+}
 
 - (void) drawCharts:(NSArray*)data inContext : (CGContextRef) context
 {
@@ -307,6 +355,11 @@
     if(yAxisStyle && !yAxisStyle.hidden)
     {
         [self drawYAxis :context withStyle:yAxisStyle];
+    }
+    
+    if(self.legendType != Graph2DLegendNone)
+    {
+        [self drawLegends : data inContext:context];
     }
     
     CGContextSetShouldAntialias(context, YES);
@@ -766,6 +819,27 @@
     
     CGContextConcatCTM(context, CGAffineTransformInvert(r));
     CGContextConcatCTM(context, CGAffineTransformInvert(t));
+}
+
+-(void) text:(NSString *)text
+      inRect:(CGRect) rect
+       angle:(CGFloat) angle
+        font:(UIFont *) font
+       color:(UIColor *) color
+   aligment :(NSTextAlignment) aligment
+{
+    /// Make a copy of the default paragraph style
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    /// Set line break mode
+    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    /// Set text alignment
+    paragraphStyle.alignment = aligment;
+    
+    NSDictionary *attributes = @{ NSFontAttributeName: font,
+                                  NSForegroundColorAttributeName: color,
+                                  NSParagraphStyleAttributeName: paragraphStyle };
+    
+    [text drawInRect:rect withAttributes:attributes];
 }
 
 - (void) drawXAxis: (CGContextRef) context withStyle:(Graph2DAxisStyle *)xAxisStyle

@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CfrStatusVC">
             <connections>
-                <outlet property="tvWins" destination="Qg5-pY-9jk" id="7wd-VF-aaR"/>
+                <outlet property="tableview" destination="Qg5-pY-9jk" id="eXI-zh-yT1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,6 +31,7 @@
                 <constraint firstAttribute="trailing" secondItem="Qg5-pY-9jk" secondAttribute="trailing" id="VkS-Ze-wB8"/>
                 <constraint firstItem="Qg5-pY-9jk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cJM-PH-Fzd"/>
             </constraints>
+            <point key="canvasLocation" x="340" y="328"/>
         </view>
     </objects>
 </document>

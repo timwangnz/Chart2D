@@ -48,6 +48,7 @@
         [values[1] addObject:[NSNumber numberWithDouble: 1.5 * cos(waves * i * M_PI/count + offset)] ];
         [values[2] addObject:[NSNumber numberWithDouble: 1.5 + cos(waves * i * M_PI/count + offset)  + .3] ];
     }
+    [self refresh];
 }
 
 - (void) initChart
@@ -60,7 +61,7 @@
     self.borderStyle = BorderStyleNone;
     count = 100;
     waves = 6;
-    
+    self.legendType = Graph2DLegendTop;
     self.topMargin = 15;
     self.topPadding = 10;
     self.bottomPadding = 1;
@@ -119,7 +120,7 @@
         seriesStyle.lineStyle.width = 1.0;
         seriesStyle.fillStyle.colorFrom = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5];
         seriesStyle.fillStyle.colorTo = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
-    
+        seriesStyle.legend = @"Test";
         seriesStyle.chartType = Graph2DLineChart;
         return seriesStyle;
     }
@@ -129,7 +130,7 @@
         seriesStyle.gradient = NO;
         seriesStyle.lineStyle.width = 3.0;
         seriesStyle.chartType = Graph2DLineChart;
-        
+        seriesStyle.legend = @"For Real";
         return seriesStyle;
     }
     return nil;
@@ -193,7 +194,6 @@
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
     return [values[series] objectAtIndex:index];
-    
 }
 
 

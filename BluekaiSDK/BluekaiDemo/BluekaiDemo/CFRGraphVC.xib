@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CFRGraphVC">
+            <connections>
+                <outlet property="graphview" destination="NrP-zY-jb3" id="j0M-sv-3EA"/>
+                <outlet property="tagged" destination="x3l-Uz-oYp" id="bcF-Sj-BQ0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrP-zY-jb3" customClass="SqlGraphView">
+                    <rect key="frame" x="0.0" y="114" width="600" height="237"/>
+                    <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3l-Uz-oYp" customClass="SqlGraphView">
+                    <rect key="frame" x="0.0" y="397" width="600" height="203"/>
+                    <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CFR Data and Delivery Trend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-jl-0Er">
+                    <rect key="frame" x="0.0" y="354" width="600" height="40"/>
+                    <color key="backgroundColor" red="0.54949978119999998" green="0.91362072169999997" blue="0.86393583480000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rRU-DH-QBk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CFR Profile Stats Trends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-xr-Lsu">
+                    <rect key="frame" x="0.0" y="69" width="600" height="43"/>
+                    <color key="backgroundColor" red="0.54949978119999998" green="0.91362072169999997" blue="0.86393583480000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.54949978119999998" green="0.91362072169999997" blue="0.86393583480000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="x3l-Uz-oYp" firstAttribute="top" secondItem="A2o-jl-0Er" secondAttribute="bottom" constant="3" id="1JF-wq-HLA"/>
+                <constraint firstItem="x3l-Uz-oYp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="397" id="1Vy-lR-cEB"/>
+                <constraint firstAttribute="bottom" secondItem="x3l-Uz-oYp" secondAttribute="bottom" id="1gR-1a-Rzo"/>
+                <constraint firstItem="A2o-jl-0Er" firstAttribute="top" secondItem="NrP-zY-jb3" secondAttribute="bottom" constant="3" id="1kh-R6-vQQ"/>
+                <constraint firstItem="x3l-Uz-oYp" firstAttribute="top" secondItem="A2o-jl-0Er" secondAttribute="bottom" constant="3" id="7FS-fh-z5Z"/>
+                <constraint firstAttribute="centerX" secondItem="x3l-Uz-oYp" secondAttribute="centerX" id="JjW-iK-Tak"/>
+                <constraint firstItem="NrP-zY-jb3" firstAttribute="top" secondItem="RQC-xr-Lsu" secondAttribute="bottom" constant="2" id="MMN-51-XHO"/>
+                <constraint firstItem="A2o-jl-0Er" firstAttribute="leading" secondItem="RQC-xr-Lsu" secondAttribute="leading" id="Ny6-Sr-Ni1"/>
+                <constraint firstItem="A2o-jl-0Er" firstAttribute="top" secondItem="NrP-zY-jb3" secondAttribute="bottom" constant="3" id="Y4s-hR-3e1"/>
+                <constraint firstItem="RQC-xr-Lsu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="69" id="cle-r5-vdX"/>
+                <constraint firstAttribute="trailing" secondItem="RQC-xr-Lsu" secondAttribute="trailing" id="djF-It-3bc"/>
+                <constraint firstItem="A2o-jl-0Er" firstAttribute="trailing" secondItem="NrP-zY-jb3" secondAttribute="trailing" id="eSv-w7-mzI"/>
+                <constraint firstItem="NrP-zY-jb3" firstAttribute="top" secondItem="RQC-xr-Lsu" secondAttribute="bottom" constant="2" id="hrB-4e-Vxj"/>
+                <constraint firstItem="NrP-zY-jb3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jvA-Eh-Zom"/>
+                <constraint firstAttribute="trailing" secondItem="NrP-zY-jb3" secondAttribute="trailing" id="lbg-5u-GDW"/>
+                <constraint firstItem="RQC-xr-Lsu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="-8" id="pff-Yf-eXD"/>
+                <constraint firstItem="NrP-zY-jb3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="s7p-ys-HzQ"/>
+                <constraint firstItem="x3l-Uz-oYp" firstAttribute="leading" secondItem="NrP-zY-jb3" secondAttribute="leading" id="v53-DA-zqT"/>
+            </constraints>
+            <point key="canvasLocation" x="326" y="51"/>
+        </view>
+    </objects>
+</document>

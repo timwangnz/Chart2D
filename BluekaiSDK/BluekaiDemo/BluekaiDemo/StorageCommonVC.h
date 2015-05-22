@@ -10,8 +10,24 @@
 
 
 @interface StorageCommonVC : UIViewController
+{
+    IBOutlet UITableView *tableview;
+    id dataReceived;
+    NSMutableArray *objects;
+    NSMutableArray *filteredObjects;
+    NSNumberFormatter *formatter;
 
+}
 @property NSString * sql;
+@property NSString *titleField;
+@property NSString *detailField;
+@property int limit;
 
 - (void) getData;
+- (void) didFinishLoading: (id)data;
+
+- (NSString *) objectTitle : (id) object;
+- (NSString *) objectDetail : (id) object;
+- (NSString *) today;
+- (void) updateModel;
 @end

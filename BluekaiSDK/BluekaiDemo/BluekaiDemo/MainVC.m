@@ -10,6 +10,10 @@
 #import "CategoryVC.h"
 #import "CampaignVC.h"
 #import "PartnerVC.h"
+#import "BluekaiIDVC.h"
+#import "CFRGraphVC.h"
+#import "OfflineGraphVC.h"
+#import "DeliveryGraphVC.h"
 
 #import "CfrStatusVC.h"
 
@@ -26,15 +30,22 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    commands = @{@"Runtime Monitoring" : @[@"DAL", @"SNV", @"WDC"],
-                 @"Operational Matrics" : @[@"CFR Status", @"Offline File Ingestion", @"Offline Status"],
-                 @"Profile Matrics" : @[@"Inventory", @"Campaign", @"ID Spaces"],
-                 @"Mobile SDK" : @[@"Demo", @"SDK"],
-                 @"Taxonomy" : @[@"Rules", @"Hints", @"Dags"],
-                 @"Partner 360" : @[@"Partner", @"Wins", @"ID Swaps", @"File Ingestions"]
+    commands = @{
+                 @"Pixel Servers" : @[@"CFR", @"Offline", @"Delivery"],
+        
+                 @"Inventory" : @[@"Inventory"]
+                 
+                 ,@"Mobile SDK" : @[@"SDK Demo"]
+            
+                ,@"Partner 360" : @[@"Partner"]
             };
     
-    sortedKeys = @[@"Operational Matrics" ,@"Profile Matrics",@"Runtime Monitoring", @"Partner 360",  @"Taxonomy"];
+    sortedKeys = @[
+                   @"Partner 360",
+                   @"Inventory",
+                   @"Mobile SDK",
+                   @"Pixel Servers"
+                   ];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,12 +71,13 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"simpelCell"];
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.indentationLevel = 0;
         
     }
     NSString *title = [commands objectForKey:sortedKeys[section]][indexPath.row];
     cell.textLabel.text = title;
+        cell.textLabel.font = [UIFont systemFontOfSize:24];
     return cell;
 }
 
@@ -78,6 +90,7 @@
         categoryVC.extendedLayoutIncludesOpaqueBars =  NO;
         categoryVC.title = @"Categories";
         categoryVC.parentId = 344;
+        categoryVC.siteId = -1;
         [self.navigationController pushViewController:categoryVC animated:YES];
     }
     if ([title isEqualToString:@"Campaign"])
@@ -97,14 +110,40 @@
         [self.navigationController pushViewController:campaignVC animated:YES];
     }
     
-    if ([title isEqualToString:@"IDFA Demo"])
+    if ([title isEqualToString:@"SDK Demo"])
     {
-        CfrStatusVC *campaignVC = [[CfrStatusVC alloc]init];
+        BluekaiIDVC *campaignVC = [[BluekaiIDVC alloc]init];
         campaignVC.extendedLayoutIncludesOpaqueBars =  NO;
-        campaignVC.title = @"CFR Status";
+        campaignVC.title = @"Mobile SDK Demo";
         
         [self.navigationController pushViewController:campaignVC animated:YES];
     }
+    
+    if ([title isEqualToString:@"CFR"])
+    {
+        CFRGraphVC *sqlGraphVC = [[CFRGraphVC alloc]init];
+        sqlGraphVC.extendedLayoutIncludesOpaqueBars =  NO;
+        sqlGraphVC.title = @"CFR Trend";
+        
+        [self.navigationController pushViewController:sqlGraphVC animated:YES];
+    }
+    if ([title isEqualToString:@"Offline"])
+    {
+        OfflineGraphVC *sqlGraphVC = [[OfflineGraphVC alloc]init];
+        sqlGraphVC.extendedLayoutIncludesOpaqueBars =  NO;
+        sqlGraphVC.title = @"Offline Trend";
+        
+        [self.navigationController pushViewController:sqlGraphVC animated:YES];
+    }
+    if ([title isEqualToString:@"Delivery"])
+    {
+        DeliveryGraphVC *sqlGraphVC = [[DeliveryGraphVC alloc]init];
+        sqlGraphVC.extendedLayoutIncludesOpaqueBars =  NO;
+        sqlGraphVC.title = @"Delivery Trend";
+        
+        [self.navigationController pushViewController:sqlGraphVC animated:YES];
+    }
+    
     if ([title isEqualToString:@"Partner"])
     {
         PartnerVC *partnerVC = [[PartnerVC alloc]init];

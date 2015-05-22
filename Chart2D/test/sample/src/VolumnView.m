@@ -30,6 +30,7 @@
     self.touchEnabled = NO;
     self.barChartStyle = BarStyleCluster;
     self.fillStyle = nil;
+    [self refresh];
 }
 
 - (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
