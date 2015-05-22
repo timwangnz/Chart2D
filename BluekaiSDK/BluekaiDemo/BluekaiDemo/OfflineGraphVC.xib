@@ -18,7 +18,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-kj-ivV" customClass="SqlGraphView">
                     <rect key="frame" x="0.0" y="111" width="600" height="489"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Iif-kj-ivV" secondAttribute="height" multiplier="1:1" id="ADC-jj-UPG"/>
                     </constraints>

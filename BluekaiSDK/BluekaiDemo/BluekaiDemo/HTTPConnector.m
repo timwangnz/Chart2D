@@ -145,9 +145,7 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
 {
     request = [self requestForPost:item withHeader:header];
     request.HTTPMethod = HTTP_METHOD_POST;
-    
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
     if (theConnection) 
     {
         receivedData = [NSMutableData data];
@@ -266,8 +264,6 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     {
         [self.delegate processData:receivedData];
     }
-  
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -306,7 +302,6 @@ static int DEFAULT_TIME_OUT_IN_SEC = 60;
     if (error) {
         NSLog(@"%@", error);
         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-       
         return nil;
     }
     return dic;

@@ -30,4 +30,6 @@
 - (NSString *) objectDetail : (id) object;
 - (NSString *) today;
 - (void) updateModel;
+
+- (NSString *) formatValue:(id) value;
 @end

@@ -62,7 +62,7 @@
     count = 100;
     waves = 6;
     self.legendType = Graph2DLegendTop;
-    self.topMargin = 15;
+    self.topMargin = 45;
     self.topPadding = 10;
     self.bottomPadding = 1;
     
@@ -80,7 +80,8 @@
     self.chartType = Graph2DLineChart;
     self.fillStyle = [[Graph2DFillStyle alloc]init];
     self.fillStyle.direction = Graph2DFillRightLeft;
-    
+    self.caption = [[Graph2DTextStyle alloc]initWithText:@"Test Caption"];
+    self.caption.font = [UIFont systemFontOfSize:17];
     [self setupData];
     
 }

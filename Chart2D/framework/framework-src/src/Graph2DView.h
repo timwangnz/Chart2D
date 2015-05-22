@@ -13,6 +13,7 @@
 #import "Graph2DSeriesStyle.h"
 #import "Graph2DFillStyle.h"
 #import "Graph2DGridStyle.h"
+#import "Graph2DTextStyle.h"
 
 #define DEFAULT_FONT @"Helvetica"
 #define DEFAULT_AXIS_GAP 10;

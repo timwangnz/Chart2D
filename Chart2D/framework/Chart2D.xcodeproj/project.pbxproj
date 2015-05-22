@@ -55,6 +55,8 @@
 		0D31ACD01A866DE100F8C26C /* Graph2DViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB31A866DE100F8C26C /* Graph2DViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D31ACD11A866DE100F8C26C /* Graph2DWidgetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D31ACB41A866DE100F8C26C /* Graph2DWidgetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D31ACD21A866DE100F8C26C /* Graph2DWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */; };
+		0DB915921B0F087D00EB444A /* Graph2DTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB915901B0F087D00EB444A /* Graph2DTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DB915931B0F087D00EB444A /* Graph2DTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB915911B0F087D00EB444A /* Graph2DTextStyle.m */; };
 		0DE50F801AC88D0E005C15A2 /* Graph2DMarkerStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE50F7E1AC88D0E005C15A2 /* Graph2DMarkerStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DE50F811AC88D0E005C15A2 /* Graph2DMarkerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F7F1AC88D0E005C15A2 /* Graph2DMarkerStyle.m */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,8 @@
 		0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DWidgetView.m; sourceTree = "<group>"; };
 		0DAD4BFA1A866C46000C51FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "framework-src/Info.plist"; sourceTree = SOURCE_ROOT; };
 		0DAD4BFB1A866C46000C51FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "framework-src/README.md"; sourceTree = SOURCE_ROOT; };
+		0DB915901B0F087D00EB444A /* Graph2DTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DTextStyle.h; sourceTree = "<group>"; };
+		0DB915911B0F087D00EB444A /* Graph2DTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DTextStyle.m; sourceTree = "<group>"; };
 		0DE50F7E1AC88D0E005C15A2 /* Graph2DMarkerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DMarkerStyle.h; sourceTree = "<group>"; };
 		0DE50F7F1AC88D0E005C15A2 /* Graph2DMarkerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DMarkerStyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +186,8 @@
 				0D31ACB51A866DE100F8C26C /* Graph2DWidgetView.m */,
 				0DE50F7E1AC88D0E005C15A2 /* Graph2DMarkerStyle.h */,
 				0DE50F7F1AC88D0E005C15A2 /* Graph2DMarkerStyle.m */,
+				0DB915901B0F087D00EB444A /* Graph2DTextStyle.h */,
+				0DB915911B0F087D00EB444A /* Graph2DTextStyle.m */,
 			);
 			name = src;
 			path = "framework-src/src";
@@ -218,6 +224,7 @@
 				0D31ACD11A866DE100F8C26C /* Graph2DWidgetView.h in Headers */,
 				0D31ACBD1A866DE100F8C26C /* Graph2DChartView.h in Headers */,
 				0D31ACCA1A866DE100F8C26C /* Graph2DStyle.h in Headers */,
+				0DB915921B0F087D00EB444A /* Graph2DTextStyle.h in Headers */,
 				0D31ACBF1A866DE100F8C26C /* Graph2DDataSource.h in Headers */,
 				0D31ACC21A866DE100F8C26C /* Graph2DGridStyle.h in Headers */,
 				0D31ACBB1A866DE100F8C26C /* Graph2DAxisStyle.h in Headers */,
@@ -314,6 +321,7 @@
 				0D31ACC51A866DE100F8C26C /* Graph2DLineStyle.m in Sources */,
 				0D31ACC31A866DE100F8C26C /* Graph2DGridStyle.m in Sources */,
 				0D31ACC91A866DE100F8C26C /* Graph2DSeriesStyle.m in Sources */,
+				0DB915931B0F087D00EB444A /* Graph2DTextStyle.m in Sources */,
 				0DE50F811AC88D0E005C15A2 /* Graph2DMarkerStyle.m in Sources */,
 				0D31ACCB1A866DE100F8C26C /* Graph2DStyle.m in Sources */,
 				0D31ACC71A866DE100F8C26C /* Graph2DPieChartView.m in Sources */,

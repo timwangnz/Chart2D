@@ -251,6 +251,27 @@
     return data;
 }
 
+- (void) drawCaption
+{
+
+    if (!self.caption)
+    {
+        return;
+    }
+    
+    CGSize size = [self.caption.text sizeWithAttributes:@{NSFontAttributeName : self.caption.font}];
+    CGPoint textLocation;
+    textLocation.x = gBounds.origin.x + (gBounds.size.width - size.width)/2;
+    textLocation.y = gBounds.origin.y - 25;
+    [self text: self.caption.text
+       inRect : CGRectMake(textLocation.x, textLocation.y, size.width, 20)
+         angle: 0
+          font: self.caption.font
+         color: self.caption.color
+      aligment: NSTextAlignmentLeft];
+}
+
+
 - (void) drawLegends: (NSArray *)data inContext:(CGContextRef) context
 {
     UIFont *font = [UIFont fontWithName:DEFAULT_FONT size:12];
@@ -361,6 +382,8 @@
     {
         [self drawLegends : data inContext:context];
     }
+    
+    [self drawCaption];
     
     CGContextSetShouldAntialias(context, YES);
 }

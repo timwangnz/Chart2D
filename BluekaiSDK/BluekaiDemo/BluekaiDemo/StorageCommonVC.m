@@ -13,12 +13,14 @@
 @interface StorageCommonVC ()<HTTPConnectorDelegate, UISearchBarDelegate>
 {
     NSDateFormatter *dateFormatter;
-    NSMutableDictionary *sqlStmts;
+    
 }
 
 @end
 
 @implementation StorageCommonVC
+
+static NSMutableDictionary *sqlStmts;
 
 - (void) viewDidLoad
 {
@@ -33,7 +35,9 @@
     formatter.decimalSeparator = @".";
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    
     NSDictionary *cachedStmts = [[BKStorageManager storageManager] read: @"sqlstmt.cache"];
+    
     if (cachedStmts)
         sqlStmts = [NSMutableDictionary dictionaryWithDictionary: cachedStmts];
     else
@@ -70,25 +74,41 @@
     {
         HTTPConnector *conn = [[HTTPConnector alloc]init];
         conn.url = [NSString stringWithFormat: @"http://vulcan03.wdc.bluekai.com:8080/dataservice/api/v1/storage/query?limit=%d", self.limit <= 0 ? 5000 : self.limit ];
+        
         NSDictionary *sql = @{@"sql":self.sql};
-        [sqlStmts setObject:[NSString stringWithFormat:@"%lu", (unsigned long)[sqlStmts count]] forKey:self.sql];
+       //
+       // CFUUIDRef udid = CFUUIDCreate(NULL);
+        
+        NSString *udidString = [self GetUUID];
+        
+        [sqlStmts setObject:[NSString stringWithFormat:@"%@.dat", udidString] forKey:self.sql];
+        
         conn.delegate = self;
         [conn post:sql withHeader:@{@"Content-Type":@"application/json",@"x-bk-cdss-client-key":@"7CSnR44TTH6IPfGJSLyTaw"}];
     }
 }
 
+- (NSString *)GetUUID
+{
+    CFUUIDRef theUUID = CFUUIDCreate(NULL);
+    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+    CFRelease(theUUID);
+    return (__bridge NSString *)string;
+}
+
 - (BOOL) checkCache
 {
-    /*
+    
     NSString *cachedKey = [sqlStmts objectForKey: self.sql];
     NSDictionary *cached = [[BKStorageManager storageManager] read: cachedKey];
     if (cached)
     {
+        //NSDate *cachedAt = cached[@"time"];
+        //NSLog(@"%@ %@  %@\n %@", sqlStmts, cachedKey, self.sql, cachedAt);
         [self processServerData:cached[@"data"]];
-        NSLog(@"Read from cache");
         return YES;
     }
-     */
+     
     return NO;
 }
 
@@ -104,19 +124,32 @@
 
 - (void) didFinishLoading: (id)data
 {
-    NSString *cachedKey = [sqlStmts objectForKey:self.sql];
     [[BKStorageManager storageManager] save:sqlStmts uri: @"sqlstmt.cache"];
+     NSString *cachedKey = [sqlStmts objectForKey: self.sql];
     [[BKStorageManager storageManager] save:@{@"data":data, @"time":[NSDate date]} uri: cachedKey];
     [self processServerData:data];
 }
 
 - (void) processServerData: (id)data
 {
-    dataReceived = data;
+    //dataReceived = data;
     NSArray *cats = data[@"data"];
     objects = [NSMutableArray arrayWithArray:cats];
     filteredObjects = [NSMutableArray  arrayWithArray:cats];
     [self updateModel];
+}
+
+- (NSString *) formatValue:(id) value
+{
+    
+    if ([value isKindOfClass:NSNumber.class])
+    {
+        return [formatter stringFromNumber: value];
+    }
+    else{
+        return [NSString stringWithFormat:@"%@", value];
+    }
+    
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

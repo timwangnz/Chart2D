@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    types = @[@"Public", @"Private"];
     if (self.siteId == -1)
     {
         self.sql =
@@ -56,7 +57,7 @@
     trend.topPadding = 0;
     trend.legendType = Graph2DLegendNone;
     showAll = NO;
-    types = @[@"Public", @"Private"];
+    
     self.titleField = @"CATEGORY_NAME";
     if (categoryId == 344)
     {

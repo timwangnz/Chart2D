@@ -14,6 +14,8 @@
 @interface PartnerEntityVC ()<Graph2DChartDelegate, Graph2DDataSource>
 {
     IBOutlet SqlGraphView *chartview;
+    NSDictionary *displayNames;
+      NSArray *keys;
 }
 
 
@@ -26,21 +28,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
+    displayNames = @{
+                     @"PARTNER_ID" : @"Partner Id",
+                     @"PARTNER_NAME":@"Partner Name",
+                     @"COMPANY_NAME" : @"Company Name",
+                     @"OFFLINE_UPDATES":@"Total Offline Updates",
+                     @"SWAPPED_IDS" : @"Total ID Swaps",
+                     @"TOTAL_TAGGED" : @"Total Tagged",
+                     @"TAGGED_TODAY" : @"Tagged in 24 Hr"
+                     };
+    
+    keys = @[@"PARTNER_ID",
+            @"PARTNER_NAME",
+            @"COMPANY_NAME",
+            @"OFFLINE_UPDATES",
+            @"SWAPPED_IDS",
+            @"TOTAL_TAGGED",
+            @"TAGGED_TODAY"];
     
     NSString *sql = @"select to_char(created_at, 'MM-DD-YYYY') CREATED_AT, sum(INVENTORY) inventory from bk_inventory_view inv where inv.site_id in (select site_id from bk_site where partner_id = %@) and sysdate - created_at < 11 group by inv.created_at order by created_at";
     
     chartview.sql = [NSString stringWithFormat:sql, self.partner[@"PARTNER_ID"]];
- 
     chartview.limit = 20;
     chartview.title = @"Inventory";
     chartview.valueFields[0] = @"INVENTORY";
     chartview.xLabelField = @"CREATED_AT";
     chartview.legendType = Graph2DLegendNone;
+    chartview.caption = [[Graph2DTextStyle alloc]initWithText:@"Total Tagged Over Time"];
     chartview.topMargin = 40;
     chartview.bottomMargin = 60;
     chartview.leftMargin = 60;
     chartview.topPadding = 0;
-   
     [chartview reload];
     
 }
@@ -65,7 +83,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.partner count];
+    return [keys count];
 }
 
 
@@ -89,12 +107,14 @@
         cell.indentationLevel = 0;
     }
     
-    id key = [self.partner allKeys][indexPath.row];
-    cell.textLabel.text = key;
+    id key =  keys[indexPath.row];
+    
+    cell.textLabel.text = displayNames[key];
     
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.detailTextLabel.textColor = [UIColor blueColor];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self.partner objectForKey:key]];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
+    cell.detailTextLabel.text = [self formatValue:[self.partner objectForKey:key]];
     return cell;
 }
 

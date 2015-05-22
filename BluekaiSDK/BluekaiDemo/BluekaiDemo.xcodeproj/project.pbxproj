@@ -42,6 +42,8 @@
 		0DAA865C1B064CC70085AF40 /* BlueKai87.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA86581B064CC70085AF40 /* BlueKai87.png */; };
 		0DAA865D1B064CC70085AF40 /* BlueKai120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DAA86591B064CC70085AF40 /* BlueKai120.png */; };
 		0DB9158F1B0EEEEA00EB444A /* BKStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9158E1B0EEEEA00EB444A /* BKStorageManager.m */; };
+		0DB915971B0FB9EB00EB444A /* BKFrontPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB915951B0FB9EB00EB444A /* BKFrontPageVC.m */; };
+		0DB915981B0FB9EB00EB444A /* BKFrontPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB915961B0FB9EB00EB444A /* BKFrontPageVC.xib */; };
 		0DD063E11A6B415300BA9139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E01A6B415300BA9139 /* main.m */; };
 		0DD063E41A6B415300BA9139 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E31A6B415300BA9139 /* AppDelegate.m */; };
 		0DD063E71A6B415300BA9139 /* BluekaiIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD063E61A6B415300BA9139 /* BluekaiIDVC.m */; };
@@ -106,6 +108,9 @@
 		0DAA86591B064CC70085AF40 /* BlueKai120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai120.png; sourceTree = "<group>"; };
 		0DB9158D1B0EEEEA00EB444A /* BKStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKStorageManager.h; sourceTree = "<group>"; };
 		0DB9158E1B0EEEEA00EB444A /* BKStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKStorageManager.m; sourceTree = "<group>"; };
+		0DB915941B0FB9EB00EB444A /* BKFrontPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKFrontPageVC.h; sourceTree = "<group>"; };
+		0DB915951B0FB9EB00EB444A /* BKFrontPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKFrontPageVC.m; sourceTree = "<group>"; };
+		0DB915961B0FB9EB00EB444A /* BKFrontPageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKFrontPageVC.xib; sourceTree = "<group>"; };
 		0DD063DB1A6B415300BA9139 /* BluekaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluekaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD063DF1A6B415300BA9139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD063E01A6B415300BA9139 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -240,6 +245,9 @@
 				0D91ADF61B0E278C00962383 /* DeliveryGraphVC.h */,
 				0D91ADF71B0E278C00962383 /* DeliveryGraphVC.m */,
 				0D91ADF81B0E278C00962383 /* DeliveryGraphVC.xib */,
+				0DB915941B0FB9EB00EB444A /* BKFrontPageVC.h */,
+				0DB915951B0FB9EB00EB444A /* BKFrontPageVC.m */,
+				0DB915961B0FB9EB00EB444A /* BKFrontPageVC.xib */,
 			);
 			path = BluekaiDemo;
 			sourceTree = "<group>";
@@ -328,6 +336,7 @@
 				0DAA865C1B064CC70085AF40 /* BlueKai87.png in Resources */,
 				0D91ADFA1B0E278C00962383 /* DeliveryGraphVC.xib in Resources */,
 				0DD4069E1AEE017A004BE290 /* PartnerEntityVC.xib in Resources */,
+				0DB915981B0FB9EB00EB444A /* BKFrontPageVC.xib in Resources */,
 				0DD0645D1A6C6A0A00BA9139 /* BlueKai_1712415.png in Resources */,
 				0D30E0B01B0D8F4600ECA455 /* OfflineGraphVC.xib in Resources */,
 				0D87D4B51AEC538A006856A8 /* CategoryVC.xib in Resources */,
@@ -353,6 +362,7 @@
 				0D87D4B01AEC4D55006856A8 /* HTTPConnector.m in Sources */,
 				0D91ADF91B0E278C00962383 /* DeliveryGraphVC.m in Sources */,
 				0D30E0AF1B0D8F4600ECA455 /* OfflineGraphVC.m in Sources */,
+				0DB915971B0FB9EB00EB444A /* BKFrontPageVC.m in Sources */,
 				0D5E65191B01C4F800EEB0E5 /* SqlGraphView.m in Sources */,
 				0D87D4BE1AEC9754006856A8 /* CfrStatusVC.m in Sources */,
 				0D87D4B41AEC538A006856A8 /* CategoryVC.m in Sources */,
@@ -480,6 +490,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BluekaiDemo;
 				PROVISIONING_PROFILE = "337b053b-a7af-4d25-8910-20f7b787cf60";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -502,6 +513,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = BluekaiDemo;
 				PROVISIONING_PROFILE = "337b053b-a7af-4d25-8910-20f7b787cf60";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

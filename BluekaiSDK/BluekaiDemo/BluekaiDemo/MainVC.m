@@ -14,6 +14,7 @@
 #import "CFRGraphVC.h"
 #import "OfflineGraphVC.h"
 #import "DeliveryGraphVC.h"
+#import "BKFrontPageVC.h"
 
 #import "CfrStatusVC.h"
 
@@ -37,7 +38,7 @@
                  
                  ,@"Mobile SDK" : @[@"SDK Demo"]
             
-                ,@"Partner 360" : @[@"Partner"]
+                ,@"Partner 360" : @[@"Home", @"Partner"]
             };
     
     sortedKeys = @[
@@ -77,7 +78,7 @@
     }
     NSString *title = [commands objectForKey:sortedKeys[section]][indexPath.row];
     cell.textLabel.text = title;
-        cell.textLabel.font = [UIFont systemFontOfSize:24];
+        cell.textLabel.font = [UIFont systemFontOfSize:20];
     return cell;
 }
 
@@ -101,6 +102,16 @@
        
         [self.navigationController pushViewController:campaignVC animated:YES];
     }
+    
+    if ([title isEqualToString:@"Home"])
+    {
+        BKFrontPageVC *frontPage = [[BKFrontPageVC alloc]init];
+        frontPage.extendedLayoutIncludesOpaqueBars =  NO;
+        frontPage.title = @"Overview";
+        
+        [self.navigationController pushViewController:frontPage animated:YES];
+    }
+    
     if ([title isEqualToString:@"CFR Status"])
     {
         CfrStatusVC *campaignVC = [[CfrStatusVC alloc]init];
@@ -127,6 +138,7 @@
         
         [self.navigationController pushViewController:sqlGraphVC animated:YES];
     }
+    
     if ([title isEqualToString:@"Offline"])
     {
         OfflineGraphVC *sqlGraphVC = [[OfflineGraphVC alloc]init];
@@ -135,6 +147,7 @@
         
         [self.navigationController pushViewController:sqlGraphVC animated:YES];
     }
+    
     if ([title isEqualToString:@"Delivery"])
     {
         DeliveryGraphVC *sqlGraphVC = [[DeliveryGraphVC alloc]init];

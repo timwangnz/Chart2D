@@ -51,8 +51,10 @@
         self.yAxisStyle.tickStyle.majorLength = 5;
         self.yAxisStyle.tickStyle.minorTicks = 1;
         self.yAxisStyle.hidden = NO;
+        
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-      
+        self.caption.text = self.title;
+      self.caption.font = [UIFont systemFontOfSize:17];
         self.yAxisStyle.color = [UIColor blackColor];
         self.yAxisStyle.labelStyle.offset = -10;
         self.yAxisStyle.tickStyle.color = [UIColor blackColor];
@@ -83,15 +85,17 @@
      onSuccess: ^(NSDictionary *data) {
          dataReceived = data;
          NSArray *pts = data[@"data"];
+         [activityView removeFromSuperview];
+         [activityView stopAnimating];
          if ([pts count] > 1)
          {
              objects = [NSMutableArray arrayWithArray:pts];
              filteredObjects = [NSMutableArray  arrayWithArray:pts];
-            
-             [activityView removeFromSuperview];
-             [activityView stopAnimating];
              [self refresh];
               self.hidden = NO;
+         }
+         else{
+             
          }
      }
      onFailure:^(NSError *error) {

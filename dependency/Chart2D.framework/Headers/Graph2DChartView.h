@@ -57,6 +57,7 @@ typedef NSUInteger Graph2DLegendType;
 //default value is YES
 @property (nonatomic) BOOL autoScale;
 @property Graph2DLegendType legendType;
+@property Graph2DTextStyle *caption;
 
 //gap between bars in a chart
 @property (nonatomic) CGFloat barGap;
