@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.readonly = YES;
 	[self updateEntity:[SSProfileVC profile] OfType:self.itemType];
-    
 }
 
 @end

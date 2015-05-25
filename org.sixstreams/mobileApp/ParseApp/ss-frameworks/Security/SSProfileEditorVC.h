@@ -14,7 +14,7 @@
 
 - (void) editMyProfile;
 
-- (void) viewProfile:(NSString *) profileId
+- (void) viewProfile: (NSString *) profileId
            onSuccess: (SuccessCallback) callback
            onFailure: (ErrorCallback) errorCallback;
 

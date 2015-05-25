@@ -97,7 +97,7 @@
     UIView *inView = self;
     
     int size = self.frame.size.width;
-    inView = [[UIView alloc]initWithFrame:CGRectMake(0, size + 50, size, 60)];
+    inView = [[UIView alloc]initWithFrame:CGRectMake(0, size, size, 100)];
     [self addSubview:inView];
     
     

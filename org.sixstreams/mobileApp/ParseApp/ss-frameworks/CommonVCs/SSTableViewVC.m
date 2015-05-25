@@ -913,7 +913,7 @@
     if (self.entityEditorClass)
     {
         Class vcClass = NSClassFromString(self.entityEditorClass);
-        SSEntityEditorVC *childVC = [[vcClass alloc] init];
+        childVC = [[vcClass alloc] init];
         if (!childVC)
         {
             NSLog(@"Failed to create VC for %@", self.entityDetailsClass);

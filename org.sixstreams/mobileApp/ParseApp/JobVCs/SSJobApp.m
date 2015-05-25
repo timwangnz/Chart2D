@@ -276,7 +276,7 @@
         recruitor.defaultImg = recruitor.image;
         recruitor.url = [[item objectForKey:USER_INFO] objectForKey:REF_ID_NAME];
         [view addSubview:recruitor];
-        view.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
+        view.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.4];
     }
     else{
         [super updateHighlightItem:item ofType:itemType inView:view];

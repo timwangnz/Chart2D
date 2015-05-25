@@ -289,7 +289,7 @@
         [view removeFromSuperview];
     }
     
-    static int margin = 0;
+    static int margin = 5;
     
     [detailsViews removeAllObjects];
     
@@ -299,7 +299,7 @@
         {
             continue;
         }
-        CGRect rect = CGRectMake(margin,  margin, self.view.frame.size.width - 2*margin, self.view.frame.size.width + 100 - margin*2 );
+        CGRect rect = CGRectMake(margin,  margin, self.view.frame.size.width - 2 * margin, self.view.frame.size.width + 100 - margin*2 );
         SSDeckView *eventView =[[SSDeckView alloc]initWithFrame:rect];
         eventView.entityType = self.objectType;
         eventView.likeText = likeText;

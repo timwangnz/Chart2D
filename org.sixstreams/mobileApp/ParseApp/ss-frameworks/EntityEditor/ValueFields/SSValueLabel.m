@@ -34,7 +34,7 @@
         }
         else
         {
-            [super setText:text];
+            [super setText:text ? text : self.defaultValue ? self.defaultValue:@""];
         }
     }
 }

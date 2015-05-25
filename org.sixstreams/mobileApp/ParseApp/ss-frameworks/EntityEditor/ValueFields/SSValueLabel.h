@@ -11,6 +11,7 @@
 @interface SSValueLabel : SSRoundLabel
 
 @property (nonatomic, strong) NSString *attrName;
+@property (nonatomic, strong) NSString *defaultValue;
 @property (nonatomic, strong) NSString *metaType;
 @property float rate;
 @end

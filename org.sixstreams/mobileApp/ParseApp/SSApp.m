@@ -121,10 +121,23 @@ CGAffineTransform makeTransform(CGFloat xScale, CGFloat yScale,
 {
     NSArray *attrs = [expression componentsSeparatedByString:@" "];
     NSMutableString *str = [[NSMutableString alloc] init];
+    BOOL hasValue = NO;
     for (NSString *attrName in attrs){
-        [str appendFormat:@"%@ ",[self valueAtPath:attrName of:item]];
+        id value = [self valueAtPath:attrName of:item];
+        if (value)
+        {
+            hasValue = YES;
+            if ([attrName isEqual:[attrs lastObject]])
+            {
+                [str appendFormat:@"%@",[self valueAtPath:attrName of:item]];
+            }
+            else
+            {
+                [str appendFormat:@"%@ ",[self valueAtPath:attrName of:item]];
+            }
+        }
     }
-    return str;
+    return hasValue ? str : nil;
 }
 
 - (id) valueAtPath:(NSString *) path of:(id) parent
@@ -132,7 +145,7 @@ CGAffineTransform makeTransform(CGFloat xScale, CGFloat yScale,
     NSMutableArray *attrs = [NSMutableArray arrayWithArray:[path componentsSeparatedByString:@"."]];
     if ([attrs count] == 1)
     {
-        return [[SSApp instance] value:parent forKey:path defaultValue:path];
+        return [[SSApp instance] value:parent forKey:path defaultValue:nil];
     }
     else{
         id child = [parent objectForKey:[attrs objectAtIndex:0]];
