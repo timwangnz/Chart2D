@@ -22,6 +22,20 @@
 		0DE50F7B1AC87D29005C15A2 /* Sample2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F6D1AC87D29005C15A2 /* Sample2DView.m */; };
 		0DE50F7C1AC87D29005C15A2 /* SamplePieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F6F1AC87D29005C15A2 /* SamplePieChart.m */; };
 		0DE50F7D1AC87D29005C15A2 /* VolumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F711AC87D29005C15A2 /* VolumnView.m */; };
+		0DEDB7761B11312900293DAF /* Graph2DArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7591B11312900293DAF /* Graph2DArea.m */; };
+		0DEDB7771B11312900293DAF /* Graph2DAxisStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB75B1B11312900293DAF /* Graph2DAxisStyle.m */; };
+		0DEDB7781B11312900293DAF /* Graph2DChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB75D1B11312900293DAF /* Graph2DChartView.m */; };
+		0DEDB7791B11312900293DAF /* Graph2DFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7601B11312900293DAF /* Graph2DFillStyle.m */; };
+		0DEDB77A1B11312900293DAF /* Graph2DGridStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7621B11312900293DAF /* Graph2DGridStyle.m */; };
+		0DEDB77B1B11312900293DAF /* Graph2DLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7641B11312900293DAF /* Graph2DLineStyle.m */; };
+		0DEDB77C1B11312900293DAF /* Graph2DMarkerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7661B11312900293DAF /* Graph2DMarkerStyle.m */; };
+		0DEDB77D1B11312900293DAF /* Graph2DPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7681B11312900293DAF /* Graph2DPieChartView.m */; };
+		0DEDB77E1B11312900293DAF /* Graph2DSeriesStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB76A1B11312900293DAF /* Graph2DSeriesStyle.m */; };
+		0DEDB77F1B11312900293DAF /* Graph2DStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB76C1B11312900293DAF /* Graph2DStyle.m */; };
+		0DEDB7801B11312900293DAF /* Graph2DTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB76E1B11312900293DAF /* Graph2DTextStyle.m */; };
+		0DEDB7811B11312900293DAF /* Graph2DTickStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7701B11312900293DAF /* Graph2DTickStyle.m */; };
+		0DEDB7821B11312900293DAF /* Graph2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7721B11312900293DAF /* Graph2DView.m */; };
+		0DEDB7831B11312900293DAF /* Graph2DWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEDB7751B11312900293DAF /* Graph2DWidgetView.m */; };
 		0DF9B4BF1656EBB3003072F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4BE1656EBB3003072F7 /* UIKit.framework */; };
 		0DF9B4C11656EBB3003072F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4C01656EBB3003072F7 /* Foundation.framework */; };
 		0DF9B4C31656EBB3003072F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF9B4C21656EBB3003072F7 /* CoreGraphics.framework */; };
@@ -53,6 +67,37 @@
 		0DE50F6F1AC87D29005C15A2 /* SamplePieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePieChart.m; sourceTree = "<group>"; };
 		0DE50F701AC87D29005C15A2 /* VolumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumnView.h; sourceTree = "<group>"; };
 		0DE50F711AC87D29005C15A2 /* VolumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumnView.m; sourceTree = "<group>"; };
+		0DEDB7571B11312900293DAF /* Chart2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chart2D.h; sourceTree = "<group>"; };
+		0DEDB7581B11312900293DAF /* Graph2DArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DArea.h; sourceTree = "<group>"; };
+		0DEDB7591B11312900293DAF /* Graph2DArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DArea.m; sourceTree = "<group>"; };
+		0DEDB75A1B11312900293DAF /* Graph2DAxisStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DAxisStyle.h; sourceTree = "<group>"; };
+		0DEDB75B1B11312900293DAF /* Graph2DAxisStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DAxisStyle.m; sourceTree = "<group>"; };
+		0DEDB75C1B11312900293DAF /* Graph2DChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DChartView.h; sourceTree = "<group>"; };
+		0DEDB75D1B11312900293DAF /* Graph2DChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DChartView.m; sourceTree = "<group>"; };
+		0DEDB75E1B11312900293DAF /* Graph2DDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DDataSource.h; sourceTree = "<group>"; };
+		0DEDB75F1B11312900293DAF /* Graph2DFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DFillStyle.h; sourceTree = "<group>"; };
+		0DEDB7601B11312900293DAF /* Graph2DFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DFillStyle.m; sourceTree = "<group>"; };
+		0DEDB7611B11312900293DAF /* Graph2DGridStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DGridStyle.h; sourceTree = "<group>"; };
+		0DEDB7621B11312900293DAF /* Graph2DGridStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DGridStyle.m; sourceTree = "<group>"; };
+		0DEDB7631B11312900293DAF /* Graph2DLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DLineStyle.h; sourceTree = "<group>"; };
+		0DEDB7641B11312900293DAF /* Graph2DLineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DLineStyle.m; sourceTree = "<group>"; };
+		0DEDB7651B11312900293DAF /* Graph2DMarkerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DMarkerStyle.h; sourceTree = "<group>"; };
+		0DEDB7661B11312900293DAF /* Graph2DMarkerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DMarkerStyle.m; sourceTree = "<group>"; };
+		0DEDB7671B11312900293DAF /* Graph2DPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DPieChartView.h; sourceTree = "<group>"; };
+		0DEDB7681B11312900293DAF /* Graph2DPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DPieChartView.m; sourceTree = "<group>"; };
+		0DEDB7691B11312900293DAF /* Graph2DSeriesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DSeriesStyle.h; sourceTree = "<group>"; };
+		0DEDB76A1B11312900293DAF /* Graph2DSeriesStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DSeriesStyle.m; sourceTree = "<group>"; };
+		0DEDB76B1B11312900293DAF /* Graph2DStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DStyle.h; sourceTree = "<group>"; };
+		0DEDB76C1B11312900293DAF /* Graph2DStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DStyle.m; sourceTree = "<group>"; };
+		0DEDB76D1B11312900293DAF /* Graph2DTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DTextStyle.h; sourceTree = "<group>"; };
+		0DEDB76E1B11312900293DAF /* Graph2DTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DTextStyle.m; sourceTree = "<group>"; };
+		0DEDB76F1B11312900293DAF /* Graph2DTickStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DTickStyle.h; sourceTree = "<group>"; };
+		0DEDB7701B11312900293DAF /* Graph2DTickStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DTickStyle.m; sourceTree = "<group>"; };
+		0DEDB7711B11312900293DAF /* Graph2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DView.h; sourceTree = "<group>"; };
+		0DEDB7721B11312900293DAF /* Graph2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DView.m; sourceTree = "<group>"; };
+		0DEDB7731B11312900293DAF /* Graph2DViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DViewDelegate.h; sourceTree = "<group>"; };
+		0DEDB7741B11312900293DAF /* Graph2DWidgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DWidgetView.h; sourceTree = "<group>"; };
+		0DEDB7751B11312900293DAF /* Graph2DWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DWidgetView.m; sourceTree = "<group>"; };
 		0DF9B4BA1656EBB3003072F7 /* Graph2DTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graph2DTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF9B4BE1656EBB3003072F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0DF9B4C01656EBB3003072F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,9 +169,49 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		0DEDB7561B11312900293DAF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0DEDB7571B11312900293DAF /* Chart2D.h */,
+				0DEDB7581B11312900293DAF /* Graph2DArea.h */,
+				0DEDB7591B11312900293DAF /* Graph2DArea.m */,
+				0DEDB75A1B11312900293DAF /* Graph2DAxisStyle.h */,
+				0DEDB75B1B11312900293DAF /* Graph2DAxisStyle.m */,
+				0DEDB75C1B11312900293DAF /* Graph2DChartView.h */,
+				0DEDB75D1B11312900293DAF /* Graph2DChartView.m */,
+				0DEDB75E1B11312900293DAF /* Graph2DDataSource.h */,
+				0DEDB75F1B11312900293DAF /* Graph2DFillStyle.h */,
+				0DEDB7601B11312900293DAF /* Graph2DFillStyle.m */,
+				0DEDB7611B11312900293DAF /* Graph2DGridStyle.h */,
+				0DEDB7621B11312900293DAF /* Graph2DGridStyle.m */,
+				0DEDB7631B11312900293DAF /* Graph2DLineStyle.h */,
+				0DEDB7641B11312900293DAF /* Graph2DLineStyle.m */,
+				0DEDB7651B11312900293DAF /* Graph2DMarkerStyle.h */,
+				0DEDB7661B11312900293DAF /* Graph2DMarkerStyle.m */,
+				0DEDB7671B11312900293DAF /* Graph2DPieChartView.h */,
+				0DEDB7681B11312900293DAF /* Graph2DPieChartView.m */,
+				0DEDB7691B11312900293DAF /* Graph2DSeriesStyle.h */,
+				0DEDB76A1B11312900293DAF /* Graph2DSeriesStyle.m */,
+				0DEDB76B1B11312900293DAF /* Graph2DStyle.h */,
+				0DEDB76C1B11312900293DAF /* Graph2DStyle.m */,
+				0DEDB76D1B11312900293DAF /* Graph2DTextStyle.h */,
+				0DEDB76E1B11312900293DAF /* Graph2DTextStyle.m */,
+				0DEDB76F1B11312900293DAF /* Graph2DTickStyle.h */,
+				0DEDB7701B11312900293DAF /* Graph2DTickStyle.m */,
+				0DEDB7711B11312900293DAF /* Graph2DView.h */,
+				0DEDB7721B11312900293DAF /* Graph2DView.m */,
+				0DEDB7731B11312900293DAF /* Graph2DViewDelegate.h */,
+				0DEDB7741B11312900293DAF /* Graph2DWidgetView.h */,
+				0DEDB7751B11312900293DAF /* Graph2DWidgetView.m */,
+			);
+			name = src;
+			path = "../framework/framework-src/src";
+			sourceTree = "<group>";
+		};
 		0DF9B4AF1656EBB3003072F7 = {
 			isa = PBXGroup;
 			children = (
+				0DEDB7561B11312900293DAF /* src */,
 				0DE50F5C1AC87D29005C15A2 /* sample */,
 				0DF9B4BD1656EBB3003072F7 /* Frameworks */,
 				0DF9B4BB1656EBB3003072F7 /* Products */,
@@ -224,13 +309,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEDB77A1B11312900293DAF /* Graph2DGridStyle.m in Sources */,
 				0DE50F781AC87D29005C15A2 /* Graph2DVC.m in Sources */,
+				0DEDB77F1B11312900293DAF /* Graph2DStyle.m in Sources */,
+				0DEDB7761B11312900293DAF /* Graph2DArea.m in Sources */,
+				0DEDB7811B11312900293DAF /* Graph2DTickStyle.m in Sources */,
+				0DEDB77E1B11312900293DAF /* Graph2DSeriesStyle.m in Sources */,
+				0DEDB7781B11312900293DAF /* Graph2DChartView.m in Sources */,
+				0DEDB77C1B11312900293DAF /* Graph2DMarkerStyle.m in Sources */,
+				0DEDB77D1B11312900293DAF /* Graph2DPieChartView.m in Sources */,
 				0DE50F771AC87D29005C15A2 /* Chart2DSampleApp.m in Sources */,
 				0DE50F7A1AC87D29005C15A2 /* main.m in Sources */,
 				0DE50F7C1AC87D29005C15A2 /* SamplePieChart.m in Sources */,
+				0DEDB7771B11312900293DAF /* Graph2DAxisStyle.m in Sources */,
 				0DE50F7B1AC87D29005C15A2 /* Sample2DView.m in Sources */,
 				0DE50F7D1AC87D29005C15A2 /* VolumnView.m in Sources */,
 				0DE50F761AC87D29005C15A2 /* BarChartSampleView.m in Sources */,
+				0DEDB77B1B11312900293DAF /* Graph2DLineStyle.m in Sources */,
+				0DEDB7791B11312900293DAF /* Graph2DFillStyle.m in Sources */,
+				0DEDB7801B11312900293DAF /* Graph2DTextStyle.m in Sources */,
+				0DEDB7821B11312900293DAF /* Graph2DView.m in Sources */,
+				0DEDB7831B11312900293DAF /* Graph2DWidgetView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

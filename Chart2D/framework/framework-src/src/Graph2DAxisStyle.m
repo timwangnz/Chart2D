@@ -16,10 +16,6 @@
     {
         _offset = 1.0;
         _hidden = NO;
-        _angle = 0;
-        _aligment = Graph2DLabelAlignmentLeft;
-        _color = [UIColor blackColor];
-        _font = [UIFont systemFontOfSize:12];
     }
     return self;
 }
@@ -39,7 +35,6 @@
     if (self)
     {
         _tickStyle = [[Graph2DTickStyle alloc] init];
-        
         _labelStyle = [[Graph2DLabelStyle alloc] init];
         _hidden = NO;
     }

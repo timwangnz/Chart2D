@@ -10,16 +10,47 @@
 
 @implementation Graph2DTextStyle
 
+- (id) init
+{
+    self = [super init];
+    if (self)
+    {
+        _alignment = NSTextAlignmentLeft;
+        _font =  [UIFont systemFontOfSize:12];
+        _angle = 0;
+        _color = [UIColor whiteColor];
+    }
+    return self;
+}
+
+
 - (id) initWithText:(NSString *) text
 {
     self = [super init];
     if (self)
     {
+        _alignment = NSTextAlignmentLeft;
         _font =  [UIFont systemFontOfSize:12];
         _text = text;
-        _color = [UIColor redColor];
+        _angle = 0;
+        _color = [UIColor whiteColor];
     }
     return self;
 }
 
+- (id) initWithText :(NSString *) text
+              color :(UIColor *) color
+               font :(UIFont *) font
+{
+    self = [super init];
+    if (self)
+    {
+        _alignment = NSTextAlignmentLeft;
+        _angle = 0;
+        _font =  font;
+        _text = text;
+        _color = color;
+    }
+    return self;
+}
 @end

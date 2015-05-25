@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D01FBCA1B129575002613A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB841B129575002613A0 /* AppDelegate.m */; };
+		0D01FBCB1B129575002613A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB851B129575002613A0 /* LaunchScreen.xib */; };
+		0D01FBCC1B129575002613A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB871B129575002613A0 /* Main.storyboard */; };
+		0D01FBCD1B129575002613A0 /* BKEntityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB8A1B129575002613A0 /* BKEntityVC.m */; };
+		0D01FBCE1B129575002613A0 /* BKFrontPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB8C1B129575002613A0 /* BKFrontPageVC.m */; };
+		0D01FBCF1B129575002613A0 /* BKFrontPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB8D1B129575002613A0 /* BKFrontPageVC.xib */; };
+		0D01FBD01B129575002613A0 /* BKOfflineDirectoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB8F1B129575002613A0 /* BKOfflineDirectoryVC.m */; };
+		0D01FBD11B129575002613A0 /* BKOfflineDirectoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB901B129575002613A0 /* BKOfflineDirectoryVC.xib */; };
+		0D01FBD21B129575002613A0 /* BKOfflineFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB921B129575002613A0 /* BKOfflineFileVC.m */; };
+		0D01FBD31B129575002613A0 /* BKOfflineFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */; };
+		0D01FBD41B129575002613A0 /* BKStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB951B129575002613A0 /* BKStorageManager.m */; };
+		0D01FBD51B129575002613A0 /* bluekai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB961B129575002613A0 /* bluekai.jpg */; };
+		0D01FBD61B129575002613A0 /* BlueKai120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB971B129575002613A0 /* BlueKai120.png */; };
+		0D01FBD71B129575002613A0 /* BlueKai58 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB981B129575002613A0 /* BlueKai58 copy.png */; };
+		0D01FBD81B129575002613A0 /* BlueKai58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB991B129575002613A0 /* BlueKai58.png */; };
+		0D01FBD91B129575002613A0 /* BlueKai80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9A1B129575002613A0 /* BlueKai80.png */; };
+		0D01FBDA1B129575002613A0 /* BlueKai87.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9B1B129575002613A0 /* BlueKai87.png */; };
+		0D01FBDB1B129575002613A0 /* BlueKai_1712415.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */; };
+		0D01FBDC1B129575002613A0 /* BlueKaiIconTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */; };
+		0D01FBDD1B129575002613A0 /* BluekaiIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */; };
+		0D01FBDE1B129575002613A0 /* BluekaiIDVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */; };
+		0D01FBDF1B129575002613A0 /* CampaignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA21B129575002613A0 /* CampaignVC.m */; };
+		0D01FBE01B129575002613A0 /* CampaignVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA31B129575002613A0 /* CampaignVC.xib */; };
+		0D01FBE11B129575002613A0 /* CampaignWinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA51B129575002613A0 /* CampaignWinsVC.m */; };
+		0D01FBE21B129575002613A0 /* CampaignWinsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */; };
+		0D01FBE31B129575002613A0 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA81B129575002613A0 /* CategoryVC.m */; };
+		0D01FBE41B129575002613A0 /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA91B129575002613A0 /* CategoryVC.xib */; };
+		0D01FBE51B129575002613A0 /* CFRGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAB1B129575002613A0 /* CFRGraphVC.m */; };
+		0D01FBE61B129575002613A0 /* CFRGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */; };
+		0D01FBE71B129575002613A0 /* CfrStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAE1B129575002613A0 /* CfrStatusVC.m */; };
+		0D01FBE81B129575002613A0 /* CfrStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */; };
+		0D01FBE91B129575002613A0 /* DeliveryGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */; };
+		0D01FBEA1B129575002613A0 /* DeliveryGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */; };
+		0D01FBEB1B129575002613A0 /* HTTPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB41B129575002613A0 /* HTTPConnector.m */; };
+		0D01FBEC1B129575002613A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB51B129575002613A0 /* Images.xcassets */; };
+		0D01FBED1B129575002613A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB61B129575002613A0 /* Info.plist */; };
+		0D01FBEE1B129575002613A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB71B129575002613A0 /* main.m */; };
+		0D01FBEF1B129575002613A0 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB91B129575002613A0 /* MainVC.m */; };
+		0D01FBF01B129575002613A0 /* OfflineGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */; };
+		0D01FBF11B129575002613A0 /* OfflineGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */; };
+		0D01FBF21B129575002613A0 /* PartnerEntityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */; };
+		0D01FBF31B129575002613A0 /* PartnerEntityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */; };
+		0D01FBF41B129575002613A0 /* PartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC11B129575002613A0 /* PartnerVC.m */; };
+		0D01FBF51B129575002613A0 /* PartnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC21B129575002613A0 /* PartnerVC.xib */; };
+		0D01FBF61B129575002613A0 /* SiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC41B129575002613A0 /* SiteVC.m */; };
+		0D01FBF71B129575002613A0 /* SiteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC51B129575002613A0 /* SiteVC.xib */; };
+		0D01FBF81B129575002613A0 /* SqlGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC71B129575002613A0 /* SqlGraphView.m */; };
+		0D01FBF91B129575002613A0 /* StorageCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC91B129575002613A0 /* StorageCommonVC.m */; };
+		0D01FBFB1B1295C2002613A0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFA1B1295C2002613A0 /* GLKit.framework */; };
+		0D01FBFD1B1295D4002613A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */; };
+		0D01FC001B129611002613A0 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFF1B129611002613A0 /* Chart2D.framework */; };
+		0D01FC021B129638002613A0 /* Bluekai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FC011B129638002613A0 /* Bluekai.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D01FB591B129544002613A0 /* Bluekai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluekai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D01FB831B129575002613A0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D01FB841B129575002613A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D01FB861B129575002613A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0D01FB881B129575002613A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D01FB891B129575002613A0 /* BKEntityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKEntityVC.h; sourceTree = "<group>"; };
+		0D01FB8A1B129575002613A0 /* BKEntityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKEntityVC.m; sourceTree = "<group>"; };
+		0D01FB8B1B129575002613A0 /* BKFrontPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKFrontPageVC.h; sourceTree = "<group>"; };
+		0D01FB8C1B129575002613A0 /* BKFrontPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKFrontPageVC.m; sourceTree = "<group>"; };
+		0D01FB8D1B129575002613A0 /* BKFrontPageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKFrontPageVC.xib; sourceTree = "<group>"; };
+		0D01FB8E1B129575002613A0 /* BKOfflineDirectoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKOfflineDirectoryVC.h; sourceTree = "<group>"; };
+		0D01FB8F1B129575002613A0 /* BKOfflineDirectoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKOfflineDirectoryVC.m; sourceTree = "<group>"; };
+		0D01FB901B129575002613A0 /* BKOfflineDirectoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKOfflineDirectoryVC.xib; sourceTree = "<group>"; };
+		0D01FB911B129575002613A0 /* BKOfflineFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKOfflineFileVC.h; sourceTree = "<group>"; };
+		0D01FB921B129575002613A0 /* BKOfflineFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKOfflineFileVC.m; sourceTree = "<group>"; };
+		0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKOfflineFileVC.xib; sourceTree = "<group>"; };
+		0D01FB941B129575002613A0 /* BKStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKStorageManager.h; sourceTree = "<group>"; };
+		0D01FB951B129575002613A0 /* BKStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKStorageManager.m; sourceTree = "<group>"; };
+		0D01FB961B129575002613A0 /* bluekai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluekai.jpg; sourceTree = "<group>"; };
+		0D01FB971B129575002613A0 /* BlueKai120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai120.png; sourceTree = "<group>"; };
+		0D01FB981B129575002613A0 /* BlueKai58 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueKai58 copy.png"; sourceTree = "<group>"; };
+		0D01FB991B129575002613A0 /* BlueKai58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai58.png; sourceTree = "<group>"; };
+		0D01FB9A1B129575002613A0 /* BlueKai80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai80.png; sourceTree = "<group>"; };
+		0D01FB9B1B129575002613A0 /* BlueKai87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai87.png; sourceTree = "<group>"; };
+		0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai_1712415.png; sourceTree = "<group>"; };
+		0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKaiIconTransparent.png; sourceTree = "<group>"; };
+		0D01FB9E1B129575002613A0 /* BluekaiIDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluekaiIDVC.h; sourceTree = "<group>"; };
+		0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluekaiIDVC.m; sourceTree = "<group>"; };
+		0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluekaiIDVC.xib; sourceTree = "<group>"; };
+		0D01FBA11B129575002613A0 /* CampaignVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignVC.h; sourceTree = "<group>"; };
+		0D01FBA21B129575002613A0 /* CampaignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignVC.m; sourceTree = "<group>"; };
+		0D01FBA31B129575002613A0 /* CampaignVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignVC.xib; sourceTree = "<group>"; };
+		0D01FBA41B129575002613A0 /* CampaignWinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignWinsVC.h; sourceTree = "<group>"; };
+		0D01FBA51B129575002613A0 /* CampaignWinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignWinsVC.m; sourceTree = "<group>"; };
+		0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignWinsVC.xib; sourceTree = "<group>"; };
+		0D01FBA71B129575002613A0 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
+		0D01FBA81B129575002613A0 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
+		0D01FBA91B129575002613A0 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
+		0D01FBAA1B129575002613A0 /* CFRGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFRGraphVC.h; sourceTree = "<group>"; };
+		0D01FBAB1B129575002613A0 /* CFRGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFRGraphVC.m; sourceTree = "<group>"; };
+		0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFRGraphVC.xib; sourceTree = "<group>"; };
+		0D01FBAD1B129575002613A0 /* CfrStatusVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CfrStatusVC.h; sourceTree = "<group>"; };
+		0D01FBAE1B129575002613A0 /* CfrStatusVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CfrStatusVC.m; sourceTree = "<group>"; };
+		0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CfrStatusVC.xib; sourceTree = "<group>"; };
+		0D01FBB01B129575002613A0 /* DeliveryGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryGraphVC.h; sourceTree = "<group>"; };
+		0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryGraphVC.m; sourceTree = "<group>"; };
+		0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryGraphVC.xib; sourceTree = "<group>"; };
+		0D01FBB31B129575002613A0 /* HTTPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnector.h; sourceTree = "<group>"; };
+		0D01FBB41B129575002613A0 /* HTTPConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnector.m; sourceTree = "<group>"; };
+		0D01FBB51B129575002613A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0D01FBB61B129575002613A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D01FBB71B129575002613A0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D01FBB81B129575002613A0 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		0D01FBB91B129575002613A0 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		0D01FBBA1B129575002613A0 /* OfflineGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineGraphVC.h; sourceTree = "<group>"; };
+		0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineGraphVC.m; sourceTree = "<group>"; };
+		0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfflineGraphVC.xib; sourceTree = "<group>"; };
+		0D01FBBD1B129575002613A0 /* PartnerEntityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerEntityVC.h; sourceTree = "<group>"; };
+		0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerEntityVC.m; sourceTree = "<group>"; };
+		0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerEntityVC.xib; sourceTree = "<group>"; };
+		0D01FBC01B129575002613A0 /* PartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerVC.h; sourceTree = "<group>"; };
+		0D01FBC11B129575002613A0 /* PartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerVC.m; sourceTree = "<group>"; };
+		0D01FBC21B129575002613A0 /* PartnerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerVC.xib; sourceTree = "<group>"; };
+		0D01FBC31B129575002613A0 /* SiteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteVC.h; sourceTree = "<group>"; };
+		0D01FBC41B129575002613A0 /* SiteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteVC.m; sourceTree = "<group>"; };
+		0D01FBC51B129575002613A0 /* SiteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SiteVC.xib; sourceTree = "<group>"; };
+		0D01FBC61B129575002613A0 /* SqlGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlGraphView.h; sourceTree = "<group>"; };
+		0D01FBC71B129575002613A0 /* SqlGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlGraphView.m; sourceTree = "<group>"; };
+		0D01FBC81B129575002613A0 /* StorageCommonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageCommonVC.h; sourceTree = "<group>"; };
+		0D01FBC91B129575002613A0 /* StorageCommonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageCommonVC.m; sourceTree = "<group>"; };
+		0D01FBFA1B1295C2002613A0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0D01FBFF1B129611002613A0 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
+		0D01FC011B129638002613A0 /* Bluekai.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bluekai.framework; path = ../sdk/Bluekai/Bluekai.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D01FB561B129544002613A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D01FC001B129611002613A0 /* Chart2D.framework in Frameworks */,
+				0D01FBFD1B1295D4002613A0 /* CoreGraphics.framework in Frameworks */,
+				0D01FC021B129638002613A0 /* Bluekai.framework in Frameworks */,
+				0D01FBFB1B1295C2002613A0 /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D01FB501B129544002613A0 = {
+			isa = PBXGroup;
+			children = (
+				0D01FBFE1B1295DC002613A0 /* frameworks */,
+				0D01FB821B129575002613A0 /* src */,
+				0D01FB5A1B129544002613A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D01FB5A1B129544002613A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D01FB591B129544002613A0 /* Bluekai.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D01FB821B129575002613A0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0D01FB831B129575002613A0 /* AppDelegate.h */,
+				0D01FB841B129575002613A0 /* AppDelegate.m */,
+				0D01FB851B129575002613A0 /* LaunchScreen.xib */,
+				0D01FB871B129575002613A0 /* Main.storyboard */,
+				0D01FB891B129575002613A0 /* BKEntityVC.h */,
+				0D01FB8A1B129575002613A0 /* BKEntityVC.m */,
+				0D01FB8B1B129575002613A0 /* BKFrontPageVC.h */,
+				0D01FB8C1B129575002613A0 /* BKFrontPageVC.m */,
+				0D01FB8D1B129575002613A0 /* BKFrontPageVC.xib */,
+				0D01FB8E1B129575002613A0 /* BKOfflineDirectoryVC.h */,
+				0D01FB8F1B129575002613A0 /* BKOfflineDirectoryVC.m */,
+				0D01FB901B129575002613A0 /* BKOfflineDirectoryVC.xib */,
+				0D01FB911B129575002613A0 /* BKOfflineFileVC.h */,
+				0D01FB921B129575002613A0 /* BKOfflineFileVC.m */,
+				0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */,
+				0D01FB941B129575002613A0 /* BKStorageManager.h */,
+				0D01FB951B129575002613A0 /* BKStorageManager.m */,
+				0D01FB961B129575002613A0 /* bluekai.jpg */,
+				0D01FB971B129575002613A0 /* BlueKai120.png */,
+				0D01FB981B129575002613A0 /* BlueKai58 copy.png */,
+				0D01FB991B129575002613A0 /* BlueKai58.png */,
+				0D01FB9A1B129575002613A0 /* BlueKai80.png */,
+				0D01FB9B1B129575002613A0 /* BlueKai87.png */,
+				0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */,
+				0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */,
+				0D01FB9E1B129575002613A0 /* BluekaiIDVC.h */,
+				0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */,
+				0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */,
+				0D01FBA11B129575002613A0 /* CampaignVC.h */,
+				0D01FBA21B129575002613A0 /* CampaignVC.m */,
+				0D01FBA31B129575002613A0 /* CampaignVC.xib */,
+				0D01FBA41B129575002613A0 /* CampaignWinsVC.h */,
+				0D01FBA51B129575002613A0 /* CampaignWinsVC.m */,
+				0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */,
+				0D01FBA71B129575002613A0 /* CategoryVC.h */,
+				0D01FBA81B129575002613A0 /* CategoryVC.m */,
+				0D01FBA91B129575002613A0 /* CategoryVC.xib */,
+				0D01FBAA1B129575002613A0 /* CFRGraphVC.h */,
+				0D01FBAB1B129575002613A0 /* CFRGraphVC.m */,
+				0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */,
+				0D01FBAD1B129575002613A0 /* CfrStatusVC.h */,
+				0D01FBAE1B129575002613A0 /* CfrStatusVC.m */,
+				0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */,
+				0D01FBB01B129575002613A0 /* DeliveryGraphVC.h */,
+				0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */,
+				0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */,
+				0D01FBB31B129575002613A0 /* HTTPConnector.h */,
+				0D01FBB41B129575002613A0 /* HTTPConnector.m */,
+				0D01FBB51B129575002613A0 /* Images.xcassets */,
+				0D01FBB61B129575002613A0 /* Info.plist */,
+				0D01FBB71B129575002613A0 /* main.m */,
+				0D01FBB81B129575002613A0 /* MainVC.h */,
+				0D01FBB91B129575002613A0 /* MainVC.m */,
+				0D01FBBA1B129575002613A0 /* OfflineGraphVC.h */,
+				0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */,
+				0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */,
+				0D01FBBD1B129575002613A0 /* PartnerEntityVC.h */,
+				0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */,
+				0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */,
+				0D01FBC01B129575002613A0 /* PartnerVC.h */,
+				0D01FBC11B129575002613A0 /* PartnerVC.m */,
+				0D01FBC21B129575002613A0 /* PartnerVC.xib */,
+				0D01FBC31B129575002613A0 /* SiteVC.h */,
+				0D01FBC41B129575002613A0 /* SiteVC.m */,
+				0D01FBC51B129575002613A0 /* SiteVC.xib */,
+				0D01FBC61B129575002613A0 /* SqlGraphView.h */,
+				0D01FBC71B129575002613A0 /* SqlGraphView.m */,
+				0D01FBC81B129575002613A0 /* StorageCommonVC.h */,
+				0D01FBC91B129575002613A0 /* StorageCommonVC.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0D01FBFE1B1295DC002613A0 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D01FC011B129638002613A0 /* Bluekai.framework */,
+				0D01FBFF1B129611002613A0 /* Chart2D.framework */,
+				0D01FBFA1B1295C2002613A0 /* GLKit.framework */,
+				0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D01FB581B129544002613A0 /* Bluekai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D01FB7C1B129544002613A0 /* Build configuration list for PBXNativeTarget "Bluekai" */;
+			buildPhases = (
+				0D01FB551B129544002613A0 /* Sources */,
+				0D01FB561B129544002613A0 /* Frameworks */,
+				0D01FB571B129544002613A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bluekai;
+			productName = application;
+			productReference = 0D01FB591B129544002613A0 /* Bluekai.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D01FB511B129544002613A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = cdss;
+				TargetAttributes = {
+					0D01FB581B129544002613A0 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = VYAKS7W7VC;
+					};
+				};
+			};
+			buildConfigurationList = 0D01FB541B129544002613A0 /* Build configuration list for PBXProject "Bluekai" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D01FB501B129544002613A0;
+			productRefGroup = 0D01FB5A1B129544002613A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D01FB581B129544002613A0 /* Bluekai */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D01FB571B129544002613A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D01FBE01B129575002613A0 /* CampaignVC.xib in Resources */,
+				0D01FBD91B129575002613A0 /* BlueKai80.png in Resources */,
+				0D01FBCB1B129575002613A0 /* LaunchScreen.xib in Resources */,
+				0D01FBDA1B129575002613A0 /* BlueKai87.png in Resources */,
+				0D01FBD11B129575002613A0 /* BKOfflineDirectoryVC.xib in Resources */,
+				0D01FBCC1B129575002613A0 /* Main.storyboard in Resources */,
+				0D01FBE41B129575002613A0 /* CategoryVC.xib in Resources */,
+				0D01FBDC1B129575002613A0 /* BlueKaiIconTransparent.png in Resources */,
+				0D01FBDE1B129575002613A0 /* BluekaiIDVC.xib in Resources */,
+				0D01FBEC1B129575002613A0 /* Images.xcassets in Resources */,
+				0D01FBD61B129575002613A0 /* BlueKai120.png in Resources */,
+				0D01FBF31B129575002613A0 /* PartnerEntityVC.xib in Resources */,
+				0D01FBF11B129575002613A0 /* OfflineGraphVC.xib in Resources */,
+				0D01FBCF1B129575002613A0 /* BKFrontPageVC.xib in Resources */,
+				0D01FBEA1B129575002613A0 /* DeliveryGraphVC.xib in Resources */,
+				0D01FBD51B129575002613A0 /* bluekai.jpg in Resources */,
+				0D01FBDB1B129575002613A0 /* BlueKai_1712415.png in Resources */,
+				0D01FBD31B129575002613A0 /* BKOfflineFileVC.xib in Resources */,
+				0D01FBF51B129575002613A0 /* PartnerVC.xib in Resources */,
+				0D01FBE21B129575002613A0 /* CampaignWinsVC.xib in Resources */,
+				0D01FBF71B129575002613A0 /* SiteVC.xib in Resources */,
+				0D01FBD71B129575002613A0 /* BlueKai58 copy.png in Resources */,
+				0D01FBE61B129575002613A0 /* CFRGraphVC.xib in Resources */,
+				0D01FBD81B129575002613A0 /* BlueKai58.png in Resources */,
+				0D01FBE81B129575002613A0 /* CfrStatusVC.xib in Resources */,
+				0D01FBED1B129575002613A0 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D01FB551B129544002613A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D01FBCA1B129575002613A0 /* AppDelegate.m in Sources */,
+				0D01FBEF1B129575002613A0 /* MainVC.m in Sources */,
+				0D01FBE11B129575002613A0 /* CampaignWinsVC.m in Sources */,
+				0D01FBE51B129575002613A0 /* CFRGraphVC.m in Sources */,
+				0D01FBCD1B129575002613A0 /* BKEntityVC.m in Sources */,
+				0D01FBF81B129575002613A0 /* SqlGraphView.m in Sources */,
+				0D01FBEB1B129575002613A0 /* HTTPConnector.m in Sources */,
+				0D01FBD41B129575002613A0 /* BKStorageManager.m in Sources */,
+				0D01FBCE1B129575002613A0 /* BKFrontPageVC.m in Sources */,
+				0D01FBD21B129575002613A0 /* BKOfflineFileVC.m in Sources */,
+				0D01FBF21B129575002613A0 /* PartnerEntityVC.m in Sources */,
+				0D01FBDD1B129575002613A0 /* BluekaiIDVC.m in Sources */,
+				0D01FBE31B129575002613A0 /* CategoryVC.m in Sources */,
+				0D01FBF01B129575002613A0 /* OfflineGraphVC.m in Sources */,
+				0D01FBE91B129575002613A0 /* DeliveryGraphVC.m in Sources */,
+				0D01FBF61B129575002613A0 /* SiteVC.m in Sources */,
+				0D01FBE71B129575002613A0 /* CfrStatusVC.m in Sources */,
+				0D01FBF41B129575002613A0 /* PartnerVC.m in Sources */,
+				0D01FBF91B129575002613A0 /* StorageCommonVC.m in Sources */,
+				0D01FBD01B129575002613A0 /* BKOfflineDirectoryVC.m in Sources */,
+				0D01FBEE1B129575002613A0 /* main.m in Sources */,
+				0D01FBDF1B129575002613A0 /* CampaignVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D01FB851B129575002613A0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D01FB861B129575002613A0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		0D01FB871B129575002613A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D01FB881B129575002613A0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D01FB7A1B129544002613A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "ae85fa85-32e1-474d-89fd-71639b4ac05a";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D01FB7B1B129544002613A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "ae85fa85-32e1-474d-89fd-71639b4ac05a";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D01FB7D1B129544002613A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/anpwang/Documents/github/sixstreams/dependency,
+					/Users/anpwang/Documents/github/sixstreams/Bluekai/sdk/Bluekai,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Bluekai;
+				PROVISIONING_PROFILE = "1b0cc643-9ea2-45db-be09-3e3cbd24a592";
+			};
+			name = Debug;
+		};
+		0D01FB7E1B129544002613A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/anpwang/Documents/github/sixstreams/dependency,
+					/Users/anpwang/Documents/github/sixstreams/Bluekai/sdk/Bluekai,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Bluekai;
+				PROVISIONING_PROFILE = "1b0cc643-9ea2-45db-be09-3e3cbd24a592";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D01FB541B129544002613A0 /* Build configuration list for PBXProject "Bluekai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D01FB7A1B129544002613A0 /* Debug */,
+				0D01FB7B1B129544002613A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D01FB7C1B129544002613A0 /* Build configuration list for PBXNativeTarget "Bluekai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D01FB7D1B129544002613A0 /* Debug */,
+				0D01FB7E1B129544002613A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D01FB511B129544002613A0 /* Project object */;
+}

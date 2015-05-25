@@ -98,6 +98,7 @@
         return seriesStyle;
     }
 }
+
 //y axis style
 - (Graph2DAxisStyle *) yAxisStyle:(Graph2DView *)graph2DView
 {
@@ -110,9 +111,9 @@
     
     yAxisStyle.width = 1;
     
-    yAxisStyle.labelStyle.offset = 1;
+    yAxisStyle.labelStyle.offset = 10;
     yAxisStyle.tickStyle.width = 2.0;
-    yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
+    yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:14];
     yAxisStyle.labelStyle.color = [UIColor whiteColor];
     return yAxisStyle;
 }

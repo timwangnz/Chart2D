@@ -203,6 +203,7 @@
                     degree --;
                 }
             }
+            
             CGFloat power = pow(10, degree);
             
             CGFloat yMax = ceil(self.yMax * power)/power;
@@ -218,6 +219,7 @@
                 }
                 yMin = yMin - delta;
             }
+            
             if (yMax > self.yMax && delta > 0)
             {
                 while (yMax > self.yMax) {
@@ -268,18 +270,78 @@
          angle: 0
           font: self.caption.font
          color: self.caption.color
-      aligment: NSTextAlignmentLeft];
+      alignment: NSTextAlignmentLeft];
+}
+
+- (void) drawText : (NSArray *)textStyles
+               at : (CGPoint ) location
+        inContext : (CGContextRef) context
+{
+    int width = -1;
+    for (Graph2DTextStyle *textStyle in textStyles)
+    {
+        if (textStyle.calculatedWidth > width)
+        {
+            width = textStyle.calculatedWidth;
+        }
+    }
+    
+    for (Graph2DTextStyle *textStyle in textStyles)
+    {
+        CGRect rect = CGRectMake(location.x, textStyle.calculatedY - textStyle.calculatedHeight, width, textStyle.calculatedHeight);
+        [self text : textStyle.text
+            inRect : rect
+             angle : textStyle.angle
+              font : textStyle.font
+             color : textStyle.color
+         alignment : textStyle.alignment];
+    }
 }
 
 
-- (void) drawLegends: (NSArray *)data inContext:(CGContextRef) context
+- (void) drawText : (NSArray *)textStyles
+               at : (CGPoint) location
+        alignment : (NSTextAlignment) alignment
+        inContext : (CGContextRef) context
 {
-    UIFont *font = [UIFont fontWithName:DEFAULT_FONT size:12];
     int width = -1;
+    for (Graph2DTextStyle *textStyle in textStyles)
+    {
+        CGSize size = [textStyle.text sizeWithAttributes:@{NSFontAttributeName : textStyle.font}];
+        if (size.width > width)
+        {
+            width = size.width;
+        }
+        textStyle.calculatedWidth = size.width;
+        textStyle.calculatedHeight = size.height;
+    }
+    width = width + 5;
+    int j = 0 ;
+    for (Graph2DTextStyle *textStyle in textStyles)
+    {
+        CGPoint textLocation;
+        
+        textLocation.x = location.x;
+        textLocation.y = location.y + (j++) * textStyle.calculatedHeight + 5;
+        
+        [self text: textStyle.text
+           inRect : CGRectMake(textLocation.x, textLocation.y, width, textStyle.calculatedHeight)
+             angle: 0
+              font: textStyle.font
+             color: textStyle.color
+          alignment: alignment];
+    }
+}
+
+
+- (void) drawLegends : (NSArray *)data
+           inContext : (CGContextRef) context
+{
+    int width = -1;
+    NSMutableArray *legends = [NSMutableArray array];
     for (int j =0 ; j< [data count]; j++)
     {
         Graph2DSeriesStyle *style = [Graph2DSeriesStyle defaultStyle:self.chartType];
-        
         if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
         {
             style = [self.chartDelegate graph2DView:self styleForSeries :j];
@@ -287,38 +349,26 @@
         
         if (style.legend)
         {
-            CGSize size = [style.legend sizeWithAttributes:@{NSFontAttributeName : font}];
+            CGSize size = [style.legend.text sizeWithAttributes:@{NSFontAttributeName : style.legend.font}];
             if (size.width > width)
             {
                 width = size.width;
             }
+            style.legend.calculatedWidth = size.width;
+            style.legend.calculatedHeight = size.height;
+            [legends addObject:style.legend];
         }
-        
     }
     width = width + 5;
     
-    for (int j =0 ; j< [data count]; j++)
-    {
-        Graph2DSeriesStyle *style = [Graph2DSeriesStyle defaultStyle:self.chartType];
-        
-        if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
-        {
-            style = [self.chartDelegate graph2DView:self styleForSeries :j];
-        }
-        if (style.legend)
-        {
-            CGPoint textLocation;
-            textLocation.x = gBounds.origin.x + gBounds.size.width - width;
-            textLocation.y = gBounds.origin.y + j * 20 + 5;
-            [self text: style.legend
-               inRect : CGRectMake(textLocation.x, textLocation.y, width, 20)
-                 angle: 0
-                  font: font
-                 color: style.color
-              aligment: NSTextAlignmentLeft];
-        }
-
-    }
+    CGPoint textLocation;
+    textLocation.x = gBounds.origin.x + gBounds.size.width - width;
+    textLocation.y = gBounds.origin.y;
+    
+    [self drawText :legends
+                at :textLocation
+         alignment :NSTextAlignmentLeft
+         inContext :context];
 }
 
 - (void) drawCharts:(NSArray*)data inContext : (CGContextRef) context
@@ -373,6 +423,8 @@
         [self drawXAxis :context withStyle:xAxisStyle];
     }
     
+    
+    
     if(yAxisStyle && !yAxisStyle.hidden)
     {
         [self drawYAxis :context withStyle:yAxisStyle];
@@ -390,9 +442,7 @@
 
 - (void) drawBarChart : (NSArray *)data inContext:(CGContextRef) context
 {
-    //
     float barWidth = gBounds.size.width / maxItems;
-    
     NSMutableArray *stackHeight = [[NSMutableArray alloc]initWithCapacity:maxItems];
     
     for (int j =0 ; j < maxItems; j++)
@@ -432,7 +482,7 @@
                 NSNumber *acumlatedHeight = [stackHeight objectAtIndex:i];
                 acumlatedHeight = [NSNumber numberWithFloat: [acumlatedHeight floatValue] + floatValue];
                 [stackHeight replaceObjectAtIndex:i withObject:acumlatedHeight];
-                barY = gBottomLeft.y - gDrawingRect.size.height *  [acumlatedHeight floatValue];
+                 barY = gBottomLeft.y - gDrawingRect.size.height *  [acumlatedHeight floatValue];
             }
             
             float barHeight = gDrawingRect.size.height * (floatValue - lowFloatValue);
@@ -751,11 +801,15 @@
     
     CGFloat yValueDelta = (self.yMax - self.yMin)/(ticks  - 1);
     
-    for (int i = 0; i < ticks; i++)
+    if (axisStyle && !axisStyle.labelStyle.hidden)
     {
-        CGFloat y = gBottomLeft.y - i * deltaY + axisStyle.tickStyle.penWidth/2;
-        if (axisStyle && !axisStyle.labelStyle.hidden)
+        NSMutableArray *labelTicks = [NSMutableArray array];
+        int width = -1;
+        int height = -1;
+        
+        for (int i = 0; i < ticks; i++)
         {
+            CGFloat y = gBottomLeft.y - i * deltaY;
             UIFont *font = axisStyle.labelStyle.font;
             CGFloat angle = axisStyle.labelStyle.angle;
             
@@ -766,16 +820,38 @@
                 theText = [self.chartDelegate graph2DView:self yLabelAt:i];
             }
             
-            NSDictionary *attributes = @{NSFontAttributeName: font, NSForegroundColorAttributeName :  labelcolor};
+            Graph2DTextStyle *tickTextStyle = [[Graph2DTextStyle alloc]initWithText:theText color: labelcolor font:font];
+            
+            tickTextStyle.angle = angle;
+            tickTextStyle.alignment = NSTextAlignmentRight;
+            
+            NSDictionary *attributes = @{NSFontAttributeName: font};
             CGSize size = [theText sizeWithAttributes:attributes];
             
-            [self textAtPoint: theText
-                           at: CGPointMake(gBounds.origin.x - size.width - axisStyle.tickStyle.majorLength - axisStyle.labelStyle.offset, y - size.height/2)
-                     andAngle: angle
-                      andFont: font
-                     andColor: labelcolor];
+            if (width < size.width)
+            {
+                width = size.width;
+            }
+            
+            height = y + size.height;
+            
+            tickTextStyle.calculatedY = y + size.height/2;
+            tickTextStyle.calculatedX = -1;
+            tickTextStyle.calculatedWidth = size.width + 5;
+            tickTextStyle.calculatedHeight = size.height;
+            
+            [labelTicks addObject:tickTextStyle];
+
         }
         
+        int x = gBounds.origin.x - width - axisStyle.tickStyle.majorLength - axisStyle.labelStyle.offset;
+        
+        [self drawText:labelTicks at: CGPointMake(x, gBottomLeft.y) inContext:context];
+    }
+    
+    for (int i = 0; i < ticks; i++)
+    {
+        CGFloat y = gBottomLeft.y - i * deltaY + axisStyle.tickStyle.penWidth/2;
         CGContextSetStrokeColorWithColor(context, [tickcolor CGColor]);
         if(axisStyle.tickStyle.showMajorTicks)
         {
@@ -784,7 +860,6 @@
             CGContextAddLineToPoint(context, gBottomLeft.x, y );
             CGContextSetShouldAntialias(context, YES);
         }
-        
         
         if (axisStyle.tickStyle.showMinorTicks && axisStyle.tickStyle.minorTicks > 0 && i < ticks - 1)
         {
@@ -849,19 +924,19 @@
        angle:(CGFloat) angle
         font:(UIFont *) font
        color:(UIColor *) color
-   aligment :(NSTextAlignment) aligment
+   alignment :(NSTextAlignment) alignment
 {
     /// Make a copy of the default paragraph style
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     /// Set line break mode
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
     /// Set text alignment
-    paragraphStyle.alignment = aligment;
+    paragraphStyle.alignment = alignment;
     
     NSDictionary *attributes = @{ NSFontAttributeName: font,
                                   NSForegroundColorAttributeName: color,
                                   NSParagraphStyleAttributeName: paragraphStyle };
-    
+    //NSLog(@"%@ %@", NSStringFromCGRect(rect), text);
     [text drawInRect:rect withAttributes:attributes];
 }
 
@@ -869,7 +944,6 @@
 {
     Graph2DAxisStyle *axisStyle = xAxisStyle ? xAxisStyle : [Graph2DAxisStyle defaultStyle];
     
-
     int ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
     int minorTicks = axisStyle.tickStyle.minorTicks;
     
@@ -896,12 +970,12 @@
             x = gBottomLeft.x + i * deltaX;
             y = gBottomLeft.y + font.pointSize + axisStyle.labelStyle.offset;
             
-            if (axisStyle.labelStyle.aligment == Graph2DLabelAlignmentCenter)
+            if (axisStyle.labelStyle.alignment == NSTextAlignmentCenter)
             {
                 x = x + deltaX / 2;
             }
             
-            if (axisStyle.labelStyle.aligment == Graph2DLabelAlignmentRight)
+            if (axisStyle.labelStyle.alignment == NSTextAlignmentRight)
             {
                 x = x + deltaX;
             }

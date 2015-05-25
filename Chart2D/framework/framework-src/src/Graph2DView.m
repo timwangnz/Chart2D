@@ -122,12 +122,14 @@
     
     gBounds = CGRectMake(self.leftMargin, self.topMargin, width - self.leftMargin - self.rightMargin, height - self.bottomMargin - self.topMargin);
     
+    [self drawCharts:[self dataFromDelegate] inContext:context];
+    
     if (self.drawBorder)
     {
         [self drawBorder:context];
     }
     
-    [self drawCharts:[self dataFromDelegate] inContext:context];
+
 }
 
 //tobe overridden by subclasses

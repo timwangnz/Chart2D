@@ -121,7 +121,7 @@
         seriesStyle.lineStyle.width = 1.0;
         seriesStyle.fillStyle.colorFrom = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5];
         seriesStyle.fillStyle.colorTo = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
-        seriesStyle.legend = @"Test";
+        seriesStyle.legend = [[Graph2DTextStyle alloc]initWithText:@"Test" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
         seriesStyle.chartType = Graph2DLineChart;
         return seriesStyle;
     }
@@ -131,7 +131,7 @@
         seriesStyle.gradient = NO;
         seriesStyle.lineStyle.width = 3.0;
         seriesStyle.chartType = Graph2DLineChart;
-        seriesStyle.legend = @"For Real";
+        seriesStyle.legend = [[Graph2DTextStyle alloc]initWithText:@"Test Again" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
         return seriesStyle;
     }
     return nil;
@@ -156,7 +156,7 @@
     xAxisStyle.lineType = LineStyleSolid;
     
     xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:8];
-    xAxisStyle.labelStyle.offset = 5;
+    xAxisStyle.labelStyle.offset = -15;
     xAxisStyle.tickStyle.majorTicks = 5;
     xAxisStyle.tickStyle.minorTicks = 1;
     xAxisStyle.tickStyle.width = 0.5;
@@ -176,8 +176,9 @@
     
     yAxisStyle.width = 1.0;
     yAxisStyle.lineType = LineStyleSolid;
-    
+     yAxisStyle.labelStyle.offset = 15;
     yAxisStyle.tickStyle.majorTicks = 5;
+     
     yAxisStyle.tickStyle.majorLength = 7;
     yAxisStyle.tickStyle.minorLength = 4;
     yAxisStyle.labelStyle.hidden = YES;
