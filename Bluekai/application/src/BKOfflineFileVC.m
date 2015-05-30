@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.cellStyle = UITableViewCellStyleSubtitle;
+    self.cellStyle = UITableViewCellStyleSubtitle;
     self.sql = [NSString stringWithFormat: @"select filename, records, to_char(end_time, 'MM/DD') end_date from bk_offline_file where directory = '%@' and end_time between sysdate - 7 and sysdate order by end_time desc", self.partner];
     self.titleField = @"FILENAME";
     self.detailField = @"RECORDS";

@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Oracle. All rights reserved.
 //
 
-#import "StorageCommonVC.h"
+#import "BKTrendGraphVC.h"
 
-@interface OfflineGraphVC : StorageCommonVC
+@interface OfflineGraphVC : BKTrendGraphVC
+
 
 @end

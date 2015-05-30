@@ -18,11 +18,11 @@
 
 @implementation OfflineGraphVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    graphview.sql = @"select to_char(start_time, 'MM/DD HH24') TIME, sum(lookups) look_ups, sum(successes) successes, sum(not_found) not_found, sum(timeout_errors) timeouts from bk_offline_ingestion_view where start_time between sysdate - 7 and sysdate group by start_time order by start_time";
-    graphview.limit = 150;
+
+- (void) updateChart
+{
+    graphview.sql = [NSString stringWithFormat:@"select to_char(start_time, 'MM/DD HH24') TIME, sum(lookups) look_ups, sum(successes) successes, sum(not_found) not_found, sum(timeout_errors) timeouts from bk_offline_ingestion_view where start_time between sysdate - %d and sysdate group by start_time order by start_time", self.days == 0 ? 1 : self.days];
+    graphview.limit = 164;
     graphview.title = self.title;
     graphview.valueFields[0] = @"LOOK_UPS";
     graphview.valueFields[1] = @"SUCCESSES";
@@ -49,8 +49,7 @@
     graphview.chartType = Graph2DLineChart;
     graphview.fillStyle = [[Graph2DFillStyle alloc]init];
     graphview.fillStyle.color =[UIColor colorWithRed:0.1 green:0.2 blue:0.5 alpha:0.4];
+    graphview.cacheTTL = 3600;
     [graphview reload];
 }
-
-
 @end

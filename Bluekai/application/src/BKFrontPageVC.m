@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sql = @"select ORACLE.*, STATS.* from BK_ORACLE_VIEW ORACLE, BK_PROFILE_STATS_VIEW STATS where ORACLE.CREATED_AT  between sysdate -1 and sysdate AND ORACLE.CREATED_AT = STATS.CREATED_AT";
+    self.sql = @"select * from BK_ORACLE_VIEW where CREATED_AT between sysdate -1 and sysdate";
     sections = @{
                    @"Profiles" : @[@"PROFILES", @"UPDATED_IN30DAYS", @"UPDATED_IN7DAYS", @"UPDATED_24HR"],
                  @"ID Types" : @[@"ANDROID_IDS", @"APPLE_AD_IDS", @"STATS_ID", @"VERIZON_UIDHS", @"GOOGLE_AD_IDS", @"DESKTOP_IDS", @"FIRST_PARTY_IDS"],

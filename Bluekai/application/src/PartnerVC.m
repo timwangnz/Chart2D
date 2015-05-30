@@ -20,6 +20,7 @@
     self.sql = @"select PARTNER_NAME, PARTNER_ID, COMPANY_NAME, tagged_today, total_tagged, offline_updates, swapped_ids from bk_partner_view where created_at between sysdate - 1 and sysdate order by partner_name";
     self.titleField = @"PARTNER_NAME";
     self.detailField = @"PARTNER_ID";
+    self.cacheTTL = 3600*24;
     self.limit = 5000;
     [self getData];
 }

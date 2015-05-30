@@ -56,7 +56,6 @@
 - (void) refresh;
 - (CGRect) getGraphBounds;
 
-
 - (void) initChart;
 
 @end

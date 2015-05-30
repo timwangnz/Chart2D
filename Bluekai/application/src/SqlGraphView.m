@@ -26,6 +26,7 @@
     activityView.center = [self convertPoint:self.center fromView:self.superview];
     [super drawRect:rect];
 }
+
 - (id) initWithCoder:(NSCoder *) coder
 {
     self = [super initWithCoder:coder];
@@ -184,7 +185,7 @@
     {
         return @"";
     }
-    NSUInteger xAt = x * ([filteredObjects count] / (self.xAxisStyle.tickStyle.majorTicks  -1));
+    NSUInteger xAt = x * (1.0*[filteredObjects count] / (self.xAxisStyle.tickStyle.majorTicks  -1));
     if(xAt > [filteredObjects count] - 1)
     {
         xAt = [filteredObjects count] - 1;

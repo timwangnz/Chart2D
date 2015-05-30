@@ -18,6 +18,8 @@
       NSArray *keys;
 }
 
+- (IBAction)showOfflineUpdates: (id)sender;
+- (IBAction)showCFRStatus: (id)sender;
 
 - (IBAction)showSites:(id)sender;
 - (IBAction)showWins:(id)sender;
@@ -46,20 +48,19 @@
             @"TOTAL_TAGGED",
             @"TAGGED_TODAY"];
     
-    NSString *sql = @"select to_char(created_at, 'MM-DD-YYYY') CREATED_AT, sum(INVENTORY) inventory from bk_inventory_view inv where inv.site_id in (select site_id from bk_site where partner_id = %@) and sysdate - created_at < 11 group by inv.created_at order by created_at";
+    NSString *sql = @"select to_char(created_at, 'MM-DD-YYYY') CREATED_AT, total_tagged tags, offline_updates, swapped_ids, tagged_today from bk_partner_view where partner_id = %@ and sysdate - created_at < 14 order by created_at";
     
     chartview.sql = [NSString stringWithFormat:sql, self.partner[@"PARTNER_ID"]];
-    //NSLog(@"%@", chartview.sql);
+   
     chartview.limit = 20;
     chartview.title = @"Inventory";
-    chartview.valueFields[0] = @"INVENTORY";
+    chartview.valueFields[0] = @"TAGS";
     chartview.xLabelField = @"CREATED_AT";
-    chartview.legendType = Graph2DLegendNone;
-    chartview.caption = [[Graph2DTextStyle alloc]initWithText:@"Total Tagged Over Time"];
-    chartview.topMargin = 40;
+    chartview.legendType = Graph2DLegendNone;    chartview.topMargin = 40;
     chartview.bottomMargin = 60;
     chartview.leftMargin = 60;
     chartview.topPadding = 0;
+    chartview.cacheTTL = 3600;
     [chartview reload];
     
 }
@@ -93,6 +94,43 @@
     return 1;
 }
 
+- (void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id key =  keys[indexPath.row];
+    
+     if ([key isEqualToString:@"SWAPPED_IDS"])
+     {
+         chartview.title = @"Ids Swapped Over Time";
+         chartview.valueFields[0] = @"SWAPPED_IDS";
+         
+
+     }
+    if ([key isEqualToString:@"TOTAL_TAGGED"])
+    {
+        chartview.title = @"Total Tags Over Time";
+        chartview.valueFields[0] = @"TAGS";
+       
+        
+    }
+    if ([key isEqualToString:@"OFFLINE_UPDATES"])
+    {
+        chartview.title = @"Offline Updates Over Time";
+        chartview.valueFields[0] = @"OFFLINE_UPDATES";
+        
+        
+    }
+    if ([key isEqualToString:@"TAGGED_TODAY"])
+    {
+        chartview.title = @"Daily Tags Over Time";
+        chartview.valueFields[0] = @"TAGGED_TODAY";
+       
+        
+    }
+    chartview.caption = [[Graph2DTextStyle alloc]initWithText:chartview.title ];
+    [chartview reload];
+
+}
+
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return  nil;
@@ -119,6 +157,22 @@
     return cell;
 }
 
+- (IBAction)showCFRStatus:(id)sender
+{
+    SiteVC *siteVC = [[SiteVC alloc]init];
+    siteVC.partnerId = [self.partner[@"PARTNER_ID"] intValue];
+    siteVC.title = [NSString stringWithFormat:@"%@ Sites", self.partner[@"PARTNER_NAME"]];
+    [self.navigationController pushViewController:siteVC animated:YES];
+}
+
+- (IBAction)showOfflineUpdates:(id)sender
+{
+    SiteVC *siteVC = [[SiteVC alloc]init];
+    siteVC.partnerId = [self.partner[@"PARTNER_ID"] intValue];
+    siteVC.title = [NSString stringWithFormat:@"%@ Sites", self.partner[@"PARTNER_NAME"]];
+    [self.navigationController pushViewController:siteVC animated:YES];
+}
+
 - (IBAction)showSites:(id)sender
 {
     SiteVC *siteVC = [[SiteVC alloc]init];
@@ -126,6 +180,7 @@
     siteVC.title = [NSString stringWithFormat:@"%@ Sites", self.partner[@"PARTNER_NAME"]];
     [self.navigationController pushViewController:siteVC animated:YES];
 }
+
 - (IBAction)showWins:(id)sender
 {
     CampaignWinsVC *campaignVC = [[CampaignWinsVC alloc]init];

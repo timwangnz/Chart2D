@@ -18,11 +18,10 @@
 
 @implementation DeliveryGraphVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)updateChart {
+    graphview.sql = [NSString stringWithFormat: @"select to_char(start_time, 'MM/DD HH24:MI') TIME, sum(targeted) targeted, sum(LOSS_RECENCY) LOSS_RECENCY, sum(LOSS_BUYER_ONLY) BUYER_ONLY, sum(won) won from bk_delivery_view where start_time between sysdate - %d and sysdate group by start_time order by start_time", self.days == 0 ? 1 : self.days];
     
-    graphview.sql = @"select to_char(start_time, 'MM/DD') TIME, sum(targeted) targeted, sum(LOSS_RECENCY) LOSS_RECENCY, sum(LOSS_BUYER_ONLY) BUYER_ONLY, sum(won) won from bk_delivery_view where start_time between sysdate - 7 and sysdate group by start_time order by start_time";
-    graphview.limit = 150;
+    graphview.limit = 166;
     graphview.title = self.title;
     graphview.valueFields[0] = @"TARGETED";
     graphview.valueFields[1] = @"WON";
@@ -43,12 +42,13 @@
     graphview.chartType = Graph2DLineChart;
     graphview.fillStyle = nil;
     graphview.displayNames = @{
-                               @"LOSS_RECENCY":@"Already Won",
-                               @"BUYER_ONLY":@"Buyer Only",
+                               @"LOSS_RECENCY":@"Loss as Already Won",
+                               @"BUYER_ONLY":@"Loss as Buyer Only",
                                @"WON" : @"Won",
-                               @"TARGETED": @"Targed Profiles"
+                               @"TARGETED": @"Hourly Targeted Requests"
                                };
     //[graphview invalidateCache];
+    graphview.cacheTTL = 3600;
     [graphview reload];
 }
 

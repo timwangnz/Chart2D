@@ -59,6 +59,7 @@
 		0D01FBFD1B1295D4002613A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */; };
 		0D01FC001B129611002613A0 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFF1B129611002613A0 /* Chart2D.framework */; };
 		0D01FC021B129638002613A0 /* Bluekai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FC011B129638002613A0 /* Bluekai.framework */; };
+		0D9E7DC01B16C6F1006904C8 /* BKTrendGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,8 @@
 		0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0D01FBFF1B129611002613A0 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0D01FC011B129638002613A0 /* Bluekai.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bluekai.framework; path = ../sdk/Bluekai/Bluekai.framework; sourceTree = "<group>"; };
+		0D9E7DBE1B16C6F0006904C8 /* BKTrendGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTrendGraphVC.h; sourceTree = "<group>"; };
+		0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTrendGraphVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 				0D01FBC71B129575002613A0 /* SqlGraphView.m */,
 				0D01FBC81B129575002613A0 /* StorageCommonVC.h */,
 				0D01FBC91B129575002613A0 /* StorageCommonVC.m */,
+				0D9E7DBE1B16C6F0006904C8 /* BKTrendGraphVC.h */,
+				0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				0D01FBEF1B129575002613A0 /* MainVC.m in Sources */,
 				0D01FBE11B129575002613A0 /* CampaignWinsVC.m in Sources */,
 				0D01FBE51B129575002613A0 /* CFRGraphVC.m in Sources */,
+				0D9E7DC01B16C6F1006904C8 /* BKTrendGraphVC.m in Sources */,
 				0D01FBCD1B129575002613A0 /* BKEntityVC.m in Sources */,
 				0D01FBF81B129575002613A0 /* SqlGraphView.m in Sources */,
 				0D01FBEB1B129575002613A0 /* HTTPConnector.m in Sources */,
@@ -488,8 +494,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/anpwang/Documents/github/sixstreams/dependency,
@@ -498,7 +504,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Bluekai;
-				PROVISIONING_PROFILE = "1b0cc643-9ea2-45db-be09-3e3cbd24a592";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -506,8 +512,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (BGCGWTTZT7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/anpwang/Documents/github/sixstreams/dependency,
@@ -516,7 +522,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Bluekai;
-				PROVISIONING_PROFILE = "1b0cc643-9ea2-45db-be09-3e3cbd24a592";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -539,6 +545,7 @@
 				0D01FB7E1B129544002613A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
