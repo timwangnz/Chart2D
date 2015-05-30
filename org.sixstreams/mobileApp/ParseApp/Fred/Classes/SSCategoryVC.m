@@ -156,7 +156,8 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/category/series
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    cell.textLabel.text = [self cellText: [self.data objectForKey:key] forKey:key];
+    cell.textLabel.text = [[self cellText: [self.data objectForKey:key] forKey:key] display:36 header:8];
+    
     return cell;
 }
 

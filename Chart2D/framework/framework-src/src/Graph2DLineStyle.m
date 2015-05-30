@@ -13,7 +13,7 @@
 {
     Graph2DLineStyle *borderStyle = [[Graph2DLineStyle alloc]init];
     borderStyle.color = [UIColor lightGrayColor];
-    borderStyle.penWidth = 1.0;
+    borderStyle.penWidth = 0.2;
     borderStyle.lineType = LineStyleSolid;
     return borderStyle;
 }
@@ -23,7 +23,7 @@
     self = [super init];
     if (self)
     {
-        _penWidth = 1.0;
+        _penWidth = 0.2;
         
     }
     return self;

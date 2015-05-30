@@ -32,7 +32,7 @@
     NSMutableDictionary *categorized;
 }
 
-@property int serviceId;
+@property NSInteger serviceId;
 
 - (IBAction)changeMonth:(UIButton *)sender;
 
@@ -54,7 +54,6 @@
         {
             
             SSFilter *retrictionFilter = [SSFilter on:INVITATION_RESTRICTIONS op:CONTAINS value:@[PUBLIC_ACCESS, [[SSProfileVC profile] objectForKey:JOB_TITLE]]];
-            
             SSFilter *ownerFilter = [SSFilter on:AUTHOR op:EQ value:[SSProfileVC profileId]];
             //BOOLEAN Filter
             SSFilter *filter = [SSFilter filter:retrictionFilter or:ownerFilter];

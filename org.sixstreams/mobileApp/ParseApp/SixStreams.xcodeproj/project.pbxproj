@@ -3673,6 +3673,8 @@
 		0D52F1A9194B50E200C6A621 /* SSJobsLookups.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D52F1A8194B50E200C6A621 /* SSJobsLookups.m */; };
 		0D61B8B5193FF0A900A180AA /* SSSkillEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61B8B3193FF0A900A180AA /* SSSkillEditor.m */; };
 		0D61B8B6193FF0A900A180AA /* SSSkillEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D61B8B4193FF0A900A180AA /* SSSkillEditor.xib */; };
+		0D659D491B12ED24008C75B9 /* fred-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D659D481B12ED24008C75B9 /* fred-transparent.png */; };
+		0D659D4B1B12EDB8008C75B9 /* fred.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D659D4A1B12EDB8008C75B9 /* fred.xcassets */; };
 		0D65EF1819ACD307000D8F8D /* SSDateTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65EF1719ACD307000D8F8D /* SSDateTimeView.m */; };
 		0D65EF1B19ACE479000D8F8D /* SSMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65EF1A19ACE479000D8F8D /* SSMapView.m */; };
 		0D65EF5319ADB001000D8F8D /* pageNearby_Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D65EF2719ADB001000D8F8D /* pageNearby_Back.png */; };
@@ -4181,7 +4183,6 @@
 		0D870D631916C06000F607BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D5D1916C06000F607BD /* main.m */; };
 		0D870D641916C06000F607BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D5D1916C06000F607BD /* main.m */; };
 		0D870D6C1916C55A00F607BD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D870D681916C55A00F607BD /* iCarousel.m */; };
-		0D8DD7791A7E9CF20074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
 		0D8DD77A1A7E9CF70074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
 		0D8DD77B1A7E9CF80074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
 		0D8DD77C1A7E9CF90074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
@@ -4190,7 +4191,6 @@
 		0D8DD77F1A7E9CFB0074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
 		0D9BBB4C17F9E2B200FCE485 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB4B17F9E2B200FCE485 /* CoreLocation.framework */; };
 		0D9BBB4E17F9E2C700FCE485 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB4D17F9E2C700FCE485 /* AudioToolbox.framework */; };
-		0D9BBB5017F9E2DC00FCE485 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB4F17F9E2DC00FCE485 /* QuartzCore.framework */; };
 		0D9BBB5217F9E2ED00FCE485 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB5117F9E2ED00FCE485 /* Security.framework */; };
 		0DA39B4C1A429F6D0065681F /* applatics.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA39B4B1A429F6D0065681F /* applatics.xcassets */; };
 		0DBC479919EA00CE0080D095 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
@@ -4261,6 +4261,11 @@
 		0DD1FA841923039A009DAC4F /* job.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1FA831923039A009DAC4F /* job.xcassets */; };
 		0DD1FA86192303DC009DAC4F /* glue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1FA85192303DC009DAC4F /* glue.xcassets */; };
 		0DD1FAF419247050009DAC4F /* SSProfile4JobVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1FAF319247050009DAC4F /* SSProfile4JobVC.m */; };
+		0DD6EE4B1B14185900AC8E97 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DD6EE4C1B14185C00AC8E97 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB4F17F9E2DC00FCE485 /* QuartzCore.framework */; };
+		0DD6EE4D1B14186700AC8E97 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
+		0DD6EE4E1B14186B00AC8E97 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7781A7E9CF20074F31B /* JavaScriptCore.framework */; };
+		0DD6EE4F1B14187600AC8E97 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
 		0DE0E53C189D8CBA00FFC3FB /* SSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D83F5451832DC5200AFB0E6 /* SSApp.m */; };
 		0DE0E557189D8CBA00FFC3FB /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D83F5471832DC5200AFB0E6 /* SSAppDelegate.m */; };
 		0DE0E5D1189D8CBA00FFC3FB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9BBB5117F9E2ED00FCE485 /* Security.framework */; };
@@ -4279,7 +4284,6 @@
 		0DE0E5DF189D8CBA00FFC3FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968617F1424F00457A1A /* UIKit.framework */; };
 		0DE0E5E0189D8CBA00FFC3FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D08968217F1424F00457A1A /* Foundation.framework */; };
 		0DE50F511AC8697D005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
-		0DE50F521AC86984005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
 		0DE50F531AC86985005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
 		0DE50F541AC86985005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
 		0DE50F551AC86986005C15A2 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F501AC8697D005C15A2 /* Chart2D.framework */; };
@@ -4299,9 +4303,38 @@
 		0DFE525517F9DBA3001BFB25 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525417F9DBA3001BFB25 /* SystemConfiguration.framework */; };
 		0DFE525717F9DBE3001BFB25 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525617F9DBE3001BFB25 /* Social.framework */; };
 		0DFE525917F9DC24001BFB25 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525817F9DC24001BFB25 /* Accounts.framework */; };
-		0DFE525B17F9DC61001BFB25 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525A17F9DC61001BFB25 /* libsqlite3.dylib */; };
 		0DFE525D17F9DC6E001BFB25 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525C17F9DC6E001BFB25 /* libz.1.1.3.dylib */; };
 		0DFE525F17F9DCD0001BFB25 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE525E17F9DCD0001BFB25 /* MobileCoreServices.framework */; };
+		0DFE62041B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE62051B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE62061B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE62071B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE62081B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE62091B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE620A1B138088006A2D43 /* SSCalendarConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE62031B138088006A2D43 /* SSCalendarConnector.m */; };
+		0DFE620C1B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE620D1B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE620E1B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE620F1B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE62101B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE62111B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE62121B138160006A2D43 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFE620B1B13815F006A2D43 /* EventKit.framework */; };
+		0DFE62131B13B0AA006A2D43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DFE62141B13B0AB006A2D43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DFE62151B13B0AC006A2D43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DFE62161B13B0AD006A2D43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DFE62171B13B0AD006A2D43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479719EA00CE0080D095 /* GLKit.framework */; };
+		0DFE62191B13B0B2006A2D43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
+		0DFE621A1B13B0B2006A2D43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
+		0DFE621B1B13B0B3006A2D43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
+		0DFE621C1B13B0B3006A2D43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
+		0DFE621D1B13B0B4006A2D43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC479819EA00CE0080D095 /* OpenGLES.framework */; };
+		0DFE621F1B13B0C6006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
+		0DFE62201B13B0C6006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
+		0DFE62211B13B0C7006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
+		0DFE62221B13B0C8006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
+		0DFE62231B13B0C8006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
+		0DFE62241B13B0C9006A2D43 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D39DD9418B9621B004F6ECC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -5049,6 +5082,8 @@
 		0D61B8B2193FF0A900A180AA /* SSSkillEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSkillEditor.h; sourceTree = "<group>"; };
 		0D61B8B3193FF0A900A180AA /* SSSkillEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSkillEditor.m; sourceTree = "<group>"; };
 		0D61B8B4193FF0A900A180AA /* SSSkillEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSSkillEditor.xib; sourceTree = "<group>"; };
+		0D659D481B12ED24008C75B9 /* fred-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fred-transparent.png"; sourceTree = "<group>"; };
+		0D659D4A1B12EDB8008C75B9 /* fred.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = fred.xcassets; sourceTree = "<group>"; };
 		0D65EF1619ACD307000D8F8D /* SSDateTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDateTimeView.h; sourceTree = "<group>"; };
 		0D65EF1719ACD307000D8F8D /* SSDateTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDateTimeView.m; sourceTree = "<group>"; };
 		0D65EF1919ACE479000D8F8D /* SSMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMapView.h; sourceTree = "<group>"; };
@@ -5666,6 +5701,9 @@
 		0DFE525A17F9DC61001BFB25 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0DFE525C17F9DC6E001BFB25 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		0DFE525E17F9DCD0001BFB25 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0DFE62021B138088006A2D43 /* SSCalendarConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCalendarConnector.h; sourceTree = "<group>"; };
+		0DFE62031B138088006A2D43 /* SSCalendarConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCalendarConnector.m; sourceTree = "<group>"; };
+		0DFE620B1B13815F006A2D43 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5673,25 +5711,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8DD7791A7E9CF20074F31B /* JavaScriptCore.framework in Frameworks */,
 				0DCFF1701A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D9BBB5217F9E2ED00FCE485 /* Security.framework in Frameworks */,
 				0D2B857B18144194000378CA /* MapKit.framework in Frameworks */,
-				0D9BBB5017F9E2DC00FCE485 /* QuartzCore.framework in Frameworks */,
 				0D9BBB4E17F9E2C700FCE485 /* AudioToolbox.framework in Frameworks */,
 				0D9BBB4C17F9E2B200FCE485 /* CoreLocation.framework in Frameworks */,
 				0DFE525F17F9DCD0001BFB25 /* MobileCoreServices.framework in Frameworks */,
 				0DFE525D17F9DC6E001BFB25 /* libz.1.1.3.dylib in Frameworks */,
-				0DFE525B17F9DC61001BFB25 /* libsqlite3.dylib in Frameworks */,
+				0DFE621F1B13B0C6006A2D43 /* AVFoundation.framework in Frameworks */,
 				0DCFF1681A7EB83B008F4B61 /* Parse.framework in Frameworks */,
+				0DD6EE4D1B14186700AC8E97 /* Chart2D.framework in Frameworks */,
 				0DFE525917F9DC24001BFB25 /* Accounts.framework in Frameworks */,
+				0DD6EE4B1B14185900AC8E97 /* GLKit.framework in Frameworks */,
 				0DFE525717F9DBE3001BFB25 /* Social.framework in Frameworks */,
 				0DFE525517F9DBA3001BFB25 /* SystemConfiguration.framework in Frameworks */,
 				0DFE525317F9DB59001BFB25 /* CFNetwork.framework in Frameworks */,
+				0DD6EE4F1B14187600AC8E97 /* OpenGLES.framework in Frameworks */,
 				0D08968517F1424F00457A1A /* CoreGraphics.framework in Frameworks */,
+				0DD6EE4C1B14185C00AC8E97 /* QuartzCore.framework in Frameworks */,
+				0DFE620C1B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D08968717F1424F00457A1A /* UIKit.framework in Frameworks */,
-				0DE50F521AC86984005C15A2 /* Chart2D.framework in Frameworks */,
 				0D08968317F1424F00457A1A /* Foundation.framework in Frameworks */,
+				0DD6EE4E1B14186B00AC8E97 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5707,18 +5748,22 @@
 				0D2E7CA7185380E0000C7D67 /* AudioToolbox.framework in Frameworks */,
 				0D2E7CA8185380E0000C7D67 /* CoreLocation.framework in Frameworks */,
 				0D2E7CA9185380E0000C7D67 /* MobileCoreServices.framework in Frameworks */,
+				0DFE62221B13B0C8006A2D43 /* AVFoundation.framework in Frameworks */,
 				0D2E7CAA185380E0000C7D67 /* libz.1.1.3.dylib in Frameworks */,
 				0DE50F551AC86986005C15A2 /* Chart2D.framework in Frameworks */,
 				0D2E7CAB185380E0000C7D67 /* libsqlite3.dylib in Frameworks */,
 				0D2E7CAC185380E0000C7D67 /* Accounts.framework in Frameworks */,
 				0DCFF16B1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
 				0D2E7CAD185380E0000C7D67 /* Social.framework in Frameworks */,
+				0DFE62151B13B0AC006A2D43 /* GLKit.framework in Frameworks */,
 				0D2E7CAE185380E0000C7D67 /* SystemConfiguration.framework in Frameworks */,
 				0D2E7CAF185380E0000C7D67 /* CFNetwork.framework in Frameworks */,
+				0DFE620F1B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D2E7BCD18537786000C7D67 /* Foundation.framework in Frameworks */,
 				0D8DD77C1A7E9CF90074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D2E7BCE18537786000C7D67 /* CoreGraphics.framework in Frameworks */,
 				0D2E7BCF18537786000C7D67 /* UIKit.framework in Frameworks */,
+				0DFE621B1B13B0B3006A2D43 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5730,18 +5775,22 @@
 				0D42541F18881384006AC83E /* Security.framework in Frameworks */,
 				0DCFF1741A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D42542018881384006AC83E /* MapKit.framework in Frameworks */,
+				0DFE62131B13B0AA006A2D43 /* GLKit.framework in Frameworks */,
 				0D42542118881384006AC83E /* QuartzCore.framework in Frameworks */,
 				0D42542218881384006AC83E /* AudioToolbox.framework in Frameworks */,
 				0D42542318881384006AC83E /* CoreLocation.framework in Frameworks */,
 				0D42542518881384006AC83E /* MobileCoreServices.framework in Frameworks */,
 				0D42542618881384006AC83E /* libz.1.1.3.dylib in Frameworks */,
+				0DFE62231B13B0C8006A2D43 /* AVFoundation.framework in Frameworks */,
 				0D42542718881384006AC83E /* libsqlite3.dylib in Frameworks */,
 				0D42542818881384006AC83E /* Accounts.framework in Frameworks */,
 				0DCFF16C1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
 				0D42542918881384006AC83E /* Social.framework in Frameworks */,
 				0D42542A18881384006AC83E /* SystemConfiguration.framework in Frameworks */,
+				0DFE621A1B13B0B2006A2D43 /* OpenGLES.framework in Frameworks */,
 				0D42542B18881384006AC83E /* CFNetwork.framework in Frameworks */,
 				0D42542C18881384006AC83E /* CoreGraphics.framework in Frameworks */,
+				0DFE62101B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D8DD77D1A7E9CFA0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D42542D18881384006AC83E /* UIKit.framework in Frameworks */,
 				0D42542E18881384006AC83E /* Foundation.framework in Frameworks */,
@@ -5756,18 +5805,22 @@
 				0DCFF1761A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D82242818E8816200A928B6 /* Security.framework in Frameworks */,
 				0D82242918E8816200A928B6 /* QuartzCore.framework in Frameworks */,
+				0DFE62141B13B0AB006A2D43 /* GLKit.framework in Frameworks */,
 				0D82242A18E8816200A928B6 /* AudioToolbox.framework in Frameworks */,
 				0D82242B18E8816200A928B6 /* CoreLocation.framework in Frameworks */,
 				0D82242C18E8816200A928B6 /* MobileCoreServices.framework in Frameworks */,
 				0D82242D18E8816200A928B6 /* libz.1.1.3.dylib in Frameworks */,
 				0D82242E18E8816200A928B6 /* libsqlite3.dylib in Frameworks */,
+				0DFE62241B13B0C9006A2D43 /* AVFoundation.framework in Frameworks */,
 				0D82242F18E8816200A928B6 /* Accounts.framework in Frameworks */,
 				0DCFF16E1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
 				0D82243018E8816200A928B6 /* Social.framework in Frameworks */,
 				0D82243118E8816200A928B6 /* SystemConfiguration.framework in Frameworks */,
 				0D82243218E8816200A928B6 /* CFNetwork.framework in Frameworks */,
+				0DFE62191B13B0B2006A2D43 /* OpenGLES.framework in Frameworks */,
 				0D82243318E8816200A928B6 /* Foundation.framework in Frameworks */,
 				0D8DD77F1A7E9CFB0074F31B /* JavaScriptCore.framework in Frameworks */,
+				0DFE62121B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D82243418E8816200A928B6 /* CoreGraphics.framework in Frameworks */,
 				0DE50F571AC86988005C15A2 /* Chart2D.framework in Frameworks */,
 				0D82243518E8816200A928B6 /* UIKit.framework in Frameworks */,
@@ -5782,18 +5835,22 @@
 				0DCFF1711A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D83F42E1832D80000AFB0E6 /* MapKit.framework in Frameworks */,
 				0D83F42F1832D80000AFB0E6 /* QuartzCore.framework in Frameworks */,
+				0DFE62171B13B0AD006A2D43 /* GLKit.framework in Frameworks */,
 				0D83F4301832D80000AFB0E6 /* AudioToolbox.framework in Frameworks */,
 				0D83F4311832D80000AFB0E6 /* CoreLocation.framework in Frameworks */,
 				0D83F4331832D80000AFB0E6 /* MobileCoreServices.framework in Frameworks */,
 				0D83F4341832D80000AFB0E6 /* libz.1.1.3.dylib in Frameworks */,
 				0D83F4351832D80000AFB0E6 /* libsqlite3.dylib in Frameworks */,
+				0DFE62201B13B0C6006A2D43 /* AVFoundation.framework in Frameworks */,
 				0D83F4361832D80000AFB0E6 /* Accounts.framework in Frameworks */,
 				0DCFF1691A7EB83B008F4B61 /* Parse.framework in Frameworks */,
 				0D83F4371832D80000AFB0E6 /* Social.framework in Frameworks */,
 				0D83F4381832D80000AFB0E6 /* SystemConfiguration.framework in Frameworks */,
 				0D83F4391832D80000AFB0E6 /* CFNetwork.framework in Frameworks */,
+				0DFE621D1B13B0B4006A2D43 /* OpenGLES.framework in Frameworks */,
 				0D83F43A1832D80000AFB0E6 /* CoreGraphics.framework in Frameworks */,
 				0D8DD77A1A7E9CF70074F31B /* JavaScriptCore.framework in Frameworks */,
+				0DFE620D1B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D83F43B1832D80000AFB0E6 /* UIKit.framework in Frameworks */,
 				0DE50F531AC86985005C15A2 /* Chart2D.framework in Frameworks */,
 				0D83F43C1832D80000AFB0E6 /* Foundation.framework in Frameworks */,
@@ -5808,18 +5865,22 @@
 				0DCFF1721A7EB842008F4B61 /* FacebookSDK.framework in Frameworks */,
 				0D83F59C1832E29300AFB0E6 /* MapKit.framework in Frameworks */,
 				0D83F59D1832E29300AFB0E6 /* QuartzCore.framework in Frameworks */,
+				0DFE62161B13B0AD006A2D43 /* GLKit.framework in Frameworks */,
 				0D83F59E1832E29300AFB0E6 /* AudioToolbox.framework in Frameworks */,
 				0D83F59F1832E29300AFB0E6 /* CoreLocation.framework in Frameworks */,
 				0D83F5A11832E29300AFB0E6 /* MobileCoreServices.framework in Frameworks */,
 				0D83F5A21832E29300AFB0E6 /* libz.1.1.3.dylib in Frameworks */,
 				0DE50F541AC86985005C15A2 /* Chart2D.framework in Frameworks */,
+				0DFE62211B13B0C7006A2D43 /* AVFoundation.framework in Frameworks */,
 				0D83F5A31832E29300AFB0E6 /* libsqlite3.dylib in Frameworks */,
 				0D83F5A41832E29300AFB0E6 /* Accounts.framework in Frameworks */,
 				0DCFF16A1A7EB83B008F4B61 /* Parse.framework in Frameworks */,
 				0D83F5A51832E29300AFB0E6 /* Social.framework in Frameworks */,
 				0D83F5A61832E29300AFB0E6 /* SystemConfiguration.framework in Frameworks */,
+				0DFE621C1B13B0B3006A2D43 /* OpenGLES.framework in Frameworks */,
 				0D83F5A71832E29300AFB0E6 /* CFNetwork.framework in Frameworks */,
 				0D83F5A81832E29300AFB0E6 /* CoreGraphics.framework in Frameworks */,
+				0DFE620E1B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0D8DD77B1A7E9CF80074F31B /* JavaScriptCore.framework in Frameworks */,
 				0D83F5A91832E29300AFB0E6 /* UIKit.framework in Frameworks */,
 				0D83F5AA1832E29300AFB0E6 /* Foundation.framework in Frameworks */,
@@ -5846,6 +5907,7 @@
 				0DE0E5D9189D8CBA00FFC3FB /* libsqlite3.dylib in Frameworks */,
 				0D8DD77E1A7E9CFA0074F31B /* JavaScriptCore.framework in Frameworks */,
 				0DE0E5DA189D8CBA00FFC3FB /* Accounts.framework in Frameworks */,
+				0DFE62111B138160006A2D43 /* EventKit.framework in Frameworks */,
 				0DE0E5DB189D8CBA00FFC3FB /* Social.framework in Frameworks */,
 				0DE0E5DC189D8CBA00FFC3FB /* SystemConfiguration.framework in Frameworks */,
 				0DE0E5DD189D8CBA00FFC3FB /* CFNetwork.framework in Frameworks */,
@@ -5888,6 +5950,7 @@
 		0D08968117F1424F00457A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DFE620B1B13815F006A2D43 /* EventKit.framework */,
 				0DE50F501AC8697D005C15A2 /* Chart2D.framework */,
 				0DCFF16F1A7EB842008F4B61 /* FacebookSDK.framework */,
 				0DCFF1671A7EB83B008F4B61 /* Parse.framework */,
@@ -5935,6 +5998,7 @@
 		0D2570941A7EDFC60087E51B /* ss-frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DFE62011B138088006A2D43 /* Calendar */,
 				0D2570951A7EDFC60087E51B /* CommonVCs */,
 				0D2570D51A7EDFC60087E51B /* Drawing App */,
 				0D25710A1A7EDFC60087E51B /* EntityEditor */,
@@ -7895,6 +7959,8 @@
 		0D870D021916B73400F607BD /* Fred */ = {
 			isa = PBXGroup;
 			children = (
+				0D659D4A1B12EDB8008C75B9 /* fred.xcassets */,
+				0D659D481B12ED24008C75B9 /* fred-transparent.png */,
 				0D870D031916B73400F607BD /* Classes */,
 				0D870D0E1916B73400F607BD /* Fred-Info.plist */,
 				0D870D0F1916B73400F607BD /* SSTimeSeriesGraphVC.h */,
@@ -8175,6 +8241,15 @@
 			name = "Job VC";
 			sourceTree = "<group>";
 		};
+		0DFE62011B138088006A2D43 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				0DFE62021B138088006A2D43 /* SSCalendarConnector.h */,
+				0DFE62031B138088006A2D43 /* SSCalendarConnector.m */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -8309,6 +8384,9 @@
 				TargetAttributes = {
 					0D08967E17F1424E00457A1A = {
 						DevelopmentTeam = WS3XCXHS4C;
+					};
+					0D42539D18881384006AC83E = {
+						DevelopmentTeam = JUG9VDVQYA;
 					};
 					0D82239218E8816200A928B6 = {
 						DevelopmentTeam = JUG9VDVQYA;
@@ -9581,6 +9659,7 @@
 				0D25756E1A7EDFC70087E51B /* SSColorPickerVC.xib in Resources */,
 				0D25780E1A7EDFC70087E51B /* 07-map-marker.png in Resources */,
 				0D2575F31A7EDFC70087E51B /* editprofile_button.png in Resources */,
+				0D659D4B1B12EDB8008C75B9 /* fred.xcassets in Resources */,
 				0D257A5A1A7EDFC80087E51B /* 173-eyedropper.png in Resources */,
 				0D2578071A7EDFC70087E51B /* 06-magnify.png in Resources */,
 				0D2579181A7EDFC80087E51B /* 131-tower.png in Resources */,
@@ -9709,6 +9788,7 @@
 				0D257A141A7EDFC80087E51B /* 164-glasses-2.png in Resources */,
 				0D257D941A7EDFC80087E51B /* save.png in Resources */,
 				0D257F461A7EDFC80087E51B /* PageGroupDetail_listProfileX2.png in Resources */,
+				0D659D491B12ED24008C75B9 /* fred-transparent.png in Resources */,
 				0D2573C31A7EDFC70087E51B /* star.png in Resources */,
 				0D257AED1A7EDFC80087E51B /* 192-credit-card.png in Resources */,
 				0D2577C11A7EDFC70087E51B /* back-arrowx2.png in Resources */,
@@ -11501,6 +11581,7 @@
 				0D257F811A7EDFC80087E51B /* SSGroupVC.m in Sources */,
 				0DE6A1C6193A4E31009A7C32 /* SSMyGlueProfileVC.m in Sources */,
 				0D17E4E11A53D9BF00196E26 /* SSSATWordVC.m in Sources */,
+				0DFE62041B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D2574051A7EDFC70087E51B /* SSRoundLabel.m in Sources */,
 				0D2576F91A7EDFC70087E51B /* ImageView.m in Sources */,
 				0D25770E1A7EDFC70087E51B /* MessageView.m in Sources */,
@@ -11655,6 +11736,7 @@
 				0D2574391A7EDFC70087E51B /* SSTableViewCell.m in Sources */,
 				0D25737C1A7EDFC70087E51B /* SSSearchVC.m in Sources */,
 				0D2581211A7EDFC80087E51B /* SSCommentView.m in Sources */,
+				0DFE62071B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D25738A1A7EDFC70087E51B /* SSShuttleVC.m in Sources */,
 				0D2575661A7EDFC70087E51B /* SSColorPickerVC.m in Sources */,
 				0D2577731A7EDFC70087E51B /* SSContainerVC.m in Sources */,
@@ -11831,6 +11913,7 @@
 				0D2580F81A7EDFC80087E51B /* SSActivityView.m in Sources */,
 				0D2577201A7EDFC70087E51B /* ProgressView.m in Sources */,
 				0D2575831A7EDFC70087E51B /* SSReferenceEditorVC.m in Sources */,
+				0DFE62081B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D2581531A7EDFC80087E51B /* SSKeyChainUtil.m in Sources */,
 				0D2576A91A7EDFC70087E51B /* SSTalkImageView.m in Sources */,
 				0D870D1A1916B73400F607BD /* SSCategoryVC.m in Sources */,
@@ -12006,6 +12089,7 @@
 				0D2581471A7EDFC80087E51B /* SSGeoCodeUtil.m in Sources */,
 				0D25766C1A7EDFC70087E51B /* iCarousel.m in Sources */,
 				0D2580521A7EDFC80087E51B /* SSSecurityVC.m in Sources */,
+				0DFE620A1B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D25745F1A7EDFC70087E51B /* GLPen.m in Sources */,
 				0D25807C1A7EDFC80087E51B /* SSStorageManager.m in Sources */,
 				0D2574BA1A7EDFC70087E51B /* SSGLKView.m in Sources */,
@@ -12163,6 +12247,7 @@
 				0D25801C1A7EDFC80087E51B /* SSMyProfileVC.m in Sources */,
 				0D257F741A7EDFC80087E51B /* SSGroupEditorVC.m in Sources */,
 				0D2575E91A7EDFC70087E51B /* SSValueLabel.m in Sources */,
+				0DFE62051B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D2576131A7EDFC70087E51B /* SSDeckHolderView.m in Sources */,
 				0D2574BC1A7EDFC70087E51B /* SSGraph.m in Sources */,
 				0D25813B1A7EDFC80087E51B /* SSBase64.m in Sources */,
@@ -12403,6 +12488,7 @@
 				0D25806A1A7EDFC80087E51B /* SSConnection.m in Sources */,
 				0D2574B61A7EDFC70087E51B /* SSGLKView.m in Sources */,
 				0D25741C1A7EDFC70087E51B /* SSShadowView.m in Sources */,
+				0DFE62061B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D2574381A7EDFC70087E51B /* SSTableViewCell.m in Sources */,
 				0D2574541A7EDFC70087E51B /* SSToolbarView.m in Sources */,
 				0D2580A91A7EDFC80087E51B /* SSSettingEditorVC.m in Sources */,
@@ -12586,6 +12672,7 @@
 				0D2575221A7EDFC70087E51B /* SSListOfValueView.m in Sources */,
 				0D2577831A7EDFC70087E51B /* SSIconView.m in Sources */,
 				0D2576171A7EDFC70087E51B /* SSDeckHolderView.m in Sources */,
+				0DFE62091B138088006A2D43 /* SSCalendarConnector.m in Sources */,
 				0D2576DB1A7EDFC70087E51B /* SSMapMarker.m in Sources */,
 				0D2580AC1A7EDFC80087E51B /* SSSettingEditorVC.m in Sources */,
 				0D2575D81A7EDFC70087E51B /* SSRoundTextView.m in Sources */,
@@ -12650,8 +12737,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -12667,9 +12754,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "4020c0c5-0e09-4eda-8109-546a1633f6c8";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12692,8 +12779,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (J42W3G8YTA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (J42W3G8YTA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -12703,8 +12790,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "4020c0c5-0e09-4eda-8109-546a1633f6c8";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -12716,8 +12804,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Glue;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../dependency",
 					/Users/anpwang/Documents/github/dependency,
@@ -12725,9 +12813,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "11ecacf0-9a76-4239-a970-2aa47a0d595f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12738,8 +12826,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Glue;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloofy LLC (WS3XCXHS4C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../dependency",
 					/Users/anpwang/Documents/github/dependency,
@@ -12747,9 +12835,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "Glue/Glue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = Glue;
-				PROVISIONING_PROFILE = "11ecacf0-9a76-4239-a970-2aa47a0d595f";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -12810,6 +12898,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
@@ -12821,6 +12911,7 @@
 				INFOPLIST_FILE = "Fred/Fred-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Fred;
+				PROVISIONING_PROFILE = "fad6dac9-589e-471a-8afc-93a5870fed49";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -12831,6 +12922,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anping Wang (VRV4FDMRCS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Mobile",
@@ -12842,6 +12935,7 @@
 				INFOPLIST_FILE = "Fred/Fred-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Fred;
+				PROVISIONING_PROFILE = "fad6dac9-589e-471a-8afc-93a5870fed49";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -12867,7 +12961,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "JobVCs/Jobs-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = Jobs;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -12891,7 +12985,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sixstreams-Prefix.pch";
 				INFOPLIST_FILE = "JobVCs/Jobs-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = Jobs;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -29,7 +29,7 @@
      IBOutlet iCarousel *detailCarousel;
      int topVisibleIndex;
      UIView *viewHolder;
-     int currentPage;
+     NSUInteger currentPage;
      NSTimer *timer;
      int animationIdx;
      UITapGestureRecognizer *tapGesture;

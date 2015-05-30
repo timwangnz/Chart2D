@@ -89,7 +89,6 @@
 
 - (IBAction) showSearch:(id) sender
 {
-    
     SSSearchVC *events = [[SSSearchVC alloc]init];
     events.objectType = MEETING_CLASS;
     events.titleKey = TITLE;
@@ -143,7 +142,7 @@
     {
         //NSString *date = [[invite objectForKey:DATE_FROM] toDate];
         NSDateComponents *components = [[NSCalendar currentCalendar]
-                                        components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                        components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                                         fromDate:[invite objectForKey:DATE_FROM]];
         NSDate *date = [[NSCalendar currentCalendar]
                         dateFromComponents:components];
@@ -295,8 +294,8 @@
     id service = item[SERVICE];
     if (service)
     {
-        NSInteger serviceId = [[SSGlueCatVC services] indexOfObject:service];
-        NSString *imgName = [NSString stringWithFormat:@"sub_bg0%d_01", serviceId + 1];
+        NSUInteger serviceId = [[SSGlueCatVC services] indexOfObject:service];
+        NSString *imgName = [NSString stringWithFormat:@"sub_bg0%ld_01", (serviceId + 1)];
         cell.statusIcon.image =[UIImage imageNamed:imgName];
     }
     else

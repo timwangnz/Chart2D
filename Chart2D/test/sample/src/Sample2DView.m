@@ -58,7 +58,7 @@
     self.dataSource = self;
     self.chartDelegate = self;
     self.view2DDelegate = self;
-    self.borderStyle = BorderStyleNone;
+    self.borderStyle = BorderStyle4Sides;
     count = 100;
     waves = 6;
     self.legendType = Graph2DLegendTop;
@@ -142,7 +142,7 @@
 {
     Graph2DLineStyle *lineStyle = [[Graph2DLineStyle alloc]init];
     lineStyle.color = [UIColor whiteColor];
-    lineStyle.width = 0.0;
+    lineStyle.penWidth = 0.1;
     lineStyle.lineType = LineStyleSolid;
     return lineStyle;
 }
@@ -152,14 +152,14 @@
 {
     Graph2DAxisStyle *xAxisStyle = [Graph2DAxisStyle defaultStyle];
     xAxisStyle.color = [UIColor whiteColor];
-    xAxisStyle.width = 1.0;
+    xAxisStyle.penWidth = 0.1;
     xAxisStyle.lineType = LineStyleSolid;
     
     xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:8];
-    xAxisStyle.labelStyle.offset = -15;
+    xAxisStyle.labelStyle.offset = 5;
     xAxisStyle.tickStyle.majorTicks = 5;
     xAxisStyle.tickStyle.minorTicks = 1;
-    xAxisStyle.tickStyle.width = 0.5;
+    xAxisStyle.tickStyle.penWidth = 0.1;
     xAxisStyle.tickStyle.majorLength = 7;
     xAxisStyle.tickStyle.minorLength = 4;
     xAxisStyle.labelStyle.angle = M_PI_4;
@@ -174,11 +174,11 @@
 {
     Graph2DAxisStyle *yAxisStyle = [Graph2DAxisStyle defaultStyle];
     
-    yAxisStyle.width = 1.0;
+    yAxisStyle.penWidth = 0.1;
     yAxisStyle.lineType = LineStyleSolid;
-     yAxisStyle.labelStyle.offset = 15;
+     yAxisStyle.labelStyle.offset = -15;
     yAxisStyle.tickStyle.majorTicks = 5;
-     
+     yAxisStyle.tickStyle.penWidth = 0.1;
     yAxisStyle.tickStyle.majorLength = 7;
     yAxisStyle.tickStyle.minorLength = 4;
     yAxisStyle.labelStyle.hidden = YES;

@@ -249,7 +249,7 @@
     
     CGContextBeginPath(context);
     CGContextSetShouldAntialias(context, NO);
-    CGContextSetLineWidth(context, 1);
+   
     
     Graph2DLineStyle *lineStyle = [Graph2DLineStyle borderStyle];
     
@@ -259,6 +259,7 @@
     }
     
     CGContextSetLineWidth(context, lineStyle.penWidth);
+    
     CGContextSetStrokeColorWithColor(context, [lineStyle.color CGColor]);
     
     if (lineStyle.lineType == LineStyleDash)
@@ -274,7 +275,7 @@
     
     if (self.borderStyle == BorderStyleLeft || self.borderStyle == BorderStyle4Sides)
     {
-        CGContextMoveToPoint(context, gBounds.origin.x, gBounds.origin.y);
+        CGContextMoveToPoint(context, gBounds.origin.x , gBounds.origin.y);
         CGContextAddLineToPoint(context, gBounds.origin.x, gBounds.origin.y + gBounds.size.height);
     }
     

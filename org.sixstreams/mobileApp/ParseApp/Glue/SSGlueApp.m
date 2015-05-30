@@ -10,6 +10,8 @@
 #import "SSGlueApp.h"
 #import "SixStreams.h"
 #import "SSGlueSettingsVC.h"
+#import "SSGluedVC.h"
+#import "SSGlueProfileVC.h"
 
 #import "SSEventVC.h"
 #import "SSProfileEditorVC.h"
@@ -18,12 +20,12 @@
 #import "SSFilter.h"
 #import "SSFriendVC.h"
 #import "SSSecurityVC.h"
-#import "SSGluedVC.h"
+
 #import "SSImagesVC.h"
 #import "SSProfileVC.h"
 #import "SSConfigManager.h"
 #import "SSActivityVC.h"
-#import "SSGlueProfileVC.h"
+
 #import "SSSpotlightView.h"
 #import "SSGroupVC.h"
 #import "SSMenuVC.h"
@@ -34,6 +36,7 @@
 #import "SSMembershipVC.h"
 #import "SSValueLabel.h"
 #import "SSMyGroupsVC.h"
+#import "SSCalendarConnector.h"
 
 @interface SSGlueApp ()<SSDeckViewVCDelegate>
 {
@@ -100,7 +103,6 @@
     deckViewVC.tabBarItem.image = [UIImage imageNamed:@"pageMenuNav_GlueIcon"];
     deckViewVC.delegate = self;
     
-    
     invites = [[SSInviteVC alloc]init];
     [invites.predicates addObject:[SSFilter on:INVITEE_ID
                                             op:EQ
@@ -143,12 +145,11 @@
     [menuVC.menuItems addObject: myGroups];
     
     [menuVC.menuItems addObject: invites];
-    //[menuVC.menuItems addObject: wordsVC];
     
     [menuVC.menuItems addObject: settingsTab];
   
     deckViewVC.menuViewControl = menuVC;
-
+   
     navCtrl = [[UINavigationController alloc]initWithRootViewController:deckViewVC];
     return navCtrl;
 }
@@ -210,6 +211,7 @@
     if ([itemType isEqualToString:MEETING_CLASS])
     {
         static int imgSize = 48;
+        
         SSImageView *iconImg = [[SSImageView alloc]initWithFrame:CGRectMake((view.frame.size.width - imgSize)/2, 10, imgSize, imgSize)];
         
         iconImg.cornerRadius = imgSize/2;

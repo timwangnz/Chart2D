@@ -26,7 +26,7 @@
 - (NSString *) fromCamelCase;
 - (NSString *) toCurrency;
 - (NSString *) toNumber;
-
+- (NSString *) display: (int) maxLength header :(int) header;
 - (id) toKeywordList;
 @end
 

@@ -20,6 +20,7 @@
         _showMinorTicks = NO;
         _minorTicks = 1;
         _minorTicks = 10;
+        self.penWidth = 0.2;
     }
     return self;
 }

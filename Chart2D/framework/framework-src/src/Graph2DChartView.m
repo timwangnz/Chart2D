@@ -532,7 +532,7 @@
 
 - (void)drawLineChart: (NSArray *)data inContext:(CGContextRef) context
 {
-    [self drawGrid:context];
+
     
     for (int j =0 ; j< [data count]; j++)
     {
@@ -797,9 +797,10 @@
     
     int minorTicks = axisStyle.tickStyle.minorTicks;
     
-    float deltaY = gBounds.size.height / (ticks - 1);
+    
     
     CGFloat yValueDelta = (self.yMax - self.yMin)/(ticks  - 1);
+    float deltaY = gBounds.size.height / (ticks - 1);
     
     if (axisStyle && !axisStyle.labelStyle.hidden)
     {
@@ -851,10 +852,11 @@
     
     for (int i = 0; i < ticks; i++)
     {
-        CGFloat y = gBottomLeft.y - i * deltaY + axisStyle.tickStyle.penWidth/2;
+        CGFloat y = gBottomLeft.y - i * deltaY;
         CGContextSetStrokeColorWithColor(context, [tickcolor CGColor]);
         if(axisStyle.tickStyle.showMajorTicks)
         {
+            CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
             CGContextSetShouldAntialias(context, NO);
             CGContextMoveToPoint(context, gBottomLeft.x - axisStyle.tickStyle.majorLength, y );
             CGContextAddLineToPoint(context, gBottomLeft.x, y );
@@ -868,6 +870,7 @@
             for(int j=1;j < minorTicks + 1;j++)
             {
                 CGContextSetShouldAntialias(context, NO);
+                CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
                 CGContextMoveToPoint(context, gBottomLeft.x, y - j * minorDelta);
                 CGContextAddLineToPoint(context, gBottomLeft.x - axisStyle.tickStyle.minorLength, y - j * minorDelta);
                 CGContextSetShouldAntialias(context, YES);
@@ -875,12 +878,13 @@
         }
     }
     
-    if (axisStyle.width > 0)
+    if (axisStyle.penWidth > 0)
     {
         if (axisStyle.color)
         {
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
+        CGContextSetLineWidth(context, axisStyle.penWidth);
         CGContextSetShouldAntialias(context, NO);
         CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y - gBounds.size.height );
         CGContextAddLineToPoint(context, gBottomLeft.x, gBottomLeft.y );
@@ -1001,6 +1005,7 @@
         CGContextSetStrokeColorWithColor(context, [color CGColor]);
         if (axisStyle.tickStyle.showMajorTicks)
         {
+            CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
             CGContextSetShouldAntialias(context, NO);
             CGContextMoveToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y);
             CGContextAddLineToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y + axisStyle.tickStyle.majorLength);
@@ -1015,6 +1020,7 @@
             
             for(int j=1; j < minorTicks + 1; j++)
             {
+                CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
                 CGContextSetShouldAntialias(context, NO);
                 CGContextMoveToPoint(context, x + j * minorDelta, gBottomLeft.y);
                 CGContextAddLineToPoint(context, x + j * minorDelta, gBottomLeft.y + axisStyle.tickStyle.minorLength);
@@ -1029,9 +1035,10 @@
         {
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
+        CGContextSetLineWidth(context, axisStyle.penWidth);
         CGContextSetShouldAntialias(context, NO);
-        CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y + 1 );
-        CGContextAddLineToPoint(context, gBottomLeft.x + gBounds.size.width, gBottomLeft.y + 1 );
+        CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y);
+        CGContextAddLineToPoint(context, gBottomLeft.x + gBounds.size.width, gBottomLeft.y);
         CGContextSetShouldAntialias(context, YES);
     }
     
@@ -1041,18 +1048,19 @@
 
 - (void) drawGrid : (CGContextRef) context
 {
+
     if (!self.drawXGrids && !self.drawYGrids)
     {
         return;
     }
     CGContextSetShouldAntialias(context, NO);
-    float deltaX = gDrawingRect.size.width / xTicks;
+    float deltaX = gDrawingRect.size.width / (xTicks - 1);
     
     if (self.drawXGrids)
     {
         CGFloat yFrom = gBounds.origin.y;
         CGFloat yTo = gBounds.origin.y + gBounds.size.height;
-        for (int i = 1; i <= xTicks; i++)
+        for (int i = 1; i < xTicks; i++)
         {
             CGFloat x = gDrawingRect.origin.x + i * deltaX;
             if (x > gBounds.origin.x && x < gBounds.origin.x + gBounds.size.width)
@@ -1065,11 +1073,11 @@
     
     if(self.drawYGrids)
     {
-        float deltaY = gBounds.size.height / yTicks;
+        float deltaY = gBounds.size.height / (yTicks - 1);
         
-        CGFloat bottom = gDrawingRect.origin.y + gDrawingRect.size.height;
+        CGFloat bottom = gDrawingRect.origin.y + gDrawingRect.size.height + self.gridStyle.penWidth;
         CGFloat xFrom = gBounds.origin.x, xTo = gBounds.origin.x + gBounds.size.width;
-        for (int i = 0; i <= yTicks; i++)
+        for (int i = 1; i < yTicks; i++)
         {
             CGFloat y = bottom - i * deltaY;
             if (y > gBounds.origin.y && y < gBounds.origin.y + gBounds.size.height)

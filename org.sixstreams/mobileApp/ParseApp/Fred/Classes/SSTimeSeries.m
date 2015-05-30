@@ -33,9 +33,7 @@
         self.categoryId = self.seriesDef[@"id"];
         NSMutableDictionary *dataPoints = [NSMutableDictionary dictionary];
         NSMutableArray *xPoints = [NSMutableArray array];
-        self.seriesStyle = [Graph2DSeriesStyle defaultStyle:Graph2DLineChart];
-        self.seriesStyle.fillStyle = nil;
-        self.seriesStyle.gradient = NO;
+       
         id observations = dict[@"observations"];
         float lastValue = 0;
         for (id observation in observations) {
@@ -54,8 +52,12 @@
         }
         self.dataPoints = [NSDictionary dictionaryWithDictionary:dataPoints];
         self.xPoints = [NSArray arrayWithArray:xPoints];
-        self.title = dict[@"title"];
+        self.title = self.seriesDef[@"title"];
         self.units = self.seriesDef[@"frequency_short"];
+        self.seriesStyle = [Graph2DSeriesStyle defaultStyle:Graph2DLineChart];
+        self.seriesStyle.fillStyle = nil;
+        self.seriesStyle.gradient = NO;
+        self.seriesStyle.legend = [[Graph2DTextStyle alloc]initWithText:self.title];
     }
     return self;
 }

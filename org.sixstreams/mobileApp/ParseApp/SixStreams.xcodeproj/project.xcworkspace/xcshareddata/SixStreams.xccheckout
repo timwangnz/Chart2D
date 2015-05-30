@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CDC3FC1A-AFA6-4C2D-822C-F8AD2B384659</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SixStreams</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0A68511700FBEE025E9746FD5D9CDBE31F7F091A</key>
 		<string>https://github.com/timwangnz/Chart2D.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>org.sixstreams/mobileApp/ParseApp/SixStreams.xcodeproj/project.xcworkspace</string>
+	<string>org.sixstreams/mobileApp/ParseApp/SixStreams.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0A68511700FBEE025E9746FD5D9CDBE31F7F091A</key>

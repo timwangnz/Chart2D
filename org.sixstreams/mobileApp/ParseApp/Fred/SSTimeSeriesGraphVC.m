@@ -28,6 +28,10 @@
     id properties;
     id theSeriesDef;
     RequestCallback dataCallback;
+    
+    int pointsInChart;
+    Graph2DChartType chartType;
+    BOOL gradient;
     NSData *loadedData;
 }
 
@@ -49,20 +53,22 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 
 - (IBAction)setDuration : (UISegmentedControl *)sender
 {
+    
     switch (sender.selectedSegmentIndex) {
         case 0:
-            seriesView.pointsInView = 30;
+            pointsInChart = 30;
             break;
         case 1:
-            seriesView.pointsInView = 180;
+            pointsInChart = 180;
             break;
         case 2:
-            seriesView.pointsInView = 360;
+            pointsInChart = 360;
             break;
             
         default:
             break;
     }
+    seriesView.pointsInView = pointsInChart;
     [seriesView updateUI];
 }
 
@@ -85,19 +91,24 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
 {
     if(sender.selectedSegmentIndex == 2)
     {
-        ts.seriesStyle.chartType = Graph2DBarChart;
-        ts.seriesStyle.barGap = 1;
+        seriesView.defaultStyle.chartType = Graph2DBarChart;
+        seriesView.defaultStyle.barGap = 1;
     }
     else if(sender.selectedSegmentIndex == 0)
     {
-        ts.seriesStyle.chartType = Graph2DLineChart;
-        ts.seriesStyle.gradient = NO;
+        seriesView.defaultStyle.chartType = Graph2DLineChart;
+        seriesView.defaultStyle.chartType = Graph2DLineChart;
+        seriesView.defaultStyle.gradient = NO;
         
     }else if(sender.selectedSegmentIndex == 1)
     {
-        ts.seriesStyle.chartType = Graph2DLineChart;
-        ts.seriesStyle.gradient = YES;
+        seriesView.defaultStyle.chartType = Graph2DLineChart;
+        seriesView.defaultStyle.gradient = YES;
     }
+    
+    ts.seriesStyle.chartType = seriesView.defaultStyle.chartType;
+    ts.seriesStyle.gradient = seriesView.defaultStyle.gradient;
+    ts.seriesStyle.barGap = seriesView.defaultStyle.barGap;
 }
 
 - (IBAction)clearAll:(id)sender
@@ -179,7 +190,9 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
         {
             tbFacts.data = properties;
         }
+        
         [dic setObject:properties forKey:@"seriesDef"];
+        
         [seriesView addSeries:dic];
        
         
@@ -226,15 +239,16 @@ static NSString  *fredCatSeri = @"http://api.stlouisfed.org/fred/series/observat
         [textView setScrollEnabled:YES];
         [textView sizeToFit];
         [textView setScrollEnabled:NO];
-        [layoutView addChildView:controller];
+        //[layoutView addChildView:seriesView];
         [layoutView addChildView:seriesView];
+        [layoutView addChildView:controller];
         [layoutView addChildView:textView];
         [layoutView addChildView:tbFacts];
     }
     else{
         self.title = @"Charts";
         textView.text = @"";
-        [layoutView addChildView:controller];
+      //  [layoutView addChildView:controller];
         [layoutView addChildView:seriesView];
     }
  

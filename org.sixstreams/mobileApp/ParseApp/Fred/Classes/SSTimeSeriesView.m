@@ -10,6 +10,7 @@
 #import "DebugLogger.h"
 #import "SSTimeSeries.h"
 #import "SSTimeUtil.h"
+#import "SSJSONUtil.h"
 
 @interface SSTimeSeriesView()
 {
@@ -87,14 +88,17 @@
 
 - (void) addSeries:(id) series
 {
-    
     SSTimeSeries *ts = [[SSTimeSeries alloc ] initWithDictionary:series];
     units = ts.units;
     self.selected = nil;
     title.text = @"";
-    ts.seriesStyle.color = [self color:[charts count] withAlpha:1.0];
+    
+    ts.seriesStyle.color = [self color: [charts count] withAlpha:1.0];
+    ts.seriesStyle.chartType = self.defaultStyle.chartType;
+    ts.seriesStyle.barGap = self.defaultStyle.barGap;
+    
     [charts addObject:ts];
-     [self updateModel];
+    [self updateModel];
     [self refresh];
 }
 
@@ -175,10 +179,11 @@
     self.bottomPadding = 0;
     self.bottomMargin = 80;
     self.leftMargin = 60;
-    
+    self.defaultStyle = [[Graph2DSeriesStyle alloc]init];
+    self.defaultStyle.chartType = Graph2DLineChart;
     self.touchEnabled = YES;
     self.cursorType = Graph2DCursorCross;
-    
+    self.legendType = Graph2DLegendTop;
     
     pointsInStep = 1;
     xTicks = 11;
@@ -194,11 +199,12 @@
     self.gridStyle.color =[UIColor grayColor];
     self.gridStyle.penWidth = 1;
     
-   
     self.chartType = Graph2DLineChart;
     
     self.fillStyle = [[Graph2DFillStyle alloc]init];
     self.fillStyle.direction = Graph2DFillRightLeft;
+    self.fillStyle.colorFrom = [UIColor blackColor];
+    self.fillStyle.colorTo = [UIColor blackColor];
     
     self.frequency = @"D";
     
@@ -214,7 +220,7 @@
         xDates = [NSMutableArray array];
         self.endDate = [NSDate date];
         SSTimeSeries *ts = charts[0];
-        NSLog(@"%@", ts.xPoints);
+        //NSLog(@"%@", ts.xPoints);
         
         if ([ts.units isEqualToString:@"D"])
         {
@@ -330,6 +336,8 @@
     else{
         ts.seriesStyle.color = [self color:series withAlpha:1.0];
     }
+    ts.seriesStyle.legend.color = ts.seriesStyle.color;
+    ts.seriesStyle.legend.text = [ts.title display:40 header:10] ;
     return ts.seriesStyle;
 }
 
@@ -358,7 +366,7 @@
     
     //yAxisStyle.labelStyle.angle = -M_PI_4/2.0;
     yAxisStyle.color = [UIColor blackColor];
-    yAxisStyle.labelStyle.offset = -10;
+    yAxisStyle.labelStyle.offset = 10;
     yAxisStyle.tickStyle.color = [UIColor redColor];
     yAxisStyle.tickStyle.penWidth = 1.0;
     yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
@@ -381,7 +389,6 @@
         SSTimeSeries *ts = charts[series];
         if (self.selected != ts)
         {
-            //clear current selected
             self.selected.selected = NO;
             
             self.selected = ts;
@@ -402,7 +409,6 @@
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) index forSeries :(NSInteger) series
 {
     SSTimeSeries *ts = charts[series];
-    
     if (self.showGrowthRate) {
         return [ts growthRatioBetween:xPoints[0] and:xPoints[index]];
     }

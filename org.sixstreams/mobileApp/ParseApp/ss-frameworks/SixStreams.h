@@ -7,7 +7,6 @@
 //
 #import "DebugLogger.h"
 
-
 #ifndef SixStreams_ParseStorageHeader_h
 #define SixStreams_ParseStorageHeader_h
 

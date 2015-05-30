@@ -184,6 +184,21 @@ NSString *parseName(NSString *input) {
     ;
 }
 
+- (NSString *) display: (int) maxLength header :(int) header
+{
+    if ([self length] < maxLength)
+    {
+        return self;
+    }
+    else{
+        NSString *headerTxt = [self substringToIndex:header];
+        
+        NSString *tailTxt = [self substringFromIndex:[self length] - (maxLength - header)];
+        
+        return [NSString stringWithFormat:@"%@...%@", headerTxt, tailTxt];
+    }
+}
+
 - (NSString *) toNumber
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];

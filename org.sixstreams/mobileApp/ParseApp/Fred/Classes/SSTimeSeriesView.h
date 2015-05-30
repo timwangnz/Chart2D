@@ -31,7 +31,7 @@
 @property NSInteger pointsInView;
 @property (nonatomic, retain) NSString *frequency;
 @property (nonatomic) id<TimeSeriesViewDelegate> delegate;
-
+@property Graph2DSeriesStyle *defaultStyle;
 
 - (void) removeAll;
 - (void) addSeries:(id) series;

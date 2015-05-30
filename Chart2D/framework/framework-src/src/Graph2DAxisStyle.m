@@ -36,6 +36,7 @@
     {
         _tickStyle = [[Graph2DTickStyle alloc] init];
         _labelStyle = [[Graph2DLabelStyle alloc] init];
+        self.penWidth = 0.2;
         _hidden = NO;
     }
     return self;
