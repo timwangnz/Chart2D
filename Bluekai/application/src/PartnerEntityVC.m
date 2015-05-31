@@ -11,7 +11,7 @@
 #import "CampaignWinsVC.h"
 #import "SqlGraphView.h"
 
-@interface PartnerEntityVC ()<Graph2DChartDelegate, Graph2DDataSource>
+@interface PartnerEntityVC ()
 {
     IBOutlet SqlGraphView *chartview;
     NSDictionary *displayNames;
@@ -53,34 +53,21 @@
     chartview.sql = [NSString stringWithFormat:sql, self.partner[@"PARTNER_ID"]];
    
     chartview.limit = 20;
-    chartview.title = @"Inventory";
+    chartview.title = @"Total Tags Over Time";
     chartview.valueFields[0] = @"TAGS";
     chartview.xLabelField = @"CREATED_AT";
-    chartview.legendType = Graph2DLegendNone;    chartview.topMargin = 40;
+    chartview.legendType = Graph2DLegendNone;
+    chartview.autoScaleMode = Graph2DAutoScaleMax;
+    chartview.yMin = 0;
+    chartview.topMargin = 40;
     chartview.bottomMargin = 60;
     chartview.leftMargin = 60;
     chartview.topPadding = 0;
+    
     chartview.cacheTTL = 3600;
+    chartview.caption = [[Graph2DTextStyle alloc]initWithText:chartview.title];
     [chartview reload];
     
-}
-
-- (NSInteger) numberOfSeries:(Graph2DView *) graph2Dview
-{
-    return 1;
-}
-
-//number of items in a group
-//return number of items
-- (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
-{
-    return 20;
-}
-
-//return value
-- (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) item forSeries :(NSInteger) series
-{
-    return [NSNumber numberWithFloat: 12 + 12.9*item];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -126,7 +113,8 @@
        
         
     }
-    chartview.caption = [[Graph2DTextStyle alloc]initWithText:chartview.title ];
+    chartview.caption = [[Graph2DTextStyle alloc]initWithText:chartview.title];
+    
     [chartview reload];
 
 }
@@ -189,4 +177,5 @@
     campaignVC.title = [NSString stringWithFormat:@"%@ Wins", self.partner[@"PARTNER_NAME"]];
     [self.navigationController pushViewController:campaignVC animated:YES];
 }
+
 @end

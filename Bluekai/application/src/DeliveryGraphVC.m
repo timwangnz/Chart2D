@@ -38,7 +38,7 @@
     
     graphview.xAxisStyle.tickStyle.majorTicks = 8;
     graphview.legendType = Graph2DLegendTop;
-    graphview.autoScale = NO;
+    graphview.autoScaleMode = Graph2DAutoScaleMax;
     graphview.chartType = Graph2DLineChart;
     graphview.fillStyle = nil;
     graphview.displayNames = @{

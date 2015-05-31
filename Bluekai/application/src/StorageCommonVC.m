@@ -114,6 +114,7 @@
         [activityView stopAnimating];
         [activityView removeFromSuperview];
     }
+    [[[UIAlertView alloc]initWithTitle:@"Netword Error" message:@"Failed to get data" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil] show ];
 }
 
 - (void) didFinishLoading: (id)data

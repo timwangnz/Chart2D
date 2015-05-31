@@ -35,7 +35,7 @@
         self.borderLineStyle = [[Graph2DLineStyle alloc]init];
         self.borderLineStyle.lineType = LineStyleSolid;
         self.borderLineStyle.color = [UIColor blackColor];
-        self.borderLineStyle.penWidth = 1;
+        self.borderLineStyle.penWidth = 0.2;
         
         self.valueFields = [NSMutableArray array];
         self.xAxisStyle = [[Graph2DAxisStyle alloc]init];
@@ -45,22 +45,24 @@
         self.xAxisStyle.labelStyle.angle = - M_PI_4/1.0;
         self.xAxisStyle.tickStyle.penWidth = 1.0;
         self.xAxisStyle.tickStyle.majorLength = 5;
+        self.xAxisStyle.tickStyle.penWidth = 0.2;
         self.xAxisStyle.labelStyle.offset = 0;
+        
         self.xAxisStyle.tickStyle.color = [UIColor blackColor];
         self.xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
+        
         self.yAxisStyle = [[Graph2DAxisStyle alloc]init];
         self.yAxisStyle.tickStyle.majorTicks = 6;
         self.yAxisStyle.tickStyle.majorLength = 5;
         self.yAxisStyle.tickStyle.minorTicks = 1;
+        self.yAxisStyle.tickStyle.penWidth = 0.2;
         self.yAxisStyle.hidden = NO;
         self.yAxisStyle.labelStyle.offset = 10;
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         self.caption.text = self.title;
         self.caption.font = [UIFont systemFontOfSize:17];
         self.yAxisStyle.color = [UIColor blackColor];
-     
         self.yAxisStyle.tickStyle.color = [UIColor blackColor];
-        self.yAxisStyle.tickStyle.penWidth = 1.0;
         self.yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
 
         self.cacheTTL = -1;
@@ -95,7 +97,8 @@
     self.dataSource = self;
     self.chartDelegate = self;
     self.chartType = Graph2DLineChart;
-    
+    objects = nil;
+    filteredObjects = nil;
     if (![self checkCache])
     {
         HTTPConnector *conn = [[HTTPConnector alloc]init];
@@ -112,7 +115,6 @@
              NSArray *pts = data[@"data"];
              
              [BKStorageManager cacheData:data at:self.sql];
-             
              [activityView removeFromSuperview];
              [activityView stopAnimating];
              if ([pts count] > 1)
@@ -152,7 +154,8 @@
     
     NSString *legend = self.valueFields[series];
     
-    
+    ss.gradient = YES;
+    ss.lineStyle.penWidth = 1;
     if (self.displayNames)
     {
         legend = self.displayNames[legend];

@@ -46,7 +46,7 @@
 {
   
         trend.sql = [NSString stringWithFormat:
-                     @"select to_char(created_at, 'MM/DD') CREATED_AT, AB_TESTED, INVENTORY from bk_inventory_view where category_id = %d and site_id = %d and sysdate - created_at < 15 order by created_at", categoryId, self.siteId];
+                     @"select to_char(created_at, 'MM/DD') CREATED_AT, AB_TESTED, INVENTORY from bk_inventory_view where category_id = %d and site_id = %d and sysdate - created_at < 30 order by created_at", categoryId, self.siteId];
     
 
     
@@ -62,6 +62,8 @@
     trend.leftMargin = 60;
     trend.topPadding = 0;
     trend.legendType = Graph2DLegendNone;
+    trend.yMin = 0;
+    trend.autoScaleMode = Graph2DAutoScaleMax;
     trend.xAxisStyle.tickStyle.majorTicks = 8;
     trend.displayNames =@{@"INVENTORY":@"Tagged in 30 Days", @"AB_TESTED":@"AB Tested 30 Days"};
     trend.legendType = Graph2DLegendTop;

@@ -33,7 +33,7 @@
     self.fillStyle = nil;
     self.touchEnabled = YES;
     self.cursorType = Graph2DCursorCross;
-    self.autoScale = YES;
+    self.autoScaleMode = Graph2DAutoScaleBoth;
     selected = -1;
     [self setupData];
 }

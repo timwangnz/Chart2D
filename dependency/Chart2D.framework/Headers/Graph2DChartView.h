@@ -24,6 +24,15 @@ enum
 };
 typedef NSUInteger Graph2DLegendType;
 
+enum
+{
+    Graph2DAutoScaleNone                   = 0,
+    Graph2DAutoScaleMin                    = 3,
+    Graph2DAutoScaleMax                       = 2,
+    Graph2DAutoScaleBoth                      = 1
+};
+typedef NSUInteger AutoScaleMode;
+
 @interface Graph2DChartView : Graph2DView
 
 //delegate for this chart
@@ -55,7 +64,7 @@ typedef NSUInteger Graph2DLegendType;
 
 //This flag indicates if the chart should be automatically scaled based on data set
 //default value is YES
-@property (nonatomic) BOOL autoScale;
+@property (nonatomic) AutoScaleMode autoScaleMode;
 @property Graph2DLegendType legendType;
 @property Graph2DTextStyle *caption;
 

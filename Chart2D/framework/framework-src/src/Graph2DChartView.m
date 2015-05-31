@@ -45,7 +45,7 @@
     self.barGap = 2;
     yZoomFactor = xZoomFactor = 1.0;
     storedLocations = [[NSMutableArray alloc]init];
-    self.autoScale = YES;
+    self.autoScaleMode = Graph2DAutoScaleBoth;
 }
 
 - (void) dealloc
@@ -70,7 +70,7 @@
         
         for (int i = 0; i < graphs; i++)
         {
-            NSMutableArray *items = [[NSMutableArray alloc]init];
+            
             //add place hodler for rects
             Graph2DSeriesStyle *seriesStyle = [Graph2DSeriesStyle defaultStyle:self.chartType];
             [storedLocations addObject:[[NSMutableArray alloc]init]];
@@ -97,7 +97,7 @@
                     numberOfLines ++;
                 }
             }
-            
+            NSMutableArray *items = [[NSMutableArray alloc]init];
             for(int j = 0; j < numberOfItems; j++)
             {
                 NSNumber *value = [self.dataSource graph2DView:self valueAtIndex : j forSeries:i];
@@ -118,9 +118,9 @@
                     yMin = [value floatValue] ;
                 }
                 
-                NSMutableDictionary *valueDic = [NSMutableDictionary dictionary];
-                if (value)
+                if (value != nil)
                 {
+                    NSMutableDictionary *valueDic = [NSMutableDictionary dictionary];
                     [valueDic setObject:value forKey : HIGH_VALUE_KEY];
                     [valueDic setObject:lowValue forKey : LOW_VALUE_KEY];
                     [items addObject:valueDic];
@@ -131,9 +131,12 @@
         }
         
         
-        if (self.autoScale)
+        if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMax)
         {
             self.yMax = yMax;
+        }
+        if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMin)
+        {
             self.yMin = yMin;
         }
     }
@@ -179,11 +182,19 @@
         }
     }
     
-    if (self.autoScale)
+    if (self.autoScaleMode != Graph2DAutoScaleNone)
     {
         CGFloat delta = (self.yMax - self.yMin);
-        self.yMax = self.yMax + delta / 10;
-        self.yMin = self.yMin - delta/ 10;
+        
+        if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMax)
+        {
+            self.yMax = self.yMax + delta / 10;
+        }
+        
+        if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMin)
+        {
+            self.yMin = self.yMin - delta/ 10;
+        }
         
         if(delta > 0)
         {
@@ -227,10 +238,20 @@
                 }
                 yMax = yMax + delta;
             }
-            
-            self.yMax = yMax;
-            self.yMin = yMin;
+            if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMax)
+            {
+                self.yMax = yMax;
+            }
+            if (self.autoScaleMode == Graph2DAutoScaleBoth || self.autoScaleMode == Graph2DAutoScaleMin)
+            {
+                self.yMin = yMin;
+            }
         }
+    }
+    if (self.yMax == self.yMin)
+    {
+        self.yMin = self.yMin - 1.0;
+        self.yMax = self.yMax + 1.0;
     }
     
     CGFloat ySpan = 1.0 / (self.yMax - self.yMin);
@@ -249,7 +270,8 @@
             [items[j] setObject:value forKey:LOW_VALUE_KEY];
         }
     }
-     
+    
+    
     return data;
 }
 
@@ -407,7 +429,7 @@
         [self drawBarChart : data inContext:context];
     }
     
-    CGContextSetShouldAntialias(context, NO);
+    //CGContextSetShouldAntialias(context, NO);
     if (touchStarted && self.cursorType == Graph2DCursorRect)
     {
         [self drawSelectedRect:context];
@@ -437,7 +459,7 @@
     
     [self drawCaption];
     
-    CGContextSetShouldAntialias(context, YES);
+    //CGContextSetShouldAntialias(context, YES);
 }
 
 - (void) drawBarChart : (NSArray *)data inContext:(CGContextRef) context
@@ -554,7 +576,7 @@
 
 - (void) fillLineChartArea: (NSArray *)data inContext:(CGContextRef) context forSeries:(int) series
 {
-    if ([data count] ==0)
+    if ([data count] < 2)
     {
         return;
     }
@@ -571,9 +593,15 @@
         CGContextSetLineWidth(context, seriesStyle ? seriesStyle.lineStyle.penWidth : 1);
         CGContextSetStrokeColorWithColor(context, [seriesStyle.color CGColor]);
     }
-    
+  
     float offset = seriesStyle.xAlign;
-    float deltaX = gBounds.size.width / (maxItems - (1 -  offset));
+  
+    if (maxItems < [data count])
+    {
+        maxItems = [data count];
+    }
+    
+    float deltaX = gBounds.size.width / (maxItems - (1 - offset));
     
     CGContextMoveToPoint(context, gBottomLeft.x + offset * deltaX/2, gBottomLeft.y - maxGraphHeight * [[data[0] objectForKey:LOW_VALUE_KEY] floatValue]);
     CGContextAddLineToPoint(context, gBottomLeft.x + offset * deltaX/2, gBottomLeft.y - maxGraphHeight * [[data[0] objectForKey:HIGH_VALUE_KEY] floatValue]);
@@ -684,7 +712,7 @@
 
 - (void) drawLine: (NSArray *)data inContext:(CGContextRef) context forSeries:(int) series
 {
-    if (!data || [data count] == 0)
+    if (!data || [data count] < 2)
     {
         return;
     }
@@ -694,7 +722,7 @@
     if (self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
     {
         seriesStyle = [self.chartDelegate graph2DView:self styleForSeries:series];
-        CGContextSetLineWidth(context, seriesStyle ? seriesStyle.lineStyle.penWidth : 1);
+        CGContextSetLineWidth(context, seriesStyle ? seriesStyle.lineStyle.penWidth : 0.2);
         CGContextSetStrokeColorWithColor(context, [seriesStyle.color CGColor]);
     }
     
@@ -708,8 +736,15 @@
     NSMutableArray *rects = [storedLocations objectAtIndex:series];
     
     CGContextBeginPath(context);
+    
     float offset = seriesStyle.xAlign;
-    float deltaX = gBounds.size.width / (maxItems - (1 -  offset));
+    
+    if (maxItems < [data count])
+    {
+        maxItems = [data count];
+    }
+    
+    float deltaX = gBounds.size.width / (maxItems - (1 - offset));
     
     CGContextMoveToPoint(context, gBottomLeft.x + offset * deltaX/2, gBottomLeft.y - maxGraphHeight * [[data[0] objectForKey:HIGH_VALUE_KEY] floatValue]);
     
@@ -758,7 +793,6 @@
             CGContextClosePath(context);
             CGContextDrawPath(context, kCGPathStroke);
         }
-        
     }
 }
 
@@ -792,15 +826,16 @@
         labelcolor = axisStyle.color;
         
     }
-    
-    int ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
+    //min 2 ticks
+    int ticks = axisStyle.tickStyle.majorTicks < 2 ? 2 : axisStyle.tickStyle.majorTicks;
+    //min 1 interval
+    int intervals = (ticks  - 1);
     
     int minorTicks = axisStyle.tickStyle.minorTicks;
     
+    CGFloat yValueDelta = (self.yMax - self.yMin)/intervals;
     
-    
-    CGFloat yValueDelta = (self.yMax - self.yMin)/(ticks  - 1);
-    float deltaY = gBounds.size.height / (ticks - 1);
+    float deltaY = gBounds.size.height / intervals;
     
     if (axisStyle && !axisStyle.labelStyle.hidden)
     {
@@ -811,6 +846,7 @@
         for (int i = 0; i < ticks; i++)
         {
             CGFloat y = gBottomLeft.y - i * deltaY;
+            
             UIFont *font = axisStyle.labelStyle.font;
             CGFloat angle = axisStyle.labelStyle.angle;
             
@@ -840,40 +876,36 @@
             tickTextStyle.calculatedX = -1;
             tickTextStyle.calculatedWidth = size.width + 5;
             tickTextStyle.calculatedHeight = size.height;
-            
             [labelTicks addObject:tickTextStyle];
-
         }
-        
         int x = gBounds.origin.x - width - axisStyle.tickStyle.majorLength - axisStyle.labelStyle.offset;
-        
         [self drawText:labelTicks at: CGPointMake(x, gBottomLeft.y) inContext:context];
     }
     
     for (int i = 0; i < ticks; i++)
     {
-        CGFloat y = gBottomLeft.y - i * deltaY;
+        CGFloat y = gBottomLeft.y - i * deltaY - axisStyle.tickStyle.penWidth;
         CGContextSetStrokeColorWithColor(context, [tickcolor CGColor]);
         if(axisStyle.tickStyle.showMajorTicks)
         {
             CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-            CGContextSetShouldAntialias(context, NO);
+            //CGContextSetShouldAntialias(context, NO);
             CGContextMoveToPoint(context, gBottomLeft.x - axisStyle.tickStyle.majorLength, y );
             CGContextAddLineToPoint(context, gBottomLeft.x, y );
-            CGContextSetShouldAntialias(context, YES);
+            //CGContextSetShouldAntialias(context, YES);
         }
         
         if (axisStyle.tickStyle.showMinorTicks && axisStyle.tickStyle.minorTicks > 0 && i < ticks - 1)
         {
             float minorDelta = deltaY/(minorTicks + 1);
-            float y = gBottomLeft.y - i * deltaY;
+            float y = gBottomLeft.y - i * deltaY - axisStyle.tickStyle.penWidth;
             for(int j=1;j < minorTicks + 1;j++)
             {
-                CGContextSetShouldAntialias(context, NO);
+                //CGContextSetShouldAntialias(context, NO);
                 CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
                 CGContextMoveToPoint(context, gBottomLeft.x, y - j * minorDelta);
                 CGContextAddLineToPoint(context, gBottomLeft.x - axisStyle.tickStyle.minorLength, y - j * minorDelta);
-                CGContextSetShouldAntialias(context, YES);
+                //CGContextSetShouldAntialias(context, YES);
             }
         }
     }
@@ -885,10 +917,10 @@
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
         CGContextSetLineWidth(context, axisStyle.penWidth);
-        CGContextSetShouldAntialias(context, NO);
+        //CGContextSetShouldAntialias(context, NO);
         CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y - gBounds.size.height );
         CGContextAddLineToPoint(context, gBottomLeft.x, gBottomLeft.y );
-        CGContextSetShouldAntialias(context, YES);
+        //CGContextSetShouldAntialias(context, YES);
     }
     
     CGContextDrawPath(context, kCGPathStroke);
@@ -1006,10 +1038,10 @@
         if (axisStyle.tickStyle.showMajorTicks)
         {
             CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-            CGContextSetShouldAntialias(context, NO);
+            //CGContextSetShouldAntialias(context, NO);
             CGContextMoveToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y);
             CGContextAddLineToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y + axisStyle.tickStyle.majorLength);
-            CGContextSetShouldAntialias(context, YES);
+            //CGContextSetShouldAntialias(context, YES);
         }
         
         if (axisStyle.tickStyle.showMinorTicks && axisStyle.tickStyle.minorTicks > 0 && i < xTicks - 1)
@@ -1021,10 +1053,10 @@
             for(int j=1; j < minorTicks + 1; j++)
             {
                 CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-                CGContextSetShouldAntialias(context, NO);
+                //CGContextSetShouldAntialias(context, NO);
                 CGContextMoveToPoint(context, x + j * minorDelta, gBottomLeft.y);
                 CGContextAddLineToPoint(context, x + j * minorDelta, gBottomLeft.y + axisStyle.tickStyle.minorLength);
-                CGContextSetShouldAntialias(context, YES);
+                //CGContextSetShouldAntialias(context, YES);
             }
         }
     }
@@ -1036,10 +1068,10 @@
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
         CGContextSetLineWidth(context, axisStyle.penWidth);
-        CGContextSetShouldAntialias(context, NO);
+        //CGContextSetShouldAntialias(context, NO);
         CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y);
         CGContextAddLineToPoint(context, gBottomLeft.x + gBounds.size.width, gBottomLeft.y);
-        CGContextSetShouldAntialias(context, YES);
+        //CGContextSetShouldAntialias(context, YES);
     }
     
     CGContextDrawPath(context, kCGPathStroke);
@@ -1053,7 +1085,7 @@
     {
         return;
     }
-    CGContextSetShouldAntialias(context, NO);
+    //CGContextSetShouldAntialias(context, NO);
     float deltaX = gDrawingRect.size.width / (xTicks - 1);
     
     if (self.drawXGrids)
@@ -1113,7 +1145,7 @@
     }
     CGContextStrokePath(context);
     CGContextSetLineDash(context, 0, NULL, 0); // Remove the dash
-    CGContextSetShouldAntialias(context, YES);
+    //CGContextSetShouldAntialias(context, YES);
 }
 
 - (void)drawBar:(CGRect)rect context:(CGContextRef)context forSeries:(int) series atIndex:(int)index

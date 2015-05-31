@@ -73,7 +73,7 @@ static NSMutableDictionary *uriCache;
     NSDictionary *cachedData = [[BKStorageManager storageManager] read:cachedUriKey];
     if (cachedData)
     {
-        if (ttl > 0)
+        if (ttl >= 0)
         {
             NSDate *cachedAt = cachedData[DATE_KEY];
             NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate:cachedAt];
@@ -81,6 +81,10 @@ static NSMutableDictionary *uriCache;
             {
                 return nil;
             }
+        }
+        else
+        {
+            return nil;
         }
         
         return cachedData[DATA_KEY];

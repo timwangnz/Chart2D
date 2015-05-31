@@ -31,6 +31,7 @@
 - (IBAction)tagUser:(id)sender
 {
     [siteId resignFirstResponder];
+    
     NSString *bkuuid = nil;
     for (NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies])
     {

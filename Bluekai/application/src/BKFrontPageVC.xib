@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BKFrontPageVC">
             <connections>
                 <outlet property="tableview" destination="U1J-5U-Aqn" id="Bx0-4t-5gK"/>
+                <outlet property="trend" destination="8dO-MB-cs8" id="OZp-4o-tNn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="U1J-5U-Aqn">
+                <view contentMode="scaleToFill" id="8dO-MB-cs8" userLabel="Chart View" customClass="SqlGraphView">
+                    <rect key="frame" x="0.0" y="386" width="320" height="182"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="40" sectionHeaderHeight="10" sectionFooterHeight="10" id="U1J-5U-Aqn">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/framework-src/src/Graph2DChartView.m"
-            timestampString = "454115693.571021"
+            timestampString = "454703761.417651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "-drawText:at:inContext:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "framework/framework-src/src/Graph2DChartView.m"
-            timestampString = "454228576.676108"
+            timestampString = "454703761.417651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "-drawCharts:inContext:"
             landmarkType = "5">
          </BreakpointContent>
