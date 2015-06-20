@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIColor * color;
 @property (nonatomic, strong) UIFont * font;
+
 @property CGFloat angle;
 @property NSTextAlignment alignment;
 
@@ -20,6 +21,7 @@
 @property int calculatedHeight;
 @property int calculatedX;
 @property int calculatedY;
+
 @property NSString *text;
 
 - (id) initWithText : (NSString *) text;

@@ -38,8 +38,6 @@
 
 @property (nonatomic) Graph2DChartType chartType;
 
-@property (nonatomic) BOOL drawBorder;
-
 @property (nonatomic) CGFloat topMargin;
 @property (nonatomic) CGFloat leftMargin;
 @property (nonatomic) CGFloat rightMargin;
@@ -50,8 +48,12 @@
 @property (nonatomic) CGFloat rightPadding;
 @property (nonatomic) CGFloat bottomPadding;
 
+@property (nonatomic) BOOL drawBorder;
 @property (nonatomic) Graph2DBorderStyle borderStyle;
+@property (nonatomic) Graph2DLineStyle *borderLineStyle;
+
 @property (nonatomic) BOOL touchEnabled;
+@property NSDictionary *displayNames;
 
 - (void) refresh;
 - (CGRect) getGraphBounds;

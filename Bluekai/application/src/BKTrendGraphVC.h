@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 cdss. All rights reserved.
 //
 
-#import "StorageCommonVC.h"
+#import "BKStorageCommonVC.h"
 
-@interface BKTrendGraphVC : StorageCommonVC
+@interface BKTrendGraphVC : BKStorageCommonVC
 @property int days;
 
 - (void)updateChart;

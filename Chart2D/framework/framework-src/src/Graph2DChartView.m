@@ -30,6 +30,11 @@
     CGPoint touchPointCurrent;
     BOOL touchStarted;
     
+    //record values at current cursor
+    NSMutableArray *yCurrentValues;
+    NSMutableArray *xCurrentValues;
+
+    //float x, y;
     NSMutableArray *storedLocations;
     CGFloat xZoomFactor;
     CGFloat yZoomFactor;
@@ -45,12 +50,57 @@
     self.barGap = 2;
     yZoomFactor = xZoomFactor = 1.0;
     storedLocations = [[NSMutableArray alloc]init];
+    xCurrentValues = [[NSMutableArray alloc]init];
+    yCurrentValues = [[NSMutableArray alloc]init];
+    touchPointCurrent = CGPointMake(-1, -1);
+    self.gridStyle = [[Graph2DGridStyle alloc]init];
+    self.gridStyle = [[Graph2DGridStyle alloc]init];
+    self.gridStyle.penWidth = 0.2;
+    self.gridStyle.lineType = LineStyleDash;
+    self.gridStyle.color = [UIColor redColor];
     self.autoScaleMode = Graph2DAutoScaleBoth;
+    self.borderLineStyle = [[Graph2DLineStyle alloc]init];
+    self.borderLineStyle.lineType = LineStyleSolid;
+    self.borderLineStyle.color = [UIColor blackColor];
+    self.borderLineStyle.penWidth = 0.2;
+    
+    
+    self.xAxisStyle = [[Graph2DAxisStyle alloc]init];
+    self.xAxisStyle.tickStyle.majorTicks = 11;
+    self.xAxisStyle.tickStyle.minorTicks = 1;
+    self.xAxisStyle.color = [UIColor blackColor];
+    self.xAxisStyle.labelStyle.angle = - M_PI_4/1.0;
+    self.xAxisStyle.tickStyle.penWidth = 1.0;
+    self.xAxisStyle.tickStyle.majorLength = 5;
+    self.xAxisStyle.tickStyle.penWidth = 0.2;
+    self.xAxisStyle.labelStyle.offset = 0;
+    
+    self.xAxisStyle.tickStyle.color = [UIColor blackColor];
+    self.xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
+    
+    self.yAxisStyle = [[Graph2DAxisStyle alloc]init];
+    self.yAxisStyle.tickStyle.majorTicks = 11;
+    self.yAxisStyle.tickStyle.majorLength = 5;
+    self.yAxisStyle.tickStyle.minorTicks = 1;
+    self.yAxisStyle.tickStyle.penWidth = 0.2;
+    self.yAxisStyle.hidden = NO;
+    self.yAxisStyle.labelStyle.offset = 10;
+    
+    
+    self.caption.font = [UIFont systemFontOfSize:17];
+    self.yAxisStyle.color = [UIColor blackColor];
+    self.yAxisStyle.tickStyle.color = [UIColor blackColor];
+    self.yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
+    self.chartType = Graph2DLineChart;
+    self.touchEnabled = YES;
+    self.cursorType = Graph2DCursorCross;
 }
 
 - (void) dealloc
 {
     storedLocations = nil;
+    xCurrentValues = nil;
+    yCurrentValues = nil;
 }
 
 - (NSArray *) dataFromDelegate
@@ -64,7 +114,6 @@
     if (self.dataSource)
     {
         NSInteger graphs = [self.dataSource numberOfSeries:self];
-        
         numberOfBars = 0;
         numberOfLines = 0;
         
@@ -220,8 +269,6 @@
             CGFloat yMax = ceil(self.yMax * power)/power;
             CGFloat yMin = floor(self.yMin * power)/power;
             
-            //NSLog(@"%f, %f, %f, %f, %f, %f", yMin, self.yMin, yMax, self.yMax, (self.yMax -  self.yMin), power);
-            
             delta = (yMax - yMin)/10;
             if (yMin < self.yMin && delta > 0)
             {
@@ -283,16 +330,18 @@
         return;
     }
     
-    CGSize size = [self.caption.text sizeWithAttributes:@{NSFontAttributeName : self.caption.font}];
+    
+    NSString *caption = self.caption.text;
+    CGSize size = [caption sizeWithAttributes:@{NSFontAttributeName : self.caption.font}];
     CGPoint textLocation;
     textLocation.x = gBounds.origin.x + (gBounds.size.width - size.width)/2;
     textLocation.y = gBounds.origin.y - 25;
-    [self text: self.caption.text
+    [self text: caption
        inRect : CGRectMake(textLocation.x, textLocation.y, size.width, 20)
          angle: 0
           font: self.caption.font
          color: self.caption.color
-      alignment: NSTextAlignmentLeft];
+     alignment: NSTextAlignmentLeft];
 }
 
 - (void) drawText : (NSArray *)textStyles
@@ -326,7 +375,9 @@
         alignment : (NSTextAlignment) alignment
         inContext : (CGContextRef) context
 {
+    
     int width = -1;
+    int j = 0 ;
     for (Graph2DTextStyle *textStyle in textStyles)
     {
         CGSize size = [textStyle.text sizeWithAttributes:@{NSFontAttributeName : textStyle.font}];
@@ -336,16 +387,19 @@
         }
         textStyle.calculatedWidth = size.width;
         textStyle.calculatedHeight = size.height;
+        j++;
     }
+    
     width = width + 5;
-    int j = 0 ;
+    j = 0 ;
+    
     for (Graph2DTextStyle *textStyle in textStyles)
     {
         CGPoint textLocation;
         
         textLocation.x = location.x;
         textLocation.y = location.y + (j++) * textStyle.calculatedHeight + 5;
-        
+
         [self text: textStyle.text
            inRect : CGRectMake(textLocation.x, textLocation.y, width, textStyle.calculatedHeight)
              angle: 0
@@ -355,13 +409,22 @@
     }
 }
 
+- (NSString *) formatValue:(NSNumber *) value
+{
+    if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:formatValue:)])
+    {
+        return [self.chartDelegate graph2DView:self formatValue:value];
+    }
+    return [NSString stringWithFormat:self.valueFormat, [value doubleValue]];
+}
 
 - (void) drawLegends : (NSArray *)data
            inContext : (CGContextRef) context
 {
     int width = -1;
+
     NSMutableArray *legends = [NSMutableArray array];
-    for (int j =0 ; j< [data count]; j++)
+    for (int j =0 ; j < [data count]; j++)
     {
         Graph2DSeriesStyle *style = [Graph2DSeriesStyle defaultStyle:self.chartType];
         if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
@@ -371,26 +434,53 @@
         
         if (style.legend)
         {
-            CGSize size = [style.legend.text sizeWithAttributes:@{NSFontAttributeName : style.legend.font}];
+            
+            NSString *text = style.legend.text;
+            
+            if([yCurrentValues count] > j)
+            {
+                text = [NSString stringWithFormat:@"%@ - %@", text, [self formatValue:yCurrentValues[j]]];
+            }
+            
+            CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : style.legend.font}];
+            
             if (size.width > width)
             {
                 width = size.width;
             }
+            
             style.legend.calculatedWidth = size.width;
             style.legend.calculatedHeight = size.height;
             [legends addObject:style.legend];
         }
     }
+    
     width = width + 5;
     
     CGPoint textLocation;
-    textLocation.x = gBounds.origin.x + gBounds.size.width - width;
+    textLocation.x = gBounds.origin.x + 10;// + gBounds.size.width - width;
     textLocation.y = gBounds.origin.y;
     
-    [self drawText :legends
-                at :textLocation
-         alignment :NSTextAlignmentLeft
-         inContext :context];
+    int j = 0 ;
+    
+    for (Graph2DTextStyle *textStyle in legends)
+    {
+        NSString *text = textStyle.text;
+        
+        if([yCurrentValues count] > j)
+        {
+            text = [NSString stringWithFormat:@"%@ - %@", text, [self formatValue:yCurrentValues[j]]];
+        }
+        
+
+        [self text: text
+           inRect : CGRectMake(textLocation.x, textLocation.y + (j++) * textStyle.calculatedHeight + 5, width, textStyle.calculatedHeight)
+             angle: 0
+              font: textStyle.font
+             color: textStyle.color
+         alignment: NSTextAlignmentLeft];
+    }
+
 }
 
 - (void) drawCharts:(NSArray*)data inContext : (CGContextRef) context
@@ -429,11 +519,11 @@
         [self drawBarChart : data inContext:context];
     }
     
-    //CGContextSetShouldAntialias(context, NO);
     if (touchStarted && self.cursorType == Graph2DCursorRect)
     {
         [self drawSelectedRect:context];
     }
+    
     else if (touchStarted && self.cursorType == Graph2DCursorCross)
     {
         
@@ -458,8 +548,6 @@
     }
     
     [self drawCaption];
-    
-    //CGContextSetShouldAntialias(context, YES);
 }
 
 - (void) drawBarChart : (NSArray *)data inContext:(CGContextRef) context
@@ -529,7 +617,6 @@
         if(self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
         {
             style = [self.chartDelegate graph2DView:self styleForSeries :j];
-            
         }
         
         if (style.chartType != Graph2DHorizontalBarChart)
@@ -554,7 +641,8 @@
 
 - (void)drawLineChart: (NSArray *)data inContext:(CGContextRef) context
 {
-
+    [xCurrentValues removeAllObjects];
+    [yCurrentValues removeAllObjects];
     
     for (int j =0 ; j< [data count]; j++)
     {
@@ -745,23 +833,30 @@
     }
     
     float deltaX = gBounds.size.width / (maxItems - (1 - offset));
+    float yValue = [[data[0] objectForKey:HIGH_VALUE_KEY] floatValue];
     
-    CGContextMoveToPoint(context, gBottomLeft.x + offset * deltaX/2, gBottomLeft.y - maxGraphHeight * [[data[0] objectForKey:HIGH_VALUE_KEY] floatValue]);
-    
+    CGContextMoveToPoint(context, gBottomLeft.x + offset * deltaX/2, gBottomLeft.y - maxGraphHeight * yValue);
+
     for (int i = 1; i < [data count]; i++)
     {
         CGFloat x = gBottomLeft.x + i * deltaX  + offset * deltaX/2;
         float floatValue  = [[data[i] objectForKey:HIGH_VALUE_KEY] floatValue];
         CGFloat y = gBottomLeft.y - maxGraphHeight * floatValue;
+        
+        if(touchPointCurrent.x > x - deltaX && touchPointCurrent.x <= x)
+        {
+            [yCurrentValues addObject: [NSNumber numberWithFloat: self.yMin + (self.yMax - self.yMin) * floatValue]];
+            [xCurrentValues addObject: [NSNumber numberWithFloat: self.xFrom + i*(self.xTo - self.xFrom) / [data count]]];
+        }
+        
         CGContextAddLineToPoint(context, x, y);
         CGRect newRect = CGRectMake(x, y, 10, 10);
-        [rects addObject:[[Graph2DArea alloc]initWithRect:newRect]];
+        [rects addObject:[[Graph2DArea alloc] initWithRect:newRect]];
     }
     
     CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y);
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathStroke);
-    
     
     if(seriesStyle.showMarker)
     {
@@ -777,6 +872,7 @@
             if ([self.chartDelegate respondsToSelector:@selector(graph2DSeries:markerAtIndex:)]) {
                  markerStyle = [self.chartDelegate graph2DSeries:series markerAtIndex:i];
             }
+            
             CGContextBeginPath(context);
             if (!markerStyle)
             {
@@ -889,10 +985,8 @@
         if(axisStyle.tickStyle.showMajorTicks)
         {
             CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-            //CGContextSetShouldAntialias(context, NO);
             CGContextMoveToPoint(context, gBottomLeft.x - axisStyle.tickStyle.majorLength, y );
             CGContextAddLineToPoint(context, gBottomLeft.x, y );
-            //CGContextSetShouldAntialias(context, YES);
         }
         
         if (axisStyle.tickStyle.showMinorTicks && axisStyle.tickStyle.minorTicks > 0 && i < ticks - 1)
@@ -901,11 +995,9 @@
             float y = gBottomLeft.y - i * deltaY - axisStyle.tickStyle.penWidth;
             for(int j=1;j < minorTicks + 1;j++)
             {
-                //CGContextSetShouldAntialias(context, NO);
                 CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
                 CGContextMoveToPoint(context, gBottomLeft.x, y - j * minorDelta);
                 CGContextAddLineToPoint(context, gBottomLeft.x - axisStyle.tickStyle.minorLength, y - j * minorDelta);
-                //CGContextSetShouldAntialias(context, YES);
             }
         }
     }
@@ -917,10 +1009,8 @@
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
         CGContextSetLineWidth(context, axisStyle.penWidth);
-        //CGContextSetShouldAntialias(context, NO);
         CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y - gBounds.size.height );
         CGContextAddLineToPoint(context, gBottomLeft.x, gBottomLeft.y );
-        //CGContextSetShouldAntialias(context, YES);
     }
     
     CGContextDrawPath(context, kCGPathStroke);
@@ -1038,10 +1128,10 @@
         if (axisStyle.tickStyle.showMajorTicks)
         {
             CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-            //CGContextSetShouldAntialias(context, NO);
+          
             CGContextMoveToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y);
             CGContextAddLineToPoint(context, gBottomLeft.x + i * deltaX, gBottomLeft.y + axisStyle.tickStyle.majorLength);
-            //CGContextSetShouldAntialias(context, YES);
+            
         }
         
         if (axisStyle.tickStyle.showMinorTicks && axisStyle.tickStyle.minorTicks > 0 && i < xTicks - 1)
@@ -1053,10 +1143,10 @@
             for(int j=1; j < minorTicks + 1; j++)
             {
                 CGContextSetLineWidth(context, axisStyle.tickStyle.penWidth);
-                //CGContextSetShouldAntialias(context, NO);
+            
                 CGContextMoveToPoint(context, x + j * minorDelta, gBottomLeft.y);
                 CGContextAddLineToPoint(context, x + j * minorDelta, gBottomLeft.y + axisStyle.tickStyle.minorLength);
-                //CGContextSetShouldAntialias(context, YES);
+               
             }
         }
     }
@@ -1068,10 +1158,10 @@
             CGContextSetStrokeColorWithColor(context, [axisStyle.color CGColor]);
         }
         CGContextSetLineWidth(context, axisStyle.penWidth);
-        //CGContextSetShouldAntialias(context, NO);
+       
         CGContextMoveToPoint(context, gBottomLeft.x, gBottomLeft.y);
         CGContextAddLineToPoint(context, gBottomLeft.x + gBounds.size.width, gBottomLeft.y);
-        //CGContextSetShouldAntialias(context, YES);
+   
     }
     
     CGContextDrawPath(context, kCGPathStroke);
@@ -1085,14 +1175,31 @@
     {
         return;
     }
-    //CGContextSetShouldAntialias(context, NO);
+    
+    if(self.gridStyle.lineType == LineStyleDash)
+    {
+        CGFloat dash[] = {2.0, 2.0};
+        CGContextSetLineDash(context, 0.0, dash, 2);
+    } else if(self.gridStyle.lineType == LineStyleDotted)
+    {
+        CGFloat dash[] = {1.0, 1.0};
+        CGContextSetLineDash(context, 0.0, dash, 2);
+    }
+    else
+    {
+        CGContextSetLineDash(context, 0, NULL, 0);
+    }
+    CGContextSetLineWidth(context, self.gridStyle.penWidth);
+    CGContextSetStrokeColorWithColor(context, [self.gridStyle.color CGColor]);
+    
+    
     float deltaX = gDrawingRect.size.width / (xTicks - 1);
     
     if (self.drawXGrids)
     {
         CGFloat yFrom = gBounds.origin.y;
         CGFloat yTo = gBounds.origin.y + gBounds.size.height;
-        for (int i = 1; i < xTicks; i++)
+        for (int i = 1; i < xTicks - 1; i++)
         {
             CGFloat x = gDrawingRect.origin.x + i * deltaX;
             if (x > gBounds.origin.x && x < gBounds.origin.x + gBounds.size.width)
@@ -1109,9 +1216,9 @@
         
         CGFloat bottom = gDrawingRect.origin.y + gDrawingRect.size.height + self.gridStyle.penWidth;
         CGFloat xFrom = gBounds.origin.x, xTo = gBounds.origin.x + gBounds.size.width;
-        for (int i = 1; i < yTicks; i++)
+        for (int i = 1; i < yTicks - 1; i++)
         {
-            CGFloat y = bottom - i * deltaY;
+            CGFloat y = bottom - i * deltaY - self.gridStyle.penWidth/2;
             if (y > gBounds.origin.y && y < gBounds.origin.y + gBounds.size.height)
             {
                 CGContextMoveToPoint(context, xFrom, y);
@@ -1120,32 +1227,8 @@
         }
     }
     
-    if(self.gridStyle)
-    {
-        if(self.gridStyle.lineType == LineStyleDash)
-        {
-            CGFloat dash[] = {2.0, 2.0};
-            CGContextSetLineDash(context, 0.0, dash, 2);
-        } else if(self.gridStyle.lineType == LineStyleDotted)
-        {
-            CGFloat dash[] = {1.0, 1.0};
-            CGContextSetLineDash(context, 0.0, dash, 2);
-        }
-        else
-        {
-            CGContextSetLineDash(context, 0, NULL, 0);
-        }
-        CGContextSetLineWidth(context, self.gridStyle.penWidth);
-        CGContextSetStrokeColorWithColor(context, [self.gridStyle.color CGColor]);
-    }
-    else
-    {
-        CGFloat dash[] = {2.0, 2.0};
-        CGContextSetLineDash(context, 0.0, dash, 2);
-    }
     CGContextStrokePath(context);
     CGContextSetLineDash(context, 0, NULL, 0); // Remove the dash
-    //CGContextSetShouldAntialias(context, YES);
 }
 
 - (void)drawBar:(CGRect)rect context:(CGContextRef)context forSeries:(int) series atIndex:(int)index
@@ -1374,28 +1457,32 @@
     CGContextAddLineToPoint(context, touchPointCurrent.x, touchPointCurrent.y);
     CGContextAddLineToPoint(context, touchPointCurrent.x, touchPointStartedAt.y);
     CGContextAddLineToPoint(context, touchPointStartedAt.x, touchPointStartedAt.y);
-    
     CGContextStrokePath(context);
 }
 
 - (void) drawCoordinate:(CGContextRef) context;
 {
     CGContextSetLineWidth(context,1);
-    CGContextSetStrokeColorWithColor(context, [[UIColor colorWithRed:0.4 green:0.8 blue:0.4 alpha:1.0] CGColor]);
     
+    CGContextSetStrokeColorWithColor(context, [[UIColor colorWithRed:0.4 green:0.8 blue:0.4 alpha:1.0] CGColor]);
     
     CGContextMoveToPoint(context, touchPointCurrent.x, gBounds.origin.y);
     CGContextAddLineToPoint(context, touchPointCurrent.x, gBounds.origin.y + gBounds.size.height);
-    
     CGContextMoveToPoint(context, gBounds.origin.x, touchPointCurrent.y);
     CGContextAddLineToPoint(context, gBounds.origin.x + gBounds.size.width, touchPointCurrent.y);
+    
     CGContextStrokePath(context);
 }
-
+- (void) refresh
+{
+    touchStarted = NO;
+    [super refresh];
+}
 //touch interface
 
 - (void) updateOntouch:(UITouch *)touch
 {
+   
     [self setNeedsDisplay];
 }
 
@@ -1419,6 +1506,24 @@
         return;
     }
     touchPointCurrent = [[touches anyObject] locationInView:self];
+    if (touchPointCurrent.x < gBounds.origin.x)
+    {
+        touchPointCurrent.x = gBounds.origin.x;
+    }
+    if (touchPointCurrent.x > gBounds.origin.x + gBounds.size.width)
+    {
+        touchPointCurrent.x = gBounds.origin.x + gBounds.size.width;
+    }
+    
+    if (touchPointCurrent.y < gBounds.origin.y)
+    {
+        touchPointCurrent.y = gBounds.origin.y;
+    }
+    if (touchPointCurrent.y > gBounds.origin.y + gBounds.size.height)
+    {
+        touchPointCurrent.y = gBounds.origin.y + gBounds.size.height;
+    }
+    
     [self updateOntouch:[touches anyObject]];
 }
 

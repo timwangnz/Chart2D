@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D01FBCA1B129575002613A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB841B129575002613A0 /* AppDelegate.m */; };
+		0D01FBCA1B129575002613A0 /* BKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB841B129575002613A0 /* BKAppDelegate.m */; };
 		0D01FBCB1B129575002613A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB851B129575002613A0 /* LaunchScreen.xib */; };
 		0D01FBCC1B129575002613A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB871B129575002613A0 /* Main.storyboard */; };
 		0D01FBCD1B129575002613A0 /* BKEntityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB8A1B129575002613A0 /* BKEntityVC.m */; };
@@ -18,54 +18,55 @@
 		0D01FBD21B129575002613A0 /* BKOfflineFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB921B129575002613A0 /* BKOfflineFileVC.m */; };
 		0D01FBD31B129575002613A0 /* BKOfflineFileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */; };
 		0D01FBD41B129575002613A0 /* BKStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB951B129575002613A0 /* BKStorageManager.m */; };
-		0D01FBD51B129575002613A0 /* bluekai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB961B129575002613A0 /* bluekai.jpg */; };
-		0D01FBD61B129575002613A0 /* BlueKai120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB971B129575002613A0 /* BlueKai120.png */; };
-		0D01FBD71B129575002613A0 /* BlueKai58 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB981B129575002613A0 /* BlueKai58 copy.png */; };
-		0D01FBD81B129575002613A0 /* BlueKai58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB991B129575002613A0 /* BlueKai58.png */; };
-		0D01FBD91B129575002613A0 /* BlueKai80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9A1B129575002613A0 /* BlueKai80.png */; };
-		0D01FBDA1B129575002613A0 /* BlueKai87.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9B1B129575002613A0 /* BlueKai87.png */; };
-		0D01FBDB1B129575002613A0 /* BlueKai_1712415.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */; };
-		0D01FBDC1B129575002613A0 /* BlueKaiIconTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */; };
-		0D01FBDD1B129575002613A0 /* BluekaiIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */; };
-		0D01FBDE1B129575002613A0 /* BluekaiIDVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */; };
-		0D01FBDF1B129575002613A0 /* CampaignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA21B129575002613A0 /* CampaignVC.m */; };
-		0D01FBE01B129575002613A0 /* CampaignVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA31B129575002613A0 /* CampaignVC.xib */; };
-		0D01FBE11B129575002613A0 /* CampaignWinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA51B129575002613A0 /* CampaignWinsVC.m */; };
-		0D01FBE21B129575002613A0 /* CampaignWinsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */; };
-		0D01FBE31B129575002613A0 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA81B129575002613A0 /* CategoryVC.m */; };
-		0D01FBE41B129575002613A0 /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA91B129575002613A0 /* CategoryVC.xib */; };
-		0D01FBE51B129575002613A0 /* CFRGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAB1B129575002613A0 /* CFRGraphVC.m */; };
-		0D01FBE61B129575002613A0 /* CFRGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */; };
-		0D01FBE71B129575002613A0 /* CfrStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAE1B129575002613A0 /* CfrStatusVC.m */; };
-		0D01FBE81B129575002613A0 /* CfrStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */; };
-		0D01FBE91B129575002613A0 /* DeliveryGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */; };
-		0D01FBEA1B129575002613A0 /* DeliveryGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */; };
+		0D01FBDD1B129575002613A0 /* BKSDKDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FB9F1B129575002613A0 /* BKSDKDemoVC.m */; };
+		0D01FBDE1B129575002613A0 /* BKSDKDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA01B129575002613A0 /* BKSDKDemoVC.xib */; };
+		0D01FBDF1B129575002613A0 /* BKCampaignsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA21B129575002613A0 /* BKCampaignsVC.m */; };
+		0D01FBE01B129575002613A0 /* BKCampaignsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA31B129575002613A0 /* BKCampaignsVC.xib */; };
+		0D01FBE11B129575002613A0 /* BKCampaignWinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA51B129575002613A0 /* BKCampaignWinsVC.m */; };
+		0D01FBE21B129575002613A0 /* BKCampaignWinsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA61B129575002613A0 /* BKCampaignWinsVC.xib */; };
+		0D01FBE31B129575002613A0 /* BKCategoriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBA81B129575002613A0 /* BKCategoriesVC.m */; };
+		0D01FBE41B129575002613A0 /* BKCategoriesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBA91B129575002613A0 /* BKCategoriesVC.xib */; };
+		0D01FBE51B129575002613A0 /* BKCFRGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAB1B129575002613A0 /* BKCFRGraphVC.m */; };
+		0D01FBE61B129575002613A0 /* BKCFRGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAC1B129575002613A0 /* BKCFRGraphVC.xib */; };
+		0D01FBE71B129575002613A0 /* BKCfrStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBAE1B129575002613A0 /* BKCfrStatusVC.m */; };
+		0D01FBE81B129575002613A0 /* BKCfrStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBAF1B129575002613A0 /* BKCfrStatusVC.xib */; };
+		0D01FBE91B129575002613A0 /* BKDeliveryGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB11B129575002613A0 /* BKDeliveryGraphVC.m */; };
+		0D01FBEA1B129575002613A0 /* BKDeliveryGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB21B129575002613A0 /* BKDeliveryGraphVC.xib */; };
 		0D01FBEB1B129575002613A0 /* HTTPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB41B129575002613A0 /* HTTPConnector.m */; };
 		0D01FBEC1B129575002613A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB51B129575002613A0 /* Images.xcassets */; };
 		0D01FBED1B129575002613A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBB61B129575002613A0 /* Info.plist */; };
 		0D01FBEE1B129575002613A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB71B129575002613A0 /* main.m */; };
-		0D01FBEF1B129575002613A0 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB91B129575002613A0 /* MainVC.m */; };
-		0D01FBF01B129575002613A0 /* OfflineGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */; };
-		0D01FBF11B129575002613A0 /* OfflineGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */; };
-		0D01FBF21B129575002613A0 /* PartnerEntityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */; };
-		0D01FBF31B129575002613A0 /* PartnerEntityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */; };
-		0D01FBF41B129575002613A0 /* PartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC11B129575002613A0 /* PartnerVC.m */; };
-		0D01FBF51B129575002613A0 /* PartnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC21B129575002613A0 /* PartnerVC.xib */; };
-		0D01FBF61B129575002613A0 /* SiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC41B129575002613A0 /* SiteVC.m */; };
-		0D01FBF71B129575002613A0 /* SiteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC51B129575002613A0 /* SiteVC.xib */; };
+		0D01FBEF1B129575002613A0 /* BKMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBB91B129575002613A0 /* BKMainVC.m */; };
+		0D01FBF01B129575002613A0 /* BKOfflineGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBB1B129575002613A0 /* BKOfflineGraphVC.m */; };
+		0D01FBF11B129575002613A0 /* BKOfflineGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBC1B129575002613A0 /* BKOfflineGraphVC.xib */; };
+		0D01FBF21B129575002613A0 /* BKPartnerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBBE1B129575002613A0 /* BKPartnerVC.m */; };
+		0D01FBF31B129575002613A0 /* BKPartnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBBF1B129575002613A0 /* BKPartnerVC.xib */; };
+		0D01FBF41B129575002613A0 /* BKPartnersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC11B129575002613A0 /* BKPartnersVC.m */; };
+		0D01FBF51B129575002613A0 /* BKPartnersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC21B129575002613A0 /* BKPartnersVC.xib */; };
+		0D01FBF61B129575002613A0 /* BKSitesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC41B129575002613A0 /* BKSitesVC.m */; };
+		0D01FBF71B129575002613A0 /* BKSitesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D01FBC51B129575002613A0 /* BKSitesVC.xib */; };
 		0D01FBF81B129575002613A0 /* SqlGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC71B129575002613A0 /* SqlGraphView.m */; };
-		0D01FBF91B129575002613A0 /* StorageCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D01FBC91B129575002613A0 /* StorageCommonVC.m */; };
 		0D01FBFB1B1295C2002613A0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFA1B1295C2002613A0 /* GLKit.framework */; };
 		0D01FBFD1B1295D4002613A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */; };
 		0D01FC001B129611002613A0 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FBFF1B129611002613A0 /* Chart2D.framework */; };
 		0D01FC021B129638002613A0 /* Bluekai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01FC011B129638002613A0 /* Bluekai.framework */; };
+		0D06B0671B2F5DF0003C9499 /* BKStorageCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06B0661B2F5DF0003C9499 /* BKStorageCommonVC.m */; };
+		0D06B0711B2F5EC7003C9499 /* bluekai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B0691B2F5EC7003C9499 /* bluekai.jpg */; };
+		0D06B0721B2F5EC7003C9499 /* BlueKai120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06A1B2F5EC7003C9499 /* BlueKai120.png */; };
+		0D06B0731B2F5EC7003C9499 /* BlueKai58 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06B1B2F5EC7003C9499 /* BlueKai58 copy.png */; };
+		0D06B0741B2F5EC7003C9499 /* BlueKai58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06C1B2F5EC7003C9499 /* BlueKai58.png */; };
+		0D06B0751B2F5EC7003C9499 /* BlueKai80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06D1B2F5EC7003C9499 /* BlueKai80.png */; };
+		0D06B0761B2F5EC7003C9499 /* BlueKai87.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06E1B2F5EC7003C9499 /* BlueKai87.png */; };
+		0D06B0771B2F5EC7003C9499 /* BlueKai_1712415.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B06F1B2F5EC7003C9499 /* BlueKai_1712415.png */; };
+		0D06B0781B2F5EC7003C9499 /* BlueKaiIconTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D06B0701B2F5EC7003C9499 /* BlueKaiIconTransparent.png */; };
+		0D46B3DF1B24B3EE009B4A7B /* SqlPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D46B3DE1B24B3EE009B4A7B /* SqlPieChartView.m */; };
 		0D9E7DC01B16C6F1006904C8 /* BKTrendGraphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D01FB591B129544002613A0 /* Bluekai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluekai.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D01FB831B129575002613A0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0D01FB841B129575002613A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D01FB831B129575002613A0 /* BKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKAppDelegate.h; sourceTree = "<group>"; };
+		0D01FB841B129575002613A0 /* BKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKAppDelegate.m; sourceTree = "<group>"; };
 		0D01FB861B129575002613A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0D01FB881B129575002613A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D01FB891B129575002613A0 /* BKEntityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKEntityVC.h; sourceTree = "<group>"; };
@@ -81,62 +82,64 @@
 		0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKOfflineFileVC.xib; sourceTree = "<group>"; };
 		0D01FB941B129575002613A0 /* BKStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKStorageManager.h; sourceTree = "<group>"; };
 		0D01FB951B129575002613A0 /* BKStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKStorageManager.m; sourceTree = "<group>"; };
-		0D01FB961B129575002613A0 /* bluekai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluekai.jpg; sourceTree = "<group>"; };
-		0D01FB971B129575002613A0 /* BlueKai120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai120.png; sourceTree = "<group>"; };
-		0D01FB981B129575002613A0 /* BlueKai58 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueKai58 copy.png"; sourceTree = "<group>"; };
-		0D01FB991B129575002613A0 /* BlueKai58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai58.png; sourceTree = "<group>"; };
-		0D01FB9A1B129575002613A0 /* BlueKai80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai80.png; sourceTree = "<group>"; };
-		0D01FB9B1B129575002613A0 /* BlueKai87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai87.png; sourceTree = "<group>"; };
-		0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai_1712415.png; sourceTree = "<group>"; };
-		0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKaiIconTransparent.png; sourceTree = "<group>"; };
-		0D01FB9E1B129575002613A0 /* BluekaiIDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluekaiIDVC.h; sourceTree = "<group>"; };
-		0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluekaiIDVC.m; sourceTree = "<group>"; };
-		0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluekaiIDVC.xib; sourceTree = "<group>"; };
-		0D01FBA11B129575002613A0 /* CampaignVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignVC.h; sourceTree = "<group>"; };
-		0D01FBA21B129575002613A0 /* CampaignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignVC.m; sourceTree = "<group>"; };
-		0D01FBA31B129575002613A0 /* CampaignVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignVC.xib; sourceTree = "<group>"; };
-		0D01FBA41B129575002613A0 /* CampaignWinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignWinsVC.h; sourceTree = "<group>"; };
-		0D01FBA51B129575002613A0 /* CampaignWinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignWinsVC.m; sourceTree = "<group>"; };
-		0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampaignWinsVC.xib; sourceTree = "<group>"; };
-		0D01FBA71B129575002613A0 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
-		0D01FBA81B129575002613A0 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
-		0D01FBA91B129575002613A0 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
-		0D01FBAA1B129575002613A0 /* CFRGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFRGraphVC.h; sourceTree = "<group>"; };
-		0D01FBAB1B129575002613A0 /* CFRGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFRGraphVC.m; sourceTree = "<group>"; };
-		0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFRGraphVC.xib; sourceTree = "<group>"; };
-		0D01FBAD1B129575002613A0 /* CfrStatusVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CfrStatusVC.h; sourceTree = "<group>"; };
-		0D01FBAE1B129575002613A0 /* CfrStatusVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CfrStatusVC.m; sourceTree = "<group>"; };
-		0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CfrStatusVC.xib; sourceTree = "<group>"; };
-		0D01FBB01B129575002613A0 /* DeliveryGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryGraphVC.h; sourceTree = "<group>"; };
-		0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryGraphVC.m; sourceTree = "<group>"; };
-		0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryGraphVC.xib; sourceTree = "<group>"; };
+		0D01FB9E1B129575002613A0 /* BKSDKDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSDKDemoVC.h; sourceTree = "<group>"; };
+		0D01FB9F1B129575002613A0 /* BKSDKDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSDKDemoVC.m; sourceTree = "<group>"; };
+		0D01FBA01B129575002613A0 /* BKSDKDemoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKSDKDemoVC.xib; sourceTree = "<group>"; };
+		0D01FBA11B129575002613A0 /* BKCampaignsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCampaignsVC.h; sourceTree = "<group>"; };
+		0D01FBA21B129575002613A0 /* BKCampaignsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCampaignsVC.m; sourceTree = "<group>"; };
+		0D01FBA31B129575002613A0 /* BKCampaignsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKCampaignsVC.xib; sourceTree = "<group>"; };
+		0D01FBA41B129575002613A0 /* BKCampaignWinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCampaignWinsVC.h; sourceTree = "<group>"; };
+		0D01FBA51B129575002613A0 /* BKCampaignWinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCampaignWinsVC.m; sourceTree = "<group>"; };
+		0D01FBA61B129575002613A0 /* BKCampaignWinsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKCampaignWinsVC.xib; sourceTree = "<group>"; };
+		0D01FBA71B129575002613A0 /* BKCategoriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCategoriesVC.h; sourceTree = "<group>"; };
+		0D01FBA81B129575002613A0 /* BKCategoriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCategoriesVC.m; sourceTree = "<group>"; };
+		0D01FBA91B129575002613A0 /* BKCategoriesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKCategoriesVC.xib; sourceTree = "<group>"; };
+		0D01FBAA1B129575002613A0 /* BKCFRGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCFRGraphVC.h; sourceTree = "<group>"; };
+		0D01FBAB1B129575002613A0 /* BKCFRGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCFRGraphVC.m; sourceTree = "<group>"; };
+		0D01FBAC1B129575002613A0 /* BKCFRGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKCFRGraphVC.xib; sourceTree = "<group>"; };
+		0D01FBAD1B129575002613A0 /* BKCfrStatusVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCfrStatusVC.h; sourceTree = "<group>"; };
+		0D01FBAE1B129575002613A0 /* BKCfrStatusVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCfrStatusVC.m; sourceTree = "<group>"; };
+		0D01FBAF1B129575002613A0 /* BKCfrStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKCfrStatusVC.xib; sourceTree = "<group>"; };
+		0D01FBB01B129575002613A0 /* BKDeliveryGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKDeliveryGraphVC.h; sourceTree = "<group>"; };
+		0D01FBB11B129575002613A0 /* BKDeliveryGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKDeliveryGraphVC.m; sourceTree = "<group>"; };
+		0D01FBB21B129575002613A0 /* BKDeliveryGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKDeliveryGraphVC.xib; sourceTree = "<group>"; };
 		0D01FBB31B129575002613A0 /* HTTPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnector.h; sourceTree = "<group>"; };
 		0D01FBB41B129575002613A0 /* HTTPConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnector.m; sourceTree = "<group>"; };
 		0D01FBB51B129575002613A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D01FBB61B129575002613A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D01FBB71B129575002613A0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0D01FBB81B129575002613A0 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
-		0D01FBB91B129575002613A0 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
-		0D01FBBA1B129575002613A0 /* OfflineGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineGraphVC.h; sourceTree = "<group>"; };
-		0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineGraphVC.m; sourceTree = "<group>"; };
-		0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfflineGraphVC.xib; sourceTree = "<group>"; };
-		0D01FBBD1B129575002613A0 /* PartnerEntityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerEntityVC.h; sourceTree = "<group>"; };
-		0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerEntityVC.m; sourceTree = "<group>"; };
-		0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerEntityVC.xib; sourceTree = "<group>"; };
-		0D01FBC01B129575002613A0 /* PartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerVC.h; sourceTree = "<group>"; };
-		0D01FBC11B129575002613A0 /* PartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerVC.m; sourceTree = "<group>"; };
-		0D01FBC21B129575002613A0 /* PartnerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerVC.xib; sourceTree = "<group>"; };
-		0D01FBC31B129575002613A0 /* SiteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteVC.h; sourceTree = "<group>"; };
-		0D01FBC41B129575002613A0 /* SiteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteVC.m; sourceTree = "<group>"; };
-		0D01FBC51B129575002613A0 /* SiteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SiteVC.xib; sourceTree = "<group>"; };
+		0D01FBB81B129575002613A0 /* BKMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMainVC.h; sourceTree = "<group>"; };
+		0D01FBB91B129575002613A0 /* BKMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMainVC.m; sourceTree = "<group>"; };
+		0D01FBBA1B129575002613A0 /* BKOfflineGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKOfflineGraphVC.h; sourceTree = "<group>"; };
+		0D01FBBB1B129575002613A0 /* BKOfflineGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKOfflineGraphVC.m; sourceTree = "<group>"; };
+		0D01FBBC1B129575002613A0 /* BKOfflineGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKOfflineGraphVC.xib; sourceTree = "<group>"; };
+		0D01FBBD1B129575002613A0 /* BKPartnerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKPartnerVC.h; sourceTree = "<group>"; };
+		0D01FBBE1B129575002613A0 /* BKPartnerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKPartnerVC.m; sourceTree = "<group>"; };
+		0D01FBBF1B129575002613A0 /* BKPartnerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKPartnerVC.xib; sourceTree = "<group>"; };
+		0D01FBC01B129575002613A0 /* BKPartnersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKPartnersVC.h; sourceTree = "<group>"; };
+		0D01FBC11B129575002613A0 /* BKPartnersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKPartnersVC.m; sourceTree = "<group>"; };
+		0D01FBC21B129575002613A0 /* BKPartnersVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKPartnersVC.xib; sourceTree = "<group>"; };
+		0D01FBC31B129575002613A0 /* BKSitesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSitesVC.h; sourceTree = "<group>"; };
+		0D01FBC41B129575002613A0 /* BKSitesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSitesVC.m; sourceTree = "<group>"; };
+		0D01FBC51B129575002613A0 /* BKSitesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BKSitesVC.xib; sourceTree = "<group>"; };
 		0D01FBC61B129575002613A0 /* SqlGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlGraphView.h; sourceTree = "<group>"; };
 		0D01FBC71B129575002613A0 /* SqlGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlGraphView.m; sourceTree = "<group>"; };
-		0D01FBC81B129575002613A0 /* StorageCommonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageCommonVC.h; sourceTree = "<group>"; };
-		0D01FBC91B129575002613A0 /* StorageCommonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageCommonVC.m; sourceTree = "<group>"; };
 		0D01FBFA1B1295C2002613A0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0D01FBFF1B129611002613A0 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0D01FC011B129638002613A0 /* Bluekai.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bluekai.framework; path = ../sdk/Bluekai/Bluekai.framework; sourceTree = "<group>"; };
+		0D06B0651B2F5DF0003C9499 /* BKStorageCommonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKStorageCommonVC.h; sourceTree = "<group>"; };
+		0D06B0661B2F5DF0003C9499 /* BKStorageCommonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKStorageCommonVC.m; sourceTree = "<group>"; };
+		0D06B0691B2F5EC7003C9499 /* bluekai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluekai.jpg; sourceTree = "<group>"; };
+		0D06B06A1B2F5EC7003C9499 /* BlueKai120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai120.png; sourceTree = "<group>"; };
+		0D06B06B1B2F5EC7003C9499 /* BlueKai58 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueKai58 copy.png"; sourceTree = "<group>"; };
+		0D06B06C1B2F5EC7003C9499 /* BlueKai58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai58.png; sourceTree = "<group>"; };
+		0D06B06D1B2F5EC7003C9499 /* BlueKai80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai80.png; sourceTree = "<group>"; };
+		0D06B06E1B2F5EC7003C9499 /* BlueKai87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai87.png; sourceTree = "<group>"; };
+		0D06B06F1B2F5EC7003C9499 /* BlueKai_1712415.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKai_1712415.png; sourceTree = "<group>"; };
+		0D06B0701B2F5EC7003C9499 /* BlueKaiIconTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueKaiIconTransparent.png; sourceTree = "<group>"; };
+		0D46B3DD1B24B3EE009B4A7B /* SqlPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlPieChartView.h; sourceTree = "<group>"; };
+		0D46B3DE1B24B3EE009B4A7B /* SqlPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlPieChartView.m; sourceTree = "<group>"; };
 		0D9E7DBE1B16C6F0006904C8 /* BKTrendGraphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTrendGraphVC.h; sourceTree = "<group>"; };
 		0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTrendGraphVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,8 +179,11 @@
 		0D01FB821B129575002613A0 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0D01FB831B129575002613A0 /* AppDelegate.h */,
-				0D01FB841B129575002613A0 /* AppDelegate.m */,
+				0D06B0681B2F5EC7003C9499 /* resources */,
+				0D06B0651B2F5DF0003C9499 /* BKStorageCommonVC.h */,
+				0D06B0661B2F5DF0003C9499 /* BKStorageCommonVC.m */,
+				0D01FB831B129575002613A0 /* BKAppDelegate.h */,
+				0D01FB841B129575002613A0 /* BKAppDelegate.m */,
 				0D01FB851B129575002613A0 /* LaunchScreen.xib */,
 				0D01FB871B129575002613A0 /* Main.storyboard */,
 				0D01FB891B129575002613A0 /* BKEntityVC.h */,
@@ -193,60 +199,52 @@
 				0D01FB931B129575002613A0 /* BKOfflineFileVC.xib */,
 				0D01FB941B129575002613A0 /* BKStorageManager.h */,
 				0D01FB951B129575002613A0 /* BKStorageManager.m */,
-				0D01FB961B129575002613A0 /* bluekai.jpg */,
-				0D01FB971B129575002613A0 /* BlueKai120.png */,
-				0D01FB981B129575002613A0 /* BlueKai58 copy.png */,
-				0D01FB991B129575002613A0 /* BlueKai58.png */,
-				0D01FB9A1B129575002613A0 /* BlueKai80.png */,
-				0D01FB9B1B129575002613A0 /* BlueKai87.png */,
-				0D01FB9C1B129575002613A0 /* BlueKai_1712415.png */,
-				0D01FB9D1B129575002613A0 /* BlueKaiIconTransparent.png */,
-				0D01FB9E1B129575002613A0 /* BluekaiIDVC.h */,
-				0D01FB9F1B129575002613A0 /* BluekaiIDVC.m */,
-				0D01FBA01B129575002613A0 /* BluekaiIDVC.xib */,
-				0D01FBA11B129575002613A0 /* CampaignVC.h */,
-				0D01FBA21B129575002613A0 /* CampaignVC.m */,
-				0D01FBA31B129575002613A0 /* CampaignVC.xib */,
-				0D01FBA41B129575002613A0 /* CampaignWinsVC.h */,
-				0D01FBA51B129575002613A0 /* CampaignWinsVC.m */,
-				0D01FBA61B129575002613A0 /* CampaignWinsVC.xib */,
-				0D01FBA71B129575002613A0 /* CategoryVC.h */,
-				0D01FBA81B129575002613A0 /* CategoryVC.m */,
-				0D01FBA91B129575002613A0 /* CategoryVC.xib */,
-				0D01FBAA1B129575002613A0 /* CFRGraphVC.h */,
-				0D01FBAB1B129575002613A0 /* CFRGraphVC.m */,
-				0D01FBAC1B129575002613A0 /* CFRGraphVC.xib */,
-				0D01FBAD1B129575002613A0 /* CfrStatusVC.h */,
-				0D01FBAE1B129575002613A0 /* CfrStatusVC.m */,
-				0D01FBAF1B129575002613A0 /* CfrStatusVC.xib */,
-				0D01FBB01B129575002613A0 /* DeliveryGraphVC.h */,
-				0D01FBB11B129575002613A0 /* DeliveryGraphVC.m */,
-				0D01FBB21B129575002613A0 /* DeliveryGraphVC.xib */,
+				0D01FB9E1B129575002613A0 /* BKSDKDemoVC.h */,
+				0D01FB9F1B129575002613A0 /* BKSDKDemoVC.m */,
+				0D01FBA01B129575002613A0 /* BKSDKDemoVC.xib */,
+				0D01FBA11B129575002613A0 /* BKCampaignsVC.h */,
+				0D01FBA21B129575002613A0 /* BKCampaignsVC.m */,
+				0D01FBA31B129575002613A0 /* BKCampaignsVC.xib */,
+				0D01FBA41B129575002613A0 /* BKCampaignWinsVC.h */,
+				0D01FBA51B129575002613A0 /* BKCampaignWinsVC.m */,
+				0D01FBA61B129575002613A0 /* BKCampaignWinsVC.xib */,
+				0D01FBA71B129575002613A0 /* BKCategoriesVC.h */,
+				0D01FBA81B129575002613A0 /* BKCategoriesVC.m */,
+				0D01FBA91B129575002613A0 /* BKCategoriesVC.xib */,
+				0D01FBAA1B129575002613A0 /* BKCFRGraphVC.h */,
+				0D01FBAB1B129575002613A0 /* BKCFRGraphVC.m */,
+				0D01FBAC1B129575002613A0 /* BKCFRGraphVC.xib */,
+				0D01FBAD1B129575002613A0 /* BKCfrStatusVC.h */,
+				0D01FBAE1B129575002613A0 /* BKCfrStatusVC.m */,
+				0D01FBAF1B129575002613A0 /* BKCfrStatusVC.xib */,
+				0D01FBB01B129575002613A0 /* BKDeliveryGraphVC.h */,
+				0D01FBB11B129575002613A0 /* BKDeliveryGraphVC.m */,
+				0D01FBB21B129575002613A0 /* BKDeliveryGraphVC.xib */,
 				0D01FBB31B129575002613A0 /* HTTPConnector.h */,
 				0D01FBB41B129575002613A0 /* HTTPConnector.m */,
 				0D01FBB51B129575002613A0 /* Images.xcassets */,
 				0D01FBB61B129575002613A0 /* Info.plist */,
 				0D01FBB71B129575002613A0 /* main.m */,
-				0D01FBB81B129575002613A0 /* MainVC.h */,
-				0D01FBB91B129575002613A0 /* MainVC.m */,
-				0D01FBBA1B129575002613A0 /* OfflineGraphVC.h */,
-				0D01FBBB1B129575002613A0 /* OfflineGraphVC.m */,
-				0D01FBBC1B129575002613A0 /* OfflineGraphVC.xib */,
-				0D01FBBD1B129575002613A0 /* PartnerEntityVC.h */,
-				0D01FBBE1B129575002613A0 /* PartnerEntityVC.m */,
-				0D01FBBF1B129575002613A0 /* PartnerEntityVC.xib */,
-				0D01FBC01B129575002613A0 /* PartnerVC.h */,
-				0D01FBC11B129575002613A0 /* PartnerVC.m */,
-				0D01FBC21B129575002613A0 /* PartnerVC.xib */,
-				0D01FBC31B129575002613A0 /* SiteVC.h */,
-				0D01FBC41B129575002613A0 /* SiteVC.m */,
-				0D01FBC51B129575002613A0 /* SiteVC.xib */,
+				0D01FBB81B129575002613A0 /* BKMainVC.h */,
+				0D01FBB91B129575002613A0 /* BKMainVC.m */,
+				0D01FBBA1B129575002613A0 /* BKOfflineGraphVC.h */,
+				0D01FBBB1B129575002613A0 /* BKOfflineGraphVC.m */,
+				0D01FBBC1B129575002613A0 /* BKOfflineGraphVC.xib */,
+				0D01FBBD1B129575002613A0 /* BKPartnerVC.h */,
+				0D01FBBE1B129575002613A0 /* BKPartnerVC.m */,
+				0D01FBBF1B129575002613A0 /* BKPartnerVC.xib */,
+				0D01FBC01B129575002613A0 /* BKPartnersVC.h */,
+				0D01FBC11B129575002613A0 /* BKPartnersVC.m */,
+				0D01FBC21B129575002613A0 /* BKPartnersVC.xib */,
+				0D01FBC31B129575002613A0 /* BKSitesVC.h */,
+				0D01FBC41B129575002613A0 /* BKSitesVC.m */,
+				0D01FBC51B129575002613A0 /* BKSitesVC.xib */,
 				0D01FBC61B129575002613A0 /* SqlGraphView.h */,
 				0D01FBC71B129575002613A0 /* SqlGraphView.m */,
-				0D01FBC81B129575002613A0 /* StorageCommonVC.h */,
-				0D01FBC91B129575002613A0 /* StorageCommonVC.m */,
 				0D9E7DBE1B16C6F0006904C8 /* BKTrendGraphVC.h */,
 				0D9E7DBF1B16C6F0006904C8 /* BKTrendGraphVC.m */,
+				0D46B3DD1B24B3EE009B4A7B /* SqlPieChartView.h */,
+				0D46B3DE1B24B3EE009B4A7B /* SqlPieChartView.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -260,6 +258,21 @@
 				0D01FBFC1B1295D4002613A0 /* CoreGraphics.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		0D06B0681B2F5EC7003C9499 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D06B0691B2F5EC7003C9499 /* bluekai.jpg */,
+				0D06B06A1B2F5EC7003C9499 /* BlueKai120.png */,
+				0D06B06B1B2F5EC7003C9499 /* BlueKai58 copy.png */,
+				0D06B06C1B2F5EC7003C9499 /* BlueKai58.png */,
+				0D06B06D1B2F5EC7003C9499 /* BlueKai80.png */,
+				0D06B06E1B2F5EC7003C9499 /* BlueKai87.png */,
+				0D06B06F1B2F5EC7003C9499 /* BlueKai_1712415.png */,
+				0D06B0701B2F5EC7003C9499 /* BlueKaiIconTransparent.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,31 +333,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D01FBE01B129575002613A0 /* CampaignVC.xib in Resources */,
-				0D01FBD91B129575002613A0 /* BlueKai80.png in Resources */,
+				0D01FBE01B129575002613A0 /* BKCampaignsVC.xib in Resources */,
 				0D01FBCB1B129575002613A0 /* LaunchScreen.xib in Resources */,
-				0D01FBDA1B129575002613A0 /* BlueKai87.png in Resources */,
+				0D06B0751B2F5EC7003C9499 /* BlueKai80.png in Resources */,
 				0D01FBD11B129575002613A0 /* BKOfflineDirectoryVC.xib in Resources */,
+				0D06B0761B2F5EC7003C9499 /* BlueKai87.png in Resources */,
 				0D01FBCC1B129575002613A0 /* Main.storyboard in Resources */,
-				0D01FBE41B129575002613A0 /* CategoryVC.xib in Resources */,
-				0D01FBDC1B129575002613A0 /* BlueKaiIconTransparent.png in Resources */,
-				0D01FBDE1B129575002613A0 /* BluekaiIDVC.xib in Resources */,
+				0D01FBE41B129575002613A0 /* BKCategoriesVC.xib in Resources */,
+				0D06B0731B2F5EC7003C9499 /* BlueKai58 copy.png in Resources */,
+				0D01FBDE1B129575002613A0 /* BKSDKDemoVC.xib in Resources */,
+				0D06B0771B2F5EC7003C9499 /* BlueKai_1712415.png in Resources */,
 				0D01FBEC1B129575002613A0 /* Images.xcassets in Resources */,
-				0D01FBD61B129575002613A0 /* BlueKai120.png in Resources */,
-				0D01FBF31B129575002613A0 /* PartnerEntityVC.xib in Resources */,
-				0D01FBF11B129575002613A0 /* OfflineGraphVC.xib in Resources */,
+				0D06B0781B2F5EC7003C9499 /* BlueKaiIconTransparent.png in Resources */,
+				0D01FBF31B129575002613A0 /* BKPartnerVC.xib in Resources */,
+				0D01FBF11B129575002613A0 /* BKOfflineGraphVC.xib in Resources */,
 				0D01FBCF1B129575002613A0 /* BKFrontPageVC.xib in Resources */,
-				0D01FBEA1B129575002613A0 /* DeliveryGraphVC.xib in Resources */,
-				0D01FBD51B129575002613A0 /* bluekai.jpg in Resources */,
-				0D01FBDB1B129575002613A0 /* BlueKai_1712415.png in Resources */,
+				0D01FBEA1B129575002613A0 /* BKDeliveryGraphVC.xib in Resources */,
 				0D01FBD31B129575002613A0 /* BKOfflineFileVC.xib in Resources */,
-				0D01FBF51B129575002613A0 /* PartnerVC.xib in Resources */,
-				0D01FBE21B129575002613A0 /* CampaignWinsVC.xib in Resources */,
-				0D01FBF71B129575002613A0 /* SiteVC.xib in Resources */,
-				0D01FBD71B129575002613A0 /* BlueKai58 copy.png in Resources */,
-				0D01FBE61B129575002613A0 /* CFRGraphVC.xib in Resources */,
-				0D01FBD81B129575002613A0 /* BlueKai58.png in Resources */,
-				0D01FBE81B129575002613A0 /* CfrStatusVC.xib in Resources */,
+				0D06B0711B2F5EC7003C9499 /* bluekai.jpg in Resources */,
+				0D06B0721B2F5EC7003C9499 /* BlueKai120.png in Resources */,
+				0D01FBF51B129575002613A0 /* BKPartnersVC.xib in Resources */,
+				0D01FBE21B129575002613A0 /* BKCampaignWinsVC.xib in Resources */,
+				0D01FBF71B129575002613A0 /* BKSitesVC.xib in Resources */,
+				0D06B0741B2F5EC7003C9499 /* BlueKai58.png in Resources */,
+				0D01FBE61B129575002613A0 /* BKCFRGraphVC.xib in Resources */,
+				0D01FBE81B129575002613A0 /* BKCfrStatusVC.xib in Resources */,
 				0D01FBED1B129575002613A0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,29 +369,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D01FBCA1B129575002613A0 /* AppDelegate.m in Sources */,
-				0D01FBEF1B129575002613A0 /* MainVC.m in Sources */,
-				0D01FBE11B129575002613A0 /* CampaignWinsVC.m in Sources */,
-				0D01FBE51B129575002613A0 /* CFRGraphVC.m in Sources */,
+				0D01FBCA1B129575002613A0 /* BKAppDelegate.m in Sources */,
+				0D01FBEF1B129575002613A0 /* BKMainVC.m in Sources */,
+				0D01FBE11B129575002613A0 /* BKCampaignWinsVC.m in Sources */,
+				0D01FBE51B129575002613A0 /* BKCFRGraphVC.m in Sources */,
 				0D9E7DC01B16C6F1006904C8 /* BKTrendGraphVC.m in Sources */,
 				0D01FBCD1B129575002613A0 /* BKEntityVC.m in Sources */,
 				0D01FBF81B129575002613A0 /* SqlGraphView.m in Sources */,
+				0D46B3DF1B24B3EE009B4A7B /* SqlPieChartView.m in Sources */,
 				0D01FBEB1B129575002613A0 /* HTTPConnector.m in Sources */,
 				0D01FBD41B129575002613A0 /* BKStorageManager.m in Sources */,
+				0D06B0671B2F5DF0003C9499 /* BKStorageCommonVC.m in Sources */,
 				0D01FBCE1B129575002613A0 /* BKFrontPageVC.m in Sources */,
 				0D01FBD21B129575002613A0 /* BKOfflineFileVC.m in Sources */,
-				0D01FBF21B129575002613A0 /* PartnerEntityVC.m in Sources */,
-				0D01FBDD1B129575002613A0 /* BluekaiIDVC.m in Sources */,
-				0D01FBE31B129575002613A0 /* CategoryVC.m in Sources */,
-				0D01FBF01B129575002613A0 /* OfflineGraphVC.m in Sources */,
-				0D01FBE91B129575002613A0 /* DeliveryGraphVC.m in Sources */,
-				0D01FBF61B129575002613A0 /* SiteVC.m in Sources */,
-				0D01FBE71B129575002613A0 /* CfrStatusVC.m in Sources */,
-				0D01FBF41B129575002613A0 /* PartnerVC.m in Sources */,
-				0D01FBF91B129575002613A0 /* StorageCommonVC.m in Sources */,
+				0D01FBF21B129575002613A0 /* BKPartnerVC.m in Sources */,
+				0D01FBDD1B129575002613A0 /* BKSDKDemoVC.m in Sources */,
+				0D01FBE31B129575002613A0 /* BKCategoriesVC.m in Sources */,
+				0D01FBF01B129575002613A0 /* BKOfflineGraphVC.m in Sources */,
+				0D01FBE91B129575002613A0 /* BKDeliveryGraphVC.m in Sources */,
+				0D01FBF61B129575002613A0 /* BKSitesVC.m in Sources */,
+				0D01FBE71B129575002613A0 /* BKCfrStatusVC.m in Sources */,
+				0D01FBF41B129575002613A0 /* BKPartnersVC.m in Sources */,
 				0D01FBD01B129575002613A0 /* BKOfflineDirectoryVC.m in Sources */,
 				0D01FBEE1B129575002613A0 /* main.m in Sources */,
-				0D01FBDF1B129575002613A0 /* CampaignVC.m in Sources */,
+				0D01FBDF1B129575002613A0 /* BKCampaignsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

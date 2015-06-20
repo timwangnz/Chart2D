@@ -253,9 +253,9 @@
     
     Graph2DLineStyle *lineStyle = [Graph2DLineStyle borderStyle];
     
-    if (self.view2DDelegate && [self.view2DDelegate respondsToSelector:@selector(borderStyle:)])
+    if (self.view2DDelegate && [self.view2DDelegate respondsToSelector:@selector(borderLineStyle:)])
     {
-        lineStyle = [self.view2DDelegate borderStyle:self];
+        lineStyle = [self.view2DDelegate borderLineStyle:self];
     }
     
     CGContextSetLineWidth(context, lineStyle.penWidth);

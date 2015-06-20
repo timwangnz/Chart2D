@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Oracle. All rights reserved.
 //
 
-#import "StorageCommonVC.h"
+#import "BKStorageCommonVC.h"
 
-@interface BKOfflineFileVC : StorageCommonVC
+@interface BKOfflineFileVC : BKStorageCommonVC
 
 @property NSString *partner;
 @end

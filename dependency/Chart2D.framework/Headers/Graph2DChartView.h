@@ -43,6 +43,12 @@ typedef NSUInteger AutoScaleMode;
 //indicating wether grid is drawn
 @property (nonatomic) BOOL drawXGrids;
 @property (nonatomic) BOOL drawYGrids;
+
+@property Graph2DAxisStyle *xAxisStyle;
+@property Graph2DAxisStyle *yAxisStyle;
+
+
+
 //how to draw the grid
 @property (strong, nonatomic) Graph2DGridStyle *gridStyle;
 
@@ -70,5 +76,7 @@ typedef NSUInteger AutoScaleMode;
 
 //gap between bars in a chart
 @property (nonatomic) CGFloat barGap;
+
+@property NSString *valueFormat;
 
 @end

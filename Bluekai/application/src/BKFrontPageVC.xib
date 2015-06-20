@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BKFrontPageVC">
             <connections>
+                <outlet property="idTypePieChart" destination="4Ek-uj-awh" id="uJ6-xT-PnQ"/>
                 <outlet property="tableview" destination="U1J-5U-Aqn" id="Bx0-4t-5gK"/>
                 <outlet property="trend" destination="8dO-MB-cs8" id="OZp-4o-tNn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,8 +21,12 @@
                     <rect key="frame" x="0.0" y="386" width="320" height="182"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="dHG-xW-rb4" appends="YES" id="h70-UI-Na4"/>
+                    </connections>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="40" sectionHeaderHeight="10" sectionFooterHeight="10" id="U1J-5U-Aqn">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="U1J-5U-Aqn">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -33,7 +38,20 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="594" y="434"/>
+            <point key="canvasLocation" x="476" y="257"/>
+        </view>
+        <swipeGestureRecognizer direction="down" id="dHG-xW-rb4">
+            <connections>
+                <action selector="closeChartView:" destination="-1" id="8PK-d5-1aX"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <view contentMode="scaleToFill" id="4Ek-uj-awh" userLabel="Chart View" customClass="SqlPieChartView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="832" y="96.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

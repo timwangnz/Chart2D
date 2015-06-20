@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Oracle. All rights reserved.
 //
 
-#import "StorageCommonVC.h"
+#import "BKStorageCommonVC.h"
 
-@interface BKOfflineDirectoryVC : StorageCommonVC
+@interface BKOfflineDirectoryVC : BKStorageCommonVC
 
 @end

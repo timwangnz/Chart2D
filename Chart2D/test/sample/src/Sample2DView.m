@@ -65,6 +65,7 @@
     self.topMargin = 45;
     self.topPadding = 10;
     self.bottomPadding = 1;
+    self.touchEnabled = YES;
     
     stopped = YES;
     offset = 10;
@@ -121,7 +122,7 @@
         seriesStyle.lineStyle.width = 1.0;
         seriesStyle.fillStyle.colorFrom = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5];
         seriesStyle.fillStyle.colorTo = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
-        seriesStyle.legend = [[Graph2DTextStyle alloc]initWithText:@"Test" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
+        seriesStyle.legend = [[Graph2DLegendStyle alloc]initWithText:@"Test" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
         seriesStyle.chartType = Graph2DLineChart;
         return seriesStyle;
     }
@@ -131,7 +132,7 @@
         seriesStyle.gradient = NO;
         seriesStyle.lineStyle.width = 3.0;
         seriesStyle.chartType = Graph2DLineChart;
-        seriesStyle.legend = [[Graph2DTextStyle alloc]initWithText:@"Test Again" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
+        seriesStyle.legend = [[Graph2DLegendStyle alloc]initWithText:@"Test Again" color:seriesStyle.color font:[UIFont systemFontOfSize:12]];
         return seriesStyle;
     }
     return nil;
@@ -165,7 +166,7 @@
     xAxisStyle.labelStyle.angle = M_PI_4;
     xAxisStyle.tickStyle.showMinorTicks = YES;
     xAxisStyle.tickStyle.color = [UIColor whiteColor];
-        xAxisStyle.labelStyle.color = [UIColor whiteColor];
+    xAxisStyle.labelStyle.color = [UIColor whiteColor];
     return xAxisStyle;
 }
 

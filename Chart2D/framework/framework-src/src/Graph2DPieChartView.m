@@ -22,6 +22,7 @@
 - (void) awakeFromNib
 {
     [super awakeFromNib];
+    self.chartType = Graph2DPieChart;
     storedLocations = [[NSMutableArray alloc]init];
 }
 
@@ -60,6 +61,11 @@
     CGContextSetTextMatrix(context, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
     
     UIFont *font = [UIFont fontWithName:DEFAULT_FONT size:12];
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    /// Set line break mode
+    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    /// Set text alignment
+    //paragraphStyle.alignment = alignment;
     
     CGFloat labelOffset = 10;
     BOOL showLabel = false;
@@ -68,7 +74,7 @@
         style = [self.pieChartDelegate labelStyle : self];
         labelOffset = style.labelStyle.offset;
         showLabel = !style.labelStyle.hidden;
-        CGContextSetFillColorWithColor(context, [style.color CGColor]);
+        //CGContextSetFillColorWithColor(context, [style.color CGColor]);
         font = style.labelStyle.font == nil ? font : style.labelStyle.font;
     }
     
@@ -101,40 +107,44 @@
         {
             CGFloat endAngle = startAngle + 2 * M_PI * [series[i] floatValue]/total;
             CGFloat cDelta = i * 1.0 /[series count];
-            CGColorRef color = nil;
+            UIColor *color = nil;
             
             if (self.pieChartDelegate)
             {
-                color = [[self.pieChartDelegate graph2DView:self colorForValue: [series[i] floatValue] atIndex: i ] CGColor];
+                color = [self.pieChartDelegate graph2DView:self colorForValue: [series[i] floatValue] atIndex: i ];
             }
             else
             {
-                color  = [[UIColor colorWithRed:  cDelta * 0.7 green: 0.4* cDelta blue:(0.2 * cDelta) alpha:0.8] CGColor];
+                color  = [UIColor colorWithRed:  cDelta * 0.7 green: 0.4* cDelta blue:(0.2 * cDelta) alpha:0.8];
             }
             
-            [self drawArcFrom:startAngle to:endAngle withRadius:radius inContext:context withColor:color];
+            [self drawArcFrom:startAngle to:endAngle withRadius:radius inContext:context withColor:[color CGColor]];
             
             if(showLabel)
             {
                 CGPoint textLocation;
                 
                 textLocation.x = gBounds.origin.x + gBounds.size.width/ 2 + textAtRadius * cos((startAngle + endAngle)/2);
-                textLocation.y = gBounds.origin.y + gBounds.size.height/ 2 +textAtRadius * sin((startAngle + endAngle)/2);
+                textLocation.y = gBounds.origin.y + gBounds.size.height/ 2 + textAtRadius * sin((startAngle + endAngle)/2);
                 
-                NSString *theText = [NSString stringWithFormat:@"L %d", i];
+                NSString *theText = [NSString stringWithFormat:@"%d", i];
                 
                 if (self.dataSource && [self.pieChartDelegate respondsToSelector:@selector(graph2DView:labelAt:)])
                 {
                     theText = [self.pieChartDelegate graph2DView:self labelAt : i];
                 }
                 
+                NSDictionary *attributes = @{NSFontAttributeName: font,
+                                              NSForegroundColorAttributeName: color,
+                                              NSParagraphStyleAttributeName: paragraphStyle };
+                
                 CGSize stringSize = [theText boundingRectWithSize:CGSizeMake(100, 2000.0)
                                                           options:NSStringDrawingUsesLineFragmentOrigin
-                                                       attributes:@{NSFontAttributeName : font}
+                                                       attributes:attributes
                                                           context:nil].size;
 
-                [theText drawAtPoint:CGPointMake(textLocation.x - stringSize.width/2, textLocation.y + stringSize.height / 2.)
-                      withAttributes:@{NSFontAttributeName : font}];
+                [theText drawAtPoint:CGPointMake(textLocation.x - stringSize.width/2, textLocation.y)
+                      withAttributes:attributes];
               
             }
             startAngle = endAngle ;

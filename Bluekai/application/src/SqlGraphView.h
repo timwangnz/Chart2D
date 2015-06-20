@@ -16,10 +16,6 @@
 @property int limit;
 @property NSMutableArray *valueFields;
 @property NSString *xLabelField;
-@property Graph2DAxisStyle *xAxisStyle;
-@property Graph2DAxisStyle *yAxisStyle;
-@property Graph2DLineStyle *borderLineStyle;
-@property NSDictionary *displayNames;
 
 @property int cacheTTL;
 

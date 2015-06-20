@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Oracle. All rights reserved.
 //
 
-#import "StorageCommonVC.h"
+#import "BKStorageCommonVC.h"
 
-@interface BKEntityVC : StorageCommonVC
+@interface BKEntityVC : BKStorageCommonVC
 {
     NSDictionary *entity;
     NSDictionary *sections, *displayNames;

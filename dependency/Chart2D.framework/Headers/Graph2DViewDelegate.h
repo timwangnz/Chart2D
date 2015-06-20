@@ -12,7 +12,8 @@
 
 @class Graph2DView;
 @protocol Graph2DViewDelegate <NSObject>
-- (Graph2DLineStyle *) borderStyle : (Graph2DView *) graph2DView;
+@optional
+- (Graph2DLineStyle *) borderLineStyle : (Graph2DView *) graph2DView;
 @end
 
 @protocol Graph2DChartDelegate<NSObject>
@@ -27,6 +28,8 @@
 - (Graph2DSeriesStyle *) graph2DView : (Graph2DView *) graph2DView styleForSeries:(int) series atIndex:(int)index;
 - (NSString *) graph2DView : (Graph2DView *) graph2DView xLabelAt :(int) x;
 - (NSString *) graph2DView : (Graph2DView *) graph2DView yLabelAt :(int) y;
+
+- (NSString *) graph2DView : (Graph2DView *) graph2DView formatValue :(NSNumber *) value;
 
 - (void) graph2DView:(Graph2DView *) graph2DView didSelectSeries:(int) series atIndex:(int) index;
 @end

@@ -32,40 +32,13 @@
     self = [super initWithCoder:coder];
     if(self)
     {
-        self.borderLineStyle = [[Graph2DLineStyle alloc]init];
-        self.borderLineStyle.lineType = LineStyleSolid;
-        self.borderLineStyle.color = [UIColor blackColor];
-        self.borderLineStyle.penWidth = 0.2;
-        
-        self.valueFields = [NSMutableArray array];
-        self.xAxisStyle = [[Graph2DAxisStyle alloc]init];
-        self.xAxisStyle.tickStyle.majorTicks = 11;
-        self.xAxisStyle.tickStyle.minorTicks = 1;
-        self.xAxisStyle.color = [UIColor blackColor];
-        self.xAxisStyle.labelStyle.angle = - M_PI_4/1.0;
-        self.xAxisStyle.tickStyle.penWidth = 1.0;
-        self.xAxisStyle.tickStyle.majorLength = 5;
-        self.xAxisStyle.tickStyle.penWidth = 0.2;
-        self.xAxisStyle.labelStyle.offset = 0;
-        
-        self.xAxisStyle.tickStyle.color = [UIColor blackColor];
-        self.xAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
-        
-        self.yAxisStyle = [[Graph2DAxisStyle alloc]init];
-        self.yAxisStyle.tickStyle.majorTicks = 6;
-        self.yAxisStyle.tickStyle.majorLength = 5;
-        self.yAxisStyle.tickStyle.minorTicks = 1;
-        self.yAxisStyle.tickStyle.penWidth = 0.2;
-        self.yAxisStyle.hidden = NO;
-        self.yAxisStyle.labelStyle.offset = 10;
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         self.caption.text = self.title;
-        self.caption.font = [UIFont systemFontOfSize:17];
-        self.yAxisStyle.color = [UIColor blackColor];
-        self.yAxisStyle.tickStyle.color = [UIColor blackColor];
-        self.yAxisStyle.labelStyle.font = [UIFont fontWithName:@"Helvetica" size:10];
-
+        self.valueFields = [NSMutableArray array];
         self.cacheTTL = -1;
+        self.drawXGrids = YES;
+        self.drawYGrids = YES;
+
         self.view2DDelegate = self;
     }
     return self;
@@ -152,6 +125,11 @@
         ss.color = [UIColor brownColor];
     }
     
+    if (series == 4)
+    {
+        ss.color = [UIColor yellowColor];
+    }
+    
     NSString *legend = self.valueFields[series];
     
     ss.gradient = YES;
@@ -161,7 +139,7 @@
         legend = self.displayNames[legend];
     }
     
-    ss.legend = [[Graph2DTextStyle alloc]initWithText:legend color:ss.color font:[UIFont systemFontOfSize:10]];
+    ss.legend = [[Graph2DLegendStyle alloc]initWithText:legend color:ss.color font:[UIFont systemFontOfSize:10]];
     return ss;
 }
 
@@ -175,11 +153,6 @@
 - (Graph2DAxisStyle *) yAxisStyle:(Graph2DView *)graph2DView
 {
     return self.yAxisStyle;
-}
-
-- (Graph2DLineStyle *) borderStyle:(Graph2DView *)graph2DView
-{
-    return self.borderLineStyle;
 }
 
 - (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(int)x
@@ -199,6 +172,12 @@
 
 - (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(int)y
 {
+    float dy = (self.yMax - self.yMin) / (self.yAxisStyle.tickStyle.majorTicks - 1);
+    return [self graph2DView:self formatValue:[NSNumber numberWithFloat:self.yMin + y * dy]];
+}
+
+- (NSString *) graph2DView:(Graph2DView *)graph2DView formatValue:(NSNumber *)value
+{
     float scale = 1;
     
     if ((self.yMax - self.yMin) > 1000) {
@@ -209,35 +188,25 @@
         scale = 1000000;
     }
     
-    
     if ((self.yMax - self.yMin) > 1000000000) {
         scale = 1000000000;
     }
     
-    float dy = (self.yMax - self.yMin) / 5;
+    NSString *unit = scale == 1000 ? @"k" : (scale == 1000000 ? @"m" : (scale == 1000000000 ? @"b": @""));
     
-    NSString *yLabel = [NSString stringWithFormat:@"%.1f %@", (self.yMin + y * dy)/scale,
-            scale == 1000 ? @"k" :
-            (scale == 1000000 ? @"m" : (scale == 1000000000 ? @"b":@""))
-            ];
-    
-    //NSLog(@"%@ %f %f %d", yLabel, self.yMin, self.yMax, y);
-    return yLabel;
+    return [NSString stringWithFormat:@"%.1f %@", [value floatValue]/scale, unit];
 }
 
-- (NSInteger) numberOfSeries:(Graph2DView *) graph2Dview
-{
-    return [self.valueFields count];
-}
-
-//number of items in a group
-//return number of items
 - (NSInteger) numberOfItems:(Graph2DView *) graph2Dview forSeries:(NSInteger) graph
 {
     return [filteredObjects count];
 }
 
 //return value
+- (NSInteger) numberOfSeries:(Graph2DView *) graph2Dview
+{
+    return [self.valueFields count];
+}
 - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) item forSeries :(NSInteger) series
 {
     id object = filteredObjects[item];

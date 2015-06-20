@@ -26,11 +26,13 @@
     self.chartType = Graph2DPieChart;
     self.dataSource = self;
     self.view2DDelegate = self;
+        self.pieChartDelegate = self;
+    
     data = [[NSArray alloc] initWithObjects: @"1", @"2", @"3", @"4", @"5", @"6", nil];
     
     self.topPadding = self.bottomPadding = self.leftPadding = self.rightPadding = 30;
     self.drawBorder = YES;
-    self.pieChartDelegate = self;
+
     stopped = YES;
     angle = 2*M_PI - 1;
     self.fillStyle = [[Graph2DFillStyle alloc]init];
@@ -38,7 +40,7 @@
     [self refresh];
 }
 
-- (Graph2DLineStyle *) borderStyle:(Graph2DView *)graph2DView
+- (Graph2DLineStyle *) borderLineStyle:(Graph2DView *)graph2DView
 {
     Graph2DLineStyle *lineStyle = [[Graph2DLineStyle alloc]init];
     lineStyle.color = [UIColor redColor];
@@ -47,7 +49,6 @@
     lineStyle.lineType = LineStyleDash;
     return lineStyle;
 }
-
 
 - (Graph2DAxisStyle *) labelStyle:(Graph2DView *)graph2DView
 {

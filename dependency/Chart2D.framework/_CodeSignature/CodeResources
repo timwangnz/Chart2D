@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		PqT2RkeLQVodIiGu1nXqAM8aq8k=
+		NL1vWGtvNN5IqPOMe5AIBHxBIeg=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -31,6 +31,10 @@
 		<key>Headers/Graph2DGridStyle.h</key>
 		<data>
 		fGFW8z7Dmf7H0WXtiF13gGWY5zQ=
+		</data>
+		<key>Headers/Graph2DLegendStyle.h</key>
+		<data>
+		7rytY+//3DKp9L8M1GzgKPAe/QM=
 		</data>
 		<key>Headers/Graph2DLineStyle.h</key>
 		<data>
@@ -46,7 +50,7 @@
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		h0m4RD2wztMvtoc6w4nAEDUBuo4=
+		bZn3wpXfmUwqdYuljiYSgBHQCSw=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
@@ -54,7 +58,7 @@
 		</data>
 		<key>Headers/Graph2DTextStyle.h</key>
 		<data>
-		vjetWN1480nscZThiZ+hEpiTnzg=
+		ZSdkxVg1xOZ8J2SYd4lBlQ/aTHI=
 		</data>
 		<key>Headers/Graph2DTickStyle.h</key>
 		<data>
@@ -62,11 +66,11 @@
 		</data>
 		<key>Headers/Graph2DView.h</key>
 		<data>
-		q/nEd1dvlqjFkPwWA4aMYbkuAH8=
+		B+JmeitVELUj2oCvnKThMToKc+4=
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>
-		U5LrFTlFgC9yisPlY2dcnLnwAdA=
+		X8GgOSpkp8O3nZalKcrhT0fPKu8=
 		</data>
 		<key>Headers/Graph2DWidgetView.h</key>
 		<data>
@@ -97,7 +101,7 @@
 		</data>
 		<key>Headers/Graph2DChartView.h</key>
 		<data>
-		PqT2RkeLQVodIiGu1nXqAM8aq8k=
+		NL1vWGtvNN5IqPOMe5AIBHxBIeg=
 		</data>
 		<key>Headers/Graph2DDataSource.h</key>
 		<data>
@@ -110,6 +114,10 @@
 		<key>Headers/Graph2DGridStyle.h</key>
 		<data>
 		fGFW8z7Dmf7H0WXtiF13gGWY5zQ=
+		</data>
+		<key>Headers/Graph2DLegendStyle.h</key>
+		<data>
+		7rytY+//3DKp9L8M1GzgKPAe/QM=
 		</data>
 		<key>Headers/Graph2DLineStyle.h</key>
 		<data>
@@ -125,7 +133,7 @@
 		</data>
 		<key>Headers/Graph2DSeriesStyle.h</key>
 		<data>
-		h0m4RD2wztMvtoc6w4nAEDUBuo4=
+		bZn3wpXfmUwqdYuljiYSgBHQCSw=
 		</data>
 		<key>Headers/Graph2DStyle.h</key>
 		<data>
@@ -133,7 +141,7 @@
 		</data>
 		<key>Headers/Graph2DTextStyle.h</key>
 		<data>
-		vjetWN1480nscZThiZ+hEpiTnzg=
+		ZSdkxVg1xOZ8J2SYd4lBlQ/aTHI=
 		</data>
 		<key>Headers/Graph2DTickStyle.h</key>
 		<data>
@@ -141,11 +149,11 @@
 		</data>
 		<key>Headers/Graph2DView.h</key>
 		<data>
-		q/nEd1dvlqjFkPwWA4aMYbkuAH8=
+		B+JmeitVELUj2oCvnKThMToKc+4=
 		</data>
 		<key>Headers/Graph2DViewDelegate.h</key>
 		<data>
-		U5LrFTlFgC9yisPlY2dcnLnwAdA=
+		X8GgOSpkp8O3nZalKcrhT0fPKu8=
 		</data>
 		<key>Headers/Graph2DWidgetView.h</key>
 		<data>

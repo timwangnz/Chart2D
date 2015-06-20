@@ -11,6 +11,7 @@
 #import "Graph2DFillStyle.h"
 #import "Graph2DMarkerStyle.h"
 #import "Graph2DTextStyle.h"
+#import "Graph2DLegendStyle.h"
 
 enum
 {
@@ -50,7 +51,7 @@ typedef NSUInteger Graph2DXAlign;
 //specify the point location between x and x + 1
 @property (nonatomic) Graph2DXAlign xAlign;//0 left, 1 middle
 
-@property (nonatomic) Graph2DTextStyle *legend;
+@property (nonatomic) Graph2DLegendStyle *legend;
 
 @property CGFloat barGap;
 

@@ -18,8 +18,11 @@
 {
     dataReceived = data;
     NSArray *cats = data[@"data"];
+    if ([cats count] == 0)
+    {
+        return;
+    }
     entity = cats[0];
-    
     objects = [NSMutableArray array];
     for (id key in [entity allKeys]) {
         [objects addObject: key];
@@ -58,13 +61,15 @@
     NSString *sectionName = [sections allKeys][indexPath.section];
     
     id key = sections[sectionName][indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:20];
+    cell.textLabel.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
+    cell.detailTextLabel.textColor =  [UIColor colorWithRed:0.5 green:0.5 blue:1 alpha:1];
     
     cell.textLabel.text = displayNames[key];
     cell.detailTextLabel.text = [self formatValue:[entity objectForKey:key]];
     
-    
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
-    cell.detailTextLabel.textColor = [UIColor blueColor];
+
     
     return cell;
 }
