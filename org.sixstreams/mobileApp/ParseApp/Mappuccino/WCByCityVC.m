@@ -31,12 +31,11 @@
     return self;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id selectedCity = [self.objects objectAtIndex:indexPath.row];
     WCByNBameVC *childVC = [[WCByNBameVC alloc] init];
-    childVC.city = [selectedCity objectForKey:CITY];
+    childVC.city = [selectedCity objectForKey: CITY];
     [self.navigationController pushViewController:childVC animated:YES];
 }
 
@@ -60,7 +59,5 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
 }
-
-
 
 @end

@@ -566,7 +566,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
         <view contentMode="scaleToFill" id="wQ8-3Q-A2a" userLabel="delete view">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a8Y-wH-Hpy">
@@ -584,6 +584,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-524" y="-18"/>
         </view>
         <view contentMode="scaleToFill" id="iqZ-Bn-CAs" userLabel="Notes view" customClass="SSRoundView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>

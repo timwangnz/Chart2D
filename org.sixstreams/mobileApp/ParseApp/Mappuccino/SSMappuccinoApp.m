@@ -22,6 +22,7 @@
 #import "SSHighlightsVC.h"
 #import "WCRoasterDetailsVC.h"
 #import "SSSpotlightView.h"
+#import "SSFollowVC.h"
 
 @interface SSMappuccinoApp ()<SSTableViewVCDelegate>
 
@@ -51,7 +52,7 @@
 {
     UITabBarController *tabbarCtrler = [[UITabBarController alloc]init];
     
-    //[tabbarCtrler addChildViewController: [[UINavigationController alloc] initWithRootViewController:[[WCHomeVC alloc] init] ]];
+    [tabbarCtrler addChildViewController: [[UINavigationController alloc] initWithRootViewController:[[WCHomeVC alloc] init] ]];
     
     SSHighlightsVC *highlightsVC =[[SSHighlightsVC alloc]init];
     highlightsVC.objectType = COMPANY_CLASS;
@@ -59,9 +60,10 @@
     [highlightsVC.tabBarItem setImage: [[UIImage imageNamed:@"02-redo"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     highlightsVC.tabBarItem.title = @"Spotlights";
     
-    [tabbarCtrler addChildViewController: [[UINavigationController alloc] initWithRootViewController:highlightsVC]];
+   // [tabbarCtrler addChildViewController: [[UINavigationController alloc] initWithRootViewController:highlightsVC]];
     
     SSSearchVC *searchVC = [[SSSearchVC alloc]init];
+    
     searchVC.objectType = COMPANY_CLASS;
     searchVC.entityEditorClass = @"WCRoasterDetailsVC";
     searchVC.titleKey = NAME;
@@ -94,8 +96,8 @@
     [profiles.tabBarItem setImage: [[UIImage imageNamed:@"112-group"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [profiles.tabBarItem setSelectedImage: [[UIImage imageNamed:@"112-group"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    [tabbarCtrler addChildViewController: [[UINavigationController alloc]initWithRootViewController:profiles]];
-
+    //[tabbarCtrler addChildViewController: [[UINavigationController alloc]initWithRootViewController:profiles]];
+    [tabbarCtrler addChildViewController:[[UINavigationController alloc] initWithRootViewController:[[SSFollowVC alloc]init]]];
     
     SSCommonSetupVC *settingsTab = [[SSCommonSetupVC alloc]init];
     
@@ -105,18 +107,17 @@
     [tabbarCtrler addChildViewController: [[UINavigationController alloc]initWithRootViewController:settingsTab]];
    
     
-        SSConfigManager *configMgr = [SSConfigManager getConfigMgr];
-        [configMgr getConfigurationWithBlock:^(id config) {
-            if (config == nil || [config count] == 0)
-            {
-                [configMgr setValue:@"SSMyProfileVC" ofType:@"viewController" at:8 isSecret:NO for:@"Profile" ofGroup:@"0.Profile"];
-                [configMgr setValue:@"" ofType:@"text" at:1 isSecret:NO for:@"End User Terms" ofGroup:@"1.About"];
-                [configMgr setValue:@"" ofType:@"text" at:2 isSecret:NO for:@"Quick Start" ofGroup:@"1.About"];
-                [configMgr setValue:@"" ofType:@"text" at:3 isSecret:NO for:@"About" ofGroup:@"1.About"];
-                [configMgr save];
-            }
-        }];
-    
+    SSConfigManager *configMgr = [SSConfigManager getConfigMgr];
+    [configMgr getConfigurationWithBlock:^(id config) {
+        if (config == nil || [config count] == 0)
+        {
+            [configMgr setValue:@"SSMyProfileVC" ofType:@"viewController" at:8 isSecret:NO for:@"Profile" ofGroup:@"0.Profile"];
+            [configMgr setValue:@"" ofType:@"text" at:1 isSecret:NO for:@"End User Terms" ofGroup:@"1.About"];
+            [configMgr setValue:@"" ofType:@"text" at:2 isSecret:NO for:@"Quick Start" ofGroup:@"1.About"];
+            [configMgr setValue:@"" ofType:@"text" at:3 isSecret:NO for:@"About" ofGroup:@"1.About"];
+            [configMgr save];
+        }
+    }];
     
     CGRect frame = CGRectMake(0, 0, 400, 148);
     UIView *viewa = [[UIView alloc] initWithFrame:frame];
@@ -126,6 +127,7 @@
     [viewa setBackgroundColor:color];
     
     float iOSVersion = [[UIDevice currentDevice].systemVersion floatValue];
+    
     if(iOSVersion <= 4.3)
     {
         [[tabbarCtrler tabBar] insertSubview:viewa atIndex:0];
@@ -197,7 +199,7 @@
 
 - (void) updateHighlightItem:(id) item inView:(SSSpotlightView *) view
 {
-    if ([view.entityType isEqualToString:COMPANY_CLASS])
+    if ([view.entityType isEqualToString:@"org_sixstreams_Company"])
     {
         
         [self addView:item inView:view withAttr:NAME at:1];
@@ -218,7 +220,7 @@
 
 - (UIViewController *) entityVCFor :(NSString *) type
 {
-    if ([type isEqualToString:COMPANY_CLASS]) {
+    if ([type isEqualToString:@"org_sixstreams_Company"]) {
         WCRoasterDetailsVC *childVC = [[WCRoasterDetailsVC alloc] init];
         
         //childVC.item2Edit = selectedObject;

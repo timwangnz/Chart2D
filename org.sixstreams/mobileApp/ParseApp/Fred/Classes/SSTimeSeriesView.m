@@ -338,6 +338,7 @@
     }
     ts.seriesStyle.legend.color = ts.seriesStyle.color;
     ts.seriesStyle.legend.text = [ts.title display:40 header:10] ;
+    ts.seriesStyle.lineStyle.penWidth = 1;
     return ts.seriesStyle;
 }
 

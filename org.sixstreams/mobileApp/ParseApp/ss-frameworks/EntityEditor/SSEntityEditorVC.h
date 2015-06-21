@@ -107,6 +107,7 @@ typedef void (^OnCallback)(id data);
         callback:(OnCallback) callback;
 
 - (void) saveOnSuccess:(OnCallback) callback;
+- (void) saveInternal:(OnCallback)callback;
 
 - (void) updateEntity:(id) entity OfType:(NSString *) entityType;
 - (void) updateEntityById:(NSString *) objectId OfType:(NSString *) entityType;
