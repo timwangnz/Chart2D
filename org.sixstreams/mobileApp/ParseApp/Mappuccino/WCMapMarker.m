@@ -32,6 +32,12 @@
     float latitude = [sLatitude floatValue];
     NSString *sLongitude = [roaster objectForKey:@"longitude"];
     float longitude = [sLongitude floatValue];
+    
+    if (latitude == 0 || longitude == 0)
+    {
+        
+    }
+    
     CLLocationCoordinate2D cord = {latitude, longitude};
     
     WCMapMarker *ann = [[WCMapMarker alloc] init];

@@ -50,10 +50,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.showBusyIndicator = YES;
-        self.limit = 200;
-        self.offset = 0;
-        iconMargin = 5;
+
         [self setupInitialValues];
     }
     return self;
@@ -169,9 +166,11 @@
 
 - (void) setupInitialValues
 {
-    self.limit = 10;
-    self.offset = 0;
     self.showBusyIndicator = YES;
+    self.limit = 200;
+    self.offset = 0;
+    iconMargin = 5;
+    
     self.predicates = [NSMutableArray array];
 }
 
@@ -386,7 +385,7 @@
     
     [queue addOperation:operation];
     [queue waitUntilAllOperationsAreFinished];
-    }
+}
 
 - (void) refreshOnSuccess: (SuccessCallback) callback
                onFailure: (ErrorCallback) errorCallback
@@ -514,8 +513,6 @@
     if (!self.iconKey && !item[PICTURE_URL]) {
         return nil;
     }
-    
-   
     
     SSImageView *imageView = [[SSImageView alloc]init];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -849,7 +846,6 @@
         else{
             [self dismissViewControllerAnimated:YES completion:nil];
         }
-        
     }
     else
     {

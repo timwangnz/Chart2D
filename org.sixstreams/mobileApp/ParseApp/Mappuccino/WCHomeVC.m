@@ -156,25 +156,37 @@ static NSString *HOME = @"Home";
 
 - (IBAction) showByName:(id)sender
 {
-    UIViewController *viewController3 = [[WCByNBameVC alloc] initWithNibName:@"WCByNBameVC" bundle:nil];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithTitle: HOME
-                                   style: UIBarButtonItemStylePlain
-                                   target: nil action: nil];
-    [self.navigationItem setBackBarButtonItem: backButton];
-    [self.navigationController pushViewController:viewController3 animated:YES];
+    WCByNBameVC *viewController3 = [[WCByNBameVC alloc] initWithNibName:@"WCByNBameVC" bundle:nil];
+    
+    [viewController3 refreshOnSuccess:^(id data) {
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                       initWithTitle: HOME
+                                       style: UIBarButtonItemStylePlain
+                                       target: nil action: nil];
+        [self.navigationItem setBackBarButtonItem: backButton];
+        [self.navigationController pushViewController:viewController3 animated:YES];
+    } onFailure:^(NSError *error) {
+        [self showAlert:@"Failed to load data" withTitle:@"Error"];
+    }];
 }
 
 - (IBAction) showByCity:(id)sender
 {
-    UIViewController *viewController3 = [[WCByCityVC alloc] initWithNibName:@"WCByCityVC" bundle:nil];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithTitle: HOME
-                                   style: UIBarButtonItemStylePlain
-                                   target: nil action: nil];
-    [self.navigationItem setBackBarButtonItem: backButton];
-    [self.navigationController pushViewController:viewController3 animated:YES];
+    WCByCityVC *cityVC = [[WCByCityVC alloc] initWithNibName:@"WCByCityVC" bundle:nil];
+        [cityVC refreshOnSuccess:^(id data) {
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                           initWithTitle: HOME
+                                           style: UIBarButtonItemStylePlain
+                                           target: nil action: nil];
+
+        [self.navigationItem setBackBarButtonItem: backButton];
+        [self.navigationController pushViewController:cityVC animated:YES];
+
+    } onFailure:^(NSError *error) {
+        [self showAlert:@"Failed to load data" withTitle:@"Error"];
+    }];
 }
+
 
 - (IBAction) showRecommend:(id)sender
 {

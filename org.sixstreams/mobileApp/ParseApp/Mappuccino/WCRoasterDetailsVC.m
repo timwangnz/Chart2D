@@ -42,8 +42,6 @@
     IBOutlet UIView *vContacts;
     
     __weak IBOutlet SSRoundTextView *tvSummary;
-    
-    
     __weak IBOutlet SSAddressField *tfAddress;
     IBOutlet SSStarRating *cafeRating;
     IBOutlet SSImageView *ownerIcon;
@@ -177,6 +175,18 @@
     }
     
     SSAddress *addressObj = [[SSAddress alloc]initWithDictionary:[self.item2Edit objectForKey:ADDRESS]];
+    
+    if (addressObj.longitude == 0)
+    {
+        [addressObj updateLocation];
+        self.item2Edit[@"longitude"] = [NSNumber numberWithFloat:addressObj.longitude];
+        self.item2Edit[@"latitude"] = [NSNumber numberWithFloat:addressObj.latitude];
+        self.item2Edit[ADDRESS] = [addressObj dictionary];
+        [self saveInternal:^(id data) {
+            NSLog(@"Update cordinates data");
+        }];
+    }
+    
     tvProducts.item = self.item2Edit;
     address.text = addressObj.street;
     address2.text = [NSString stringWithFormat:@"%@, %@", addressObj.city, addressObj.state];
@@ -193,8 +203,6 @@
     
     [mapView removeAnnotations:mapView.annotations];
     [mapView setMapType:MKMapTypeStandard];
-    //[mapView setZoomEnabled:YES];
-    //[mapView setScrollEnabled:YES];
     
     WCMapMarker *ann = [WCMapMarker getMarker:self.item2Edit];
     
@@ -248,6 +256,8 @@
     
   
     [super doLayout];
+    
+    
     [layoutTable addChildView:commandView at:i++];
 
     [layoutTable addChildView: vFooter at:i++];
@@ -266,7 +276,7 @@
     [imageVC forceRefresh];
     //[commentsVC forceRefresh];
     
-    self.title = [self.item2Edit objectForKey:NAME];
+    self.title = [self.item2Edit objectForKey: NAME];
     lName.text = self.title;
     [self linkEditFields];
     [layoutTable reloadData];
@@ -290,7 +300,6 @@
         
         iconView.url = [self.item2Edit objectForKey:REF_ID_NAME];
         iconView.defaultImg = [UIImage imageNamed:@"shop"];
-        
     }
     
     tvProducts.editable = YES;
@@ -301,9 +310,11 @@
     [layoutTable addChildView:vContacts at:2];
     [layoutTable addChildView:tvProducts at:3];
     [layoutTable addChildView:vActions at:4];
+    [layoutTable addChildView:vFooter at:5];
      [self linkEditFields];
     [layoutTable reloadData];
 }
+
 - (void) uiWillUpdate:(id)object
 {
     if (self.action == SSViewEntity)
@@ -322,11 +333,11 @@
     SSAddress *cafeAddress = [[SSAddress alloc] initWithDictionary:[object objectForKey:ADDRESS]];
     if(cafeAddress)
     {
-        [object setValue:[@[tfName.value, cafeAddress.city] toKeywordList] forKey:SEARCHABLE_WORDS];
+        [object setValue:[@[object[NAME], cafeAddress.city] toKeywordList] forKey:SEARCHABLE_WORDS];
     }
     else
     {
-        [object setValue:[@[tfName.value] toKeywordList] forKey:SEARCHABLE_WORDS];
+        [object setValue:[@[object[NAME]] toKeywordList] forKey:SEARCHABLE_WORDS];
     }
 }
 

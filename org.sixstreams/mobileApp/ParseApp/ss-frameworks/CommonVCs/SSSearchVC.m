@@ -58,21 +58,20 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     searchBar.barTintColor = self.navigationController.navigationBar.barTintColor;
     searchBar.translucent = self.navigationController.navigationBar.translucent;
     searchBar.barStyle = self.navigationController.navigationBar.barStyle;
     searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     searchBar.searchBarStyle = UISearchBarStyleMinimal;
     pulldownHandle.hidden = !self.filterable;
-   
+    
     rightBarButtonItems = self.navigationItem.rightBarButtonItems;
 }
 
 - (void) showSearch:(id) sender
 {
-    int offset = 50;
-
-    
+    int offset = 10;
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationItem.titleView = searchBarView;
         self.navigationItem.rightBarButtonItems = nil;
@@ -94,7 +93,7 @@
         btnCancel.hidden = YES;
         [searchBar resignFirstResponder];
         self.navigationItem.titleView = nil;
-        self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+        self.navigationItem.rightBarButtonItem = search;
     }];
 }
 
@@ -116,7 +115,7 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar                   // called when text starts editing
 {
-    int offset = 50;
+    int offset = 10;
 
     [UIView animateWithDuration:0.5 animations:^{
         theSearchBar.frame = CGRectMake(searchBar.frame.origin.x, searchBar.frame.origin.y,

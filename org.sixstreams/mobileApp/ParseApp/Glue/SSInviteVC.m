@@ -133,6 +133,7 @@
         }];
     }
 }
+
 - (void) processList
 {
     allInvites = self.objects;
@@ -365,7 +366,8 @@
             [self.navigationItem setBackBarButtonItem: backButton];
             [self.navigationController pushViewController:entityEditor animated:YES];
         } onFailure:^(NSError *error) {
-            //
+            [self showAlert:@"Sorry, selected event not found, it might have been cancelled" withTitle:@"Error"];
+            [self deleteObject:item ofType:self.objectType];
         }];
         return nil;//so the caller will not push the controller
     }
