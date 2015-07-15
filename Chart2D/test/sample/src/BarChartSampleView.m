@@ -9,7 +9,7 @@
 #import "BarChartSampleView.h"
 @interface BarChartSampleView()
 {
-    int selected;
+    NSInteger selected;
 }
 
 @end
@@ -29,7 +29,7 @@
     self.drawYGrids = YES;
 
     self.barChartStyle = BarStyleCluster;
-    self.chartType = Graph2DBarChart;
+  //  self.chartType = Graph2DBarChart;
     self.fillStyle = nil;
     self.touchEnabled = YES;
     self.cursorType = Graph2DCursorCross;
@@ -44,7 +44,7 @@
     return 3;
 }
 
-- (void) graph2DView:(Graph2DView *)graph2DView didSelectSeries:(int)series atIndex:(int)index
+- (void) graph2DView:(Graph2DView *)graph2DView didSelectSeries:(NSInteger)series atIndex:(NSInteger)index
 {
     //NSLog(@"%d - %d", series, index);
     if (selected != series)
@@ -54,7 +54,7 @@
     }
 }
 
-- (Graph2DMarkerStyle *) graph2DSeries:(int)series markerAtIndex:(int)index
+- (Graph2DMarkerStyle *) graph2DSeries:(NSInteger)series markerAtIndex:(NSInteger)index
 {
     Graph2DMarkerStyle *style = [[Graph2DMarkerStyle alloc]init];
     float scale = 1.0*index/count;
@@ -64,7 +64,7 @@
 }
 
 //style for each series
-- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int)series  
+- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(NSInteger)series
 {
     Graph2DSeriesStyle *seriesStyle = [[Graph2DSeriesStyle alloc]init];
     seriesStyle.showMarker = series == selected;

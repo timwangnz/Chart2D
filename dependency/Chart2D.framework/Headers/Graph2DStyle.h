@@ -16,7 +16,7 @@ enum
     LineStyleDotted                       = 1
 };
 
-typedef NSUInteger Graph2DLineType;
+typedef NSInteger Graph2DLineType;
 
 enum
 {
@@ -24,7 +24,7 @@ enum
     BarStyleCluster                     = 0
 };
 
-typedef NSUInteger Graph2DBarStyle;
+typedef NSInteger Graph2DBarStyle;
 
 //should be unionable
 enum
@@ -37,7 +37,7 @@ enum
     BorderStyle4Sides                      = 0,
 };
 
-typedef NSUInteger Graph2DBorderStyle;
+typedef NSInteger Graph2DBorderStyle;
 
 @property (nonatomic, strong) UIColor * color;
 

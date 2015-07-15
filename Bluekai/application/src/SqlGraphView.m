@@ -106,7 +106,7 @@
     }
 }
 
-- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
+- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(NSInteger) series
 {
     Graph2DSeriesStyle *ss = [Graph2DSeriesStyle defaultStyle:Graph2DLineChart];
     
@@ -155,7 +155,7 @@
     return self.yAxisStyle;
 }
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(int)x
+- (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(NSInteger)x
 {
     if ([filteredObjects count] == 0)
     {
@@ -170,7 +170,7 @@
     return object[self.xLabelField];
 }
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(int)y
+- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(NSInteger)y
 {
     float dy = (self.yMax - self.yMin) / (self.yAxisStyle.tickStyle.majorTicks - 1);
     return [self graph2DView:self formatValue:[NSNumber numberWithFloat:self.yMin + y * dy]];

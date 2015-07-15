@@ -18,28 +18,26 @@
 
 @protocol Graph2DChartDelegate<NSObject>
 @optional
-- (Graph2DSeriesStyle *) graph2DView : (Graph2DView *) graph2DView styleForSeries:(int) series;
-- (Graph2DMarkerStyle *) graph2DSeries:(int)series markerAtIndex:(int)index;
+- (Graph2DSeriesStyle *) graph2DView : (Graph2DView *) graph2DView styleForSeries:(NSInteger) series;
+- (Graph2DMarkerStyle *) graph2DSeries:(NSInteger)series markerAtIndex:(NSInteger)index;
 
 - (Graph2DAxisStyle *) xAxisStyle : (Graph2DView *) graph2DView;
 - (Graph2DAxisStyle *) yAxisStyle : (Graph2DView *) graph2DView;
 
 //customize one point
-- (Graph2DSeriesStyle *) graph2DView : (Graph2DView *) graph2DView styleForSeries:(int) series atIndex:(int)index;
-- (NSString *) graph2DView : (Graph2DView *) graph2DView xLabelAt :(int) x;
-- (NSString *) graph2DView : (Graph2DView *) graph2DView yLabelAt :(int) y;
+- (Graph2DSeriesStyle *) graph2DView : (Graph2DView *) graph2DView styleForSeries:(NSInteger) series atIndex:(NSInteger)index;
 
 - (NSString *) graph2DView : (Graph2DView *) graph2DView formatValue :(NSNumber *) value;
 
-- (void) graph2DView:(Graph2DView *) graph2DView didSelectSeries:(int) series atIndex:(int) index;
+- (void) graph2DView:(Graph2DView *) graph2DView didSelectSeries:(NSInteger) series atIndex:(NSInteger) index;
 @end
 
 @protocol Graph2DPieDelegate<NSObject>
 @required
 - (Graph2DAxisStyle *) labelStyle : (Graph2DView *) graph2DView;
 - (CGFloat) startAngle : (Graph2DView *) graph2DView;
-- (UIColor *) graph2DView : (Graph2DView*) graph2DView colorForValue :(CGFloat) value atIndex: (int) index;
-- (NSString *) graph2DView : (Graph2DView *) graph2DView labelAt :(int) x;
+- (UIColor *) graph2DView : (Graph2DView*) graph2DView colorForValue :(CGFloat) value atIndex: (NSInteger) index;
+- (NSString *) graph2DView : (Graph2DView *) graph2DView labelAt :(NSInteger) x;
 @optional
-- (void) graph2DView:(Graph2DView *) graph2DView didSelectIndex:(int) index;
+- (void) graph2DView:(Graph2DView *) graph2DView didSelectIndex:(NSInteger) index;
 @end

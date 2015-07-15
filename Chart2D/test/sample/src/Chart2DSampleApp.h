@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Graph2DVC;
 
 @interface Chart2DSampleApp : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) Graph2DVC *graph2DVC;
 
 @end

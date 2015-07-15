@@ -26,6 +26,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         refreshed = NO;
+        [self initChart];
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(orientationDidChange:)
+                                                     name: UIApplicationDidChangeStatusBarOrientationNotification
+                                                   object: nil];
     }
     return self;
 }

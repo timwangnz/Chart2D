@@ -62,9 +62,9 @@
     return xAxisStyle;
 }
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView labelAt:(int)x
+- (NSString *) graph2DView:(Graph2DView *)graph2DView labelAt:(NSInteger)x
 {
-    return [NSString stringWithFormat:@"Pie %d", x];
+    return [NSString stringWithFormat:@"Pie %ld", (long)x];
 }
 
 - (CGFloat) startAngle:(Graph2DView *) graph2DView
@@ -93,7 +93,7 @@
     });
 }
 
-- (UIColor *) graph2DView:(Graph2DView *)graph2DView colorForValue:(CGFloat)value atIndex:(int)index
+- (UIColor *) graph2DView:(Graph2DView *)graph2DView colorForValue:(CGFloat)value atIndex:(NSInteger)index
 {
     switch (index) {
         case 1:

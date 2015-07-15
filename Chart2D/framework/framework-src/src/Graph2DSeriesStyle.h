@@ -20,7 +20,7 @@ enum
     Graph2DLineChart                      = 1,
     Graph2DPieChart                       = 3,
 };
-typedef NSUInteger Graph2DChartType;
+typedef NSInteger Graph2DChartType;
 
 enum
 {
@@ -28,7 +28,7 @@ enum
     Graph2DXAlignCenter             = 1,
 };
 
-typedef NSUInteger Graph2DXAlign;
+typedef NSInteger Graph2DXAlign;
 
 @interface Graph2DSeriesStyle : Graph2DStyle;
 

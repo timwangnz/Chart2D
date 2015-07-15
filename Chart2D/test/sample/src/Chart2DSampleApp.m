@@ -10,6 +10,7 @@
 
 
 #import "Graph2DVC.h"
+#import "BarChartTestVC.h"
 
 @implementation Chart2DSampleApp
 
@@ -19,9 +20,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
    
     
-    self.graph2DVC = [[Graph2DVC alloc] initWithNibName:@"Graph2DVC" bundle:nil];
+    UIViewController *graph2DVC = [[BarChartTestVC alloc]init];
     
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.graph2DVC];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:graph2DVC];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;

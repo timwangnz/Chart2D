@@ -806,7 +806,7 @@
     }
     
     Graph2DSeriesStyle *seriesStyle = [Graph2DSeriesStyle defaultStyle:self.chartType];
-    
+    seriesStyle.chartType = self.chartType;
     if (self.chartDelegate && [self.chartDelegate respondsToSelector:@selector(graph2DView:styleForSeries:)])
     {
         seriesStyle = [self.chartDelegate graph2DView:self styleForSeries:series];
@@ -923,11 +923,11 @@
         
     }
     //min 2 ticks
-    int ticks = axisStyle.tickStyle.majorTicks < 2 ? 2 : axisStyle.tickStyle.majorTicks;
+    NSInteger ticks = axisStyle.tickStyle.majorTicks < 2 ? 2 : axisStyle.tickStyle.majorTicks;
     //min 1 interval
-    int intervals = (ticks  - 1);
+    NSInteger intervals = (ticks  - 1);
     
-    int minorTicks = axisStyle.tickStyle.minorTicks;
+    NSInteger minorTicks = axisStyle.tickStyle.minorTicks;
     
     CGFloat yValueDelta = (self.yMax - self.yMin)/intervals;
     
@@ -945,12 +945,12 @@
             
             UIFont *font = axisStyle.labelStyle.font;
             CGFloat angle = axisStyle.labelStyle.angle;
-            
-            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), i*yValueDelta + self.yMin];
+            double value = i*yValueDelta + self.yMin;
+            NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), value];
             
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(graph2DView:yLabelAt:)])
             {
-                theText = [self.chartDelegate graph2DView:self yLabelAt:i];
+                theText = [self.dataSource graph2DView:self yLabelAt:value];
             }
             
             Graph2DTextStyle *tickTextStyle = [[Graph2DTextStyle alloc]initWithText:theText color: labelcolor font:font];
@@ -1024,7 +1024,8 @@
 {
     CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : font}];
 
-    CGFloat x = basePoint.x + (sinf(angle) > 0 ? size.height*sinf(angle) / 2.0 : -size.width *cosf(angle));
+//    CGFloat x = basePoint.x + (sinf(angle) > 0 ? size.height*sinf(angle) / 2.0 : -size.width *cosf(angle));
+    CGFloat x = basePoint.x +  size.height*sinf(angle) / 2.0;
     
     if (sinf(angle) == 0)
     {
@@ -1070,10 +1071,11 @@
 {
     Graph2DAxisStyle *axisStyle = xAxisStyle ? xAxisStyle : [Graph2DAxisStyle defaultStyle];
     
-    int ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
-    int minorTicks = axisStyle.tickStyle.minorTicks;
+    NSInteger ticks = axisStyle.tickStyle.majorTicks == 0 ? 2 : axisStyle.tickStyle.majorTicks;
+    NSInteger minorTicks = axisStyle.tickStyle.minorTicks;
     
-    float deltaX = gDrawingRect.size.width / (ticks - 1);
+    CGFloat intervals = self.chartType == Graph2DBarChart ? ticks : (ticks - 1);
+    float deltaX = gDrawingRect.size.width / intervals;
     
     for (int i = 0; i < ticks; i++)
     {
@@ -1082,18 +1084,20 @@
             UIFont *font = axisStyle.labelStyle.font;
             
             CGFloat angle = axisStyle.labelStyle.angle;
-            CGFloat xValue = (self.xTo - self.xFrom) * i / (ticks - 1);
+            
+            CGFloat xValue = (self.xTo - self.xFrom) * i / intervals;
             
             NSString *theText = [NSString stringWithFormat: (axisStyle.labelStyle.format ? axisStyle.labelStyle.format: @"%0.2f"), xValue];
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(graph2DView:xLabelAt:)])
             {
-                theText = [self.chartDelegate graph2DView:self xLabelAt:i];
+                theText = [self.dataSource graph2DView:self xLabelAt:i];
             }
             
             CGFloat x = 0;
             CGFloat y = 0;
             
-            x = gBottomLeft.x + i * deltaX;
+            x = gBottomLeft.x + i * deltaX + (self.chartType == Graph2DBarChart ? deltaX/2 : 0);
+            
             y = gBottomLeft.y + font.pointSize + axisStyle.labelStyle.offset;
             
             if (axisStyle.labelStyle.alignment == NSTextAlignmentCenter)
@@ -1106,7 +1110,7 @@
                 x = x + deltaX;
             }
             
-            if (self.chartType != Graph2DBarChart || (self.chartType == Graph2DBarChart && i < xTicks))
+            //if (self.chartType != Graph2DBarChart)
             {
                 [self textAtPoint:theText at:CGPointMake(x, y) andAngle: angle andFont:font andColor: axisStyle.labelStyle.color];
             }
@@ -1192,14 +1196,14 @@
     CGContextSetLineWidth(context, self.gridStyle.penWidth);
     CGContextSetStrokeColorWithColor(context, [self.gridStyle.color CGColor]);
     
-    
-    float deltaX = gDrawingRect.size.width / (xTicks - 1);
+    CGFloat intervals = self.chartType == Graph2DBarChart ? xTicks : (xTicks - 1);
+    float deltaX = gDrawingRect.size.width / intervals;
     
     if (self.drawXGrids)
     {
         CGFloat yFrom = gBounds.origin.y;
         CGFloat yTo = gBounds.origin.y + gBounds.size.height;
-        for (int i = 1; i < xTicks - 1; i++)
+        for (int i = 1; i < xTicks; i++)
         {
             CGFloat x = gDrawingRect.origin.x + i * deltaX;
             if (x > gBounds.origin.x && x < gBounds.origin.x + gBounds.size.width)

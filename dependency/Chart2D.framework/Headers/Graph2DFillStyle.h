@@ -14,8 +14,7 @@ enum
     Graph2DFillRightLeft                       = 1,
     Graph2DFillTopBottom                       = 3,
 };
-
-typedef NSUInteger Graph2DFillDirection;
+typedef NSInteger Graph2DFillDirection;
 
 @interface Graph2DFillStyle : Graph2DStyle
 

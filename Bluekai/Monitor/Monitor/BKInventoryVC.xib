@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BKInventoryVC" customModule="Monitor" customModuleProvider="target">
+            <connections>
+                <outlet property="dataTableView" destination="lZQ-RR-yr3" id="01n-UB-fXa"/>
+                <outlet property="trendView" destination="XsE-uJ-Wci" id="kbJ-2A-6Vw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lZQ-RR-yr3">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="413"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="413" id="CSl-GM-ia8"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Y0F-bw-fHe"/>
+                        <outlet property="delegate" destination="-1" id="Q7E-sr-PlX"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsE-uJ-Wci" customClass="BKSqlChartView" customModule="Monitor" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="413" width="600" height="187"/>
+                    <color key="backgroundColor" red="0.29223638480000003" green="0.5862594123" blue="0.86807105650000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XsE-uJ-Wci" firstAttribute="top" secondItem="lZQ-RR-yr3" secondAttribute="bottom" id="NSo-Ed-fpU"/>
+                <constraint firstItem="lZQ-RR-yr3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q6W-mo-wFF"/>
+                <constraint firstAttribute="trailing" secondItem="lZQ-RR-yr3" secondAttribute="trailing" id="RMf-AP-K3s"/>
+                <constraint firstItem="lZQ-RR-yr3" firstAttribute="leading" secondItem="XsE-uJ-Wci" secondAttribute="leading" id="SEX-L1-WEy"/>
+                <constraint firstItem="lZQ-RR-yr3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UEk-SU-VkI"/>
+                <constraint firstItem="lZQ-RR-yr3" firstAttribute="trailing" secondItem="XsE-uJ-Wci" secondAttribute="trailing" id="mgk-6E-TR6"/>
+                <constraint firstAttribute="bottom" secondItem="XsE-uJ-Wci" secondAttribute="bottom" id="r3g-ye-phu"/>
+            </constraints>
+            <point key="canvasLocation" x="-37" y="346"/>
+        </view>
+    </objects>
+</document>

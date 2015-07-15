@@ -9,8 +9,8 @@
 
 @interface Graph2DTickStyle : Graph2DLineStyle
 
-@property int majorTicks;//grids
-@property int minorTicks;
+@property NSInteger majorTicks;//grids
+@property NSInteger minorTicks;
 @property CGFloat majorLength;
 @property CGFloat minorLength;
 @property BOOL showMajorTicks;

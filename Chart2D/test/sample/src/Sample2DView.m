@@ -101,18 +101,18 @@
     return count;
 }
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(int)x 
+- (NSString *) graph2DView:(Graph2DView *)graph2DView xLabelAt:(NSInteger)x
 {
-    return [NSString stringWithFormat:@"L %d", x];
+    return [NSString stringWithFormat:@"L %ld", (long)x];
 }
 
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(int)y
+- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(NSInteger)y
 {
-    return [NSString stringWithFormat:@"%d", y];
+    return [NSString stringWithFormat:@"%ld", (long)y];
 }
 
-- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(int) series
+- (Graph2DSeriesStyle *) graph2DView:(Graph2DView *)graph2DView styleForSeries:(NSInteger) series
 {
     Graph2DSeriesStyle *seriesStyle = [[Graph2DSeriesStyle alloc]init];
     if (series == 0)

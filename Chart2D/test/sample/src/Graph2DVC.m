@@ -11,7 +11,7 @@
 
 @interface Graph2DVC ()
 {
-    int selected;
+    NSInteger selected;
     NSArray *data;
     CGRect restoreRect;
 }
@@ -68,15 +68,15 @@
     }
 }
 
-- (NSString *) graph2DView:(Graph2DView *) graph2DView xLabelAt:(int)x
+- (NSString *) graph2DView:(Graph2DView *) graph2DView xLabelAt:(NSInteger)x
 {
-    return [NSString stringWithFormat:@"%d", x];
+    return [NSString stringWithFormat:@"%ld", (long)x];
 }
 
 
-- (NSString *) graph2DView:(Graph2DView *) graph2DView yLabelAt:(int)y
+- (NSString *) graph2DView:(Graph2DView *) graph2DView yLabelAt:(NSInteger)y
 {
-    return [NSString stringWithFormat:@"%d", y];
+    return [NSString stringWithFormat:@"%ld", (long)y];
 }
 
 
@@ -111,7 +111,7 @@
     [super viewDidUnload];
 }
 
-- (void) graph2DView :(Graph2DView *) graph2DView didSelectSeries:(int)series atIndex:(int)index
+- (void) graph2DView :(Graph2DView *) graph2DView didSelectSeries:(NSInteger)series atIndex:(NSInteger)index
 {
     selected = index;
 }

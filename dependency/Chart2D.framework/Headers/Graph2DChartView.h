@@ -13,7 +13,7 @@ enum
     Graph2DCursorCross                      = 1,
     Graph2DCursorNone                       = 0
 };
-typedef NSUInteger Graph2DCursorType;
+typedef NSInteger Graph2DCursorType;
 enum
 {
     Graph2DLegendNone                       = -1,
@@ -22,7 +22,7 @@ enum
     Graph2DLegendLeft                      = 1,
     Graph2DLegendRight                       = 0
 };
-typedef NSUInteger Graph2DLegendType;
+typedef NSInteger Graph2DLegendType;
 
 enum
 {
@@ -31,7 +31,7 @@ enum
     Graph2DAutoScaleMax                       = 2,
     Graph2DAutoScaleBoth                      = 1
 };
-typedef NSUInteger AutoScaleMode;
+typedef NSInteger AutoScaleMode;
 
 @interface Graph2DChartView : Graph2DView
 

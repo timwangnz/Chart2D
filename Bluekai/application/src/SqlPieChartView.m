@@ -84,12 +84,12 @@
     return xAxisStyle;
 }
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView labelAt:(int)x
+- (NSString *) graph2DView:(Graph2DView *)graph2DView labelAt:(NSInteger)x
 {
     return self.displayNames[self.valueFields[x]];
 }
 
-- (UIColor *) graph2DView:(Graph2DView *)graph2DView colorForValue:(CGFloat)value atIndex:(int)index
+- (UIColor *) graph2DView:(Graph2DView *)graph2DView colorForValue:(CGFloat)value atIndex:(NSInteger)index
 {
     switch (index) {
         case 1:

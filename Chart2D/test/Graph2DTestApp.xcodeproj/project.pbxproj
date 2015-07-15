@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2FCBB91B4E1E0400776931 /* BarChartTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCBB71B4E1E0400776931 /* BarChartTestVC.m */; };
+		0D2FCBBA1B4E1E0400776931 /* BarChartTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2FCBB81B4E1E0400776931 /* BarChartTestVC.xib */; };
 		0D8DD7771A7E9C4C0074F31B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8DD7761A7E9C4C0074F31B /* JavaScriptCore.framework */; };
 		0DA781201B226FE70066113F /* Graph2DLegendStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA7811F1B226FE70066113F /* Graph2DLegendStyle.m */; };
 		0DE50F591AC86F85005C15A2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE50F581AC86F85005C15A2 /* CoreImage.framework */; };
@@ -14,7 +16,6 @@
 		0DE50F721AC87D29005C15A2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE50F5E1AC87D29005C15A2 /* Default-568h@2x.png */; };
 		0DE50F731AC87D29005C15A2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE50F5F1AC87D29005C15A2 /* Default.png */; };
 		0DE50F741AC87D29005C15A2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE50F601AC87D29005C15A2 /* Default@2x.png */; };
-		0DE50F751AC87D29005C15A2 /* Graph2DTestApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DE50F611AC87D29005C15A2 /* Graph2DTestApp-Info.plist */; };
 		0DE50F761AC87D29005C15A2 /* BarChartSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F651AC87D29005C15A2 /* BarChartSampleView.m */; };
 		0DE50F771AC87D29005C15A2 /* Chart2DSampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F671AC87D29005C15A2 /* Chart2DSampleApp.m */; };
 		0DE50F781AC87D29005C15A2 /* Graph2DVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE50F691AC87D29005C15A2 /* Graph2DVC.m */; };
@@ -46,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2FCBB61B4E1E0400776931 /* BarChartTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartTestVC.h; sourceTree = "<group>"; };
+		0D2FCBB71B4E1E0400776931 /* BarChartTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartTestVC.m; sourceTree = "<group>"; };
+		0D2FCBB81B4E1E0400776931 /* BarChartTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartTestVC.xib; sourceTree = "<group>"; };
 		0D8DD7761A7E9C4C0074F31B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0DA7811E1B226FE70066113F /* Graph2DLegendStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph2DLegendStyle.h; sourceTree = "<group>"; };
 		0DA7811F1B226FE70066113F /* Graph2DLegendStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph2DLegendStyle.m; sourceTree = "<group>"; };
@@ -168,6 +172,9 @@
 				0DE50F6F1AC87D29005C15A2 /* SamplePieChart.m */,
 				0DE50F701AC87D29005C15A2 /* VolumnView.h */,
 				0DE50F711AC87D29005C15A2 /* VolumnView.m */,
+				0D2FCBB61B4E1E0400776931 /* BarChartTestVC.h */,
+				0D2FCBB71B4E1E0400776931 /* BarChartTestVC.m */,
+				0D2FCBB81B4E1E0400776931 /* BarChartTestVC.xib */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -274,7 +281,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CoreCrm;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Oracle;
 			};
 			buildConfigurationList = 0DF9B4B41656EBB3003072F7 /* Build configuration list for PBXProject "Graph2DTestApp" */;
@@ -300,8 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE50F741AC87D29005C15A2 /* Default@2x.png in Resources */,
-				0DE50F751AC87D29005C15A2 /* Graph2DTestApp-Info.plist in Resources */,
 				0DE50F721AC87D29005C15A2 /* Default-568h@2x.png in Resources */,
+				0D2FCBBA1B4E1E0400776931 /* BarChartTestVC.xib in Resources */,
 				0DE50F791AC87D29005C15A2 /* Graph2DVC.xib in Resources */,
 				0DE50F731AC87D29005C15A2 /* Default.png in Resources */,
 			);
@@ -328,6 +335,7 @@
 				0DE50F7C1AC87D29005C15A2 /* SamplePieChart.m in Sources */,
 				0DEDB7771B11312900293DAF /* Graph2DAxisStyle.m in Sources */,
 				0DE50F7B1AC87D29005C15A2 /* Sample2DView.m in Sources */,
+				0D2FCBB91B4E1E0400776931 /* BarChartTestVC.m in Sources */,
 				0DE50F7D1AC87D29005C15A2 /* VolumnView.m in Sources */,
 				0DE50F761AC87D29005C15A2 /* BarChartSampleView.m in Sources */,
 				0DEDB77B1B11312900293DAF /* Graph2DLineStyle.m in Sources */,

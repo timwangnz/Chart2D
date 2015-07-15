@@ -21,4 +21,6 @@
     - (NSNumber *) graph2DView:(Graph2DView *) graph2DView valueAtIndex:(NSInteger) item forSeries :(NSInteger) series;
 @optional//only needed if it is range, default is 0
     - (NSNumber *) graph2DView:(Graph2DView *)graph2DView lowValueAtIndex:(NSInteger)item forSeries:(NSInteger)series;
+    - (NSString *) graph2DView : (Graph2DView *) graph2DView xLabelAt :(NSInteger) x;
+    - (NSString *) graph2DView : (Graph2DView *) graph2DView yLabelAt :(double) y;
 @end

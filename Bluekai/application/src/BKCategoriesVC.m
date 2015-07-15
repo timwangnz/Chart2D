@@ -77,6 +77,8 @@
         trend.yAxisStyle.tickStyle.majorTicks = 6;
     trend.displayNames =@{@"INVENTORY":@"Tagged in 30 Days", @"AB_TESTED":@"AB Tested 30 Days"};
     trend.legendType = Graph2DLegendTop;
+    
+    
     showAll = NO;
     trend.cacheTTL = 3600;
     self.titleField = @"CATEGORY_NAME";

@@ -16,7 +16,7 @@ enum
     Graph2DMarkerCircle                 = 3,
 };
 
-typedef NSUInteger Graph2DMarkerType;
+typedef NSInteger Graph2DMarkerType;
 
 @interface Graph2DMarkerStyle : NSObject
 
