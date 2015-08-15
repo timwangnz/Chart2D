@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SqlTapVisualVC: SqlMainVC {
+class TapChartVisualVC: ChartMainVC {
         
-    var detailViewController: SqlTapVisualViewVC? = nil
+    var detailViewController: VisualViewVC? = nil
     var objects = [AnyObject]()
 
 
@@ -27,7 +27,7 @@ class SqlTapVisualVC: SqlMainVC {
       
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? SqlTapVisualViewVC
+            self.detailViewController = controllers[controllers.count-1].topViewController as? VisualViewVC
             self.detailViewController!.model = model
         }
     }
@@ -37,7 +37,7 @@ class SqlTapVisualVC: SqlMainVC {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! SqlTapVisualViewVC
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! VisualViewVC
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

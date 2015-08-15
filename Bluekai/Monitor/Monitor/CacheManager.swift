@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BKCacheManager
+class CacheManager
 {
     let DATA_KEY = "data"
     var uriCache  = [String: AnyObject]()

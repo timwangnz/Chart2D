@@ -8,14 +8,14 @@
 
 import UIKit
 
-class BKRestVC: UIViewController {
+class RestfulDataVC: UIViewController {
     
     @IBOutlet var dataTableView: UITableView!
     
     var titleField:NSString?
     var detailField:NSString?
     
-    let data = BKRestData()
+    let data = RestfulDataSource()
     var displayNames : NSDictionary?
     var keys : NSArray?
     var filteredValues : NSArray?
@@ -48,7 +48,7 @@ class BKRestVC: UIViewController {
         data.sql = getSql()!
         data.limit = limit;
         data.get (){ (response: NSURLResponse!, data:NSData!, error:NSError!) -> Void in
-            let jsonDict:NSDictionary = BKRestData.parseJSON(data)
+            let jsonDict:NSDictionary = RestfulDataSource.parseJSON(data)
             self.values = jsonDict.objectForKey("data") as? NSArray
             self.filteredValues = self.values
             callback(data:jsonDict, error:error)

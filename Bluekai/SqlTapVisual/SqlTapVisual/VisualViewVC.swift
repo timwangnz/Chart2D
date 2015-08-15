@@ -9,16 +9,13 @@
 import UIKit
 import Chart2D
 
-class SqlTapVisualViewVC: UIViewController {
+class VisualViewVC: UIViewController {
     
     @IBOutlet var columnsView: UIView!
     @IBOutlet var rowsView: UIView!
     
-    var chartViews : [BKSqlChartView]  = []
-    //BKSqlChartView
-    
-    //var sqlChartView1 : BKSqlChartView? = nil
-    
+    var chartViews : [ChartView]  = []
+         
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
@@ -46,7 +43,7 @@ class SqlTapVisualViewVC: UIViewController {
         }
     }
     
-    func initView(sqlView : BKSqlChartView)
+    func initView(sqlView : ChartView, col:Int, row:Int)
     {
         sqlView.borderStyle = BorderStyle4Sides;
         sqlView.drawXGrids = true
@@ -57,9 +54,9 @@ class SqlTapVisualViewVC: UIViewController {
         sqlView.touchEnabled = false
         sqlView.view2DDelegate = sqlView;
         
-        sqlView.topMargin = 20
-        sqlView.bottomMargin = 80
-        sqlView.leftMargin = 40
+        sqlView.topMargin = row == 0 ? 20 : 10
+        sqlView.bottomMargin = row != model!.chartRows.count - 1 ? 10 : 80;
+        sqlView.leftMargin = 50
         sqlView.topPadding = 0
         sqlView.legendType = Graph2DLegendNone
         sqlView.xAxisStyle.labelStyle.angle = CGFloat(M_PI/2.0)
@@ -76,7 +73,7 @@ class SqlTapVisualViewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        chartViews.append(BKSqlChartView(frame: CGRectZero))
+        //chartViews.append(BKSqlChartView(frame: CGRectZero))
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "columnsChanged:",
@@ -102,23 +99,63 @@ class SqlTapVisualViewVC: UIViewController {
     {
         for sqlChartView in chartViews
         {
-            containerView.addSubview(sqlChartView)
-            initView(sqlChartView);
-            sqlChartView.dataSource = self.model!
-            let margin:CGFloat = 10
-            let columns = model!.numberOfValues()
-            if (columns == 0)
+            sqlChartView.removeFromSuperview()
+        }
+        
+        chartViews.removeAll(keepCapacity: false);
+        
+       
+        var j = 0
+        let rows = CGFloat(model!.chartRows.count)
+        let margin:CGFloat = 5
+        
+        var height = (self.containerView.frame.height - 80 - margin * 2) / rows
+        
+        for col in model!.chartColumns
+        {
+             var i = 0
+            for row in model!.chartRows
             {
-                sqlChartView.hidden = true
+                let sqlChartView = ChartView(frame: CGRectZero)
+                chartViews.append(sqlChartView)
+                containerView.addSubview(sqlChartView)
+                let chartModel = ChartModel()
+                chartModel.globalModel = self.model!
+                
+                chartModel.rowName = row.fieldName
+                chartModel.colName = model!.chartColumns[j].fieldName
+                
+                sqlChartView.dataSource = chartModel
+                
+                initView(sqlChartView, col: j, row: i)
+                let columns = model!.aggregatedModel[row.fieldName]?.count
+                
+                if (columns == 0)
+                {
+                    sqlChartView.hidden = true
+                }
+                else
+                {
+                    sqlChartView.hidden = false
+                    let width = sqlChartView.leftMargin + sqlChartView.rightMargin +  margin * 2 + CGFloat(columns! * 15)
+                    
+                    var y = margin + (height) * CGFloat(i);
+                    
+                    if i == model!.chartRows.count - 1
+                    {
+                        height = height + 80
+                    }
+                    
+                    sqlChartView.frame = CGRectMake(margin, y, width, height)
+                }
+                i++;
             }
-            else
-            {
-                sqlChartView.hidden = false
-                let width = sqlChartView.leftMargin + sqlChartView.rightMargin +  margin * 2 + CGFloat(columns * 30)
-                let height = self.containerView.frame.height / 2 - margin * 2
-                sqlChartView.frame = CGRectMake(margin, margin, width, height)
-                sqlChartView.refresh();
-            }
+            j++;
+        }
+       
+        for sqlChartView in chartViews
+        {
+            sqlChartView.refresh();
         }
     }
 
@@ -136,9 +173,9 @@ class SqlTapVisualViewVC: UIViewController {
             let button : UIButton = UIButton()
             button.frame = CGRectMake(x, columnsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
             button.backgroundColor = UIColor.grayColor()
-            let name = column["COLUMN_NAME"] as! String
+           
             button.tag = i
-            button.setTitle(name, forState: UIControlState.Normal)
+            button.setTitle(column.fieldName, forState: UIControlState.Normal)
             button.addTarget(self, action: "deleteColumn:", forControlEvents: UIControlEvents.TouchUpInside)
             columnsView.addSubview(button);
             x = x + 125
@@ -159,11 +196,10 @@ class SqlTapVisualViewVC: UIViewController {
             let button : UIButton = UIButton()
             button.frame = CGRectMake(x, rowsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
             button.backgroundColor = UIColor.grayColor()
-            
-            let name = row["COLUMN_NAME"] as! String
+           
             button.tag = i
             
-            button.setTitle(name, forState: UIControlState.Normal)
+            button.setTitle(row.fieldName, forState: UIControlState.Normal)
             button.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchUpInside)
             rowsView.addSubview(button);
             x = x + 125

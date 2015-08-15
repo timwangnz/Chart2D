@@ -9,301 +9,133 @@
 import Foundation
 import Chart2D
 
-class VisualizationModel: NSObject, BkDraggableDelegate, Graph2DDataSource {
+class VisualizationModel: NSObject, DraggableDelegate {
+
+    var dataSource : StaticDataSource = StaticDataSource()
     
-    let data = BKRestData()
-    let cacheManager : BKCacheManager =   BKCacheManager()
+
     
-    var cacheTTL : Int = -1
-    
-    var chartRows : NSMutableArray = []
-    var chartColumns : NSMutableArray = []
-    
-    var objects : NSMutableArray = []
-    
-    var chartObjects : NSMutableArray = []
-    
-    var valueFields : NSMutableArray = []
-    
+    var aggregatedModel = [String:AggregatedValue]()
+    var chartRows = [ChartField]()
+    var chartColumns = [ChartField]()
+
     var counting : Bool = false;
-    
-    var dimensions : NSMutableArray = []
-    var measures : NSMutableArray = []
-    
-    var tableName : NSString? {
-        didSet {
-            chartColumns.removeAllObjects();
-            chartRows.removeAllObjects();
-            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
-        }
-    }
+
+
     
     func swap(from: NSIndexPath, to: NSIndexPath) {
         //
     }
-    
-    func getSql() ->String
+
+    func resetModel()
     {
-        return "select count(*) from \(tableName!)"
-    }
-    
-    func invalidateCache () -> Void
-    {
-        cacheManager.invalidateCache(self.getSql())
-    }
-    
-    func checkCache () -> Bool
-    {
-        if let cached: AnyObject = cacheManager.getCache(self.getSql(), timeToLive: cacheTTL)
-        {
-            let dataReceived : NSDictionary = cached as! NSDictionary;
-            let pts: NSArray = dataReceived["data"] as! NSArray
-            objects.removeAllObjects()
-            objects.arrayByAddingObjectsFromArray(pts as [AnyObject])
-            return true;
-        }
-        return false;
-    }
-    
-    func reload(callback: (data:NSDictionary!, error: NSError!) -> Void) -> Void
-    {
-        objects = NSMutableArray();
-        if !self.checkCache()
-        {
-            data.sql = self.getSql()
-            data.get (){ (response: NSURLResponse!, data:NSData!, error:NSError!) -> Void in
-                let jsonDict:NSDictionary = BKRestData.parseJSON(data)
-                
-                if let data : AnyObject? = jsonDict.objectForKey("data")
-                {
-                    self.objects.removeAllObjects()
-                    self.objects.addObjectsFromArray(data as! [AnyObject])
-                    NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.data.loaded", object: nil)
-                }
-                else if let status: AnyObject = jsonDict.objectForKey("status")
-                {
-                    println("encounted an error \(jsonDict)")
-                    NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.data.error", object: jsonDict)
-                }
-                callback(data:jsonDict, error:error)
-            }
-        }
+        chartColumns.removeAll(keepCapacity: false);
+        chartRows.removeAll(keepCapacity: false);
+        NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
     }
     
     func deleteRowAt(index:Int)
     {
-        let row: AnyObject = chartRows.objectAtIndex(index);
-        if (row as! NSDictionary)["COLUMN_NAME"] as! String == "COUNTS"
+        let row = chartRows[index];
+        if row.fieldName == "COUNTS"
         {
             self.counting = false
         }
-        chartRows.removeObject(row)
-         updateModel();
+        chartRows.removeAtIndex(index);
+        updateModel();
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: chartRows)
     }
     
     func deleteColumnAt(index:Int)
     {
-        chartColumns.removeObjectAtIndex(index)
-         updateModel();
+        chartColumns.removeAtIndex(index);
+        updateModel();
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: chartColumns)
     }
     
-    func addRow(row : AnyObject)
+    func addRow(row : ChartField)
     {
-        if (!chartRows.containsObject(row))
+        if !contains(chartRows, row)
         {
             if(self.counting)
             {
                 return;
             }
             
-            if (row as! NSDictionary)["COLUMN_NAME"] as! String == "COUNTS"
+            if row.fieldName == "COUNTS"
             {
                 self.counting = true
             }
-            chartRows.addObject(row)
+            chartRows.append(row)
             updateModel();
             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: chartRows)
         }
     }
     
-    func addColumn(column:AnyObject)
+    func addColumn(column:ChartField)
     {
-        if (!chartColumns.containsObject(column))
+        if !contains(chartColumns, column)
         {
-            chartColumns.addObject(column)
+            chartColumns.append(column)
             updateModel();
             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: chartColumns)
         }
     }
     
-    func numberOfValues() -> Int
+    func totalGroupedBy(objects : NSMutableArray, fieldName : String) -> Double
     {
-        return chartObjects.count
-    }
-
-    func totalGroupBy(rowName :String)
-    {
-        
-        for colunm in chartColumns
+        var total : Double = 0
+        for object in objects
         {
-            
+            let measure: AnyObject? = object[fieldName];
+            total = total + (measure as! Double)
         }
-        
+        return total;
     }
     
-    func totalGroupBy(rowName :String, colName:String)
+    func objectsGroupedBy(path:[String]) -> NSMutableArray
     {
-        var groupBySum = Dictionary<String, Double>()
-        for var i = 0; i < Int(count!); i++
+        var children = dataSource.objects
+        
+        for pathEle in path
         {
-            let object : NSDictionary = objects.objectAtIndex(i) as! NSDictionary
-            let dimension: AnyObject? = object[colName];
-            
-            println("\(dimension!)");
-            
-            let groupBy : String = "\(dimension!)"
-            
-            var sum = groupBySum[groupBy]
-            
-            if (sum == nil)
+            children = objectsGroupedBy(children, fieldName: pathEle)
+        }
+        return children;
+    }
+    
+    func objectsGroupedBy(objects :NSMutableArray, fieldName:String) -> NSMutableArray
+    {
+        var groupedObjects : NSMutableArray = []
+        for object in objects
+        {
+            if let child: AnyObject = object[fieldName]
             {
-                sum = 0
+                groupedObjects.addObject(object)
             }
-            
-            let measure: AnyObject? = object[rowName];
-            sum = sum! + (measure as! Double)
-            groupBySum[groupBy] = sum
-            
         }
-        
-        for (kind, number) in groupBySum {
-            chartObjects.addObject(["Marker":kind, rowName: number])
-        }
-
+        return groupedObjects;
     }
     
-    func sumTotal(rowName :String)
-    {
-        var sum : Double = 0.0
-        for var i = 0; i < Int(count!); i++
-        {
-            let object: NSDictionary = objects.objectAtIndex(i) as! NSDictionary
-            let measure: AnyObject? = object[rowName];
-            sum = sum + (measure as! Double)
-        }
-        chartObjects.addObject(["Marker":"Total Sales", rowName: sum]);
-    }
     
     func updateModel()
     {
-        chartObjects.removeAllObjects()
-        if (chartRows.count == 0)
+        aggregatedModel.removeAll(keepCapacity: false);
+        var i = 0
+        for measure in self.chartRows //for each measure
         {
-            return;
+            var rootValue = AggregatedValue(measure: measure, values: dataSource.objects)
+            rootValue.buildValueModelTree(self.chartColumns);
+            aggregatedModel.updateValue(rootValue, forKey: measure.fieldName)
         }
         
-        let  row : NSDictionary = chartRows[0] as! NSDictionary
-        let rowName = row["COLUMN_NAME"] as! String
-        
-        if (chartColumns.count == 0)
+        /*
+        for (fieldName, aggregatedValue) in aggregatedModel
         {
-            sumTotal(rowName);
+        println("\(fieldName)")
+        aggregatedValue.printTree()
         }
-        else
-        {
-            let column : NSDictionary = chartColumns[0] as! NSDictionary
-            let colName = column["COLUMN_NAME"] as! String
-            totalGroupBy(rowName, colName: colName)
-        }
+        */
     }
     
-
-    func numberOfItems(graph2Dview: Graph2DView!, forSeries graph: Int) -> Int {
-        return self.chartObjects.count
-    }
-    
-    func numberOfSeries(graph2Dview: Graph2DView!) -> Int {
-        return 1
-    }
-    
-    func graph2DView(graph2DView: Graph2DView!, yLabelAt y: Double) -> String! {
-        return String(format: "%.0f", y)//"\(y)"
-    }
-
-    func graph2DView(graph2DView: Graph2DView!, xLabelAt x: Int) -> String! {
-        if self.chartObjects.count == 0
-        {
-            return ""
-        }
-        let object: AnyObject = chartObjects.objectAtIndex(x)
-        let row : NSDictionary = object as! NSDictionary
-        let xlabel: AnyObject = row.objectForKey("Marker")!
-        return "\(xlabel)"
-    }
-    
-    func graph2DView(graph2DView: Graph2DView!, valueAtIndex item: Int, forSeries series: Int) -> NSNumber! {
-        let object: AnyObject = chartObjects.objectAtIndex(item)
-        let row : NSDictionary = object as! NSDictionary
-        
-       // let fieldName = self.valueFields[series] as! String
-        
-        let  column : NSDictionary = chartRows[0] as! NSDictionary
-        let fieldName = column["COLUMN_NAME"] as! String
-        
-        let value: AnyObject = row[fieldName]!
-        
-        if value.isKindOfClass(NSNumber)
-        {
-            return value as! NSNumber
-        }
-        else
-        {
-            let nValue = (value as! NSString).floatValue
-            return nValue
-        }
-    }
-    
-    
-    //testing data
-   
-    var  count:Double? = 120
-    var waves:Double? = 2.0
-    var offset:Double? = 1
-    
-    func setupData()
-    {
-        objects = NSMutableArray()
-        valueFields = ["Sales", "Profit"];
-        
-        for var i = 0; i < Int(count!); i++
-        {
-            var k: Int = random() % 10;
-            var fRand:Double = 100*Double(k);
-            var value1:Double = Double(0.4) * sin(waves! * Double(i) * (M_PI/count!) * sin(offset!)) + fRand;
-            var value2 =  4.0 + Double(1.5)  * cos(waves! * Double(i) * M_PI/count! + offset!) + fRand*2;
-            var myObject = NSDate()
-            let futureDate = myObject.dateByAddingTimeInterval(3600*24*Double(i))
-            
-            objects.addObject(
-                [
-                    "Sales" : value1,
-                    "Marker": i,
-                    "Date": futureDate,
-                    "Product": "Product \(i%12)",
-                    "Region": "Region \(i%4)",
-                    "Profit": value2
-                ]
-            )
-        }
-        dimensions = NSMutableArray()
-        dimensions.addObject(["COLUMN_NAME":"Date", "DATA_TYPE":"VARCHAR2"])
-        dimensions.addObject(["COLUMN_NAME":"Product", "DATA_TYPE":"VARCHAR2"])
-        dimensions.addObject(["COLUMN_NAME":"Region", "DATA_TYPE":"VARCHAR2"])
-        measures = NSMutableArray()
-        measures.addObject(["COLUMN_NAME":"Sales", "DATA_TYPE":"NUMBER"])
-        measures.addObject(["COLUMN_NAME":"Profit", "DATA_TYPE":"NUMBER"])
-        measures.addObject(["COLUMN_NAME":"Marker", "DATA_TYPE":"NUMBER"])
-    }
 }

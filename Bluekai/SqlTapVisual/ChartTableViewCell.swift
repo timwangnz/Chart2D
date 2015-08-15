@@ -8,18 +8,25 @@
 
 import UIKit
 
-class SqlTableViewCell: UITableViewCell {
+class ChartTableViewCell: UITableViewCell {
     let gradientLayer = CAGradientLayer()
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("NSCoding not supported")
+        super.init(coder: aDecoder)
+        //fatalError("NSCoding not supported")
+        doInit()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        doInit()
         
+    }
+    
+    func doInit()
+    {
         // gradient layer for cell
         gradientLayer.frame = bounds
         let color1 = UIColor(white: 1.0, alpha: 0.2).CGColor as CGColorRef
@@ -33,7 +40,6 @@ class SqlTableViewCell: UITableViewCell {
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
     }
-    
     func handlePan(recognizer: UIPanGestureRecognizer) {
         // 1
         if recognizer.state == .Began {

@@ -7,26 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D49B2441B5B299100947DF4 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B2431B5B299100947DF4 /* ChartModel.swift */; };
+		0D49B24A1B5B3A2300947DF4 /* ChartField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B2491B5B3A2300947DF4 /* ChartField.swift */; };
+		0D49B24C1B5BED6200947DF4 /* AggregatedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */; };
+		0D49B24E1B5BF4E300947DF4 /* ChartValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */; };
 		0D97F62E1B49CD9F002C6DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */; };
-		0D97F6301B49CD9F002C6DF9 /* SqlTapVisualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F62F1B49CD9F002C6DF9 /* SqlTapVisualVC.swift */; };
-		0D97F6321B49CD9F002C6DF9 /* SqlTapVisualViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6311B49CD9F002C6DF9 /* SqlTapVisualViewVC.swift */; };
+		0D97F6301B49CD9F002C6DF9 /* TapChartVisualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */; };
+		0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6311B49CD9F002C6DF9 /* VisualViewVC.swift */; };
 		0D97F6351B49CD9F002C6DF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D97F6331B49CD9F002C6DF9 /* Main.storyboard */; };
 		0D97F6371B49CD9F002C6DF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D97F6361B49CD9F002C6DF9 /* Images.xcassets */; };
 		0D97F63A1B49CD9F002C6DF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D97F6381B49CD9F002C6DF9 /* LaunchScreen.xib */; };
 		0D97F6461B49CDA0002C6DF9 /* SqlTapVisualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6451B49CDA0002C6DF9 /* SqlTapVisualTests.swift */; };
-		0D97F65C1B49CE28002C6DF9 /* BKCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F64F1B49CE28002C6DF9 /* BKCacheManager.swift */; };
-		0D97F65D1B49CE28002C6DF9 /* BKDBColumnsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6501B49CE28002C6DF9 /* BKDBColumnsVC.swift */; };
-		0D97F65E1B49CE28002C6DF9 /* BKDBColumnsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D97F6511B49CE28002C6DF9 /* BKDBColumnsVC.xib */; };
-		0D97F65F1B49CE28002C6DF9 /* BkDBTablesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6521B49CE28002C6DF9 /* BkDBTablesVC.swift */; };
-		0D97F6601B49CE28002C6DF9 /* BkDBTablesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D97F6531B49CE28002C6DF9 /* BkDBTablesVC.xib */; };
-		0D97F6641B49CE28002C6DF9 /* BKRestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6571B49CE28002C6DF9 /* BKRestData.swift */; };
-		0D97F6651B49CE28002C6DF9 /* BKRestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6581B49CE28002C6DF9 /* BKRestVC.swift */; };
-		0D97F6681B49CE28002C6DF9 /* BKSqlChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F65B1B49CE28002C6DF9 /* BKSqlChartView.swift */; };
+		0D97F65C1B49CE28002C6DF9 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F64F1B49CE28002C6DF9 /* CacheManager.swift */; };
+		0D97F6641B49CE28002C6DF9 /* RestulDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6571B49CE28002C6DF9 /* RestulDataSource.swift */; };
+		0D97F6651B49CE28002C6DF9 /* RestfulDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6581B49CE28002C6DF9 /* RestfulDataVC.swift */; };
+		0D97F6681B49CE28002C6DF9 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F65B1B49CE28002C6DF9 /* ChartView.swift */; };
 		0D97F66B1B49CE9D002C6DF9 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */; };
-		0D97F6701B49DCFF002C6DF9 /* SqlMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F66E1B49DCFF002C6DF9 /* SqlMainVC.swift */; };
-		0D97F6731B49E745002C6DF9 /* SqlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6721B49E745002C6DF9 /* SqlTableViewCell.swift */; };
+		0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */; };
+		0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */; };
 		0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */; };
-		0DD213F81B53758C005616B3 /* BkDragableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD213F71B53758C005616B3 /* BkDragableCellModel.swift */; };
+		0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */; };
+		0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD213F71B53758C005616B3 /* DragableCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,30 +41,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D49B2431B5B299100947DF4 /* ChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		0D49B2491B5B3A2300947DF4 /* ChartField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartField.swift; sourceTree = "<group>"; };
+		0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AggregatedValue.swift; sourceTree = "<group>"; };
+		0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValue.swift; sourceTree = "<group>"; };
 		0D97F6281B49CD9F002C6DF9 /* SqlTapVisual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqlTapVisual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D97F62C1B49CD9F002C6DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D97F62F1B49CD9F002C6DF9 /* SqlTapVisualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlTapVisualVC.swift; sourceTree = "<group>"; };
-		0D97F6311B49CD9F002C6DF9 /* SqlTapVisualViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlTapVisualViewVC.swift; sourceTree = "<group>"; };
+		0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapChartVisualVC.swift; sourceTree = "<group>"; };
+		0D97F6311B49CD9F002C6DF9 /* VisualViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualViewVC.swift; sourceTree = "<group>"; };
 		0D97F6341B49CD9F002C6DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D97F6361B49CD9F002C6DF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D97F6391B49CD9F002C6DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0D97F63F1B49CDA0002C6DF9 /* SqlTapVisualTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SqlTapVisualTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D97F6441B49CDA0002C6DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D97F6451B49CDA0002C6DF9 /* SqlTapVisualTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlTapVisualTests.swift; sourceTree = "<group>"; };
-		0D97F64F1B49CE28002C6DF9 /* BKCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BKCacheManager.swift; path = ../Monitor/Monitor/BKCacheManager.swift; sourceTree = "<group>"; };
-		0D97F6501B49CE28002C6DF9 /* BKDBColumnsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BKDBColumnsVC.swift; path = ../Monitor/Monitor/BKDBColumnsVC.swift; sourceTree = "<group>"; };
-		0D97F6511B49CE28002C6DF9 /* BKDBColumnsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKDBColumnsVC.xib; path = ../Monitor/Monitor/BKDBColumnsVC.xib; sourceTree = "<group>"; };
-		0D97F6521B49CE28002C6DF9 /* BkDBTablesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BkDBTablesVC.swift; path = ../Monitor/Monitor/BkDBTablesVC.swift; sourceTree = "<group>"; };
-		0D97F6531B49CE28002C6DF9 /* BkDBTablesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BkDBTablesVC.xib; path = ../Monitor/Monitor/BkDBTablesVC.xib; sourceTree = "<group>"; };
-		0D97F6571B49CE28002C6DF9 /* BKRestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BKRestData.swift; path = ../Monitor/Monitor/BKRestData.swift; sourceTree = "<group>"; };
-		0D97F6581B49CE28002C6DF9 /* BKRestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BKRestVC.swift; path = ../Monitor/Monitor/BKRestVC.swift; sourceTree = "<group>"; };
-		0D97F65B1B49CE28002C6DF9 /* BKSqlChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BKSqlChartView.swift; path = ../Monitor/Monitor/BKSqlChartView.swift; sourceTree = "<group>"; };
+		0D97F64F1B49CE28002C6DF9 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CacheManager.swift; path = ../Monitor/Monitor/CacheManager.swift; sourceTree = "<group>"; };
+		0D97F6571B49CE28002C6DF9 /* RestulDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestulDataSource.swift; path = ../Monitor/Monitor/RestulDataSource.swift; sourceTree = "<group>"; };
+		0D97F6581B49CE28002C6DF9 /* RestfulDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestfulDataVC.swift; path = ../Monitor/Monitor/RestfulDataVC.swift; sourceTree = "<group>"; };
+		0D97F65B1B49CE28002C6DF9 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = ../Monitor/Monitor/ChartView.swift; sourceTree = "<group>"; };
 		0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
-		0D97F66E1B49DCFF002C6DF9 /* SqlMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlMainVC.swift; sourceTree = "<group>"; };
-		0D97F6721B49E745002C6DF9 /* SqlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlTableViewCell.swift; sourceTree = "<group>"; };
+		0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartMainVC.swift; sourceTree = "<group>"; };
+		0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizationModel.swift; sourceTree = "<group>"; };
-		0DD213F71B53758C005616B3 /* BkDragableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkDragableCellModel.swift; sourceTree = "<group>"; };
+		0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDataSource.swift; sourceTree = "<group>"; };
+		0DD213F71B53758C005616B3 /* DragableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +111,18 @@
 			isa = PBXGroup;
 			children = (
 				0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */,
-				0D97F62F1B49CD9F002C6DF9 /* SqlTapVisualVC.swift */,
-				0D97F6311B49CD9F002C6DF9 /* SqlTapVisualViewVC.swift */,
+				0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */,
+				0D97F6311B49CD9F002C6DF9 /* VisualViewVC.swift */,
 				0D97F6331B49CD9F002C6DF9 /* Main.storyboard */,
 				0D97F6361B49CD9F002C6DF9 /* Images.xcassets */,
 				0D97F6381B49CD9F002C6DF9 /* LaunchScreen.xib */,
 				0D97F62B1B49CD9F002C6DF9 /* Supporting Files */,
 				0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */,
+				0D49B2431B5B299100947DF4 /* ChartModel.swift */,
+				0D49B2491B5B3A2300947DF4 /* ChartField.swift */,
+				0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */,
+				0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */,
+				0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */,
 			);
 			path = SqlTapVisual;
 			sourceTree = "<group>";
@@ -148,17 +155,13 @@
 		0D97F6691B49CE66002C6DF9 /* DBVC */ = {
 			isa = PBXGroup;
 			children = (
-				0D97F64F1B49CE28002C6DF9 /* BKCacheManager.swift */,
-				0D97F6501B49CE28002C6DF9 /* BKDBColumnsVC.swift */,
-				0D97F6511B49CE28002C6DF9 /* BKDBColumnsVC.xib */,
-				0D97F6521B49CE28002C6DF9 /* BkDBTablesVC.swift */,
-				0D97F6531B49CE28002C6DF9 /* BkDBTablesVC.xib */,
-				0D97F6571B49CE28002C6DF9 /* BKRestData.swift */,
-				0D97F6581B49CE28002C6DF9 /* BKRestVC.swift */,
-				0D97F65B1B49CE28002C6DF9 /* BKSqlChartView.swift */,
-				0D97F66E1B49DCFF002C6DF9 /* SqlMainVC.swift */,
-				0D97F6721B49E745002C6DF9 /* SqlTableViewCell.swift */,
-				0DD213F71B53758C005616B3 /* BkDragableCellModel.swift */,
+				0D97F64F1B49CE28002C6DF9 /* CacheManager.swift */,
+				0D97F6571B49CE28002C6DF9 /* RestulDataSource.swift */,
+				0D97F6581B49CE28002C6DF9 /* RestfulDataVC.swift */,
+				0D97F65B1B49CE28002C6DF9 /* ChartView.swift */,
+				0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */,
+				0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */,
+				0DD213F71B53758C005616B3 /* DragableCellModel.swift */,
 			);
 			name = DBVC;
 			sourceTree = "<group>";
@@ -246,8 +249,6 @@
 				0D97F6351B49CD9F002C6DF9 /* Main.storyboard in Resources */,
 				0D97F63A1B49CD9F002C6DF9 /* LaunchScreen.xib in Resources */,
 				0D97F6371B49CD9F002C6DF9 /* Images.xcassets in Resources */,
-				0D97F6601B49CE28002C6DF9 /* BkDBTablesVC.xib in Resources */,
-				0D97F65E1B49CE28002C6DF9 /* BKDBColumnsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,19 +266,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D97F6731B49E745002C6DF9 /* SqlTableViewCell.swift in Sources */,
-				0D97F6321B49CD9F002C6DF9 /* SqlTapVisualViewVC.swift in Sources */,
+				0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */,
+				0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */,
 				0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */,
-				0D97F6301B49CD9F002C6DF9 /* SqlTapVisualVC.swift in Sources */,
+				0D97F6301B49CD9F002C6DF9 /* TapChartVisualVC.swift in Sources */,
+				0D49B24E1B5BF4E300947DF4 /* ChartValue.swift in Sources */,
 				0D97F62E1B49CD9F002C6DF9 /* AppDelegate.swift in Sources */,
-				0D97F65C1B49CE28002C6DF9 /* BKCacheManager.swift in Sources */,
-				0D97F65F1B49CE28002C6DF9 /* BkDBTablesVC.swift in Sources */,
-				0D97F65D1B49CE28002C6DF9 /* BKDBColumnsVC.swift in Sources */,
-				0D97F6681B49CE28002C6DF9 /* BKSqlChartView.swift in Sources */,
-				0D97F6701B49DCFF002C6DF9 /* SqlMainVC.swift in Sources */,
-				0DD213F81B53758C005616B3 /* BkDragableCellModel.swift in Sources */,
-				0D97F6641B49CE28002C6DF9 /* BKRestData.swift in Sources */,
-				0D97F6651B49CE28002C6DF9 /* BKRestVC.swift in Sources */,
+				0D49B24A1B5B3A2300947DF4 /* ChartField.swift in Sources */,
+				0D97F65C1B49CE28002C6DF9 /* CacheManager.swift in Sources */,
+				0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */,
+				0D49B24C1B5BED6200947DF4 /* AggregatedValue.swift in Sources */,
+				0D97F6681B49CE28002C6DF9 /* ChartView.swift in Sources */,
+				0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */,
+				0D49B2441B5B299100947DF4 /* ChartModel.swift in Sources */,
+				0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */,
+				0D97F6641B49CE28002C6DF9 /* RestulDataSource.swift in Sources */,
+				0D97F6651B49CE28002C6DF9 /* RestfulDataVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

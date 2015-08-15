@@ -9,14 +9,14 @@
 import Foundation
 
 
-class BKRestData{
+class RestfulDataSource{
     var sql : String = "select 1 from dual"
     var cacheTTL : Int?
     var limit : Int = 20
     
     var requestUri:String?
     
-    let cacheManager = BKCacheManager()
+    let cacheManager = CacheManager()
     
     class func parseJSON(inputData: NSData) -> NSDictionary
     {

@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol BkDraggableDelegate{
+protocol DraggableDelegate{
     
     func swap(from:NSIndexPath,to:NSIndexPath)
 
 }
 
-class BkDragableCellModel: NSObject {
+class DragableCellModel: NSObject {
     
     var dataTableView : UITableView?
-    var delegate : BkDraggableDelegate? = nil
+    var delegate : DraggableDelegate? = nil
     
     func setup(tableview : UITableView)
     {

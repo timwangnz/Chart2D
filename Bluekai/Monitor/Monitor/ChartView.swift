@@ -9,7 +9,7 @@
 import UIKit
 import Chart2D
 
-class BKSqlChartView: Graph2DChartView, Graph2DChartDelegate, Graph2DViewDelegate{
+class ChartView: Graph2DChartView, Graph2DChartDelegate, Graph2DViewDelegate{
     var title:String = ""
     var limit : Int = 0
     var cacheTTL : Int = -1
