@@ -12,8 +12,6 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
 
     var model : VisualizationModel = VisualizationModel()
     var draggle : DragableCellModel = DragableCellModel()
-    
-  //  @IBOutlet var tableView: UITableView!
 
     var sortedKeys = [ "Dimensions", "Measures"]
 
@@ -65,17 +63,14 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var row : ChartField
         
         if (indexPath.section == 0)
         {
-            row = model.dataSource.dimensions[indexPath.row]
-            model.addColumn(row)
+            model.addColumn(model.dataSource.dimensions[indexPath.row])
         }
         else
         {
-            row = model.dataSource.measures[indexPath.row]
-            model.addRow(row)
+            model.addRow(model.dataSource.measures[indexPath.row])
         }
     }
 }

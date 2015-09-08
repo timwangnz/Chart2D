@@ -63,7 +63,7 @@
     self.borderLineStyle.lineType = LineStyleSolid;
     self.borderLineStyle.color = [UIColor blackColor];
     self.borderLineStyle.penWidth = 0.2;
-    
+    self.drawContent = YES;
     
     self.xAxisStyle = [[Graph2DAxisStyle alloc]init];
     self.xAxisStyle.tickStyle.majorTicks = 11;
@@ -330,7 +330,6 @@
         return;
     }
     
-    
     NSString *caption = self.caption.text;
     CGSize size = [caption sizeWithAttributes:@{NSFontAttributeName : self.caption.font}];
     CGPoint textLocation;
@@ -501,22 +500,24 @@
         yTicks = yAxisStyle.tickStyle.majorTicks;
     }
     
-    [self drawGrid:context];
     
-    
-    if (self.chartType == Graph2DBarChart)
+    if (self.drawContent)
     {
-        [self drawBarChart : data inContext:context];
-        [self drawLineChart : data inContext:context];
-    }
-    else if(self.chartType == Graph2DHorizontalBarChart)
-    {
-        [self drawHBarChart:data inContext:context];
-    }
-    else if (self.chartType == Graph2DLineChart)
-    {
-        [self drawLineChart : data inContext:context];
-        [self drawBarChart : data inContext:context];
+        [self drawGrid:context];
+        if (self.chartType == Graph2DBarChart)
+        {
+            [self drawBarChart : data inContext:context];
+            [self drawLineChart : data inContext:context];
+        }
+        else if(self.chartType == Graph2DHorizontalBarChart)
+        {
+            [self drawHBarChart:data inContext:context];
+        }
+        else if (self.chartType == Graph2DLineChart)
+        {
+            [self drawLineChart : data inContext:context];
+            [self drawBarChart : data inContext:context];
+        }
     }
     
     if (touchStarted && self.cursorType == Graph2DCursorRect)

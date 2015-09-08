@@ -12,16 +12,12 @@ import Chart2D
 class VisualizationModel: NSObject, DraggableDelegate {
 
     var dataSource : StaticDataSource = StaticDataSource()
-    
-
-    
+   
     var aggregatedModel = [String:AggregatedValue]()
     var chartRows = [ChartField]()
-    var chartColumns = [ChartField]()
+    var chartColumns = [ChartDimension]()
 
     var counting : Bool = false;
-
-
     
     func swap(from: NSIndexPath, to: NSIndexPath) {
         //
@@ -72,11 +68,12 @@ class VisualizationModel: NSObject, DraggableDelegate {
         }
     }
     
-    func addColumn(column:ChartField)
+    func addColumn(column:ChartDimension)
     {
         if !contains(chartColumns, column)
         {
             chartColumns.append(column)
+           
             updateModel();
             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: chartColumns)
         }
@@ -128,14 +125,6 @@ class VisualizationModel: NSObject, DraggableDelegate {
             rootValue.buildValueModelTree(self.chartColumns);
             aggregatedModel.updateValue(rootValue, forKey: measure.fieldName)
         }
-        
-        /*
-        for (fieldName, aggregatedValue) in aggregatedModel
-        {
-        println("\(fieldName)")
-        aggregatedValue.printTree()
-        }
-        */
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 import Chart2D
 
 class ChartView: Graph2DChartView, Graph2DChartDelegate, Graph2DViewDelegate{
-    var title:String = ""
+    var title : String = ""
     var limit : Int = 0
     var cacheTTL : Int = -1
     var xLabelField : String = ""
@@ -68,7 +68,10 @@ class ChartView: Graph2DChartView, Graph2DChartDelegate, Graph2DViewDelegate{
     }
     
     func xAxisStyle(graph2DView: Graph2DView!) -> Graph2DAxisStyle! {
-        xAxisStyle.tickStyle.majorTicks = self.dataSource.numberOfItems(self, forSeries: 0)
+        if graph2DView.chartType == Graph2DBarChart
+        {
+            xAxisStyle.tickStyle.majorTicks = self.dataSource.numberOfItems(self, forSeries: 0)
+        }
         return self.xAxisStyle
     }
     

@@ -10,12 +10,11 @@ import UIKit
 import Chart2D
 
 class ChartModel: NSObject, Graph2DDataSource {
-    var globalModel : VisualizationModel?
-    var rowName : String?
-    var colName : String?
+    var model : AggregatedValue?
+    
     
     func numberOfItems(graph2Dview: Graph2DView!, forSeries graph: Int) -> Int {
-        return globalModel!.aggregatedModel[self.rowName!]!.count
+        return model!.children.count == 0 ? 1 : model!.children.count
     }
     
     func numberOfSeries(graph2Dview: Graph2DView!) -> Int {
@@ -23,25 +22,35 @@ class ChartModel: NSObject, Graph2DDataSource {
     }
     
     func graph2DView(graph2DView: Graph2DView!, yLabelAt y: Double) -> String! {
-        return String(format: "%.0f", y)//"\(y)"
+        return "\(y)";
     }
     
     func graph2DView(graph2DView: Graph2DView!, xLabelAt x: Int) -> String {
-        return globalModel!.aggregatedModel[self.rowName!]!.getDimensionValueAt(x)
-    }
-    
-    func graph2DView(graph2DView: Graph2DView!, valueAtIndex item: Int, forSeries series: Int) -> NSNumber! {
-        let object: NSDictionary = globalModel!.aggregatedModel[rowName!]!.valueObjects[item] as! NSDictionary
-        var cName = rowName!
-        let value: AnyObject = object[cName]!
-        if value.isKindOfClass(NSNumber)
+        if (model!.children.count == 0)
         {
-            return value as! NSNumber
+            return "Total"
         }
         else
         {
-            let nValue = (value as! NSString).floatValue
-            return nValue
+            var i = x;
+            
+            if (i > model!.children.count - 1)
+            {
+                i = model!.children.count - 1
+            }
+            return "\(model!.children[i].dimensionValue!)"
         }
     }
+    
+    func graph2DView(graph2DView: Graph2DView!, valueAtIndex item: Int, forSeries series: Int) -> NSNumber!
+    {
+        if (model!.children.count == 0){
+            return model?.subtotal
+        }
+        else
+        {
+            return model!.children[item].subtotal
+        }
+    }
+    
 }

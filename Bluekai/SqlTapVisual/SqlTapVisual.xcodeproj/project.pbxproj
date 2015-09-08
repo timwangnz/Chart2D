@@ -11,6 +11,13 @@
 		0D49B24A1B5B3A2300947DF4 /* ChartField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B2491B5B3A2300947DF4 /* ChartField.swift */; };
 		0D49B24C1B5BED6200947DF4 /* AggregatedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */; };
 		0D49B24E1B5BF4E300947DF4 /* ChartValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */; };
+		0D5C01511B9E141200ECEFA2 /* TickTock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5C01501B9E141200ECEFA2 /* TickTock.swift */; };
+		0D5C01531B9E372400ECEFA2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5C01521B9E372400ECEFA2 /* QuartzCore.framework */; };
+		0D5C01551B9E4EC300ECEFA2 /* ChartDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5C01541B9E4EC300ECEFA2 /* ChartDimension.swift */; };
+		0D5C01571B9E4FC600ECEFA2 /* DateDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5C01561B9E4FC600ECEFA2 /* DateDimension.swift */; };
+		0D63478B1B9B9BF7003EA2AE /* DimensionalChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63478A1B9B9BF7003EA2AE /* DimensionalChart.swift */; };
+		0D63478D1B9CA94D003EA2AE /* StringDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63478C1B9CA94D003EA2AE /* StringDimension.swift */; };
+		0D63478F1B9CB486003EA2AE /* RowChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63478E1B9CB486003EA2AE /* RowChartView.swift */; };
 		0D97F62E1B49CD9F002C6DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */; };
 		0D97F6301B49CD9F002C6DF9 /* TapChartVisualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */; };
 		0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6311B49CD9F002C6DF9 /* VisualViewVC.swift */; };
@@ -26,6 +33,7 @@
 		0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */; };
 		0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */; };
 		0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */; };
+		0DA62D0B1B9B78A60043705A /* salesSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA62D0A1B9B78A60043705A /* salesSampleData.json */; };
 		0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */; };
 		0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD213F71B53758C005616B3 /* DragableCellModel.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +53,13 @@
 		0D49B2491B5B3A2300947DF4 /* ChartField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartField.swift; sourceTree = "<group>"; };
 		0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AggregatedValue.swift; sourceTree = "<group>"; };
 		0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValue.swift; sourceTree = "<group>"; };
+		0D5C01501B9E141200ECEFA2 /* TickTock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickTock.swift; sourceTree = "<group>"; };
+		0D5C01521B9E372400ECEFA2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0D5C01541B9E4EC300ECEFA2 /* ChartDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDimension.swift; sourceTree = "<group>"; };
+		0D5C01561B9E4FC600ECEFA2 /* DateDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDimension.swift; sourceTree = "<group>"; };
+		0D63478A1B9B9BF7003EA2AE /* DimensionalChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionalChart.swift; sourceTree = "<group>"; };
+		0D63478C1B9CA94D003EA2AE /* StringDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDimension.swift; sourceTree = "<group>"; };
+		0D63478E1B9CB486003EA2AE /* RowChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowChartView.swift; sourceTree = "<group>"; };
 		0D97F6281B49CD9F002C6DF9 /* SqlTapVisual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqlTapVisual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D97F62C1B49CD9F002C6DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +79,7 @@
 		0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartMainVC.swift; sourceTree = "<group>"; };
 		0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizationModel.swift; sourceTree = "<group>"; };
+		0DA62D0A1B9B78A60043705A /* salesSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = salesSampleData.json; sourceTree = "<group>"; };
 		0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDataSource.swift; sourceTree = "<group>"; };
 		0DD213F71B53758C005616B3 /* DragableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5C01531B9E372400ECEFA2 /* QuartzCore.framework in Frameworks */,
 				0D97F66B1B49CE9D002C6DF9 /* Chart2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +107,7 @@
 		0D97F61F1B49CD9F002C6DF9 = {
 			isa = PBXGroup;
 			children = (
+				0D5C01521B9E372400ECEFA2 /* QuartzCore.framework */,
 				0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */,
 				0D97F6691B49CE66002C6DF9 /* DBVC */,
 				0D97F62A1B49CD9F002C6DF9 /* SqlTapVisual */,
@@ -110,6 +128,7 @@
 		0D97F62A1B49CD9F002C6DF9 /* SqlTapVisual */ = {
 			isa = PBXGroup;
 			children = (
+				0DA62D0A1B9B78A60043705A /* salesSampleData.json */,
 				0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */,
 				0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */,
 				0D97F6311B49CD9F002C6DF9 /* VisualViewVC.swift */,
@@ -123,6 +142,10 @@
 				0D49B24B1B5BED6200947DF4 /* AggregatedValue.swift */,
 				0D49B24D1B5BF4E300947DF4 /* ChartValue.swift */,
 				0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */,
+				0D63478C1B9CA94D003EA2AE /* StringDimension.swift */,
+				0D63478E1B9CB486003EA2AE /* RowChartView.swift */,
+				0D5C01501B9E141200ECEFA2 /* TickTock.swift */,
+				0D5C01561B9E4FC600ECEFA2 /* DateDimension.swift */,
 			);
 			path = SqlTapVisual;
 			sourceTree = "<group>";
@@ -162,6 +185,8 @@
 				0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */,
 				0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */,
 				0DD213F71B53758C005616B3 /* DragableCellModel.swift */,
+				0D63478A1B9B9BF7003EA2AE /* DimensionalChart.swift */,
+				0D5C01541B9E4EC300ECEFA2 /* ChartDimension.swift */,
 			);
 			name = DBVC;
 			sourceTree = "<group>";
@@ -246,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA62D0B1B9B78A60043705A /* salesSampleData.json in Resources */,
 				0D97F6351B49CD9F002C6DF9 /* Main.storyboard in Resources */,
 				0D97F63A1B49CD9F002C6DF9 /* LaunchScreen.xib in Resources */,
 				0D97F6371B49CD9F002C6DF9 /* Images.xcassets in Resources */,
@@ -267,15 +293,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */,
+				0D5C01511B9E141200ECEFA2 /* TickTock.swift in Sources */,
 				0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */,
 				0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */,
+				0D5C01551B9E4EC300ECEFA2 /* ChartDimension.swift in Sources */,
 				0D97F6301B49CD9F002C6DF9 /* TapChartVisualVC.swift in Sources */,
+				0D63478B1B9B9BF7003EA2AE /* DimensionalChart.swift in Sources */,
 				0D49B24E1B5BF4E300947DF4 /* ChartValue.swift in Sources */,
 				0D97F62E1B49CD9F002C6DF9 /* AppDelegate.swift in Sources */,
+				0D63478D1B9CA94D003EA2AE /* StringDimension.swift in Sources */,
 				0D49B24A1B5B3A2300947DF4 /* ChartField.swift in Sources */,
 				0D97F65C1B49CE28002C6DF9 /* CacheManager.swift in Sources */,
+				0D5C01571B9E4FC600ECEFA2 /* DateDimension.swift in Sources */,
 				0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */,
 				0D49B24C1B5BED6200947DF4 /* AggregatedValue.swift in Sources */,
+				0D63478F1B9CB486003EA2AE /* RowChartView.swift in Sources */,
 				0D97F6681B49CE28002C6DF9 /* ChartView.swift in Sources */,
 				0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */,
 				0D49B2441B5B299100947DF4 /* ChartModel.swift in Sources */,

@@ -46,8 +46,8 @@ typedef NSInteger AutoScaleMode;
 
 @property Graph2DAxisStyle *xAxisStyle;
 @property Graph2DAxisStyle *yAxisStyle;
-
-
+//if true, no charts will be drawn, grid, axis, legends not controlled by this flag
+@property BOOL drawContent;
 
 //how to draw the grid
 @property (strong, nonatomic) Graph2DGridStyle *gridStyle;

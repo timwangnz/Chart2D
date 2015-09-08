@@ -9,14 +9,18 @@
 import UIKit
 import Chart2D
 
+let MIN_CHART_WIDTH : Int = 400
+
 class VisualViewVC: UIViewController {
     
     @IBOutlet var columnsView: UIView!
     @IBOutlet var rowsView: UIView!
     
     var chartViews : [ChartView]  = []
-         
-    @IBOutlet var containerView: UIView!
+    var rowViews : [RowChartView]  = []
+
+    @IBOutlet var containerView: UIScrollView!
+    @IBOutlet var contentView: UIView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
     var model : VisualizationModel?
@@ -43,31 +47,32 @@ class VisualViewVC: UIViewController {
         }
     }
     
-    func initView(sqlView : ChartView, col:Int, row:Int)
+    func initView(chartView : ChartView, col:Int, row:Int)
     {
-        sqlView.borderStyle = BorderStyle4Sides;
-        sqlView.drawXGrids = true
-        sqlView.drawYGrids = true
+        chartView.borderStyle = BorderStyle4Sides;
+        chartView.drawXGrids = true
+        chartView.drawYGrids = true
         
-        sqlView.fillStyle = nil
-        sqlView.autoScaleMode = Graph2DAutoScaleMax;
-        sqlView.touchEnabled = false
-        sqlView.view2DDelegate = sqlView;
+        chartView.fillStyle = nil
+        chartView.autoScaleMode = Graph2DAutoScaleMax;
+        chartView.touchEnabled = false
+        chartView.view2DDelegate = chartView;
         
-        sqlView.topMargin = row == 0 ? 20 : 10
-        sqlView.bottomMargin = row != model!.chartRows.count - 1 ? 10 : 80;
-        sqlView.leftMargin = 50
-        sqlView.topPadding = 0
-        sqlView.legendType = Graph2DLegendNone
-        sqlView.xAxisStyle.labelStyle.angle = CGFloat(M_PI/2.0)
-        
-        sqlView.yMin = 0
-        sqlView.barChartStyle = BarStyleCluster
-        sqlView.chartType = Graph2DBarChart
-        sqlView.cursorType = Graph2DCursorCross
-        sqlView.hidden = true
-        sqlView.autoScaleMode = Graph2DAutoScaleMax
-        sqlView.drawBorder = true
+        chartView.topMargin = row == 0 ? 20 : 10
+        chartView.bottomMargin = row != model!.chartRows.count - 1 ? 10 : 80;
+        chartView.leftMargin = 100
+        chartView.topPadding = 0
+        chartView.legendType = Graph2DLegendNone
+        chartView.xAxisStyle.labelStyle.angle = CGFloat(M_PI/4.0)
+        //chartView.xAxisStyle.tickStyle.majorTicks = 10
+        chartView.yMin = 0
+        chartView.barChartStyle = BarStyleCluster
+        chartView.chartType = Graph2DBarChart //Graph2DLineChart
+        chartView.cursorType = Graph2DCursorCross
+        chartView.hidden = true
+        chartView.autoScaleMode = Graph2DAutoScaleMax
+        chartView.drawBorder = true
+        //chartView.backgroundColor = UIColor.grayColor()
     }
     
     override func viewDidLoad() {
@@ -94,69 +99,202 @@ class VisualViewVC: UIViewController {
         layoutRows();
         updateChart();
     }
-
+    func resetContentView()
+    {
+        if let content = contentView
+        {
+            if (content.subviews.count > 0)
+            {
+                for view in content.subviews
+                {
+                    view.removeFromSuperview()
+                }
+            }
+            content.removeFromSuperview()
+        }
+        contentWidth = CGFloat(0)
+        contentHeight = CGFloat(0)
+        chartViews.removeAll(keepCapacity: false)
+        rowViews.removeAll(keepCapacity: false)
+        contentView = UIView(frame: CGRectZero)
+    }
+    
     func updateChart()
     {
-        for sqlChartView in chartViews
-        {
-            sqlChartView.removeFromSuperview()
-        }
+        resetContentView()
         
-        chartViews.removeAll(keepCapacity: false);
-        
-       
-        var j = 0
+        var min : Double = 10000000000000000.0
+        var max : Double = -10000000000000000.0
         let rows = CGFloat(model!.chartRows.count)
-        let margin:CGFloat = 5
-        
-        var height = (self.containerView.frame.height - 80 - margin * 2) / rows
-        
-        for col in model!.chartColumns
+        var i = 0
+        for row in model!.chartRows
         {
-             var i = 0
-            for row in model!.chartRows
+            var rowView = RowChartView()
+            rowViews.append(rowView)
+          //  axisView.contentSize =
+            let aggregatedValue = model!.aggregatedModel[row.fieldName]
+            var j = 0
+            rowView.aggregatedValue = aggregatedValue
+            let children = aggregatedValue?.children
+                
+            if (aggregatedValue?.hasSubDimensions == true)
             {
-                let sqlChartView = ChartView(frame: CGRectZero)
-                chartViews.append(sqlChartView)
-                containerView.addSubview(sqlChartView)
-                let chartModel = ChartModel()
-                chartModel.globalModel = self.model!
-                
-                chartModel.rowName = row.fieldName
-                chartModel.colName = model!.chartColumns[j].fieldName
-                
-                sqlChartView.dataSource = chartModel
-                
-                initView(sqlChartView, col: j, row: i)
-                let columns = model!.aggregatedModel[row.fieldName]?.count
-                
-                if (columns == 0)
+                for child in children!
                 {
-                    sqlChartView.hidden = true
-                }
-                else
-                {
-                    sqlChartView.hidden = false
-                    let width = sqlChartView.leftMargin + sqlChartView.rightMargin +  margin * 2 + CGFloat(columns! * 15)
-                    
-                    var y = margin + (height) * CGFloat(i);
-                    
-                    if i == model!.chartRows.count - 1
+                    if (child.max > max)
                     {
-                        height = height + 80
+                        max = child.max
                     }
+                    if (child.min < min)
+                    {
+                        min = child.min
+                    }
+                    let chartView = createView(child, row: i, col: j, rows: rows, yAxis:false)
                     
-                    sqlChartView.frame = CGRectMake(margin, y, width, height)
+                    if (i == 0)
+                    {
+                       // chartView.bottomMargin = 0
+                        let label = UILabel(frame: CGRectMake(0, 40, chartView.contentSize.width, 21))
+                        label.textColor = UIColor.redColor()
+                        //label.center = chartView.center
+                        label.textAlignment = NSTextAlignment.Center
+                        
+                        label.text = "\(child.dimensionValue!)"
+                        
+                        chartView.addSubview(label);
+                    }
+                
+                    if (j == 0)
+                    {
+                        let axisView = createView(child, row: i, col: j, rows: rows, yAxis:true)
+                         rowView.addSubview(axisView)
+                    }
+                    rowView.addSubview(chartView)
+                    j++
                 }
-                i++;
             }
-            j++;
+            else
+            {
+                max = aggregatedValue!.max
+                min = aggregatedValue!.min
+                if (aggregatedValue?.children.count == 0)
+                {
+                    max = Double(aggregatedValue!.subtotal);
+                    min = 0;
+                }
+                
+
+                
+                let chartView = createView(aggregatedValue!, row: i, col: j, rows: rows, yAxis: false)
+                rowView.addSubview(chartView)
+                let axisView = createView(aggregatedValue!, row: i, col: j, rows: rows, yAxis: true)
+                rowView.addSubview(axisView)
+            }
+            aggregatedValue!.max = max
+            aggregatedValue!.min = min
+            i++
         }
-       
-        for sqlChartView in chartViews
+        
+        for chartView in chartViews
         {
-            sqlChartView.refresh();
+            contentView.addSubview(chartView)
         }
+        
+        autosizeScrollView(contentView)
+        containerView.addSubview(contentView);
+
+    }
+    
+    var contentWidth :CGFloat = CGFloat(0)
+    var contentHeight : CGFloat = CGFloat(0)
+    
+    func autosizeScrollView(contentView : UIView) -> Void
+    {
+        contentView.frame.size = CGSizeMake(contentWidth, contentHeight);
+        containerView.contentSize = CGSizeMake(contentWidth, contentHeight);
+        containerView.backgroundColor = UIColor.grayColor()
+        contentView.backgroundColor=UIColor.darkGrayColor()
+        contentView.clipsToBounds = true
+        for chartView in rowViews
+        {
+            chartView.scale();
+            chartView.drawLabel(contentView)
+        }
+        
+        for chartView in chartViews
+        {
+            chartView.refresh();
+        }
+        //println("\(contentWidth):\(contentHeight)")
+    }
+    
+    func createView(aggregatedValue:AggregatedValue, row :Int, col:Int, rows:CGFloat, yAxis:Bool) -> ChartView
+    {
+        let margin:CGFloat = 15
+        let height = (self.containerView.frame.height - 80 - margin * 2) / rows
+        let chartView = ChartView(frame: CGRectZero)
+        chartViews.append(chartView)
+        let chartModel = ChartModel()
+        chartModel.model = aggregatedValue;
+        chartView.dataSource = chartModel
+        
+        initView(chartView, col: col, row: row)
+        
+        let leftMargin = CGFloat(100);
+
+        let columns = aggregatedValue.children.count
+        var h = height
+        var gap  = CGFloat(2)
+        
+        var width = chartView.rightMargin +  margin * 2 + CGFloat(columns * 10) - leftMargin;
+        
+        if (width < CGFloat(MIN_CHART_WIDTH))
+        {
+            width = CGFloat(MIN_CHART_WIDTH);
+        }
+        
+        if row == model!.chartRows.count - 1
+        {
+            h = h + 80
+        }
+        
+        var y = margin + (height) * CGFloat(row);
+        var x = (width + gap) * CGFloat(col);
+
+        chartView.hidden = false
+        if (!yAxis)
+        {
+            //chartView.frame = CGRectMake(leftMargin + x, y, containerView.frame.size.width - 2 * margin, h)
+            chartView.leftMargin = margin;
+            chartView.rightMargin = margin;
+            chartView.yAxisStyle.labelStyle.hidden = true
+            chartView.frame = CGRectMake(leftMargin + x, y, width, h)
+            chartView.contentSize = CGSizeMake(width, h)
+        }
+        else
+        {
+            //chartView.frame = CGRectMake(x, y, containerView.frame.size.width - 2 * margin, h)
+            chartView.rightMargin = 0;
+            chartView.leftMargin = leftMargin + margin;
+            chartView.frame = CGRectMake(x, y, chartView.rightMargin + chartView.leftMargin, h)
+            chartView.contentSize = chartView.frame.size
+            
+            chartView.borderStyle = BorderStyleNone
+            chartView.drawContent = false
+            chartView.xAxisStyle.hidden = true
+        }
+        
+        if (contentWidth < chartView.contentSize.width + chartView.frame.origin.x)
+        {
+            contentWidth = CGFloat(chartView.contentSize.width + chartView.frame.origin.x)
+        }
+        
+        if (contentHeight < chartView.contentSize.height + chartView.frame.origin.y)
+        {
+            contentHeight = CGFloat(chartView.contentSize.height + chartView.frame.origin.y)
+        }
+        
+        return chartView;
     }
 
     func layoutColumns()

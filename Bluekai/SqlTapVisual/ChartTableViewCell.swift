@@ -40,6 +40,7 @@ class ChartTableViewCell: UITableViewCell {
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
     }
+    
     func handlePan(recognizer: UIPanGestureRecognizer) {
         // 1
         if recognizer.state == .Began {

@@ -18,7 +18,7 @@
 #define DEFAULT_FONT @"Helvetica"
 #define DEFAULT_AXIS_GAP 10;
 
-@interface Graph2DView : UIView
+@interface Graph2DView : UIScrollView
 {
     CGRect gDrawingRect;
     CGRect gBounds;

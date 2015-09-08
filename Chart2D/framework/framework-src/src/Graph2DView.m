@@ -99,6 +99,7 @@
 
 - (CGRect) getGraphBounds
 {
+    [self sizeChart];
     return gBounds;
 }
 
@@ -111,12 +112,13 @@
     }
 }
 
-- (void) repaint
+- (void) sizeChart
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self paintBackground:context];
-    CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
+    //if content size is not set, we use frame size
+    CGSize size = self.contentSize.width == 0 ? self.frame.size : self.contentSize;
+    
+    CGFloat width = size.width;
+    CGFloat height = size.height;
     
     CGFloat gGraphHeight = height - self.bottomMargin - self.topMargin - self.topPadding - self.bottomPadding;
     CGFloat gGraphWidth = width - self.leftMargin - self.rightMargin - self.leftPadding - self.rightPadding;
@@ -126,6 +128,14 @@
     gBottomLeft = CGPointMake(gDrawingRect.origin.x, gDrawingRect.origin.y + gDrawingRect.size.height);
     
     gBounds = CGRectMake(self.leftMargin, self.topMargin, width - self.leftMargin - self.rightMargin, height - self.bottomMargin - self.topMargin);
+}
+
+- (void) repaint
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self paintBackground:context];
+    
+    [self sizeChart];
     
     [self drawCharts:[self dataFromDelegate] inContext:context];
     

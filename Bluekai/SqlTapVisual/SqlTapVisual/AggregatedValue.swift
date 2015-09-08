@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+
 /**
 an aggregated value should be a matrix
 
@@ -36,17 +38,18 @@ class AggregatedValue: NSObject {
     var count : Int = 0
     
     var valueObjects : NSMutableArray = []
-    
+    var hasSubDimensions : Bool = false
     
     var measure : ChartField
     
-    var dimension : ChartField?
-    var dimensionValue : String?
+    var dimension : ChartDimension?
+    var dimensionValue : AnyObject?
     
-    var children = [String: AggregatedValue]()
-    var childDimensionValues = [String]()
+    var children = [AggregatedValue]()
     
     var parent : AggregatedValue?
+    var max : Double = -100000000000000.0;
+    var min : Double =  100000000000000.0;
     
     /**
     * Initialized root
@@ -58,11 +61,8 @@ class AggregatedValue: NSObject {
         self.dimension = nil
         self.dimensionValue = nil
         self.parent = nil
-        
         self.count = values.count
-        
         self.valueObjects = values;
-        
         for valueObject in self.valueObjects
         {
             subtotal = subtotal + (valueObject[self.measure.fieldName] as! Double);
@@ -78,60 +78,60 @@ class AggregatedValue: NSObject {
     func getPath() -> [String]
     {
         var path = [String]()
-        for (name, child) in children
+        for (child) in children
         {
-            path.append(name)
+            path.append("\(child.dimensionValue!)")
         }
         return path
     }
     
-    func getDimensionSubset(dimensionName:String, dimensionValue : String, candidates:NSMutableArray) -> NSMutableArray
+    func getDimensionSubset(dimensionName:String, dimensionValue : AnyObject, candidates:NSMutableArray) -> NSMutableArray
     {
         var subset : NSMutableArray = []
         for element in candidates
         {
-            if dimensionValue == element[dimensionName] as! String
+            let ele = element[dimensionName]
+            if ele != nil
             {
-                subset.addObject(element);
+                if dimensionValue.isEqual(ele)
+                {
+                    subset.addObject(element);
+                }
             }
         }
         return subset;
     }
-    
-    func getDistinctDimensionValues(dimension : String, candidates:NSMutableArray) -> [String]
-    {
-        var categories = [String]()
         
-        for element in candidates
-        {
-            if let value = element[dimension]  as? String
-            {
-                if (!contains(categories, value))
-                {
-                    categories.append(value);
-                }
-            }
-        }
-        return categories
-    }
-    
-    func buildValueModel(var dimension : ChartField) -> [String : AggregatedValue]
+    func buildValueModel(var dimension : ChartDimension) -> [AggregatedValue]
     {
-        var returnValue = [String : AggregatedValue]()
+        var returnValue = [AggregatedValue]()
         
-        let dimensionValues = getDistinctDimensionValues(dimension.fieldName, candidates: valueObjects)
+        let dimensionValues = dimension.getDimensionValues(valueObjects)
+        
+        var i : Int = 0;
+        
         for dimensionValue in dimensionValues
         {
-            var aggValue : AggregatedValue =
-                AggregatedValue(measure: self.measure, values: getDimensionSubset(dimension.fieldName, dimensionValue: dimensionValue, candidates: valueObjects));
+            var aggValue : AggregatedValue = AggregatedValue(measure: self.measure,
+                values: getDimensionSubset(dimension.fieldName, dimensionValue: dimensionValue, candidates: valueObjects))
             
             aggValue.dimension = dimension
             aggValue.dimensionValue = dimensionValue
-            aggValue.parent = self;
+            if (max < aggValue.subtotal)
+            {
+                max = aggValue.subtotal
+            }
             
-            returnValue.updateValue(aggValue, forKey: dimensionValue)
+            if (min > aggValue.subtotal)
+            {
+                min = aggValue.subtotal
+            }
             
+            aggValue.parent = self
+            returnValue.append(aggValue)
+            i++;
         }
+    
         return returnValue
     }
     
@@ -151,7 +151,7 @@ class AggregatedValue: NSObject {
         return ""
     }
     
-    func buildValueModelTree(dimensions : [ChartField]) -> Void
+    func buildValueModelTree(dimensions : [ChartDimension]) -> Void
     {
         if (dimensions.isEmpty)
         {
@@ -160,14 +160,16 @@ class AggregatedValue: NSObject {
         
         var localDimensions = dimensions;
         self.dimension = localDimensions.first;
+        
         children = buildValueModel(self.dimension!);
         
         localDimensions.removeAtIndex(0)
         if (!localDimensions.isEmpty)
         {
-            for (dimensionValue, aggregatedValue) in children
+            for (aggregatedValue) in children
             {
                 aggregatedValue.parent = self;
+                self.hasSubDimensions = true;
                 aggregatedValue.buildValueModelTree(localDimensions)
             }
         }
@@ -180,7 +182,7 @@ class AggregatedValue: NSObject {
             println("\(self.getValuePath())(\(self.subtotal))");
         }
         
-        for (dimValue, value) in children
+        for (value) in children
         {
             value.printTree()
         }
