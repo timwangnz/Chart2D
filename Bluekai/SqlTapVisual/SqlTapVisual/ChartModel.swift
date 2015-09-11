@@ -9,9 +9,20 @@
 import UIKit
 import Chart2D
 
-class ChartModel: NSObject, Graph2DDataSource {
+class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DViewDelegate {
     var model : AggregatedValue?
     
+    var seriesStyle = Graph2DSeriesStyle.defaultStyle(Graph2DLineChart)
+    
+    var lineStyle = Graph2DLineStyle()
+    
+    override init()
+    {
+        seriesStyle.chartType = Graph2DBarChart;
+        seriesStyle.color = UIColor.yellowColor()
+        seriesStyle.gradient = true;
+        seriesStyle.lineStyle.penWidth = 1;
+    }
     
     func numberOfItems(graph2Dview: Graph2DView!, forSeries graph: Int) -> Int {
         return model!.children.count == 0 ? 1 : model!.children.count
@@ -52,5 +63,43 @@ class ChartModel: NSObject, Graph2DDataSource {
             return model!.children[item].subtotal
         }
     }
+
+
+    //protocols
+    func graph2DView(graph2DView: Graph2DChartView!, styleForSeries series: Int) -> Graph2DSeriesStyle! {
+        var legend: String = ""
+        
+        seriesStyle.legend = Graph2DLegendStyle(text: legend, color: seriesStyle.color, font: UIFont.systemFontOfSize(10))
+        return seriesStyle;
+    }
     
+    func borderLineStyle(graph2DView: Graph2DView!) -> Graph2DLineStyle! {
+        lineStyle.color = UIColor.whiteColor()
+        lineStyle.penWidth = 0.1
+        lineStyle.lineType = LineStyleSolid
+        return lineStyle
+    }
+    
+    func setColorDimension(dim : Dimension)
+    {
+        
+    }
+    
+    func setSizeDimension(dim : Dimension)
+    {
+        
+    }
+    
+    func xAxisStyle(graph2DView: Graph2DChartView!) -> Graph2DAxisStyle! {
+        if graph2DView.chartType == Graph2DBarChart
+        {
+            graph2DView.xAxisStyle.tickStyle.majorTicks = self.numberOfItems(graph2DView, forSeries: 0)
+        }
+        return graph2DView.xAxisStyle
+    }
+    
+    func yAxisStyle(graph2DView: Graph2DChartView!) -> Graph2DAxisStyle! {
+        return graph2DView.yAxisStyle
+    }
+
 }

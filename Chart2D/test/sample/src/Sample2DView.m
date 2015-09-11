@@ -107,7 +107,7 @@
 }
 
 
-- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(NSInteger)y
+- (NSString *) graph2DView:(Graph2DView *)graph2DView yLabelAt:(double)y
 {
     return [NSString stringWithFormat:@"%ld", (long)y];
 }

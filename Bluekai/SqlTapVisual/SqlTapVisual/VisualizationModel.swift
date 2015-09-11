@@ -14,8 +14,8 @@ class VisualizationModel: NSObject, DraggableDelegate {
     var dataSource : StaticDataSource = StaticDataSource()
    
     var aggregatedModel = [String:AggregatedValue]()
-    var chartRows = [ChartField]()
-    var chartColumns = [ChartDimension]()
+    var measures = [Measure]()
+    var dimensions = [Dimension]()
 
     var counting : Bool = false;
     
@@ -25,57 +25,56 @@ class VisualizationModel: NSObject, DraggableDelegate {
 
     func resetModel()
     {
-        chartColumns.removeAll(keepCapacity: false);
-        chartRows.removeAll(keepCapacity: false);
+        dimensions.removeAll(keepCapacity: false);
+        measures.removeAll(keepCapacity: false);
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
     }
     
-    func deleteRowAt(index:Int)
+    func deleteMeasure(index:Int)
     {
-        let row = chartRows[index];
+        let row = measures[index];
         if row.fieldName == "COUNTS"
         {
             self.counting = false
         }
-        chartRows.removeAtIndex(index);
+        measures.removeAtIndex(index);
         updateModel();
-        NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: chartRows)
+        NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: measures)
     }
     
-    func deleteColumnAt(index:Int)
+    func deleteDimension(index:Int)
     {
-        chartColumns.removeAtIndex(index);
+        dimensions.removeAtIndex(index);
         updateModel();
-        NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: chartColumns)
+        NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: dimensions)
     }
     
-    func addRow(row : ChartField)
+    func addMeasure(measure : Measure)
     {
-        if !contains(chartRows, row)
+        if !contains(measures, measure)
         {
             if(self.counting)
             {
                 return;
             }
             
-            if row.fieldName == "COUNTS"
+            if measure.fieldName == "COUNTS"
             {
                 self.counting = true
             }
-            chartRows.append(row)
+            measures.append(measure)
             updateModel();
-            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: chartRows)
+            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: measures)
         }
     }
     
-    func addColumn(column:ChartDimension)
+    func addDimension(dimension:Dimension)
     {
-        if !contains(chartColumns, column)
+        if !contains(dimensions, dimension)
         {
-            chartColumns.append(column)
-           
+            dimensions.append(dimension)
             updateModel();
-            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: chartColumns)
+            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: dimensions)
         }
     }
     
@@ -119,10 +118,10 @@ class VisualizationModel: NSObject, DraggableDelegate {
     {
         aggregatedModel.removeAll(keepCapacity: false);
         var i = 0
-        for measure in self.chartRows //for each measure
+        for measure in self.measures //for each measure
         {
             var rootValue = AggregatedValue(measure: measure, values: dataSource.objects)
-            rootValue.buildValueModelTree(self.chartColumns);
+            rootValue.buildValueModelTree(self.dimensions);
             aggregatedModel.updateValue(rootValue, forKey: measure.fieldName)
         }
     }

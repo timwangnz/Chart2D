@@ -66,11 +66,11 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
         
         if (indexPath.section == 0)
         {
-            model.addColumn(model.dataSource.dimensions[indexPath.row])
+            model.addDimension(model.dataSource.dimensions[indexPath.row])
         }
         else
         {
-            model.addRow(model.dataSource.measures[indexPath.row])
+            model.addMeasure(model.dataSource.measures[indexPath.row])
         }
     }
 }

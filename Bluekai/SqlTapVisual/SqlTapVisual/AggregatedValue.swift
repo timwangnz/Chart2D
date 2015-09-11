@@ -35,6 +35,7 @@ root
 class AggregatedValue: NSObject {
     
     var subtotal : Double = 0
+    var average :Double = 0.0
     var count : Int = 0
     
     var valueObjects : NSMutableArray = []
@@ -42,30 +43,45 @@ class AggregatedValue: NSObject {
     
     var measure : ChartField
     
-    var dimension : ChartDimension?
-    var dimensionValue : AnyObject?
+    var dimension : Dimension?
+    var dimensionValue : DimensionValue?
     
     var children = [AggregatedValue]()
     
     var parent : AggregatedValue?
-    var max : Double = -100000000000000.0;
-    var min : Double =  100000000000000.0;
-    
+    var max : Double = -100000000000000.0
+    var min : Double =  100000000000000.0
+
     /**
     * Initialized root
     **/
     init(measure : ChartField, values : NSMutableArray)
     {
         self.measure = measure
-        
         self.dimension = nil
         self.dimensionValue = nil
         self.parent = nil
         self.count = values.count
         self.valueObjects = values;
+        subtotal = 0;
+        
         for valueObject in self.valueObjects
         {
             subtotal = subtotal + (valueObject[self.measure.fieldName] as! Double);
+        }
+        
+        average = subtotal/Double(count);
+    }
+    
+    func sortChildren(order : NSComparisonResult) ->Void
+    {
+        if children.count < 2
+        {
+            return;
+        }
+        
+        children.sort {
+            $1.dimensionValue!.compare($0.dimensionValue!) == order
         }
     }
     
@@ -85,7 +101,7 @@ class AggregatedValue: NSObject {
         return path
     }
     
-    func getDimensionSubset(dimensionName:String, dimensionValue : AnyObject, candidates:NSMutableArray) -> NSMutableArray
+    func getDimensionSubset(dimensionName:String, dimensionValue : DimensionValue, candidates:NSMutableArray) -> NSMutableArray
     {
         var subset : NSMutableArray = []
         for element in candidates
@@ -93,7 +109,7 @@ class AggregatedValue: NSObject {
             let ele = element[dimensionName]
             if ele != nil
             {
-                if dimensionValue.isEqual(ele)
+                if dimensionValue.test(ele)
                 {
                     subset.addObject(element);
                 }
@@ -102,7 +118,7 @@ class AggregatedValue: NSObject {
         return subset;
     }
         
-    func buildValueModel(var dimension : ChartDimension) -> [AggregatedValue]
+    func buildValueModel(var dimension : Dimension) -> [AggregatedValue]
     {
         var returnValue = [AggregatedValue]()
         
@@ -117,6 +133,7 @@ class AggregatedValue: NSObject {
             
             aggValue.dimension = dimension
             aggValue.dimensionValue = dimensionValue
+            
             if (max < aggValue.subtotal)
             {
                 max = aggValue.subtotal
@@ -151,7 +168,7 @@ class AggregatedValue: NSObject {
         return ""
     }
     
-    func buildValueModelTree(dimensions : [ChartDimension]) -> Void
+    func buildValueModelTree(dimensions : [Dimension]) -> Void
     {
         if (dimensions.isEmpty)
         {
@@ -161,7 +178,9 @@ class AggregatedValue: NSObject {
         var localDimensions = dimensions;
         self.dimension = localDimensions.first;
         
-        children = buildValueModel(self.dimension!);
+        children = buildValueModel(self.dimension!)
+        
+        self.sortChildren(NSComparisonResult.OrderedAscending)
         
         localDimensions.removeAtIndex(0)
         if (!localDimensions.isEmpty)

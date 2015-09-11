@@ -9,7 +9,7 @@
 import UIKit
 import Chart2D
 
-let MIN_CHART_WIDTH : Int = 400
+let MIN_CHART_WIDTH : Int = 240
 
 class VisualViewVC: UIViewController {
     
@@ -56,10 +56,10 @@ class VisualViewVC: UIViewController {
         chartView.fillStyle = nil
         chartView.autoScaleMode = Graph2DAutoScaleMax;
         chartView.touchEnabled = false
-        chartView.view2DDelegate = chartView;
+        //chartView.view2DDelegate = chartView;
         
         chartView.topMargin = row == 0 ? 20 : 10
-        chartView.bottomMargin = row != model!.chartRows.count - 1 ? 10 : 80;
+        chartView.bottomMargin = row != model!.measures.count - 1 ? 10 : 80;
         chartView.leftMargin = 100
         chartView.topPadding = 0
         chartView.legendType = Graph2DLegendNone
@@ -72,19 +72,17 @@ class VisualViewVC: UIViewController {
         chartView.hidden = true
         chartView.autoScaleMode = Graph2DAutoScaleMax
         chartView.drawBorder = true
-        //chartView.backgroundColor = UIColor.grayColor()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        //chartViews.append(BKSqlChartView(frame: CGRectZero))
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "columnsChanged:",
+            selector: "dimensionsChanged:",
             name: "VisualizationModel.columns.changed", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "rowsChanged:",
+            selector: "measuresChanged:",
             name: "VisualizationModel.rows.changed", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -99,6 +97,7 @@ class VisualViewVC: UIViewController {
         layoutRows();
         updateChart();
     }
+    
     func resetContentView()
     {
         if let content = contentView
@@ -125,13 +124,13 @@ class VisualViewVC: UIViewController {
         
         var min : Double = 10000000000000000.0
         var max : Double = -10000000000000000.0
-        let rows = CGFloat(model!.chartRows.count)
+        let rows = CGFloat(model!.measures.count)
         var i = 0
-        for row in model!.chartRows
+        for row in model!.measures
         {
             var rowView = RowChartView()
             rowViews.append(rowView)
-          //  axisView.contentSize =
+            
             let aggregatedValue = model!.aggregatedModel[row.fieldName]
             var j = 0
             rowView.aggregatedValue = aggregatedValue
@@ -183,8 +182,6 @@ class VisualViewVC: UIViewController {
                     min = 0;
                 }
                 
-
-                
                 let chartView = createView(aggregatedValue!, row: i, col: j, rows: rows, yAxis: false)
                 rowView.addSubview(chartView)
                 let axisView = createView(aggregatedValue!, row: i, col: j, rows: rows, yAxis: true)
@@ -225,7 +222,6 @@ class VisualViewVC: UIViewController {
         {
             chartView.refresh();
         }
-        //println("\(contentWidth):\(contentHeight)")
     }
     
     func createView(aggregatedValue:AggregatedValue, row :Int, col:Int, rows:CGFloat, yAxis:Bool) -> ChartView
@@ -235,8 +231,11 @@ class VisualViewVC: UIViewController {
         let chartView = ChartView(frame: CGRectZero)
         chartViews.append(chartView)
         let chartModel = ChartModel()
+        
         chartModel.model = aggregatedValue;
         chartView.dataSource = chartModel
+        chartView.chartDelegate = chartModel
+        chartView.view2DDelegate = chartModel
         
         initView(chartView, col: col, row: row)
         
@@ -253,7 +252,7 @@ class VisualViewVC: UIViewController {
             width = CGFloat(MIN_CHART_WIDTH);
         }
         
-        if row == model!.chartRows.count - 1
+        if row == model!.measures.count - 1
         {
             h = h + 80
         }
@@ -264,7 +263,6 @@ class VisualViewVC: UIViewController {
         chartView.hidden = false
         if (!yAxis)
         {
-            //chartView.frame = CGRectMake(leftMargin + x, y, containerView.frame.size.width - 2 * margin, h)
             chartView.leftMargin = margin;
             chartView.rightMargin = margin;
             chartView.yAxisStyle.labelStyle.hidden = true
@@ -273,7 +271,6 @@ class VisualViewVC: UIViewController {
         }
         else
         {
-            //chartView.frame = CGRectMake(x, y, containerView.frame.size.width - 2 * margin, h)
             chartView.rightMargin = 0;
             chartView.leftMargin = leftMargin + margin;
             chartView.frame = CGRectMake(x, y, chartView.rightMargin + chartView.leftMargin, h)
@@ -306,7 +303,7 @@ class VisualViewVC: UIViewController {
         var x : CGFloat = 5;
         var i : Int = 0;
         
-        for column in model!.chartColumns
+        for column in model!.dimensions
         {
             let button : UIButton = UIButton()
             button.frame = CGRectMake(x, columnsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
@@ -314,7 +311,7 @@ class VisualViewVC: UIViewController {
            
             button.tag = i
             button.setTitle(column.fieldName, forState: UIControlState.Normal)
-            button.addTarget(self, action: "deleteColumn:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "deleteDimension:", forControlEvents: UIControlEvents.TouchUpInside)
             columnsView.addSubview(button);
             x = x + 125
             i = i + 1
@@ -329,7 +326,7 @@ class VisualViewVC: UIViewController {
         }
         var x : CGFloat = 5;
         var i : Int = 0;
-        for row in model!.chartRows
+        for row in model!.measures
         {
             let button : UIButton = UIButton()
             button.frame = CGRectMake(x, rowsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
@@ -338,31 +335,31 @@ class VisualViewVC: UIViewController {
             button.tag = i
             
             button.setTitle(row.fieldName, forState: UIControlState.Normal)
-            button.addTarget(self, action: "deleteRow:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "deleteMeasure:", forControlEvents: UIControlEvents.TouchUpInside)
             rowsView.addSubview(button);
             x = x + 125
             i = i + 1
         }
     }
     
-    func columnsChanged(object: AnyObject) {
+    func dimensionsChanged(object: AnyObject) {
         layoutColumns();
         updateChart();
     }
     
-    func rowsChanged(object: AnyObject) {
+    func measuresChanged(object: AnyObject) {
         layoutRows();
         updateChart();
     }
     
-    func deleteRow(sender : AnyObject)
+    func deleteMeasure(sender : AnyObject)
     {
-        model!.deleteRowAt(sender.tag)
+        model!.deleteMeasure(sender.tag)
     }
     
-    func deleteColumn(sender : AnyObject)
+    func deleteDimension(sender : AnyObject)
     {
-        model!.deleteColumnAt(sender.tag)
+        model!.deleteDimension(sender.tag)
     }
 }
 
