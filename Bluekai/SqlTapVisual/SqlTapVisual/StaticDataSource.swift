@@ -21,7 +21,7 @@ class StaticDataSource: NSObject {
     {
         
         let filePath = NSBundle.mainBundle().pathForResource("salesSampleData",ofType:"json")
-        ticktock.TICK("Process \(filePath)")
+        //ticktock.TICK("Process \(filePath)")
         var readError:NSError?
         
         if let jsonData = NSData(contentsOfFile:filePath!, options:NSDataReadingOptions.DataReadingUncached, error:&readError) {
@@ -33,7 +33,7 @@ class StaticDataSource: NSObject {
             analyze()
             convert()
         }
-        ticktock.TOCK()
+        //ticktock.TOCK()
     }
     
     func convert()->Void
@@ -68,13 +68,14 @@ class StaticDataSource: NSObject {
                     }
                 }
                 else if value is Int{
-                    measures.append(Measure(fieldName: key, dateType: "Number", type: 1))
+                    measures.append(Measure(fieldName: key, dateType: "Int", type: 1))
                 }
                 else if value is Float{
-                    measures.append(Measure(fieldName: key, dateType: "Number", type: 1))
+                    measures.append(Measure(fieldName: key, dateType: "Float", type: 1))
                 }
             }
         }
+        measures.append(Measure(fieldName: "Number Of Records", dateType: "Int", type: 1))
     }
     
     override init()

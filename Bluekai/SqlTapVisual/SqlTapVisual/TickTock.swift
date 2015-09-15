@@ -13,6 +13,7 @@ var ticktock = TickTock()
 class TickTock: NSObject {
     var startTime = NSDate()
     var context = ""
+    var enabled = false
     
     func TICK(context :String){
         self.context = context
@@ -21,6 +22,9 @@ class TickTock: NSObject {
     
     func TOCK(function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__)
     {
-        println("\(function) \(context) Time: \(-startTime.timeIntervalSinceNow)\nLine:\(line) File: \(file)")
+        if (enabled)
+        {
+            println("\(function) \(context) Time: \(-startTime.timeIntervalSinceNow)\nLine:\(line) File: \(file)")
+        }
     }
 }

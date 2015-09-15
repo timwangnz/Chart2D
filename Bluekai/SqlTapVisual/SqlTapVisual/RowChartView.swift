@@ -33,7 +33,7 @@ class RowChartView: NSObject {
             
             label.center = CGPointMake(40, firstChild.frame.origin.y + firstChild.getGraphBounds().size.height/2)
             
-            label.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/2));
+            label.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI/2));
             contentView.addSubview(label)
         }
         
@@ -102,7 +102,7 @@ class RowChartView: NSObject {
             min = aggregatedValue!.min
             if (aggregatedValue?.children.count == 0)
             {
-                max = Double(aggregatedValue!.subtotal);
+                max = Double(aggregatedValue!.getValue());
                 min = 0;
             }
         }

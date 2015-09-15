@@ -15,7 +15,6 @@ class ChartTableViewCell: UITableViewCell {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        //fatalError("NSCoding not supported")
         doInit()
     }
     

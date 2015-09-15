@@ -18,8 +18,65 @@ enum DateDimensionRange : Int {
 class DateDimension: Dimension {
     
     var range : DateDimensionRange = DateDimensionRange.Year
+    var dayOfWeek = ["Sunday", "Monday","Tuesday","Wendsday","Thursday","Friday","Saturday"]
+     
+    override func makeNew()->Dimension
+    {
+        var newCopy = DateDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        newCopy.range = self.range;
+        return newCopy
+    }
     
-    var buckets = [DateDimensionValue]()
+    override func formatObject(object : AnyObject?) -> String
+    {
+        if (object == nil)
+        {
+            return ""
+        }
+        
+        if (object is NSDate)
+        {
+            let formatter = NSDateFormatter()
+            switch range
+            {
+            case .Year:
+                formatter.dateFormat = "YYYY"
+            case .Month:
+                formatter.dateFormat = "MMM YYYY"
+            case .Day:
+                formatter.dateFormat = "dd MMM YYYY"
+            default:
+                formatter.dateFormat = "dd/MM/YY"
+            }
+        
+            return formatter.stringFromDate(object as! NSDate)
+        }
+        if (range == .Week)
+        {
+            let day = object as! Int
+            
+            return dayOfWeek[day - 1];
+        }
+        return "\(object!)"
+    }
+    
+    func toWeekDay(date : NSDate) -> Int
+    {
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let myComponents = myCalendar.components(.CalendarUnitWeekday, fromDate: date)
+        return myComponents.weekday
+    }
+    
+    func dateRangeForWeekday(date : NSDate) -> DateDimensionValue
+    {
+        let weekday = toWeekDay(date);
+        let weekdayDimValue = DateDimensionValue(dimension: self, fromValue: weekday, toValue: weekday)
+        if (weekday == 3)
+        {
+            self.addToBlacklist(weekdayDimValue)
+        }
+        return weekdayDimValue;
+    }
     
     func dateRangeForMonth(date:NSDate) -> DateDimensionValue
     {
@@ -30,7 +87,7 @@ class DateDimension: Dimension {
             month: calendar.component(.CalendarUnitMonth, fromDate: date), day: 31, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Dec 31, 2015, 12:00 AM"
         return DateDimensionValue(dimension: self, fromValue: firstDayOfMonth, toValue: lastDayOfMonth)
     }
-    
+ 
     func dateRangeForYear(date:NSDate) -> DateDimensionValue
     {
         let calendar = NSCalendar.currentCalendar()
@@ -68,13 +125,17 @@ class DateDimension: Dimension {
     
     func getDateDimensionValue(date: NSDate) -> DateDimensionValue
     {
-        if (range == DateDimensionRange.Year)
+        if (range == .Year)
         {
             return dateRangeForYear(date)
         }
-        else if (range == DateDimensionRange.Month)
+        else if (range == .Month)
         {
             return dateRangeForMonth(date)
+        }
+        else if (range == .Week)
+        {
+            return dateRangeForWeekday(date)
         }
         else
         {

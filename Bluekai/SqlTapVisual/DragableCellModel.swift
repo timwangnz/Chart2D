@@ -8,21 +8,22 @@
 
 import UIKit
 
-protocol DraggableDelegate{
-    
+protocol DraggableCellDelegate{
     func swap(from:NSIndexPath,to:NSIndexPath)
-
 }
 
 class DragableCellModel: NSObject {
     
     var dataTableView : UITableView?
-    var delegate : DraggableDelegate? = nil
+    var delegate : DraggableCellDelegate? = nil
+    var model : VisualizationModel?
     
-    func setup(tableview : UITableView)
+    func setup(tableview : UITableView, model : VisualizationModel)
     {
         tableview.separatorStyle = .None
         tableview.rowHeight = 50.0
+        self.model = model;
+        
         let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
         tableview.addGestureRecognizer(longpress)
         dataTableView = tableview
@@ -52,6 +53,53 @@ class DragableCellModel: NSObject {
         static var initialIndexPath : NSIndexPath? = nil
     }
     
+    func subviewAt(point:CGPoint, inView: UIView) -> UIView? {
+        var subviews = inView.subviews
+        if (subviews.count == 0) { return nil}
+        for subview in subviews {
+            if (CGRectContainsPoint(subview.frame, point))
+            {
+                if (subview is Droppable)
+                {
+                    return subview as? UIView
+                }
+            }
+        }
+        return nil
+    }
+    
+    func subviewFor(longPress : UILongPressGestureRecognizer, inView: UIView) -> UIView? {
+        var point = longPress.locationInView(inView)
+        var subviews = inView.subviews
+        if (subviews.count == 0) { return nil}
+        for subview in subviews {
+            if (CGRectContainsPoint(subview.frame, point))
+            {
+                return subview as? UIView
+            }
+        }
+        return nil
+    }
+    
+    func findDroppable(longPress : UILongPressGestureRecognizer, inView:UIView) -> Droppable?
+    {
+        let nextview = subviewFor(longPress, inView: inView);
+        if (nextview == nil)
+        {
+            return nil;
+        }
+        
+        if (nextview is Droppable)
+        {
+            return nextview as? Droppable
+        }
+        else
+        {
+            return findDroppable(longPress, inView: nextview!)
+        }
+        
+        
+    }
     
     func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
         let longPress = gestureRecognizer as! UILongPressGestureRecognizer
@@ -64,7 +112,8 @@ class DragableCellModel: NSObject {
         let rootview = appDelegate.window!
         
         var locationInWindow = longPress.locationInView(rootview)
-        
+        let hitView = findDroppable(longPress, inView: rootview)
+
         switch state {
         case UIGestureRecognizerState.Began:
             if indexPath != nil {
@@ -75,9 +124,7 @@ class DragableCellModel: NSObject {
                 var center = locationInWindow
                 My.cellSnapshot!.center = center
                 My.cellSnapshot!.alpha = 0.0
-                
                 rootview.addSubview(My.cellSnapshot!)
-                
                 UIView.animateWithDuration(0.25, animations: { () -> Void in
                     //center.y = locationInView.y
                     My.cellSnapshot!.center = center
@@ -93,8 +140,6 @@ class DragableCellModel: NSObject {
             }
             
         case UIGestureRecognizerState.Changed:
-            //var center = My.cellSnapshot!.center
-            //center.y = locationInView.y
             My.cellSnapshot!.center = locationInWindow
             
         case UIGestureRecognizerState.Ended:
@@ -104,6 +149,25 @@ class DragableCellModel: NSObject {
                     if ((self.delegate) != nil)
                     {
                         self.delegate?.swap(indexPath!, to: Path.initialIndexPath!)
+                    }
+                }
+            }
+            else
+            {
+                if (hitView != nil)
+                {
+                    let row = Path.initialIndexPath?.row
+                    let section = Path.initialIndexPath?.section
+                    if (section == 0)
+                    {
+                        let dim = self.model?.dataSource.dimensions[row!]
+                        
+                        hitView!.dropItem(self.dataTableView!, dropInfo: ["dimesion": dim!])
+                    }
+                    else
+                    {
+                        let messure = self.model?.dataSource.measures[row!]
+                        hitView!.dropItem(self.dataTableView!, dropInfo: ["measure": messure!])
                     }
                 }
             }

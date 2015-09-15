@@ -34,43 +34,74 @@ root
 
 class AggregatedValue: NSObject {
     
-    var subtotal : Double = 0
+    var sum : Double = 0
     var average :Double = 0.0
     var count : Int = 0
-    
     var valueObjects : NSMutableArray = []
     var hasSubDimensions : Bool = false
     
-    var measure : ChartField
+    var measure : Measure
     
     var dimension : Dimension?
     var dimensionValue : DimensionValue?
+        {
+        didSet {
+            self.dimensionValue?.value = self;
+        }
+    }
     
     var children = [AggregatedValue]()
     
     var parent : AggregatedValue?
+
     var max : Double = -100000000000000.0
     var min : Double =  100000000000000.0
 
     /**
     * Initialized root
     **/
-    init(measure : ChartField, values : NSMutableArray)
+    init(measure : Measure, values : NSMutableArray)
     {
         self.measure = measure
         self.dimension = nil
-        self.dimensionValue = nil
+        //self.dimensionValue = nil
         self.parent = nil
         self.count = values.count
         self.valueObjects = values;
-        subtotal = 0;
-        
-        for valueObject in self.valueObjects
+        sum = 0;
+        if (self.measure.fieldName != "Number Of Records")
         {
-            subtotal = subtotal + (valueObject[self.measure.fieldName] as! Double);
+            for valueObject in self.valueObjects
+            {
+                sum = sum + (valueObject[self.measure.fieldName] as! Double);
+            }
+            average = sum/Double(count);
         }
+        else
+        {
+            sum = Double(self.count)
+        }
+    }
+    
+    func getValue()->Double
+    {
+        let valueType = measure.valueType
         
-        average = subtotal/Double(count);
+        if valueType == AggregatedValueType.Sum
+        {
+            return sum
+        } else if valueType == AggregatedValueType.Average
+        {
+            return average
+        }
+        else if valueType == AggregatedValueType.Count
+        {
+            return Double(count)
+        }
+        else
+        {
+            return sum
+        }
     }
     
     func sortChildren(order : NSComparisonResult) ->Void
@@ -117,38 +148,78 @@ class AggregatedValue: NSObject {
         }
         return subset;
     }
-        
+    
+    func getDimensionSubsets(dimensionName:String, dimensionValues : [DimensionValue], candidates:NSMutableArray) -> Dictionary<DimensionValue, NSMutableArray>
+    {
+        var subsets = Dictionary<DimensionValue, NSMutableArray>()
+        ticktock.TICK("getDimensionSubsets \(dimensionName)")
+        for element in candidates
+        {
+            let ele = element[dimensionName]
+            
+            for dimensionValue in dimensionValues
+            {
+                if dimensionValue.test(ele)
+                {
+                    var subset = subsets[dimensionValue]
+                    
+                    if (subset != nil)
+                    {
+                        subset!.addObject(element);
+                        
+                    }else
+                    {
+                        var newsubset = NSMutableArray()
+                        newsubset.addObject(element);
+                        subsets.updateValue(newsubset, forKey: dimensionValue)
+                        
+                    }
+                }
+            }
+        }
+        ticktock.TOCK()
+        return subsets;
+    }
+    
     func buildValueModel(var dimension : Dimension) -> [AggregatedValue]
     {
         var returnValue = [AggregatedValue]()
-        
-        let dimensionValues = dimension.getDimensionValues(valueObjects)
-        
+        ticktock.TICK("buildValueModel")
+        dimension.buildDimensionValuesFromData(valueObjects)
+        ticktock.TOCK()
         var i : Int = 0;
+        
+        let dimensionValues = dimension.getDimensionValues()
+        
+        let subsets = getDimensionSubsets(dimension.fieldName, dimensionValues: dimensionValues, candidates: valueObjects);
+        ticktock.TOCK()
         
         for dimensionValue in dimensionValues
         {
-            var aggValue : AggregatedValue = AggregatedValue(measure: self.measure,
-                values: getDimensionSubset(dimension.fieldName, dimensionValue: dimensionValue, candidates: valueObjects))
-            
-            aggValue.dimension = dimension
-            aggValue.dimensionValue = dimensionValue
-            
-            if (max < aggValue.subtotal)
+            if let subset = subsets[dimensionValue]
             {
-                max = aggValue.subtotal
+                var aggValue = AggregatedValue(measure: self.measure, values: subset)
+                
+                aggValue.dimension = dimension
+                aggValue.dimensionValue = dimensionValue
+                
+                if (max < aggValue.getValue())
+                {
+                    max = aggValue.getValue()
+                }
+                
+                if (min > aggValue.getValue())
+                {
+                    min = aggValue.getValue()
+                }
+                
+                aggValue.parent = self
+                returnValue.append(aggValue)
+                i++;
             }
-            
-            if (min > aggValue.subtotal)
-            {
-                min = aggValue.subtotal
-            }
-            
-            aggValue.parent = self
-            returnValue.append(aggValue)
-            i++;
         }
-    
+        ticktock.TOCK()
+        
         return returnValue
     }
     
@@ -174,14 +245,14 @@ class AggregatedValue: NSObject {
         {
             return
         }
-        
+       
         var localDimensions = dimensions;
         self.dimension = localDimensions.first;
-        
+    
         children = buildValueModel(self.dimension!)
-        
+      
         self.sortChildren(NSComparisonResult.OrderedAscending)
-        
+
         localDimensions.removeAtIndex(0)
         if (!localDimensions.isEmpty)
         {
@@ -192,13 +263,14 @@ class AggregatedValue: NSObject {
                 aggregatedValue.buildValueModelTree(localDimensions)
             }
         }
+        
     }
     
     func printTree()
     {
         if (self.dimensionValue != nil)
         {
-            println("\(self.getValuePath())(\(self.subtotal))");
+            println("\(self.getValuePath()) \(self.getValue())");
         }
         
         for (value) in children

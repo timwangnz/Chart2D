@@ -18,7 +18,7 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         model.resetModel()
-        draggle.setup(tableView)
+        draggle.setup(tableView, model: model)
         draggle.delegate = model
     }
     
@@ -41,11 +41,18 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(32)
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("MasterVCCell") as! UITableViewCell
 
         cell.selectionStyle = .None
-        
         var row : ChartField
         
         if (indexPath.section == 0)
@@ -56,9 +63,9 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
         {
             row = model.dataSource.measures[indexPath.row]
         }
-        
+        cell.textLabel!.font = UIFont.boldSystemFontOfSize(12)
         cell.textLabel!.text = row.fieldName
-       
+
         return cell
     }
     

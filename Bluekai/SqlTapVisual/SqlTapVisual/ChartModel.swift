@@ -33,7 +33,7 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
     }
     
     func graph2DView(graph2DView: Graph2DView!, yLabelAt y: Double) -> String! {
-        return "\(y)";
+        return model!.measure.formatObject(y)
     }
     
     func graph2DView(graph2DView: Graph2DView!, xLabelAt x: Int) -> String {
@@ -56,11 +56,11 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
     func graph2DView(graph2DView: Graph2DView!, valueAtIndex item: Int, forSeries series: Int) -> NSNumber!
     {
         if (model!.children.count == 0){
-            return model?.subtotal
+            return model?.getValue()
         }
         else
         {
-            return model!.children[item].subtotal
+            return model!.children[item].getValue()
         }
     }
 

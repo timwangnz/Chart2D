@@ -9,12 +9,24 @@
 import UIKit
 import Chart2D
 
-let MIN_CHART_WIDTH : Int = 240
+let MIN_CHART_WIDTH = 240
+let DEFAULT_BAR_WIDTH = 20
 
-class VisualViewVC: UIViewController {
+class VisualViewVC: UIViewController, DragableViewModelDelegate{
     
-    @IBOutlet var columnsView: UIView!
-    @IBOutlet var rowsView: UIView!
+    var draggle  = DragableViewModel()
+    var rowdraggle = DragableViewModel()
+    
+    @IBOutlet var columnsView: DroppableView!
+    @IBOutlet var rowsView: DroppableView!
+    
+    @IBOutlet var sizeMark: DroppableView!
+    @IBOutlet var colorMark: DroppableView!
+    @IBOutlet var filtersView: DroppableView!
+    @IBOutlet var pagesView: DroppableView!
+    @IBOutlet var controlsView: DroppableView!
+    
+    @IBOutlet var labelMark: DroppableView!
     
     var chartViews : [ChartView]  = []
     var rowViews : [RowChartView]  = []
@@ -22,6 +34,8 @@ class VisualViewVC: UIViewController {
     @IBOutlet var containerView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    
+    let panRec = UIPanGestureRecognizer()
     
     var model : VisualizationModel?
         {
@@ -32,21 +46,19 @@ class VisualViewVC: UIViewController {
     
     var detailItem: AnyObject? {
         didSet {
-            // Update the view.
             self.configureView()
-            
         }
     }
     
     func configureView() {
-        // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
             }
         }
     }
-    
+
+
     func initView(chartView : ChartView, col:Int, row:Int)
     {
         chartView.borderStyle = BorderStyle4Sides;
@@ -56,15 +68,14 @@ class VisualViewVC: UIViewController {
         chartView.fillStyle = nil
         chartView.autoScaleMode = Graph2DAutoScaleMax;
         chartView.touchEnabled = false
-        //chartView.view2DDelegate = chartView;
         
         chartView.topMargin = row == 0 ? 20 : 10
         chartView.bottomMargin = row != model!.measures.count - 1 ? 10 : 80;
         chartView.leftMargin = 100
         chartView.topPadding = 0
         chartView.legendType = Graph2DLegendNone
-        chartView.xAxisStyle.labelStyle.angle = CGFloat(M_PI/4.0)
-        //chartView.xAxisStyle.tickStyle.majorTicks = 10
+        chartView.xAxisStyle.labelStyle.angle = CGFloat(1.0*M_PI/4.0)
+
         chartView.yMin = 0
         chartView.barChartStyle = BarStyleCluster
         chartView.chartType = Graph2DBarChart //Graph2DLineChart
@@ -74,28 +85,68 @@ class VisualViewVC: UIViewController {
         chartView.drawBorder = true
     }
     
+    func drop(view : UIView, from:UIView, to:UIView)
+    {
+        if(from.isEqual(columnsView))
+        {
+            if (to.isEqual(columnsView))
+            {
+                //does nothing
+            }
+            else
+            {
+                self.model!.deleteDimensionAt(view.tag);
+            }
+        }
+        if (from.isEqual(rowsView))
+        {
+            if (from.isEqual(columnsView))
+            {
+                //does nothing
+            }
+            else
+            {
+                self.model!.deleteMeasureAt(view.tag);
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        self.draggle.setup(columnsView)
+        self.rowdraggle.setup(rowsView)
+        self.draggle.delegate = self;
+        self.rowdraggle.delegate = self;
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "dimensionsChanged:",
+            selector: "dimensionsChanged",
             name: "VisualizationModel.columns.changed", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "measuresChanged:",
+            selector: "measuresChanged",
             name: "VisualizationModel.rows.changed", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "tableChanged:",
+            selector: "tableChanged",
             name: "VisualizationModel.table.changed", object: nil)
-        
     }
     
-    func tableChanged(object : AnyObject)
+    func tableChanged()
     {
-        layoutColumns();
-        layoutRows();
-        updateChart();
+        model!.measuresChanged()
+        layoutColumns()
+        layoutRows()
+        updateChart()
+    }
+    
+    func dimensionsChanged() {
+        layoutColumns()
+        updateChart()
+    }
+    
+    func measuresChanged() {
+        layoutRows()
+        updateChart()
     }
     
     func resetContentView()
@@ -152,14 +203,10 @@ class VisualViewVC: UIViewController {
                     
                     if (i == 0)
                     {
-                       // chartView.bottomMargin = 0
-                        let label = UILabel(frame: CGRectMake(0, 40, chartView.contentSize.width, 21))
+                        let label = UILabel(frame: CGRectMake(0, 0, chartView.contentSize.width, 21))
                         label.textColor = UIColor.redColor()
-                        //label.center = chartView.center
                         label.textAlignment = NSTextAlignment.Center
-                        
                         label.text = "\(child.dimensionValue!)"
-                        
                         chartView.addSubview(label);
                     }
                 
@@ -178,7 +225,7 @@ class VisualViewVC: UIViewController {
                 min = aggregatedValue!.min
                 if (aggregatedValue?.children.count == 0)
                 {
-                    max = Double(aggregatedValue!.subtotal);
+                    max = Double(aggregatedValue!.getValue());
                     min = 0;
                 }
                 
@@ -211,6 +258,8 @@ class VisualViewVC: UIViewController {
         containerView.contentSize = CGSizeMake(contentWidth, contentHeight);
         containerView.backgroundColor = UIColor.grayColor()
         contentView.backgroundColor=UIColor.darkGrayColor()
+        
+        println("\(containerView.frame) \(contentView.frame)")
         contentView.clipsToBounds = true
         for chartView in rowViews
         {
@@ -245,7 +294,7 @@ class VisualViewVC: UIViewController {
         var h = height
         var gap  = CGFloat(2)
         
-        var width = chartView.rightMargin +  margin * 2 + CGFloat(columns * 10) - leftMargin;
+        var width = chartView.rightMargin +  margin * 2 + CGFloat(columns * DEFAULT_BAR_WIDTH) - leftMargin;
         
         if (width < CGFloat(MIN_CHART_WIDTH))
         {
@@ -293,7 +342,16 @@ class VisualViewVC: UIViewController {
         
         return chartView;
     }
-
+    
+    func createLabel(title : String, at : CGPoint) -> UIButton
+    {
+        let button : UIButton = UIButton()
+        button.frame = CGRectMake(at.x, at.y, CGFloat(120), CGFloat(24))
+        button.backgroundColor = UIColor.grayColor()
+        button.setTitle(title, forState: UIControlState.Normal)
+        return button;
+    }
+    
     func layoutColumns()
     {
         for view:UIView in columnsView.subviews as! Array<UIView>
@@ -305,19 +363,17 @@ class VisualViewVC: UIViewController {
         
         for column in model!.dimensions
         {
-            let button : UIButton = UIButton()
-            button.frame = CGRectMake(x, columnsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
+            var button = createLabel(column.fieldName, at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.backgroundColor = UIColor.grayColor()
-           
             button.tag = i
-            button.setTitle(column.fieldName, forState: UIControlState.Normal)
-            button.addTarget(self, action: "deleteDimension:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "configDimension:", forControlEvents: UIControlEvents.TouchUpInside)
             columnsView.addSubview(button);
             x = x + 125
             i = i + 1
         }
     }
     
+
     func layoutRows()
     {
         for view:UIView in rowsView.subviews as! Array<UIView>
@@ -328,38 +384,38 @@ class VisualViewVC: UIViewController {
         var i : Int = 0;
         for row in model!.measures
         {
-            let button : UIButton = UIButton()
-            button.frame = CGRectMake(x, rowsView.frame.size.height/2 - 12, CGFloat(120), CGFloat(24))
+            var button = createLabel(row.fieldName, at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.backgroundColor = UIColor.grayColor()
-           
             button.tag = i
-            
-            button.setTitle(row.fieldName, forState: UIControlState.Normal)
-            button.addTarget(self, action: "deleteMeasure:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "configMeasure:", forControlEvents: UIControlEvents.TouchUpInside)
             rowsView.addSubview(button);
             x = x + 125
             i = i + 1
         }
     }
     
-    func dimensionsChanged(object: AnyObject) {
-        layoutColumns();
-        updateChart();
-    }
-    
-    func measuresChanged(object: AnyObject) {
-        layoutRows();
-        updateChart();
-    }
-    
-    func deleteMeasure(sender : AnyObject)
+    func configMeasure(sender : AnyObject)
     {
-        model!.deleteMeasure(sender.tag)
+        let btn = sender as! UIButton
+        let vc = MeasureConfigVC(nibName: "MeasureConfigVC", bundle: nil)
+        vc.parentVC = self
+        vc.measure = model!.measures[btn.tag]
+        vc.modalPresentationStyle = .Popover
+        let popRect = sender.frame
+        let aPopover =  UIPopoverController(contentViewController: vc)
+        aPopover.presentPopoverFromRect(popRect, inView: btn.superview!, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
     }
     
-    func deleteDimension(sender : AnyObject)
+    func configDimension(sender : AnyObject)
     {
-        model!.deleteDimension(sender.tag)
+        let btn = sender as! UIButton
+        let vc = DimensionConfigVC(nibName: "DimensionConfigVC", bundle: nil)
+        vc.modalPresentationStyle = .Popover
+        vc.parentVC = self
+        vc.dimension = model!.dimensions[btn.tag]
+        let popRect = sender.frame
+        let aPopover =  UIPopoverController(contentViewController: vc)
+        aPopover.presentPopoverFromRect(popRect, inView: btn.superview!, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
     }
 }
 

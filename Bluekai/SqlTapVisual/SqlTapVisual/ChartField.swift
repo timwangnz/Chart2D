@@ -19,4 +19,60 @@ class ChartField: NSObject {
         self.dataType = dateType
         self.type = type
     }
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        if !(object is ChartField)
+        {
+            return false
+        }
+        let chartField = object as! ChartField
+        return self.fieldName == chartField.fieldName
+    }
+    
+    static var dataFormats = [String : NSDateFormatter]()
+    
+    class func getDateFormatter(dateformat : String) -> NSDateFormatter
+    {
+        if let formatter = dataFormats[dateformat]
+        {
+            return formatter
+        }
+        else
+        {
+            let newFormatter = NSDateFormatter()
+            newFormatter.dateFormat = dateformat
+            dataFormats.updateValue(newFormatter, forKey: dateformat)
+            return newFormatter
+        }
+    }
+    
+    class func toDate(stringValue : String, format: String) -> NSDate
+    {
+        return getDateFormatter(format).dateFromString(stringValue)!
+    }
+    
+    func formatObject(object : AnyObject?) -> String
+    {
+        if (object == nil)
+        {
+            return ""
+        }
+        
+        if (object is NSDate)
+        {
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = NSDateFormatterStyle.LongStyle
+            return formatter.stringFromDate(object as! NSDate)
+        }
+        if (object is Double)
+        {
+            var numberFormatter = NSNumberFormatter()
+            numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            return numberFormatter.stringFromNumber(object as! Double)!
+        }
+        else
+        {
+            return "\(object as! String)"
+        }
+    }
 }

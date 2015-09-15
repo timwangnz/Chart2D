@@ -32,12 +32,22 @@
 		0D97F6641B49CE28002C6DF9 /* RestulDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6571B49CE28002C6DF9 /* RestulDataSource.swift */; };
 		0D97F6651B49CE28002C6DF9 /* RestfulDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6581B49CE28002C6DF9 /* RestfulDataVC.swift */; };
 		0D97F6681B49CE28002C6DF9 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F65B1B49CE28002C6DF9 /* ChartView.swift */; };
-		0D97F66B1B49CE9D002C6DF9 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */; };
 		0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */; };
 		0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */; };
 		0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */; };
 		0DA62D0B1B9B78A60043705A /* salesSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA62D0A1B9B78A60043705A /* salesSampleData.json */; };
 		0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */; };
+		0DCE6FBF1BA334DD00C7EBB8 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCE6FBE1BA334DD00C7EBB8 /* Chart2D.framework */; };
+		0DCE6FC11BA46BAC00C7EBB8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */; };
+		0DCE6FC41BA4A31200C7EBB8 /* PopoverGenericVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC21BA4A31200C7EBB8 /* PopoverGenericVC.swift */; };
+		0DCE6FC51BA4A31200C7EBB8 /* PopoverGenericVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC31BA4A31200C7EBB8 /* PopoverGenericVC.xib */; };
+		0DCE6FC81BA4BB4100C7EBB8 /* MeasureConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC61BA4BB4100C7EBB8 /* MeasureConfigVC.swift */; };
+		0DCE6FC91BA4BB4100C7EBB8 /* MeasureConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC71BA4BB4100C7EBB8 /* MeasureConfigVC.xib */; };
+		0DCE6FCC1BA4BB5F00C7EBB8 /* DimensionConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FCA1BA4BB5F00C7EBB8 /* DimensionConfigVC.swift */; };
+		0DCE6FCD1BA4BB5F00C7EBB8 /* DimensionConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DCE6FCB1BA4BB5F00C7EBB8 /* DimensionConfigVC.xib */; };
+		0DCE6FCF1BA4DBB800C7EBB8 /* DragableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FCE1BA4DBB800C7EBB8 /* DragableViewModel.swift */; };
+		0DCE6FD31BA516DB00C7EBB8 /* DroppableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */; };
+		0DCE6FD51BA7784F00C7EBB8 /* ColorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */; };
 		0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD213F71B53758C005616B3 /* DragableCellModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,12 +91,22 @@
 		0D97F6571B49CE28002C6DF9 /* RestulDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestulDataSource.swift; path = ../Monitor/Monitor/RestulDataSource.swift; sourceTree = "<group>"; };
 		0D97F6581B49CE28002C6DF9 /* RestfulDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestfulDataVC.swift; path = ../Monitor/Monitor/RestfulDataVC.swift; sourceTree = "<group>"; };
 		0D97F65B1B49CE28002C6DF9 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = ../Monitor/Monitor/ChartView.swift; sourceTree = "<group>"; };
-		0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0D97F66E1B49DCFF002C6DF9 /* ChartMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartMainVC.swift; sourceTree = "<group>"; };
 		0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizationModel.swift; sourceTree = "<group>"; };
 		0DA62D0A1B9B78A60043705A /* salesSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = salesSampleData.json; sourceTree = "<group>"; };
 		0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDataSource.swift; sourceTree = "<group>"; };
+		0DCE6FBE1BA334DD00C7EBB8 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
+		0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		0DCE6FC21BA4A31200C7EBB8 /* PopoverGenericVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverGenericVC.swift; path = ../PopoverGenericVC.swift; sourceTree = "<group>"; };
+		0DCE6FC31BA4A31200C7EBB8 /* PopoverGenericVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopoverGenericVC.xib; path = ../PopoverGenericVC.xib; sourceTree = "<group>"; };
+		0DCE6FC61BA4BB4100C7EBB8 /* MeasureConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasureConfigVC.swift; path = ../MeasureConfigVC.swift; sourceTree = "<group>"; };
+		0DCE6FC71BA4BB4100C7EBB8 /* MeasureConfigVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MeasureConfigVC.xib; path = ../MeasureConfigVC.xib; sourceTree = "<group>"; };
+		0DCE6FCA1BA4BB5F00C7EBB8 /* DimensionConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DimensionConfigVC.swift; path = ../DimensionConfigVC.swift; sourceTree = "<group>"; };
+		0DCE6FCB1BA4BB5F00C7EBB8 /* DimensionConfigVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DimensionConfigVC.xib; path = ../DimensionConfigVC.xib; sourceTree = "<group>"; };
+		0DCE6FCE1BA4DBB800C7EBB8 /* DragableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableViewModel.swift; sourceTree = "<group>"; };
+		0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroppableView.swift; sourceTree = "<group>"; };
+		0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorContainerView.swift; sourceTree = "<group>"; };
 		0DD213F71B53758C005616B3 /* DragableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCE6FBF1BA334DD00C7EBB8 /* Chart2D.framework in Frameworks */,
 				0D5C01531B9E372400ECEFA2 /* QuartzCore.framework in Frameworks */,
-				0D97F66B1B49CE9D002C6DF9 /* Chart2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +133,8 @@
 		0D97F61F1B49CD9F002C6DF9 = {
 			isa = PBXGroup;
 			children = (
+				0DCE6FBE1BA334DD00C7EBB8 /* Chart2D.framework */,
 				0D5C01521B9E372400ECEFA2 /* QuartzCore.framework */,
-				0D97F66A1B49CE9D002C6DF9 /* Chart2D.framework */,
 				0D97F6691B49CE66002C6DF9 /* DBVC */,
 				0D97F62A1B49CD9F002C6DF9 /* SqlTapVisual */,
 				0D97F6421B49CDA0002C6DF9 /* SqlTapVisualTests */,
@@ -134,6 +154,12 @@
 		0D97F62A1B49CD9F002C6DF9 /* SqlTapVisual */ = {
 			isa = PBXGroup;
 			children = (
+				0DCE6FC31BA4A31200C7EBB8 /* PopoverGenericVC.xib */,
+				0DCE6FC21BA4A31200C7EBB8 /* PopoverGenericVC.swift */,
+				0DCE6FCA1BA4BB5F00C7EBB8 /* DimensionConfigVC.swift */,
+				0DCE6FCB1BA4BB5F00C7EBB8 /* DimensionConfigVC.xib */,
+				0DCE6FC61BA4BB4100C7EBB8 /* MeasureConfigVC.swift */,
+				0DCE6FC71BA4BB4100C7EBB8 /* MeasureConfigVC.xib */,
 				0DA62D0A1B9B78A60043705A /* salesSampleData.json */,
 				0D97F62D1B49CD9F002C6DF9 /* AppDelegate.swift */,
 				0D97F62F1B49CD9F002C6DF9 /* TapChartVisualVC.swift */,
@@ -154,6 +180,9 @@
 				0D5C015C1B9EB27D00ECEFA2 /* DateDimension.swift */,
 				0D5C01601B9EB33D00ECEFA2 /* DateDimensionValue.swift */,
 				0D5C01621B9EB39D00ECEFA2 /* SingleDimensionValue.swift */,
+				0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */,
+				0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */,
+				0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */,
 			);
 			path = SqlTapVisual;
 			sourceTree = "<group>";
@@ -196,6 +225,7 @@
 				0D63478A1B9B9BF7003EA2AE /* DimensionalChart.swift */,
 				0D5C01541B9E4EC300ECEFA2 /* Dimension.swift */,
 				0D5C015A1B9EADD200ECEFA2 /* Measure.swift */,
+				0DCE6FCE1BA4DBB800C7EBB8 /* DragableViewModel.swift */,
 			);
 			name = DBVC;
 			sourceTree = "<group>";
@@ -281,8 +311,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA62D0B1B9B78A60043705A /* salesSampleData.json in Resources */,
+				0DCE6FC91BA4BB4100C7EBB8 /* MeasureConfigVC.xib in Resources */,
 				0D97F6351B49CD9F002C6DF9 /* Main.storyboard in Resources */,
+				0DCE6FCD1BA4BB5F00C7EBB8 /* DimensionConfigVC.xib in Resources */,
 				0D97F63A1B49CD9F002C6DF9 /* LaunchScreen.xib in Resources */,
+				0DCE6FC51BA4A31200C7EBB8 /* PopoverGenericVC.xib in Resources */,
 				0D97F6371B49CD9F002C6DF9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +338,8 @@
 				0D5C01511B9E141200ECEFA2 /* TickTock.swift in Sources */,
 				0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */,
 				0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */,
+				0DCE6FC41BA4A31200C7EBB8 /* PopoverGenericVC.swift in Sources */,
+				0DCE6FC81BA4BB4100C7EBB8 /* MeasureConfigVC.swift in Sources */,
 				0D5C015B1B9EADD200ECEFA2 /* Measure.swift in Sources */,
 				0D5C01551B9E4EC300ECEFA2 /* Dimension.swift in Sources */,
 				0D97F6301B49CD9F002C6DF9 /* TapChartVisualVC.swift in Sources */,
@@ -312,18 +347,23 @@
 				0D49B24E1B5BF4E300947DF4 /* ChartValue.swift in Sources */,
 				0D97F62E1B49CD9F002C6DF9 /* AppDelegate.swift in Sources */,
 				0D5C01591B9E644F00ECEFA2 /* DimensionValue.swift in Sources */,
+				0DCE6FCF1BA4DBB800C7EBB8 /* DragableViewModel.swift in Sources */,
 				0D49B24A1B5B3A2300947DF4 /* ChartField.swift in Sources */,
 				0D97F65C1B49CE28002C6DF9 /* CacheManager.swift in Sources */,
+				0DCE6FD51BA7784F00C7EBB8 /* ColorContainerView.swift in Sources */,
 				0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */,
+				0DCE6FD31BA516DB00C7EBB8 /* DroppableView.swift in Sources */,
 				0D49B24C1B5BED6200947DF4 /* AggregatedValue.swift in Sources */,
 				0D5C01631B9EB39D00ECEFA2 /* SingleDimensionValue.swift in Sources */,
 				0D63478F1B9CB486003EA2AE /* RowChartView.swift in Sources */,
 				0D97F6681B49CE28002C6DF9 /* ChartView.swift in Sources */,
 				0D97F6701B49DCFF002C6DF9 /* ChartMainVC.swift in Sources */,
+				0DCE6FCC1BA4BB5F00C7EBB8 /* DimensionConfigVC.swift in Sources */,
 				0D5C015D1B9EB27D00ECEFA2 /* DateDimension.swift in Sources */,
 				0D49B2441B5B299100947DF4 /* ChartModel.swift in Sources */,
 				0D5C01611B9EB33D00ECEFA2 /* DateDimensionValue.swift in Sources */,
 				0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */,
+				0DCE6FC11BA46BAC00C7EBB8 /* Filter.swift in Sources */,
 				0D97F6641B49CE28002C6DF9 /* RestulDataSource.swift in Sources */,
 				0D97F6651B49CE28002C6DF9 /* RestfulDataVC.swift in Sources */,
 			);
@@ -403,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -442,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,10 +497,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/anpwang/Documents/github/sixstreams/dependency,
+					/Users/anpwang/Documents/github/dependency,
 				);
 				INFOPLIST_FILE = SqlTapVisual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -471,10 +513,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/anpwang/Documents/github/sixstreams/dependency,
+					/Users/anpwang/Documents/github/dependency,
 				);
 				INFOPLIST_FILE = SqlTapVisual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

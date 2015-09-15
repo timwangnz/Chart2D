@@ -12,72 +12,92 @@ import UIKit
     dimensionValue can have child dimensionValues, its like a tree branches
 **/
 
+enum SortBy : Int {
+    case Name
+    case Value
+}
+
+
 class Dimension: ChartField {
-    
-    static var dataFormats = [String : NSDateFormatter]()
-    
-    class func getDateFormatter(dateformat : String) -> NSDateFormatter
-    {
-        if let formatter = dataFormats[dateformat]
-        {
-            return formatter
-        }
-        else
-        {
-            let newFormatter = NSDateFormatter()
-            newFormatter.dateFormat = dateformat
-            dataFormats.updateValue(newFormatter, forKey: dateformat)
-            return newFormatter
-        }
-    }
-    
-    class func toDate(stringValue : String, format: String) -> NSDate
-    {
-        return getDateFormatter(format).dateFromString(stringValue)!
-    }
-    
-    
-    func formatObject(object : AnyObject?) -> String
-    {
-        if (object == nil)
-        {
-            return ""
-        }
-        
-        if (object is NSDate)
-        {
-            let formatter = NSDateFormatter()
-            formatter.dateStyle = NSDateFormatterStyle.LongStyle
-            //formatter.timeStyle = .ShortStyle
-            return formatter.stringFromDate(object as! NSDate)
-        }
-        return "\(object!)"
-    }
-    
-    
+    var sortBy : SortBy = SortBy.Name
     var dimensionValues = [DimensionValue]()
     var usedValues = [DimensionValue]()
+    var blacklist = [DimensionValue]()
+    var whitelist = [DimensionValue]()
     
+    func makeNew()->Dimension
+    {
+        var newCopy = Dimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        return newCopy
+    }
+    
+    func addToWhitelist(dimValue : DimensionValue)
+    {
+        if (contains(whitelist, dimValue))
+        {
+            return;
+        }
+        whitelist.append(dimValue)
+    }
+    
+    func addToBlacklist(dimValue : DimensionValue)
+    {
+        if (contains(blacklist, dimValue))
+        {
+            return;
+        }
+        blacklist.append(dimValue)
+    }
+
     func containsDimensionValue(testValue : AnyObject?) -> DimensionValue?
     {
         if (testValue == nil)
         {
             return nil
         }
-        
         let dimValue = SingleDimensionValue(dimension: self, fromValue: testValue)
-        for dimensionValue in dimensionValues
+        if contains(dimensionValues, dimValue)
         {
-            if (dimensionValue.isEqual(dimValue))
-            {
-                return nil
-            }
+            return nil
         }
         return dimValue
     }
     
+    func checkAllowed(dimensionValue : DimensionValue) -> Bool
+    {
+        if (contains(self.blacklist, dimensionValue))
+        {
+            return false
+        }
+        
+        let eq1 = (self.whitelist.count > 0) && !contains(self.whitelist, dimensionValue)
+        
+        if eq1
+        {
+            return false
+        }
+        
+        return true;
+    }
+    
+    func getDimensionValues() -> [DimensionValue]
+    {
+        var allowed = [DimensionValue]()
+        for dimValue in usedValues
+        {
+            if (self.checkAllowed(dimValue))
+            {
+                allowed.append(dimValue);
+            }
+        }
+        allowed.sort() {
+            $0.compare($1) == NSComparisonResult.OrderedAscending
+        }
+        return allowed
+    }
+
     //figure out distinct dimensional values
-    func getDimensionValues(candidates : NSMutableArray) -> [DimensionValue]
+    func buildDimensionValuesFromData(candidates : NSMutableArray) -> [DimensionValue]
     {
         if (dimensionValues.count > 0)
         {
@@ -86,30 +106,22 @@ class Dimension: ChartField {
         
         var i = 0;
         usedValues.removeAll(keepCapacity: false)
+        
         for element in candidates
         {
             let valueObject = element[self.fieldName]
             
             if let value = containsDimensionValue(valueObject)
             {
+                
                 dimensionValues.append(value);
-                if (i++ < 20)
+                if (i++ < 100)
                 {
                     usedValues.append(value);
                 }
             }
-            
         }
+       
         return usedValues
-    }
-    
-    func sort()
-    {
-        self.dimensionValues.sort() {
-            $0.compare($1) == NSComparisonResult.OrderedAscending
-        }
-        self.usedValues.sort() {
-            $0.compare($1) == NSComparisonResult.OrderedAscending
-        }
     }
 }

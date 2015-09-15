@@ -8,8 +8,11 @@
 
 import UIKit
 
+let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+
 extension NSDate
 {
+    
     func greaterThan(dateToCompare : NSDate) -> Bool
     {
         //Declare Variables
@@ -25,6 +28,11 @@ extension NSDate
         return isGreater
     }
     
+    func toWeekDay() -> Int
+    {
+        let myComponents = myCalendar.components(.CalendarUnitWeekday, fromDate: self)
+        return myComponents.weekday
+    }
     
     func lessThan(dateToCompare : NSDate) -> Bool
     {
@@ -79,12 +87,11 @@ extension NSDate
 
 
 class DateDimensionValue: DimensionValue {
-    
     override func isEqual(object: AnyObject?) -> Bool {
         if object is DateDimensionValue && fromValue != nil
         {
             let obj = object as! DateDimensionValue
-            return self.fromValue!.isEqual(obj.fromValue) && self.toValue!.isEqual(obj.toValue)
+            return self.fromValue!.isEqual(obj.fromValue!) //&& self.toValue!.isEqual(obj.toValue)
         }
         return false
     }
@@ -92,38 +99,24 @@ class DateDimensionValue: DimensionValue {
     //check if a measure should be counted
     override func test(testObject : AnyObject?) -> Bool
     {
+        if !(testObject is NSDate)
+        {
+            return false
+        }
         if fromValue is NSDate && toValue is NSDate
         {
             let testValue = testObject as? NSDate
             return testValue!.greaterThan(fromValue as! NSDate) && testValue!.lessThan(toValue as! NSDate)
         }
+        else if (fromValue is Int) && (testObject is NSDate)
+        {
+            if (self.dimension as! DateDimension).range == .Week
+            {
+                let testValue = testObject as? NSDate
+                let dayofweek = testValue!.toWeekDay()
+                return (fromValue as! Int) == dayofweek
+            }
+        }
         return false
-    }
-    
-    override func compare(object : DimensionValue) -> NSComparisonResult
-    {
-        let objectToCompare = object as! DateDimensionValue
-        
-        if fromValue is NSDate
-        {
-            let testValue = objectToCompare.fromValue as? NSDate
-            return testValue!.compare(self.fromValue as! NSDate)
-        }
-        else if self.fromValue is Int && self.toValue is Int
-        {
-            let testValue = objectToCompare.fromValue as? Int
-            let fromValue = self.fromValue as! Int
-            
-            return testValue > fromValue ? NSComparisonResult.OrderedAscending : NSComparisonResult.OrderedDescending
-            
-        }else if self.fromValue is Double && self.toValue is Double{
-            let testValue = objectToCompare.fromValue as? Double
-            let fromValue = self.fromValue as! Double
-            return testValue > fromValue ? NSComparisonResult.OrderedAscending : NSComparisonResult.OrderedDescending
-        }
-        else
-        {
-            return NSComparisonResult.OrderedSame
-        }
     }
 }

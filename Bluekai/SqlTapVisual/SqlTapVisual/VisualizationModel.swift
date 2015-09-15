@@ -9,7 +9,7 @@
 import Foundation
 import Chart2D
 
-class VisualizationModel: NSObject, DraggableDelegate {
+class VisualizationModel: NSObject, DraggableCellDelegate {
 
     var dataSource : StaticDataSource = StaticDataSource()
    
@@ -30,23 +30,34 @@ class VisualizationModel: NSObject, DraggableDelegate {
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
     }
     
-    func deleteMeasure(index:Int)
+    func deleteMeasureAt(index:Int)
     {
-        let row = measures[index];
-        if row.fieldName == "COUNTS"
-        {
-            self.counting = false
-        }
         measures.removeAtIndex(index);
         updateModel();
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: measures)
     }
     
-    func deleteDimension(index:Int)
+    func deleteDimensionAt(index:Int)
     {
         dimensions.removeAtIndex(index);
         updateModel();
         NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: dimensions)
+    }
+    
+    func deleteDimension(dimension : Dimension)
+    {
+        if let idx = find(dimensions, dimension)
+        {
+            deleteDimensionAt(idx);
+        }
+    }
+    
+    func deleteMeasure(measure : Measure)
+    {
+        if let idx = find(measures, measure)
+        {
+            deleteMeasureAt(idx);
+        }
     }
     
     func addMeasure(measure : Measure)
@@ -62,7 +73,7 @@ class VisualizationModel: NSObject, DraggableDelegate {
             {
                 self.counting = true
             }
-            measures.append(measure)
+            measures.append(measure.makeNew())
             updateModel();
             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.rows.changed", object: measures)
         }
@@ -72,7 +83,7 @@ class VisualizationModel: NSObject, DraggableDelegate {
     {
         if !contains(dimensions, dimension)
         {
-            dimensions.append(dimension)
+            dimensions.append(dimension.makeNew())
             updateModel();
             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.columns.changed", object: dimensions)
         }
@@ -126,4 +137,12 @@ class VisualizationModel: NSObject, DraggableDelegate {
         }
     }
     
+    func measuresChanged()
+    {
+        updateModel()
+    }
+    func dimensionChanged()
+    {
+        updateModel()
+    }
 }
