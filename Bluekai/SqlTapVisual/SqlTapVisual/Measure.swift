@@ -24,4 +24,11 @@ class Measure: ChartField {
         
         return newCopy
     }
+    
+    func toDimension(buckets : Int) -> HistogramDimension
+    {
+        var dim = HistogramDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type)
+        dim.buckets = buckets;
+        return dim;
+    }
 }

@@ -67,7 +67,8 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         
         chartView.fillStyle = nil
         chartView.autoScaleMode = Graph2DAutoScaleMax;
-        chartView.touchEnabled = false
+        chartView.touchEnabled = true
+      //  chartView.cursorType = Graph2DChartCursorType.
         
         chartView.topMargin = row == 0 ? 20 : 10
         chartView.bottomMargin = row != model!.measures.count - 1 ? 10 : 80;
@@ -79,7 +80,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         chartView.yMin = 0
         chartView.barChartStyle = BarStyleCluster
         chartView.chartType = Graph2DBarChart //Graph2DLineChart
-        chartView.cursorType = Graph2DCursorCross
+        chartView.cursorType = Graph2DCursorNone
         chartView.hidden = true
         chartView.autoScaleMode = Graph2DAutoScaleMax
         chartView.drawBorder = true
@@ -246,7 +247,6 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         
         autosizeScrollView(contentView)
         containerView.addSubview(contentView);
-
     }
     
     var contentWidth :CGFloat = CGFloat(0)
@@ -259,7 +259,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         containerView.backgroundColor = UIColor.grayColor()
         contentView.backgroundColor=UIColor.darkGrayColor()
         
-        println("\(containerView.frame) \(contentView.frame)")
+        //println("\(containerView.frame) \(contentView.frame)")
         contentView.clipsToBounds = true
         for chartView in rowViews
         {
@@ -273,6 +273,28 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         }
     }
     
+    func buildColorModel(aggregatedValue:AggregatedValue) -> AggregatedValue?
+    {
+        if (aggregatedValue.dimension == nil || self.model?.colorMeasure == nil)
+        {
+            return nil
+        }
+        
+        if let measure = self.model?.colorMeasure
+        {
+            var rootValue = AggregatedValue(measure: measure, values:  aggregatedValue.valueObjects)
+            
+            var aggregatedValues = rootValue.buildValueModel(aggregatedValue.dimension!)
+            
+            for aggregatedValue in aggregatedValues
+            {
+                rootValue.children.append(aggregatedValue)
+            }
+            return rootValue;
+        }
+        return nil
+    }
+    
     func createView(aggregatedValue:AggregatedValue, row :Int, col:Int, rows:CGFloat, yAxis:Bool) -> ChartView
     {
         let margin:CGFloat = 15
@@ -280,6 +302,8 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         let chartView = ChartView(frame: CGRectZero)
         chartViews.append(chartView)
         let chartModel = ChartModel()
+        
+        chartModel.colorModel = buildColorModel(aggregatedValue)
         
         chartModel.model = aggregatedValue;
         chartView.dataSource = chartModel

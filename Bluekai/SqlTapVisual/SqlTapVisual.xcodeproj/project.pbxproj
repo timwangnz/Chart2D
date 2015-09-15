@@ -48,6 +48,8 @@
 		0DCE6FCF1BA4DBB800C7EBB8 /* DragableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FCE1BA4DBB800C7EBB8 /* DragableViewModel.swift */; };
 		0DCE6FD31BA516DB00C7EBB8 /* DroppableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */; };
 		0DCE6FD51BA7784F00C7EBB8 /* ColorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */; };
+		0DCE6FD71BA7DDA600C7EBB8 /* HistogramDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD61BA7DDA600C7EBB8 /* HistogramDimension.swift */; };
+		0DCE6FD91BA7DE1400C7EBB8 /* HistogramDimensionValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FD81BA7DE1400C7EBB8 /* HistogramDimensionValue.swift */; };
 		0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD213F71B53758C005616B3 /* DragableCellModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,8 @@
 		0DCE6FCE1BA4DBB800C7EBB8 /* DragableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableViewModel.swift; sourceTree = "<group>"; };
 		0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroppableView.swift; sourceTree = "<group>"; };
 		0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorContainerView.swift; sourceTree = "<group>"; };
+		0DCE6FD61BA7DDA600C7EBB8 /* HistogramDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistogramDimension.swift; sourceTree = "<group>"; };
+		0DCE6FD81BA7DE1400C7EBB8 /* HistogramDimensionValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistogramDimensionValue.swift; sourceTree = "<group>"; };
 		0DD213F71B53758C005616B3 /* DragableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +187,8 @@
 				0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */,
 				0DCE6FD21BA516DB00C7EBB8 /* DroppableView.swift */,
 				0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */,
+				0DCE6FD61BA7DDA600C7EBB8 /* HistogramDimension.swift */,
+				0DCE6FD81BA7DE1400C7EBB8 /* HistogramDimensionValue.swift */,
 			);
 			path = SqlTapVisual;
 			sourceTree = "<group>";
@@ -362,6 +368,8 @@
 				0D5C015D1B9EB27D00ECEFA2 /* DateDimension.swift in Sources */,
 				0D49B2441B5B299100947DF4 /* ChartModel.swift in Sources */,
 				0D5C01611B9EB33D00ECEFA2 /* DateDimensionValue.swift in Sources */,
+				0DCE6FD71BA7DDA600C7EBB8 /* HistogramDimension.swift in Sources */,
+				0DCE6FD91BA7DE1400C7EBB8 /* HistogramDimensionValue.swift in Sources */,
 				0DD213F81B53758C005616B3 /* DragableCellModel.swift in Sources */,
 				0DCE6FC11BA46BAC00C7EBB8 /* Filter.swift in Sources */,
 				0D97F6641B49CE28002C6DF9 /* RestulDataSource.swift in Sources */,

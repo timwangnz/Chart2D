@@ -14,7 +14,7 @@ class ChartView: Graph2DChartView{
     var limit : Int = 0
     var cacheTTL : Int = -1
     var xLabelField : String = ""
-
+    
     var activityView : UIActivityIndicatorView
     
     required init(coder aDecoder: NSCoder) {

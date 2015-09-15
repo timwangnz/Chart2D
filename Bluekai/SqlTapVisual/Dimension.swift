@@ -97,7 +97,7 @@ class Dimension: ChartField {
     }
 
     //figure out distinct dimensional values
-    func buildDimensionValuesFromData(candidates : NSMutableArray) -> [DimensionValue]
+    func buildDimensionValuesFromData(aggregatedValue : AggregatedValue) -> [DimensionValue]
     {
         if (dimensionValues.count > 0)
         {
@@ -107,7 +107,7 @@ class Dimension: ChartField {
         var i = 0;
         usedValues.removeAll(keepCapacity: false)
         
-        for element in candidates
+        for element in aggregatedValue.valueObjects
         {
             let valueObject = element[self.fieldName]
             

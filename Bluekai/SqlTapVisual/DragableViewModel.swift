@@ -52,8 +52,9 @@ class DragableViewModel: NSObject {
         
         if (subviews.count == 0) { return nil}
         
+        let theSubviews : Array = inView.subviews
         
-        for subview in subviews {
+        for subview in theSubviews.reverse() {
             if (CGRectContainsPoint(subview.frame, point))
             {
                 return subview as? UIView
@@ -62,6 +63,27 @@ class DragableViewModel: NSObject {
         return nil
     }
     
+    func subviewFor(longPress : UILongPressGestureRecognizer, inView: UIView) -> UIView? {
+        return subviewAt(longPress.locationInView(inView), inView:inView)
+    }
+    
+    func findDroppable(longPress : UILongPressGestureRecognizer, inView:UIView) -> Droppable?
+    {
+        let nextview = subviewFor(longPress, inView: inView);
+        if (nextview == nil)
+        {
+            return nil;
+        }
+        
+        if (nextview is Droppable)
+        {
+            return nextview as? Droppable
+        }
+        else
+        {
+            return findDroppable(longPress, inView: nextview!)
+        }
+    }
     var childView : UIView? = nil
     
     func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
@@ -85,6 +107,7 @@ class DragableViewModel: NSObject {
         let rootview = appDelegate.window!
         var locationInWindow = longPress.locationInView(rootview)
         let hitView = subviewAt(locationInWindow, inView: rootview)
+        
         
         switch state {
         case UIGestureRecognizerState.Began:
@@ -119,7 +142,12 @@ class DragableViewModel: NSObject {
             {
                 self.delegate?.drop(self.childView!, from:self.parentView!,  to:hitView!)
             }
-            
+            /*
+            if let droppable = findDroppable(longPress, inView: rootview)
+            {
+                droppable.dropItem(self.childView!, dropInfo: ["dimension": ""])
+            }
+            */
             self.childView = nil
             break
         default:

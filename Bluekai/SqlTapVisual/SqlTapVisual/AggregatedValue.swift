@@ -73,7 +73,17 @@ class AggregatedValue: NSObject {
         {
             for valueObject in self.valueObjects
             {
-                sum = sum + (valueObject[self.measure.fieldName] as! Double);
+                let value = valueObject[self.measure.fieldName] as! Double
+                if (value >= max)
+                {
+                    max = value
+                }
+                if (value < min)
+                {
+                    min = value
+                }
+                
+                sum = sum + value;
             }
             average = sum/Double(count);
         }
@@ -185,7 +195,7 @@ class AggregatedValue: NSObject {
     {
         var returnValue = [AggregatedValue]()
         ticktock.TICK("buildValueModel")
-        dimension.buildDimensionValuesFromData(valueObjects)
+        dimension.buildDimensionValuesFromData(self)
         ticktock.TOCK()
         var i : Int = 0;
         
@@ -219,7 +229,6 @@ class AggregatedValue: NSObject {
             }
         }
         ticktock.TOCK()
-        
         return returnValue
     }
     

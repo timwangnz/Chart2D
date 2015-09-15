@@ -12,6 +12,7 @@ class StaticDataSource: NSObject {
     let cacheManager : CacheManager =   CacheManager()
     //testing data
     var objects : NSMutableArray = []
+    
     var dimensions = [Dimension]()
     var measures = [Measure]()
     

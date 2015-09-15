@@ -16,11 +16,44 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     var aggregatedModel = [String:AggregatedValue]()
     var measures = [Measure]()
     var dimensions = [Dimension]()
-
+    
+    var sizeMeasure : Measure?
+        {
+        didSet {
+            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
+        }
+    }
+    
+    var labelMeasure : Measure?
+        {
+        didSet {
+            NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
+        }
+    }
+    
+    var colorMeasure : Measure?
+        {
+        didSet {
+             NSNotificationCenter.defaultCenter().postNotificationName("VisualizationModel.table.changed", object: nil)
+        }
+    }
+    
     var counting : Bool = false;
     
     func swap(from: NSIndexPath, to: NSIndexPath) {
-        //
+        /*
+        var histogramDim = measure.toDimension(10);
+        let objects = self.model?.dataSource.objects
+        
+        var rootValue = AggregatedValue(measure: measure, values:  objects!)
+        
+        var aggregatedValues = rootValue.buildValueModel(histogramDim)
+        
+        for aggreageValue in aggregatedValues
+        {
+        println("\(aggreageValue.count)")
+        
+        }*/
     }
 
     func resetModel()

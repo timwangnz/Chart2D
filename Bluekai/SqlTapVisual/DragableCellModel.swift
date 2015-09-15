@@ -161,13 +161,12 @@ class DragableCellModel: NSObject {
                     if (section == 0)
                     {
                         let dim = self.model?.dataSource.dimensions[row!]
-                        
-                        hitView!.dropItem(self.dataTableView!, dropInfo: ["dimesion": dim!])
+                        hitView!.dropItem(self.dataTableView!, dropInfo: ["dimension": dim!, "model": model!])
                     }
                     else
                     {
                         let messure = self.model?.dataSource.measures[row!]
-                        hitView!.dropItem(self.dataTableView!, dropInfo: ["measure": messure!])
+                        hitView!.dropItem(self.dataTableView!, dropInfo: ["measure": messure!, "model": model!])
                     }
                 }
             }

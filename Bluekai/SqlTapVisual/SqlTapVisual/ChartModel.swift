@@ -11,6 +11,13 @@ import Chart2D
 
 class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DViewDelegate {
     var model : AggregatedValue?
+    var colorModel : AggregatedValue?
+        {
+        didSet {
+           //should refresh the view
+        }
+    }
+
     
     var seriesStyle = Graph2DSeriesStyle.defaultStyle(Graph2DLineChart)
     
@@ -63,13 +70,45 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
             return model!.children[item].getValue()
         }
     }
-
-
-    //protocols
-    func graph2DView(graph2DView: Graph2DChartView!, styleForSeries series: Int) -> Graph2DSeriesStyle! {
-        var legend: String = ""
+    
+    let colors = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.grayColor(), UIColor.lightGrayColor(), UIColor.whiteColor()]
+    
+    
+    func getColor(min : Double, max : Double, value:Double)->UIColor
+    {
+        let step = (max - min) / Double(colors.count);
+        for var i = 0; i < colors.count; i++
+        {
+            if (value > (max - Double(i) * step))
+            {
+                return colors[i];
+            }
+        }
+        //println("color \(min) \(max) \(value)")
         
-        seriesStyle.legend = Graph2DLegendStyle(text: legend, color: seriesStyle.color, font: UIFont.systemFontOfSize(10))
+        return UIColor.yellowColor();
+    }
+    
+    //protocols
+    func graph2DView(graph2DView: Graph2DChartView!, didSelectSeries series: Int, atIndex index: Int) {
+        if (index < self.model?.children.count)
+        {
+            if let dimValue = self.model?.children[index]
+            {
+                println("clicked  \(dimValue.dimension!.fieldName) = \(dimValue.dimensionValue!)")
+            }
+        }
+        
+    }
+    
+    func graph2DView(graph2DView: Graph2DChartView!, styleForSeries series: Int, atIndex index: Int) -> Graph2DSeriesStyle! {
+        if (self.colorModel != nil && index < self.colorModel?.children.count)
+        {
+            if let number = self.colorModel?.children[index]
+            {
+                seriesStyle.color = getColor(self.colorModel!.min, max: self.colorModel!.max, value: number.getValue());
+            }
+        }
         return seriesStyle;
     }
     
@@ -78,16 +117,6 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
         lineStyle.penWidth = 0.1
         lineStyle.lineType = LineStyleSolid
         return lineStyle
-    }
-    
-    func setColorDimension(dim : Dimension)
-    {
-        
-    }
-    
-    func setSizeDimension(dim : Dimension)
-    {
-        
     }
     
     func xAxisStyle(graph2DView: Graph2DChartView!) -> Graph2DAxisStyle! {
