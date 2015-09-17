@@ -32,6 +32,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
     var rowViews : [RowChartView]  = []
 
     @IBOutlet var containerView: UIScrollView!
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
@@ -255,11 +256,18 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
     func autosizeScrollView(contentView : UIView) -> Void
     {
         contentView.frame.size = CGSizeMake(contentWidth, contentHeight);
-        containerView.contentSize = CGSizeMake(contentWidth, contentHeight);
+        let insets =
+          UIEdgeInsets(top: 0, left: 0, bottom: contentHeight, right: contentWidth);
+        //containerView.contentSize = CGSizeMake(contentWidth, contentHeight);
+        
+        containerView.contentInset = insets;
+        
+        containerView.contentOffset = CGPointMake(0, 0)
+        
         containerView.backgroundColor = UIColor.grayColor()
         contentView.backgroundColor=UIColor.darkGrayColor()
         
-        //println("\(containerView.frame) \(contentView.frame)")
+        println("\(containerView.contentSize) \(contentView.frame) \(containerView.frame)   \(containerView.contentInset.top)" )
         contentView.clipsToBounds = true
         for chartView in rowViews
         {
@@ -367,14 +375,19 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         return chartView;
     }
     
-    func createLabel(title : String, at : CGPoint) -> UIButton
+    func createButton(title : String, bg:UIColor, at : CGPoint) -> UIButton
     {
         let button : UIButton = UIButton()
         button.frame = CGRectMake(at.x, at.y, CGFloat(120), CGFloat(24))
-        button.backgroundColor = UIColor.grayColor()
+        button.backgroundColor = bg
         button.setTitle(title, forState: UIControlState.Normal)
+        button.titleLabel!.font =  UIFont.systemFontOfSize(12)
+        button.layer.cornerRadius = 4.0
+        button.clipsToBounds = true
         return button;
     }
+    
+    
     
     func layoutColumns()
     {
@@ -387,8 +400,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         
         for column in model!.dimensions
         {
-            var button = createLabel(column.fieldName, at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
-            button.backgroundColor = UIColor.grayColor()
+            var button = createButton(column.fieldName, bg:UIColor.lightGrayColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.tag = i
             button.addTarget(self, action: "configDimension:", forControlEvents: UIControlEvents.TouchUpInside)
             columnsView.addSubview(button);
@@ -408,8 +420,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         var i : Int = 0;
         for row in model!.measures
         {
-            var button = createLabel(row.fieldName, at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
-            button.backgroundColor = UIColor.grayColor()
+            var button = createButton(row.fieldName, bg:UIColor.brownColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.tag = i
             button.addTarget(self, action: "configMeasure:", forControlEvents: UIControlEvents.TouchUpInside)
             rowsView.addSubview(button);

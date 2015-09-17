@@ -84,15 +84,16 @@ class RowChartView: NSObject {
         
         if (aggregatedValue!.hasSubDimensions == true)
         {
+           
             for child in aggregatedValue!.children
             {
-                if (child.max > max)
+                if (child.maxOfChildren > max)
                 {
-                    max = child.max
+                    max = child.maxOfChildren
                 }
-                if (child.min < min)
+                if (child.minOfChildren < min)
                 {
-                    min = child.min
+                    min = child.minOfChildren
                 }
             }
         }
@@ -105,11 +106,17 @@ class RowChartView: NSObject {
                 max = Double(aggregatedValue!.getValue());
                 min = 0;
             }
+            else
+            {
+                min = aggregatedValue!.minOfChildren
+                max = aggregatedValue!.maxOfChildren
+            }
         }
         if (min > 0)
         {
             min = 0;
         }
+        
         for chartView in chartViews
         {
             chartView.autoScaleMode = Graph2DAutoScaleNone

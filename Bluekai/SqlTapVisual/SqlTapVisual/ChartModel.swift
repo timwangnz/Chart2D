@@ -72,16 +72,21 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
     }
     
     let colors = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.grayColor(), UIColor.lightGrayColor(), UIColor.whiteColor()]
-    
+
+    func indexToColor(index:Int) -> UIColor
+    {
+        let c = CGFloat(index)/CGFloat(16)
+        return UIColor(red: c, green: 0.5, blue: 1, alpha: 1)
+    }
     
     func getColor(min : Double, max : Double, value:Double)->UIColor
     {
-        let step = (max - min) / Double(colors.count);
-        for var i = 0; i < colors.count; i++
+        let step = (max - min) / Double(16);
+        for var i = 0; i < 16; i++
         {
             if (value > (max - Double(i) * step))
             {
-                return colors[i];
+                return indexToColor(i);
             }
         }
         //println("color \(min) \(max) \(value)")
@@ -91,7 +96,7 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
     
     //protocols
     func graph2DView(graph2DView: Graph2DChartView!, didSelectSeries series: Int, atIndex index: Int) {
-        if (index < self.model?.children.count)
+        if (index >= 0 && index < self.model?.children.count)
         {
             if let dimValue = self.model?.children[index]
             {

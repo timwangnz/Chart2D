@@ -34,10 +34,15 @@ root
 
 class AggregatedValue: NSObject {
     
+    
+    var valueObjects : NSMutableArray = []
+    var max : Double = -100000000000000.0
+    var min : Double =  100000000000000.0
     var sum : Double = 0
     var average :Double = 0.0
     var count : Int = 0
-    var valueObjects : NSMutableArray = []
+    
+    
     var hasSubDimensions : Bool = false
     
     var measure : Measure
@@ -54,8 +59,9 @@ class AggregatedValue: NSObject {
     
     var parent : AggregatedValue?
 
-    var max : Double = -100000000000000.0
-    var min : Double =  100000000000000.0
+    var maxOfChildren : Double = -100000000000.0
+    var minOfChildren : Double = 100000000000.0
+    
 
     /**
     * Initialized root
@@ -213,14 +219,14 @@ class AggregatedValue: NSObject {
                 aggValue.dimension = dimension
                 aggValue.dimensionValue = dimensionValue
                 
-                if (max < aggValue.getValue())
+                if (maxOfChildren < aggValue.getValue())
                 {
-                    max = aggValue.getValue()
+                    maxOfChildren = aggValue.getValue()
                 }
                 
-                if (min > aggValue.getValue())
+                if (minOfChildren > aggValue.getValue())
                 {
-                    min = aggValue.getValue()
+                    minOfChildren = aggValue.getValue()
                 }
                 
                 aggValue.parent = self

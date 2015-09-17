@@ -41,11 +41,7 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
             if !contains(measures, measure)
             {
                 measures.append(measure)
-                let button : UIButton = UIButton()
-                button.frame = CGRectMake(2, 5, self.frame.size.width - 4, self.frame.size.height - 10)
-                button.backgroundColor = UIColor.grayColor()
-                button.setTitle(measure.fieldName, forState: UIControlState.Normal)
-                self.addSubview(button)
+                self.addSubview(createButton(measure.fieldName, backgroundColor:UIColor.grayColor()))
             }
         }
         
@@ -54,15 +50,25 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
             if !contains(dimensions, dimension)
             {
                 dimensions.append(dimension)
-                let button : UIButton = UIButton()
-                button.frame = CGRectMake(2, 5, self.frame.size.width - 4, self.frame.size.height - 10)
-                button.backgroundColor = UIColor.brownColor()
-                button.setTitle(dimension.fieldName, forState: UIControlState.Normal)
-                self.addSubview(button)
+                self.addSubview(createButton(dimension.fieldName, backgroundColor:UIColor.brownColor()))
             }
         }
         self.itemDropped()
     }
+    
+    
+    func createButton(titleString :String, backgroundColor:UIColor) -> UIButton{
+        let button : UIButton = UIButton()
+        button.frame = CGRectMake(2, 5, self.frame.size.width - 4, self.frame.size.height - 10)
+        button.backgroundColor = backgroundColor
+        button.setTitle(titleString, forState: UIControlState.Normal)
+        button.titleLabel!.font =  UIFont.systemFontOfSize(12)
+        button.layer.cornerRadius = 4.0
+        button.clipsToBounds = true
+        return button
+    }
+    
+    
     func itemDropped()
     {
         
@@ -71,8 +77,11 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
     func drop(view : UIView, from: UIView, to:UIView)
     {
         view.removeFromSuperview()
-        self.model!.colorMeasure = nil
-        model = nil
+        if (self.model != nil)
+        {
+            self.model!.colorMeasure = nil
+            model = nil
+        }
         dimensions.removeAll(keepCapacity: false)
         measures.removeAll(keepCapacity: false)
     }
