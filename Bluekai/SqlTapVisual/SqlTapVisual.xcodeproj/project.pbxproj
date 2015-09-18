@@ -36,6 +36,7 @@
 		0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */; };
 		0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */; };
 		0DA62D0B1B9B78A60043705A /* salesSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA62D0A1B9B78A60043705A /* salesSampleData.json */; };
+		0DA8E9811BAA6CC500FDF2EF /* FilterContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8E9801BAA6CC500FDF2EF /* FilterContainerView.swift */; };
 		0DBC63F31B7FA46D00B20640 /* StaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */; };
 		0DCE6FBF1BA334DD00C7EBB8 /* Chart2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCE6FBE1BA334DD00C7EBB8 /* Chart2D.framework */; };
 		0DCE6FC11BA46BAC00C7EBB8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */; };
@@ -97,6 +98,7 @@
 		0D97F6721B49E745002C6DF9 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		0D97F6761B4AE24C002C6DF9 /* VisualizationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizationModel.swift; sourceTree = "<group>"; };
 		0DA62D0A1B9B78A60043705A /* salesSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = salesSampleData.json; sourceTree = "<group>"; };
+		0DA8E9801BAA6CC500FDF2EF /* FilterContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterContainerView.swift; sourceTree = "<group>"; };
 		0DBC63F21B7FA46D00B20640 /* StaticDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDataSource.swift; sourceTree = "<group>"; };
 		0DCE6FBE1BA334DD00C7EBB8 /* Chart2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chart2D.framework; path = ../../dependency/Chart2D.framework; sourceTree = "<group>"; };
 		0DCE6FC01BA46BAC00C7EBB8 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				0DCE6FD41BA7784F00C7EBB8 /* ColorContainerView.swift */,
 				0DCE6FD61BA7DDA600C7EBB8 /* HistogramDimension.swift */,
 				0DCE6FD81BA7DE1400C7EBB8 /* HistogramDimensionValue.swift */,
+				0DA8E9801BAA6CC500FDF2EF /* FilterContainerView.swift */,
 			);
 			path = SqlTapVisual;
 			sourceTree = "<group>";
@@ -280,7 +283,9 @@
 		0D97F6201B49CD9F002C6DF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = cdss;
 				TargetAttributes = {
 					0D97F6271B49CD9F002C6DF9 = {
@@ -343,6 +348,7 @@
 				0D97F6731B49E745002C6DF9 /* ChartTableViewCell.swift in Sources */,
 				0D5C01511B9E141200ECEFA2 /* TickTock.swift in Sources */,
 				0D97F6321B49CD9F002C6DF9 /* VisualViewVC.swift in Sources */,
+				0DA8E9811BAA6CC500FDF2EF /* FilterContainerView.swift in Sources */,
 				0D97F6771B4AE24C002C6DF9 /* VisualizationModel.swift in Sources */,
 				0DCE6FC41BA4A31200C7EBB8 /* PopoverGenericVC.swift in Sources */,
 				0DCE6FC81BA4BB4100C7EBB8 /* MeasureConfigVC.swift in Sources */,
@@ -436,6 +442,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -509,6 +516,7 @@
 				);
 				INFOPLIST_FILE = SqlTapVisual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oracle.bluekai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -525,6 +533,7 @@
 				);
 				INFOPLIST_FILE = SqlTapVisual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oracle.bluekai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -544,6 +553,7 @@
 				);
 				INFOPLIST_FILE = SqlTapVisualTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oracle.bluekai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqlTapVisual.app/SqlTapVisual";
 			};
@@ -559,6 +569,7 @@
 				);
 				INFOPLIST_FILE = SqlTapVisualTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oracle.bluekai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqlTapVisual.app/SqlTapVisual";
 			};

@@ -47,8 +47,8 @@ class RestfulDataVC: UIViewController {
     {
         data.sql = getSql()!
         data.limit = limit;
-        data.get (){ (response: NSURLResponse!, data:NSData!, error:NSError!) -> Void in
-            let jsonDict:NSDictionary = RestfulDataSource.parseJSON(data)
+        data.get (){ (response: NSURLResponse?, data:NSData?, error:NSError?) -> Void in
+            let jsonDict:NSDictionary = RestfulDataSource.parseJSON(data!)
             self.values = jsonDict.objectForKey("data") as? NSArray
             self.filteredValues = self.values
             callback(data:jsonDict, error:error)

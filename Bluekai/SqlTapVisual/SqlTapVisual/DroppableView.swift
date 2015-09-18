@@ -12,7 +12,7 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
     
     var draggle  = DragableViewModel()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         draggle.setup(self)
         self.draggle.delegate = self
@@ -38,7 +38,7 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
         
         if let measure = dropInfo["measure"] as? Measure
         {
-            if !contains(measures, measure)
+            if !measures.contains(measure)
             {
                 measures.append(measure)
                 self.addSubview(createButton(measure.fieldName, backgroundColor:UIColor.grayColor()))
@@ -47,7 +47,7 @@ class DroppableView: UIView, Droppable, DragableViewModelDelegate{
         
         if let dimension = dropInfo["dimension"] as? Dimension
         {
-            if !contains(dimensions, dimension)
+            if !dimensions.contains(dimension)
             {
                 dimensions.append(dimension)
                 self.addSubview(createButton(dimension.fieldName, backgroundColor:UIColor.brownColor()))

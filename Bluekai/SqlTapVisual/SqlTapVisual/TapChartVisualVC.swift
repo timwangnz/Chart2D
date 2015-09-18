@@ -27,7 +27,7 @@ class TapChartVisualVC: ChartMainVC {
       
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? VisualViewVC
+            self.detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? VisualViewVC
             self.detailViewController!.model = model
         }
     }
@@ -36,7 +36,7 @@ class TapChartVisualVC: ChartMainVC {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let _ = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! VisualViewVC
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true

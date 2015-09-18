@@ -30,7 +30,7 @@ class DragableViewModel: NSObject {
     
     func snapshopOfView(inputView: UIView) -> UIView {
         UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
-        inputView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        inputView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
         UIGraphicsEndImageContext()
         
@@ -48,16 +48,16 @@ class DragableViewModel: NSObject {
     }
 
     func subviewAt(point:CGPoint, inView: UIView) -> UIView? {
-        var subviews = inView.subviews
+        let subviews = inView.subviews
         
         if (subviews.count == 0) { return nil}
         
         let theSubviews : Array = inView.subviews
         
-        for subview in theSubviews.reverse() {
+        for subview in Array(theSubviews.reverse()) {
             if (CGRectContainsPoint(subview.frame, point))
             {
-                return subview as? UIView
+                return subview
             }
         }
         return nil
@@ -91,7 +91,7 @@ class DragableViewModel: NSObject {
         let longPress = gestureRecognizer as! UILongPressGestureRecognizer
         let state = longPress.state
         
-        var locationInView = longPress.locationInView(parentView)
+        let locationInView = longPress.locationInView(parentView)
         
         if (childView == nil)
         {
@@ -105,14 +105,14 @@ class DragableViewModel: NSObject {
         
         let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
         let rootview = appDelegate.window!
-        var locationInWindow = longPress.locationInView(rootview)
+        let locationInWindow = longPress.locationInView(rootview)
         let hitView = subviewAt(locationInWindow, inView: rootview)
         
         
         switch state {
         case UIGestureRecognizerState.Began:
             My.snapshot = snapshopOfView(childView!)
-            var center = locationInWindow
+            let center = locationInWindow
             My.snapshot!.center = center
             My.snapshot!.alpha = 0.0
             

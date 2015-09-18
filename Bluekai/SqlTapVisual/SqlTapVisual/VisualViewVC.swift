@@ -181,7 +181,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         var i = 0
         for row in model!.measures
         {
-            var rowView = RowChartView()
+            let rowView = RowChartView()
             rowViews.append(rowView)
             
             let aggregatedValue = model!.aggregatedModel[row.fieldName]
@@ -256,9 +256,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
     func autosizeScrollView(contentView : UIView) -> Void
     {
         contentView.frame.size = CGSizeMake(contentWidth, contentHeight);
-        let insets =
-          UIEdgeInsets(top: 0, left: 0, bottom: contentHeight, right: contentWidth);
-        //containerView.contentSize = CGSizeMake(contentWidth, contentHeight);
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: contentHeight, right: contentWidth);
         
         containerView.contentInset = insets;
         
@@ -267,7 +265,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         containerView.backgroundColor = UIColor.grayColor()
         contentView.backgroundColor=UIColor.darkGrayColor()
         
-        println("\(containerView.contentSize) \(contentView.frame) \(containerView.frame)   \(containerView.contentInset.top)" )
+        //println("\(containerView.contentSize) \(contentView.frame) \(containerView.frame)   \(containerView.contentInset.top)" )
         contentView.clipsToBounds = true
         for chartView in rowViews
         {
@@ -290,9 +288,9 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         
         if let measure = self.model?.colorMeasure
         {
-            var rootValue = AggregatedValue(measure: measure, values:  aggregatedValue.valueObjects)
+            let rootValue = AggregatedValue(measure: measure, values:  aggregatedValue.valueObjects)
             
-            var aggregatedValues = rootValue.buildValueModel(aggregatedValue.dimension!)
+            let aggregatedValues = rootValue.buildValueModel(aggregatedValue.dimension!)
             
             for aggregatedValue in aggregatedValues
             {
@@ -324,7 +322,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
 
         let columns = aggregatedValue.children.count
         var h = height
-        var gap  = CGFloat(2)
+        let gap  = CGFloat(2)
         
         var width = chartView.rightMargin +  margin * 2 + CGFloat(columns * DEFAULT_BAR_WIDTH) - leftMargin;
         
@@ -338,8 +336,8 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
             h = h + 80
         }
         
-        var y = margin + (height) * CGFloat(row);
-        var x = (width + gap) * CGFloat(col);
+        let y = margin + (height) * CGFloat(row);
+        let x = (width + gap) * CGFloat(col);
 
         chartView.hidden = false
         if (!yAxis)
@@ -391,7 +389,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
     
     func layoutColumns()
     {
-        for view:UIView in columnsView.subviews as! Array<UIView>
+        for view:UIView in columnsView.subviews 
         {
             view .removeFromSuperview();
         }
@@ -400,7 +398,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         
         for column in model!.dimensions
         {
-            var button = createButton(column.fieldName, bg:UIColor.lightGrayColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
+            let button = createButton(column.fieldName, bg:UIColor.lightGrayColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.tag = i
             button.addTarget(self, action: "configDimension:", forControlEvents: UIControlEvents.TouchUpInside)
             columnsView.addSubview(button);
@@ -412,7 +410,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
 
     func layoutRows()
     {
-        for view:UIView in rowsView.subviews as! Array<UIView>
+        for view:UIView in rowsView.subviews 
         {
             view .removeFromSuperview();
         }
@@ -420,7 +418,7 @@ class VisualViewVC: UIViewController, DragableViewModelDelegate{
         var i : Int = 0;
         for row in model!.measures
         {
-            var button = createButton(row.fieldName, bg:UIColor.brownColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
+            let button = createButton(row.fieldName, bg:UIColor.brownColor(), at:CGPointMake(x, columnsView.frame.size.height/2 - 12))
             button.tag = i
             button.addTarget(self, action: "configMeasure:", forControlEvents: UIControlEvents.TouchUpInside)
             rowsView.addSubview(button);

@@ -16,7 +16,9 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     var aggregatedModel = [String:AggregatedValue]()
     var measures = [Measure]()
     var dimensions = [Dimension]()
+    var filters = [Dimension]()
     
+
     var sizeMeasure : Measure?
         {
         didSet {
@@ -39,6 +41,15 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     }
     
     var counting : Bool = false;
+    
+    func addFilter(filter : Dimension)
+    {
+        filters.append(filter);
+    }
+    func clearFilters()
+    {
+        filters.removeAll(keepCapacity: false)
+    }
     
     func swap(from: NSIndexPath, to: NSIndexPath) {
         /*
@@ -79,7 +90,7 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     
     func deleteDimension(dimension : Dimension)
     {
-        if let idx = find(dimensions, dimension)
+        if let idx = dimensions.indexOf(dimension)
         {
             deleteDimensionAt(idx);
         }
@@ -87,7 +98,7 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     
     func deleteMeasure(measure : Measure)
     {
-        if let idx = find(measures, measure)
+        if let idx = measures.indexOf(measure)
         {
             deleteMeasureAt(idx);
         }
@@ -95,7 +106,7 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     
     func addMeasure(measure : Measure)
     {
-        if !contains(measures, measure)
+        if !measures.contains(measure)
         {
             if(self.counting)
             {
@@ -114,7 +125,7 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     
     func addDimension(dimension:Dimension)
     {
-        if !contains(dimensions, dimension)
+        if !dimensions.contains(dimension)
         {
             dimensions.append(dimension.makeNew())
             updateModel();
@@ -146,10 +157,10 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     
     func objectsGroupedBy(objects :NSMutableArray, fieldName:String) -> NSMutableArray
     {
-        var groupedObjects : NSMutableArray = []
+        let groupedObjects : NSMutableArray = []
         for object in objects
         {
-            if let child: AnyObject = object[fieldName]
+            if let _: AnyObject = object[fieldName]
             {
                 groupedObjects.addObject(object)
             }
@@ -161,10 +172,10 @@ class VisualizationModel: NSObject, DraggableCellDelegate {
     func updateModel()
     {
         aggregatedModel.removeAll(keepCapacity: false);
-        var i = 0
+      
         for measure in self.measures //for each measure
         {
-            var rootValue = AggregatedValue(measure: measure, values: dataSource.objects)
+            let rootValue = AggregatedValue(measure: measure, values: dataSource.objects)
             rootValue.buildValueModelTree(self.dimensions);
             aggregatedModel.updateValue(rootValue, forKey: measure.fieldName)
         }

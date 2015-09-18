@@ -20,7 +20,7 @@ class RowChartView: NSObject {
     {
         if (chartViews.count > 0)
         {
-            var firstChild = chartViews[0]
+            let firstChild = chartViews[0]
             
             let label = UILabel(frame: CGRectZero)
             
@@ -56,8 +56,15 @@ class RowChartView: NSObject {
             }
             let power = pow(Double(10), Double(degree))
             
+            let hStep = ceil(value * power)/power/10
             
-            return ceil(value * power)/power
+            for var i = 0; i<10; i++
+            {
+                if (value < Double(i) * hStep)
+                {
+                    return Double(i) * hStep;
+                }
+            }
         }
         return value;
     }
@@ -112,6 +119,7 @@ class RowChartView: NSObject {
                 max = aggregatedValue!.maxOfChildren
             }
         }
+        
         if (min > 0)
         {
             min = 0;

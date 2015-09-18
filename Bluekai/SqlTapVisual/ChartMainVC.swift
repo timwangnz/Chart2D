@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSource{
+class ChartMainVC: UITableViewController{
 
     var model : VisualizationModel = VisualizationModel()
     var draggle : DragableCellModel = DragableCellModel()
@@ -50,9 +50,9 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("MasterVCCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MasterVCCell")
 
-        cell.selectionStyle = .None
+        cell!.selectionStyle = .None
         var row : ChartField
         
         if (indexPath.section == 0)
@@ -63,10 +63,10 @@ class ChartMainVC: UITableViewController, UITableViewDelegate, UITableViewDataSo
         {
             row = model.dataSource.measures[indexPath.row]
         }
-        cell.textLabel!.font = UIFont.boldSystemFontOfSize(12)
-        cell.textLabel!.text = row.fieldName
+        cell!.textLabel!.font = UIFont.boldSystemFontOfSize(12)
+        cell!.textLabel!.text = row.fieldName
 
-        return cell
+        return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

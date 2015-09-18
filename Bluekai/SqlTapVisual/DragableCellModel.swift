@@ -31,7 +31,7 @@ class DragableCellModel: NSObject {
     
     func snapshopOfCell(inputView: UIView) -> UIView {
         UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
-        inputView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        inputView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
         UIGraphicsEndImageContext()
         
@@ -54,14 +54,14 @@ class DragableCellModel: NSObject {
     }
     
     func subviewAt(point:CGPoint, inView: UIView) -> UIView? {
-        var subviews = inView.subviews
+        let subviews = inView.subviews
         if (subviews.count == 0) { return nil}
         for subview in subviews {
             if (CGRectContainsPoint(subview.frame, point))
             {
                 if (subview is Droppable)
                 {
-                    return subview as? UIView
+                    return subview
                 }
             }
         }
@@ -69,13 +69,13 @@ class DragableCellModel: NSObject {
     }
     
     func subviewFor(longPress : UILongPressGestureRecognizer, inView: UIView) -> UIView? {
-        var point = longPress.locationInView(inView)
-        var subviews = inView.subviews
+        let point = longPress.locationInView(inView)
+        let subviews = inView.subviews
         if (subviews.count == 0) { return nil}
         for subview in subviews {
             if (CGRectContainsPoint(subview.frame, point))
             {
-                return subview as? UIView
+                return subview
             }
         }
         return nil
@@ -105,13 +105,13 @@ class DragableCellModel: NSObject {
         let longPress = gestureRecognizer as! UILongPressGestureRecognizer
         let state = longPress.state
         
-        var locationInView = longPress.locationInView(dataTableView)
-        var indexPath = dataTableView!.indexPathForRowAtPoint(locationInView)
+        let locationInView = longPress.locationInView(dataTableView)
+        let indexPath = dataTableView!.indexPathForRowAtPoint(locationInView)
         let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let rootview = appDelegate.window!
         
-        var locationInWindow = longPress.locationInView(rootview)
+        let locationInWindow = longPress.locationInView(rootview)
         let hitView = findDroppable(longPress, inView: rootview)
 
         switch state {
@@ -121,7 +121,7 @@ class DragableCellModel: NSObject {
                 let cell = dataTableView!.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
                 My.cellSnapshot = snapshopOfCell(cell)
                 
-                var center = locationInWindow
+                let center = locationInWindow
                 My.cellSnapshot!.center = center
                 My.cellSnapshot!.alpha = 0.0
                 rootview.addSubview(My.cellSnapshot!)

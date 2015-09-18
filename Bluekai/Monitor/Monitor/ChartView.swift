@@ -17,7 +17,7 @@ class ChartView: Graph2DChartView{
     
     var activityView : UIActivityIndicatorView
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         activityView = UIActivityIndicatorView();
         activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
         super.init(coder: aDecoder);

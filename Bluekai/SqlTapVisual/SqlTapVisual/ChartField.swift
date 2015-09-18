@@ -66,7 +66,7 @@ class ChartField: NSObject {
         }
         if (object is Double)
         {
-            var numberFormatter = NSNumberFormatter()
+            let numberFormatter = NSNumberFormatter()
             numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
             return numberFormatter.stringFromNumber(object as! Double)!
         }

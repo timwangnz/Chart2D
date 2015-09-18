@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6C-72-anR">
                                 <rect key="frame" x="0.0" y="64" width="124" height="536"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-1S-Nyq" customClass="DroppableView" customModule="SqlTapVisual" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPg-1S-Nyq" customClass="FilterContainerView" customModule="SqlTapVisual" customModuleProvider="target">
                                         <rect key="frame" x="8" y="99" width="109" height="60"/>
                                         <color key="backgroundColor" red="0.96550214059999995" green="0.96663856319999997" blue="0.98398021940000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -90,6 +91,9 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-uS-Vg8" customClass="DroppableView" customModule="SqlTapVisual" customModuleProvider="target">
                                         <rect key="frame" x="8" y="382" width="109" height="41"/>
                                         <color key="backgroundColor" red="0.96550214059999995" green="0.96663856319999997" blue="0.98398021940000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="Py2-zc-8gi"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-hO-dpQ">
                                         <rect key="frame" x="8" y="363" width="82" height="21"/>
@@ -136,7 +140,6 @@
                                     <constraint firstItem="ES1-zy-hgO" firstAttribute="leading" secondItem="WkV-RP-fss" secondAttribute="leading" id="Ben-z0-0sn"/>
                                     <constraint firstItem="XkY-uS-Vg8" firstAttribute="top" secondItem="aur-Eg-f2L" secondAttribute="bottom" constant="27" id="Crs-sX-QtJ"/>
                                     <constraint firstItem="baC-CK-sp8" firstAttribute="top" secondItem="b6C-72-anR" secondAttribute="top" constant="27" id="EAu-Pu-9ph"/>
-                                    <constraint firstAttribute="bottom" secondItem="XkY-uS-Vg8" secondAttribute="bottom" constant="113" id="FIu-Wx-kH5"/>
                                     <constraint firstItem="CPg-1S-Nyq" firstAttribute="leading" secondItem="rz1-QH-m2S" secondAttribute="leading" id="Ffn-4v-vnq"/>
                                     <constraint firstItem="rz1-QH-m2S" firstAttribute="top" secondItem="baC-CK-sp8" secondAttribute="bottom" constant="11" id="HVJ-ec-Ky2"/>
                                     <constraint firstItem="zCP-Pq-bly" firstAttribute="trailing" secondItem="ES1-zy-hgO" secondAttribute="trailing" id="HYd-Ms-Cov"/>
@@ -272,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-598" y="414"/>
+            <point key="canvasLocation" x="-61" y="372"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -291,7 +294,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-765" y="-330"/>
+            <point key="canvasLocation" x="-682" y="-330"/>
         </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
@@ -305,14 +308,14 @@
                         <color key="sectionIndexBackgroundColor" red="0.81893970289999996" green="0.89897930420000005" blue="0.99649891950000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MasterVCCell" textLabel="Arm-wq-HPj" rowHeight="32" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD" customClass="ChartTableViewCell" customModule="SqlTapVisual" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="32"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="31"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="31"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -337,7 +340,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-494" y="-1183"/>
+            <point key="canvasLocation" x="-61" y="-330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -352,7 +355,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="112"/>
+            <point key="canvasLocation" x="-682" y="377"/>
         </scene>
     </scenes>
 </document>

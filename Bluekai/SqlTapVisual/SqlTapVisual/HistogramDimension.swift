@@ -14,7 +14,7 @@ class HistogramDimension: Dimension {
     
     override func makeNew()->Dimension
     {
-        var newCopy = HistogramDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        let newCopy = HistogramDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
         newCopy.buckets = self.buckets;
         return newCopy
     }
@@ -31,14 +31,13 @@ class HistogramDimension: Dimension {
             return usedValues;
         }
         
-        var i = 0;
         usedValues.removeAll(keepCapacity: false)
         
-        var step = Double(aggregatedValue.max - aggregatedValue.min)/Double(buckets)
+        let step = Double(aggregatedValue.max - aggregatedValue.min)/Double(buckets)
         
         for var i = 0; i < buckets; i++
         {
-            var dimValue = HistogramDimensionValue(dimension: self, fromValue: Double(aggregatedValue.min + Double(i)*step), toValue: Double(aggregatedValue.min + Double(i+1)*step))
+            let dimValue = HistogramDimensionValue(dimension: self, fromValue: Double(aggregatedValue.min + Double(i)*step), toValue: Double(aggregatedValue.min + Double(i+1)*step))
             usedValues.append(dimValue)
             dimensionValues.append(dimValue)
         }

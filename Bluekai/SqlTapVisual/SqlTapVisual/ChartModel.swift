@@ -71,27 +71,75 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
         }
     }
     
-    let colors = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.grayColor(), UIColor.lightGrayColor(), UIColor.whiteColor()]
-
-    func indexToColor(index:Int) -> UIColor
+    func _indexToColor(index:Int) -> UIColor
     {
         let c = CGFloat(index)/CGFloat(16)
-        return UIColor(red: c, green: 0.5, blue: 1, alpha: 1)
+        return getHeatMapColor(c);
+    }
+    
+    func indexToColor(index:Int) -> UIColor
+    {
+        var c = CGFloat(index)/CGFloat(16)
+        if c <= 1
+        {
+            return UIColor(red: c, green: 1.0, blue: 1.0, alpha: 1)
+        }
+        else
+        {
+            c = CGFloat(index - 8)/CGFloat(8)
+            
+            return UIColor(red: 0.0, green: c, blue: 0.0, alpha: 1)
+        }
+    }
+    
+    func getHeatMapColor(value : CGFloat) -> UIColor
+    {
+        let NUM_COLORS = 4
+        
+        let color = [[0,0,1], [0,1,0], [1,1,0], [1,0,0]]
+        
+        // A static array of 4 colors:  (blue,   green,  yellow,  red) using {r,g,b} for each.
+        
+        var idx1 = 0             // |-- Our desired color will be between these two indexes in "color".
+        var idx2 = 0             // |
+        var fractBetween = CGFloat(0.0)  // Fraction between "idx1" and "idx2" where our value is.
+        var dv = value
+        if(dv <= 0)
+        {
+            idx1 = 0
+            idx2 = 0
+        }    // accounts for an input <=0
+        else if(dv >= 1)  {
+            idx1 = NUM_COLORS-1
+            idx2 = NUM_COLORS-1
+        }    // accounts for an input >=0
+        else
+        {
+            dv = dv * CGFloat((NUM_COLORS - 1)); // Will multiply value by 3.
+            idx1  = Int(floor(dv))                  // Our desired color will be after this index.
+            idx2  = idx1 + 1;                   // ... and before this index (inclusive).
+            fractBetween = dv - CGFloat(idx1);   // Distance between the two indexes (0-1).
+        }
+        
+        let red   = CGFloat(color[idx2][0] - color[idx1][0]) * fractBetween + CGFloat(color[idx1][0])
+        let green = CGFloat(color[idx2][1] - color[idx1][1]) * fractBetween + CGFloat(color[idx1][1])
+        _  = CGFloat(color[idx2][2] - color[idx1][2]) * fractBetween + CGFloat(color[idx1][2])
+        return UIColor(red: red, green: green, blue: green, alpha: 1.0)
     }
     
     func getColor(min : Double, max : Double, value:Double)->UIColor
     {
-        let step = (max - min) / Double(16);
+        //println("\(min) \(max) \(value)")
+        
+        let step = (max - min) / Double(16)
         for var i = 0; i < 16; i++
         {
-            if (value > (max - Double(i) * step))
+            if (value >= (max - Double(i) * step))
             {
-                return indexToColor(i);
+                return indexToColor(i)
             }
         }
-        //println("color \(min) \(max) \(value)")
-        
-        return UIColor.yellowColor();
+        return indexToColor(0)
     }
     
     //protocols
@@ -100,10 +148,9 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
         {
             if let dimValue = self.model?.children[index]
             {
-                println("clicked  \(dimValue.dimension!.fieldName) = \(dimValue.dimensionValue!)")
+                print("clicked  \(dimValue.dimension!.fieldName) = \(dimValue.dimensionValue!)")
             }
         }
-        
     }
     
     func graph2DView(graph2DView: Graph2DChartView!, styleForSeries series: Int, atIndex index: Int) -> Graph2DSeriesStyle! {
@@ -111,7 +158,7 @@ class ChartModel: NSObject, Graph2DDataSource, Graph2DChartDelegate, Graph2DView
         {
             if let number = self.colorModel?.children[index]
             {
-                seriesStyle.color = getColor(self.colorModel!.min, max: self.colorModel!.max, value: number.getValue());
+                seriesStyle.color = getColor(self.colorModel!.minOfChildren, max: self.colorModel!.maxOfChildren, value: number.getValue());
             }
         }
         return seriesStyle;

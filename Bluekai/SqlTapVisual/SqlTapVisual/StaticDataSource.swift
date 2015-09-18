@@ -23,17 +23,13 @@ class StaticDataSource: NSObject {
         
         let filePath = NSBundle.mainBundle().pathForResource("salesSampleData",ofType:"json")
         //ticktock.TICK("Process \(filePath)")
-        var readError:NSError?
         
-        if let jsonData = NSData(contentsOfFile:filePath!, options:NSDataReadingOptions.DataReadingUncached, error:&readError) {
-            var error: NSError?
-            
-            let jsonArray = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSArray
-            
-            objects.addObjectsFromArray(jsonArray! as [AnyObject])
-            analyze()
-            convert()
-        }
+        let jsonData = try? NSData(contentsOfFile:filePath!, options:NSDataReadingOptions.DataReadingUncached)
+        let jsonArray = try? NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
+        objects.addObjectsFromArray(jsonArray! as! [AnyObject])
+        analyze()
+        convert()
+        
         //ticktock.TOCK()
     }
     
@@ -43,7 +39,8 @@ class StaticDataSource: NSObject {
         {
             for (key, value) in object as! Dictionary<String, AnyObject>
             {
-                if let textRange = key.rangeOfString("Date") {
+                let textRange = key.rangeOfString("Date")
+                if textRange != nil {
                     let dateValue = Dimension.toDate(value as! String, format: "MM/dd/yy")
                     object.setObject(dateValue, forKey: key)
                 }
@@ -60,7 +57,9 @@ class StaticDataSource: NSObject {
             {
                 if value is String
                 {
-                    if let textRange = key.rangeOfString("Date") {
+                    let textRange = key.rangeOfString("Date")
+                    if textRange != nil
+                    {
                         dimensions.append(DateDimension(fieldName: key, dateType: "Date", type: 0))
                     }
                     else

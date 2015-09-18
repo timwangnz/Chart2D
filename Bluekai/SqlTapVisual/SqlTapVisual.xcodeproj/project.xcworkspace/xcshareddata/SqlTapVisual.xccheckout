@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0E4003E7-CB31-4AEA-AA78-6DD86F4D2EF4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SqlTapVisual</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0A68511700FBEE025E9746FD5D9CDBE31F7F091A</key>
 		<string>https://github.com/timwangnz/Chart2D.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Bluekai/SqlTapVisual/SqlTapVisual.xcodeproj/project.xcworkspace</string>
+	<string>Bluekai/SqlTapVisual/SqlTapVisual.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0A68511700FBEE025E9746FD5D9CDBE31F7F091A</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>0A68511700FBEE025E9746FD5D9CDBE31F7F091A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>github</string>
+			<string>sixstreams</string>
 		</dict>
 	</array>
 </dict>

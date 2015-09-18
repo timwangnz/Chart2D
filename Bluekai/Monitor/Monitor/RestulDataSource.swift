@@ -20,16 +20,16 @@ class RestfulDataSource{
     
     class func parseJSON(inputData: NSData) -> NSDictionary
     {
-        var error: NSError?
-        var jsonDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+        let jsonDict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
         
         return jsonDict
     }
     
     
-    func getData(urlPath:String, header: Dictionary<String, String>, data : NSString, callback: (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void) -> Void{
-        var url: NSURL = NSURL(string: urlPath)!
-        var request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+    func getData(urlPath:String, header: Dictionary<String, String>, data : NSString, callback: (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void) -> Void{
+        
+        let url = NSURL(string: urlPath)
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url!)
     
         for (key, value) in header {
             request.setValue(value, forHTTPHeaderField: key)
@@ -43,7 +43,7 @@ class RestfulDataSource{
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: callback)
     }
     
-    func get(callback: (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void) -> Bool
+    func get(callback: (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void) -> Bool
     {
         if checkCache()
         {
@@ -57,7 +57,7 @@ class RestfulDataSource{
         
         let header = ["Content-Type":"application/json","x-bk-cdss-client-key":"7CSnR44TTH6IPfGJSLyTaw"]
         //println("SQL call \(jsonString)");
-        getData(requestUri, header:header, data: jsonString){(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        getData(requestUri, header:header, data: jsonString){(response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             if (error == nil)
             {
                 callback(response:response, data:data, error:error);
@@ -68,10 +68,13 @@ class RestfulDataSource{
     }
     
     func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> String {
-        var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
+        
+        
+        
         if NSJSONSerialization.isValidJSONObject(value) {
-            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
-                if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            let data = try? NSJSONSerialization.dataWithJSONObject(value, options: NSJSONWritingOptions.PrettyPrinted)
+            if data != nil {
+                if let string = NSString(data: data!, encoding: NSUTF8StringEncoding) {
                     return string as String
                 }
             }

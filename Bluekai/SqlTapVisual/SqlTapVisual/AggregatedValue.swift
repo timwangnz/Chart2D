@@ -127,7 +127,7 @@ class AggregatedValue: NSObject {
             return;
         }
         
-        children.sort {
+        children.sortInPlace {
             $1.dimensionValue!.compare($0.dimensionValue!) == order
         }
     }
@@ -150,7 +150,7 @@ class AggregatedValue: NSObject {
     
     func getDimensionSubset(dimensionName:String, dimensionValue : DimensionValue, candidates:NSMutableArray) -> NSMutableArray
     {
-        var subset : NSMutableArray = []
+        let subset : NSMutableArray = []
         for element in candidates
         {
             let ele = element[dimensionName]
@@ -177,7 +177,7 @@ class AggregatedValue: NSObject {
             {
                 if dimensionValue.test(ele)
                 {
-                    var subset = subsets[dimensionValue]
+                    let subset = subsets[dimensionValue]
                     
                     if (subset != nil)
                     {
@@ -185,7 +185,7 @@ class AggregatedValue: NSObject {
                         
                     }else
                     {
-                        var newsubset = NSMutableArray()
+                        let newsubset = NSMutableArray()
                         newsubset.addObject(element);
                         subsets.updateValue(newsubset, forKey: dimensionValue)
                         
@@ -197,7 +197,7 @@ class AggregatedValue: NSObject {
         return subsets;
     }
     
-    func buildValueModel(var dimension : Dimension) -> [AggregatedValue]
+    func buildValueModel(dimension : Dimension) -> [AggregatedValue]
     {
         var returnValue = [AggregatedValue]()
         ticktock.TICK("buildValueModel")
@@ -214,7 +214,7 @@ class AggregatedValue: NSObject {
         {
             if let subset = subsets[dimensionValue]
             {
-                var aggValue = AggregatedValue(measure: self.measure, values: subset)
+                let aggValue = AggregatedValue(measure: self.measure, values: subset)
                 
                 aggValue.dimension = dimension
                 aggValue.dimensionValue = dimensionValue
@@ -285,7 +285,7 @@ class AggregatedValue: NSObject {
     {
         if (self.dimensionValue != nil)
         {
-            println("\(self.getValuePath()) \(self.getValue())");
+            print("\(self.getValuePath()) \(self.getValue())");
         }
         
         for (value) in children

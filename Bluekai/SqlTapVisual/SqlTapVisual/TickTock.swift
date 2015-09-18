@@ -24,7 +24,7 @@ class TickTock: NSObject {
     {
         if (enabled)
         {
-            println("\(function) \(context) Time: \(-startTime.timeIntervalSinceNow)\nLine:\(line) File: \(file)")
+            print("\(function) \(context) Time: \(-startTime.timeIntervalSinceNow)\nLine:\(line) File: \(file)")
         }
     }
 }

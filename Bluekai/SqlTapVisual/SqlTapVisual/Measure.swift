@@ -19,7 +19,7 @@ class Measure: ChartField {
     var valueType : AggregatedValueType = AggregatedValueType.Sum
     func makeNew()->Measure
     {
-        var newCopy = Measure(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        let newCopy = Measure(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
         newCopy.valueType = self.valueType
         
         return newCopy
@@ -27,7 +27,7 @@ class Measure: ChartField {
     
     func toDimension(buckets : Int) -> HistogramDimension
     {
-        var dim = HistogramDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type)
+        let dim = HistogramDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type)
         dim.buckets = buckets;
         return dim;
     }

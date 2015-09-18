@@ -13,7 +13,7 @@ class ChartTableViewCell: UITableViewCell {
     var originalCenter = CGPoint()
     var deleteOnDragRelease = false
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         doInit()
     }
@@ -35,7 +35,7 @@ class ChartTableViewCell: UITableViewCell {
         gradientLayer.colors = [color1, color2, color3, color4]
         gradientLayer.locations = [0.0, 0.01, 0.95, 1.0]
         layer.insertSublayer(gradientLayer, atIndex: 0)
-        var recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
     }

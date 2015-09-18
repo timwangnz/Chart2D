@@ -22,7 +22,7 @@ class DateDimension: Dimension {
      
     override func makeNew()->Dimension
     {
-        var newCopy = DateDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        let newCopy = DateDimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
         newCopy.range = self.range;
         return newCopy
     }
@@ -63,7 +63,7 @@ class DateDimension: Dimension {
     func toWeekDay(date : NSDate) -> Int
     {
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let myComponents = myCalendar.components(.CalendarUnitWeekday, fromDate: date)
+        let myComponents = myCalendar.components(.Weekday, fromDate: date)
         return myComponents.weekday
     }
     
@@ -81,10 +81,10 @@ class DateDimension: Dimension {
     func dateRangeForMonth(date:NSDate) -> DateDimensionValue
     {
         let calendar = NSCalendar.currentCalendar()
-        let firstDayOfMonth  = calendar.dateWithEra(1, year: calendar.component(.CalendarUnitYear, fromDate: date),
-            month: calendar.component(.CalendarUnitMonth, fromDate: date), day: 1, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Jan 1, 2015, 12:00 AM"
-        let lastDayOfMonth  = calendar.dateWithEra(1, year: calendar.component(.CalendarUnitYear, fromDate: date),
-            month: calendar.component(.CalendarUnitMonth, fromDate: date), day: 31, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Dec 31, 2015, 12:00 AM"
+        let firstDayOfMonth  = calendar.dateWithEra(1, year: calendar.component(.Year, fromDate: date),
+            month: calendar.component(.Month, fromDate: date), day: 1, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Jan 1, 2015, 12:00 AM"
+        let lastDayOfMonth  = calendar.dateWithEra(1, year: calendar.component(.Year, fromDate: date),
+            month: calendar.component(.Month, fromDate: date), day: 31, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Dec 31, 2015, 12:00 AM"
         return DateDimensionValue(dimension: self, fromValue: firstDayOfMonth, toValue: lastDayOfMonth)
     }
  
@@ -92,9 +92,9 @@ class DateDimension: Dimension {
     {
         let calendar = NSCalendar.currentCalendar()
         
-        let firstDayOfTheYear  = calendar.dateWithEra(1, year: calendar.component(.CalendarUnitYear, fromDate: date),
+        let firstDayOfTheYear  = calendar.dateWithEra(1, year: calendar.component(.Year, fromDate: date),
             month: 1, day: 1, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Jan 1, 2015, 12:00 AM"
-        let lastDayOfTheYear  = calendar.dateWithEra(1, year: calendar.component(.CalendarUnitYear, fromDate: date),
+        let lastDayOfTheYear  = calendar.dateWithEra(1, year: calendar.component(.Year, fromDate: date),
             month: 12, day: 31, hour: 0, minute: 0, second: 0, nanosecond: 0)!   // "Dec 31, 2015, 12:00 AM"
         
         return DateDimensionValue(dimension: self, fromValue: firstDayOfTheYear, toValue: lastDayOfTheYear)
@@ -110,15 +110,15 @@ class DateDimension: Dimension {
         let calendar = NSCalendar.currentCalendar()
         
         let morning  = calendar.dateWithEra(1,
-            year: calendar.component(.CalendarUnitYear, fromDate: date),
-            month: calendar.component(.CalendarUnitMonth, fromDate: date),
-            day : calendar.component(.CalendarUnitDay, fromDate: date),
+            year: calendar.component(.Year, fromDate: date),
+            month: calendar.component(.Month, fromDate: date),
+            day : calendar.component(.Day, fromDate: date),
             hour: 0, minute: 0, second: 0, nanosecond: 0)!
         
         let night  =  calendar.dateWithEra(1,
-            year: calendar.component(.CalendarUnitYear, fromDate: date),
-            month: calendar.component(.CalendarUnitMonth, fromDate: date),
-            day : calendar.component(.CalendarUnitDay, fromDate: date) + 1,
+            year: calendar.component(.Year, fromDate: date),
+            month: calendar.component(.Month, fromDate: date),
+            day : calendar.component(.Day, fromDate: date) + 1,
             hour: 0, minute: 0, second: 0, nanosecond: 0)!
         return DateDimensionValue(dimension: self, fromValue: morning, toValue: night)
     }

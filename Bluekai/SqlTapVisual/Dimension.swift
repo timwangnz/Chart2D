@@ -27,13 +27,13 @@ class Dimension: ChartField {
     
     func makeNew()->Dimension
     {
-        var newCopy = Dimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
+        let newCopy = Dimension(fieldName: self.fieldName, dateType: self.dataType, type: self.type);
         return newCopy
     }
     
     func addToWhitelist(dimValue : DimensionValue)
     {
-        if (contains(whitelist, dimValue))
+        if (whitelist.contains(dimValue))
         {
             return;
         }
@@ -42,7 +42,7 @@ class Dimension: ChartField {
     
     func addToBlacklist(dimValue : DimensionValue)
     {
-        if (contains(blacklist, dimValue))
+        if (blacklist.contains(dimValue))
         {
             return;
         }
@@ -56,7 +56,7 @@ class Dimension: ChartField {
             return nil
         }
         let dimValue = SingleDimensionValue(dimension: self, fromValue: testValue)
-        if contains(dimensionValues, dimValue)
+        if dimensionValues.contains(dimValue)
         {
             return nil
         }
@@ -65,12 +65,12 @@ class Dimension: ChartField {
     
     func checkAllowed(dimensionValue : DimensionValue) -> Bool
     {
-        if (contains(self.blacklist, dimensionValue))
+        if (self.blacklist.contains(dimensionValue))
         {
             return false
         }
         
-        let eq1 = (self.whitelist.count > 0) && !contains(self.whitelist, dimensionValue)
+        let eq1 = (self.whitelist.count > 0) && !self.whitelist.contains(dimensionValue)
         
         if eq1
         {
@@ -90,7 +90,7 @@ class Dimension: ChartField {
                 allowed.append(dimValue);
             }
         }
-        allowed.sort() {
+        allowed.sortInPlace() {
             $0.compare($1) == NSComparisonResult.OrderedAscending
         }
         return allowed
