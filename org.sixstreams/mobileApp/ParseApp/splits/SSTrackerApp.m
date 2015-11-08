@@ -44,7 +44,8 @@
         [servicesDisabledAlert show];
     }
     
-    //SSDeviceTrackerVC *tracker = [[SSDeviceTrackerVC alloc]init];
+    SSDeviceTrackerVC *tracker = [[SSDeviceTrackerVC alloc]init];
+    tracker.title = @"Take a picture";
     
     nearbyVC = [[SSNearByVC alloc]init];
     nearbyVC.showDeviceLoc = YES;
@@ -55,7 +56,7 @@
     nearbyVC.delegate = self;
     
     nearbyVC.title = @"Track Me";
-    return  [[UINavigationController alloc]initWithRootViewController:nearbyVC];
+    return  [[UINavigationController alloc]initWithRootViewController:tracker];
 }
 
 - (void) mapView:(id)view didDeviceMove:(CLLocation *)userLocation
@@ -84,8 +85,6 @@
         myLocation[DISTANCE] = [NSNumber numberWithDouble:distance];
         myLocation[DATE] = lastLocation.timestamp;
         myLocation[DEVICE_ID] = [self deviceId];
-        
-        //nearbyVC.title = [NSString stringWithFormat:@"%f %f", userLocation.coordinate.latitude, userLocation.coordinate.longitude];
         
         [[SSConnection connector] createObject:myLocation ofType:@"sixstreams_tracker" onSuccess:^(id data) {
             //
