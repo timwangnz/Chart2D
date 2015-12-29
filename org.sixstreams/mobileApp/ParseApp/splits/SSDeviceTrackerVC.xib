@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSDeviceTrackerVC">
@@ -10,39 +9,107 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="itemType" value="org.sixstream.swim.Event"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="iconView" destination="tuQ-3t-9El" id="QPu-Bp-Yt5"/>
                 <outlet property="layoutTable" destination="yPz-JD-1dQ" id="DOs-fo-MpO"/>
+                <outlet property="scrollView" destination="hyC-My-QK1" id="HHm-5c-fM4"/>
                 <outlet property="swimmerProfile" destination="1" id="dhX-et-Srw"/>
+                <outlet property="tapRecongnizer" destination="nhx-YA-Tod" id="2FQ-UA-7is"/>
+                <outlet property="textLabel" destination="sGq-YU-JZm" id="sSr-aw-PwY"/>
                 <outlet property="view" destination="yPz-JD-1dQ" id="m8X-ma-966"/>
+                <outlet property="view1" destination="YMt-6I-bL7" id="ICO-no-dyF"/>
+                <outlet property="view2" destination="BuH-KH-ipL" id="3zA-yC-beh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person-icon.png" id="tuQ-3t-9El" customClass="SSImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="340" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <animations/>
-                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hyC-My-QK1">
+                    <rect key="frame" x="0.0" y="50" width="414" height="455"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view hidden="YES" alpha="0.60000002384185791" contentMode="scaleToFill" id="YMt-6I-bL7">
+                            <rect key="frame" x="199" y="220" width="8" height="8"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.058817687969999997" blue="0.1372975068" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lazzy-eye.jpg" id="tuQ-3t-9El" customClass="SSImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="nhx-YA-Tod" appends="YES" id="okm-fQ-htB"/>
+                            </connections>
+                        </imageView>
+                        <view hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" id="BuH-KH-ipL">
+                            <rect key="frame" x="199" y="220" width="8" height="8"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.058817687969999997" blue="0.1372975068" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sGq-YU-JZm">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vyp-IQ-hFj">
+                    <rect key="frame" x="105" y="687" width="94" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleColor" red="0.02659573007" green="0.20579134269999999" blue="0.4721679688" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clearPoints:" destination="-1" eventType="touchUpInside" id="JvT-H7-Tug"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KqV-L9-hBE">
+                    <rect key="frame" x="215" y="687" width="94" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Measure">
+                        <color key="titleColor" red="0.02659573007" green="0.20579134269999999" blue="0.4721679688" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="changeMode:" destination="-1" eventType="touchUpInside" id="LzK-X0-rzg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0KL-rR-HNl">
+                    <rect key="frame" x="105" y="649" width="204" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Reset">
+                        <color key="titleColor" red="0.02659573007" green="0.20579134269999999" blue="0.4721679688" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetZoom" destination="-1" eventType="touchUpInside" id="5xV-lm-B86"/>
+                    </connections>
+                </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="382" y="81"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="348" y="-59"/>
         </view>
         <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yPz-JD-1dQ" customClass="SSTableLayoutView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <animations/>
             <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <point key="canvasLocation" x="646" y="90"/>
         </tableView>
+        <tapGestureRecognizer id="nhx-YA-Tod">
+            <connections>
+                <action selector="pickPoint:" destination="-1" id="BPX-5y-kho"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="person-icon.png" width="1200" height="1200"/>
+        <image name="lazzy-eye.jpg" width="325" height="400"/>
     </resources>
 </document>

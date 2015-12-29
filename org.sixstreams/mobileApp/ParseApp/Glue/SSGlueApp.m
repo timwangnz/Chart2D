@@ -37,6 +37,8 @@
 #import "SSValueLabel.h"
 #import "SSMyGroupsVC.h"
 #import "SSCalendarConnector.h"
+#import "SSDeviceTrackerVC.h"
+#import "SSNearByVC.h"
 
 @interface SSGlueApp ()<SSDeckViewVCDelegate>
 {
@@ -97,6 +99,25 @@
 
 -(UIViewController *) createRootVC
 {
+    SSDeviceTrackerVC *tracker = [[SSDeviceTrackerVC alloc]init];
+    tracker.title = @"Take a picture";
+    /*
+    SSNearByVC *nearbyVC = [[SSNearByVC alloc]init];
+    nearbyVC.showDeviceLoc = YES;
+    nearbyVC.searchAllowed = NO;
+    nearbyVC.trackDevice = YES;
+    nearbyVC.deltaLatitude = 0.2;
+    nearbyVC.deltaLongitude = 0.2;
+    nearbyVC.delegate = self;
+    
+    nearbyVC.title = @"Lazy Eye";*/
+    return  tracker;//[[UINavigationController alloc]initWithRootViewController:tracker];
+}
+
+
+-(UIViewController *) _createRootVC
+{
+
     deckViewVC =[[SSDeckViewVC alloc]init];
     deckViewVC.objectType = MEETING_CLASS;
     deckViewVC.limit = 20;
@@ -171,6 +192,7 @@
     if (self)
     {
         self.displayName = @"Gloofy";
+         self.isPublic = YES;
         NSDictionary *eventTypes = @{
                                      @"0":@"Lunch",
                                      @"1":@"Study",

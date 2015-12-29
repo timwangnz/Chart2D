@@ -56,7 +56,7 @@
     nearbyVC.delegate = self;
     
     nearbyVC.title = @"Track Me";
-    return  [[UINavigationController alloc]initWithRootViewController:tracker];
+    return  tracker;//[[UINavigationController alloc]initWithRootViewController:tracker];
 }
 
 - (void) mapView:(id)view didDeviceMove:(CLLocation *)userLocation

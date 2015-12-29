@@ -80,7 +80,6 @@
                     animations:^{
                         self.image = newImage;
                     } completion:nil];
-   
 }
 
 - (void)awakeFromNib
